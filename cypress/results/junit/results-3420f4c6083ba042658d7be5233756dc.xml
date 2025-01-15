@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="8.249" tests="1" failures="0">
-  <testsuite name="Root Suite" timestamp="2025-01-15T09:34:22" tests="0" file="cypress/e2e/SideMenu/Know_Your_Transactions_test.cy.ts" time="0.000" failures="0">
-  </testsuite>
-  <testsuite name="Know your Transactions" timestamp="2025-01-15T09:34:28" tests="1" time="2.610" failures="0">
-    <testcase name="Know your Transactions Visits know your transactions page" time="8.149" classname="Visits know your transactions page">
-    </testcase>
-  </testsuite>
-</testsuites>
