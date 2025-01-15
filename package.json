@@ -4,7 +4,13 @@
   "description": "This project contains Automated E2E tests for the Regtech_CLM",
   "main": "index.js",
   "scripts": {
-    "cypress:run": "npm start"
+    "cypress:open": "cypress open",
+    "cypress:run": "npm run prereport && cypress run --browser chrome",
+    "delete:reports": "rm -r cypress/results/* || true",
+    "prereport": "npm run delete:reports",
+    "mochawesome:merge": "npx mochawesome-merge \"cypress/results/mochawesome/*.json\" > mochawesome.json && npx marge mochawesome.json",
+    "junit:merge": "npx junit-merge -d cypress/results/junit -o cypress/results/junit/result.xml",
+    "cypress:record": "cypress run --record --key 8adb12bc-ad45-4e3b-8fe2-fbc5492b5fc2"
   },
   "repository": {
     "type": "git",
