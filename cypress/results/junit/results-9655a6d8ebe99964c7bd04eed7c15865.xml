@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="50.513" tests="2" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-15T08:52:34" tests="0" file="cypress/e2e/IndividualClientFunctionality/Add_Edit_Delete_Client_Bank_Account_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Add, Edit, Delete Client Bank Account" timestamp="2025-01-15T08:52:44" tests="2" time="40.224" failures="0">
+    <testcase name="Add, Edit, Delete Client Bank Account Add Client Bank Account" time="39.347" classname="Add Client Bank Account">
+    </testcase>
+    <testcase name="Add, Edit, Delete Client Bank Account Edit client Bank Account" time="11.122" classname="Edit client Bank Account">
+    </testcase>
+  </testsuite>
+</testsuites>

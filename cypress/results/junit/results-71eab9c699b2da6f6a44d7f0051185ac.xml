@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="26.722" tests="2" failures="1">
+  <testsuite name="Root Suite" timestamp="2025-01-15T10:12:40" tests="0" file="cypress/e2e/HelperFunctionalities/Evaluation&amp;Questionairre/2.Criteria_Categories_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Criteria Categories" timestamp="2025-01-15T10:12:45" tests="2" time="21.073" failures="1">
+    <testcase name="Criteria Categories Adds an Evaluation Type" time="11.596" classname="Adds an Evaluation Type">
+    </testcase>
+    <testcase name="Criteria Categories Edits an Evaluation Type" time="0.000" classname="Edits an Evaluation Type">
+      <failure message="Timed out retrying after 4000ms: Expected to find content: &apos;The criteria category has been updated.&apos; but never did." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find content: 'The criteria category has been updated.' but never did.
+    at Context.eval (webpack:///./cypress/e2e/HelperFunctionalities/Evaluation&Questionairre/2.Criteria_Categories_test.cy.ts:27:11)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

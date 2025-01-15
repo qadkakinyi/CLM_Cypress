@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-15T08:39:25.796Z",
+    "end": "2025-01-15T08:39:50.444Z",
+    "duration": 24648,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c150b467-3f0c-4829-9e1c-ccc3fa0bdc49",
+      "title": "",
+      "fullFile": "cypress/e2e/CorporateClientFunctionality/Fraud_Risk_Analysis_test.cy.ts",
+      "file": "cypress/e2e/CorporateClientFunctionality/Fraud_Risk_Analysis_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "acee09f5-85e4-41f6-b2b9-bbbbce1c60af",
+          "title": "Fraud Risk Analysis",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Navigates to Fraud Risk Analysis",
+              "fullTitle": "Fraud Risk Analysis Navigates to Fraud Risk Analysis",
+              "timedOut": null,
+              "duration": 24580,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Navigate to specific client\nObject(_support_e2e__WEBPACK_IMPORTED_MODULE_0__[\"navigateToClientMenu\"])('Corporate');\ncy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('Fraud Risk Analysis').click().wait(1000);\ncy.get('#gridClientFraudRiskAnalyzes');\ncy.contains('h1', 'Fraud Risk Analysis');\ncy.get('#gridClientFraudRiskAnalysisRecords');\ncy.contains('h1', 'Fraud Risk Analysis Pending Records');",
+              "err": {},
+              "uuid": "86554a5c-7e11-4f45-a00a-be73dfd7ef44",
+              "parentUUID": "acee09f5-85e4-41f6-b2b9-bbbbce1c60af",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "86554a5c-7e11-4f45-a00a-be73dfd7ef44"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 24580,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

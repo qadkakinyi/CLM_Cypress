@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="49.297" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-15T08:15:29" tests="0" file="cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Client_Card_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Add, Edit, Delete Client Cards" timestamp="2025-01-15T08:15:40" tests="3" time="37.856" failures="0">
+    <testcase name="Add, Edit, Delete Client Cards Add Client Cards" time="27.787" classname="Add Client Cards">
+    </testcase>
+    <testcase name="Add, Edit, Delete Client Cards Edit client Cards" time="11.596" classname="Edit client Cards">
+    </testcase>
+    <testcase name="Add, Edit, Delete Client Cards Delete client Cards" time="9.859" classname="Delete client Cards">
+    </testcase>
+  </testsuite>
+</testsuites>

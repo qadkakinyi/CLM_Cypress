@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-15T10:52:45.351Z",
+    "end": "2025-01-15T10:54:24.688Z",
+    "duration": 99337,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "104c22ce-c9c0-41d7-840f-d7d810e1964f",
+      "title": "",
+      "fullFile": "cypress/e2e/ScreenPerformance/Reports&Lists/Transaction_Monitoring&Actions_test.cy.ts",
+      "file": "cypress/e2e/ScreenPerformance/Reports&Lists/Transaction_Monitoring&Actions_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f33b9f62-a931-4128-a8d5-717ca367a9d3",
+          "title": "Transaction Monitoring & Actions",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Opens menu under the section and navigates to the expected pages",
+              "fullTitle": "Transaction Monitoring & Actions Opens menu under the section and navigates to the expected pages",
+              "timedOut": null,
+              "duration": 99242,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let routes = [\n    { index: 0, route: \"/reports/actions-report\", assertion: \"Actions Report\" },\n    { index: 1, route: \"/reports/cases-overview-report\", assertion: \"Cases Overview\" },\n    { index: 2, route: \"/reports/cases-per-rule-report\", assertion: \"Cases Per Rule Report\" },\n    { index: 3, route: \"/reports/cases-report\", assertion: \"Cases Report\" },\n    { index: 4, route: \"/reports/customer-activity-per-scenario-report\", assertion: \"Customer activity per scenario report\" },\n    { index: 5, route: \"/reports/dynamic-reports\", assertion: \"Dynamic Reports\" },\n    { index: 6, route: \"/reports/transactions-evaluation-report\", assertion: \"Post Transactions\" },\n    { index: 7, route: \"/reports/scenario-activity-report\", assertion: \"Scenario Activity Report\" },\n];\nroutes.forEach((route, i) => {\n    cy.get(\"@transaction-links\").eq(route.index).click();\n    cy.location(\"pathname\").should(\"equal\", route.route);\n    cy.wait(5000);\n    cy.contains(route.assertion);\n    // after this 5 seconds the data should have loades and spinner should not be visible\n    cy.get('.sk-ball-spin-clockwise').should(`not.be.visible`);\n    if (i < routes.length - 1) {\n        cy.visit(\"/main/dashboard\");\n        cy.getByDataCy(\"reports-menu\").click();\n        cy.getByDataCy(\"transaction-monitoring-menu\").should(\"be.visible\");\n        cy.getByDataCy(\"transaction-monitoring-menu\").click().as('transaction-monitoring-menu').wait(1500);\n        cy.getByDataCy(\"transaction-links\").as(\"transaction-links\");\n    }\n});",
+              "err": {},
+              "uuid": "2347c2cc-195e-4b14-89fa-3e576aaa7fd6",
+              "parentUUID": "f33b9f62-a931-4128-a8d5-717ca367a9d3",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "2347c2cc-195e-4b14-89fa-3e576aaa7fd6"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 99242,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

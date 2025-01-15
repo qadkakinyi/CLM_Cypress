@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="44.950" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-15T09:10:11" tests="0" file="cypress/e2e/IndividualClientFunctionality/Internal_Screening_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Internal Screening - Individual" timestamp="2025-01-15T09:10:22" tests="1" time="34.639" failures="0">
+    <testcase name="Internal Screening - Individual Performs Internal blacklists search" time="44.902" classname="Performs Internal blacklists search">
+    </testcase>
+  </testsuite>
+</testsuites>

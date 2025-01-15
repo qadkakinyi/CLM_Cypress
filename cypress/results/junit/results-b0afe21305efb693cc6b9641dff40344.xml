@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="79.797" tests="7" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-15T10:40:44" tests="0" file="cypress/e2e/HelperFunctionalities/TransactionMonitoring&amp;Actions/Transactions_Setup_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Transaction Types" timestamp="2025-01-15T10:40:50" tests="3" time="23.384" failures="0">
+    <testcase name="Transaction Types Adds a Transaction Type" time="11.173" classname="Adds a Transaction Type">
+    </testcase>
+    <testcase name="Transaction Types Edits a Transaction Type" time="9.839" classname="Edits a Transaction Type">
+    </testcase>
+    <testcase name="Transaction Types Deletes a Game Type" time="8.009" classname="Deletes a Game Type">
+    </testcase>
+  </testsuite>
+  <testsuite name="Transaction Methods" timestamp="2025-01-15T10:41:13" tests="3" time="31.039" failures="0">
+    <testcase name="Transaction Methods Adds a Transaction Method" time="8.770" classname="Adds a Transaction Method">
+    </testcase>
+    <testcase name="Transaction Methods Edits a Transaction Method" time="13.140" classname="Edits a Transaction Method">
+    </testcase>
+    <testcase name="Transaction Methods Deletes a Transaction Method" time="9.091" classname="Deletes a Transaction Method">
+    </testcase>
+  </testsuite>
+  <testsuite name="Execution Status Threshold" timestamp="2025-01-15T10:41:44" tests="1" time="19.704" failures="0">
+    <testcase name="Execution Status Threshold Edits a Gaming Transaction Type" time="19.699" classname="Edits a Gaming Transaction Type">
+    </testcase>
+  </testsuite>
+</testsuites>

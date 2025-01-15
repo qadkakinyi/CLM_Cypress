@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-15T08:03:58.924Z",
+    "end": "2025-01-15T08:05:16.415Z",
+    "duration": 77491,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f031fedd-0371-42c0-a66d-171ec89e0c7a",
+      "title": "",
+      "fullFile": "cypress/e2e/CorporateClientFunctionality/Add_Client_Questionnaire_test.cy.ts",
+      "file": "cypress/e2e/CorporateClientFunctionality/Add_Client_Questionnaire_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3aeb6688-2850-426e-8ce9-d70bc2241b86",
+          "title": "Add a client questionnaire - Corporate",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Adds questionnaire type, creates question categories, creates a question then adds a questionnaire",
+              "fullTitle": "Add a client questionnaire - Corporate Adds questionnaire type, creates question categories, creates a question then adds a questionnaire",
+              "timedOut": null,
+              "duration": 77396,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "Object(_support_e2e__WEBPACK_IMPORTED_MODULE_1__[\"navigateToClientMenu\"])('Corporate');\ncy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Questionnaires').click().wait(1000);\ncy.location('pathname').then((loc) => {\n    location = loc;\n});\ncy.getByDataCy('create-questionnaire').click();\ncy.wait(3000);\n//step 1\ncy.getByDataCy('reasonForQuestionnaire').then(el => {\n    if (el.is(':visible')) {\n        cy.getByDataCy('questionnaire-type').click();\n        cy.wait(1000);\n        cy.get('#dynamicSelectBoxDropdownGrid td').contains('Open Ended').click({ force: true });\n        cy.wait(500);\n        cy.getByDataCy('reason-for-questionnaire').type(_faker_js_faker__WEBPACK_IMPORTED_MODULE_0__[\"faker\"].word.verb());\n        cy.getByDataCy(\"Questionnaire-next-step-btn\").click().wait(3000);\n    }\n});\n//step 2\ncy.getByDataCy('step2-complete-the-questions').then(el => {\n    if (el.is(':visible')) {\n        cy.getByDataCy('proceed-to-step3').click().wait(3000);\n    }\n});\n//step 3\ncy.getByDataCy('finish-questionnaire');\ncy.getByDataCy('finalize-btn').click();\ncy.wait(1000);",
+              "err": {},
+              "uuid": "4b8910ff-bfba-4895-aa0d-217c8d130df8",
+              "parentUUID": "3aeb6688-2850-426e-8ce9-d70bc2241b86",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4b8910ff-bfba-4895-aa0d-217c8d130df8"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 77396,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

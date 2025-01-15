@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="38.430" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-15T09:57:44" tests="0" file="cypress/e2e/HelperFunctionalities/ClientProfiling/Custom_Fields_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Custom Fields" timestamp="2025-01-15T09:57:49" tests="3" time="32.666" failures="0">
+    <testcase name="Custom Fields Add a custom field to a form" time="14.954" classname="Add a custom field to a form">
+    </testcase>
+    <testcase name="Custom Fields Edits a custom field" time="11.687" classname="Edits a custom field">
+    </testcase>
+    <testcase name="Custom Fields Deletes a custom field" time="11.736" classname="Deletes a custom field">
+    </testcase>
+  </testsuite>
+</testsuites>

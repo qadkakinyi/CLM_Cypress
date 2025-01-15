@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="116.417" tests="5" failures="2">
+  <testsuite name="Root Suite" timestamp="2025-01-15T09:19:25" tests="0" file="cypress/e2e/Priority2/Regulation_Group_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Regulation Groups" timestamp="2025-01-15T09:19:31" tests="5" time="110.712" failures="2">
+    <testcase name="Regulation Groups Generate Regulation Group Hash Key" time="17.458" classname="Generate Regulation Group Hash Key">
+    </testcase>
+    <testcase name="Regulation Groups Duplicates a Regulation Group" time="0.000" classname="Duplicates a Regulation Group">
+      <failure message="Timed out retrying after 4000ms: Expected to find content: &apos;Duplicated regulation group has been added.&apos; but never did." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Duplicated regulation group has been added.' but never did.
+    at Context.eval (webpack:///./cypress/e2e/Priority2/Regulation_Group_test.cy.ts:39:11)]]></failure>
+    </testcase>
+    <testcase name="Regulation Groups Edits a Regulation Group" time="9.073" classname="Edits a Regulation Group">
+    </testcase>
+    <testcase name="Regulation Groups Synchronizes a Regulation Group" time="18.522" classname="Synchronizes a Regulation Group">
+    </testcase>
+    <testcase name="Regulation Groups Deletes a Regulation Group" time="0.000" classname="Deletes a Regulation Group">
+      <failure message="Timed out retrying after 4000ms: Expected to find content: &apos;The Regulation Group has been deleted.&apos; but never did." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find content: 'The Regulation Group has been deleted.' but never did.
+    at Context.eval (webpack:///./cypress/e2e/Priority2/Regulation_Group_test.cy.ts:75:11)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

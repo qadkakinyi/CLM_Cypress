@@ -1,0 +1,182 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-15T10:18:00.253Z",
+    "end": "2025-01-15T10:18:59.910Z",
+    "duration": 59657,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "3e5ed100-e2e8-4247-8473-8c669b5f8186",
+      "title": "",
+      "fullFile": "cypress/e2e/HelperFunctionalities/Evaluation&Questionairre/8.Questions_test.cy.ts",
+      "file": "cypress/e2e/HelperFunctionalities/Evaluation&Questionairre/8.Questions_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ff4874f2-6b9f-42e0-9b77-ef00f8fa9bec",
+          "title": "Questions",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Adds a Question",
+              "fullTitle": "Questions Adds a Question",
+              "timedOut": null,
+              "duration": 17141,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/settings/questions').wait(2000);\ncy.contains('Add').click().wait(1000);\ncy.getByFormControlName('name').type('Are you An English Speaker?');\ncy.getByDataCy('regulation-group-list').click();\ncy.get('#dynamicSelectBoxDropdownGrid').find('.dx-datagrid-rowsview').find('tr > td').first().click();\ncy.getByFormControlName('questionsCategoryId').click();\ncy.get('.dx-popup-content .dx-scrollable-container').contains('Questionnaire Type DKA').click();\ncy.getByDataCy('client-type').click();\ncy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-content>table tr>td').contains('Individual').click();\ncy.getByDataCy('question-setup-type').click();\ncy.get('.dx-overlay-content .dx-datagrid-rowsview').contains('List of Answers').click().wait(500);\ncy.getByFormControlName('order').type(`1`);\ncy.getByFormControlName('mappingReference').type(_faker_js_faker__WEBPACK_IMPORTED_MODULE_0__[\"faker\"].string.alphanumeric(12));\n//--this causes an error when deleting due to the relationship created unless you first remove the relationship\n// cy.getByFormControlName('capacities').click() \n// cy.contains('Authorised Person').click()\ncy.getByFormControlName('riskPoint').type('4');\ncy.getByDataCy('save-question').click();\ncy.wait(2000);\ncy.contains('Question has been added').wait(1000);",
+              "err": {},
+              "uuid": "a923eeee-1a5b-431f-a9c5-72ba138cfe14",
+              "parentUUID": "ff4874f2-6b9f-42e0-9b77-ef00f8fa9bec",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edits a Question",
+              "fullTitle": "Questions Edits a Question",
+              "timedOut": null,
+              "duration": 13522,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/settings/questions').wait(2000);\ncy.get('#gridQuestions tr .dx-first-cell .dx-texteditor-input').type('Are you An English Speaker?', { force: true }).wait(2000);\ncy.get('#gridQuestions tr td').find('.fa-angle-double-right').eq(0).click({ force: true }).wait(2000);\ncy.getByFormControlName('name').clear().type('Are you An English Native Speaker?').wait(500);\n//status disable\ncy.get('dx-drop-down-box').eq(3).click().wait(500);\ncy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview .dx-datagrid-content tr td').contains('Disabled').click({ force: true }).wait(500);\ncy.getBySel('saveAndCloseButton').click().wait(1500);\ncy.contains(`Question has been updated.`).wait(1000);",
+              "err": {},
+              "uuid": "320f25c2-9bee-4f8f-84a2-271686124026",
+              "parentUUID": "ff4874f2-6b9f-42e0-9b77-ef00f8fa9bec",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deletes a Question",
+              "fullTitle": "Questions Deletes a Question",
+              "timedOut": null,
+              "duration": 12748,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/settings/questions').wait(2000);\ncy.get('#gridQuestions tr .dx-first-cell .dx-texteditor-input').type('Are you An English Native Speaker?', { force: true }).wait(3000);\ncy.get('#gridQuestions tr td').find('.fa-angle-double-right').eq(0).click({ force: true }).wait(2000);\ncy.get('[icon=\"trash\"]').eq(0).click().wait(1000);\ncy.get('#bot2-Msg1').contains('Yes').click().wait(1000);\ncy.contains(`Question has been deleted.`).wait(1000);",
+              "err": {},
+              "uuid": "fee5058e-8feb-42df-b9e7-350c1ff33534",
+              "parentUUID": "ff4874f2-6b9f-42e0-9b77-ef00f8fa9bec",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deletes a Question Category",
+              "fullTitle": "Questions Deletes a Question Category",
+              "timedOut": null,
+              "duration": 8261,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/settings/questions-categories').wait(2000);\ncy.get('#gridQuestionsCategories tr .dx-first-cell .dx-texteditor-input').type('Closed Ended Questions Edited DKA', { force: true }).wait(2000);\ncy.get('#gridQuestionsCategories tr td').find('.dx-icon-trash').eq(1).click({ force: true }).wait(1000);\ncy.get('.dx-popup-normal').contains('Yes').click({ force: true }).wait(1000);\ncy.contains(`Questions category has been deleted.`).wait(1000);",
+              "err": {},
+              "uuid": "798c8a1a-66c9-4a4e-9b17-b499755ba173",
+              "parentUUID": "ff4874f2-6b9f-42e0-9b77-ef00f8fa9bec",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deletes a Questionnaire Type",
+              "fullTitle": "Questions Deletes a Questionnaire Type",
+              "timedOut": null,
+              "duration": 7937,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/settings/questionnaire-types').wait(2000);\ncy.get('#gridQuestionnaireTypes tr .dx-first-cell .dx-texteditor-input').type('Type DKA Test Updated', { force: true }).wait(2000);\ncy.get('#gridQuestionnaireTypes tr td').find('.dx-icon-trash').eq(1).click({ force: true }).wait(1000);\ncy.get('.dx-popup-normal').contains('Yes').click({ force: true }).wait(1000);\ncy.contains(`The questionnaire type has been deleted.`).wait(1000);",
+              "err": {},
+              "uuid": "2cf8f8bb-5d18-4c22-a4bd-9fe8389f19cf",
+              "parentUUID": "ff4874f2-6b9f-42e0-9b77-ef00f8fa9bec",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a923eeee-1a5b-431f-a9c5-72ba138cfe14",
+            "320f25c2-9bee-4f8f-84a2-271686124026",
+            "fee5058e-8feb-42df-b9e7-350c1ff33534",
+            "798c8a1a-66c9-4a4e-9b17-b499755ba173",
+            "2cf8f8bb-5d18-4c22-a4bd-9fe8389f19cf"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 59609,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

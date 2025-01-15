@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="36.287" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-15T09:56:58" tests="0" file="cypress/e2e/HelperFunctionalities/ClientProfiling/Client_Statuses_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Client Statuses" timestamp="2025-01-15T09:57:04" tests="3" time="30.573" failures="0">
+    <testcase name="Client Statuses Adds A Client Status" time="15.769" classname="Adds A Client Status">
+    </testcase>
+    <testcase name="Client Statuses Edits A Client Status" time="11.347" classname="Edits A Client Status">
+    </testcase>
+    <testcase name="Client Statuses Deletes A Client Status" time="9.132" classname="Deletes A Client Status">
+    </testcase>
+  </testsuite>
+</testsuites>

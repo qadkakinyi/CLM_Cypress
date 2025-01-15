@@ -1,0 +1,144 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-15T09:59:12.830Z",
+    "end": "2025-01-15T09:59:46.139Z",
+    "duration": 33309,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "68077294-5b97-425b-9d12-4aae7438f049",
+      "title": "",
+      "fullFile": "cypress/e2e/HelperFunctionalities/ClientProfiling/Document_Category_test.cy.ts",
+      "file": "cypress/e2e/HelperFunctionalities/ClientProfiling/Document_Category_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "cea51b58-be9d-4953-a844-11169b835cb9",
+          "title": "Document Categories",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Adds A Document Category",
+              "fullTitle": "Document Categories Adds A Document Category",
+              "timedOut": null,
+              "duration": 12266,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//add document category\ncy.visit('/settings/document-categories');\ncy.contains('sa-button', 'Add').click().wait(1000);\ncy.get('#addDocumentCategoryForm');\ncy.getByFormControlName('name').type('Test Ledger');\ncy.getByFormControlName('mappingReference').type(_faker_js_faker__WEBPACK_IMPORTED_MODULE_0__[\"faker\"].string.alphanumeric(11));\ncy.get('sa-button').contains('Save').click().wait(2000);\ncy.contains('Document category has been added.');",
+              "err": {},
+              "uuid": "e7edaa16-266b-4a99-a7e7-fd449bda01ba",
+              "parentUUID": "cea51b58-be9d-4953-a844-11169b835cb9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edits A Document Category",
+              "fullTitle": "Document Categories Edits A Document Category",
+              "timedOut": null,
+              "duration": 11419,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/settings/document-categories').wait(3000);\ncy.get('#gridDocumentCategories tr .dx-first-cell .dx-texteditor-input').type('Test Ledger', { force: true }).wait(2000);\ncy.get('tr td').find('.dx-icon-edit').eq(1).click({ force: true }).wait(1000);\ncy.get('#gridDocumentCategories .dx-datagrid-table .dx-texteditor-container > .dx-texteditor-input-container > .dx-texteditor-input').as('documentCategories');\ncy.get('@documentCategories').eq(3).clear().wait(1000).type('Ledger Test', { force: true }).wait(1000);\ncy.get('tr td').find('.dx-icon-save').eq(1).click().wait(1000);\ncy.contains('Document Category has been updated.');",
+              "err": {},
+              "uuid": "4160fb7c-996c-4a15-8003-f0a0db88bf4c",
+              "parentUUID": "cea51b58-be9d-4953-a844-11169b835cb9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deletes A Document Category",
+              "fullTitle": "Document Categories Deletes A Document Category",
+              "timedOut": null,
+              "duration": 9584,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/settings/document-categories').wait(3000);\ncy.get('#gridDocumentCategories tr .dx-first-cell .dx-texteditor-input').type('Ledger Test', { force: true }).wait(2500);\ncy.get('tr td').find('.dx-icon-trash').eq(1).click({ force: true }).wait(1000);\ncy.get('.dx-popup-normal').contains('Yes').click({ force: true }).wait(1000);\ncy.contains('Document Category has been deleted.');",
+              "err": {},
+              "uuid": "6e91b01d-cc4c-441e-a636-fcb1ac54e601",
+              "parentUUID": "cea51b58-be9d-4953-a844-11169b835cb9",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e7edaa16-266b-4a99-a7e7-fd449bda01ba",
+            "4160fb7c-996c-4a15-8003-f0a0db88bf4c",
+            "6e91b01d-cc4c-441e-a636-fcb1ac54e601"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 33269,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

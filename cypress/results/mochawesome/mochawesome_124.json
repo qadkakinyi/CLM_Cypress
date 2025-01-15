@@ -1,0 +1,144 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-15T10:09:47.947Z",
+    "end": "2025-01-15T10:10:32.949Z",
+    "duration": 45002,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "529fdaec-368b-4b4d-b16f-ed7b635bbf69",
+      "title": "",
+      "fullFile": "cypress/e2e/HelperFunctionalities/Countries/Countries_test.cy.ts",
+      "file": "cypress/e2e/HelperFunctionalities/Countries/Countries_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1377df27-002a-44a6-a27a-ff1e671c82bb",
+          "title": "Countries",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Edits A Country",
+              "fullTitle": "Countries Edits A Country",
+              "timedOut": null,
+              "duration": 26437,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/settings/countries').wait(2000);\ncy.get('#gridCountries tr .dx-first-cell .dx-texteditor-input').type('Kenya').wait(1000);\ncy.get('#gridCountries tr td').find('.dx-icon-edit').eq(0).click({ force: true }).wait(2000);\ncy.get('#gridCountries .dx-datagrid-table .dx-texteditor-container > .dx-texteditor-input-container > .dx-texteditor-input').as('countries').wait(1000);\ncy.get('@countries').eq(9).clear().wait(1000).type('Kenia', { force: true }).wait(1000);\ncy.get('tr td').find('.dx-icon-save').eq(1).click().wait(2000);\n//revert back from Kenia to Kenya\ncy.get('#gridCountries tr .dx-first-cell .dx-texteditor-input').clear().type('Kenia').wait(3000);\ncy.get('#gridCountries tr td').find('.dx-icon-edit').eq(0).click({ force: true }).wait(1000);\ncy.get('#gridCountries .dx-datagrid-table .dx-texteditor-container > .dx-texteditor-input-container > .dx-texteditor-input').as('countries').wait(100);\ncy.get('@countries').eq(9).clear().wait(1000).type('Kenya', { force: true }).wait(1000);\ncy.get('tr td').find('.dx-icon-save').eq(1).click().wait(2000);\ncy.contains('The country \"Kenia\" has been updated.');",
+              "err": {},
+              "uuid": "ab5ef430-0033-40c8-a1b1-8c4cbeddc624",
+              "parentUUID": "1377df27-002a-44a6-a27a-ff1e671c82bb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Imports Country from file",
+              "fullTitle": "Countries Imports Country from file",
+              "timedOut": null,
+              "duration": 8197,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/settings/countries').wait(1000);\ncy.contains('Import Countries From File').click().wait(1000);\ncy.get('#addCountriesFromFileForm');\ncy.getByFormControlName('fileTemplate').eq(0).selectFile(\"cypress/fixtures/Imports/Countries___Template.xlsx\");\ncy.get('#addCountriesFromFileForm').contains('sa-button', 'Import').click().wait(1500);\ncy.contains('The countries have been imported.');",
+              "err": {},
+              "uuid": "f0d95a8d-d534-4d30-a6d7-c94294a9766c",
+              "parentUUID": "1377df27-002a-44a6-a27a-ff1e671c82bb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deletes a Country",
+              "fullTitle": "Countries Deletes a Country",
+              "timedOut": null,
+              "duration": 10324,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/settings/countries').wait(2000);\ncy.get('#gridCountries tr .dx-first-cell .dx-texteditor-input').type('DKA').wait(3000);\ncy.get('#gridCountries tr td').find('.dx-icon-trash').eq(1).click({ force: true }).wait(1000);\ncy.get('.dx-popup-normal').contains('Yes').click({ force: true }).wait(2000);\ncy.contains('The country DKA Test has been deleted.');",
+              "err": {},
+              "uuid": "4be23699-e040-4da5-8c1e-5dc8a112b95d",
+              "parentUUID": "1377df27-002a-44a6-a27a-ff1e671c82bb",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ab5ef430-0033-40c8-a1b1-8c4cbeddc624",
+            "f0d95a8d-d534-4d30-a6d7-c94294a9766c",
+            "4be23699-e040-4da5-8c1e-5dc8a112b95d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 44958,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="22.514" tests="2" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-15T10:24:10" tests="0" file="cypress/e2e/HelperFunctionalities/Templates&amp;Report_Setups/Email_Intro&amp;Endings_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Intro &amp; Endings" timestamp="2025-01-15T10:24:16" tests="2" time="16.786" failures="0">
+    <testcase name="Intro &amp; Endings Adds an Intro And Ending" time="13.744" classname="Adds an Intro And Ending">
+    </testcase>
+    <testcase name="Intro &amp; Endings Edits an Intro And Ending" time="8.745" classname="Edits an Intro And Ending">
+    </testcase>
+  </testsuite>
+</testsuites>

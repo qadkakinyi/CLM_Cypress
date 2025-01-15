@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="29.668" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-15T10:05:25" tests="0" file="cypress/e2e/HelperFunctionalities/ClientProfiling/Monitoring_Visit_Types_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Monitoring Visit Types" timestamp="2025-01-15T10:05:31" tests="3" time="24.008" failures="0">
+    <testcase name="Monitoring Visit Types Adds a Visit Type" time="11.591" classname="Adds a Visit Type">
+    </testcase>
+    <testcase name="Monitoring Visit Types Edits a Visit Type" time="10.475" classname="Edits a Visit Type">
+    </testcase>
+    <testcase name="Monitoring Visit Types Deletes a Visit Type" time="7.574" classname="Deletes a Visit Type">
+    </testcase>
+  </testsuite>
+</testsuites>

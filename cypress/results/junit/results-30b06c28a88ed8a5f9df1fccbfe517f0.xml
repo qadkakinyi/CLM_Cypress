@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="58.221" tests="3" failures="1">
+  <testsuite name="Root Suite" timestamp="2025-01-15T08:29:25" tests="0" file="cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Client_Transaction_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Add, Edit, Delete Client Transactions - Corporate" timestamp="2025-01-15T08:29:36" tests="3" time="47.272" failures="1">
+    <testcase name="Add, Edit, Delete Client Transactions - Corporate Add Client Transactions" time="35.849" classname="Add Client Transactions">
+    </testcase>
+    <testcase name="Add, Edit, Delete Client Transactions - Corporate Edit client Transactions" time="15.141" classname="Edit client Transactions">
+    </testcase>
+    <testcase name="Add, Edit, Delete Client Transactions - Corporate Delete client Transactions" time="0.000" classname="Delete client Transactions">
+      <failure message="`cy.eq()` failed because this element is detached from the DOM.
+
+`&lt;input autocomplete=&quot;off&quot; aria-label=&quot;Filter cell&quot; aria-describedby=&quot;dx-col-306&quot; class=&quot;dx-texteditor-input&quot; type=&quot;text&quot; spellcheck=&quot;false&quot; role=&quot;textbox&quot; style=&quot;text-align: left;&quot;&gt;`
+
+Cypress requires elements be attached in the DOM to interact with them.
+
+The previous command that ran was:
+
+  &gt; `cy.wait()`
+
+This DOM element likely became detached somewhere between the previous and current command.
+
+Common situations why this happens:
+  - Your JS framework re-rendered asynchronously
+  - Your app code reacted to an event firing and removed the element
+
+You typically need to re-query for the element or add &apos;guards&apos; which delay Cypress from running new commands.
+
+All 2 subject validations failed on this subject.
+
+https://on.cypress.io/element-has-detached-from-dom" type="CypressError"><![CDATA[CypressError: `cy.eq()` failed because this element is detached from the DOM.
+
+`<input autocomplete="off" aria-label="Filter cell" aria-describedby="dx-col-306" class="dx-texteditor-input" type="text" spellcheck="false" role="textbox" style="text-align: left;">`
+
+Cypress requires elements be attached in the DOM to interact with them.
+
+The previous command that ran was:
+
+  > `cy.wait()`
+
+This DOM element likely became detached somewhere between the previous and current command.
+
+Common situations why this happens:
+  - Your JS framework re-rendered asynchronously
+  - Your app code reacted to an event firing and removed the element
+
+You typically need to re-query for the element or add 'guards' which delay Cypress from running new commands.
+
+All 2 subject validations failed on this subject.
+
+https://on.cypress.io/element-has-detached-from-dom
+    at ensureAttached (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:147620:76)
+    at validateType (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:147453:11)
+    at $Cy.ensureSubjectByType (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:147493:9)
+    at $Cy.pushSubject (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:158018:12)
+    at wrapped (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:157507:19)
+From Your Spec Code:
+    at goToTransactionByReference (webpack:///./cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Client_Transaction_test.cy.ts:10:84)
+    at Context.eval (webpack:///./cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Client_Transaction_test.cy.ts:88:6)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

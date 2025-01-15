@@ -1,0 +1,244 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 8,
+    "passes": 7,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-01-15T08:41:51.392Z",
+    "end": "2025-01-15T08:42:59.157Z",
+    "duration": 67765,
+    "testsRegistered": 8,
+    "passPercent": 87.5,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "7813c29a-749d-4979-a744-82953f45105d",
+      "title": "",
+      "fullFile": "cypress/e2e/DemonstrationFlow/Add_Client_Corporate_Process_test.cy.ts",
+      "file": "cypress/e2e/DemonstrationFlow/Add_Client_Corporate_Process_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a133e5da-18d7-4927-8252-f37fc65dccd5",
+          "title": "Add Corporate Client Process",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should add a corporate client",
+              "fullTitle": "Add Corporate Client Process should add a corporate client",
+              "timedOut": null,
+              "duration": 19683,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/main/clients').wait(2000);\n//add client api call\ncy.request({\n    method: \"POST\",\n    url: \"https://complytek-testing-api.regtek.co/api/Staging/clientCorporate\",\n    headers: {\n        \"Content-Type\": \"application/json\",\n        'Authorization': `Bearer ${token}`\n    },\n    body: {\n        \"registeredName\": companyName,\n        \"registrationNumber\": _faker_js_faker__WEBPACK_IMPORTED_MODULE_0__[\"faker\"].string.alphanumeric(13),\n        \"externalReference\": _faker_js_faker__WEBPACK_IMPORTED_MODULE_0__[\"faker\"].string.alphanumeric(13),\n        \"authorisedCapital\": 1000000,\n        \"clientRegulationGroupId\": 1,\n        \"clientStatusId\": 3,\n        \"countryOfIncorporationId\": 8,\n        \"joinedDate\": new Date().toISOString(),\n        \"notes\": \"This client was created from the Demonstration flow API test\",\n        \"phone\": \"+25471-234-5678\",\n        \"email\": \"string\",\n        \"ipAddress\": companyName + `@gmail.com`,\n        \"isClient\": true,\n        \"ignoreAutoOngoingMonitoringStatus\": true,\n        \"issuedCapital\": 10000,\n        \"defaultFullStructureEvaluation\": \"Yes\"\n    }\n}).then((res) => {\n    if (res.body) {\n        cy.get('[aria-colindex=\"4\"]  .dx-texteditor-input-container > .dx-texteditor-input').eq(0).type(companyName).wait(2500);\n        cy.get('#gridClients table tr td .dx-header-filter-indicator').eq(0).click({ force: true });\n        let gridClientsRows = cy.wrap('#gridClients table tbody tr');\n        gridClientsRows.get('.dx-command-edit-with-icons a').eq(0).click({ force: true }).wait(2000);\n        cy.contains(companyName);\n        cy.location('pathname').then(url => {\n            location = url;\n            const pathSections = url.split('/');\n            clientId = pathSections[3];\n        }).wait(1500);\n    }\n});",
+              "err": {},
+              "uuid": "a09926d1-b4dc-4fbc-9c33-5b9e05137bae",
+              "parentUUID": "a133e5da-18d7-4927-8252-f37fc65dccd5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should add a client document",
+              "fullTitle": "Add Corporate Client Process should add a client document",
+              "timedOut": null,
+              "duration": 7807,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(location).wait(2000);\ncy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('Documents').scrollIntoView().click().wait(2000);\ncy.request({\n    method: \"POST\",\n    url: `https://complytek-testing-api.regtek.co/api/clientCommon/${clientId}/documents`,\n    headers: {\n        \"Content-Type\": \"application/json\",\n        'Authorization': `Bearer ${token}`\n    },\n    body: {\n        \"clientId\": `${clientId}`,\n        \"documentId\": 1,\n        \"collectionStatus\": 1,\n        \"documentForm\": 1,\n        \"documentNumber\": \"123\",\n        \"countryOfIssueId\": 1,\n        \"dateOfIssue\": \"\",\n        \"expirationDate\": \"\",\n        \"collectionDate\": \"2024-10-29\",\n        \"certifiedDate\": \"\",\n        \"certifiedByUsername\": null,\n        \"reviewedByUsername\": null,\n        \"customFields\": {},\n        \"comment\": \"\",\n        \"directoryPathOrUrl\": \"\"\n    }\n}).then(res => {\n    console.log(res);\n    newDocID = res.body.id;\n});",
+              "err": {},
+              "uuid": "3ec76a8e-ff9d-43bc-a358-c6fc3de1bc59",
+              "parentUUID": "a133e5da-18d7-4927-8252-f37fc65dccd5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should update document status to collected",
+              "fullTitle": "Add Corporate Client Process should update document status to collected",
+              "timedOut": null,
+              "duration": 7864,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(location).wait(2000);\ncy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('Documents').scrollIntoView().click().wait(2000);\ncy.request({\n    method: \"PUT\",\n    url: `https://complytek-testing-api.regtek.co/api/clientCommon/${clientId}/documents`,\n    headers: {\n        \"Content-Type\": \"application/json\",\n        'Authorization': `Bearer ${token}`\n    },\n    body: {\n        \"id\": newDocID,\n        \"clientId\": `${clientId}`,\n        \"documentId\": 1,\n        \"collectionStatus\": 4,\n        \"verificationStatus\": 5,\n        \"verificationMessage\": \"\",\n        \"documentForm\": 1,\n        \"documentNumber\": \"123\",\n        \"countryOfIssueId\": 1,\n        \"dateOfIssue\": \"\",\n        \"expirationDate\": \"\",\n        \"collectionDate\": \"2024-10-24\",\n        \"nextCollectionDate\": \"2025-10-24\",\n        \"certifiedDate\": \"\",\n        \"certifiedByUsername\": null,\n        \"reviewedByUsername\": null,\n        \"attachments\": [],\n        \"mandatory\": true,\n        \"directoryPathOrUrl\": \"\",\n        \"customFields\": {},\n        \"comment\": \"\"\n    }\n}).then(res => {\n    console.log(res);\n    res.body.collectionStatus = 4;\n});",
+              "err": {},
+              "uuid": "a6c394f7-4e7f-4b54-92a0-20afb08f9ada",
+              "parentUUID": "a133e5da-18d7-4927-8252-f37fc65dccd5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should perform internal monitoring",
+              "fullTitle": "Add Corporate Client Process should perform internal monitoring",
+              "timedOut": null,
+              "duration": 6739,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(location).wait(2000);\ncy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('Internal Screening').scrollIntoView().click().wait(2000);\ncy.request({\n    method: \"POST\",\n    url: `https://complytek-testing-api.regtek.co/api/clientCommon/${clientId}/internalBlackListsOngoingMonitoring`,\n    headers: {\n        \"Content-Type\": \"application/json\",\n        'Authorization': `Bearer ${token}`\n    }\n});\ncy.reload();\ncy.wait(2000);\ncy.contains('Remove Internal Monitoring');",
+              "err": {
+                "message": "CypressError: `cy.request()` failed on:\n\nhttps://complytek-testing-api.regtek.co/api/clientCommon/462/internalBlackListsOngoingMonitoring\n\nThe response we received from your web server was:\n\n  > 400: Bad Request\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: https://complytek-testing-api.regtek.co/api/clientCommon/462/internalBlackListsOngoingMonitoring\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Content-Type\": \"application/json\",\n  \"Authorization\": \"Bearer eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI1RkM0QkM4NzM2QTE5NzkwQkUxQzU4NTc3NENCQjM4RDVDQzA1NTNDIiwidHlwIjoiYXQrand0In0.cuc-240k3Nb6Ti5AuR8lJ5Y3u94PG-xMCHX2TXYwpMwme_mQfwJbBdt-ZnwEXO677MRW9puxVt8QXXPJNH03u_ZTdg_8HcVd3jk0XlqBSYyXqYplnYTEPdT6DvKIcSB7iskiFvDIwsKhrJ43-a_WSWty6zIQCgdh3MR3pbQOf_m0BL2_TLhyS6mH-uxmiBS4aYUPY2HQmMe1Zpf4mNnEuA5sPYxMHrJyS4UsjzjFHFOyVMFXsY5BJZRmfjTIOoio5t-ZDkmEIWZckMWf12pjMVBR2zDh4M8fczOWnp6yIgD0zb5IHWLlVi-44v_qIJ2Sm5dNbM9BQdsdrLJy1CWkgsOHkHzWDd1ABctuAVQJNzEgMIsmjfK1O-lIpMMb0m4zuwPWw923KGls12haZpYwcS5nX4Km9E9HHTO9yTZFzqXRiMrrJI5lI_kVOqUuXffMBvltb5iDvPj4331HXhUBTxOqP8AQ4RHJzQgGYK9yX-q1kkOEUy0o6JNg1-DPyCpVKHQbt2FKMu-nGYrH5E_0CRQYUv63jvzf0MNWVPY0nyG_d1UBLOXIu6BEDXQrTx7KWfGOE1X2e64wNNUi_WZ6LDjdQEmJT3lc40Jog6JBs9pkeYYYOPIeZTAf53CMwvqtMp_Sb5XHgryC-ajs7c08Lx8Gwj3aZOjGrUtiRuTQXz0.nb6xc5Ne8iARFI-qjoEsIQ.4uJA4UNFIp8v_uwk--k9qOWDxUexEyvo5MiRTrtUTWP-Xha8Rqf9qvIK66y7EnILbKXvKzJtC3457Ek5-M0HjxZy7uvHTnXB9b1BOJc3-qekftbKYiAwNXC8SkLIhaj0L_t0wEmoRVWftWMDl-a7M6bI1WTdxzUaqQ980rv61-rR9cloKtgCcTVse_qzClgpHNkP-Kbl8-0pb2cTFUkn2gkoomEsXo5IwfsSwLjKx27N4oeu3fT2Ah6q84MPhpnmDTSgQIvkiVH_8Qe0ojP6Fhb22v0_wZMas6k4Gx7rFRf0pr01_DguI0Zmf_kETr4-J6jquPgwLBcU4q6l0fGvLp0A4NI5Ey7zIWQMzwGM81lbxc36bCwSXk2sWD-3TxV0_39rQO1JFRrBglSeSA_ZlrarFtFDsro4z6-TkdJNsnKLPdmjagiEfpMXEeuHz52L_DM_5Fo8JQoywr6SI7WK_wCBEnPBzW4myQex7qs_6Vk71PERdoEqdUJyfL8KEMFBYjFEcUIn63KrGTxRHkFBHFhmyfFeu0Bft5OjJ6biUXACaPUFLO7K93LUm7JzT2qW-IoxwSFQT5w5VJTjx3AMUg5Ui52m2A46GEzoN23LC6-u07WzbN_yVib_oUvjd49cuxgHZqRRZivdSOpbOyP6QuGcnELlEaWryl6Djj6G690YRj61QWDkXpSm7aBojO1NTjNEPhKjo2tlGoWEH6xOnrg9CVrIQKh9Ko9G8eEZGAQoK_233cvQwYe2zUwUgXLFVdFILQdltNL6tCNqJb0tV2mL1XFTe5qJgIN4eMVKpp0jvpKlqcPKZtBN8GKpPEVhTzR5GFIyQ8GSDTWEPIKiKSUfPkrgwWa21LrQSBeHK7VYOGdWIolmdQRIlEopfdm69MuPWT7jdFmbIjIfKmONqPqjt6ztZRyDNKHDseR38K4yFqb6jLy3aIr-uKP6OnVKGp3eJVJt_NYPl0Yte5_Hl36yNMcy5zPanLkP4vMcy0-F59BSEJz724bV_bpCo1RrxIvk6Wa9fhDyHWTMYfCM0NoXsBQS4fLaV27aQrsMegPRgNQB7myodag8lMGfOIBdNo0MOTltOKYlj7doDu7RdB3qcrpmEz5JkKHQPylhQcDWVBQ6GyP55T1ml8geVpn0OJDEluA6986fETpVkI8Oz3W7RSSUBawbWWbKgcrBZvF6oHrkKxWblGDtBK4O2i396x20agZEnl8qq2qKpbBe08-Jw0XnliFoSFSqQjQ1yTaTAGLLOPpir4084p6YtpV_H7bw2EA2m-FYkfhHVze5gpTOlQBeY6ePpvxhx909Zm4Vylp2CocabELqOiXpXsQ39yLg57g1TWYreQTASacpTLGFycHMFxFtoA5fssW9UHg_1STrQS5-iWzqfp1xwCVZLk4tRCvh4vVJjbb0Xrw-mAL5UBWBvWV4e5K3fcbv7ruaLAXO_UesENe-KKGRNh8xnEarsOdo4bm2WZTa9kRl-xs7-o5Dk6rvvNcQJGrjk8fe52jEmDakups6kGdrKNjxjy_VH-hhZkbQF-P4k1dxCzHic6ZD2JcRXulAuf4bYtBr3WhSxAWp_nnp2RGF4BHUxhIafcBquiENE-58jA97mBOFc2qs0XxFMoYnA9fpAAsux4N4s711z1kQ6rzLCgZ-zdru2Po_-ckuW1etsM7SclyssQh1beNf9234hBbD_xfYW7herlAb_2SeW8ccdGBwa5SsGnCG6HVC3YNtcLIRkh7Ma0LjC7GuuuTpEF3_9sYRSoZNM8SMIUfVZsY2Zjz3tevdl_y6Fr8fbpI9-1i_RhBB0mcWK5m9iXOESGhFOzKHrLeuo8fjNaE3bTLJayl7Bf1TOrYYu19_3VuPZAT3jtHsRLY-mPGkM98uaAe2b1FO6GMPqLCEfBYsjKnnO09c7z_gDO86rr00I1lbOku1TpO0ryNywqQeqL5IX0iRdcPGJBg3CclhlMfc4LKuOD9u9XLmokf10BDhyux7THnsJ_8_KUq98EidCR-VaCgTYcXLV_jgDzaTtbnQx0iLaHXmUwO6V9QZ9JyhSNZigjUIyfXinqnqJOU5CNdPGI1FSUWCV7ZaLXetdaRf8SbzwmFccuMfTayDnCS8kiWaEGGsdKYqK_ZSt_sTCCns4G85Lij-UJCBARz2gVxHQ9kqQXNJIxUWSK0XjfRpczfDaU95Z44EV4fPidYibLoSO5Wb35A4Eo3ccun2DjLzjK2nGXB5PwFNkUzOQynKNF_gh3m8LOsJjrSCVCf2G44_DuoW9wdjOEF6GxGwR_NLMQGNiOXEQJ4G8vnu8YzIiMncP9PBQd-FrnyqWcATsGgI-YomMqbZjDe_A9fujALv0sFLbo0BVmSphPMWiaspiFjWjX_JrvfPF2oF5vCpFetcWyGlvOYHOOaUK6AB4KBGWD8dnf5cEr4NqCW1C8CiWs1S5TqNcK56mMxNiNjkDgcYgrqK1Na1D92g7u9II2cdNUDS9H-ukvhOW1ZEHwveJA2k_NzwfLMQIXy62ltIhOgjBJ3obmeqQuuiVzTWI84QZ5ItQeEBUDyDTje0wjnOIyNF3ei4orLCpNShVfUOixraYoAPCRezFMJcCZFCRdTz5yGBwr3cKVpa7DfnuPanPRw68yI3XEqC8XqBgaLeMJpnJFaKtP7LU59DB9iXRaLkmGqwnggOxwQtlupJEQPU9OMuuQROFu25Qw19bLX4BfrjSIoDkEn1YKVerxip2Y4SfX8IHzzEOp3s2wApToFCTGjWpTjLIuWuXSvwmmsZ3p4Dmy6HflKkfkXOwxzHiqsIVct0LJWfAhcpyxaIKKPDUERwUiJ6QJL6uTnVMM3TBeffw74gKv1p5Cqp7-5fiA3vMiJe4yfscSiv5ML0vXKhgECqAgSS4IHOqGOhKAm7QjIk3fRQ46IeJAnyf9I-MTM-PY3BATNhEXN5z0ckYZ_zIcdG0VH88w3qTJGbhsLgc-ROfC9uFC62Lq_uUtYwryvwQcIl28iGXZulezzQ-tV0sQZBU_B1RBudWMZJXVvws4LhP7TICjkxp8_kZwdEZmioRZwHbPIX1hBgNdyKxw2UWRAMVp0KZ1yvO04wYABNze9SJOgrZas9GLl23ILv7HHNh4L1lVhHxMhTu-YPVb-eGfmQc2EFDKHC0HryUSUaqAgHBTfOLTLSInDTtgWfhd0iUcaYhKOOrmRiOj7aIqXZdkjXv4JvK1P5su-_ehVoW26b_mYtTngTY4HJlkGH1RUrc4aCx0sO9dcgdYPxm_l3LUIpD803kFMbqgKIymMlvaXKdJQVZ1uxvy3zUzsGj1T384SY8Sr7_3Z5CP2TNbUHsg7C1F34zxEtIYCIzt-aUQ68_7psLIwrhxFi6lgA00JRvB4yX1QD3JM0MTfD8w2YjEU2a_eAw9CeDDOaRzfi4sDh1-Jjr-uIPEBA84YhbutH_WxQIT-v_6GgY5aKVPhbve0ptFI7tsabrKcZA1Kmw3oHFiv4K7-2pniVLUEMsrrnSiXPc3qRr_fAHj7k0tGH-2IcAyLDnL_Jd_en-AugoH50AMVMtdXutVSyKg-aeRmSF9SGpB6hmR-j04jHawJ4V1CZZuqL0yYzxYhgNGKrW2gpj7ZX5CBghjXu6EUAwKVYGsF_cV4QbJgOTSoaq8gny-yu2v61kfmIvI1aKsEZdMLa88x6JkpHZdM1NZubZOij7B1mVoFFxzgM1H4__3Q8e_y9Ry0od3YGkLug1pZtUjf3VQisSUCkQFQoTe5TDBM1OcH2GUGW5fu817I4JLN3XFFj_AivN7qmK7kP-xSUMKANk6pUKgNKucu7Jk-25aCWWujpErbSfey9Nh9M-GFJT9iw8GHV9gGaJ5RKKxyaZBY5bTN21hCWMTgVDbt73622t5yZJTOe42oDszZUVJt78odLHT396JWgdQ3cKNJmKmwLkmN4pMKTLHpLzEQQI1iIF4VhmivbAVjEEy2LRNWduOZrUqbXEDdDI0eWbQbfOQdl87GRRyLYiLCt3_HK4iya_mEriHLL2ZQSUsy-_cioZiUhzkIz5IqJjnrvf3uBWml6Jl6wNXQwQtS_4u5RKINFoy5co1GsHJlRSfkjk-G-tchUE9lDNBgjiL1yrQf40j08O0mEypauH9pFYGo6GxJhGk67bwaYkgT1GiMqT4mmzoFYecrpwt_6h32PJCfrlvfRyKBCqCgLHiiMlgdS9rWgVkxe2qfe3J70Pk0WLgYpi93hJrLLykFGzVtOydpGZ9ikf_Lz8W1N5tcrXLSAL-JDxM7HsjZ4gLVHffgTUF9pL9fLLdpw8-nnW95l_UzplmcfT0GBgS2vf5yyabvKtR9O0VkjFg4-gPoJEbuI8c-I9-2Z1sictcGc7uCW9Kv4lnUzy39Lf9S7vJ-nvT9FfxuUPwdW1LM2.rnfZ0ymg_7Vn-37qMhsZOmHPh47vKRYJ0RtqXWdgSk8\",\n  \"user-agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/131.0.0.0 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-length\": 0\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 400 - Bad Request\nHeaders: {\n  \"date\": \"Wed, 15 Jan 2025 08:42:33 GMT\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"content-length\": \"260\",\n  \"connection\": \"keep-alive\",\n  \"cf-cache-status\": \"DYNAMIC\",\n  \"report-to\": \"{\\\"endpoints\\\":[{\\\"url\\\":\\\"https:\\\\/\\\\/a.nel.cloudflare.com\\\\/report\\\\/v4?s=I%2BXfkcoR6Wh%2BQRUnT52QAUhu%2BOl6WgEd4r62BY1W2UQm1CHRiu4rtRalI7XEXWQW%2FsY%2FAnNA5ORC%2FOp5OoUoWF%2Bno93GXT6GVDrrkH0cZdSiV6oSIFNqVyE7Qw1AEW7Gc01v6%2B8RjLOw2zp8rADJKEI%3D\\\"}],\\\"group\\\":\\\"cf-nel\\\",\\\"max_age\\\":604800}\",\n  \"nel\": \"{\\\"success_fraction\\\":0,\\\"report_to\\\":\\\"cf-nel\\\",\\\"max_age\\\":604800}\",\n  \"server\": \"cloudflare\",\n  \"cf-ray\": \"902492b24cc1d29c-FRA\",\n  \"server-timing\": \"cfL4;desc=\\\"?proto=TCP&rtt=15317&min_rtt=5778&rtt_var=14826&sent=448&recv=387&lost=0&retrans=0&sent_bytes=276078&recv_bytes=246100&delivery_rate=6921694&cwnd=256&unsent_bytes=0&cid=2b59c7e276c8d92c&ts=66779&x=0\\\"\"\n}\nBody: [\n  {\n    \"title\": \"Error\",\n    \"description\": \"The client cannot be added in the monitoring internal screening since the following fields: Identification Number are missing.\",\n    \"exceptionInfo\": {\n      \"exceptionMessage\": null,\n      \"exceptionInnerMessage\": null,\n      \"exceptionStackTrace\": null\n    }\n  }\n]\n\n\nhttps://on.cypress.io/request",
+                "estack": "CypressError: `cy.request()` failed on:\n\nhttps://complytek-testing-api.regtek.co/api/clientCommon/462/internalBlackListsOngoingMonitoring\n\nThe response we received from your web server was:\n\n  > 400: Bad Request\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: https://complytek-testing-api.regtek.co/api/clientCommon/462/internalBlackListsOngoingMonitoring\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Content-Type\": \"application/json\",\n  \"Authorization\": \"Bearer eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI1RkM0QkM4NzM2QTE5NzkwQkUxQzU4NTc3NENCQjM4RDVDQzA1NTNDIiwidHlwIjoiYXQrand0In0.cuc-240k3Nb6Ti5AuR8lJ5Y3u94PG-xMCHX2TXYwpMwme_mQfwJbBdt-ZnwEXO677MRW9puxVt8QXXPJNH03u_ZTdg_8HcVd3jk0XlqBSYyXqYplnYTEPdT6DvKIcSB7iskiFvDIwsKhrJ43-a_WSWty6zIQCgdh3MR3pbQOf_m0BL2_TLhyS6mH-uxmiBS4aYUPY2HQmMe1Zpf4mNnEuA5sPYxMHrJyS4UsjzjFHFOyVMFXsY5BJZRmfjTIOoio5t-ZDkmEIWZckMWf12pjMVBR2zDh4M8fczOWnp6yIgD0zb5IHWLlVi-44v_qIJ2Sm5dNbM9BQdsdrLJy1CWkgsOHkHzWDd1ABctuAVQJNzEgMIsmjfK1O-lIpMMb0m4zuwPWw923KGls12haZpYwcS5nX4Km9E9HHTO9yTZFzqXRiMrrJI5lI_kVOqUuXffMBvltb5iDvPj4331HXhUBTxOqP8AQ4RHJzQgGYK9yX-q1kkOEUy0o6JNg1-DPyCpVKHQbt2FKMu-nGYrH5E_0CRQYUv63jvzf0MNWVPY0nyG_d1UBLOXIu6BEDXQrTx7KWfGOE1X2e64wNNUi_WZ6LDjdQEmJT3lc40Jog6JBs9pkeYYYOPIeZTAf53CMwvqtMp_Sb5XHgryC-ajs7c08Lx8Gwj3aZOjGrUtiRuTQXz0.nb6xc5Ne8iARFI-qjoEsIQ.4uJA4UNFIp8v_uwk--k9qOWDxUexEyvo5MiRTrtUTWP-Xha8Rqf9qvIK66y7EnILbKXvKzJtC3457Ek5-M0HjxZy7uvHTnXB9b1BOJc3-qekftbKYiAwNXC8SkLIhaj0L_t0wEmoRVWftWMDl-a7M6bI1WTdxzUaqQ980rv61-rR9cloKtgCcTVse_qzClgpHNkP-Kbl8-0pb2cTFUkn2gkoomEsXo5IwfsSwLjKx27N4oeu3fT2Ah6q84MPhpnmDTSgQIvkiVH_8Qe0ojP6Fhb22v0_wZMas6k4Gx7rFRf0pr01_DguI0Zmf_kETr4-J6jquPgwLBcU4q6l0fGvLp0A4NI5Ey7zIWQMzwGM81lbxc36bCwSXk2sWD-3TxV0_39rQO1JFRrBglSeSA_ZlrarFtFDsro4z6-TkdJNsnKLPdmjagiEfpMXEeuHz52L_DM_5Fo8JQoywr6SI7WK_wCBEnPBzW4myQex7qs_6Vk71PERdoEqdUJyfL8KEMFBYjFEcUIn63KrGTxRHkFBHFhmyfFeu0Bft5OjJ6biUXACaPUFLO7K93LUm7JzT2qW-IoxwSFQT5w5VJTjx3AMUg5Ui52m2A46GEzoN23LC6-u07WzbN_yVib_oUvjd49cuxgHZqRRZivdSOpbOyP6QuGcnELlEaWryl6Djj6G690YRj61QWDkXpSm7aBojO1NTjNEPhKjo2tlGoWEH6xOnrg9CVrIQKh9Ko9G8eEZGAQoK_233cvQwYe2zUwUgXLFVdFILQdltNL6tCNqJb0tV2mL1XFTe5qJgIN4eMVKpp0jvpKlqcPKZtBN8GKpPEVhTzR5GFIyQ8GSDTWEPIKiKSUfPkrgwWa21LrQSBeHK7VYOGdWIolmdQRIlEopfdm69MuPWT7jdFmbIjIfKmONqPqjt6ztZRyDNKHDseR38K4yFqb6jLy3aIr-uKP6OnVKGp3eJVJt_NYPl0Yte5_Hl36yNMcy5zPanLkP4vMcy0-F59BSEJz724bV_bpCo1RrxIvk6Wa9fhDyHWTMYfCM0NoXsBQS4fLaV27aQrsMegPRgNQB7myodag8lMGfOIBdNo0MOTltOKYlj7doDu7RdB3qcrpmEz5JkKHQPylhQcDWVBQ6GyP55T1ml8geVpn0OJDEluA6986fETpVkI8Oz3W7RSSUBawbWWbKgcrBZvF6oHrkKxWblGDtBK4O2i396x20agZEnl8qq2qKpbBe08-Jw0XnliFoSFSqQjQ1yTaTAGLLOPpir4084p6YtpV_H7bw2EA2m-FYkfhHVze5gpTOlQBeY6ePpvxhx909Zm4Vylp2CocabELqOiXpXsQ39yLg57g1TWYreQTASacpTLGFycHMFxFtoA5fssW9UHg_1STrQS5-iWzqfp1xwCVZLk4tRCvh4vVJjbb0Xrw-mAL5UBWBvWV4e5K3fcbv7ruaLAXO_UesENe-KKGRNh8xnEarsOdo4bm2WZTa9kRl-xs7-o5Dk6rvvNcQJGrjk8fe52jEmDakups6kGdrKNjxjy_VH-hhZkbQF-P4k1dxCzHic6ZD2JcRXulAuf4bYtBr3WhSxAWp_nnp2RGF4BHUxhIafcBquiENE-58jA97mBOFc2qs0XxFMoYnA9fpAAsux4N4s711z1kQ6rzLCgZ-zdru2Po_-ckuW1etsM7SclyssQh1beNf9234hBbD_xfYW7herlAb_2SeW8ccdGBwa5SsGnCG6HVC3YNtcLIRkh7Ma0LjC7GuuuTpEF3_9sYRSoZNM8SMIUfVZsY2Zjz3tevdl_y6Fr8fbpI9-1i_RhBB0mcWK5m9iXOESGhFOzKHrLeuo8fjNaE3bTLJayl7Bf1TOrYYu19_3VuPZAT3jtHsRLY-mPGkM98uaAe2b1FO6GMPqLCEfBYsjKnnO09c7z_gDO86rr00I1lbOku1TpO0ryNywqQeqL5IX0iRdcPGJBg3CclhlMfc4LKuOD9u9XLmokf10BDhyux7THnsJ_8_KUq98EidCR-VaCgTYcXLV_jgDzaTtbnQx0iLaHXmUwO6V9QZ9JyhSNZigjUIyfXinqnqJOU5CNdPGI1FSUWCV7ZaLXetdaRf8SbzwmFccuMfTayDnCS8kiWaEGGsdKYqK_ZSt_sTCCns4G85Lij-UJCBARz2gVxHQ9kqQXNJIxUWSK0XjfRpczfDaU95Z44EV4fPidYibLoSO5Wb35A4Eo3ccun2DjLzjK2nGXB5PwFNkUzOQynKNF_gh3m8LOsJjrSCVCf2G44_DuoW9wdjOEF6GxGwR_NLMQGNiOXEQJ4G8vnu8YzIiMncP9PBQd-FrnyqWcATsGgI-YomMqbZjDe_A9fujALv0sFLbo0BVmSphPMWiaspiFjWjX_JrvfPF2oF5vCpFetcWyGlvOYHOOaUK6AB4KBGWD8dnf5cEr4NqCW1C8CiWs1S5TqNcK56mMxNiNjkDgcYgrqK1Na1D92g7u9II2cdNUDS9H-ukvhOW1ZEHwveJA2k_NzwfLMQIXy62ltIhOgjBJ3obmeqQuuiVzTWI84QZ5ItQeEBUDyDTje0wjnOIyNF3ei4orLCpNShVfUOixraYoAPCRezFMJcCZFCRdTz5yGBwr3cKVpa7DfnuPanPRw68yI3XEqC8XqBgaLeMJpnJFaKtP7LU59DB9iXRaLkmGqwnggOxwQtlupJEQPU9OMuuQROFu25Qw19bLX4BfrjSIoDkEn1YKVerxip2Y4SfX8IHzzEOp3s2wApToFCTGjWpTjLIuWuXSvwmmsZ3p4Dmy6HflKkfkXOwxzHiqsIVct0LJWfAhcpyxaIKKPDUERwUiJ6QJL6uTnVMM3TBeffw74gKv1p5Cqp7-5fiA3vMiJe4yfscSiv5ML0vXKhgECqAgSS4IHOqGOhKAm7QjIk3fRQ46IeJAnyf9I-MTM-PY3BATNhEXN5z0ckYZ_zIcdG0VH88w3qTJGbhsLgc-ROfC9uFC62Lq_uUtYwryvwQcIl28iGXZulezzQ-tV0sQZBU_B1RBudWMZJXVvws4LhP7TICjkxp8_kZwdEZmioRZwHbPIX1hBgNdyKxw2UWRAMVp0KZ1yvO04wYABNze9SJOgrZas9GLl23ILv7HHNh4L1lVhHxMhTu-YPVb-eGfmQc2EFDKHC0HryUSUaqAgHBTfOLTLSInDTtgWfhd0iUcaYhKOOrmRiOj7aIqXZdkjXv4JvK1P5su-_ehVoW26b_mYtTngTY4HJlkGH1RUrc4aCx0sO9dcgdYPxm_l3LUIpD803kFMbqgKIymMlvaXKdJQVZ1uxvy3zUzsGj1T384SY8Sr7_3Z5CP2TNbUHsg7C1F34zxEtIYCIzt-aUQ68_7psLIwrhxFi6lgA00JRvB4yX1QD3JM0MTfD8w2YjEU2a_eAw9CeDDOaRzfi4sDh1-Jjr-uIPEBA84YhbutH_WxQIT-v_6GgY5aKVPhbve0ptFI7tsabrKcZA1Kmw3oHFiv4K7-2pniVLUEMsrrnSiXPc3qRr_fAHj7k0tGH-2IcAyLDnL_Jd_en-AugoH50AMVMtdXutVSyKg-aeRmSF9SGpB6hmR-j04jHawJ4V1CZZuqL0yYzxYhgNGKrW2gpj7ZX5CBghjXu6EUAwKVYGsF_cV4QbJgOTSoaq8gny-yu2v61kfmIvI1aKsEZdMLa88x6JkpHZdM1NZubZOij7B1mVoFFxzgM1H4__3Q8e_y9Ry0od3YGkLug1pZtUjf3VQisSUCkQFQoTe5TDBM1OcH2GUGW5fu817I4JLN3XFFj_AivN7qmK7kP-xSUMKANk6pUKgNKucu7Jk-25aCWWujpErbSfey9Nh9M-GFJT9iw8GHV9gGaJ5RKKxyaZBY5bTN21hCWMTgVDbt73622t5yZJTOe42oDszZUVJt78odLHT396JWgdQ3cKNJmKmwLkmN4pMKTLHpLzEQQI1iIF4VhmivbAVjEEy2LRNWduOZrUqbXEDdDI0eWbQbfOQdl87GRRyLYiLCt3_HK4iya_mEriHLL2ZQSUsy-_cioZiUhzkIz5IqJjnrvf3uBWml6Jl6wNXQwQtS_4u5RKINFoy5co1GsHJlRSfkjk-G-tchUE9lDNBgjiL1yrQf40j08O0mEypauH9pFYGo6GxJhGk67bwaYkgT1GiMqT4mmzoFYecrpwt_6h32PJCfrlvfRyKBCqCgLHiiMlgdS9rWgVkxe2qfe3J70Pk0WLgYpi93hJrLLykFGzVtOydpGZ9ikf_Lz8W1N5tcrXLSAL-JDxM7HsjZ4gLVHffgTUF9pL9fLLdpw8-nnW95l_UzplmcfT0GBgS2vf5yyabvKtR9O0VkjFg4-gPoJEbuI8c-I9-2Z1sictcGc7uCW9Kv4lnUzy39Lf9S7vJ-nvT9FfxuUPwdW1LM2.rnfZ0ymg_7Vn-37qMhsZOmHPh47vKRYJ0RtqXWdgSk8\",\n  \"user-agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/131.0.0.0 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-length\": 0\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 400 - Bad Request\nHeaders: {\n  \"date\": \"Wed, 15 Jan 2025 08:42:33 GMT\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"content-length\": \"260\",\n  \"connection\": \"keep-alive\",\n  \"cf-cache-status\": \"DYNAMIC\",\n  \"report-to\": \"{\\\"endpoints\\\":[{\\\"url\\\":\\\"https:\\\\/\\\\/a.nel.cloudflare.com\\\\/report\\\\/v4?s=I%2BXfkcoR6Wh%2BQRUnT52QAUhu%2BOl6WgEd4r62BY1W2UQm1CHRiu4rtRalI7XEXWQW%2FsY%2FAnNA5ORC%2FOp5OoUoWF%2Bno93GXT6GVDrrkH0cZdSiV6oSIFNqVyE7Qw1AEW7Gc01v6%2B8RjLOw2zp8rADJKEI%3D\\\"}],\\\"group\\\":\\\"cf-nel\\\",\\\"max_age\\\":604800}\",\n  \"nel\": \"{\\\"success_fraction\\\":0,\\\"report_to\\\":\\\"cf-nel\\\",\\\"max_age\\\":604800}\",\n  \"server\": \"cloudflare\",\n  \"cf-ray\": \"902492b24cc1d29c-FRA\",\n  \"server-timing\": \"cfL4;desc=\\\"?proto=TCP&rtt=15317&min_rtt=5778&rtt_var=14826&sent=448&recv=387&lost=0&retrans=0&sent_bytes=276078&recv_bytes=246100&delivery_rate=6921694&cwnd=256&unsent_bytes=0&cid=2b59c7e276c8d92c&ts=66779&x=0\\\"\"\n}\nBody: [\n  {\n    \"title\": \"Error\",\n    \"description\": \"The client cannot be added in the monitoring internal screening since the following fields: Identification Number are missing.\",\n    \"exceptionInfo\": {\n      \"exceptionMessage\": null,\n      \"exceptionInnerMessage\": null,\n      \"exceptionStackTrace\": null\n    }\n  }\n]\n\n\nhttps://on.cypress.io/request\n    at <unknown> (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:144155:80)\n    at tryCatcher (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:11318:23)\n    at Promise._settlePromiseFromHandler (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:9253:31)\n    at Promise._settlePromise (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:9310:18)\n    at Promise._settlePromise0 (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:9355:10)\n    at Promise._settlePromises (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:9435:18)\n    at _drainQueueStep (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:6025:12)\n    at _drainQueue (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:6018:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:6034:5)\n    at Async.drainQueues (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:5904:14)\nFrom Your Spec Code:\n    at Context.eval (webpack:///./cypress/e2e/DemonstrationFlow/Add_Client_Corporate_Process_test.cy.ts:154:11)",
+                "diff": null
+              },
+              "uuid": "8f0c1942-2b1d-42da-a15c-0355a8ba2cf5",
+              "parentUUID": "a133e5da-18d7-4927-8252-f37fc65dccd5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should perform internal blacklist search",
+              "fullTitle": "Add Corporate Client Process should perform internal blacklist search",
+              "timedOut": null,
+              "duration": 8585,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(location).wait(2000);\ncy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('Internal Screening').scrollIntoView().click().wait(2000);\ncy.request({\n    method: \"POST\",\n    url: `https://complytek-testing-api.regtek.co/api/clientCommon/${clientId}/internalBlackListsSearch`,\n    headers: {\n        \"Content-Type\": \"application/json\",\n        'Authorization': `Bearer ${token}`\n    },\n    body: {\n        \"identificationNumber\": DocNumber,\n        \"registeredName\": companyName,\n        \"dateOfBirth\": birthDay,\n        \"idNumber\": DocNumber,\n        \"clientType\": 1\n    }\n}).then(res => {\n    console.log(res);\n    cy.reload();\n});",
+              "err": {},
+              "uuid": "acaf3598-f0ec-472d-8884-8ab891c45ad8",
+              "parentUUID": "a133e5da-18d7-4927-8252-f37fc65dccd5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should add a shareholder",
+              "fullTitle": "Add Corporate Client Process should add a shareholder",
+              "timedOut": null,
+              "duration": 6682,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(location).wait(2000);\ncy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Shareholders/Partners').click();\n//get current count of shareholders\nlet totalStakeholdersCount;\ncy.request({\n    method: 'GET',\n    url: `https://complytek-testing-api.regtek.co/api/paging/${clientId}/shareholders?skip=0&requireTotalCount=true`,\n    headers: {\n        \"Content-Type\": \"application/json\",\n        'Authorization': `Bearer ${token}`\n    }\n}).then(res => {\n    totalStakeholdersCount = res.body.totalCount;\n});\ncy.request({\n    method: 'POST',\n    url: `https://complytek-testing-api.regtek.co/api/clientCorporates/${clientId}/shareholders`,\n    headers: {\n        \"Content-Type\": \"application/json\",\n        'Authorization': `Bearer ${token}`\n    },\n    body: {\n        \"clientId\": clientId,\n        \"shareholderCapacity\": 2,\n        \"includeInEvaluation\": true,\n        \"isControllingPerson\": false,\n        \"isNominee\": false,\n        \"appointmentDate\": \"2024-10-31\",\n        \"resignationDate\": \"2024-11-01\",\n        \"isLegalRepresentative\": false,\n        \"profileId\": clientId,\n        \"rateWeightPercentage\": 65,\n        \"numberOfShares\": null,\n        \"clientType\": \"1\",\n        \"externalReference\": null,\n        \"ignoreAutoOngoingMonitoringStatus\": false,\n        \"clientCorporate\": {\n            \"appointmentDate\": \"2024-10-31\",\n            \"resignationDate\": \"2024-11-01\"\n        },\n        \"customFields\": {}\n    }\n}).then(res => {\n    // get current count of shareholders\n    //expecting the count to be plus 1\n    cy.request({\n        method: 'GET',\n        url: `https://complytek-testing-api.regtek.co/api/paging/${clientId}/shareholders?skip=0&requireTotalCount=true`,\n        headers: {\n            \"Content-Type\": \"application/json\",\n            'Authorization': `Bearer ${token}`\n        }\n    }).then(res => {\n        let updatedTotalStakeholderCount = res.body.totalCount;\n        expect(updatedTotalStakeholderCount).to.equal(totalStakeholdersCount + 1);\n    });\n});",
+              "err": {},
+              "uuid": "471aa996-c2e4-44a9-8531-0671aa607c03",
+              "parentUUID": "a133e5da-18d7-4927-8252-f37fc65dccd5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should add a capacity",
+              "fullTitle": "Add Corporate Client Process should add a capacity",
+              "timedOut": null,
+              "duration": 6131,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(location).wait(2000);\ncy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Capacity').click();\n//get current count of shareholders\nlet totalCapacityCount;\ncy.request({\n    method: 'GET',\n    url: `https://complytek-testing-api.regtek.co/api/paging/${clientId}/authorizedPersons?skip=0&requireTotalCount=true`,\n    headers: {\n        \"Content-Type\": \"application/json\",\n        'Authorization': `Bearer ${token}`\n    }\n}).then(res => {\n    totalCapacityCount = res.body.totalCount;\n});\ncy.request({\n    method: 'POST',\n    url: `https://complytek-testing-api.regtek.co/api/clientCommon/${clientId}/authorizedPersons`,\n    headers: {\n        \"Content-Type\": \"application/json\",\n        'Authorization': `Bearer ${token}`\n    },\n    body: {\n        \"clientId\": clientId,\n        \"capacityId\": 7,\n        \"includeInEvaluation\": true,\n        \"isNominee\": false,\n        \"isLegalRepresentative\": false,\n        \"isControllingPerson\": false,\n        \"profileId\": clientId,\n        \"rateWeightPercentage\": 72,\n        \"clientType\": \"1\",\n        \"externalReference\": null,\n        \"ignoreAutoOngoingMonitoringStatus\": false,\n        \"clientCorporate\": {\n            \"customFields\": {}\n        },\n        \"appointmentDate\": \"2024-11-11\",\n        \"resignationDate\": \"2024-11-12\",\n        \"customFields\": {}\n    }\n}).then(res => {\n    // get current count of capacities\n    //expecting the count to be plus 1\n    cy.request({\n        method: 'GET',\n        url: `https://complytek-testing-api.regtek.co/api/paging/${clientId}/authorizedPersons?skip=0&requireTotalCount=true`,\n        headers: {\n            \"Content-Type\": \"application/json\",\n            'Authorization': `Bearer ${token}`\n        }\n    }).then(res => {\n        let updatedCapacityCount = res.body.totalCount;\n        expect(updatedCapacityCount).to.equal(totalCapacityCount + 1);\n    });\n});",
+              "err": {},
+              "uuid": "e42a9180-95df-4c32-894b-58ce964636b5",
+              "parentUUID": "a133e5da-18d7-4927-8252-f37fc65dccd5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should archive a client(soft delete)",
+              "fullTitle": "Add Corporate Client Process should archive a client(soft delete)",
+              "timedOut": null,
+              "duration": 4180,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n    method: 'DELETE',\n    url: `https://complytek-testing-api.regtek.co/api/clientCommon/${clientId}/soft`,\n    headers: {\n        \"Content-Type\": \"application/json\",\n        'Authorization': `Bearer ${token}`\n    }\n}).then(res => {\n    if (res.body) {\n        cy.visit(location).wait(2000);\n        cy.contains('N/A');\n    }\n});",
+              "err": {},
+              "uuid": "954223b3-5d18-440e-a2df-183576c809d3",
+              "parentUUID": "a133e5da-18d7-4927-8252-f37fc65dccd5",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a09926d1-b4dc-4fbc-9c33-5b9e05137bae",
+            "3ec76a8e-ff9d-43bc-a358-c6fc3de1bc59",
+            "a6c394f7-4e7f-4b54-92a0-20afb08f9ada",
+            "acaf3598-f0ec-472d-8884-8ab891c45ad8",
+            "471aa996-c2e4-44a9-8531-0671aa607c03",
+            "e42a9180-95df-4c32-894b-58ce964636b5",
+            "954223b3-5d18-440e-a2df-183576c809d3"
+          ],
+          "failures": [
+            "8f0c1942-2b1d-42da-a15c-0355a8ba2cf5"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 67671,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

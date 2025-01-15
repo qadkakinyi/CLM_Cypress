@@ -1,0 +1,144 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-15T08:24:46.468Z",
+    "end": "2025-01-15T08:25:49.499Z",
+    "duration": 63031,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e0bc3111-6343-40b2-be15-27c75fbf1e80",
+      "title": "",
+      "fullFile": "cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Client_MID_Accounts_test.cy.ts",
+      "file": "cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Client_MID_Accounts_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3ba87e5a-67db-4056-83d6-40eb043295e2",
+          "title": "Add, Edit, Delete Client MID Accounts",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add Client MID Accounts",
+              "fullTitle": "Add, Edit, Delete Client MID Accounts Add Client MID Accounts",
+              "timedOut": null,
+              "duration": 42564,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Click on Know your Clients navigation item\nObject(_support_e2e__WEBPACK_IMPORTED_MODULE_1__[\"navigateToClientMenu\"])('Corporate');\ncy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'MID Accounts').click();\ncy.location('pathname').then((loc) => {\n    location = loc;\n});\n// Add new Client Policies\ncy.getBySel('addMidAccounts').click();\ncy.getBySel('addMidAccountForm').should('be.visible');\ncy.getBySel('bankAccounts').click();\ncy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview .dx-datagrid-content>.dx-datagrid-table > tbody > .dx-data-row > td').eq(0).click({ force: true });\ncy.get('#addMidAccountForm input[name=\"name\"]').type(_faker_js_faker__WEBPACK_IMPORTED_MODULE_0__[\"faker\"].finance.accountName());\ncy.getBySel('currencies').click();\ncy.get('#dynamicSelectBoxDropdownGrid tbody > .dx-data-row > td').eq(2).click({ force: true });\ncy.wait(500);\ncy.getBySel('midTypes').click();\ncy.wait(500);\ncy.contains('Test MID type').click({ force: true });\ncy.get('#addMidAccountForm input[name=\"code\"]').type(code);\ncy.getBySel('midClasses').click();\ncy.wait(500);\ncy.contains('Test MID class').click({ force: true });\ncy.getBySel('saveMidAccounts').click();",
+              "err": {},
+              "uuid": "466056bb-f06a-4794-92d5-29bf9031d8ef",
+              "parentUUID": "3ba87e5a-67db-4056-83d6-40eb043295e2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edit Client MID Accounts",
+              "fullTitle": "Add, Edit, Delete Client MID Accounts Edit Client MID Accounts",
+              "timedOut": null,
+              "duration": 10617,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(location);\ncy.wait(2000);\n// Edit Policy\ncy.getBySel('gridMidAccounts').should('be.visible');\ncy.get('.dx-datagrid-filter-row .dx-texteditor-input-container input').eq(0).type(code, { force: true });\ncy.wait(2000);\ncy.get('#gridMidAccounts table tbody tr td.dx-command-edit-with-icons a').eq(0).click({ force: true });\ncy.get('#editClientMidAccountForm').should('be.visible');\ncode = _faker_js_faker__WEBPACK_IMPORTED_MODULE_0__[\"faker\"].string.numeric(16);\ncy.get('#editClientMidAccountForm input[name=\"code\"]').should('be.visible').clear();\ncy.get('#editClientMidAccountForm input[name=\"code\"]').type(code);\ncy.getBySel('saveAndCloseButton').click();",
+              "err": {},
+              "uuid": "89c2a2e6-4067-4c11-aa28-070540b3434c",
+              "parentUUID": "3ba87e5a-67db-4056-83d6-40eb043295e2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Delete client MID Accounts",
+              "fullTitle": "Add, Edit, Delete Client MID Accounts Delete client MID Accounts",
+              "timedOut": null,
+              "duration": 9809,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(location);\ncy.wait(2000);\n// Delete MID Accounts\ncy.getBySel('gridMidAccounts').should('be.visible');\ncy.get('.dx-datagrid-filter-row .dx-texteditor-input-container input').eq(0).type(code, { force: true });\ncy.wait(2000);\nlet gridMidAccounts = cy.wrap('#gridMidAccounts table tbody tr td');\ngridMidAccounts.get('.dx-command-edit-with-icons a').eq(0).click({ force: true });\n// Delete MID Accounts\ncy.getBySel('deleteMidAccounts').should('be.visible').click();\ncy.get('#bot2-Msg1').contains('Yes').click();",
+              "err": {},
+              "uuid": "4f5861f1-8086-446a-9022-da61651789a6",
+              "parentUUID": "3ba87e5a-67db-4056-83d6-40eb043295e2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "466056bb-f06a-4794-92d5-29bf9031d8ef",
+            "89c2a2e6-4067-4c11-aa28-070540b3434c",
+            "4f5861f1-8086-446a-9022-da61651789a6"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 62990,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

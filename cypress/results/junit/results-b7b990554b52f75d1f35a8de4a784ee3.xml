@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="38.430" tests="3" failures="1">
+  <testsuite name="Root Suite" timestamp="2025-01-15T09:54:55" tests="0" file="cypress/e2e/HelperFunctionalities/ClientProfiling/Checklist_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Checklist" timestamp="2025-01-15T09:55:00" tests="3" time="32.645" failures="1">
+    <testcase name="Checklist Adds A Checklist" time="0.000" classname="Adds A Checklist">
+      <failure message="Timed out retrying after 4000ms: Expected to find content: &apos;New checklist has been added.&apos; but never did." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find content: 'New checklist has been added.' but never did.
+    at Context.eval (webpack:///./cypress/e2e/HelperFunctionalities/ClientProfiling/Checklist_test.cy.ts:13:11)]]></failure>
+    </testcase>
+    <testcase name="Checklist Edits A Checklist" time="10.784" classname="Edits A Checklist">
+    </testcase>
+    <testcase name="Checklist Deletes A CheckList" time="8.242" classname="Deletes A CheckList">
+    </testcase>
+  </testsuite>
+</testsuites>

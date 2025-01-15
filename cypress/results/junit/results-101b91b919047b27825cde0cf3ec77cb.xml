@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="36.710" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-15T10:16:04" tests="0" file="cypress/e2e/HelperFunctionalities/Evaluation&amp;Questionairre/5.Questionnaire_Grades_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Questionnaire Grades" timestamp="2025-01-15T10:16:09" tests="3" time="31.088" failures="0">
+    <testcase name="Questionnaire Grades Adds a Questionnaire Grade" time="15.060" classname="Adds a Questionnaire Grade">
+    </testcase>
+    <testcase name="Questionnaire Grades Edits a Questionnaire Grade" time="12.310" classname="Edits a Questionnaire Grade">
+    </testcase>
+    <testcase name="Questionnaire Grades Deletes a Questionnaire Grade" time="9.307" classname="Deletes a Questionnaire Grade">
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="90.862" tests="9" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-15T10:36:17" tests="0" file="cypress/e2e/HelperFunctionalities/TransactionMonitoring&amp;Actions/Gaming_Setups_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Game Types" timestamp="2025-01-15T10:36:23" tests="3" time="23.596" failures="0">
+    <testcase name="Game Types Adds a Game Type" time="11.501" classname="Adds a Game Type">
+    </testcase>
+    <testcase name="Game Types Edits a Game Type" time="10.797" classname="Edits a Game Type">
+    </testcase>
+    <testcase name="Game Types Deletes a Game Type" time="6.977" classname="Deletes a Game Type">
+    </testcase>
+  </testsuite>
+  <testsuite name="Gaming Account Statuses" timestamp="2025-01-15T10:36:47" tests="3" time="31.451" failures="0">
+    <testcase name="Gaming Account Statuses Adds a Gaming Account Status" time="7.626" classname="Adds a Gaming Account Status">
+    </testcase>
+    <testcase name="Gaming Account Statuses Edits a Gaming Account Status" time="13.398" classname="Edits a Gaming Account Status">
+    </testcase>
+    <testcase name="Gaming Account Statuses Deletes a Gaming Account Status" time="10.405" classname="Deletes a Gaming Account Status">
+    </testcase>
+  </testsuite>
+  <testsuite name="Gaming Transaction Types" timestamp="2025-01-15T10:37:18" tests="3" time="30.105" failures="0">
+    <testcase name="Gaming Transaction Types Adds a Gaming Transaction Type" time="7.469" classname="Adds a Gaming Transaction Type">
+    </testcase>
+    <testcase name="Gaming Transaction Types Edits a Gaming Transaction Type" time="12.158" classname="Edits a Gaming Transaction Type">
+    </testcase>
+    <testcase name="Gaming Transaction Types Deletes a Gaming Transaction Type" time="10.448" classname="Deletes a Gaming Transaction Type">
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,130 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 1,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-01-15T10:12:40.191Z",
+    "end": "2025-01-15T10:13:06.913Z",
+    "duration": 26722,
+    "testsRegistered": 2,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a0fb10a5-daf8-4417-99ba-fa0f4920a6d5",
+      "title": "",
+      "fullFile": "cypress/e2e/HelperFunctionalities/Evaluation&Questionairre/2.Criteria_Categories_test.cy.ts",
+      "file": "cypress/e2e/HelperFunctionalities/Evaluation&Questionairre/2.Criteria_Categories_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d7188a85-6bfe-4683-a59e-d9925198b08c",
+          "title": "Criteria Categories",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Adds an Evaluation Type",
+              "fullTitle": "Criteria Categories Adds an Evaluation Type",
+              "timedOut": null,
+              "duration": 11596,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('sa-button', 'Add').click().wait(1000);\ncy.getByFormControlName('name').eq(0).type('Test Category DKA');\ncy.getByFormControlName('mappingReference').eq(0).type(_faker_js_faker__WEBPACK_IMPORTED_MODULE_0__[\"faker\"].string.alphanumeric(13));\ncy.contains('sa-button', 'Save').click().wait(1000);\ncy.contains('Criteria category has been added');",
+              "err": {},
+              "uuid": "f6453562-bf30-4f8c-b6cf-7e0dd05478a4",
+              "parentUUID": "d7188a85-6bfe-4683-a59e-d9925198b08c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edits an Evaluation Type",
+              "fullTitle": "Criteria Categories Edits an Evaluation Type",
+              "timedOut": null,
+              "duration": 15094,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#gridCriteriaCategories tr .dx-first-cell .dx-texteditor-input').type('Test Category DKA', { force: true }).wait(2000);\ncy.get('#gridCriteriaCategories tr td').find('.dx-icon-edit').eq(0).click({ force: true }).wait(1000);\ncy.get('#gridCriteriaCategories .dx-datagrid-table .dx-texteditor-container > .dx-texteditor-input-container > .dx-texteditor-input').as('categories');\ncy.get('@categories').eq(4).clear().wait(1000).type('DKA Test Category', { force: true }).wait(1000);\ncy.get('tr td').find('.dx-icon-save').eq(1).click().wait(1500);\ncy.contains(`The criteria category has been updated.`).wait(1000);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'The criteria category has been updated.' but never did.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'The criteria category has been updated.' but never did.\n    at Context.eval (webpack:///./cypress/e2e/HelperFunctionalities/Evaluation&Questionairre/2.Criteria_Categories_test.cy.ts:27:11)",
+                "diff": null
+              },
+              "uuid": "11ecd38a-a50d-4735-baa1-f113e564a1df",
+              "parentUUID": "d7188a85-6bfe-4683-a59e-d9925198b08c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f6453562-bf30-4f8c-b6cf-7e0dd05478a4"
+          ],
+          "failures": [
+            "11ecd38a-a50d-4735-baa1-f113e564a1df"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 26690,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="32.500" tests="3" failures="1">
+  <testsuite name="Root Suite" timestamp="2025-01-15T10:08:36" tests="0" file="cypress/e2e/HelperFunctionalities/ClientProfiling/Tags_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Tags" timestamp="2025-01-15T10:08:42" tests="3" time="26.605" failures="1">
+    <testcase name="Tags Adds a Tag" time="0.000" classname="Adds a Tag">
+      <failure message="Timed out retrying after 4000ms: Expected to find content: &apos;Tag has been added.&apos; but never did." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Tag has been added.' but never did.
+    at Context.eval (webpack:///./cypress/e2e/HelperFunctionalities/ClientProfiling/Tags_test.cy.ts:11:11)]]></failure>
+    </testcase>
+    <testcase name="Tags Edits a Tag" time="9.375" classname="Edits a Tag">
+    </testcase>
+    <testcase name="Tags Deletes a Tag" time="5.996" classname="Deletes a Tag">
+    </testcase>
+  </testsuite>
+</testsuites>

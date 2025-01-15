@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="35.209" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-15T10:22:21" tests="0" file="cypress/e2e/HelperFunctionalities/KnowYourFirm/Firm_Mitigation_Measures_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Firm Mitigation Measures" timestamp="2025-01-15T10:22:27" tests="3" time="29.323" failures="0">
+    <testcase name="Firm Mitigation Measures Adds a Firm Mitigation Measure" time="15.914" classname="Adds a Firm Mitigation Measure">
+    </testcase>
+    <testcase name="Firm Mitigation Measures Edits a Firm Mitigation Measure" time="11.069" classname="Edits a Firm Mitigation Measure">
+    </testcase>
+    <testcase name="Firm Mitigation Measures Deletes a Firm Mitigation Measure" time="8.189" classname="Deletes a Firm Mitigation Measure">
+    </testcase>
+  </testsuite>
+</testsuites>

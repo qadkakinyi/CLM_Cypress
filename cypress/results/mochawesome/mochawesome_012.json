@@ -1,0 +1,125 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-15T08:06:10.930Z",
+    "end": "2025-01-15T08:06:43.293Z",
+    "duration": 32363,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "4c4fe3d3-29d3-4b81-a0f1-99a78c1a3c28",
+      "title": "",
+      "fullFile": "cypress/e2e/CorporateClientFunctionality/Add_Delete_Client_Internal_Notes_test.cy.ts",
+      "file": "cypress/e2e/CorporateClientFunctionality/Add_Delete_Client_Internal_Notes_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e6c476b5-dfbe-4222-9868-896a33b4fb9c",
+          "title": "Add, Delete Client Internal Notes - Corporate",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add Client Internal Notes",
+              "fullTitle": "Add, Delete Client Internal Notes - Corporate Add Client Internal Notes",
+              "timedOut": null,
+              "duration": 26768,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "Object(_support_e2e__WEBPACK_IMPORTED_MODULE_1__[\"navigateToClientMenu\"])('Corporate');\ncy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Internal Notes').click();\n// Add new Client Internal Notes\ncy.location('pathname').then((pathname) => {\n    location = pathname;\n});\ncy.get('.chat-footer textarea[name=\"chat-input\"]').type(_faker_js_faker__WEBPACK_IMPORTED_MODULE_0__[\"faker\"].lorem.sentence());\ncy.getBySel('saveChatText').click().wait(1000);",
+              "err": {},
+              "uuid": "f52775b2-5df8-4537-b12f-2ebdd573c4f0",
+              "parentUUID": "e6c476b5-dfbe-4222-9868-896a33b4fb9c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Delete client Internal Notes",
+              "fullTitle": "Add, Delete Client Internal Notes - Corporate Delete client Internal Notes",
+              "timedOut": null,
+              "duration": 5539,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// delete tax Internal Notes\ncy.visit(location).wait(2000);\ncy.getBySel('deleteInternalNote').should('be.visible').click({ force: true });\ncy.get('#bot2-Msg1').contains('Yes').last().click().wait(1000);",
+              "err": {},
+              "uuid": "b88d45a0-2d7a-449b-b4da-3c702fd25aa5",
+              "parentUUID": "e6c476b5-dfbe-4222-9868-896a33b4fb9c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f52775b2-5df8-4537-b12f-2ebdd573c4f0",
+            "b88d45a0-2d7a-449b-b4da-3c702fd25aa5"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 32307,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

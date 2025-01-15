@@ -1,0 +1,260 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 7,
+    "passes": 7,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-15T10:40:44.760Z",
+    "end": "2025-01-15T10:42:04.557Z",
+    "duration": 79797,
+    "testsRegistered": 7,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "6bf43c2e-63c1-4794-bb9b-94d7347fb75a",
+      "title": "",
+      "fullFile": "cypress/e2e/HelperFunctionalities/TransactionMonitoring&Actions/Transactions_Setup_test.cy.ts",
+      "file": "cypress/e2e/HelperFunctionalities/TransactionMonitoring&Actions/Transactions_Setup_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "99ca2fd2-debb-49cd-bd52-2c3d28aa74a6",
+          "title": "Transaction Types",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Adds a Transaction Type",
+              "fullTitle": "Transaction Types Adds a Transaction Type",
+              "timedOut": null,
+              "duration": 11173,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('sa-button', 'Add').click().wait(1000);\ncy.getByFormControlName('name').eq(1).type('Transfer DKA');\ncy.getByFormControlName('mappingReference').eq(1).type(_faker_js_faker__WEBPACK_IMPORTED_MODULE_0__[\"faker\"].string.alphanumeric(13));\ncy.contains('sa-button', 'Save').click().wait(1000);\ncy.contains('Transaction type has been added');",
+              "err": {},
+              "uuid": "c3c6bdea-c59f-4f55-8aad-a6c63da802ad",
+              "parentUUID": "99ca2fd2-debb-49cd-bd52-2c3d28aa74a6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edits a Transaction Type",
+              "fullTitle": "Transaction Types Edits a Transaction Type",
+              "timedOut": null,
+              "duration": 9839,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#gridTransactionTypes tr .dx-first-cell .dx-texteditor-input').type('Transfer DKA', { force: true }).wait(2000);\ncy.get('#gridTransactionTypes tr td').find('.dx-icon-edit').eq(0).click({ force: true }).wait(1000);\ncy.get('#gridTransactionTypes .dx-datagrid-table .dx-texteditor-container > .dx-texteditor-input-container > .dx-texteditor-input').as('transactionTypes');\ncy.get('@transactionTypes').eq(4).clear().wait(1000).type('DKA Transfer', { force: true }).wait(1000);\ncy.get('tr td').find('.dx-icon-save').eq(1).click().wait(1500);\ncy.contains(`Transaction type has been updated.`);",
+              "err": {},
+              "uuid": "be2635e4-17cb-4e25-967d-d23d4eb77c07",
+              "parentUUID": "99ca2fd2-debb-49cd-bd52-2c3d28aa74a6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deletes a Game Type",
+              "fullTitle": "Transaction Types Deletes a Game Type",
+              "timedOut": null,
+              "duration": 8009,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#gridTransactionTypes tr .dx-first-cell .dx-texteditor-input').type('DKA Transfer', { force: true }).wait(2000);\ncy.get('#gridTransactionTypes tr td').find('.dx-icon-trash').eq(1).click({ force: true }).wait(1000);\ncy.get('.dx-popup-normal').contains('Yes').click({ force: true }).wait(1000);\ncy.contains(`Transaction type has been deleted.`);",
+              "err": {},
+              "uuid": "ed8c842c-2d74-4b06-920c-1a6606807952",
+              "parentUUID": "99ca2fd2-debb-49cd-bd52-2c3d28aa74a6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c3c6bdea-c59f-4f55-8aad-a6c63da802ad",
+            "be2635e4-17cb-4e25-967d-d23d4eb77c07",
+            "ed8c842c-2d74-4b06-920c-1a6606807952"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 29021,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "ed0b20d8-211f-42ed-8326-be990b307d6c",
+          "title": "Transaction Methods",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Adds a Transaction Method",
+              "fullTitle": "Transaction Methods Adds a Transaction Method",
+              "timedOut": null,
+              "duration": 8770,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('sa-button', 'Add').click().wait(1000);\ncy.getByFormControlName('name').eq(0).type('DKA B2B Transfer');\ncy.getByFormControlName('mappingReference').eq(0).type(_faker_js_faker__WEBPACK_IMPORTED_MODULE_0__[\"faker\"].string.alphanumeric(13));\ncy.contains('button', 'Save').click().wait(1000);\ncy.contains('Transaction method has been added').wait(1000);",
+              "err": {},
+              "uuid": "c55ec24f-424c-443e-a9ca-48f9b5cbb6c6",
+              "parentUUID": "ed0b20d8-211f-42ed-8326-be990b307d6c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edits a Transaction Method",
+              "fullTitle": "Transaction Methods Edits a Transaction Method",
+              "timedOut": null,
+              "duration": 13140,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#gridTransactionMethods tr .dx-first-cell .dx-texteditor-input').type('DKA B2B Transfer', { force: true }).wait(2000);\ncy.get('#gridTransactionMethods tr td').find('.dx-icon-edit').eq(0).click({ force: true }).wait(1000);\ncy.get('#gridTransactionMethods .dx-datagrid-table .dx-texteditor-container > .dx-texteditor-input-container > .dx-texteditor-input').as('methods');\ncy.get('@methods').eq(3).clear().wait(1000).type('B2B DKA Transfer', { force: true }).wait(1000);\ncy.get('tr td').find('.dx-icon-save').eq(1).click().wait(1500);\ncy.contains(`Transaction method has been updated.`).wait(1000);",
+              "err": {},
+              "uuid": "04966d10-206e-4b91-b3da-8f455db12bd5",
+              "parentUUID": "ed0b20d8-211f-42ed-8326-be990b307d6c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deletes a Transaction Method",
+              "fullTitle": "Transaction Methods Deletes a Transaction Method",
+              "timedOut": null,
+              "duration": 9091,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#gridTransactionMethods tr .dx-first-cell .dx-texteditor-input').type('B2B DKA Transfer', { force: true }).wait(2000);\ncy.get('#gridTransactionMethods tr td').find('.dx-icon-trash').eq(1).click({ force: true }).wait(1000);\ncy.get('.dx-popup-normal').contains('Yes').click({ force: true }).wait(1000);\ncy.contains(`Transaction method has been deleted.`);",
+              "err": {},
+              "uuid": "a51e8e20-a904-4832-8a8e-6cdfb7e95972",
+              "parentUUID": "ed0b20d8-211f-42ed-8326-be990b307d6c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c55ec24f-424c-443e-a9ca-48f9b5cbb6c6",
+            "04966d10-206e-4b91-b3da-8f455db12bd5",
+            "a51e8e20-a904-4832-8a8e-6cdfb7e95972"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 31001,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "b61d8739-1cfb-449d-82ab-4f6d4145eb26",
+          "title": "Execution Status Threshold",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Edits a Gaming Transaction Type",
+              "fullTitle": "Execution Status Threshold Edits a Gaming Transaction Type",
+              "timedOut": null,
+              "duration": 19699,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#gridLiveTransactionStatusThreshold tr .dx-first-cell .dx-texteditor-input').type('Accepted', { force: true }).wait(2000);\ncy.get('#gridLiveTransactionStatusThreshold tr td').find('.dx-icon-edit').last().click({ force: true }).wait(1000);\ncy.get('#gridLiveTransactionStatusThreshold .dx-datagrid-table .dx-texteditor-container > .dx-texteditor-input-container > .dx-texteditor-input').as('thresholds');\ncy.get('@thresholds').eq(3).clear().wait(1000).type('1', { force: true }).wait(1000);\ncy.get('tr td').find('.dx-icon-save').eq(1).click().wait(3000);\n//revert\n// cy.get('#gridLiveTransactionStatusThreshold tr .dx-first-cell .dx-texteditor-input').type('Accepted', {force:true}).wait(2000)\ncy.get('#gridLiveTransactionStatusThreshold tr td').find('.dx-icon-edit').last().click({ force: true }).wait(1000);\ncy.get('#gridLiveTransactionStatusThreshold .dx-datagrid-table .dx-texteditor-container > .dx-texteditor-input-container > .dx-texteditor-input').as('thresholds');\ncy.get('@thresholds').eq(3).clear().wait(1000).type('0', { force: true }).wait(1000);\ncy.get('tr td').find('.dx-icon-save').eq(1).click().wait(1500);\ncy.contains(`Execution status threshold has been updated.`);",
+              "err": {},
+              "uuid": "08e8f59d-b407-41f4-8b47-6cffa12810a0",
+              "parentUUID": "b61d8739-1cfb-449d-82ab-4f6d4145eb26",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "08e8f59d-b407-41f4-8b47-6cffa12810a0"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 19699,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

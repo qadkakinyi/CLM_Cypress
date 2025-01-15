@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-15T10:47:59.294Z",
+    "end": "2025-01-15T10:49:15.259Z",
+    "duration": 75965,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b62a22f5-36c1-46bc-9078-0d467c1e4dc2",
+      "title": "",
+      "fullFile": "cypress/e2e/ScreenPerformance/Reports&Lists/Client_Profiling_test.cy.ts",
+      "file": "cypress/e2e/ScreenPerformance/Reports&Lists/Client_Profiling_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5728328d-b43b-4878-b96a-e8ca36149689",
+          "title": "Client Profiling",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Opens the client profiling menu - level 2 menu",
+              "fullTitle": "Client Profiling Opens the client profiling menu - level 2 menu",
+              "timedOut": null,
+              "duration": 75796,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let routes = [\n    { index: 0, route: \"/reports/clients-general-info-report\", assertion: \"Clients General Info\" },\n    { index: 1, route: \"/reports/clients-report\", assertion: \"Clients Report\" },\n    { index: 2, route: \"/reports/entity-position-report\", assertion: \"Entity Position Report\" },\n    { index: 3, route: \"/reports/profiles-report\", assertion: \"Profiles Report\" },\n    { index: 4, route: \"/reports/statutory-information-report\", assertion: \"Statutory Information Report\" },\n    { index: 5, route: \"/reports/ubo-of-clients-report\", assertion: \"Ubo of Clients Report\" }\n];\nroutes.forEach((route, i) => {\n    cy.get(\"@client-profiling-links\").eq(route.index).click();\n    cy.location(\"pathname\").should(\"equal\", route.route);\n    cy.contains(route.assertion);\n    cy.wait(5000);\n    // after this 5 seconds the data should have loades and spinner should not be visible\n    cy.get('.sk-ball-spin-clockwise').should(`not.be.visible`);\n    if (i < routes.length - 1) {\n        cy.visit(\"/main/dashboard\");\n        cy.getByDataCy(\"reports-menu\").click();\n        cy.getByDataCy(\"client-profiling\").should(\"be.visible\");\n        cy.getByDataCy(\"client-profiling\").click().as('client-profiling-menu').wait(1500);\n        cy.get(\"@client-profiling-menu\").find(\"ul>li\").as(\"client-profiling-links\");\n    }\n});",
+              "err": {},
+              "uuid": "dd8bb3cd-23cd-43dc-83fe-02405093eccb",
+              "parentUUID": "5728328d-b43b-4878-b96a-e8ca36149689",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "dd8bb3cd-23cd-43dc-83fe-02405093eccb"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 75796,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

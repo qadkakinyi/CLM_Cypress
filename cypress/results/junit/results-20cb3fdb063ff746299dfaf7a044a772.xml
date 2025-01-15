@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="195.443" tests="5" failures="2">
+  <testsuite name="Root Suite" timestamp="2025-01-15T08:19:00" tests="0" file="cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Client_Evaluation_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Add Corporate Client Evaluation" timestamp="2025-01-15T08:19:10" tests="5" time="185.207" failures="2">
+    <testcase name="Add Corporate Client Evaluation Adds an evaluation" time="0.000" classname="Adds an evaluation">
+      <failure message="Timed out retrying after 4050ms: `cy.click()` failed because this element is not visible:
+
+`&lt;a _ngcontent-eel-c358=&quot;&quot; placement=&quot;bottom&quot; container=&quot;body&quot; triggers=&quot;mouseenter:mouseleave&quot; class=&quot;sa-button success left dark md with-icon&quot; id=&quot;&quot; title=&quot;&quot; type=&quot;&quot; href=&quot;/main/client-structure/452/2/client-corporate/452/2/evaluations&quot;&gt;...&lt;/a&gt;`
+
+This element `&lt;a.sa-button.success.left.dark.md.with-icon&gt;` is not visible because its parent `&lt;div.tab-pane.ng-tns-c874-252&gt;` has CSS property: `display: none`
+
+Fix this problem, or use `{force: true}` to disable error checking.
+
+https://on.cypress.io/element-cannot-be-interacted-with" type="CypressError"><![CDATA[CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is not visible:
+
+`<a _ngcontent-eel-c358="" placement="bottom" container="body" triggers="mouseenter:mouseleave" class="sa-button success left dark md with-icon" id="" title="" type="" href="/main/client-structure/452/2/client-corporate/452/2/evaluations">...</a>`
+
+This element `<a.sa-button.success.left.dark.md.with-icon>` is not visible because its parent `<div.tab-pane.ng-tns-c874-252>` has CSS property: `display: none`
+
+Fix this problem, or use `{force: true}` to disable error checking.
+
+https://on.cypress.io/element-cannot-be-interacted-with
+    at runVisibilityCheck (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:147591:76)
+    at $Cy.ensureStrictVisibility (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:147607:12)
+    at runAllChecks (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:133491:14)
+    at retryActionability (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:133546:16)
+    at tryCatcher (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:11318:23)
+    at Promise.attempt.Promise.try (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:8592:29)
+    at whenStable (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:152819:65)
+    at <unknown> (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:152244:14)
+    at tryCatcher (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:11318:23)
+    at Promise._settlePromiseFromHandler (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:9253:31)
+    at Promise._settlePromise (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:9310:18)
+    at Promise._settlePromise0 (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:9355:10)
+    at Promise._settlePromises (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:9435:18)
+    at Promise._fulfill (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:9379:18)
+    at <unknown> (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:10993:46)
+From Your Spec Code:
+    at Context.eval (webpack:///./cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Client_Evaluation_test.cy.ts:61:70)]]></failure>
+    </testcase>
+    <testcase name="Add Corporate Client Evaluation Adds another evaluation" time="0.000" classname="Adds another evaluation">
+      <failure message="Timed out retrying after 4050ms: `cy.click()` failed because this element is not visible:
+
+`&lt;a _ngcontent-lsi-c358=&quot;&quot; placement=&quot;bottom&quot; container=&quot;body&quot; triggers=&quot;mouseenter:mouseleave&quot; class=&quot;sa-button success left dark md with-icon&quot; id=&quot;&quot; title=&quot;&quot; type=&quot;&quot; href=&quot;/main/client-structure/452/2/client-corporate/452/2/evaluations&quot;&gt;...&lt;/a&gt;`
+
+This element `&lt;a.sa-button.success.left.dark.md.with-icon&gt;` is not visible because its parent `&lt;div.tab-pane.ng-tns-c874-252&gt;` has CSS property: `display: none`
+
+Fix this problem, or use `{force: true}` to disable error checking.
+
+https://on.cypress.io/element-cannot-be-interacted-with" type="CypressError"><![CDATA[CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is not visible:
+
+`<a _ngcontent-lsi-c358="" placement="bottom" container="body" triggers="mouseenter:mouseleave" class="sa-button success left dark md with-icon" id="" title="" type="" href="/main/client-structure/452/2/client-corporate/452/2/evaluations">...</a>`
+
+This element `<a.sa-button.success.left.dark.md.with-icon>` is not visible because its parent `<div.tab-pane.ng-tns-c874-252>` has CSS property: `display: none`
+
+Fix this problem, or use `{force: true}` to disable error checking.
+
+https://on.cypress.io/element-cannot-be-interacted-with
+    at runVisibilityCheck (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:147591:76)
+    at $Cy.ensureStrictVisibility (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:147607:12)
+    at runAllChecks (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:133491:14)
+    at retryActionability (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:133546:16)
+    at tryCatcher (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:11318:23)
+    at Promise.attempt.Promise.try (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:8592:29)
+    at whenStable (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:152819:65)
+    at <unknown> (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:152244:14)
+    at tryCatcher (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:11318:23)
+    at Promise._settlePromiseFromHandler (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:9253:31)
+    at Promise._settlePromise (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:9310:18)
+    at Promise._settlePromise0 (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:9355:10)
+    at Promise._settlePromises (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:9435:18)
+    at Promise._fulfill (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:9379:18)
+    at <unknown> (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:10993:46)
+From Your Spec Code:
+    at Context.eval (webpack:///./cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Client_Evaluation_test.cy.ts:94:70)]]></failure>
+    </testcase>
+    <testcase name="Add Corporate Client Evaluation Edits an Evaluation" time="12.528" classname="Edits an Evaluation">
+    </testcase>
+    <testcase name="Add Corporate Client Evaluation Deletes an Evaluation" time="10.565" classname="Deletes an Evaluation">
+    </testcase>
+    <testcase name="Add Corporate Client Evaluation Ignores need re-evaluation" time="49.069" classname="Ignores need re-evaluation">
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="144.319" tests="15" failures="1">
+  <testsuite name="Root Suite" timestamp="2025-01-15T10:29:35" tests="0" file="cypress/e2e/HelperFunctionalities/TransactionMonitoring&amp;Actions/Contract_Setup_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Contract Policy Categories" timestamp="2025-01-15T10:29:41" tests="2" time="17.230" failures="0">
+    <testcase name="Contract Policy Categories Adds a Purpose of Transaction" time="11.705" classname="Adds a Purpose of Transaction">
+    </testcase>
+    <testcase name="Contract Policy Categories Edits a Purpose of Transaction" time="11.190" classname="Edits a Purpose of Transaction">
+    </testcase>
+  </testsuite>
+  <testsuite name="Contract Products" timestamp="2025-01-15T10:29:58" tests="4" time="40.715" failures="0">
+    <testcase name="Contract Products Adds a Contract product" time="8.506" classname="Adds a Contract product">
+    </testcase>
+    <testcase name="Contract Products Edits a Contract policy product" time="12.069" classname="Edits a Contract policy product">
+    </testcase>
+    <testcase name="Contract Products Deletes a Contract product" time="8.494" classname="Deletes a Contract product">
+    </testcase>
+    <testcase name="Contract Products Deletes a Contract policy category" time="11.613" classname="Deletes a Contract policy category">
+    </testcase>
+  </testsuite>
+  <testsuite name="Contract Status" timestamp="2025-01-15T10:30:38" tests="3" time="27.789" failures="1">
+    <testcase name="Contract Status Adds a Contract Status" time="6.155" classname="Adds a Contract Status">
+    </testcase>
+    <testcase name="Contract Status Edits a Contract Status" time="11.143" classname="Edits a Contract Status">
+    </testcase>
+    <testcase name="Contract Status Deletes a Contract Status" time="0.000" classname="Deletes a Contract Status">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `.dx-popup-normal`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `.dx-popup-normal`, but never found it.
+    at Context.eval (webpack:///./cypress/e2e/HelperFunctionalities/TransactionMonitoring&Actions/Contract_Setup_test.cy.ts:129:11)]]></failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Contract Transaction Payment Method" timestamp="2025-01-15T10:31:06" tests="3" time="27.445" failures="0">
+    <testcase name="Contract Transaction Payment Method Adds a Transaction Payment Method" time="7.512" classname="Adds a Transaction Payment Method">
+    </testcase>
+    <testcase name="Contract Transaction Payment Method Edits a Transaction Payment Method" time="11.569" classname="Edits a Transaction Payment Method">
+    </testcase>
+    <testcase name="Contract Transaction Payment Method Deletes a Transaction Payment Method" time="8.321" classname="Deletes a Transaction Payment Method">
+    </testcase>
+  </testsuite>
+  <testsuite name="Contract Beneficiary Relations" timestamp="2025-01-15T10:31:34" tests="3" time="25.407" failures="0">
+    <testcase name="Contract Beneficiary Relations Adds a Beneficiary Relations" time="5.871" classname="Adds a Beneficiary Relations">
+    </testcase>
+    <testcase name="Contract Beneficiary Relations Edits a Beneficiary Relations" time="10.828" classname="Edits a Beneficiary Relations">
+    </testcase>
+    <testcase name="Contract Beneficiary Relations Deletes a Beneficiary Relations" time="8.629" classname="Deletes a Beneficiary Relations">
+    </testcase>
+  </testsuite>
+</testsuites>

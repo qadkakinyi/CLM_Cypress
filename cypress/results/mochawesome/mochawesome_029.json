@@ -1,0 +1,144 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-15T08:27:22.540Z",
+    "end": "2025-01-15T08:28:09.927Z",
+    "duration": 47387,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c80fc016-5ab7-476b-b993-dff1e63b29c0",
+      "title": "",
+      "fullFile": "cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Client_Related_Website_test.cy.ts",
+      "file": "cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Client_Related_Website_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4b1d0c68-8134-40e8-8102-d3cf0907e83f",
+          "title": "Add, Edit, Delete Client Related Website",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add Client Related Website",
+              "fullTitle": "Add, Edit, Delete Client Related Website Add Client Related Website",
+              "timedOut": null,
+              "duration": 32410,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Click on Know your Clients navigation item\nObject(_support_e2e__WEBPACK_IMPORTED_MODULE_1__[\"navigateToClientMenu\"])('Corporate');\ncy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Related Websites').click();\ncy.wait(1000);\ncy.location('pathname').then((loc) => {\n    location = loc;\n});\n// Add new Client Policies\ncy.getBySel('addRelatedWebsite').click();\ncy.getBySel('addRelatedWebsiteForm').should('be.visible');\ncy.getBySel('relatedWebsiteTypes').click();\ncy.get('.dx-overlay-wrapper.dx-popup-wrapper.dx-dropdowneditor-overlay #dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true });\ncy.get('#addRelatedWebsiteForm input[name=\"website\"]').type(_faker_js_faker__WEBPACK_IMPORTED_MODULE_0__[\"faker\"].internet.url());\ncy.getBySel('saveRelatedWebsite').click();",
+              "err": {},
+              "uuid": "aff3c879-d355-4a99-8c0f-a303b23173f6",
+              "parentUUID": "4b1d0c68-8134-40e8-8102-d3cf0907e83f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edit Client Related website",
+              "fullTitle": "Add, Edit, Delete Client Related Website Edit Client Related website",
+              "timedOut": null,
+              "duration": 7865,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Edit Related Website\ncy.visit(location);\ncy.wait(2000);\ncy.getBySel('gridClientRelatedWebsites').should('be.visible');\ncy.get('#gridClientRelatedWebsites table tbody tr td.dx-command-edit-with-icons a').eq(0).click({ force: true });\ncy.get('#editClientRelatedWebsiteForm').should('be.visible');\ncy.get('#editClientRelatedWebsiteForm input[name=\"website\"]').should('be.visible').clear();\ncy.get('#editClientRelatedWebsiteForm input[name=\"website\"]').type(_faker_js_faker__WEBPACK_IMPORTED_MODULE_0__[\"faker\"].internet.url());\ncy.getBySel('saveAndCloseButton').click();",
+              "err": {},
+              "uuid": "ca38f14d-11ef-48d8-bccd-d227c2e1142f",
+              "parentUUID": "4b1d0c68-8134-40e8-8102-d3cf0907e83f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Delete client Related Website",
+              "fullTitle": "Add, Edit, Delete Client Related Website Delete client Related Website",
+              "timedOut": null,
+              "duration": 7077,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Delete Related Website\ncy.visit(location);\ncy.wait(2000);\ncy.getBySel('gridClientRelatedWebsites').should('be.visible');\ncy.get('#gridClientRelatedWebsites table tbody tr td.dx-command-edit-with-icons a').eq(0).click({ force: true });\n// Delete Related Website\ncy.getBySel('deleteRelatedWebsite').should('be.visible').click();\ncy.get('#bot2-Msg1').contains('Yes').click();",
+              "err": {},
+              "uuid": "42fecf2a-a2d4-4e4a-908e-9ec04b7ab9c3",
+              "parentUUID": "4b1d0c68-8134-40e8-8102-d3cf0907e83f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "aff3c879-d355-4a99-8c0f-a303b23173f6",
+            "ca38f14d-11ef-48d8-bccd-d227c2e1142f",
+            "42fecf2a-a2d4-4e4a-908e-9ec04b7ab9c3"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 47352,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

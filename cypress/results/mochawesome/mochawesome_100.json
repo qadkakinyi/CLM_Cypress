@@ -1,0 +1,125 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-15T09:51:56.005Z",
+    "end": "2025-01-15T09:52:45.490Z",
+    "duration": 49485,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a10a49dc-9211-4811-aa8a-72ce3b97908c",
+      "title": "",
+      "fullFile": "cypress/e2e/SideMenu/System_Settings_test.cy.ts",
+      "file": "cypress/e2e/SideMenu/System_Settings_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "cfdfacc8-a3ae-4d96-a1b8-a2270f46edb7",
+          "title": "System Settings",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Click system settings menu and opens the submenus",
+              "fullTitle": "System Settings Click system settings menu and opens the submenus",
+              "timedOut": null,
+              "duration": 10199,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByDataCy(\"system-settings-menu\").click().wait(2000).find(\"ul>li\").should(\"have.length\", 10);",
+              "err": {},
+              "uuid": "e7dfcfa0-67f5-4a00-8ad4-a4fc3c3c2107",
+              "parentUUID": "cfdfacc8-a3ae-4d96-a1b8-a2270f46edb7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Visits each page and asserts if it is visible",
+              "fullTitle": "System Settings Visits each page and asserts if it is visible",
+              "timedOut": null,
+              "duration": 39247,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"/main/dashboard\");\nlet routes = [\n    { index: 0, route: '/system-settings/account' },\n    { index: 1, route: '/system-settings/case-statuses' },\n    { index: 2, route: '/system-settings/defaults' },\n    { index: 3, route: '/system-settings/id-verification-data-supports' },\n    { index: 4, route: '/system-settings/event-engines-setup' },\n    { index: 5, route: '/system-settings/languages-setup' },\n    { index: 6, route: '/system-settings/parameter-queries' },\n    { index: 7, route: '/system-settings/portal-setup' },\n    { index: 8, route: '/system-settings/system-logs' },\n    { index: 9, route: '/system-settings/hangfire-details' }\n];\n// routes.forEach((route, i)=>{\ncy.getByDataCy(\"system-settings-menu\").scrollIntoView().click();\ncy.get(\"[data-cy='system-settings-menu'] ul>li\").each(el => {\n    cy.wrap(el).click();\n    cy.wait(3000);\n    cy.getByDataCy(\"system-settings-menu\").scrollIntoView().click();\n});\n// })",
+              "err": {},
+              "uuid": "aab3a10e-3db1-4e36-aad4-2e8bd652773f",
+              "parentUUID": "cfdfacc8-a3ae-4d96-a1b8-a2270f46edb7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e7dfcfa0-67f5-4a00-8ad4-a4fc3c3c2107",
+            "aab3a10e-3db1-4e36-aad4-2e8bd652773f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 49446,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

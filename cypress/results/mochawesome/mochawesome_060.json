@@ -1,0 +1,125 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-15T08:52:34.245Z",
+    "end": "2025-01-15T08:53:24.758Z",
+    "duration": 50513,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e9aa958c-0806-48d1-9fd6-ccb2cba3d1ca",
+      "title": "",
+      "fullFile": "cypress/e2e/IndividualClientFunctionality/Add_Edit_Delete_Client_Bank_Account_test.cy.ts",
+      "file": "cypress/e2e/IndividualClientFunctionality/Add_Edit_Delete_Client_Bank_Account_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e2ffb041-aad7-4265-a2fe-63fe722b59c5",
+          "title": "Add, Edit, Delete Client Bank Account",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add Client Bank Account",
+              "fullTitle": "Add, Edit, Delete Client Bank Account Add Client Bank Account",
+              "timedOut": null,
+              "duration": 39347,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "add_bank_account();",
+              "err": {},
+              "uuid": "c805e931-f479-43ee-8fd2-bec5cef8c630",
+              "parentUUID": "e2ffb041-aad7-4265-a2fe-63fe722b59c5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edit client Bank Account",
+              "fullTitle": "Add, Edit, Delete Client Bank Account Edit client Bank Account",
+              "timedOut": null,
+              "duration": 11122,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Edit Bank Account\ncy.visit(`/main/client-individual/${client_id}/1/bankaccounts`).wait(2000);\ncy.getBySel('gridClientAccounts').should('be.visible');\ncy.get('.dx-datagrid-filter-row .dx-texteditor-input-container input').eq(0).type(accountNumberTest);\ncy.wait(2000);\nlet gridClientAccounts = cy.wrap('#gridClientAccounts table tbody tr');\ngridClientAccounts.get('.dx-command-edit-with-icons a').eq(0).click({ force: true }).wait(1500);\ncy.get('#editClientAccountForm textarea[name=\"comment\"]').type(_faker_js_faker__WEBPACK_IMPORTED_MODULE_0__[\"faker\"].lorem.text(), { force: true });\ncy.getBySel('saveAndCloseButton').click();",
+              "err": {},
+              "uuid": "b1f28f9f-9265-483f-a6d6-3144f9e89085",
+              "parentUUID": "e2ffb041-aad7-4265-a2fe-63fe722b59c5",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c805e931-f479-43ee-8fd2-bec5cef8c630",
+            "b1f28f9f-9265-483f-a6d6-3144f9e89085"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 50469,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

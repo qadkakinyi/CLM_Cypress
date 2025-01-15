@@ -1,0 +1,144 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-15T09:53:33.060Z",
+    "end": "2025-01-15T09:54:04.877Z",
+    "duration": 31817,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "904b8f26-0b2e-417d-86e0-aee223b5823c",
+      "title": "",
+      "fullFile": "cypress/e2e/HelperFunctionalities/ClientProfiling/Bank_test.cy.ts",
+      "file": "cypress/e2e/HelperFunctionalities/ClientProfiling/Bank_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "fed9e172-965c-4cb7-9eff-2b92c4f51ff4",
+          "title": "Bank",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add bank",
+              "fullTitle": "Bank Add bank",
+              "timedOut": null,
+              "duration": 13412,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/settings/banks');\ncy.contains('Add').click();\ncy.wait(1000);\ncy.getByDataCy(\"bank-name\").type(`Xyz Test Bank`);\ncy.getByDataCy(\"bank-code\").type(_faker_js_faker__WEBPACK_IMPORTED_MODULE_0__[\"faker\"].string.alphanumeric(20));\ncy.getByDataCy(\"bank-mapping-reference\").type(_faker_js_faker__WEBPACK_IMPORTED_MODULE_0__[\"faker\"].string.alphanumeric(20));\ncy.contains('Save').click().wait(2000);\ncy.contains('The bank has been added');",
+              "err": {},
+              "uuid": "4491dac0-6ba7-4116-b857-dbff2ac019f4",
+              "parentUUID": "fed9e172-965c-4cb7-9eff-2b92c4f51ff4",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edits Address type",
+              "fullTitle": "Bank Edits Address type",
+              "timedOut": null,
+              "duration": 10871,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/settings/banks').wait(2000);\ncy.get('#gridBanks tr .dx-first-cell .dx-texteditor-input').type('Xyz Test', { force: true }).wait(2500);\ncy.get('tr td').find('.dx-icon-edit').eq(1).click({ force: true }).wait(1000);\ncy.get('#gridBanks .dx-datagrid-table .dx-texteditor-container > .dx-texteditor-input-container > .dx-texteditor-input').eq(6).clear().wait(1000).type('Xyz Bank Test ' + _faker_js_faker__WEBPACK_IMPORTED_MODULE_0__[\"faker\"].string.alphanumeric(3), { force: true }).wait(1000);\ncy.get('tr td').find('.dx-icon-save').eq(1).click().wait(1000);\ncy.contains('The bank has been updated');",
+              "err": {},
+              "uuid": "bf115e4c-b4f7-48ed-b4aa-f5f75ee784c8",
+              "parentUUID": "fed9e172-965c-4cb7-9eff-2b92c4f51ff4",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deletes Address type",
+              "fullTitle": "Bank Deletes Address type",
+              "timedOut": null,
+              "duration": 7438,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/settings/banks').wait(2000);\ncy.get('#gridBanks tr .dx-first-cell .dx-texteditor-input').type('Xyz Bank', { force: true }).wait(2500);\ncy.get('tr td').find('.dx-icon-trash').eq(1).click({ force: true }).wait(1000);\ncy.get('.dx-popup-normal').contains('Yes').click({ force: true }).wait(1000);\ncy.contains('The bank has been deleted.');",
+              "err": {},
+              "uuid": "a16ae3e4-ce17-41dd-b1fb-8279a3b5333e",
+              "parentUUID": "fed9e172-965c-4cb7-9eff-2b92c4f51ff4",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4491dac0-6ba7-4116-b857-dbff2ac019f4",
+            "bf115e4c-b4f7-48ed-b4aa-f5f75ee784c8",
+            "a16ae3e4-ce17-41dd-b1fb-8279a3b5333e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 31721,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

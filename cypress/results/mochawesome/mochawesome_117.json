@@ -1,0 +1,144 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-15T10:05:25.863Z",
+    "end": "2025-01-15T10:05:55.531Z",
+    "duration": 29668,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "91d49694-e8af-4479-bbec-110fa8fa548d",
+      "title": "",
+      "fullFile": "cypress/e2e/HelperFunctionalities/ClientProfiling/Monitoring_Visit_Types_test.cy.ts",
+      "file": "cypress/e2e/HelperFunctionalities/ClientProfiling/Monitoring_Visit_Types_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1e8ef16c-fdd8-4bf1-9bc2-36f3779664bc",
+          "title": "Monitoring Visit Types",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Adds a Visit Type",
+              "fullTitle": "Monitoring Visit Types Adds a Visit Type",
+              "timedOut": null,
+              "duration": 11591,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/settings/monitoring-visit-type').wait(1500);\ncy.contains('Add').click().wait(1000);\ncy.getByFormControlName('name').type(name);\ncy.getByFormControlName('mappingReference').type(_faker_js_faker__WEBPACK_IMPORTED_MODULE_0__[\"faker\"].string.alphanumeric(13));\ncy.contains('sa-button', 'Save').click().wait(1500);\ncy.contains('Monitoring visit type has been added.');",
+              "err": {},
+              "uuid": "3a61ecce-298e-4137-9da9-063d5c6d89ab",
+              "parentUUID": "1e8ef16c-fdd8-4bf1-9bc2-36f3779664bc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edits a Visit Type",
+              "fullTitle": "Monitoring Visit Types Edits a Visit Type",
+              "timedOut": null,
+              "duration": 10475,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/settings/monitoring-visit-type').wait(2000);\ncy.get('#gridBanks tr .dx-first-cell .dx-texteditor-input').type(name, { force: true }).wait(2000);\ncy.get('#gridBanks tr td').find('.dx-icon-edit').eq(0).click({ force: true }).wait(1000);\ncy.get('#gridBanks .dx-datagrid-table .dx-texteditor-container > .dx-texteditor-input-container > .dx-texteditor-input').as('VisitTypes');\ncy.get('@VisitTypes').eq(2).clear().wait(1000).type(name + _faker_js_faker__WEBPACK_IMPORTED_MODULE_0__[\"faker\"].string.alphanumeric(1), { force: true }).wait(1000);\ncy.get('tr td').find('.dx-icon-save').eq(1).click().wait(1000);\ncy.contains('Monitoring Visit Type has been updated.');",
+              "err": {},
+              "uuid": "2a7eb57a-6c3f-4fca-91c2-e1deb0af4457",
+              "parentUUID": "1e8ef16c-fdd8-4bf1-9bc2-36f3779664bc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deletes a Visit Type",
+              "fullTitle": "Monitoring Visit Types Deletes a Visit Type",
+              "timedOut": null,
+              "duration": 7574,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/settings/monitoring-visit-type').wait(2000);\ncy.get('#gridBanks tr .dx-first-cell .dx-texteditor-input').type(name, { force: true }).wait(2500);\ncy.get('#gridBanks tr td').find('.dx-icon-trash').eq(1).click({ force: true }).wait(1000);\ncy.get('.dx-popup-normal').contains('Yes').click({ force: true }).wait(1000);\ncy.contains('The Monitoring Visit Type has been deleted.');",
+              "err": {},
+              "uuid": "b12333fa-17ca-40eb-b6f8-9138ae83545a",
+              "parentUUID": "1e8ef16c-fdd8-4bf1-9bc2-36f3779664bc",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3a61ecce-298e-4137-9da9-063d5c6d89ab",
+            "2a7eb57a-6c3f-4fca-91c2-e1deb0af4457",
+            "b12333fa-17ca-40eb-b6f8-9138ae83545a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 29640,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

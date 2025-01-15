@@ -1,0 +1,126 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 1,
+    "pending": 1,
+    "failures": 0,
+    "start": "2025-01-15T08:37:50.099Z",
+    "end": "2025-01-15T08:38:18.915Z",
+    "duration": 28816,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 50,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 1,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "588b6677-0936-4801-bb9b-06c1dcafc454",
+      "title": "",
+      "fullFile": "cypress/e2e/CorporateClientFunctionality/Edit_Corporate_Client_Profile_test.cy.ts",
+      "file": "cypress/e2e/CorporateClientFunctionality/Edit_Corporate_Client_Profile_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0ec0d4e2-9b6f-4197-9bb3-94a3b0dd3421",
+          "title": "Edit Corporate Client Profile",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Edit Corporate Profile",
+              "fullTitle": "Edit Corporate Client Profile Edit Corporate Profile",
+              "timedOut": null,
+              "duration": 28779,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Navigate to specific client\nObject(_support_e2e__WEBPACK_IMPORTED_MODULE_0__[\"navigateToClientMenu\"])('Corporate');\ncy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a>span').eq(1).contains('Profile');\ncy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').eq(1).click();\ncy.get('#editProfileForm input[name=\"phone\"]').clear().type(_faker_js_faker__WEBPACK_IMPORTED_MODULE_1__[\"faker\"].string.numeric(10));\ncy.get('sa-button').contains('Save').click();\n//get the current client id\ncy.location('pathname').then((pathname) => {\n    const pathSections = pathname.split('/');\n    corporate_id = pathSections[3];\n});\n// check if tree structure is visible\ncy.contains('Tree Structure').should('be.visible');\ncy.wait(1000);",
+              "err": {},
+              "uuid": "7df8909f-fa8e-49df-a90d-56a4e23d7557",
+              "parentUUID": "0ec0d4e2-9b6f-4197-9bb3-94a3b0dd3421",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Archives a client",
+              "fullTitle": "Edit Corporate Client Profile Archives a client",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(`/main/client-individual/${corporate_id}/1/profile`);\n// cy.get('.dx-datagrid-content-fixed > .dx-datagrid-table > tbody > [aria-rowindex=\"1\"] > .dx-command-edit > span > .dx-template-wrapper > .dx-link > .fa').click();\n// cy.get('a.ng-tns-c463-199 > .ng-trigger').click();\ncy.get('[icon=\"archive\"] > .sa-button > .text').click();\ncy.get('#bot2-Msg1').click();",
+              "err": {},
+              "uuid": "5d257302-7f80-4607-b5f5-615c44ccf60b",
+              "parentUUID": "0ec0d4e2-9b6f-4197-9bb3-94a3b0dd3421",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7df8909f-fa8e-49df-a90d-56a4e23d7557"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [
+            "5d257302-7f80-4607-b5f5-615c44ccf60b"
+          ],
+          "duration": 28779,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

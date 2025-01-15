@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="21.618" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-15T10:28:02" tests="0" file="cypress/e2e/HelperFunctionalities/TransactionMonitoring&amp;Actions/Case_Statuses_Risk_Points_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Case Statuses Risk Point" timestamp="2025-01-15T10:28:07" tests="1" time="15.996" failures="0">
+    <testcase name="Case Statuses Risk Point Edits a Case Statuses Risk Point" time="21.587" classname="Edits a Case Statuses Risk Point">
+    </testcase>
+  </testsuite>
+</testsuites>

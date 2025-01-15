@@ -1,0 +1,144 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-15T08:58:49.638Z",
+    "end": "2025-01-15T08:59:47.484Z",
+    "duration": 57846,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "4a788ef4-3c35-42de-bbff-83d578d91788",
+      "title": "",
+      "fullFile": "cypress/e2e/IndividualClientFunctionality/Add_Edit_Delete_Client_Gaming_Transaction_test.cy.ts",
+      "file": "cypress/e2e/IndividualClientFunctionality/Add_Edit_Delete_Client_Gaming_Transaction_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "83ab7d97-c8b5-4055-a817-40bf58503666",
+          "title": "Add, Edit, Delete Client Gaming Transactions",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add Client Gaming Transactions",
+              "fullTitle": "Add, Edit, Delete Client Gaming Transactions Add Client Gaming Transactions",
+              "timedOut": null,
+              "duration": 33863,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Click on Know your Clients navigation item\nObject(_support_e2e__WEBPACK_IMPORTED_MODULE_1__[\"navigateToClientMenu\"])('Individual');\ncy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Gaming Transactions').click();\ncy.getBySel('addGamingTransaction').should('be.visible').click();\ncy.location('pathname').then((pathname) => {\n    const pathSections = pathname.split('/');\n    client_id = pathSections[3];\n});\ncy.wait(1500);\ncy.get('.datetimeDevExtreme').type('01');\ncy.get('#addClientGamingTransactionForm input[name=\"ipAddress\"]').type(_faker_js_faker__WEBPACK_IMPORTED_MODULE_0__[\"faker\"].internet.ipv4());\ncy.get('#addClientGamingTransactionForm input[name=\"deviceUsed\"]').type(_faker_js_faker__WEBPACK_IMPORTED_MODULE_0__[\"faker\"].internet.userAgent());\ncy.get('#addClientGamingTransactionForm input[name=\"volume\"]').type(_faker_js_faker__WEBPACK_IMPORTED_MODULE_0__[\"faker\"].number.int({ min: 1, max: 100 }).toString());\ncy.get('#addClientGamingTransactionForm input[name=\"playTime\"]').type(_faker_js_faker__WEBPACK_IMPORTED_MODULE_0__[\"faker\"].number.int({ min: 1, max: 100 }).toString());\ncy.getBySel('countriesList').should('be.visible').click();\ncy.get('.dx-overlay-wrapper.dx-popup-wrapper.dx-dropdowneditor-overlay .dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true });\ncy.get('#addClientGamingTransactionForm input[name=\"totalPlayTimeSinceLast\"]').type(_faker_js_faker__WEBPACK_IMPORTED_MODULE_0__[\"faker\"].number.int({ min: 1, max: 100 }).toString());\ncy.get('#addClientGamingTransactionForm input[name=\"promotionAmount\"]').type(_faker_js_faker__WEBPACK_IMPORTED_MODULE_0__[\"faker\"].number.int({ min: 1, max: 100 }).toString());\ncy.get('#addClientGamingTransactionForm input[name=\"withdrawalLimit\"]').type(_faker_js_faker__WEBPACK_IMPORTED_MODULE_0__[\"faker\"].number.int({ min: 1, max: 100 }).toString());\ncy.get('#addClientGamingTransactionForm input[name=\"amountOnHold\"]').type(_faker_js_faker__WEBPACK_IMPORTED_MODULE_0__[\"faker\"].number.int({ min: 1, max: 100 }).toString());\ncy.get('#addClientGamingTransactionForm input[name=\"externalReference\"]').type(accountExternalReference);\ncy.get('#addClientGamingTransactionForm textarea[name=\"comments\"]').type(_faker_js_faker__WEBPACK_IMPORTED_MODULE_0__[\"faker\"].lorem.paragraph());\ncy.getBySel('gameTypesList').should('be.visible').click();\ncy.get('.dx-overlay-wrapper.dx-popup-wrapper.dx-dropdowneditor-overlay .dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true });\ncy.get('#addClientGamingTransactionForm dx-drop-down-box[formControlName=\"clientGamingAccountId\"]').should('be.visible').click();\ncy.get('.dx-overlay-wrapper.dx-popup-wrapper.dx-dropdowneditor-overlay #accountListDataGrid .dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true });\ncy.getBySel('saveGamingTransaction').should('be.visible').click().wait(1000);",
+              "err": {},
+              "uuid": "b0161e29-ab2f-445f-9aa9-a048d98e136a",
+              "parentUUID": "83ab7d97-c8b5-4055-a817-40bf58503666",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edit client Gaming Transactions",
+              "fullTitle": "Add, Edit, Delete Client Gaming Transactions Edit client Gaming Transactions",
+              "timedOut": null,
+              "duration": 11417,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(`/main/client-individual/${client_id}/1/gaming-transactions`);\ncy.wait(2000);\ncy.getBySel('gridClientGamingTransactions').should('be.visible');\ncy.get('.dx-datagrid-filter-row .dx-texteditor-input-container input').eq(7).type(accountExternalReference);\ncy.wait(2000);\nlet gridGamingTransactions = cy.wrap('#gridClientGamingTransactions table tbody tr td');\ngridGamingTransactions.get('.dx-command-edit-with-icons a').eq(0).click({ force: true });\ncy.get('#editClientGamingTransactionForm input[name=\"ipAddress\"]').clear();\ncy.get('#editClientGamingTransactionForm input[name=\"ipAddress\"]').type(_faker_js_faker__WEBPACK_IMPORTED_MODULE_0__[\"faker\"].internet.ipv4());\ncy.getBySel('saveAndCloseButton').click().wait(1000);",
+              "err": {},
+              "uuid": "9d802faa-2841-4884-865b-81fa1fe78f3b",
+              "parentUUID": "83ab7d97-c8b5-4055-a817-40bf58503666",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Delete client Gaming Transactions",
+              "fullTitle": "Add, Edit, Delete Client Gaming Transactions Delete client Gaming Transactions",
+              "timedOut": null,
+              "duration": 12508,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(`/main/client-individual/${client_id}/1/gaming-transactions`).wait(2000);\ncy.getBySel('gridClientGamingTransactions').should('be.visible');\ncy.get('.dx-datagrid-filter-row .dx-texteditor-input-container input').eq(7).type(accountExternalReference);\ncy.wait(3000);\nlet gridGamingTransactions = cy.wrap('#gridClientGamingTransactions table tbody tr td');\ngridGamingTransactions.get('.dx-command-edit-with-icons a').eq(0).click({ force: true }).wait(2000);\ncy.getBySel('deleteGamingTransaction').should('be.visible').click();\ncy.get('#bot2-Msg1').contains('Yes').click().wait(1000);",
+              "err": {},
+              "uuid": "07b95b17-5332-4155-876d-8cfdd03a5cef",
+              "parentUUID": "83ab7d97-c8b5-4055-a817-40bf58503666",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b0161e29-ab2f-445f-9aa9-a048d98e136a",
+            "9d802faa-2841-4884-865b-81fa1fe78f3b",
+            "07b95b17-5332-4155-876d-8cfdd03a5cef"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 57788,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

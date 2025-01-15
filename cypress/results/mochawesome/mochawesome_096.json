@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-15T09:35:44.235Z",
+    "end": "2025-01-15T09:36:04.318Z",
+    "duration": 20083,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c03bb99b-1d06-4cc8-83ab-7671e9c1d37c",
+      "title": "",
+      "fullFile": "cypress/e2e/SideMenu/Navigation_test.cy.ts",
+      "file": "cypress/e2e/SideMenu/Navigation_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "fc3f1d09-4157-43df-955f-b482e454cbcd",
+          "title": "Click on navigation menu of RegTek",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Start clicking on navigation items",
+              "fullTitle": "Click on navigation menu of RegTek Start clicking on navigation items",
+              "timedOut": null,
+              "duration": 20044,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.login(\"systemadmin\", \"Password1!\");\ncy.get('ul.main-menu>li>sa-menu-item>a').click({ multiple: true });",
+              "err": {},
+              "uuid": "b22408d8-02df-41b5-823e-7f76b7b8f256",
+              "parentUUID": "fc3f1d09-4157-43df-955f-b482e454cbcd",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b22408d8-02df-41b5-823e-7f76b7b8f256"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 20044,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

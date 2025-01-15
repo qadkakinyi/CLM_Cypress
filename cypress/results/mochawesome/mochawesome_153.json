@@ -1,0 +1,298 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 9,
+    "passes": 9,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-15T10:36:17.732Z",
+    "end": "2025-01-15T10:37:48.594Z",
+    "duration": 90862,
+    "testsRegistered": 9,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "cd82a53d-0af0-4509-bf2a-8c762a846f12",
+      "title": "",
+      "fullFile": "cypress/e2e/HelperFunctionalities/TransactionMonitoring&Actions/Gaming_Setups_test.cy.ts",
+      "file": "cypress/e2e/HelperFunctionalities/TransactionMonitoring&Actions/Gaming_Setups_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8607563e-390a-4f44-be22-e0e69ef43e05",
+          "title": "Game Types",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Adds a Game Type",
+              "fullTitle": "Game Types Adds a Game Type",
+              "timedOut": null,
+              "duration": 11501,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('sa-button', 'Add').click().wait(1000);\ncy.getByFormControlName('name').eq(0).type('Action Games');\ncy.getByFormControlName('mappingReference').eq(0).type(_faker_js_faker__WEBPACK_IMPORTED_MODULE_0__[\"faker\"].string.alphanumeric(13));\ncy.contains('sa-button', 'Save').click().wait(1000);\ncy.contains('Game type has been added');",
+              "err": {},
+              "uuid": "9a147da9-ae27-4118-b258-d8328de2ae5b",
+              "parentUUID": "8607563e-390a-4f44-be22-e0e69ef43e05",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edits a Game Type",
+              "fullTitle": "Game Types Edits a Game Type",
+              "timedOut": null,
+              "duration": 10797,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#gridGameTypes tr .dx-first-cell .dx-texteditor-input').type('Action Games', { force: true }).wait(2000);\ncy.get('#gridGameTypes tr td').find('.dx-icon-edit').eq(0).click({ force: true }).wait(1000);\ncy.get('#gridGameTypes .dx-datagrid-table .dx-texteditor-container > .dx-texteditor-input-container > .dx-texteditor-input').as('gameTypes');\ncy.get('@gameTypes').eq(3).clear().wait(1000).type('Adventure Games', { force: true }).wait(1000);\ncy.get('tr td').find('.dx-icon-save').eq(1).click().wait(1500);\ncy.contains(`Game type has been updated.`);",
+              "err": {},
+              "uuid": "4f5571e9-83f9-433c-8817-87ab83124dd4",
+              "parentUUID": "8607563e-390a-4f44-be22-e0e69ef43e05",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deletes a Game Type",
+              "fullTitle": "Game Types Deletes a Game Type",
+              "timedOut": null,
+              "duration": 6977,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#gridGameTypes tr .dx-first-cell .dx-texteditor-input').type('Adventure Games', { force: true }).wait(2000);\ncy.get('#gridGameTypes tr td').find('.dx-icon-trash').eq(1).click({ force: true }).wait(1000);\ncy.get('.dx-popup-normal').contains('Yes').click({ force: true }).wait(1000);\ncy.contains(`Game type has been deleted.`);",
+              "err": {},
+              "uuid": "0700b070-23cb-4420-9c64-39194a5d56e0",
+              "parentUUID": "8607563e-390a-4f44-be22-e0e69ef43e05",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9a147da9-ae27-4118-b258-d8328de2ae5b",
+            "4f5571e9-83f9-433c-8817-87ab83124dd4",
+            "0700b070-23cb-4420-9c64-39194a5d56e0"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 29275,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "b1b034af-e7c9-4f04-87ed-747dd93fd6ea",
+          "title": "Gaming Account Statuses",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Adds a Gaming Account Status",
+              "fullTitle": "Gaming Account Statuses Adds a Gaming Account Status",
+              "timedOut": null,
+              "duration": 7626,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('sa-button', 'Add').click().wait(1000);\ncy.getByFormControlName('name').eq(1).type('Blocked');\ncy.getByFormControlName('mappingReference').eq(1).type(_faker_js_faker__WEBPACK_IMPORTED_MODULE_0__[\"faker\"].string.alphanumeric(13));\ncy.getByDataCy('Save-client-gaming-status').click().wait(1000);\ncy.contains('Gaming account status has been added');",
+              "err": {},
+              "uuid": "f46b6716-659a-49c6-a458-ef59dc90cee9",
+              "parentUUID": "b1b034af-e7c9-4f04-87ed-747dd93fd6ea",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edits a Gaming Account Status",
+              "fullTitle": "Gaming Account Statuses Edits a Gaming Account Status",
+              "timedOut": null,
+              "duration": 13398,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#gridGamingAccountStatuses tr .dx-first-cell .dx-texteditor-input').type('Blocked', { force: true }).wait(2000);\ncy.get('#gridGamingAccountStatuses tr td').find('.dx-icon-edit').eq(0).click({ force: true }).wait(1000);\ncy.get('#gridGamingAccountStatuses .dx-datagrid-table .dx-texteditor-container > .dx-texteditor-input-container > .dx-texteditor-input').as('statuses');\ncy.get('@statuses').eq(3).clear().wait(1000).type('Unblocked', { force: true }).wait(1000);\ncy.get('tr td').find('.dx-icon-save').eq(1).click().wait(1500);\ncy.contains(`Gaming account status has been updated.`);",
+              "err": {},
+              "uuid": "81e79e8e-3530-4fad-a690-0b676424c75d",
+              "parentUUID": "b1b034af-e7c9-4f04-87ed-747dd93fd6ea",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deletes a Gaming Account Status",
+              "fullTitle": "Gaming Account Statuses Deletes a Gaming Account Status",
+              "timedOut": null,
+              "duration": 10405,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#gridGamingAccountStatuses tr .dx-first-cell .dx-texteditor-input').type('Unblocked', { force: true }).wait(2000);\ncy.get('#gridGamingAccountStatuses tr td').find('.dx-icon-trash').eq(1).click({ force: true }).wait(1000);\ncy.get('.dx-popup-normal').contains('Yes').click({ force: true }).wait(1000);\ncy.contains(`Gaming account status has been deleted.`);",
+              "err": {},
+              "uuid": "539928da-e8bf-43fa-a6bc-c3adcf8dc059",
+              "parentUUID": "b1b034af-e7c9-4f04-87ed-747dd93fd6ea",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f46b6716-659a-49c6-a458-ef59dc90cee9",
+            "81e79e8e-3530-4fad-a690-0b676424c75d",
+            "539928da-e8bf-43fa-a6bc-c3adcf8dc059"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 31429,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "564d3993-95ff-4455-a890-3dfac1dba0ef",
+          "title": "Gaming Transaction Types",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Adds a Gaming Transaction Type",
+              "fullTitle": "Gaming Transaction Types Adds a Gaming Transaction Type",
+              "timedOut": null,
+              "duration": 7469,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('sa-button', 'Add').click().wait(1000);\ncy.getByFormControlName('name').eq(2).type('DKA Type');\ncy.getByFormControlName('mappingReference').eq(2).type(_faker_js_faker__WEBPACK_IMPORTED_MODULE_0__[\"faker\"].string.alphanumeric(13));\ncy.get('#addGamingTransactionTypeForm [icon=\"save\"]').click().wait(1000);\ncy.contains('Gaming transaction type has been added');",
+              "err": {},
+              "uuid": "4563fdef-f2f6-4e15-844d-515f1af85d73",
+              "parentUUID": "564d3993-95ff-4455-a890-3dfac1dba0ef",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edits a Gaming Transaction Type",
+              "fullTitle": "Gaming Transaction Types Edits a Gaming Transaction Type",
+              "timedOut": null,
+              "duration": 12158,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#gridGamingTransactionType tr .dx-first-cell .dx-texteditor-input').type('DKA Type', { force: true }).wait(2000);\ncy.get('#gridGamingTransactionType tr td').find('.dx-icon-edit').eq(0).click({ force: true }).wait(1000);\ncy.get('#gridGamingTransactionType .dx-datagrid-table .dx-texteditor-container > .dx-texteditor-input-container > .dx-texteditor-input').as('transactionTYpes');\ncy.get('@transactionTYpes').eq(3).clear().wait(1000).type('Type DKA', { force: true }).wait(1000);\ncy.get('tr td').find('.dx-icon-save').eq(1).click().wait(1500);\ncy.contains(`Gaming transaction type has been updated.`);",
+              "err": {},
+              "uuid": "6c472f42-27ca-4613-a787-7c47851c410b",
+              "parentUUID": "564d3993-95ff-4455-a890-3dfac1dba0ef",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deletes a Gaming Transaction Type",
+              "fullTitle": "Gaming Transaction Types Deletes a Gaming Transaction Type",
+              "timedOut": null,
+              "duration": 10448,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#gridGamingTransactionType tr .dx-first-cell .dx-texteditor-input').type('Type DKA', { force: true }).wait(2000);\ncy.get('#gridGamingTransactionType tr td').find('.dx-icon-trash').eq(1).click({ force: true }).wait(1000);\ncy.get('.dx-popup-normal').contains('Yes').click({ force: true }).wait(1000);\ncy.contains(`Gaming transaction type has been deleted.`);",
+              "err": {},
+              "uuid": "7dbde396-4128-484d-bf18-2cee7f5346a2",
+              "parentUUID": "564d3993-95ff-4455-a890-3dfac1dba0ef",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4563fdef-f2f6-4e15-844d-515f1af85d73",
+            "6c472f42-27ca-4613-a787-7c47851c410b",
+            "7dbde396-4128-484d-bf18-2cee7f5346a2"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 30075,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

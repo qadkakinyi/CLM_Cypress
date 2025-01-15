@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-15T10:49:21.146Z",
+    "end": "2025-01-15T10:49:37.610Z",
+    "duration": 16464,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "0a895ec7-5d07-4511-ac60-32fbe43c289d",
+      "title": "",
+      "fullFile": "cypress/e2e/ScreenPerformance/Reports&Lists/Machine_Learning_test.cy.ts",
+      "file": "cypress/e2e/ScreenPerformance/Reports&Lists/Machine_Learning_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "60975196-27d7-4e3c-a07e-365f0adb350a",
+          "title": "Machine Learning",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Opens menu under the section and navigates to the expected pages",
+              "fullTitle": "Machine Learning Opens menu under the section and navigates to the expected pages",
+              "timedOut": null,
+              "duration": 16404,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let routes = [\n    { index: 0, route: \"/reports/classification-means-report\", assertion: \"Segmentation Values\" }\n];\nroutes.forEach((route, i) => {\n    cy.get(\"@machine-learning-links\").eq(route.index).click();\n    cy.location(\"pathname\").should(\"equal\", route.route);\n    cy.wait(5000);\n    cy.contains(route.assertion);\n    // after this 5 seconds the data should have loades and spinner should not be visible\n    cy.get('.sk-ball-spin-clockwise').should(`not.be.visible`);\n    if (i < routes.length - 1) {\n        cy.visit(\"/main/dashboard\");\n        cy.getByDataCy(\"reports-menu\").click();\n        cy.getByDataCy(\"machine-learning-menu\").should(\"be.visible\");\n        cy.getByDataCy(\"machine-learning-menu\").click().as('machine-learning-menu').wait(1500);\n        cy.getByDataCy(\"machine-learning-links\").as(\"machine-learning-links\");\n    }\n});",
+              "err": {},
+              "uuid": "997e0fd1-5b42-4d57-8ac9-1732a27f0e03",
+              "parentUUID": "60975196-27d7-4e3c-a07e-365f0adb350a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "997e0fd1-5b42-4d57-8ac9-1732a27f0e03"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 16404,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

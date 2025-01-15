@@ -1,0 +1,125 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-15T10:42:46.915Z",
+    "end": "2025-01-15T10:43:57.947Z",
+    "duration": 71032,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "27e6a5a7-5b2b-4faa-a075-75e8d958cf35",
+      "title": "",
+      "fullFile": "cypress/e2e/ScreenPerformance/Administration/Audit_Trail_Extraction_Menu_test.cy.ts",
+      "file": "cypress/e2e/ScreenPerformance/Administration/Audit_Trail_Extraction_Menu_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "23324fc4-f55d-462c-914e-e61df4eb30c5",
+          "title": "Audit Trail Extractions & Setups",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Opens Audit Trails Menus",
+              "fullTitle": "Audit Trail Extractions & Setups Opens Audit Trails Menus",
+              "timedOut": null,
+              "duration": 12972,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"@audit-trail-menu\").scrollIntoView().find(\"ul>li\").should(\"have.length\", 8).wait(1000);",
+              "err": {},
+              "uuid": "5ef7c91c-8a1b-43a6-b362-09a77145dfd5",
+              "parentUUID": "23324fc4-f55d-462c-914e-e61df4eb30c5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Accesses all pages in the menu list",
+              "fullTitle": "Audit Trail Extractions & Setups Accesses all pages in the menu list",
+              "timedOut": null,
+              "duration": 57952,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "data.forEach((route, i) => {\n    cy.get(\"@audit-trail-list\").eq(route.index).click();\n    cy.location(\"pathname\").should(\"equal\", route.route);\n    cy.contains(route.assertion);\n    cy.wait(2000);\n    cy.get('.sk-ball-spin-clockwise').should(`not.be.visible`);\n    if (i < data.length - 1) {\n        cy.visit('/main/dashboard').wait(3000);\n        cy.getByDataCy(\"administration-menu\").should(\"be.visible\").click();\n        cy.getByDataCy(\"administration-menu\").find(\"ul>li\").eq(3).click().as(\"audit-trail-menu\");\n        cy.get(\"@audit-trail-menu\").find(\"ul>li\").as(\"audit-trail-list\");\n    }\n});",
+              "err": {},
+              "uuid": "864c5c40-7d05-430f-83af-edd4a9f9fb11",
+              "parentUUID": "23324fc4-f55d-462c-914e-e61df4eb30c5",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5ef7c91c-8a1b-43a6-b362-09a77145dfd5",
+            "864c5c40-7d05-430f-83af-edd4a9f9fb11"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 70924,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

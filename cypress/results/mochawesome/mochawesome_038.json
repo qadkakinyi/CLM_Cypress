@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-15T08:36:18.905Z",
+    "end": "2025-01-15T08:36:47.369Z",
+    "duration": 28464,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9ce80878-d7dc-41b1-b1b2-4d1e5e1e6310",
+      "title": "",
+      "fullFile": "cypress/e2e/CorporateClientFunctionality/Audit_Trails_test.cy.ts",
+      "file": "cypress/e2e/CorporateClientFunctionality/Audit_Trails_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3b1ca60a-8e07-4f16-bba3-be43e28fb11a",
+          "title": "System logs",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Navigates to system logs",
+              "fullTitle": "System logs Navigates to system logs",
+              "timedOut": null,
+              "duration": 28413,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Navigate to specific client\nObject(_support_e2e__WEBPACK_IMPORTED_MODULE_0__[\"navigateToClientMenu\"])('Corporate');\ncy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('Audit Trail').click().wait(1000);\ncy.get('#gridAuditLog');\ncy.contains('h1', 'Logs');\ncy.wait(1000);\n//view external audit trails\ncy.contains('External Audit Trails').click().wait(1000);\n//view onboarding audit trails\ncy.contains('Onboarding Audit Trails').click().wait(1000);",
+              "err": {},
+              "uuid": "d1416f06-4b5e-42b5-b5b0-28e0c2fa471c",
+              "parentUUID": "3b1ca60a-8e07-4f16-bba3-be43e28fb11a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d1416f06-4b5e-42b5-b5b0-28e0c2fa471c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 28413,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

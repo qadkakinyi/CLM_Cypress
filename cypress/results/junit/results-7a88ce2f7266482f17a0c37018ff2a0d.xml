@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="33.309" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-15T09:59:12" tests="0" file="cypress/e2e/HelperFunctionalities/ClientProfiling/Document_Category_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Document Categories" timestamp="2025-01-15T09:59:18" tests="3" time="27.643" failures="0">
+    <testcase name="Document Categories Adds A Document Category" time="12.266" classname="Adds A Document Category">
+    </testcase>
+    <testcase name="Document Categories Edits A Document Category" time="11.419" classname="Edits A Document Category">
+    </testcase>
+    <testcase name="Document Categories Deletes A Document Category" time="9.584" classname="Deletes A Document Category">
+    </testcase>
+  </testsuite>
+</testsuites>

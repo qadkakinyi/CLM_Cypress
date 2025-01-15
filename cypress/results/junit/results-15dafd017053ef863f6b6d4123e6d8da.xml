@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="60.064" tests="6" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-15T10:26:15" tests="0" file="cypress/e2e/HelperFunctionalities/TransactionMonitoring&amp;Actions/Actions_Setup_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Actions Setup" timestamp="2025-01-15T10:26:21" tests="6" time="54.375" failures="0">
+    <testcase name="Actions Setup Adds an Action Category" time="12.126" classname="Adds an Action Category">
+    </testcase>
+    <testcase name="Actions Setup Edits an Action Category" time="11.184" classname="Edits an Action Category">
+    </testcase>
+    <testcase name="Actions Setup Deletes an Action Category" time="7.522" classname="Deletes an Action Category">
+    </testcase>
+    <testcase name="Actions Setup Adds a Status" time="7.520" classname="Adds a Status">
+    </testcase>
+    <testcase name="Actions Setup Edits a Status" time="12.602" classname="Edits a Status">
+    </testcase>
+    <testcase name="Actions Setup Deletes a Status" time="9.055" classname="Deletes a Status">
+    </testcase>
+  </testsuite>
+</testsuites>
