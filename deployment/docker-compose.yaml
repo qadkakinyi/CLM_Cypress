@@ -1,0 +1,7 @@
+services:
+  clm-cypress-builder:
+    image: clm-cypress:v.1.0.0
+    container_name: clm-cypress-builder
+    restart: no
+    volumes:
+      - ./mochawesome-report:/app/mochawesome-report
