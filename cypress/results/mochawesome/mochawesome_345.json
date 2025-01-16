@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-16T08:43:19.567Z",
+    "end": "2025-01-16T08:44:58.459Z",
+    "duration": 98892,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ccdaf7f0-c0b7-4f60-b5a3-7d31b709e969",
+      "title": "",
+      "fullFile": "cypress/e2e/ScreenPerformance/Reports&Lists/Screening&Electronic_Identification_test.cy.ts",
+      "file": "cypress/e2e/ScreenPerformance/Reports&Lists/Screening&Electronic_Identification_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "cea496b2-b20b-40f4-ad50-4efa9520e177",
+          "title": "Screening & Electronic Identification",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Opens menu under the section and navigates to the expected pages",
+              "fullTitle": "Screening & Electronic Identification Opens menu under the section and navigates to the expected pages",
+              "timedOut": null,
+              "duration": 98818,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var routes = [\n    { index: 0, route: \"/reports/detailed-screening-list-report\", assertion: \"Detailed Screening List Report\" },\n    { index: 1, route: \"/reports/internal-blacklist-report\", assertion: \"Internal Black List Report\" },\n    { index: 2, route: \"/reports/internal-screen-notification-logs-report\", assertion: \"Internal Screen Notification Audit Trail Report\" },\n    { index: 3, route: \"/reports/kyb-registry-search-history-report\", assertion: \"KYB Registry Search History Report\" },\n    { index: 4, route: \"/reports/negative-list-search-history-report\", assertion: \"Negative Lists Search History Report\" },\n    { index: 5, route: \"/reports/ongoing-monitoring-search-history-report\", assertion: \"Ongoing Monitoring Search History Report\" },\n    { index: 6, route: \"/reports/pending-verifications-report\", assertion: \"Pending Verifications Report\" },\n    { index: 7, route: \"/reports/screening-list-report\", assertion: \"Screening List Report\" }\n];\nroutes.forEach(function (route, i) {\n    cy.get(\"@screening-links\").eq(route.index).click();\n    cy.location(\"pathname\").should(\"equal\", route.route);\n    cy.wait(5000);\n    cy.contains(route.assertion);\n    // after this 5 seconds the data should have loades and spinner should not be visible\n    cy.get('.sk-ball-spin-clockwise').should(\"not.be.visible\");\n    if (i < routes.length - 1) {\n        cy.visit(\"/main/dashboard\");\n        cy.getByDataCy(\"reports-menu\").click();\n        cy.getByDataCy(\"screening-and-identification-menu\").should(\"be.visible\");\n        cy.getByDataCy(\"screening-and-identification-menu\").click().as('screening-and-identification-menu').wait(1500);\n        cy.getByDataCy(\"screening-links\").as(\"screening-links\");\n    }\n});",
+              "err": {},
+              "uuid": "1595afc3-aba8-4772-bced-f4a0950e2e37",
+              "parentUUID": "cea496b2-b20b-40f4-ad50-4efa9520e177",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1595afc3-aba8-4772-bced-f4a0950e2e37"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 98818,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

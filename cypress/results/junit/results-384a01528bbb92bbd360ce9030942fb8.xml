@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="30.753" tests="2" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T07:07:50" tests="0" file="cypress/e2e/Priority2/Administrator_Rules_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Add Rule" timestamp="2025-01-16T07:07:56" tests="2" time="24.947" failures="0">
+    <testcase name="Add Rule Generate Regulation Group Hash Key" time="19.818" classname="Generate Regulation Group Hash Key">
+    </testcase>
+    <testcase name="Add Rule Adds A Rule" time="10.828" classname="Adds A Rule">
+    </testcase>
+  </testsuite>
+</testsuites>

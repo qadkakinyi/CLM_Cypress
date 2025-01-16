@@ -1,0 +1,153 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 1,
+    "pending": 0,
+    "failures": 2,
+    "start": "2025-01-16T12:57:25.294Z",
+    "end": "2025-01-16T12:58:15.444Z",
+    "duration": 50150,
+    "testsRegistered": 3,
+    "passPercent": 33.33333333333333,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "3d8aac99-e1a5-4216-9c15-f45bc2b36077",
+      "title": "",
+      "fullFile": "cypress/e2e/IndividualClientFunctionality/Add_Edit_Delete_Client_Application_test.cy.ts",
+      "file": "cypress/e2e/IndividualClientFunctionality/Add_Edit_Delete_Client_Application_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0a870b8f-1919-4818-a804-b5904f654077",
+          "title": "Add, Edit, Delete Client Applications",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add Client Applications",
+              "fullTitle": "Add, Edit, Delete Client Applications Add Client Applications",
+              "timedOut": null,
+              "duration": 34434,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Click on Know your Clients navigation item\n(0, e2e_1.navigateToClientMenu)('Individual');\ncy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Applications').click();\n// Add new Client Application\ncy.getBySel('addApplication').click();\ncy.location('pathname').then(function (pathname) {\n    var pathSections = pathname.split('/');\n    client_id = pathSections[3];\n});\ncy.getBySel('addApplicationForm').should('be.visible');\ncy.getBySel('purposeOfTransactions').click();\ncy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview table tr td').eq(0).click({ force: true });\ncy.getByDataCy('approvedBy').click();\ncy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview .dx-datagrid-content>.dx-datagrid-table > tbody > .dx-data-row > td').eq(1).click({ force: true });\ncy.get('#addApplicationForm input[name=\"applicationReferenceNumber\"]').type(externalReference);\ncy.getBySel('users').click();\ncy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview table tr td').eq(0).click({ force: true });\ncy.get('#addApplicationForm input[name=\"receiverEmail\"]').should('be.visible').clear();\ncy.get('#addApplicationForm input[name=\"receiverEmail\"]').type(faker_1.faker.internet.email());\ncy.get('#addApplicationForm input[name=\"comments\"]').type(faker_1.faker.lorem.sentence());\ncy.getBySel('saveApplication').click();",
+              "err": {},
+              "uuid": "f8cac261-fbaa-4315-a795-9c4cfa5a61a2",
+              "parentUUID": "0a870b8f-1919-4818-a804-b5904f654077",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edit client application",
+              "fullTitle": "Add, Edit, Delete Client Applications Edit client application",
+              "timedOut": null,
+              "duration": 7890,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"main/client-individual/\".concat(client_id, \"/1/applications\")).wait(2000);\n// Edit application\ncy.getBySel('gridClientApplications').should('be.visible');\ncy.get('.dx-datagrid-filter-row .dx-texteditor-input-container input').eq(1).type(externalReference);\ncy.wait(2000);\nvar gridApplications = cy.wrap('#gridClientApplications table tbody tr td');\ngridApplications.get('.dx-command-edit-with-icons a').eq(0).click({ force: true });\ncy.get('#editClientApplicationForm').should('be.visible');\ncy.get('#editClientApplicationForm input[name=\"comments\"]').should('be.visible').clear();\ncy.get('#editClientApplicationForm input[name=\"comments\"]').type(faker_1.faker.lorem.sentence());\ncy.getBySel('saveAndCloseButton').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<dx-data-grid#gridClientApplications.dx-widget.dx-visibility-change-handler>' to be 'visible'\n\nThis element `<dx-data-grid#gridClientApplications.dx-widget.dx-visibility-change-handler>` is not visible because it has CSS property: `position: fixed` and it's being covered by another element:\n\n`<div _ngcontent-kyl-c74=\"\" class=\"ngx-overlay loading-foreground\" style=\"background-color: rgba(40, 40, 40, 0.3); border-radius: 0px;\">...</div>`",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<dx-data-grid#gridClientApplications.dx-widget.dx-visibility-change-handler>' to be 'visible'\n\nThis element `<dx-data-grid#gridClientApplications.dx-widget.dx-visibility-change-handler>` is not visible because it has CSS property: `position: fixed` and it's being covered by another element:\n\n`<div _ngcontent-kyl-c74=\"\" class=\"ngx-overlay loading-foreground\" style=\"background-color: rgba(40, 40, 40, 0.3); border-radius: 0px;\">...</div>`\n    at Context.eval (webpack://clm_cypress/./cypress/e2e/IndividualClientFunctionality/Add_Edit_Delete_Client_Application_test.cy.ts:42:0)",
+                "diff": null
+              },
+              "uuid": "18297fa3-fd32-47f1-a9f8-1221b043accc",
+              "parentUUID": "0a870b8f-1919-4818-a804-b5904f654077",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Delete client applications",
+              "fullTitle": "Add, Edit, Delete Client Applications Delete client applications",
+              "timedOut": null,
+              "duration": 7702,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"main/client-individual/\".concat(client_id, \"/1/applications\")).wait(2000);\n// Delete applications\ncy.getBySel('gridClientApplications').should('be.visible');\ncy.get('.dx-datagrid-filter-row .dx-texteditor-input-container input').eq(1).type(externalReference);\ncy.wait(2000);\nvar gridApplications = cy.wrap('#gridClientApplications table tbody tr td');\ngridApplications.get('.dx-command-edit-with-icons a').eq(0).click({ force: true });\ncy.getBySel('deleteApplication').should('be.visible').click();\ncy.get('#bot2-Msg1').contains('Yes').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<dx-data-grid#gridClientApplications.dx-widget.dx-visibility-change-handler>' to be 'visible'\n\nThis element `<dx-data-grid#gridClientApplications.dx-widget.dx-visibility-change-handler>` is not visible because it has CSS property: `position: fixed` and it's being covered by another element:\n\n`<div _ngcontent-btp-c74=\"\" class=\"ngx-overlay loading-foreground\" style=\"background-color: rgba(40, 40, 40, 0.3); border-radius: 0px;\">...</div>`",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<dx-data-grid#gridClientApplications.dx-widget.dx-visibility-change-handler>' to be 'visible'\n\nThis element `<dx-data-grid#gridClientApplications.dx-widget.dx-visibility-change-handler>` is not visible because it has CSS property: `position: fixed` and it's being covered by another element:\n\n`<div _ngcontent-btp-c74=\"\" class=\"ngx-overlay loading-foreground\" style=\"background-color: rgba(40, 40, 40, 0.3); border-radius: 0px;\">...</div>`\n    at Context.eval (webpack://clm_cypress/./cypress/e2e/IndividualClientFunctionality/Add_Edit_Delete_Client_Application_test.cy.ts:55:0)",
+                "diff": null
+              },
+              "uuid": "ee4daf8e-3f65-4bc7-8b9f-b766bdeb6e45",
+              "parentUUID": "0a870b8f-1919-4818-a804-b5904f654077",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f8cac261-fbaa-4315-a795-9c4cfa5a61a2"
+          ],
+          "failures": [
+            "18297fa3-fd32-47f1-a9f8-1221b043accc",
+            "ee4daf8e-3f65-4bc7-8b9f-b766bdeb6e45"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 50026,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

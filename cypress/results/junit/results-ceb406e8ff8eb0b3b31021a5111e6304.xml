@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="44.582" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T08:02:22" tests="0" file="cypress/e2e/HelperFunctionalities/Countries/Countries_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Countries" timestamp="2025-01-16T08:02:28" tests="3" time="38.630" failures="0">
+    <testcase name="Countries Edits A Country" time="27.665" classname="Edits A Country">
+    </testcase>
+    <testcase name="Countries Imports Country from file" time="6.654" classname="Imports Country from file">
+    </testcase>
+    <testcase name="Countries Deletes a Country" time="10.168" classname="Deletes a Country">
+    </testcase>
+  </testsuite>
+</testsuites>

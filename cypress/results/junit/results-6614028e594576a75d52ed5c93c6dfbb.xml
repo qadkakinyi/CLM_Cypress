@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="55.393" tests="2" failures="1">
+  <testsuite name="Root Suite" timestamp="2025-01-16T07:13:42" tests="0" file="cypress/e2e/Priority2/Transaction_Screening_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Transaction Screening with APIS" timestamp="2025-01-16T07:13:48" tests="1" time="22.099" failures="0">
+    <testcase name="Transaction Screening with APIS Perform Transaction Screening check and navigate to the created case" time="28.298" classname="Perform Transaction Screening check and navigate to the created case">
+    </testcase>
+  </testsuite>
+  <testsuite name="Performing Transaction Screening With UI" timestamp="2025-01-16T07:14:10" tests="1" time="27.047" failures="1">
+    <testcase name="Performing Transaction Screening With UI Check Transaction Screening" time="0.000" classname="Check Transaction Screening">
+      <failure message="Timed out retrying after 4000ms: Expected to find content: &apos;18676&apos; but never did." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find content: '18676' but never did.
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/Priority2/Transaction_Screening_test.cy.ts:95:0)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

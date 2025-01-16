@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="31.490" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T07:57:56" tests="0" file="cypress/e2e/HelperFunctionalities/ClientProfiling/Integration_Capacity_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Integration Capacity" timestamp="2025-01-16T07:58:02" tests="3" time="25.192" failures="0">
+    <testcase name="Integration Capacity Adds Integration Capability" time="14.421" classname="Adds Integration Capability">
+    </testcase>
+    <testcase name="Integration Capacity Edits Integration Capability" time="9.798" classname="Edits Integration Capability">
+    </testcase>
+    <testcase name="Integration Capacity Deletes Integration Capability" time="7.150" classname="Deletes Integration Capability">
+    </testcase>
+  </testsuite>
+</testsuites>

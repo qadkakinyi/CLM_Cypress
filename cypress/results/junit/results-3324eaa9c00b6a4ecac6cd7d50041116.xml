@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="31.436" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T07:49:47" tests="0" file="cypress/e2e/HelperFunctionalities/ClientProfiling/Client_Categories_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Client Categories" timestamp="2025-01-16T07:49:53" tests="3" time="25.594" failures="0">
+    <testcase name="Client Categories Adds A Client Category" time="12.678" classname="Adds A Client Category">
+    </testcase>
+    <testcase name="Client Categories Edits A Client Category" time="11.167" classname="Edits A Client Category">
+    </testcase>
+    <testcase name="Client Categories Deletes A Client Category" time="7.490" classname="Deletes A Client Category">
+    </testcase>
+  </testsuite>
+</testsuites>

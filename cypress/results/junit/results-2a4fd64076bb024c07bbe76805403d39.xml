@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="38.261" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T07:55:05" tests="0" file="cypress/e2e/HelperFunctionalities/ClientProfiling/Document_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Documents" timestamp="2025-01-16T07:55:11" tests="3" time="31.734" failures="0">
+    <testcase name="Documents Adds a document" time="17.231" classname="Adds a document">
+    </testcase>
+    <testcase name="Documents Edits a document" time="10.874" classname="Edits a document">
+    </testcase>
+    <testcase name="Documents Deletes a document" time="10.013" classname="Deletes a document">
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="26.121" tests="2" failures="1" skipped="1">
+  <testsuite name="Root Suite" timestamp="2025-01-16T12:10:24" tests="0" file="cypress/e2e/AddClients/Add_ClientIndividual_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Add Client Individual" timestamp="2025-01-16T12:10:30" tests="2" time="20.086" failures="1">
+    <testcase name="Add Client Individual Add Client Individual" time="0.000" classname="Add Client Individual">
+      <failure message="Timed out retrying after 4000ms: Expected to find content: &apos;Client individual has been added&apos; but never did." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Client individual has been added' but never did.
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/AddClients/Add_ClientIndividual_test.cy.ts:33:0)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

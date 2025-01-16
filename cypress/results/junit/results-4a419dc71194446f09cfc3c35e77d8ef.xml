@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="62.674" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T08:54:34" tests="0" file="cypress/e2e/ScreenPerformance/Settings/Transaction_Monitoring_And_Actions/Transaction_Monitoring-Submenus_test(7-14).cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Transaction Monitoring &amp; Actions" timestamp="2025-01-16T08:54:41" tests="1" time="56.562" failures="0">
+    <testcase name="Transaction Monitoring &amp; Actions Transaction Monitoring &amp; Actions pages" time="62.591" classname="Transaction Monitoring &amp; Actions pages">
+    </testcase>
+  </testsuite>
+</testsuites>

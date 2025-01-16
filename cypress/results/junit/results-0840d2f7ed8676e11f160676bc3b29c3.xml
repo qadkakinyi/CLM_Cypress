@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="67.596" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T08:52:31" tests="0" file="cypress/e2e/ScreenPerformance/Settings/Client_Profiling/Client_Profiling_Performance(8-15).cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Client Profiling" timestamp="2025-01-16T08:52:37" tests="1" time="61.590" failures="0">
+    <testcase name="Client Profiling Client Profiling Pages (submenus 8 to 15)" time="67.486" classname="Client Profiling Pages (submenus 8 to 15)">
+    </testcase>
+  </testsuite>
+</testsuites>

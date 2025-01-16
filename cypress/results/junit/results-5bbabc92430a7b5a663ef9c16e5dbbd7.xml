@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="69.991" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T12:58:58" tests="0" file="cypress/e2e/IndividualClientFunctionality/Add_Client_Questionnaire_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Add a client questionnaire" timestamp="2025-01-16T12:59:09" tests="1" time="58.810" failures="0">
+    <testcase name="Add a client questionnaire Adds questionnaire type, creates question categories, creates a question then adds a questionnaire" time="69.904" classname="Adds questionnaire type, creates question categories, creates a question then adds a questionnaire">
+    </testcase>
+  </testsuite>
+</testsuites>

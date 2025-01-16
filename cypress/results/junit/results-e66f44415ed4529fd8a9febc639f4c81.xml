@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="29.040" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T06:05:08" tests="0" file="cypress/e2e/CorporateClientFunctionality/AdHoc_Evaluations_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Adhoc Evaluations" timestamp="2025-01-16T06:05:19" tests="1" time="17.145" failures="0">
+    <testcase name="Adhoc Evaluations Navigates to Adhoc Evaluations Page" time="28.993" classname="Navigates to Adhoc Evaluations Page">
+    </testcase>
+  </testsuite>
+</testsuites>

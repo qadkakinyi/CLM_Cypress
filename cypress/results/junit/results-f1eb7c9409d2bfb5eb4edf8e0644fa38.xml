@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="72.857" tests="6" failures="3">
+  <testsuite name="Root Suite" timestamp="2025-01-16T08:11:36" tests="0" file="cypress/e2e/HelperFunctionalities/Evaluation&amp;Questionairre/4.Evaluation_Grades_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Evaluation Grades" timestamp="2025-01-16T08:11:42" tests="6" time="66.911" failures="3">
+    <testcase name="Evaluation Grades Adds an Overall Evaluation Grade" time="14.790" classname="Adds an Overall Evaluation Grade">
+    </testcase>
+    <testcase name="Evaluation Grades Edits an Overall Evaluation Grade" time="12.530" classname="Edits an Overall Evaluation Grade">
+    </testcase>
+    <testcase name="Evaluation Grades Adds an Answer Evaluation Grade" time="0.000" classname="Adds an Answer Evaluation Grade">
+      <failure message="Timed out retrying after 4000ms: Expected to find content: &apos;BERMUDA&apos; within the element: &lt;td&gt; but never did." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find content: 'BERMUDA' within the element: <td> but never did.
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/HelperFunctionalities/Evaluation&Questionairre/4.Evaluation_Grades_test.cy.ts:42:0)]]></failure>
+    </testcase>
+    <testcase name="Evaluation Grades Edits an Answer Evaluation Grade" time="0.000" classname="Edits an Answer Evaluation Grade">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `.dx-icon-edit`, but never found it. Queried from:
+
+              &gt; cy.get(#gridEvaluationGradesAnswers tr td)" type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `.dx-icon-edit`, but never found it. Queried from:
+
+              > cy.get(#gridEvaluationGradesAnswers tr td)
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/HelperFunctionalities/Evaluation&Questionairre/4.Evaluation_Grades_test.cy.ts:53:0)]]></failure>
+    </testcase>
+    <testcase name="Evaluation Grades Deletes an Answer Evaluation Grade" time="0.000" classname="Deletes an Answer Evaluation Grade">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `.dx-icon-trash`, but never found it. Queried from:
+
+              &gt; cy.get(#gridEvaluationGradesAnswers tr td)" type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `.dx-icon-trash`, but never found it. Queried from:
+
+              > cy.get(#gridEvaluationGradesAnswers tr td)
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/HelperFunctionalities/Evaluation&Questionairre/4.Evaluation_Grades_test.cy.ts:62:0)]]></failure>
+    </testcase>
+    <testcase name="Evaluation Grades Deletes an Evaluation Grade" time="8.194" classname="Deletes an Evaluation Grade">
+    </testcase>
+  </testsuite>
+</testsuites>

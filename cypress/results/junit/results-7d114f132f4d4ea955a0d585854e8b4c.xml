@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="18.267" tests="2" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T08:31:41" tests="0" file="cypress/e2e/ScreenPerformance/Administration/Administration_Level_1_Submenus_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Administration Submenu Level 1" timestamp="2025-01-16T08:31:47" tests="2" time="12.463" failures="0">
+    <testcase name="Administration Submenu Level 1 Opens Account" time="12.309" classname="Opens Account">
+    </testcase>
+    <testcase name="Administration Submenu Level 1 Opens release notes" time="5.880" classname="Opens release notes">
+    </testcase>
+  </testsuite>
+</testsuites>

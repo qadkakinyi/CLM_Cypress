@@ -1,0 +1,259 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 8,
+    "passes": 8,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-16T07:07:03.532Z",
+    "end": "2025-01-16T07:09:28.582Z",
+    "duration": 145050,
+    "testsRegistered": 8,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e3f40120-5bcd-4aec-a10e-965a00689e58",
+      "title": "",
+      "fullFile": "cypress/e2e/Priority2/Adhoc_Screening_test.cy.ts",
+      "file": "cypress/e2e/Priority2/Adhoc_Screening_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d56a5e78-93e7-4802-b04e-9beb731fc70f",
+          "title": "Adhoc Screening Individual Client",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Performs Person Search Using UI",
+              "fullTitle": "Adhoc Screening Individual Client Performs Person Search Using UI",
+              "timedOut": null,
+              "duration": 32560,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "(0, e2e_1.navigateToClientMenu)('Individual');\ncy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('Screening').click().wait(2000);\ncy.get('.screening-primary-buttons > [icon=\"search\"] > .sa-button').contains('Person Search').click().wait(1000);\ncy.location('pathname').then(function (path) {\n    location = path;\n    clientId = path.split('/')[3];\n});\ncy.getByFormControlName('fullName').clear().type('Putin');\ncy.getByFormControlName('dateOfBirth').eq(0).clear();\ncy.get('#performPersonSearchAcurisForm [icon=\"search\"] > .sa-button').contains('Search').click().wait(2000);\ncy.contains('The person search has been executed.');\ncy.wait(2000);",
+              "err": {},
+              "uuid": "6cc634e3-c64e-4e5f-8236-b024f32921b0",
+              "parentUUID": "d56a5e78-93e7-4802-b04e-9beb731fc70f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Performs Person Monitoring and Refreshes Results",
+              "fullTitle": "Adhoc Screening Individual Client Performs Person Monitoring and Refreshes Results",
+              "timedOut": null,
+              "duration": 15864,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(location).wait(2000);\ncy.get('.screening-primary-buttons > [icon=\"list\"] > .sa-button').contains('Person Monitoring').click().wait(1000);\ncy.get('#performPersonMonitoringAcurisForm [icon=\"save\"] > .sa-button').contains('Submit').click().wait(2000);\ncy.contains('The person monitoring has been executed').wait(3500);\ncy.contains('sa-button', 'Refresh Results').click().wait(2000);\n// cy.contains('The monitoring results have been updated')",
+              "err": {},
+              "uuid": "8be604f9-5b1d-4542-955a-5d42533cdae1",
+              "parentUUID": "d56a5e78-93e7-4802-b04e-9beb731fc70f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Removes Person Monitoring",
+              "fullTitle": "Adhoc Screening Individual Client Removes Person Monitoring",
+              "timedOut": null,
+              "duration": 10173,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(location).wait(3000);\ncy.get('[icon=\"times-circle\"] > .sa-button').contains('Remove Person Monitoring').click().wait(2000);\ncy.get('#bot2-Msg1').contains('Yes').click().wait(2000);\ncy.contains('Client has been removed from monitoring list');\n// deactivate remove person monitoring button after the client is removed from monitoring\n// deactivate person monitoring when client is added to the monitoring list",
+              "err": {},
+              "uuid": "92b5bf82-45d8-439c-ab30-900c98492b53",
+              "parentUUID": "d56a5e78-93e7-4802-b04e-9beb731fc70f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Performs Person Search Using API",
+              "fullTitle": "Adhoc Screening Individual Client Performs Person Search Using API",
+              "timedOut": null,
+              "duration": 23352,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "(0, e2e_1.navigateToClientMenu)('Individual');\ncy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('Screening').click().wait(2000);\ncy.location('pathname').then(function (path) {\n    clientId = path.split('/')[3];\n    if (clientId) {\n        cy.request({\n            method: 'POST',\n            url: \"https://complytek-testing-api.regtek.co/api/clientIndividuals/\".concat(clientId, \"/performPersonSearch\"),\n            headers: {\n                'Content-Type': 'application/json',\n                'Authorization': \"Bearer \".concat(token)\n            },\n            body: {\n                \"acuris\": {\n                    \"fullName\": \"Putin\",\n                    \"dateOfBirth\": \"\",\n                    \"address\": \"\",\n                    \"city\": \"\",\n                    \"country\": \"\",\n                    \"postcode\": \"\",\n                    \"threshold\": 90\n                }\n            }\n        }).wait(2000);\n        cy.reload();\n    }\n}).wait(2000);",
+              "err": {},
+              "uuid": "ddc72505-f2c1-42b3-b52d-ea5abff254be",
+              "parentUUID": "d56a5e78-93e7-4802-b04e-9beb731fc70f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6cc634e3-c64e-4e5f-8236-b024f32921b0",
+            "8be604f9-5b1d-4542-955a-5d42533cdae1",
+            "92b5bf82-45d8-439c-ab30-900c98492b53",
+            "ddc72505-f2c1-42b3-b52d-ea5abff254be"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 81949,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "f9250046-3615-43ec-a04a-cfad7c3b0288",
+          "title": "Adhoc Screening Corporate Client",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Performs Business Search Using UI",
+              "fullTitle": "Adhoc Screening Corporate Client Performs Business Search Using UI",
+              "timedOut": null,
+              "duration": 19854,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "(0, e2e_1.navigateToClientMenu)('Corporate');\ncy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('Screening').click().wait(2000);\ncy.get('.screening-primary-buttons > [icon=\"search\"] > .sa-button').contains('Business Search').click().wait(1000);\ncy.location('pathname').then(function (path) {\n    location = path;\n    clientId = path.split('/')[3];\n});\n// cy.contains('button', 'I Understand').click().wait(2000)\ncy.get('form [icon=\"search\"] > .sa-button').contains('Search').click().wait(2000);\ncy.contains('The business search has been executed.');\ncy.wait(2000);",
+              "err": {},
+              "uuid": "efc3693e-0c3e-4174-9494-a1656954e85e",
+              "parentUUID": "f9250046-3615-43ec-a04a-cfad7c3b0288",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Performs Business Monitoring and Refreshes results",
+              "fullTitle": "Adhoc Screening Corporate Client Performs Business Monitoring and Refreshes results",
+              "timedOut": null,
+              "duration": 14518,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(location).wait(2000);\ncy.get('.screening-primary-buttons > [icon=\"list\"] > .sa-button').contains('Business Monitoring').click().wait(1000);\ncy.get('form [icon=\"save\"] > .sa-button').contains('Submit').click().wait(2000);\ncy.contains('The business monitoring has been executed').wait(3500);\ncy.contains('sa-button', 'Refresh Results').click().wait(2000);\ncy.contains('The monitoring results have been updated');",
+              "err": {},
+              "uuid": "b7a66d97-5162-496f-bc8c-7e495cebc5e9",
+              "parentUUID": "f9250046-3615-43ec-a04a-cfad7c3b0288",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Removes Business Monitoring",
+              "fullTitle": "Adhoc Screening Corporate Client Removes Business Monitoring",
+              "timedOut": null,
+              "duration": 7915,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(location).wait(3000);\ncy.get('[icon=\"times-circle\"] > .sa-button').contains('Remove Business Monitoring').click({ force: true }).wait(1000);\ncy.get('#bot2-Msg1').contains('Yes').click().wait(2000);\ncy.contains('Client has been removed from monitoring list');\n// deactivate remove business monitoring button after the client is removed from monitoring\n// deactivate business monitoring when client is added to the monitoring list",
+              "err": {},
+              "uuid": "0557ea5b-5d17-41e5-90f9-0de32c821727",
+              "parentUUID": "f9250046-3615-43ec-a04a-cfad7c3b0288",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Performs Business Search Using API",
+              "fullTitle": "Adhoc Screening Corporate Client Performs Business Search Using API",
+              "timedOut": null,
+              "duration": 20395,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "(0, e2e_1.navigateToClientMenu)('Corporate');\ncy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('Screening').click().wait(2000);\ncy.get('.client-name > h2').invoke('text').then(function (text) {\n    clientName = text.trim();\n});\ncy.location('pathname').then(function (path) {\n    clientId = path.split('/')[3];\n    if (clientId) {\n        cy.request({\n            method: 'POST',\n            url: \"https://complytek-testing-api.regtek.co/api/clientCorporates/\".concat(clientId, \"/performBusinessSearch\"),\n            headers: {\n                'Content-Type': 'application/json',\n                'Authorization': \"Bearer \".concat(token)\n            },\n            body: {\n                \"acuris\": {\n                    \"businessName\": clientName,\n                    \"address\": \"\",\n                    \"city\": \"\",\n                    \"country\": \"\",\n                    \"postalCode\": \"\",\n                    \"threshold\": 90\n                }\n            }\n        }).wait(2000);\n        cy.reload();\n    }\n}).wait(2000);",
+              "err": {},
+              "uuid": "91f9ddbf-ca10-4270-b903-d77dd5202223",
+              "parentUUID": "f9250046-3615-43ec-a04a-cfad7c3b0288",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "efc3693e-0c3e-4174-9494-a1656954e85e",
+            "b7a66d97-5162-496f-bc8c-7e495cebc5e9",
+            "0557ea5b-5d17-41e5-90f9-0de32c821727",
+            "91f9ddbf-ca10-4270-b903-d77dd5202223"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 62682,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

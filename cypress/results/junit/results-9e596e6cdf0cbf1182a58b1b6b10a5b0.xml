@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="56.619" tests="3" failures="2">
+  <testsuite name="Root Suite" timestamp="2025-01-16T13:22:57" tests="0" file="cypress/e2e/IndividualClientFunctionality/ZFinal_CleanUp.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Add, Edit, Delete Client Bank Account" timestamp="2025-01-16T13:23:08" tests="2" time="39.189" failures="1">
+    <testcase name="Add, Edit, Delete Client Bank Account Add Client Bank Account" time="41.762" classname="Add Client Bank Account">
+    </testcase>
+    <testcase name="Add, Edit, Delete Client Bank Account Edit client Bank Account" time="0.000" classname="Edit client Bank Account">
+      <failure message="Timed out retrying after 4000ms: expected &apos;&lt;dx-data-grid#gridClientAccounts.dx-widget.dx-visibility-change-handler&gt;&apos; to be &apos;visible&apos;
+
+This element `&lt;dx-data-grid#gridClientAccounts.dx-widget.dx-visibility-change-handler&gt;` is not visible because it has CSS property: `position: fixed` and it&apos;s being covered by another element:
+
+`&lt;div _ngcontent-qfb-c74=&quot;&quot; class=&quot;ngx-overlay loading-foreground&quot; style=&quot;background-color: rgba(40, 40, 40, 0.3); border-radius: 0px;&quot;&gt;...&lt;/div&gt;`" type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: expected '<dx-data-grid#gridClientAccounts.dx-widget.dx-visibility-change-handler>' to be 'visible'
+
+This element `<dx-data-grid#gridClientAccounts.dx-widget.dx-visibility-change-handler>` is not visible because it has CSS property: `position: fixed` and it's being covered by another element:
+
+`<div _ngcontent-qfb-c74="" class="ngx-overlay loading-foreground" style="background-color: rgba(40, 40, 40, 0.3); border-radius: 0px;">...</div>`
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/IndividualClientFunctionality/Add_Edit_Delete_Client_Bank_Account_test.cy.ts:51:0)]]></failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Cleans Up Created Objects That Were being Used By other Functionalities" timestamp="2025-01-16T13:23:47" tests="1" time="6.801" failures="1">
+    <testcase name="Cleans Up Created Objects That Were being Used By other Functionalities Delete client Bank Account" time="0.000" classname="Delete client Bank Account">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `#gridClients`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `#gridClients`, but never found it.
+    at navigateToClientMenu (webpack://clm_cypress/./cypress/support/e2e.ts:62:0)
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/IndividualClientFunctionality/ZFinal_CleanUp.cy.ts:7:0)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

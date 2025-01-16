@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="60.098" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2025-01-16T06:40:31" tests="0" file="cypress/e2e/IndividualClientFunctionality/Add_Client_Questionnaire_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Add a client questionnaire" timestamp="2025-01-16T06:40:41" tests="1" time="49.987" failures="1">
+    <testcase name="Add a client questionnaire Adds questionnaire type, creates question categories, creates a question then adds a questionnaire" time="0.000" classname="Adds questionnaire type, creates question categories, creates a question then adds a questionnaire">
+      <failure message="Timed out retrying after 4050ms: `cy.click()` failed because this element is not visible:
+
+`&lt;sa-button data-cy=&quot;finalize-btn&quot; icon=&quot;check&quot; color=&quot;success&quot; class=&quot;ng-tns-c728-248&quot; _nghost-tiq-c358=&quot;&quot;&gt;...&lt;/sa-button&gt;`
+
+This element `&lt;sa-button.ng-tns-c728-248&gt;` is not visible because its parent `&lt;div.tab-pane.ng-tns-c728-248&gt;` has CSS property: `display: none`
+
+Fix this problem, or use `{force: true}` to disable error checking.
+
+https://on.cypress.io/element-cannot-be-interacted-with" type="CypressError"><![CDATA[CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is not visible:
+
+`<sa-button data-cy="finalize-btn" icon="check" color="success" class="ng-tns-c728-248" _nghost-tiq-c358="">...</sa-button>`
+
+This element `<sa-button.ng-tns-c728-248>` is not visible because its parent `<div.tab-pane.ng-tns-c728-248>` has CSS property: `display: none`
+
+Fix this problem, or use `{force: true}` to disable error checking.
+
+https://on.cypress.io/element-cannot-be-interacted-with
+    at runVisibilityCheck (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:144957:58)
+    at Object.isStrictlyVisible (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:144971:10)
+    at runAllChecks (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:113271:26)
+    at retryActionability (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:113339:16)
+    at tryCatcher (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1830:23)
+    at Promise.attempt.Promise.try (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:4338:29)
+    at whenStable (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:143744:68)
+    at <unknown> (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:143685:14)
+    at tryCatcher (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1830:23)
+    at Promise._settlePromiseFromHandler (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1542:31)
+    at Promise._settlePromise (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1599:18)
+    at Promise._settlePromise0 (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1644:10)
+    at Promise._settlePromises (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1724:18)
+    at Promise._fulfill (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1668:18)
+    at <unknown> (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:5473:46)
+From Your Spec Code:
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/IndividualClientFunctionality/Add_Client_Questionnaire_test.cy.ts:79:0)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

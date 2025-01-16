@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="33.327" tests="2" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T06:42:43" tests="0" file="cypress/e2e/IndividualClientFunctionality/Add_Delete_Alternative_Names_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Add and Delete Alternative Names" timestamp="2025-01-16T06:42:54" tests="2" time="22.508" failures="0">
+    <testcase name="Add and Delete Alternative Names Adds Alternative Name" time="25.884" classname="Adds Alternative Name">
+    </testcase>
+    <testcase name="Add and Delete Alternative Names Deletes Alternative Names" time="7.360" classname="Deletes Alternative Names">
+    </testcase>
+  </testsuite>
+</testsuites>

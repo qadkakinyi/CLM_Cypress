@@ -1,0 +1,144 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-16T08:02:35.398Z",
+    "end": "2025-01-16T08:03:07.959Z",
+    "duration": 32561,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a4ac6e90-22d4-4d79-9910-3f42afd5989b",
+      "title": "",
+      "fullFile": "cypress/e2e/HelperFunctionalities/ClientProfiling/Sub_Groups_test.cy.ts",
+      "file": "cypress/e2e/HelperFunctionalities/ClientProfiling/Sub_Groups_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ce54733b-9cee-4c6e-af3d-4f0668705004",
+          "title": "Sub-groups",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Adds a Sub-group",
+              "fullTitle": "Sub-groups Adds a Sub-group",
+              "timedOut": null,
+              "duration": 12215,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/settings/sub-groups').wait(1500);\ncy.contains('Add').click().wait(1000);\ncy.getByFormControlName('name').type(name);\ncy.getByFormControlName('mappingReference').type(faker_1.faker.string.alphanumeric(13));\ncy.contains('sa-button', 'Save').click().wait(1500);\ncy.contains('Sub-group has been added.');",
+              "err": {},
+              "uuid": "5f009eab-3e79-4df9-ab6c-652578f3dfb4",
+              "parentUUID": "ce54733b-9cee-4c6e-af3d-4f0668705004",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edits a Sub-group",
+              "fullTitle": "Sub-groups Edits a Sub-group",
+              "timedOut": null,
+              "duration": 11406,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/settings/sub-groups').wait(2000);\ncy.get('#gridSubGroups tr .dx-first-cell .dx-texteditor-input').type(name, { force: true }).wait(2500);\ncy.get('#gridSubGroups tr td').find('.dx-icon-edit').eq(0).click({ force: true }).wait(1000);\ncy.get('#gridSubGroups .dx-datagrid-table .dx-texteditor-container > .dx-texteditor-input-container > .dx-texteditor-input').as('subgroups');\ncy.get('@subgroups').eq(3).clear().wait(1000).type(name + faker_1.faker.string.alphanumeric(1), { force: true }).wait(1000);\ncy.get('tr td').find('.dx-icon-save').eq(1).click().wait(1000);\ncy.contains('Sub-group has been updated.');",
+              "err": {},
+              "uuid": "89e41c61-1c27-4146-b1fb-33e88c30ea2f",
+              "parentUUID": "ce54733b-9cee-4c6e-af3d-4f0668705004",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deletes a Sub-group",
+              "fullTitle": "Sub-groups Deletes a Sub-group",
+              "timedOut": null,
+              "duration": 8826,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/settings/sub-groups').wait(2000);\ncy.get('#gridSubGroups tr .dx-first-cell .dx-texteditor-input').type(name, { force: true }).wait(2500);\ncy.get('#gridSubGroups tr td').find('.dx-icon-trash').eq(1).click({ force: true }).wait(1000);\ncy.get('.dx-popup-normal').contains('Yes').click({ force: true }).wait(1000);\ncy.contains('Sub-group has been deleted.');",
+              "err": {},
+              "uuid": "a5b67bee-c614-4aaf-b449-37c11b27258c",
+              "parentUUID": "ce54733b-9cee-4c6e-af3d-4f0668705004",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5f009eab-3e79-4df9-ab6c-652578f3dfb4",
+            "89e41c61-1c27-4146-b1fb-33e88c30ea2f",
+            "a5b67bee-c614-4aaf-b449-37c11b27258c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 32447,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

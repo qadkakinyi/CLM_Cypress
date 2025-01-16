@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="17.677" tests="2" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T13:35:15" tests="0" file="cypress/e2e/SideMenu/My_Tasks_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="My Tasks" timestamp="2025-01-16T13:35:21" tests="2" time="11.765" failures="0">
+    <testcase name="My Tasks Visit my tasks and history page and tests switching tasks and history" time="9.666" classname="Visit my tasks and history page and tests switching tasks and history">
+    </testcase>
+    <testcase name="My Tasks Can add a new task" time="7.773" classname="Can add a new task">
+    </testcase>
+  </testsuite>
+</testsuites>

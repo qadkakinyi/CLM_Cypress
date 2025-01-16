@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="27.406" tests="3" failures="2">
+  <testsuite name="Root Suite" timestamp="2025-01-16T07:59:36" tests="0" file="cypress/e2e/HelperFunctionalities/ClientProfiling/Regulation_Groups_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Regulation Groups" timestamp="2025-01-16T07:59:42" tests="3" time="21.603" failures="2">
+    <testcase name="Regulation Groups Generate Regulation Group Hash Key" time="0.000" classname="Generate Regulation Group Hash Key">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `span.ng-tns-c329-33`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `span.ng-tns-c329-33`, but never found it.
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/HelperFunctionalities/ClientProfiling/Regulation_Groups_test.cy.ts:13:0)]]></failure>
+    </testcase>
+    <testcase name="Regulation Groups Add a Regulation Group" time="0.000" classname="Add a Regulation Group">
+      <failure message="`cy.type()` cannot accept an empty string. You need to actually type something.
+
+https://on.cypress.io/type" type="CypressError"><![CDATA[CypressError: `cy.type()` cannot accept an empty string. You need to actually type something.
+
+https://on.cypress.io/type
+    at Context.type (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:115388:68)
+    at wrapped (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:138092:19)
+From Your Spec Code:
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/HelperFunctionalities/ClientProfiling/Regulation_Groups_test.cy.ts:39:0)]]></failure>
+    </testcase>
+    <testcase name="Regulation Groups Edits a Regulation Group" time="8.922" classname="Edits a Regulation Group">
+    </testcase>
+  </testsuite>
+</testsuites>

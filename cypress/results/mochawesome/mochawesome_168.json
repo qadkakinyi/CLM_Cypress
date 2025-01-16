@@ -1,0 +1,163 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-16T07:11:27.690Z",
+    "end": "2025-01-16T07:13:28.969Z",
+    "duration": 121279,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "365870b0-d964-478f-9970-d811cf98ae3b",
+      "title": "",
+      "fullFile": "cypress/e2e/Priority2/Handle_Rules_test.cy.ts",
+      "file": "cypress/e2e/Priority2/Handle_Rules_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "01f2914f-8175-4eca-ae60-c6bf4d26b1b8",
+          "title": "Handle Rules",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Execute Rule",
+              "fullTitle": "Handle Rules Execute Rule",
+              "timedOut": null,
+              "duration": 30229,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('sa-button', 'Execute Rules').click().wait(1000);\ncy.get('app-execute-recurring-rules > .sa-form > .custom-backround-transparent > .row > .col > [icon=\"play\"] > .sa-button').click().wait(2000);\ncy.contains('have been executed.').wait(1000);",
+              "err": {},
+              "uuid": "05dca954-a408-426b-86b5-0e3f568a851b",
+              "parentUUID": "01f2914f-8175-4eca-ae60-c6bf4d26b1b8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Update Rule Status",
+              "fullTitle": "Handle Rules Update Rule Status",
+              "timedOut": null,
+              "duration": 33057,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('sa-button', 'Update Status').click().wait(1000);\ncy.get('#updateRuleStatusForm dx-drop-down-box').click().wait(500);\ncy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-table tbody tr').eq(4).click().wait(500);\ncy.contains('sa-button', 'Save').click().wait(3000);\ncy.contains('The rules has been updated').wait(1000);\n// activate the rule\ncy.contains('sa-button', 'Update Status').click().wait(1000);\ncy.get('#updateRuleStatusForm dx-drop-down-box').click().wait(500);\ncy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-table tbody tr').eq(2).click().wait(500);\ncy.contains('sa-button', 'Save').click().wait(3000);",
+              "err": {},
+              "uuid": "5e8b7a12-9200-4bd9-a5a2-b8fcc541c2a4",
+              "parentUUID": "01f2914f-8175-4eca-ae60-c6bf4d26b1b8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Update Schedule",
+              "fullTitle": "Handle Rules Update Schedule",
+              "timedOut": null,
+              "duration": 26270,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('sa-button', 'Update Schedule').click().wait(1000);\ncy.getByFormControlName('jobScheduleValue').type('1');\ncy.getByFormControlName('jobScheduleInterval').select('Day(s)').wait(500);\ncy.getByFormControlName('jobScheduleTime').type('08:30');\ncy.getByFormControlName('jobScheduleStartDate').type('2024-10-22');\ncy.get('#editRuleScheduleForm [icon=\"save\"]').click().wait(3000);\ncy.contains('Rules schedules have been updated').wait(1000);",
+              "err": {},
+              "uuid": "ccf40635-ac65-408d-bb8d-31cf2c6825c6",
+              "parentUUID": "01f2914f-8175-4eca-ae60-c6bf4d26b1b8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Synchronize Rule",
+              "fullTitle": "Handle Rules Synchronize Rule",
+              "timedOut": null,
+              "duration": 31480,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('sa-button', 'Synchronize Rules').click().wait(1000);\ncy.contains('sa-button', 'Submit').click().wait(4500);\ncy.contains('Updated successfully').wait(1000);\ncy.get('#synchronizeRulesForm [icon=\"times\"]').click().wait(1500);",
+              "err": {},
+              "uuid": "2689957a-426d-4a57-9eba-953903ef4ac6",
+              "parentUUID": "01f2914f-8175-4eca-ae60-c6bf4d26b1b8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "05dca954-a408-426b-86b5-0e3f568a851b",
+            "5e8b7a12-9200-4bd9-a5a2-b8fcc541c2a4",
+            "ccf40635-ac65-408d-bb8d-31cf2c6825c6",
+            "2689957a-426d-4a57-9eba-953903ef4ac6"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 121036,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

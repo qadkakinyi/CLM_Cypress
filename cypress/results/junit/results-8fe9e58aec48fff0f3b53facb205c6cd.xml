@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="29.552" tests="2" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T08:34:15" tests="0" file="cypress/e2e/ScreenPerformance/Administration/User_Management_Menu_tests.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="User Management" timestamp="2025-01-16T08:34:21" tests="2" time="23.781" failures="0">
+    <testcase name="User Management Opens User Management Menus" time="10.059" classname="Opens User Management Menus">
+    </testcase>
+    <testcase name="User Management Accesses all pages in the menu list" time="19.383" classname="Accesses all pages in the menu list">
+    </testcase>
+  </testsuite>
+</testsuites>

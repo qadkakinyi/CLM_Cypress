@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="31.768" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T08:28:22" tests="0" file="cypress/e2e/HelperFunctionalities/TransactionMonitoring&amp;Actions/Payment_Method_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Payment Methods" timestamp="2025-01-16T08:28:28" tests="3" time="25.666" failures="0">
+    <testcase name="Payment Methods Adds a Payment Method" time="14.022" classname="Adds a Payment Method">
+    </testcase>
+    <testcase name="Payment Methods Edits a Payment Method" time="9.801" classname="Edits a Payment Method">
+    </testcase>
+    <testcase name="Payment Methods Deletes a Payment Method" time="7.857" classname="Deletes a Payment Method">
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="39.893" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T08:45:23" tests="0" file="cypress/e2e/ScreenPerformance/Settings/Templates&amp;ReportSetups_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Templates and Reports" timestamp="2025-01-16T08:45:29" tests="1" time="34.288" failures="0">
+    <testcase name="Templates and Reports Templates &amp; Report Setups" time="39.802" classname="Templates &amp; Report Setups">
+    </testcase>
+  </testsuite>
+</testsuites>

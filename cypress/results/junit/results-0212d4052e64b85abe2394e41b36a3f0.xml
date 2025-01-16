@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="6.116" tests="1" failures="0" skipped="1">
+  <testsuite name="Root Suite" timestamp="2025-01-16T06:01:11" tests="0" file="cypress/e2e/AddClients/Add_ClientJoint_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Add Client Joint" timestamp="2025-01-16T06:01:17" tests="1" time="0.042" failures="0">
+  </testsuite>
+</testsuites>

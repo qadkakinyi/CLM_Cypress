@@ -1,0 +1,144 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-16T12:20:25.634Z",
+    "end": "2025-01-16T12:21:36.165Z",
+    "duration": 70531,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2bdb6d16-8ac6-409d-9e12-3c03f439483a",
+      "title": "",
+      "fullFile": "cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Case_test.cy.ts",
+      "file": "cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Case_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8d791679-9a57-4d99-92c8-e4ff3a781189",
+          "title": "Cases - Corporate",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Adds A Case",
+              "fullTitle": "Cases - Corporate Adds A Case",
+              "timedOut": null,
+              "duration": 50467,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "(0, e2e_1.navigateToClientMenu)('Corporate');\ncy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Cases').click();\ncy.getByDataCy('addCaseBtn').click().wait(1000);\ncy.getByDataCy('caseRule').click().wait(2000);\ncy.get('#dynamicSelectBoxDropdownGrid table tbody [aria-rowindex=\"1\"] [aria-colindex=\"1\"]').click().wait(1000);\ncy.getByDataCy('status').click();\ncy.get('#dynamicSelectBoxDropdownGrid table tbody [aria-rowindex=\"1\"] [aria-colindex=\"1\"]').eq(1).click().wait(500);\ncy.getByDataCy('assignee').click().wait(500);\ncy.get('#dynamicSelectBoxDropdownGrid table tbody [aria-rowindex=\"1\"] [aria-colindex=\"1\"]').eq(2).click().wait(500);\ncy.get('#CustomField_Fraud_Status').select('False Positive');\ncy.get('#addClientCaseForm').contains('Save').click().wait(3000);\ncy.contains('The case has been added');\ncy.location('pathname').then(function (loc) {\n    location = loc;\n});",
+              "err": {},
+              "uuid": "74ea7227-4b87-4128-b06d-e355f7a8658a",
+              "parentUUID": "8d791679-9a57-4d99-92c8-e4ff3a781189",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edit A Case",
+              "fullTitle": "Cases - Corporate Edit A Case",
+              "timedOut": null,
+              "duration": 10741,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(location).wait(2000);\ncy.get('#gridClientCases .fa-angle-double-right').should('be.visible').eq(0).click({ force: true }).wait(2000);\ncy.get('#editClientCaseForm');\ncy.getByDataCy('caseStatus').click();\ncy.get('#dynamicSelectBoxDropdownGrid table tbody [aria-rowindex=\"2\"] [aria-colindex=\"1\"]').click().wait(500);\ncy.contains('div', 'Save & Close').click().wait(500);\ncy.contains('The case has been updated.');",
+              "err": {},
+              "uuid": "81d82110-266f-434d-ae7b-6c9bb05c3164",
+              "parentUUID": "8d791679-9a57-4d99-92c8-e4ff3a781189",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Delete A Case",
+              "fullTitle": "Cases - Corporate Delete A Case",
+              "timedOut": null,
+              "duration": 9079,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(location).wait(2000);\ncy.get('#gridClientCases .fa-angle-double-right').should('be.visible').eq(0).click({ force: true }).wait(2000);\ncy.get('#editClientCaseForm');\ncy.contains('div', 'Delete').click().wait(500);\ncy.contains('Yes').click().wait(500);\ncy.contains('Case has been permanently deleted.');",
+              "err": {},
+              "uuid": "b0b236b4-ef83-482e-b42a-f6c775ff1e72",
+              "parentUUID": "8d791679-9a57-4d99-92c8-e4ff3a781189",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "74ea7227-4b87-4128-b06d-e355f7a8658a",
+            "81d82110-266f-434d-ae7b-6c9bb05c3164",
+            "b0b236b4-ef83-482e-b42a-f6c775ff1e72"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 70287,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="98.892" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T08:43:19" tests="0" file="cypress/e2e/ScreenPerformance/Reports&amp;Lists/Screening&amp;Electronic_Identification_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Screening &amp; Electronic Identification" timestamp="2025-01-16T08:43:25" tests="1" time="92.753" failures="0">
+    <testcase name="Screening &amp; Electronic Identification Opens menu under the section and navigates to the expected pages" time="98.818" classname="Opens menu under the section and navigates to the expected pages">
+    </testcase>
+  </testsuite>
+</testsuites>

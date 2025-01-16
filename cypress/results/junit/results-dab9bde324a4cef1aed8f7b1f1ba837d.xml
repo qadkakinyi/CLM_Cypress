@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="30.527" tests="2" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T06:43:19" tests="0" file="cypress/e2e/IndividualClientFunctionality/Add_Delete_Client_Internal_Notes_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Add, Delete Client Internal Notes" timestamp="2025-01-16T06:43:30" tests="2" time="19.813" failures="0">
+    <testcase name="Add, Delete Client Internal Notes Add Client Internal Notes" time="24.333" classname="Add Client Internal Notes">
+    </testcase>
+    <testcase name="Add, Delete Client Internal Notes Delete client Internal Notes" time="6.118" classname="Delete client Internal Notes">
+    </testcase>
+  </testsuite>
+</testsuites>

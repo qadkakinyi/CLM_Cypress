@@ -1,0 +1,149 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 2,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-01-16T08:22:52.656Z",
+    "end": "2025-01-16T08:23:30.108Z",
+    "duration": 37452,
+    "testsRegistered": 3,
+    "passPercent": 66.66666666666666,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "3f6a4037-044d-41fe-a19c-1e306e604fbf",
+      "title": "",
+      "fullFile": "cypress/e2e/HelperFunctionalities/TransactionMonitoring&Actions/Currency_Information_test.cy.ts",
+      "file": "cypress/e2e/HelperFunctionalities/TransactionMonitoring&Actions/Currency_Information_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8d2353c2-c846-4dad-b7f7-9d14053f574a",
+          "title": "Currency Information",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Adds a Currency Information",
+              "fullTitle": "Currency Information Adds a Currency Information",
+              "timedOut": null,
+              "duration": 14713,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('sa-button', 'Add').click().wait(1000);\ncy.getByFormControlName('code').type(code);\ncy.getByFormControlName('name').eq(0).type(currency_name);\n// cy.getByDataCy('type').eq(0).click()\ncy.get('dx-drop-down-box').eq(0).click().wait(500);\ncy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview .dx-datagrid-content').contains('Fiat').click().wait(500);\ncy.getByFormControlName('mappingReference').eq(0).type(faker_1.faker.string.alphanumeric(11));\n// cy.getByDataCy('status').click()\ncy.get('dx-drop-down-box').eq(1).click().wait(500);\ncy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview .dx-datagrid-content').contains('Enabled').click().wait(500);\ncy.contains('sa-button', 'Save').click().wait(1500);\ncy.contains('The currency information has been added.');",
+              "err": {},
+              "uuid": "9ec49fb5-8e89-4385-a278-f555b537e0c9",
+              "parentUUID": "8d2353c2-c846-4dad-b7f7-9d14053f574a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edits a Currency Information",
+              "fullTitle": "Currency Information Edits a Currency Information",
+              "timedOut": null,
+              "duration": 15225,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//getting an error when saving after editing currency information\ncy.get('#gridCurrencyInformations tr .dx-first-cell .dx-texteditor-input').type(code, { force: true }).wait(2000);\ncy.get('#gridCurrencyInformations tr td').find('.dx-icon-edit').eq(0).click({ force: true }).wait(1000);\ncy.get('#gridCurrencyInformations .dx-datagrid-table .dx-texteditor-container > .dx-texteditor-input-container > .dx-texteditor-input').as('currencies');\ncy.get('@currencies').eq(9).clear().wait(1000).type(faker_1.faker.string.alphanumeric(11), { force: true }).wait(1000);\ncy.get('tr td').find('.dx-icon-save').eq(1).click().wait(1500);\ncy.contains(\"\".concat(currency_name, \" has been updated.\"));",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Uzbekistan Sum DKA has been updated.' but never did.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Uzbekistan Sum DKA has been updated.' but never did.\n    at Context.eval (webpack://clm_cypress/./cypress/e2e/HelperFunctionalities/TransactionMonitoring&Actions/Currency_Information_test.cy.ts:31:0)",
+                "diff": null
+              },
+              "uuid": "7b6784b8-168e-4015-bf39-096355b5b7e3",
+              "parentUUID": "8d2353c2-c846-4dad-b7f7-9d14053f574a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deletes a Currency Information",
+              "fullTitle": "Currency Information Deletes a Currency Information",
+              "timedOut": null,
+              "duration": 7369,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#gridCurrencyInformations tr .dx-first-cell .dx-texteditor-input').type(code, { force: true }).wait(2500);\ncy.get('#gridCurrencyInformations tr td').find('.dx-icon-trash').eq(1).click({ force: true }).wait(1000);\ncy.get('.dx-popup-normal').contains('Yes').click({ force: true }).wait(1000);\ncy.contains(\"\".concat(currency_name, \" has been deleted.\"));",
+              "err": {},
+              "uuid": "f43a43f9-1ba7-49d5-b217-85fa1aaba84a",
+              "parentUUID": "8d2353c2-c846-4dad-b7f7-9d14053f574a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9ec49fb5-8e89-4385-a278-f555b537e0c9",
+            "f43a43f9-1ba7-49d5-b217-85fa1aaba84a"
+          ],
+          "failures": [
+            "7b6784b8-168e-4015-bf39-096355b5b7e3"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 37307,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="68.219" tests="4" failures="4">
+  <testsuite name="Root Suite" timestamp="2025-01-16T12:43:22" tests="0" file="cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Ultimate_Beneficial_Owner_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Ultimate Beneficial Owner" timestamp="2025-01-16T12:43:33" tests="4" time="57.605" failures="4">
+    <testcase name="Ultimate Beneficial Owner Adds UBO" time="0.000" classname="Adds UBO">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `[aria-rowindex=&quot;1&quot;]`, but never found it. Queried from:
+
+              &gt; cy.get([data-test=dynamicSelectBoxDropdownGrid])" type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `[aria-rowindex="1"]`, but never found it. Queried from:
+
+              > cy.get([data-test=dynamicSelectBoxDropdownGrid])
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Ultimate_Beneficial_Owner_test.cy.ts:12:0)]]></failure>
+    </testcase>
+    <testcase name="Ultimate Beneficial Owner Edits UBO" time="0.000" classname="Edits UBO">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `#gridClientBeneficiary .dx-icon-chevrondoubleright`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `#gridClientBeneficiary .dx-icon-chevrondoubleright`, but never found it.
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Ultimate_Beneficial_Owner_test.cy.ts:31:0)]]></failure>
+    </testcase>
+    <testcase name="Ultimate Beneficial Owner Deletes UBO" time="0.000" classname="Deletes UBO">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `#gridClientBeneficiary .dx-icon-trash`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `#gridClientBeneficiary .dx-icon-trash`, but never found it.
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Ultimate_Beneficial_Owner_test.cy.ts:39:0)]]></failure>
+    </testcase>
+    <testcase name="Ultimate Beneficial Owner Deletes Authorized Person" time="0.000" classname="Deletes Authorized Person">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `#gridClientShareholders .dx-icon-trash`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `#gridClientShareholders .dx-icon-trash`, but never found it.
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Ultimate_Beneficial_Owner_test.cy.ts:46:0)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

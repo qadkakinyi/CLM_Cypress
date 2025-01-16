@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="593.205" tests="9" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T07:38:01" tests="0" file="cypress/e2e/SideMenu/Settings_tests.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Settings menu" timestamp="2025-01-16T07:38:08" tests="1" time="2.432" failures="0">
+    <testcase name="Settings menu Logs in and open level on menu" time="8.434" classname="Logs in and open level on menu">
+    </testcase>
+  </testsuite>
+  <testsuite name="Client Profiling" timestamp="2025-01-16T07:38:10" tests="3" time="252.426" failures="0">
+    <testcase name="Client Profiling Client Profiling Pages first 8" time="86.105" classname="Client Profiling Pages first 8">
+    </testcase>
+    <testcase name="Client Profiling Client Profiling Pages (submenus 8 to 15)" time="85.590" classname="Client Profiling Pages (submenus 8 to 15)">
+    </testcase>
+    <testcase name="Client Profiling Client Profiling Pages (submenus 16 to 22)" time="74.465" classname="Client Profiling Pages (submenus 16 to 22)">
+    </testcase>
+  </testsuite>
+  <testsuite name="Countries" timestamp="2025-01-16T07:42:22" tests="1" time="37.623" failures="0">
+    <testcase name="Countries Countries Pages" time="37.539" classname="Countries Pages">
+    </testcase>
+  </testsuite>
+  <testsuite name="Transaction Monitoring &amp; Actions" timestamp="2025-01-16T07:43:00" tests="1" time="133.348" failures="0">
+    <testcase name="Transaction Monitoring &amp; Actions Transaction Monitoring &amp; Actions pages" time="133.074" classname="Transaction Monitoring &amp; Actions pages">
+    </testcase>
+  </testsuite>
+  <testsuite name="Opens level 2 menus" timestamp="2025-01-16T07:45:13" tests="3" time="161.333" failures="0">
+    <testcase name="Opens level 2 menus Evaluation &amp; Questionnaire" time="63.886" classname="Evaluation &amp; Questionnaire">
+    </testcase>
+    <testcase name="Opens level 2 menus Know Your Firm" time="58.375" classname="Know Your Firm">
+    </testcase>
+    <testcase name="Opens level 2 menus Templates &amp; Report Setups" time="38.809" classname="Templates &amp; Report Setups">
+    </testcase>
+  </testsuite>
+</testsuites>

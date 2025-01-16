@@ -1,0 +1,144 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-16T07:50:22.595Z",
+    "end": "2025-01-16T07:50:51.660Z",
+    "duration": 29065,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "158843dd-6a26-4259-9b75-c170e0bdef90",
+      "title": "",
+      "fullFile": "cypress/e2e/HelperFunctionalities/ClientProfiling/Client_Categorizations_test.cy.ts",
+      "file": "cypress/e2e/HelperFunctionalities/ClientProfiling/Client_Categorizations_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f30113ca-899e-4e65-a9e0-b003f1887ce2",
+          "title": "Client Categories",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Adds A Client Categorization",
+              "fullTitle": "Client Categories Adds A Client Categorization",
+              "timedOut": null,
+              "duration": 12850,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//add client category\ncy.visit('/settings/client-categorizations').wait(1000);\ncy.contains('sa-button', 'Add').click().wait(1000);\ncy.get('#addClientCategorizationForm');\ncy.getByFormControlName('name').type('Client Categorization Test');\ncy.getByFormControlName('mappingReference').type(faker_1.faker.string.alphanumeric(11));\ncy.get('sa-button').contains('Save').click().wait(2000);\ncy.contains('The client categorization has been added.');",
+              "err": {},
+              "uuid": "ce0a6397-3ac1-4265-8436-ea0c47bdb0a9",
+              "parentUUID": "f30113ca-899e-4e65-a9e0-b003f1887ce2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edits A Client Categorization",
+              "fullTitle": "Client Categories Edits A Client Categorization",
+              "timedOut": null,
+              "duration": 9996,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/settings/client-categorizations').wait(2000);\ncy.get('#gridClientCategorizations tr .dx-first-cell .dx-texteditor-input').type('Client Categorization Test', { force: true }).wait(1000);\ncy.get('tr td').find('.dx-icon-edit').eq(1).click({ force: true }).wait(1000);\ncy.get('#gridClientCategorizations .dx-datagrid-table .dx-texteditor-container > .dx-texteditor-input-container > .dx-texteditor-input').as('clientCategorizations');\ncy.get('@clientCategorizations').eq(3).clear().wait(1000).type('Test Categorization ' + faker_1.faker.string.alphanumeric(3), { force: true }).wait(1000);\ncy.get('tr td').find('.dx-icon-save').eq(1).click().wait(1000);\ncy.contains('The client categorization has been updated.');",
+              "err": {},
+              "uuid": "08796078-32b2-4973-8e38-7115ba71448d",
+              "parentUUID": "f30113ca-899e-4e65-a9e0-b003f1887ce2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deletes A Client Categorization",
+              "fullTitle": "Client Categories Deletes A Client Categorization",
+              "timedOut": null,
+              "duration": 6121,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/settings/client-categorizations').wait(2000);\ncy.get('#gridClientCategorizations tr .dx-first-cell .dx-texteditor-input').type('Test Categorization', { force: true }).wait(1000);\ncy.get('tr td').find('.dx-icon-trash').eq(1).click({ force: true }).wait(1000);\ncy.get('.dx-popup-normal').contains('Yes').click({ force: true }).wait(1000);\ncy.contains('The client categorization has been deleted.');",
+              "err": {},
+              "uuid": "a4686a72-6d21-4606-a47d-eecddf51461c",
+              "parentUUID": "f30113ca-899e-4e65-a9e0-b003f1887ce2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ce0a6397-3ac1-4265-8436-ea0c47bdb0a9",
+            "08796078-32b2-4973-8e38-7115ba71448d",
+            "a4686a72-6d21-4606-a47d-eecddf51461c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 28967,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

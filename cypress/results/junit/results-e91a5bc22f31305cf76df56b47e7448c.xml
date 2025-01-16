@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="32.781" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T08:32:53" tests="0" file="cypress/e2e/HelperFunctionalities/TransactionMonitoring&amp;Actions/Trade_Types_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Trade Types" timestamp="2025-01-16T08:32:59" tests="3" time="26.599" failures="0">
+    <testcase name="Trade Types Adds a Trade Type" time="12.254" classname="Adds a Trade Type">
+    </testcase>
+    <testcase name="Trade Types Edits a Trade Type" time="11.009" classname="Edits a Trade Type">
+    </testcase>
+    <testcase name="Trade Types Deletes a Trade Type" time="9.394" classname="Deletes a Trade Type">
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,149 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 2,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-01-16T06:29:11.835Z",
+    "end": "2025-01-16T06:30:09.719Z",
+    "duration": 57884,
+    "testsRegistered": 3,
+    "passPercent": 66.66666666666666,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "15ab0b9a-6064-412d-9c9c-7549487547af",
+      "title": "",
+      "fullFile": "cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Client_Transaction_test.cy.ts",
+      "file": "cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Client_Transaction_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "63919ff1-ddd7-4ae1-9729-9fa59235740b",
+          "title": "Add, Edit, Delete Client Transactions - Corporate",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add Client Transactions",
+              "fullTitle": "Add, Edit, Delete Client Transactions - Corporate Add Client Transactions",
+              "timedOut": null,
+              "duration": 32751,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Click on Know your Clients navigation item\n(0, e2e_1.navigateToClientMenu)('Corporate');\ncy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Transactions').click();\n// Add new Client Transaction\ncy.getBySel('addClientTransaction').click().wait(2000);\ncy.location('pathname').then(function (loc) {\n    location = loc;\n});\ncy.get('#addClientTransactionForm .datetimeDevExtreme.transactionDate .dx-texteditor-input').type('03');\ncy.get('#addClientTransactionForm .datetimeDevExtreme.approvalDate .dx-texteditor-input').type('03');\ncy.get('#addClientTransactionForm input[name=\"baseAmount\"]').type(faker_1.faker.finance.amount({ min: 5, max: 10000 }));\ncy.getBySel('transactionTypesList').should('be.visible').click();\ncy.get('.dx-overlay-wrapper.dx-popup-wrapper.dx-dropdowneditor-overlay .dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true });\ncy.getBySel('transactionMethodsList').should('be.visible').click();\ncy.get('.dx-overlay-wrapper.dx-popup-wrapper.dx-dropdowneditor-overlay #dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true });\ncy.getBySel('countriesList').should('be.visible').click();\ncy.get('.dx-overlay-wrapper.dx-popup-wrapper.dx-dropdowneditor-overlay #dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true });\ncy.getBySel('outgoingCountryList').should('be.visible').click();\ncy.get('.dx-overlay-wrapper.dx-popup-wrapper.dx-dropdowneditor-overlay #dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true });\ncy.get('#addClientTransactionForm input[name=\"counterpartyName\"]').type(faker_1.faker.company.name());\ncy.get('#addClientTransactionForm input[name=\"counterpartyAccount\"]').type(faker_1.faker.finance.accountNumber(16));\ncy.get('#addClientTransactionForm input[name=\"externalReference\"]').type(transactionReference);\ncy.getBySel('clientAccountsList').should('be.visible').click();\ncy.get('.dx-overlay-wrapper.dx-popup-wrapper.dx-dropdowneditor-overlay #dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true });\ncy.get('#addClientTransactionForm input[name=\"foreignAmount\"]').type(faker_1.faker.finance.amount({ min: 5, max: 10000 }));\ncy.getBySel('foreignCurrencyList').should('be.visible').click();\ncy.get('.dx-overlay-wrapper.dx-popup-wrapper.dx-dropdowneditor-overlay #dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true });\ncy.get('#addClientTransactionForm textarea[name=\"description\"]').type(faker_1.faker.lorem.sentence());\ncy.get('app-add-transaction .fa-plus').eq(0).click();\ncy.get('#CustomField_Payment_Details').type('BankXYZ');\ncy.get('#CustomField_Transaction_Update_Date').type(faker_1.faker.date.past({ refDate: 1 }).toISOString().slice(0, 10));\ncy.getBySel('saveClientTransaction').click().wait(2000);",
+              "err": {},
+              "uuid": "db7115a3-4b3d-48ba-b73e-ef315c619990",
+              "parentUUID": "63919ff1-ddd7-4ae1-9729-9fa59235740b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edit client Transactions",
+              "fullTitle": "Add, Edit, Delete Client Transactions - Corporate Edit client Transactions",
+              "timedOut": null,
+              "duration": 14458,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Edit Transaction\ntry {\n    goToTransactionByReference(transactionReference);\n    transactionReference = faker_1.faker.string.alphanumeric(12);\n    cy.get('#editClientTransactionForm input[name=\"externalReference\"]').clear();\n    cy.get('#editClientTransactionForm input[name=\"externalReference\"]').type(transactionReference);\n    cy.getBySel('saveAndCloseButton').click().wait(2000);\n    cy.contains('The transaction has been updated.').wait(1000);\n}\ncatch (error) {\n    cy.log(error);\n}",
+              "err": {},
+              "uuid": "197d9110-1e3a-4af9-b295-612a89726b27",
+              "parentUUID": "63919ff1-ddd7-4ae1-9729-9fa59235740b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Delete client Transactions",
+              "fullTitle": "Add, Edit, Delete Client Transactions - Corporate Delete client Transactions",
+              "timedOut": null,
+              "duration": 10548,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "try {\n    goToTransactionByReference(transactionReference);\n    // Delete Transactions\n    cy.getBySel('deleteTransaction').should('be.visible').click();\n    cy.get('#bot2-Msg1').contains('Yes').click().wait(2000);\n    cy.contains('Transaction has been deleted.');\n}\ncatch (error) {\n    cy.log(error);\n}",
+              "err": {
+                "message": "CypressError: Timed out retrying after 4000ms: `cy.eq()` failed because the page updated as a result of this command, but you tried to continue the command chain. The subject is no longer attached to the DOM, and Cypress cannot requery the page after commands such as `cy.eq()`.\n\nCommon situations why this happens:\n  - Your JS framework re-rendered asynchronously\n  - Your app code reacted to an event firing and removed the element\n\nYou can typically solve this by breaking up a chain. For example, rewrite:\n\n> `cy.get('button').click().should('have.class', 'active')`\n\nto\n\n> `cy.get('button').as('btn').click()`\n> `cy.get('@btn').should('have.class', 'active')`\n\nhttps://on.cypress.io/element-has-detached-from-dom",
+                "estack": "CypressError: Timed out retrying after 4000ms: `cy.eq()` failed because the page updated as a result of this command, but you tried to continue the command chain. The subject is no longer attached to the DOM, and Cypress cannot requery the page after commands such as `cy.eq()`.\n\nCommon situations why this happens:\n  - Your JS framework re-rendered asynchronously\n  - Your app code reacted to an event firing and removed the element\n\nYou can typically solve this by breaking up a chain. For example, rewrite:\n\n> `cy.get('button').click().should('have.class', 'active')`\n\nto\n\n> `cy.get('button').as('btn').click()`\n> `cy.get('@btn').should('have.class', 'active')`\n\nhttps://on.cypress.io/element-has-detached-from-dom\n    at isAttached (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:144980:58)\n    at validateType (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:144850:9)\n    at Object.isType (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:144885:7)\n    at <unknown> (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:135247:24)\n    at Object.subjectFn (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:143866:16)\n    at $Cy.verifyUpcomingAssertions (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:143205:31)\n    at onRetry (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:143857:15)\n    at tryCatcher (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1830:23)\n    at Promise.attempt.Promise.try (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:4338:29)\n    at whenStable (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:143744:68)\n    at <unknown> (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:143685:14)\n    at tryCatcher (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1830:23)\n    at Promise._settlePromiseFromHandler (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1542:31)\n    at Promise._settlePromise (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1599:18)\n    at Promise._settlePromise0 (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1644:10)\n    at Promise._settlePromises (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1724:18)\n    at Promise._fulfill (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1668:18)\n    at <unknown> (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:5473:46)\nFrom Your Spec Code:\n    at goToTransactionByReference (webpack://clm_cypress/./cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Client_Transaction_test.cy.ts:10:0)\n    at Context.eval (webpack://clm_cypress/./cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Client_Transaction_test.cy.ts:66:0)",
+                "diff": null
+              },
+              "uuid": "6a7fd130-9e80-460f-90a6-c5a5038cf61a",
+              "parentUUID": "63919ff1-ddd7-4ae1-9729-9fa59235740b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "db7115a3-4b3d-48ba-b73e-ef315c619990",
+            "197d9110-1e3a-4af9-b295-612a89726b27"
+          ],
+          "failures": [
+            "6a7fd130-9e80-460f-90a6-c5a5038cf61a"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 57757,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

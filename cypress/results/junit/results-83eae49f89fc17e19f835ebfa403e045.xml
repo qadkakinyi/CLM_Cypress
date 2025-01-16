@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="151.366" tests="5" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T06:18:51" tests="0" file="cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Client_Evaluation_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Add Corporate Client Evaluation" timestamp="2025-01-16T06:19:01" tests="5" time="140.622" failures="0">
+    <testcase name="Add Corporate Client Evaluation Adds an evaluation" time="61.851" classname="Adds an evaluation">
+    </testcase>
+    <testcase name="Add Corporate Client Evaluation Adds another evaluation" time="23.844" classname="Adds another evaluation">
+    </testcase>
+    <testcase name="Add Corporate Client Evaluation Edits an Evaluation" time="10.701" classname="Edits an Evaluation">
+    </testcase>
+    <testcase name="Add Corporate Client Evaluation Deletes an Evaluation" time="8.656" classname="Deletes an Evaluation">
+    </testcase>
+    <testcase name="Add Corporate Client Evaluation Ignores need re-evaluation" time="45.986" classname="Ignores need re-evaluation">
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,125 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-16T13:13:23.150Z",
+    "end": "2025-01-16T13:13:57.331Z",
+    "duration": 34181,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "6ff93f97-164e-4ef7-aac7-f47057bd5d3d",
+      "title": "",
+      "fullFile": "cypress/e2e/IndividualClientFunctionality/Edit_Client_Individual_Profile_test.cy.ts",
+      "file": "cypress/e2e/IndividualClientFunctionality/Edit_Client_Individual_Profile_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2d693a23-62de-4eca-9ed5-e5c42633be35",
+          "title": "Edit Client Individual Profile",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Edit Individual Profile",
+              "fullTitle": "Edit Client Individual Profile Edit Individual Profile",
+              "timedOut": null,
+              "duration": 27490,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Click on Know your Clients navigation item\n(0, e2e_1.navigateToClientMenu)('Individual');\ncy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a>span').eq(1).contains('Profile');\ncy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').eq(1).click();\ncy.get('#editProfileForm input[name=\"middleName\"]').type(Cypress._.random(0, 1e6).toString());\ncy.get('#saveIndividualProfile').click();\n//get the current client id\ncy.location('pathname').then(function (pathname) {\n    var pathSections = pathname.split('/');\n    client_id = pathSections[3];\n});\ncy.wait(1000);",
+              "err": {},
+              "uuid": "7973057d-1379-42ec-84b9-3f9d41051300",
+              "parentUUID": "2d693a23-62de-4eca-9ed5-e5c42633be35",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Archives a client",
+              "fullTitle": "Edit Client Individual Profile Archives a client",
+              "timedOut": null,
+              "duration": 6613,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"/main/client-individual/\".concat(client_id, \"/1/profile\")).wait(2000);\ncy.get('[icon=\"archive\"] > .sa-button > .text').click();\ncy.get('#bot2-Msg1').click();",
+              "err": {},
+              "uuid": "371dd7bc-7ff1-4ab5-8007-5dce91015e12",
+              "parentUUID": "2d693a23-62de-4eca-9ed5-e5c42633be35",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7973057d-1379-42ec-84b9-3f9d41051300",
+            "371dd7bc-7ff1-4ab5-8007-5dce91015e12"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 34103,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="29.386" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T07:59:04" tests="0" file="cypress/e2e/HelperFunctionalities/ClientProfiling/Reason_for_TIN_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Reasons for TIN" timestamp="2025-01-16T07:59:10" tests="3" time="23.467" failures="0">
+    <testcase name="Reasons for TIN Adds a Visit Type" time="13.293" classname="Adds a Visit Type">
+    </testcase>
+    <testcase name="Reasons for TIN Edits a Visit Type" time="9.838" classname="Edits a Visit Type">
+    </testcase>
+    <testcase name="Reasons for TIN Deletes a Visit Type" time="6.137" classname="Deletes a Visit Type">
+    </testcase>
+  </testsuite>
+</testsuites>

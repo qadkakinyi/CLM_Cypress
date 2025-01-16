@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="40.074" tests="2" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T12:53:01" tests="0" file="cypress/e2e/IndividualClientFunctionality/Add_Delete_Payment_Method_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Add and Delete Payment Method" timestamp="2025-01-16T12:53:11" tests="2" time="29.711" failures="0">
+    <testcase name="Add and Delete Payment Method Adds a new Payment Method" time="33.760" classname="Adds a new Payment Method">
+    </testcase>
+    <testcase name="Add and Delete Payment Method Deletes Payment Method" time="6.224" classname="Deletes Payment Method">
+    </testcase>
+  </testsuite>
+</testsuites>

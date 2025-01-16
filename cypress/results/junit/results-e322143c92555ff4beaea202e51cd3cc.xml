@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="38.513" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T07:59:38" tests="0" file="cypress/e2e/HelperFunctionalities/ClientProfiling/Mandatory_Document_Categories_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Mandatory Document Categories (MDC)" timestamp="2025-01-16T07:59:44" tests="3" time="32.355" failures="0">
+    <testcase name="Mandatory Document Categories (MDC) Adds a MDC" time="17.811" classname="Adds a MDC">
+    </testcase>
+    <testcase name="Mandatory Document Categories (MDC) Edits a MDC" time="10.670" classname="Edits a MDC">
+    </testcase>
+    <testcase name="Mandatory Document Categories (MDC) Deletes a MDC" time="9.850" classname="Deletes a MDC">
+    </testcase>
+  </testsuite>
+</testsuites>

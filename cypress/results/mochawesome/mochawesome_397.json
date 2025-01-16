@@ -1,0 +1,156 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 0,
+    "pending": 0,
+    "failures": 3,
+    "start": "2025-01-16T12:21:44.839Z",
+    "end": "2025-01-16T12:22:35.790Z",
+    "duration": 50951,
+    "testsRegistered": 3,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "8b1ae91f-c7f6-4b8d-9e10-26a3a71169d3",
+      "title": "",
+      "fullFile": "cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Capacity_test.cy.ts",
+      "file": "cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Capacity_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "885af73f-0936-4582-8c9f-14ad221322a1",
+          "title": "Capacity - Corporate",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Adds Authorized Person",
+              "fullTitle": "Capacity - Corporate Adds Authorized Person",
+              "timedOut": null,
+              "duration": 36144,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "(0, e2e_1.navigateToClientMenu)('Corporate');\ncy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Capacity').click();\ncy.getBySel('addAuthorizedPerson').click().wait(1000);\ncy.getBySel('capacitiesList').click();\ncy.getBySel('dynamicSelectBoxDropdownGrid').find('[aria-rowindex=\"2\"]').click();\ncy.getByDataCy('weight-percentage').clear().type(faker_1.faker.number.int({ min: 50, max: 99 }).toString());\ncy.getByFormControlName('includeInEvaluation').click();\ncy.getByFormControlName('isNominee').click();\ncy.getByFormControlName('isControllingPerson').click();\ncy.getBySel('controllingPersonTypesList').click();\ncy.getBySel('dynamicSelectBoxDropdownGrid').find('[aria-rowindex=\"2\"]').eq(1).should('be.visible').click();\ncy.getByFormControlName('controllingPersonTypeOther').type(faker_1.faker.word.words(5));\ncy.getByFormControlName('appointmentDate').type(faker_1.faker.date.past().toISOString().slice(0, 10));\ncy.getByFormControlName('resignationDate').type(faker_1.faker.date.recent().toISOString().slice(0, 10));\ncy.getBySel('existingClientsList').click();\ncy.get('#clientsFilteringDataGrid').find('[aria-rowindex=\"1\"]').click().wait(2000);\ncy.get('#addAuthorizedPersonForm').contains('Save').click().wait(1000);\ncy.contains('The authorized person has been added.').wait(1500);\ncy.location('pathname').then(function (loc) {\n    location = loc;\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'The authorized person has been added.' but never did.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'The authorized person has been added.' but never did.\n    at Context.eval (webpack://clm_cypress/./cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Capacity_test.cy.ts:25:0)",
+                "diff": null
+              },
+              "uuid": "3c84bc1d-35da-48f8-a0e3-59d878a72218",
+              "parentUUID": "885af73f-0936-4582-8c9f-14ad221322a1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edits Authorized Person",
+              "fullTitle": "Capacity - Corporate Edits Authorized Person",
+              "timedOut": null,
+              "duration": 7920,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(location).wait(2000);\ncy.get('#gridClientAuthorizedPersons .dx-icon-chevrondoubleright').should('be.visible').eq(0).click({ force: true }).wait(2000);\ncy.get('#editClientAuthorizedPersonForm');\ncy.getByDataCy('weight-percentage').clear().type(faker_1.faker.number.int({ min: 10, max: 49 }).toString());\ncy.contains('div', 'Save & Close').click().wait(1000);\ncy.contains('The capacity has been updated.').wait(2500);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#gridClientAuthorizedPersons .dx-icon-chevrondoubleright`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#gridClientAuthorizedPersons .dx-icon-chevrondoubleright`, but never found it.\n    at Context.eval (webpack://clm_cypress/./cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Capacity_test.cy.ts:32:0)",
+                "diff": null
+              },
+              "uuid": "47df4590-cd51-4cd2-bf1d-9a37cc0175a4",
+              "parentUUID": "885af73f-0936-4582-8c9f-14ad221322a1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deletes Authorized Person",
+              "fullTitle": "Capacity - Corporate Deletes Authorized Person",
+              "timedOut": null,
+              "duration": 6679,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(location).wait(2000);\ncy.get('#gridClientAuthorizedPersons .dx-icon-trash').should('be.visible').eq(0).click({ force: true });\ncy.contains('Yes').click().wait(500);\ncy.contains('The authorized person has been deleted.').wait(1500);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#gridClientAuthorizedPersons .dx-icon-trash`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#gridClientAuthorizedPersons .dx-icon-trash`, but never found it.\n    at Context.eval (webpack://clm_cypress/./cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Capacity_test.cy.ts:40:0)",
+                "diff": null
+              },
+              "uuid": "3bb26128-0e6a-48dd-b8d2-bffc02d93dba",
+              "parentUUID": "885af73f-0936-4582-8c9f-14ad221322a1",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "3c84bc1d-35da-48f8-a0e3-59d878a72218",
+            "47df4590-cd51-4cd2-bf1d-9a37cc0175a4",
+            "3bb26128-0e6a-48dd-b8d2-bffc02d93dba"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 50743,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

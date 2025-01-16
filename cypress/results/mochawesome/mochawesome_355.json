@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-16T08:49:14.518Z",
+    "end": "2025-01-16T08:49:58.983Z",
+    "duration": 44465,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "176937d4-57a3-48c5-95ef-da8034828abf",
+      "title": "",
+      "fullFile": "cypress/e2e/ScreenPerformance/Settings/Templates&ReportSetups_test.cy.ts",
+      "file": "cypress/e2e/ScreenPerformance/Settings/Templates&ReportSetups_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0822d11e-c66c-43b6-81f1-70415e82e8dd",
+          "title": "Templates and Reports",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Templates & Report Setups",
+              "fullTitle": "Templates and Reports Templates & Report Setups",
+              "timedOut": null,
+              "duration": 44352,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var routes = [\n    { index: 0, route: \"/settings/intro-endings\", assertion: 'Intro & Endings' },\n    { index: 1, route: \"/settings/email-templates\", assertion: 'Email Templates' },\n    { index: 2, route: \"/settings/external-notification-templates\", assertion: 'External Notification Templates' },\n    { index: 3, route: \"/settings/notification-templates\", assertion: 'Notification Templates' },\n    { index: 4, route: \"/settings/report-engine-setups\", assertion: 'Report Engine Setups' },\n];\nroutes.forEach(function (route, i) {\n    cy.getByDataCy(\"settings-menu\").click().wait(1000);\n    cy.getByDataCy(\"templates-menu\").scrollIntoView();\n    cy.getByDataCy(\"templates-menu\").click().as('templates-menu');\n    cy.getByDataCy(\"templates-links\").as(\"templates-links\");\n    cy.get(\"@templates-links\").eq(route.index).click();\n    cy.location(\"pathname\").should(\"equal\", route.route);\n    cy.wait(2000);\n    cy.contains(route.assertion);\n    cy.get('.sk-ball-spin-clockwise').should(\"not.be.visible\");\n    if (i < routes.length - 1) {\n        cy.visit(\"/main/dashboard\").wait(2000);\n    }\n});",
+              "err": {},
+              "uuid": "08d8f3c7-3570-4c0b-9b4b-831792e98779",
+              "parentUUID": "0822d11e-c66c-43b6-81f1-70415e82e8dd",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "08d8f3c7-3570-4c0b-9b4b-831792e98779"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 44352,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

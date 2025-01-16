@@ -1,0 +1,144 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-16T06:22:26.095Z",
+    "end": "2025-01-16T06:23:31.770Z",
+    "duration": 65675,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "76d248dd-d4f7-4d37-9389-ae5e3dd97286",
+      "title": "",
+      "fullFile": "cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Client_Investment_Account_test.cy.ts",
+      "file": "cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Client_Investment_Account_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "76336418-5228-4fb4-976f-b7670d3d2071",
+          "title": "Add, Edit, Delete Client Investment Account",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add Client Investment Account",
+              "fullTitle": "Add, Edit, Delete Client Investment Account Add Client Investment Account",
+              "timedOut": null,
+              "duration": 39258,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Click on Know your Clients navigation item\n(0, e2e_1.navigateToClientMenu)('Corporate');\ncy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Investment Accounts').click();\n// Add new Client Card\ncy.getBySel('addInvestmentAccount').click().wait(2000);\ncy.location('pathname').then(function (loc) {\n    location = loc;\n});\ncy.getBySel('addClientInvestmentAccountForm').should('be.visible').then(function () {\n    cy.get('#addClientInvestmentAccountForm input[name=\"accountName\"]').type(faker_1.faker.finance.accountName());\n    cy.get('#addClientInvestmentAccountForm input[name=\"accountNumber\"]').type(accountNumber);\n    cy.get('#addClientInvestmentAccountForm input[name=\"tradingAccount\"]').type(faker_1.faker.finance.accountNumber(10));\n    cy.getBySel('investmentAccountTypesList').should('be.visible').click();\n    cy.get('.dx-overlay-wrapper.dx-popup-wrapper.dx-dropdowneditor-overlay .dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true });\n    cy.get('#addClientInvestmentAccountForm input[name=\"groupName\"]').type(faker_1.faker.lorem.word());\n    cy.get('#addClientInvestmentAccountForm input[name=\"balance\"]').type(faker_1.faker.finance.amount({ min: 1, max: 9999999 }));\n    cy.getBySel('currenciesList').should('be.visible').click();\n    cy.get('.dx-overlay-wrapper.dx-popup-wrapper.dx-dropdowneditor-overlay .dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true });\n    cy.get('#addClientInvestmentAccountForm input[name=\"previousDayEquity\"]').type(faker_1.faker.number.int().toString());\n    cy.get('#addClientInvestmentAccountForm input[name=\"externalReference\"]').type(externalReference);\n    cy.get('#addClientInvestmentAccountForm textarea[name=\"comment\"]').type(faker_1.faker.lorem.sentence());\n    cy.getBySel('saveInvestmentAccount').click().wait(2000);\n});",
+              "err": {},
+              "uuid": "96505980-a168-4a5b-bdf3-d7c3b8b7458b",
+              "parentUUID": "76336418-5228-4fb4-976f-b7670d3d2071",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edit client investment account",
+              "fullTitle": "Add, Edit, Delete Client Investment Account Edit client investment account",
+              "timedOut": null,
+              "duration": 12825,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Edit Cards\ncy.visit(location).wait(2000);\ncy.getBySel('gridClientInvestmentAccounts').should('be.visible').then(function () {\n    cy.get('.dx-datagrid-filter-row .dx-texteditor-input-container input').eq(1).type(accountNumber);\n    cy.wait(2000);\n    var gridInvestmentAccounts = cy.wrap('#gridClientInvestmentAccounts table tbody tr td');\n    gridInvestmentAccounts.get('.dx-command-edit-with-icons a').eq(0).click({ force: true });\n    cy.get('#editClientInvestmentAccountForm').should('be.visible');\n    accountNumber = faker_1.faker.finance.accountNumber();\n    cy.get('#editClientInvestmentAccountForm input[name=\"accountNumber\"]').should('be.visible').clear();\n    cy.get('#editClientInvestmentAccountForm input[name=\"accountNumber\"]').type(accountNumber);\n    cy.getBySel('saveAndCloseButton').click().wait(2000);\n});",
+              "err": {},
+              "uuid": "9029bb74-b316-439a-80c7-251c6e2d9158",
+              "parentUUID": "76336418-5228-4fb4-976f-b7670d3d2071",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Delete client investment account",
+              "fullTitle": "Add, Edit, Delete Client Investment Account Delete client investment account",
+              "timedOut": null,
+              "duration": 13443,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(location).wait(2000);\ncy.getBySel('gridClientInvestmentAccounts').should('be.visible');\ncy.get('.dx-datagrid-filter-row .dx-texteditor-input-container input').eq(1).type(accountNumber);\ncy.wait(2000);\nvar gridWallets = cy.wrap('#gridClientInvestmentAccounts table tbody tr td');\ngridWallets.get('.dx-command-edit-with-icons a').eq(0).click({ force: true });\n// Delete Cards\ncy.getBySel('deleteInvestmentAccount').should('be.visible').click().wait(2000);\ncy.get('#bot2-Msg1').contains('Yes').click().wait(1000);\ncy.contains('Investment account has been deleted.');",
+              "err": {},
+              "uuid": "6ac94256-b880-4a8d-b477-295080c4d95c",
+              "parentUUID": "76336418-5228-4fb4-976f-b7670d3d2071",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "96505980-a168-4a5b-bdf3-d7c3b8b7458b",
+            "9029bb74-b316-439a-80c7-251c6e2d9158",
+            "6ac94256-b880-4a8d-b477-295080c4d95c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 65526,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

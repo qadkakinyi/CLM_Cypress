@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="109.651" tests="5" failures="3">
+  <testsuite name="Root Suite" timestamp="2025-01-16T07:11:51" tests="0" file="cypress/e2e/Priority2/Regulation_Group_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Regulation Groups" timestamp="2025-01-16T07:11:57" tests="5" time="103.802" failures="3">
+    <testcase name="Regulation Groups Generate Regulation Group Hash Key" time="17.070" classname="Generate Regulation Group Hash Key">
+    </testcase>
+    <testcase name="Regulation Groups Duplicates a Regulation Group" time="0.000" classname="Duplicates a Regulation Group">
+      <failure message="Timed out retrying after 4000ms: Expected to find content: &apos;Duplicated regulation group has been added.&apos; but never did." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Duplicated regulation group has been added.' but never did.
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/Priority2/Regulation_Group_test.cy.ts:34:0)]]></failure>
+    </testcase>
+    <testcase name="Regulation Groups Edits a Regulation Group" time="9.265" classname="Edits a Regulation Group">
+    </testcase>
+    <testcase name="Regulation Groups Synchronizes a Regulation Group" time="0.000" classname="Synchronizes a Regulation Group">
+      <failure message="Timed out retrying after 4000ms: Expected to find content: &apos;BERMUDA&apos; within the element: &lt;li.multiselect-item-checkbox.ng-star-inserted&gt; but never did." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find content: 'BERMUDA' within the element: <li.multiselect-item-checkbox.ng-star-inserted> but never did.
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/Priority2/Regulation_Group_test.cy.ts:47:0)]]></failure>
+    </testcase>
+    <testcase name="Regulation Groups Deletes a Regulation Group" time="0.000" classname="Deletes a Regulation Group">
+      <failure message="Timed out retrying after 4000ms: Expected to find content: &apos;The Regulation Group has been deleted.&apos; but never did." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find content: 'The Regulation Group has been deleted.' but never did.
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/Priority2/Regulation_Group_test.cy.ts:63:0)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

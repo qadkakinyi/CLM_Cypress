@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="32.442" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T08:09:13" tests="0" file="cypress/e2e/HelperFunctionalities/Evaluation&amp;Questionairre/1.AdHoc_Evaluation_Types_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="AdHoc Evaluation Types" timestamp="2025-01-16T08:09:19" tests="3" time="26.616" failures="0">
+    <testcase name="AdHoc Evaluation Types Adds an Evaluation Type" time="11.683" classname="Adds an Evaluation Type">
+    </testcase>
+    <testcase name="AdHoc Evaluation Types Edits an Evaluation Type" time="12.402" classname="Edits an Evaluation Type">
+    </testcase>
+    <testcase name="AdHoc Evaluation Types Deletes an Evaluation Type" time="8.228" classname="Deletes an Evaluation Type">
+    </testcase>
+  </testsuite>
+</testsuites>

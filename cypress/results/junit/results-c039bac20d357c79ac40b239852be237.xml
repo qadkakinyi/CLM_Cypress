@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="41.602" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T08:16:43" tests="0" file="cypress/e2e/HelperFunctionalities/Templates&amp;Report_Setups/Report_Engine_Setups_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Report Engine Setups" timestamp="2025-01-16T08:16:49" tests="3" time="35.826" failures="0">
+    <testcase name="Report Engine Setups Adds a Report Engine Setups" time="18.347" classname="Adds a Report Engine Setups">
+    </testcase>
+    <testcase name="Report Engine Setups Edits a Report Engine Setups" time="12.147" classname="Edits a Report Engine Setups">
+    </testcase>
+    <testcase name="Report Engine Setups Deletes a Report Engine Setups" time="10.963" classname="Deletes a Report Engine Setups">
+    </testcase>
+  </testsuite>
+</testsuites>

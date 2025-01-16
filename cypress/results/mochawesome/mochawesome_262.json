@@ -1,0 +1,144 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-16T08:07:28.042Z",
+    "end": "2025-01-16T08:08:03.478Z",
+    "duration": 35436,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f760bd70-37de-458e-9170-6d69ffd2d6a0",
+      "title": "",
+      "fullFile": "cypress/e2e/HelperFunctionalities/KnowYourFirm/Firm_Mitigation_Measures_test.cy.ts",
+      "file": "cypress/e2e/HelperFunctionalities/KnowYourFirm/Firm_Mitigation_Measures_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2548fdb8-1972-4a5e-9c51-0087bd009d03",
+          "title": "Firm Mitigation Measures",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Adds a Firm Mitigation Measure",
+              "fullTitle": "Firm Mitigation Measures Adds a Firm Mitigation Measure",
+              "timedOut": null,
+              "duration": 15838,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Add').click().wait(1000);\ncy.getByFormControlName('name').eq(0).type('Test DKA');\n//regulation group\ncy.get('dx-drop-down-box').eq(0).click().wait(500);\ncy.get('#dynamicSelectBoxDropdownGrid').find('.dx-datagrid-rowsview').find('tr > td').first().click().wait(500);\ncy.get('dx-drop-down-box').eq(1).click().wait(500);\ncy.get('[aria-rowindex=\"1\"] > .dx-command-select > .dx-widget > .dx-checkbox-container > .dx-checkbox-icon').click({ force: true }).wait(500);\ncy.get('[icon=\"save\"]').eq(0).click().wait(1000);\ncy.contains('The Firm Mitigation Measure has been added').wait(1000);",
+              "err": {},
+              "uuid": "08ea1ba6-6517-4f5d-aae1-cdfd045d8d6b",
+              "parentUUID": "2548fdb8-1972-4a5e-9c51-0087bd009d03",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edits a Firm Mitigation Measure",
+              "fullTitle": "Firm Mitigation Measures Edits a Firm Mitigation Measure",
+              "timedOut": null,
+              "duration": 11215,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#gridFirmMitigationActions tr .dx-first-cell .dx-texteditor-input').type('Test DKA', { force: true }).wait(2000);\ncy.get('#gridFirmMitigationActions tr td').find('.dx-icon-edit').eq(0).click({ force: true }).wait(1000);\ncy.getByFormControlName('name').eq(1).clear().wait(200).type('Test Mitigation Measure DKA');\ncy.get('dx-drop-down-box').eq(3).click().wait(500);\ncy.get('[aria-rowindex=\"1\"] > .dx-command-select > .dx-widget > .dx-checkbox-container > .dx-checkbox-icon').click({ force: true }).wait(500);\ncy.get('[icon=\"save\"]').eq(1).click().wait(1000);\ncy.contains(\"The Firm Mitigation Measure has been modified.\").wait(1000);",
+              "err": {},
+              "uuid": "3e26830b-db6e-44b8-ad55-538650142df2",
+              "parentUUID": "2548fdb8-1972-4a5e-9c51-0087bd009d03",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deletes a Firm Mitigation Measure",
+              "fullTitle": "Firm Mitigation Measures Deletes a Firm Mitigation Measure",
+              "timedOut": null,
+              "duration": 8266,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#gridFirmMitigationActions tr .dx-first-cell .dx-texteditor-input').type('Test Mitigation Measure DKA', { force: true }).wait(2000);\ncy.get('#gridFirmMitigationActions tr td').find('.dx-icon-trash').eq(1).click({ force: true }).wait(1000);\ncy.get('.dx-popup-normal').contains('Yes').click({ force: true }).wait(1000);\ncy.contains(\"The firm mitigation measure has been deleted.\").wait(1000);",
+              "err": {},
+              "uuid": "e0fc5885-0c0a-46fe-a66e-ff8ab80e767a",
+              "parentUUID": "2548fdb8-1972-4a5e-9c51-0087bd009d03",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "08ea1ba6-6517-4f5d-aae1-cdfd045d8d6b",
+            "3e26830b-db6e-44b8-ad55-538650142df2",
+            "e0fc5885-0c0a-46fe-a66e-ff8ab80e767a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 35319,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

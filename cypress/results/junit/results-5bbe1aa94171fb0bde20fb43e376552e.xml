@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="55.685" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T08:48:17" tests="0" file="cypress/e2e/ScreenPerformance/Settings/Know_Your_Firm_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Know Your Firm" timestamp="2025-01-16T08:48:23" tests="1" time="49.730" failures="0">
+    <testcase name="Know Your Firm Know Your Firm performance test" time="55.621" classname="Know Your Firm performance test">
+    </testcase>
+  </testsuite>
+</testsuites>

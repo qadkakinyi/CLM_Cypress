@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="37.782" tests="3" failures="3">
+  <testsuite name="Root Suite" timestamp="2025-01-16T07:51:33" tests="0" file="cypress/e2e/HelperFunctionalities/ClientProfiling/Custom_Fields_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Custom Fields" timestamp="2025-01-16T07:51:39" tests="3" time="31.856" failures="3">
+    <testcase name="Custom Fields Add a custom field to a form" time="0.000" classname="Add a custom field to a form">
+      <failure message="Timed out retrying after 4000ms: `cy.select()` failed because it could not find a single `&lt;option&gt;` with value, index, or text matching: `BERMUDA`
+
+https://on.cypress.io/select" type="CypressError"><![CDATA[CypressError: Timed out retrying after 4000ms: `cy.select()` failed because it could not find a single `<option>` with value, index, or text matching: `BERMUDA`
+
+https://on.cypress.io/select
+    at getOptions (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:114180:72)
+    at tryCatcher (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1830:23)
+    at Promise.attempt.Promise.try (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:4338:29)
+    at retryOptions (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:114212:70)
+    at tryCatcher (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1830:23)
+    at Promise.attempt.Promise.try (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:4338:29)
+    at whenStable (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:143744:68)
+    at <unknown> (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:143685:14)
+    at tryCatcher (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1830:23)
+    at Promise._settlePromiseFromHandler (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1542:31)
+    at Promise._settlePromise (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1599:18)
+    at Promise._settlePromise0 (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1644:10)
+    at Promise._settlePromises (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1724:18)
+    at Promise._fulfill (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1668:18)
+    at <unknown> (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:5473:46)
+From Your Spec Code:
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/HelperFunctionalities/ClientProfiling/Custom_Fields_test.cy.ts:13:0)]]></failure>
+    </testcase>
+    <testcase name="Custom Fields Edits a custom field" time="0.000" classname="Edits a custom field">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `.fa-angle-double-right`, but never found it. Queried from:
+
+              &gt; cy.get(tr td)" type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `.fa-angle-double-right`, but never found it. Queried from:
+
+              > cy.get(tr td)
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/HelperFunctionalities/ClientProfiling/Custom_Fields_test.cy.ts:22:0)]]></failure>
+    </testcase>
+    <testcase name="Custom Fields Deletes a custom field" time="0.000" classname="Deletes a custom field">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `.fa-angle-double-right`, but never found it. Queried from:
+
+              &gt; cy.get(tr td)" type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `.fa-angle-double-right`, but never found it. Queried from:
+
+              > cy.get(tr td)
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/HelperFunctionalities/ClientProfiling/Custom_Fields_test.cy.ts:31:0)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

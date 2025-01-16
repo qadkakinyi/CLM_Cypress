@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="127.786" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T08:38:22" tests="0" file="cypress/e2e/ScreenPerformance/Reports&amp;Lists/Client_Evaluations&amp;Documents_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Client Evaluations &amp; Documents" timestamp="2025-01-16T08:38:27" tests="1" time="121.835" failures="0">
+    <testcase name="Client Evaluations &amp; Documents Opens menu under the section and navigates to the expected pages" time="127.668" classname="Opens menu under the section and navigates to the expected pages">
+    </testcase>
+  </testsuite>
+</testsuites>

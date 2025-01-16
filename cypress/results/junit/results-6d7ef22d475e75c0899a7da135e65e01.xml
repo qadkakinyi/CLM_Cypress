@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="166.222" tests="9" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T07:22:37" tests="0" file="cypress/e2e/SideMenu/Administration_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Administration" timestamp="2025-01-16T07:22:43" tests="3" time="10.741" failures="0">
+    <testcase name="Administration Opens the menu list under administration" time="9.933" classname="Opens the menu list under administration">
+    </testcase>
+    <testcase name="Administration Opens Account" time="3.256" classname="Opens Account">
+    </testcase>
+    <testcase name="Administration Opens release notes" time="3.072" classname="Opens release notes">
+    </testcase>
+  </testsuite>
+  <testsuite name="User Management" timestamp="2025-01-16T07:22:54" tests="2" time="23.049" failures="0">
+    <testcase name="User Management Opens User Management Menus" time="4.204" classname="Opens User Management Menus">
+    </testcase>
+    <testcase name="User Management Accesses all pages in the menu list" time="18.731" classname="Accesses all pages in the menu list">
+    </testcase>
+  </testsuite>
+  <testsuite name="Audit Trail Extractions &amp; Setups" timestamp="2025-01-16T07:23:17" tests="2" time="60.331" failures="0">
+    <testcase name="Audit Trail Extractions &amp; Setups Opens Audit Trails Menus" time="4.284" classname="Opens Audit Trails Menus">
+    </testcase>
+    <testcase name="Audit Trail Extractions &amp; Setups Accesses all pages in the menu list" time="55.901" classname="Accesses all pages in the menu list">
+    </testcase>
+  </testsuite>
+  <testsuite name="Other Settings" timestamp="2025-01-16T07:24:17" tests="2" time="66.387" failures="0">
+    <testcase name="Other Settings Opens Other Settings Menus" time="4.432" classname="Opens Other Settings Menus">
+    </testcase>
+    <testcase name="Other Settings Accesses all pages in the menu list" time="61.809" classname="Accesses all pages in the menu list">
+    </testcase>
+  </testsuite>
+</testsuites>

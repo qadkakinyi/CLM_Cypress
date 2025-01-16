@@ -1,0 +1,338 @@
+{
+  "stats": {
+    "suites": 5,
+    "tests": 9,
+    "passes": 9,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-16T07:37:05.939Z",
+    "end": "2025-01-16T07:46:31.643Z",
+    "duration": 565704,
+    "testsRegistered": 9,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "4bcaa0ea-250c-4d9d-85df-d1ce56aec0df",
+      "title": "",
+      "fullFile": "cypress/e2e/SideMenu/Settings_tests.cy.ts",
+      "file": "cypress/e2e/SideMenu/Settings_tests.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f1ab7039-0693-4fd5-aba0-1b11f34badd1",
+          "title": "Settings menu",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Logs in and open level on menu",
+              "fullTitle": "Settings menu Logs in and open level on menu",
+              "timedOut": null,
+              "duration": 7966,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.wait(2000);\ncy.getByDataCy(\"settings-menu\").scrollIntoView().click();",
+              "err": {},
+              "uuid": "6464d522-8ddc-4c8b-b3a0-280bc6d3459a",
+              "parentUUID": "f1ab7039-0693-4fd5-aba0-1b11f34badd1",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6464d522-8ddc-4c8b-b3a0-280bc6d3459a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7966,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "b2a32c0e-5ec1-447f-9a81-baa300888ec6",
+          "title": "Client Profiling",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Client Profiling Pages first 8",
+              "fullTitle": "Client Profiling Client Profiling Pages first 8",
+              "timedOut": null,
+              "duration": 85829,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var routes = [\n    { index: 0, route: \"/settings/addressesTypes\", assertion: \"Addresses Types\" },\n    { index: 1, route: \"/settings/banks\", assertion: \"Banks\" },\n    { index: 2, route: \"/settings/capacities\", assertion: \"Capacities\" },\n    { index: 3, route: \"/settings/checklists\", assertion: \"Checklists\" },\n    { index: 4, route: \"/settings/client-categories\", assertion: \"Client Categories\" },\n    { index: 5, route: \"/settings/client-categorizations\", assertion: \"Client Categorizations\" },\n    { index: 6, route: \"/settings/client-statuses\", assertion: \"Client Statuses\" },\n    { index: 7, route: \"/settings/custom-fields\", assertion: \"Custom Fields\" },\n];\nroutes.forEach(function (route, i) {\n    cy.get(\"@client-profiling-links\").eq(route.index).click();\n    cy.wait(4000);\n    cy.location(\"pathname\").should(\"equal\", route.route);\n    cy.contains(route.assertion);\n    if (i < routes.length - 1) {\n        cy.visit(\"/main/dashboard\").wait(2000);\n        cy.getByDataCy(\"settings-menu\").click().wait(2000);\n        cy.getByDataCy(\"client-profiling-menu\").click().as('client-profiling-menu');\n        cy.get(\"@client-profiling-menu\").find(\"ul>li\").as(\"client-profiling-links\");\n    }\n});",
+              "err": {},
+              "uuid": "7df8cd67-2597-41f9-8e01-7df23fa60be0",
+              "parentUUID": "b2a32c0e-5ec1-447f-9a81-baa300888ec6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Client Profiling Pages (submenus 8 to 15)",
+              "fullTitle": "Client Profiling Client Profiling Pages (submenus 8 to 15)",
+              "timedOut": null,
+              "duration": 81471,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var routes = [\n    { index: 8, route: \"/settings/default-addresses\", assertion: \"Default Addresses\" },\n    { index: 9, route: \"/settings/document-categories\", assertion: \"Document Categories\" },\n    { index: 10, route: \"/settings/documents\", assertion: \"Documents\" },\n    { index: 11, route: \"/settings/fatca-setup\", assertion: \"FATCA Setup\" },\n    { index: 12, route: \"/settings/integration-capacities\", assertion: \"Integration Capacities\" },\n    { index: 13, route: \"/settings/keywords\", assertion: \"Keywords\" },\n    { index: 14, route: \"/settings/mandatory-documents-categories\", assertion: \"Mandatory Documents Categories\" },\n    { index: 15, route: \"/settings/mid-classes\", assertion: \"MID Classes\" },\n];\nroutes.forEach(function (route, i) {\n    cy.get(\"@client-profiling-links\").eq(route.index).click();\n    cy.wait(4000);\n    cy.location(\"pathname\").should(\"equal\", route.route);\n    cy.contains(route.assertion);\n    if (i < routes.length - 1) {\n        cy.visit(\"/main/dashboard\").wait(2000);\n        cy.getByDataCy(\"settings-menu\").click().wait(2000);\n        cy.getByDataCy(\"client-profiling-menu\").should(\"be.visible\");\n        cy.getByDataCy(\"client-profiling-menu\").click().as('client-profiling-menu');\n        cy.get(\"@client-profiling-menu\").find(\"ul>li\").as(\"client-profiling-links\");\n    }\n});",
+              "err": {},
+              "uuid": "ce25771c-16ae-4201-90ef-bdeb7d283c8a",
+              "parentUUID": "b2a32c0e-5ec1-447f-9a81-baa300888ec6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Client Profiling Pages (submenus 16 to 22)",
+              "fullTitle": "Client Profiling Client Profiling Pages (submenus 16 to 22)",
+              "timedOut": null,
+              "duration": 70737,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var routes = [\n    { index: 16, route: \"/settings/mid-types\", assertion: \"MID Types\" },\n    { index: 17, route: \"/settings/monitoring-visit-type\", assertion: \"Monitoring Visit Type\" },\n    { index: 18, route: \"/settings/reasonsForTin\", assertion: \"Reasons For TIN\" },\n    { index: 19, route: \"/settings/regulation-groups\", assertion: \"Regulation Groups\" },\n    { index: 20, route: \"/settings/related-website-types\", assertion: \"Related Website Types\" },\n    { index: 21, route: \"/settings/sub-groups\", assertion: \"Sub-Groups\" },\n    { index: 22, route: \"/settings/tags\", assertion: \"Tags\" }\n];\nroutes.forEach(function (route, i) {\n    cy.get(\"@client-profiling-links\").eq(route.index).click();\n    cy.wait(4000);\n    cy.location(\"pathname\").should(\"equal\", route.route);\n    cy.contains(route.assertion);\n    if (i < routes.length - 1) {\n        cy.visit(\"/main/dashboard\").wait(2000);\n        cy.getByDataCy(\"settings-menu\").click().wait(2000);\n        cy.getByDataCy(\"client-profiling-menu\").should(\"be.visible\");\n        cy.getByDataCy(\"client-profiling-menu\").click().as('client-profiling-menu');\n        cy.get(\"@client-profiling-menu\").find(\"ul>li\").as(\"client-profiling-links\");\n    }\n});",
+              "err": {},
+              "uuid": "03937f25-b900-42e1-8177-96c7c40e72f1",
+              "parentUUID": "b2a32c0e-5ec1-447f-9a81-baa300888ec6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7df8cd67-2597-41f9-8e01-7df23fa60be0",
+            "ce25771c-16ae-4201-90ef-bdeb7d283c8a",
+            "03937f25-b900-42e1-8177-96c7c40e72f1"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 238037,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "e8cdfb35-83e9-4854-8328-c3b976067497",
+          "title": "Countries",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Countries Pages",
+              "fullTitle": "Countries Countries Pages",
+              "timedOut": null,
+              "duration": 33997,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var routes = [\n    { index: 0, route: \"/settings/cities\", assertions: \"Cities & Ports\" },\n    { index: 1, route: \"/settings/countries\", assertions: \"Countries\" },\n    { index: 2, route: \"/settings/country-categories\", assertions: \"Country Categories\" },\n    { index: 3, route: \"/settings/country-evaluation-grades\", assertions: \"Country Evaluation Grades\" }\n];\nroutes.forEach(function (route, i) {\n    cy.get(\"@country-links\").eq(route.index).click().wait(1000);\n    cy.location(\"pathname\").should(\"equal\", route.route);\n    cy.wait(2000);\n    cy.contains(route.assertions);\n    if (i < routes.length - 1) {\n        cy.visit(\"/main/dashboard\").wait(2000);\n        cy.getByDataCy(\"settings-menu\").click().wait(2000);\n        cy.getByDataCy(\"country-menu\").should(\"be.visible\");\n        cy.getByDataCy(\"country-menu\").click().as('country-menu');\n        cy.getByDataCy(\"country-links\").as(\"country-links\");\n    }\n});",
+              "err": {},
+              "uuid": "5151edd9-6b23-49c9-9409-99c38e826094",
+              "parentUUID": "e8cdfb35-83e9-4854-8328-c3b976067497",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5151edd9-6b23-49c9-9409-99c38e826094"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 33997,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "093b4807-c626-4001-9e01-3a7780056d5b",
+          "title": "Transaction Monitoring & Actions",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Transaction Monitoring & Actions pages",
+              "fullTitle": "Transaction Monitoring & Actions Transaction Monitoring & Actions pages",
+              "timedOut": null,
+              "duration": 127534,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var routes = [\n    { index: 0, route: \"/settings/actions-setup\", assertion: \"Actions Setup\" },\n    { index: 1, route: \"/settings/application-approval-setup\", assertion: \"Application Approval Setup\" },\n    { index: 2, route: \"/settings/case-statuses-risk-points\", assertion: \"Case Statuses Risk Points\" },\n    { index: 3, route: \"/settings/case-suspicion-levels-risk-points\", assertion: \"Case Suspicion Levels Risk Points\" },\n    { index: 4, route: \"/settings/case-workflow-statuses\", assertion: \"Case Workflow Statuses\" },\n    { index: 5, route: \"/settings/contracts-setup\", assertion: \"Contract Policy Categories\" },\n    { index: 6, route: \"/settings/currency-informations\", assertion: \"Currency Information\" },\n    { index: 7, route: \"/settings/currency-rates\", assertion: \"Currency Rates\" },\n    { index: 8, route: \"/settings/dynamic-report-engine-setups\", assertion: \"Dynamic Report Engine Setups\" },\n    { index: 9, route: \"/settings/gaming-setups\", assertion: \"Gaming Setups\" },\n    { index: 10, route: \"/settings/investment-account-types\", assertion: \"Investment Account Types\" },\n    { index: 11, route: \"/settings/payment-methods\", assertion: \"Payment Methods\" },\n    { index: 12, route: \"/settings/rule-categories\", assertion: \"Rule Categories\" },\n    { index: 13, route: \"/settings/trade-types\", assertion: \"Trade Types\" },\n    { index: 14, route: \"/settings/transactions-setup\", assertion: \"Transactions Setup\" },\n];\nroutes.forEach(function (route, i) {\n    cy.get(\"@transaction-links\").eq(route.index).click();\n    cy.location(\"pathname\").should(\"equal\", route.route);\n    cy.wait(2000);\n    cy.contains(route.assertion);\n    if (i < routes.length - 1) {\n        cy.visit(\"/main/dashboard\").wait(2000);\n        cy.getByDataCy(\"settings-menu\").click().wait(2000);\n        cy.getByDataCy(\"transaction-menu\").should(\"be.visible\");\n        cy.getByDataCy(\"transaction-menu\").click().as('transaction-menu');\n        cy.getByDataCy(\"transaction-links\").as(\"transaction-links\");\n    }\n});",
+              "err": {},
+              "uuid": "4e57174c-623b-40b4-97d2-026cab310a00",
+              "parentUUID": "093b4807-c626-4001-9e01-3a7780056d5b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4e57174c-623b-40b4-97d2-026cab310a00"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 127534,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "a0b7474c-7434-4cee-90f0-efb6dc801e9f",
+          "title": "Opens level 2 menus",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Evaluation & Questionnaire",
+              "fullTitle": "Opens level 2 menus Evaluation & Questionnaire",
+              "timedOut": null,
+              "duration": 61912,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var routes = [\n    { index: 0, route: \"/settings/evaluation-types\", assertion: \"Adhoc Evaluation Types\" },\n    { index: 1, route: \"/settings/criteria\", assertion: \"Criteria\" },\n    { index: 2, route: \"/settings/criteria-categories\", assertion: \"Criteria Categories\" },\n    { index: 3, route: \"/settings/evaluation-grades\", assertion: \"Evaluation Grades\" },\n    { index: 4, route: \"/settings/questionnaire-grades\", assertion: \"Questionnaire Grades\" },\n    { index: 5, route: \"/settings/questionnaire-types\", assertion: \"Questionnaire Types\" },\n    { index: 6, route: \"/settings/questions\", assertion: \"Questions\" },\n    { index: 7, route: \"/settings/questions-categories\", assertion: \"Questionnaire Categories\" },\n];\nroutes.forEach(function (route, i) {\n    cy.get(\"@evaluation-links\").eq(route.index).click();\n    cy.location(\"pathname\").should(\"equal\", route.route);\n    cy.wait(2000);\n    cy.contains(route.assertion);\n    if (i < routes.length - 1) {\n        cy.visit(\"/main/dashboard\").wait(2000);\n        cy.getByDataCy(\"settings-menu\").click().wait(2000);\n        cy.getByDataCy(\"evaluation-menu\").scrollIntoView();\n        cy.getByDataCy(\"evaluation-menu\").click().as('evaluation-menu');\n        cy.getByDataCy(\"evaluation-links\").as(\"evaluation-links\");\n    }\n});",
+              "err": {},
+              "uuid": "3a2946f4-0e28-43b7-a334-a54c7c9ea6af",
+              "parentUUID": "a0b7474c-7434-4cee-90f0-efb6dc801e9f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Know Your Firm",
+              "fullTitle": "Opens level 2 menus Know Your Firm",
+              "timedOut": null,
+              "duration": 52406,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var routes = [\n    { index: 0, route: \"/settings/firm-criteria\", assertion: 'Firm Criteria' },\n    { index: 1, route: \"/settings/firm-criteria-categories\", assertion: 'Firm Criteria Categories' },\n    { index: 2, route: \"/settings/firm-evaluation-grades\", assertion: 'Firm Evaluation Grades' },\n    { index: 3, route: \"/settings/firm-mitigation-measures\", assertion: 'Firm Mitigation Measures' },\n    { index: 4, route: \"/settings/firm-sanction-criteria\", assertion: 'Firm Sanction Criteria' },\n    { index: 5, route: \"/settings/firm-sanction-evaluation-grades\", assertion: 'Firm Sanction Evaluation Grades' },\n    { index: 6, route: \"/settings/firm-sanction-mitigation-measures\", assertion: 'Firm Sanction Mitigation Measures' },\n];\nroutes.forEach(function (route, i) {\n    cy.get(\"@know-your-firm-links\").eq(route.index).click();\n    cy.location(\"pathname\").should(\"equal\", route.route);\n    cy.wait(2000);\n    cy.contains(route.assertion);\n    if (i < routes.length - 1) {\n        cy.visit(\"/main/dashboard\").wait(2000);\n        cy.getByDataCy(\"settings-menu\").click().wait(2000);\n        cy.getByDataCy(\"know-your-firm-menu\").scrollIntoView();\n        cy.getByDataCy(\"know-your-firm-menu\").click().as('know-your-firm-menu');\n        cy.getByDataCy(\"know-your-firm-links\").as(\"know-your-firm-links\");\n    }\n});",
+              "err": {},
+              "uuid": "4d3bbbae-429b-4bf0-9e7b-11c2a10a8d12",
+              "parentUUID": "a0b7474c-7434-4cee-90f0-efb6dc801e9f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Templates & Report Setups",
+              "fullTitle": "Opens level 2 menus Templates & Report Setups",
+              "timedOut": null,
+              "duration": 36957,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var routes = [\n    { index: 0, route: \"/settings/intro-endings\", assertion: 'Intro & Endings' },\n    { index: 1, route: \"/settings/email-templates\", assertion: 'Email Templates' },\n    { index: 2, route: \"/settings/external-notification-templates\", assertion: 'External Notification Templates' },\n    { index: 3, route: \"/settings/notification-templates\", assertion: 'Notification Templates' },\n    { index: 4, route: \"/settings/report-engine-setups\", assertion: 'Report Engine Setups' },\n];\nroutes.forEach(function (route, i) {\n    cy.get(\"@templates-links\").eq(route.index).click();\n    cy.location(\"pathname\").should(\"equal\", route.route);\n    cy.wait(2000);\n    cy.contains(route.assertion);\n    if (i < routes.length - 1) {\n        cy.visit(\"/main/dashboard\").wait(2000);\n        cy.getByDataCy(\"settings-menu\").click().wait(2000);\n        cy.getByDataCy(\"templates-menu\").scrollIntoView();\n        cy.getByDataCy(\"templates-menu\").click().as('templates-menu');\n        cy.getByDataCy(\"templates-links\").as(\"templates-links\");\n    }\n});",
+              "err": {},
+              "uuid": "a4d1817d-246d-4eac-ae89-aed0e051900a",
+              "parentUUID": "a0b7474c-7434-4cee-90f0-efb6dc801e9f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3a2946f4-0e28-43b7-a334-a54c7c9ea6af",
+            "4d3bbbae-429b-4bf0-9e7b-11c2a10a8d12",
+            "a4d1817d-246d-4eac-ae89-aed0e051900a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 151275,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

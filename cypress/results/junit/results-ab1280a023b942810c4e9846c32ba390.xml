@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="33.001" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T08:42:57" tests="0" file="cypress/e2e/ScreenPerformance/Settings/Countries_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Countries" timestamp="2025-01-16T08:43:03" tests="1" time="26.912" failures="0">
+    <testcase name="Countries Countries Pages" time="32.955" classname="Countries Pages">
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="59.764" tests="4" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T06:44:22" tests="0" file="cypress/e2e/IndividualClientFunctionality/Add_Edit_Delete_Client_Action_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Add, Edit, Delete Client Action (Task)" timestamp="2025-01-16T06:44:32" tests="4" time="49.694" failures="0">
+    <testcase name="Add, Edit, Delete Client Action (Task) Navigates to individual client" time="30.432" classname="Navigates to individual client">
+    </testcase>
+    <testcase name="Add, Edit, Delete Client Action (Task) Add Client Action" time="14.210" classname="Add Client Action">
+    </testcase>
+    <testcase name="Add, Edit, Delete Client Action (Task) Edit Action" time="9.787" classname="Edit Action">
+    </testcase>
+    <testcase name="Add, Edit, Delete Client Action (Task) Delete Action" time="5.042" classname="Delete Action">
+    </testcase>
+  </testsuite>
+</testsuites>

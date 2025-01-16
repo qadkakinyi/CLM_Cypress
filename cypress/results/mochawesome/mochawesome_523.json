@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-16T13:18:39.102Z",
+    "end": "2025-01-16T13:18:57.239Z",
+    "duration": 18137,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "dc261b7f-a3d9-4b4c-b017-fff5f9e05a7f",
+      "title": "",
+      "fullFile": "cypress/e2e/Priority2/Check_Live_Transactions_test.cy.ts",
+      "file": "cypress/e2e/Priority2/Check_Live_Transactions_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2aa69889-3c33-4f5c-9cbe-f6e266fc5a3c",
+          "title": "Checks live transaction",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Check live transaction through API",
+              "fullTitle": "Checks live transaction Check live transaction through API",
+              "timedOut": null,
+              "duration": 18109,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//get user ID\ncy.wait(1000);\ncy.request({\n    method: \"POST\",\n    url: 'https://complytek-testing-api.regtek.co/api/paging/clients',\n    headers: {\n        \"Content-Type\": \"application/x-www-form-urlencoded\",\n        'Authorization': \"Bearer \".concat(token)\n    },\n    body: {\n        \"skip\": '0',\n        \"requireTotalCount\": true\n    }\n}).then(function (res) {\n    var users = res.body.data;\n    user = users.find(function (user) {\n        // console.log(user.clientType == 1 && user.regulationGroupId == 1 && user.clientStatusId == 6)\n        return (user.clientType == 1 && user.regulationGroupId == 1 && user.clientStatusId == 6 && user.lastEvaluationGradeId == 4);\n    });\n    if (user) {\n        cy.log(user.id);\n        cy.request({\n            method: \"POST\",\n            url: 'https://complytek-testing-api.regtek.co/api/LiveRules/checkLiveTransaction/78',\n            headers: {\n                'Content-Type': 'application/json',\n                'Authorization': \"Bearer \".concat(token)\n            },\n            body: {\n                \"clientId\": user.id,\n                \"baseAmount\": 18500,\n                \"baseCurrency\": \"EUR\",\n                \"transactionDate\": \"2024-10-23T11:17:03.269Z\",\n                \"incomingCountryId\": 155,\n                \"outgoingCountryId\": 8,\n                \"transactionMethodId\": 2,\n                \"transactionTypeId\": 2\n            }\n        }).then(function (res) {\n            console.log(res.body[0].caseId);\n            if (res.body[0].caseId) {\n                var caseId = res.body[0].caseId;\n                cy.visit(\"https://complytek-testing.regtek.co/main/client-individual/\".concat(user.id, \"/1/case/\").concat(caseId)).wait(2000);\n                cy.contains('Temporarily Rejected').wait(1000);\n            }\n        });\n    }\n});",
+              "err": {},
+              "uuid": "b2f01fbe-5dcc-4c3d-974a-8c991fb3b20d",
+              "parentUUID": "2aa69889-3c33-4f5c-9cbe-f6e266fc5a3c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b2f01fbe-5dcc-4c3d-974a-8c991fb3b20d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 18109,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

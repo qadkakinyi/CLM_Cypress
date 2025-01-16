@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="50.643" tests="3" failures="2">
+  <testsuite name="Root Suite" timestamp="2025-01-16T12:35:08" tests="0" file="cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Client_Related_Website_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Add, Edit, Delete Client Related Website" timestamp="2025-01-16T12:35:20" tests="3" time="39.003" failures="2">
+    <testcase name="Add, Edit, Delete Client Related Website Add Client Related Website" time="32.314" classname="Add Client Related Website">
+    </testcase>
+    <testcase name="Add, Edit, Delete Client Related Website Edit Client Related website" time="0.000" classname="Edit Client Related website">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `#gridClientRelatedWebsites table tbody tr td.dx-command-edit-with-icons a`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `#gridClientRelatedWebsites table tbody tr td.dx-command-edit-with-icons a`, but never found it.
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Client_Related_Website_test.cy.ts:38:0)]]></failure>
+    </testcase>
+    <testcase name="Add, Edit, Delete Client Related Website Delete client Related Website" time="0.000" classname="Delete client Related Website">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `#gridClientRelatedWebsites table tbody tr td.dx-command-edit-with-icons a`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `#gridClientRelatedWebsites table tbody tr td.dx-command-edit-with-icons a`, but never found it.
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Client_Related_Website_test.cy.ts:49:0)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="54.054" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T06:09:52" tests="0" file="cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Capacity_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Capacity - Corporate" timestamp="2025-01-16T06:10:03" tests="3" time="42.815" failures="0">
+    <testcase name="Capacity - Corporate Adds Authorized Person" time="34.161" classname="Adds Authorized Person">
+    </testcase>
+    <testcase name="Capacity - Corporate Edits Authorized Person" time="11.516" classname="Edits Authorized Person">
+    </testcase>
+    <testcase name="Capacity - Corporate Deletes Authorized Person" time="8.178" classname="Deletes Authorized Person">
+    </testcase>
+  </testsuite>
+</testsuites>

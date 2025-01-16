@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="6.129" tests="6" failures="-5" skipped="6">
+  <testsuite name="Root Suite" timestamp="2025-01-16T06:01:28" tests="0" file="cypress/e2e/ClientCommonComponents/Add_Edit_Delete_Client_Authorized_Persons_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Add, Edit, Delete Client Authorized Person" timestamp="2025-01-16T06:01:34" tests="6" time="0.062" failures="0">
+  </testsuite>
+</testsuites>

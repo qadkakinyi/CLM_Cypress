@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="32.561" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T08:02:35" tests="0" file="cypress/e2e/HelperFunctionalities/ClientProfiling/Sub_Groups_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Sub-groups" timestamp="2025-01-16T08:02:41" tests="3" time="26.458" failures="0">
+    <testcase name="Sub-groups Adds a Sub-group" time="12.215" classname="Adds a Sub-group">
+    </testcase>
+    <testcase name="Sub-groups Edits a Sub-group" time="11.406" classname="Edits a Sub-group">
+    </testcase>
+    <testcase name="Sub-groups Deletes a Sub-group" time="8.826" classname="Deletes a Sub-group">
+    </testcase>
+  </testsuite>
+</testsuites>

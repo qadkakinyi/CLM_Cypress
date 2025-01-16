@@ -1,0 +1,201 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 6,
+    "failures": -5,
+    "start": "2025-01-16T12:11:10.970Z",
+    "end": "2025-01-16T12:11:17.185Z",
+    "duration": 6215,
+    "testsRegistered": 6,
+    "passPercent": null,
+    "pendingPercent": 100,
+    "other": 5,
+    "hasOther": true,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "78d0b3dd-9fd9-4d5d-9b37-ee259c9f4fff",
+      "title": "",
+      "fullFile": "cypress/e2e/ClientCommonComponents/Add_Edit_Delete_Client_Authorized_Persons_test.cy.ts",
+      "file": "cypress/e2e/ClientCommonComponents/Add_Edit_Delete_Client_Authorized_Persons_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3c2ff34d-2439-4086-9327-4bf11986fb72",
+          "title": "Add, Edit, Delete Client Authorized Person",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add Client Authorized Person existing profile",
+              "fullTitle": "Add, Edit, Delete Client Authorized Person Add Client Authorized Person existing profile",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "// Click on Know your Clients navigation item\ncy.get('a[href*=\"main/clients\"]').click();\ncy.get('#gridClients').should('be.visible');\ncy.get('#gridClients table tr td .dx-header-filter-indicator').eq(0).click();\nvar gridClientsRows = cy.wrap('#gridClients table tbody tr');\ngridClientsRows.get('.dx-command-edit-with-icons a').eq(0).click({ force: true });\ncy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Capacity').click();\naddAuthorizedPerson(true);",
+              "err": {},
+              "uuid": "448256a2-3056-4fb1-9dd8-c002e45210ff",
+              "parentUUID": "3c2ff34d-2439-4086-9327-4bf11986fb72",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edit Authorized Person (Existing profile)",
+              "fullTitle": "Add, Edit, Delete Client Authorized Person Edit Authorized Person (Existing profile)",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "var gridAuthorizedPersons = cy.wrap('#gridClientAuthorizedPersons table tbody tr');\ngridAuthorizedPersons.get('.dx-command-edit-with-icons a').eq(0).click({ force: true });\ncy.getBySel('editClientAuthorizedPersonForm').should('be.visible');\ncy.get('#editClientAuthorizedPersonForm input[name=\"isNominee\"]').check();\ncy.get('#editClientAuthorizedPersonForm input[name=\"isLegalRepresentative\"]').check();\ncy.get('#editClientAuthorizedPersonForm input[name=\"isControllingPerson\"]').check();\ncy.getBySel('saveAndCloseButton').click();",
+              "err": {},
+              "uuid": "3dc3084c-0ea2-4e96-bbf8-83cf18a3e58b",
+              "parentUUID": "3c2ff34d-2439-4086-9327-4bf11986fb72",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Delete Authorized Person (Existing profile)",
+              "fullTitle": "Add, Edit, Delete Client Authorized Person Delete Authorized Person (Existing profile)",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "return deleteAuthorizedPerson();",
+              "err": {},
+              "uuid": "7186733b-a967-4fd3-b8fa-cbab8b8d0de7",
+              "parentUUID": "3c2ff34d-2439-4086-9327-4bf11986fb72",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Add Client Authorized Person as new profile",
+              "fullTitle": "Add, Edit, Delete Client Authorized Person Add Client Authorized Person as new profile",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "return addAuthorizedPerson(false);",
+              "err": {},
+              "uuid": "e8b81de1-bb46-43b6-b4b6-04ebeeec8465",
+              "parentUUID": "3c2ff34d-2439-4086-9327-4bf11986fb72",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edit Authorized Person (New profile)",
+              "fullTitle": "Add, Edit, Delete Client Authorized Person Edit Authorized Person (New profile)",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "var gridAuthorizedPersons = cy.wrap('#gridClientAuthorizedPersons table tbody tr');\ngridAuthorizedPersons.get('.dx-command-edit-with-icons a').eq(0).click({ force: true });\ncy.getBySel('editClientAuthorizedPersonForm').should('be.visible');\ncy.get('#editClientAuthorizedPersonForm input[name=\"isNominee\"]').check();\ncy.get('#editClientAuthorizedPersonForm input[name=\"isLegalRepresentative\"]').check();\ncy.get('#editClientAuthorizedPersonForm input[name=\"isControllingPerson\"]').check();\ncy.getBySel('saveAndCloseButton').click();",
+              "err": {},
+              "uuid": "13ad3779-12de-4730-9fc5-6b3c4c37924c",
+              "parentUUID": "3c2ff34d-2439-4086-9327-4bf11986fb72",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Delete Authorized Person (New profile)",
+              "fullTitle": "Add, Edit, Delete Client Authorized Person Delete Authorized Person (New profile)",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "return deleteAuthorizedPerson();",
+              "err": {},
+              "uuid": "3f8c3cb9-3686-4cea-89c3-004878d150f9",
+              "parentUUID": "3c2ff34d-2439-4086-9327-4bf11986fb72",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [],
+          "pending": [
+            "448256a2-3056-4fb1-9dd8-c002e45210ff",
+            "3dc3084c-0ea2-4e96-bbf8-83cf18a3e58b",
+            "7186733b-a967-4fd3-b8fa-cbab8b8d0de7",
+            "e8b81de1-bb46-43b6-b4b6-04ebeeec8465",
+            "13ad3779-12de-4730-9fc5-6b3c4c37924c",
+            "3f8c3cb9-3686-4cea-89c3-004878d150f9"
+          ],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="41.962" tests="3" failures="1">
+  <testsuite name="Root Suite" timestamp="2025-01-16T08:10:10" tests="0" file="cypress/e2e/HelperFunctionalities/KnowYourFirm/Firm_Sanction_Criteria_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Firm Sanction Criteria" timestamp="2025-01-16T08:10:16" tests="3" time="35.786" failures="1">
+    <testcase name="Firm Sanction Criteria Adds a Firm Sanction Criteria" time="15.652" classname="Adds a Firm Sanction Criteria">
+    </testcase>
+    <testcase name="Firm Sanction Criteria Edits a Firm Sanction Criteria" time="0.000" classname="Edits a Firm Sanction Criteria">
+      <failure message="Timed out retrying after 4000ms: Expected to find content: &apos;The criterion has been updated.&apos; but never did." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find content: 'The criterion has been updated.' but never did.
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/HelperFunctionalities/KnowYourFirm/Firm_Sanction_Criteria_test.cy.ts:26:0)]]></failure>
+    </testcase>
+    <testcase name="Firm Sanction Criteria Deletes a Firm Sanction Criteria" time="10.964" classname="Deletes a Firm Sanction Criteria">
+    </testcase>
+  </testsuite>
+</testsuites>

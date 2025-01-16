@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="33.900" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T07:50:01" tests="0" file="cypress/e2e/HelperFunctionalities/ClientProfiling/Capacity_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Capacity" timestamp="2025-01-16T07:50:07" tests="3" time="27.626" failures="0">
+    <testcase name="Capacity Add Capacity" time="14.735" classname="Add Capacity">
+    </testcase>
+    <testcase name="Capacity Edits A Capacity" time="10.652" classname="Edits A Capacity">
+    </testcase>
+    <testcase name="Capacity Delete A Capacity" time="8.366" classname="Delete A Capacity">
+    </testcase>
+  </testsuite>
+</testsuites>

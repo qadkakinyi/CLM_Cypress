@@ -1,0 +1,144 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-16T12:30:40.612Z",
+    "end": "2025-01-16T12:31:35.270Z",
+    "duration": 54658,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "82b0cb27-815e-439a-a84b-38a26e7347d6",
+      "title": "",
+      "fullFile": "cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Client_Gaming_Account_test.cy.ts",
+      "file": "cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Client_Gaming_Account_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "04370e3c-2b94-40ce-a01d-fc39425dbdfa",
+          "title": "Add, Edit, Delete Client Gaming Accounts",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add Client Gaming Accounts",
+              "fullTitle": "Add, Edit, Delete Client Gaming Accounts Add Client Gaming Accounts",
+              "timedOut": null,
+              "duration": 34965,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Click on Know your Clients navigation item\n(0, e2e_1.navigateToClientMenu)('Corporate');\ncy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Gaming Accounts').click();\ncy.getBySel('addGamingAccount').should('be.visible').click();\ncy.location('pathname').then(function (loc) {\n    location = loc;\n});\ncy.get('#addClientGamingAccountForm input[name=\"signUpDevice\"]').type(faker_1.faker.internet.userAgent());\ncy.get('#addClientGamingAccountForm input[name=\"externalReference\"]').type(accountExternalReference);\ncy.get('#addClientGamingAccountForm input[name=\"signUpIP\"]').type(faker_1.faker.internet.ipv4());\ncy.getBySel('gamingAccountsList').should('be.visible').click();\ncy.get('.dx-overlay-wrapper.dx-popup-wrapper.dx-dropdowneditor-overlay .dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true });\ncy.get('#addClientGamingAccountForm input[name=\"balance\"]').type(faker_1.faker.finance.amount({ min: 5, max: 999 }));\ncy.get('#addClientGamingAccountForm textarea[name=\"comment\"]').type(faker_1.faker.lorem.paragraph());\ncy.getBySel('saveGamingAccount').should('be.visible').click();",
+              "err": {},
+              "uuid": "31b85046-a12d-45a8-a9d8-e9ac7d1f70fc",
+              "parentUUID": "04370e3c-2b94-40ce-a01d-fc39425dbdfa",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edit client Gaming Accounts",
+              "fullTitle": "Add, Edit, Delete Client Gaming Accounts Edit client Gaming Accounts",
+              "timedOut": null,
+              "duration": 10369,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(location);\ncy.wait(2000);\ncy.getBySel('gridClientGamingAccounts').should('be.visible');\ncy.get('.dx-datagrid-filter-row .dx-texteditor-input-container input').eq(5).type(accountExternalReference);\ncy.wait(2000);\nvar gridGamingAccounts = cy.wrap('#gridClientGamingAccounts table tbody tr td');\ngridGamingAccounts.get('.dx-command-edit-with-icons a').eq(0).click({ force: true });\ncy.get('#editClientGamingAccountForm input[name=\"signUpIP\"]').clear();\ncy.get('#editClientGamingAccountForm input[name=\"signUpIP\"]').type(faker_1.faker.internet.ipv4());\ncy.getBySel('saveAndCloseButton').click();",
+              "err": {},
+              "uuid": "e72532ec-919f-4645-a199-6da50fb51dcd",
+              "parentUUID": "04370e3c-2b94-40ce-a01d-fc39425dbdfa",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Delete client Gaming Accounts",
+              "fullTitle": "Add, Edit, Delete Client Gaming Accounts Delete client Gaming Accounts",
+              "timedOut": null,
+              "duration": 9095,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(location);\ncy.wait(2000);\ncy.getBySel('gridClientGamingAccounts').should('be.visible');\ncy.get('.dx-datagrid-filter-row .dx-texteditor-input-container input').eq(5).type(accountExternalReference);\ncy.wait(2000);\nvar gridGamingAccounts = cy.wrap('#gridClientGamingAccounts table tbody tr td');\ngridGamingAccounts.get('.dx-command-edit-with-icons a').eq(0).click({ force: true });\ncy.getBySel('deleteGamingAccount').should('be.visible').click();\ncy.get('#bot2-Msg1').contains('Yes').click();\ncy.contains('The gaming account has been deleted.');",
+              "err": {},
+              "uuid": "3c0647c2-18af-4eac-99ff-fdcebebadb06",
+              "parentUUID": "04370e3c-2b94-40ce-a01d-fc39425dbdfa",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "31b85046-a12d-45a8-a9d8-e9ac7d1f70fc",
+            "e72532ec-919f-4645-a199-6da50fb51dcd",
+            "3c0647c2-18af-4eac-99ff-fdcebebadb06"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 54429,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

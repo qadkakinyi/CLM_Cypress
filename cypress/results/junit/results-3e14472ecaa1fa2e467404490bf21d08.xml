@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="58.029" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T06:28:10" tests="0" file="cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Client_Trade_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Add, Edit, Delete Client Trade" timestamp="2025-01-16T06:28:21" tests="3" time="47.537" failures="0">
+    <testcase name="Add, Edit, Delete Client Trade Add Client Trade" time="39.179" classname="Add Client Trade">
+    </testcase>
+    <testcase name="Add, Edit, Delete Client Trade Edit client trade" time="10.450" classname="Edit client trade">
+    </testcase>
+    <testcase name="Add, Edit, Delete Client Trade Delete client trade" time="8.296" classname="Delete client trade">
+    </testcase>
+  </testsuite>
+</testsuites>

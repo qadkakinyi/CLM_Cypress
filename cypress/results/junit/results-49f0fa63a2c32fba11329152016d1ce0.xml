@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="33.452" tests="2" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T13:21:31" tests="0" file="cypress/e2e/IndividualClientFunctionality/Edit_Client_Individual_Profile_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Edit Client Individual Profile" timestamp="2025-01-16T13:21:41" tests="2" time="22.923" failures="0">
+    <testcase name="Edit Client Individual Profile Edit Individual Profile" time="26.810" classname="Edit Individual Profile">
+    </testcase>
+    <testcase name="Edit Client Individual Profile Archives a client" time="6.546" classname="Archives a client">
+    </testcase>
+  </testsuite>
+</testsuites>

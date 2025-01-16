@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-16T12:48:34.028Z",
+    "end": "2025-01-16T12:48:58.163Z",
+    "duration": 24135,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c9f35ce0-36ad-4d39-a4a6-dc8fc4a89d40",
+      "title": "",
+      "fullFile": "cypress/e2e/CorporateClientFunctionality/Internal_Screening_test.cy.ts",
+      "file": "cypress/e2e/CorporateClientFunctionality/Internal_Screening_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ea9ac4de-4315-427a-b888-0bb486356414",
+          "title": "Screening History",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Navigates to Screening Page",
+              "fullTitle": "Screening History Navigates to Screening Page",
+              "timedOut": null,
+              "duration": 24080,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Navigate to specific client\n(0, e2e_1.navigateToClientMenu)('Corporate');\ncy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('Internal Screening').scrollIntoView().click();\ncy.wait(1000);\ncy.contains('h1', 'Internal Screening');",
+              "err": {},
+              "uuid": "eb5ec5dc-8f22-4b3d-b8ec-349af24ed132",
+              "parentUUID": "ea9ac4de-4315-427a-b888-0bb486356414",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "eb5ec5dc-8f22-4b3d-b8ec-349af24ed132"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 24080,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

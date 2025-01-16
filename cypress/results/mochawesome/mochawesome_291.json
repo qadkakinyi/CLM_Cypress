@@ -1,0 +1,163 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-16T08:18:20.112Z",
+    "end": "2025-01-16T08:19:08.600Z",
+    "duration": 48488,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "aa0a728b-2b73-42a7-be9a-c1048d973c95",
+      "title": "",
+      "fullFile": "cypress/e2e/HelperFunctionalities/Templates&Report_Setups/Email_Template_test.cy.ts",
+      "file": "cypress/e2e/HelperFunctionalities/Templates&Report_Setups/Email_Template_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c9a923ca-ec52-497a-af66-7d94d2fe4996",
+          "title": "Email Template",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Adds an Email Template",
+              "fullTitle": "Email Template Adds an Email Template",
+              "timedOut": null,
+              "duration": 15632,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/settings/email-templates').wait(2000);\ncy.contains('Add').click().wait(1000);\ncy.getByFormControlName('subject').type('Test Template DKA');\ncy.get('dx-drop-down-box').eq(0).click().wait(500);\ncy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview .dx-datagrid-content tr td').contains('Test DKA').click({ force: true }).wait(500);\ncy.get('ngx-editor div div').type('Good afternoon, ...');\ncy.get('[icon=\"save\"]').click().wait(1000);\ncy.contains('Email Template has been added').wait(1000);",
+              "err": {},
+              "uuid": "f2f5f9eb-0b26-4182-9971-be76c6b289a2",
+              "parentUUID": "c9a923ca-ec52-497a-af66-7d94d2fe4996",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edits an Email Template",
+              "fullTitle": "Email Template Edits an Email Template",
+              "timedOut": null,
+              "duration": 11986,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/settings/email-templates').wait(2000);\ncy.get('#gridCustomFields tr .dx-first-cell .dx-texteditor-input').type('Test Template DKA', { force: true }).wait(2000);\ncy.get('#gridCustomFields tr td').find('.fa-angle-double-right').eq(0).click({ force: true }).wait(2000);\ncy.get('ngx-editor div div').clear().wait(1000).type('Good afternoon, ...');\ncy.getBySel('saveAndCloseButton').click().wait(1000);\ncy.contains(\"Email template has been updated.\").wait(1000);",
+              "err": {},
+              "uuid": "5ede42b8-54ec-48fc-919b-2bf0a92a5585",
+              "parentUUID": "c9a923ca-ec52-497a-af66-7d94d2fe4996",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deletes an Email Template",
+              "fullTitle": "Email Template Deletes an Email Template",
+              "timedOut": null,
+              "duration": 10399,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/settings/email-templates').wait(2000);\ncy.get('#gridCustomFields tr .dx-first-cell .dx-texteditor-input').type('Test Template DKA', { force: true }).wait(2000);\ncy.get('#gridCustomFields tr td').find('.fa-angle-double-right').eq(0).click({ force: true }).wait(1000);\ncy.contains('sa-button', 'Delete').click().wait(500);\ncy.get('#bot2-Msg1').click({ force: true }).wait(1000);\ncy.contains(\"Email template has been deleted.\").wait(1000);",
+              "err": {},
+              "uuid": "e4c25725-8b17-4552-97e9-6b3a67fd61e0",
+              "parentUUID": "c9a923ca-ec52-497a-af66-7d94d2fe4996",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deletes an Intro And Ending",
+              "fullTitle": "Email Template Deletes an Intro And Ending",
+              "timedOut": null,
+              "duration": 10327,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/settings/intro-endings').wait(2000);\ncy.get('#gridIntroEndings tr .dx-first-cell .dx-texteditor-input').type('Test DKA', { force: true }).wait(2000);\ncy.get('#gridIntroEndings tr td').find('.fa-angle-double-right').eq(0).click({ force: true }).wait(1000);\ncy.contains('sa-button', 'Delete').click().wait(500);\ncy.get('#bot2-Msg1').click({ force: true }).wait(1000);\ncy.contains(\"The intro ending has been deleted.\").wait(1000);",
+              "err": {},
+              "uuid": "b4bc1cd4-d2c3-4194-b3f6-c017d3937a04",
+              "parentUUID": "c9a923ca-ec52-497a-af66-7d94d2fe4996",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f2f5f9eb-0b26-4182-9971-be76c6b289a2",
+            "5ede42b8-54ec-48fc-919b-2bf0a92a5585",
+            "e4c25725-8b17-4552-97e9-6b3a67fd61e0",
+            "b4bc1cd4-d2c3-4194-b3f6-c017d3937a04"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 48344,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

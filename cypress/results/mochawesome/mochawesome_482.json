@@ -1,0 +1,144 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-16T12:59:14.576Z",
+    "end": "2025-01-16T12:59:59.057Z",
+    "duration": 44481,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ed0f3b3d-c444-43d5-a002-07eee314e39a",
+      "title": "",
+      "fullFile": "cypress/e2e/IndividualClientFunctionality/Add_Edit_Delete_Client_Card_test.cy.ts",
+      "file": "cypress/e2e/IndividualClientFunctionality/Add_Edit_Delete_Client_Card_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9588978d-5bda-4b31-ac9e-c1b37b40e869",
+          "title": "Add, Edit, Delete Client Cards",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add Client Cards",
+              "fullTitle": "Add, Edit, Delete Client Cards Add Client Cards",
+              "timedOut": null,
+              "duration": 27010,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//add bank account required\n// Click on Know your Clients navigation item\n(0, e2e_1.navigateToClientMenu)('Individual');\ncy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Cards').click();\n// Add new Client Card\ncy.getBySel('addCard').click();\ncy.location('pathname').then(function (pathname) {\n    var pathSections = pathname.split('/');\n    client_id = pathSections[3];\n});\ncy.wait(1000);\ncy.getBySel('addClientCardForm').should('be.visible').then(function () {\n    cy.get('#addClientCardForm input[name=\"cardNumber\"]').type(cardNumberTest);\n    cy.get('#addClientCardForm input[name=\"cardholder\"]').type(faker_1.faker.person.fullName());\n    cy.get('#addClientCardForm .datetimeDevExtreme .dx-texteditor-input').type('0128');\n    cy.get('#addClientCardForm input[name=\"externalReference\"]').type(faker_1.faker.string.alphanumeric(12));\n    cy.getBySel('accountsList').should('be.visible').click();\n    cy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true });\n    cy.getBySel('saveClientCardForm').click();\n});",
+              "err": {},
+              "uuid": "24e7b0c7-917e-4815-b7dd-094331392ffb",
+              "parentUUID": "9588978d-5bda-4b31-ac9e-c1b37b40e869",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edit client Cards",
+              "fullTitle": "Add, Edit, Delete Client Cards Edit client Cards",
+              "timedOut": null,
+              "duration": 7762,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"/main/client-individual/\".concat(client_id, \"/1/cards\")).wait(2000);\n// Edit Cards\ncy.getBySel('gridClientCards').should('be.visible').then(function () {\n    cy.get('.dx-datagrid-filter-row .dx-texteditor-input-container input').eq(2).type(cardNumberTest);\n    cy.wait(2000);\n    var gridCards = cy.wrap('#gridClientCards table tbody tr td');\n    gridCards.get('.dx-command-edit-with-icons a').eq(0).click({ force: true });\n    cy.get('#editClientCardForm').should('be.visible');\n    cardNumberTest = faker_1.faker.finance.creditCardNumber('visa');\n    cy.get('#editClientCardForm input[name=\"cardNumber\"]').should('be.visible').clear();\n    cy.get('#editClientCardForm input[name=\"cardNumber\"]').type(cardNumberTest);\n    cy.getBySel('saveAndCloseButton').click();\n});",
+              "err": {},
+              "uuid": "da1278db-aac6-438d-82b2-82b8cd1cced8",
+              "parentUUID": "9588978d-5bda-4b31-ac9e-c1b37b40e869",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Delete client Cards",
+              "fullTitle": "Add, Edit, Delete Client Cards Delete client Cards",
+              "timedOut": null,
+              "duration": 9608,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"/main/client-individual/\".concat(client_id, \"/1/cards\")).wait(2000);\ncy.getBySel('gridClientCards').should('be.visible');\ncy.get('.dx-datagrid-filter-row .dx-texteditor-input-container input').eq(2).type(cardNumberTest);\ncy.wait(2000);\nvar gridCards = cy.wrap('#gridClientCards table tbody tr td');\ngridCards.get('.dx-command-edit-with-icons a').eq(0).click({ force: true });\n// Delete Cards\ncy.getBySel('deleteCard').should('be.visible').click();\ncy.get('#bot2-Msg1').contains('Yes').click();",
+              "err": {},
+              "uuid": "0307e1d4-f553-4b30-84c8-e5e38500c053",
+              "parentUUID": "9588978d-5bda-4b31-ac9e-c1b37b40e869",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "24e7b0c7-917e-4815-b7dd-094331392ffb",
+            "da1278db-aac6-438d-82b2-82b8cd1cced8",
+            "0307e1d4-f553-4b30-84c8-e5e38500c053"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 44380,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

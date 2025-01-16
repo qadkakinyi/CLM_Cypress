@@ -1,0 +1,191 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 3,
+    "pending": 0,
+    "failures": 2,
+    "start": "2025-01-16T13:22:06.680Z",
+    "end": "2025-01-16T13:23:57.348Z",
+    "duration": 110668,
+    "testsRegistered": 5,
+    "passPercent": 60,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "19347974-92ac-450f-bbb0-3b9b8e0b1700",
+      "title": "",
+      "fullFile": "cypress/e2e/Priority2/Regulation_Group_test.cy.ts",
+      "file": "cypress/e2e/Priority2/Regulation_Group_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "72cead5d-f0ba-4247-8136-68741c2230e9",
+          "title": "Regulation Groups",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Generate Regulation Group Hash Key",
+              "fullTitle": "Regulation Groups Generate Regulation Group Hash Key",
+              "timedOut": null,
+              "duration": 17332,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.wait(3000);\ncy.getByDataCy('system-settings-menu').scrollIntoView().click();\ncy.get('[title=\"Account\"]').click().wait(1000);\ncy.get('[icon=\"key\"] > .sa-button > .text').click().wait(1000);\ncy.get('.col-md-12 > .form-group > app-dynamic-selectbox > .sa-input-dropdown > .custom-selectbox > .dx-dropdowneditor-input-wrapper > .dx-texteditor-container > .dx-texteditor-buttons-container > .dx-widget > .dx-button-content > .dx-dropdowneditor-icon').click();\ncy.get('[aria-rowindex=\"4\"] > td').click();\ncy.get('#createHashKeyForm > fieldset > :nth-child(2) > .col-md-12 > .sa-input > .ng-untouched').clear();\ncy.get('#createHashKeyForm > fieldset > :nth-child(2) > .col-md-12 > .sa-input > .ng-untouched').type(getProviderKey());\ncy.get('.row.ng-star-inserted > .col-md-12 > .sa-input > .ng-untouched').clear();\ncy.get('.row.ng-star-inserted > .col-md-12 > .sa-input > .ng-untouched').type('10');\ncy.get('#createHashKeyForm > .custom-backround-transparent > .row > .col > [icon=\"save\"] > .sa-button').click().wait(2000);\ncy.getByFormControlName('hashKey').invoke('val').then(function (value) {\n    hashValue = value;\n});\ncy.get('#createHashKeyForm > .custom-backround-transparent > .row > .col > [icon=\"times\"] > .sa-button > .text').click();",
+              "err": {},
+              "uuid": "f3cbe1a9-9048-48b1-b49b-bb5edfe50dc1",
+              "parentUUID": "72cead5d-f0ba-4247-8136-68741c2230e9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Duplicates a Regulation Group",
+              "fullTitle": "Regulation Groups Duplicates a Regulation Group",
+              "timedOut": null,
+              "duration": 18390,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/settings/regulation-groups').wait(1500);\ncy.get('header > div .fa-clone').last().click().wait(1000);\ncy.getByFormControlName('newName').type('DKA Duplicate Group');\ncy.getByFormControlName('hash').eq(1).type(hashValue);\ncy.get('#duplicateRegulationGroupForm [icon=\"save\"]').click().wait(7000);\ncy.contains('Duplicated regulation group has been added.').wait(1000);",
+              "err": {},
+              "uuid": "40f16d5b-7c05-48c3-8d3c-b117ef7685b0",
+              "parentUUID": "72cead5d-f0ba-4247-8136-68741c2230e9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edits a Regulation Group",
+              "fullTitle": "Regulation Groups Edits a Regulation Group",
+              "timedOut": null,
+              "duration": 9342,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/settings/regulation-groups').wait(3000);\ncy.get('.sa-panel header .fa-share-square-o').last().click({ force: true }).wait(2000);\ncy.getByFormControlName('name').clear().type('DKA Duplicate Group Edited');\ncy.contains('sa-button', 'Save & Close').click().wait(1500);\ncy.contains('Regulation group has been updated.');",
+              "err": {},
+              "uuid": "9a6f23bd-9018-4290-a1b9-44579df43445",
+              "parentUUID": "72cead5d-f0ba-4247-8136-68741c2230e9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Synchronizes a Regulation Group",
+              "fullTitle": "Regulation Groups Synchronizes a Regulation Group",
+              "timedOut": null,
+              "duration": 12301,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/settings/regulation-groups').wait(3000);\ncy.get('header > div .fa-refresh').last().click().wait(3000);\ncy.getByFormControlName('regulationGroupsToBeSynced').click();\ncy.get('.multiselect-item-checkbox').contains('BERMUDA').click().wait(500);\ncy.getByFormControlName('setupTypes').click();\ncy.get('.multiselect-item-checkbox').contains('Criteria').click().wait(500);\ncy.getByFormControlName('regulationGroupCriteria').click();\ncy.get('.dx-header-row .dx-checkbox-icon').first().click({ force: true }).wait(1000);\ncy.getByFormControlName('regulationGroupCriteria').click();\ncy.get('[icon=\"recycle\"] > .sa-button').click({ force: true }).wait(5000);\ncy.contains('Synchronization Completed');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'BERMUDA' within the element: <li.multiselect-item-checkbox.ng-star-inserted> but never did.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'BERMUDA' within the element: <li.multiselect-item-checkbox.ng-star-inserted> but never did.\n    at Context.eval (webpack://clm_cypress/./cypress/e2e/Priority2/Regulation_Group_test.cy.ts:47:0)",
+                "diff": null
+              },
+              "uuid": "ad2207a2-25f1-4228-adcb-fa8d05c4fce0",
+              "parentUUID": "72cead5d-f0ba-4247-8136-68741c2230e9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deletes a Regulation Group",
+              "fullTitle": "Regulation Groups Deletes a Regulation Group",
+              "timedOut": null,
+              "duration": 53033,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/settings/regulation-groups').wait(3000);\ncy.get('.sa-panel header .fa-share-square-o').last().click({ force: true }).wait(2000);\ncy.get('[primary-buttons=\"\"] > [icon=\"trash\"] > .sa-button').click({ force: true }).wait(1000);\ncy.get('.col > [icon=\"trash\"]').click();\ncy.get('.MessageBoxButtonSection').contains('button', 'Yes').click();\ncy.wait(40000);\ncy.contains('The Regulation Group has been deleted.');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'The Regulation Group has been deleted.' but never did.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'The Regulation Group has been deleted.' but never did.\n    at Context.eval (webpack://clm_cypress/./cypress/e2e/Priority2/Regulation_Group_test.cy.ts:63:0)",
+                "diff": null
+              },
+              "uuid": "fb74df61-80c9-4dbf-8259-4c95ead4c28e",
+              "parentUUID": "72cead5d-f0ba-4247-8136-68741c2230e9",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f3cbe1a9-9048-48b1-b49b-bb5edfe50dc1",
+            "40f16d5b-7c05-48c3-8d3c-b117ef7685b0",
+            "9a6f23bd-9018-4290-a1b9-44579df43445"
+          ],
+          "failures": [
+            "ad2207a2-25f1-4228-adcb-fa8d05c4fce0",
+            "fb74df61-80c9-4dbf-8259-4c95ead4c28e"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 110398,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

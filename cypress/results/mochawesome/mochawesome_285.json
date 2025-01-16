@@ -1,0 +1,145 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 2,
+    "pending": 1,
+    "failures": 0,
+    "start": "2025-01-16T08:16:20.954Z",
+    "end": "2025-01-16T08:16:47.506Z",
+    "duration": 26552,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 33.33333333333333,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "66268fe7-46ff-4d77-ab89-692fe775e6f5",
+      "title": "",
+      "fullFile": "cypress/e2e/HelperFunctionalities/Evaluation&Questionairre/7.Questions_Categories_test.cy.ts",
+      "file": "cypress/e2e/HelperFunctionalities/Evaluation&Questionairre/7.Questions_Categories_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5fb4437a-af2b-4bc6-a1ba-ec55ad34dda5",
+          "title": "Questionnaire Categories",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Adds a Question Category",
+              "fullTitle": "Questionnaire Categories Adds a Question Category",
+              "timedOut": null,
+              "duration": 13620,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Add').click().wait(1000);\ncy.getByDataCy('question-category-name').type('Closed Ended Questions');\ncy.getByDataCy('question-category-mapping-reference').type(faker_1.faker.string.alphanumeric(15));\ncy.getByDataCy('questionnaire-type-options').click();\ncy.get('.multiselect-item-checkbox').contains('Type DKA Test Updated').click().wait(500);\ncy.getByDataCy('question-weight').type('4');\ncy.getByDataCy('save-question-category').click();\ncy.wait(500);\ncy.contains('Questions category has been added').wait(1000);",
+              "err": {},
+              "uuid": "dee276dc-d54d-4bca-9189-165382bde0a6",
+              "parentUUID": "5fb4437a-af2b-4bc6-a1ba-ec55ad34dda5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edits a Question Category",
+              "fullTitle": "Questionnaire Categories Edits a Question Category",
+              "timedOut": null,
+              "duration": 12849,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#gridQuestionsCategories tr .dx-first-cell .dx-texteditor-input').type('Closed Ended Questions', { force: true }).wait(2000);\ncy.get('#gridQuestionsCategories tr td').find('.dx-icon-edit').eq(0).click({ force: true }).wait(1000);\ncy.get('#gridQuestionsCategories .dx-datagrid-table .dx-texteditor-container > .dx-texteditor-input-container > .dx-texteditor-input').as('categories');\ncy.get('@categories').eq(4).clear().wait(1000).type('Closed Ended Questions Edited DKA', { force: true }).wait(1000);\ncy.get('tr td').find('.dx-icon-save').eq(1).click().wait(1500);\ncy.contains(\"Questions category has been updated.\").wait(1000);",
+              "err": {},
+              "uuid": "836e7762-efca-48cb-931a-499c3a6f695a",
+              "parentUUID": "5fb4437a-af2b-4bc6-a1ba-ec55ad34dda5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deletes a Question Category",
+              "fullTitle": "Questionnaire Categories Deletes a Question Category",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "cy.visit('/settings/questions-categories').wait(2000);\ncy.get('#gridQuestionsCategories tr .dx-first-cell .dx-texteditor-input').type('Closed Ended Questions Edited DKA', { force: true }).wait(2000);\ncy.get('#gridQuestionsCategories tr td').find('.dx-icon-trash').eq(1).click({ force: true }).wait(1000);\ncy.get('.dx-popup-normal').contains('Yes').click({ force: true }).wait(1000);\ncy.contains(\"Questions category has been deleted.\").wait(1000);",
+              "err": {},
+              "uuid": "25a5949f-178d-47cd-985b-8759292101f3",
+              "parentUUID": "5fb4437a-af2b-4bc6-a1ba-ec55ad34dda5",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "dee276dc-d54d-4bca-9189-165382bde0a6",
+            "836e7762-efca-48cb-931a-499c3a6f695a"
+          ],
+          "failures": [],
+          "pending": [
+            "25a5949f-178d-47cd-985b-8759292101f3"
+          ],
+          "skipped": [],
+          "duration": 26469,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

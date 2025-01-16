@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="28.761" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T12:47:13" tests="0" file="cypress/e2e/CorporateClientFunctionality/Electronic_Identification_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Electronic Identification" timestamp="2025-01-16T12:47:24" tests="1" time="17.696" failures="0">
+    <testcase name="Electronic Identification Checks if the Identity verifications page loads" time="28.709" classname="Checks if the Identity verifications page loads">
+    </testcase>
+  </testsuite>
+</testsuites>

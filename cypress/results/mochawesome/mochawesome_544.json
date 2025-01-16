@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-16T13:33:40.071Z",
+    "end": "2025-01-16T13:33:50.630Z",
+    "duration": 10559,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "7aa0cb1d-559e-4d3c-83eb-274234801433",
+      "title": "",
+      "fullFile": "cypress/e2e/SideMenu/Know_Your_Clients_test.cy.ts",
+      "file": "cypress/e2e/SideMenu/Know_Your_Clients_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0460da48-2819-424a-a760-11cfe4c6af2e",
+          "title": "Know Your Clients",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Load the list of clients",
+              "fullTitle": "Know Your Clients Load the list of clients",
+              "timedOut": null,
+              "duration": 10502,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//clicks the know your clients button then confirms if we successfully navigated to the clients route\ncy.getByDataCy(\"know-clients-btn\").click();\ncy.location(\"pathname\").should('equal', \"/main/clients\");\ncy.contains(\"Know your Clients\").should(\"be.visible\");",
+              "err": {},
+              "uuid": "060013b5-34b4-43e2-9907-f3ace830e6af",
+              "parentUUID": "0460da48-2819-424a-a760-11cfe4c6af2e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "060013b5-34b4-43e2-9907-f3ace830e6af"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 10502,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

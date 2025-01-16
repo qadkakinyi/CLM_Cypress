@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-16T12:09:54.953Z",
+    "end": "2025-01-16T12:10:21.691Z",
+    "duration": 26738,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "fb2cd284-8dd2-4224-b88f-bcf35a99c9da",
+      "title": "",
+      "fullFile": "cypress/e2e/AddClients/Add_ClientCorporate_test.cy.ts",
+      "file": "cypress/e2e/AddClients/Add_ClientCorporate_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "545fe501-13d3-4d39-b787-d9cadca69d45",
+          "title": "Add Client Corporate",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add Client Corporate",
+              "fullTitle": "Add Client Corporate Add Client Corporate",
+              "timedOut": null,
+              "duration": 26642,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Click on Know your Clients navigation item\ncy.get('a[href*=\"main/clients\"]').click();\ncy.get('#addCorporate').should('be.visible').click();\ncy.wait(1000);\nvar companyName = faker_1.faker.company.name();\ncy.get('#addClientCorporateForm input[name=\"registeredName\"]').type(companyName);\ncy.get('#addClientCorporateForm input[name=\"registrationNumber\"]').type(faker_1.faker.string.numeric({ length: 8, allowLeadingZeros: false }));\ncy.get('#regulationGroupDropdown').click();\ncy.get('.dx-overlay-wrapper.dx-popup-wrapper.dx-dropdowneditor-overlay .dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true });\ncy.get('#defaultFullStructureEvaluationDropdown').click();\ncy.get('#dynamicSelectBoxDropdownGrid table').contains('td', 'Yes').click();\ncy.get('#clientStatusDropdown').click();\ncy.get('#dynamicSelectBoxDropdownGrid table').contains('td', 'Active').click();\ncy.get('#countriesListDropdown').click();\ncy.get('#dynamicSelectBoxDropdownGrid table').contains('td', 'Albania').click();\ncy.get('#addClientCorporateForm input[name=\"externalReference\"]').type(faker_1.faker.string.uuid());\ncy.get('#addClientCorporateForm input[name=\"phone\"]').type(faker_1.faker.string.numeric(8));\ncy.get('#addClientCorporateForm input[name=\"email\"]').type(\"\".concat(companyName, \"@gmail.com\"));\ncy.get('#addClientCorporateForm input[name=\"authorisedCapital\"]').clear().wait(500).type('10000');\ncy.get('#addClientCorporateForm input[name=\"issuedCapital\"]').type(faker_1.faker.string.numeric({ length: 4, allowLeadingZeros: false }));\ncy.get('#addClientCorporateForm input[name=\"ipAddress\"]').type(faker_1.faker.internet.ipv4());\ncy.get('#addClientCorporateForm textarea[name=\"notes\"]').type(faker_1.faker.lorem.paragraph(5));\ncy.get('#saveClientCorporate').click().wait(2000);\ncy.contains('The Client Corporate has been added.');",
+              "err": {},
+              "uuid": "f5d987f1-ea88-4a79-b0c4-043918a8a963",
+              "parentUUID": "545fe501-13d3-4d39-b787-d9cadca69d45",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f5d987f1-ea88-4a79-b0c4-043918a8a963"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 26642,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

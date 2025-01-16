@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="145.489" tests="8" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T07:05:22" tests="0" file="cypress/e2e/Priority2/Adhoc_Screening_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Adhoc Screening Individual Client" timestamp="2025-01-16T07:05:34" tests="4" time="72.210" failures="0">
+    <testcase name="Adhoc Screening Individual Client Performs Person Search Using UI" time="35.249" classname="Performs Person Search Using UI">
+    </testcase>
+    <testcase name="Adhoc Screening Individual Client Performs Person Monitoring and Refreshes Results" time="16.380" classname="Performs Person Monitoring and Refreshes Results">
+    </testcase>
+    <testcase name="Adhoc Screening Individual Client Removes Person Monitoring" time="10.057" classname="Removes Person Monitoring">
+    </testcase>
+    <testcase name="Adhoc Screening Individual Client Performs Person Search Using API" time="22.170" classname="Performs Person Search Using API">
+    </testcase>
+  </testsuite>
+  <testsuite name="Adhoc Screening Corporate Client" timestamp="2025-01-16T07:06:46" tests="4" time="61.472" failures="0">
+    <testcase name="Adhoc Screening Corporate Client Performs Business Search Using UI" time="20.274" classname="Performs Business Search Using UI">
+    </testcase>
+    <testcase name="Adhoc Screening Corporate Client Performs Business Monitoring and Refreshes results" time="14.037" classname="Performs Business Monitoring and Refreshes results">
+    </testcase>
+    <testcase name="Adhoc Screening Corporate Client Removes Business Monitoring" time="8.001" classname="Removes Business Monitoring">
+    </testcase>
+    <testcase name="Adhoc Screening Corporate Client Performs Business Search Using API" time="18.944" classname="Performs Business Search Using API">
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="48.488" tests="4" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T08:18:20" tests="0" file="cypress/e2e/HelperFunctionalities/Templates&amp;Report_Setups/Email_Template_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Email Template" timestamp="2025-01-16T08:18:26" tests="4" time="42.076" failures="0">
+    <testcase name="Email Template Adds an Email Template" time="15.632" classname="Adds an Email Template">
+    </testcase>
+    <testcase name="Email Template Edits an Email Template" time="11.986" classname="Edits an Email Template">
+    </testcase>
+    <testcase name="Email Template Deletes an Email Template" time="10.399" classname="Deletes an Email Template">
+    </testcase>
+    <testcase name="Email Template Deletes an Intro And Ending" time="10.327" classname="Deletes an Intro And Ending">
+    </testcase>
+  </testsuite>
+</testsuites>

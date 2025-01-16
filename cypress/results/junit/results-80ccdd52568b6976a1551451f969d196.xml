@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="243.870" tests="7" failures="2">
+  <testsuite name="Root Suite" timestamp="2025-01-16T13:26:50" tests="0" file="cypress/e2e/ScreenPerformance/Processes_Performance_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Processes Menu" timestamp="2025-01-16T13:26:56" tests="1" time="2.355" failures="0">
+    <testcase name="Processes Menu Toggles first level menu list items visibility" time="8.108" classname="Toggles first level menu list items visibility">
+    </testcase>
+  </testsuite>
+  <testsuite name="Client Profiling" timestamp="2025-01-16T13:26:58" tests="2" time="83.020" failures="1">
+    <testcase name="Client Profiling Opens level 2 menu list under client profiling" time="6.198" classname="Opens level 2 menu list under client profiling">
+    </testcase>
+    <testcase name="Client Profiling opens Client profiling menu items and loads the right page" time="0.000" classname="opens Client profiling menu items and loads the right page">
+      <failure message="Timed out retrying after 4050ms: `cy.click()` failed because this element:
+
+`&lt;sa-menu-item _ngcontent-mus-c332=&quot;&quot; data-cy=&quot;processes&quot; icon=&quot;play&quot; title=&quot;Processes&quot; _nghost-mus-c329=&quot;&quot; class=&quot;ng-tns-c329-5 ng-star-inserted&quot;&gt;...&lt;/sa-menu-item&gt;`
+
+is being covered by another element:
+
+`&lt;div _ngcontent-mus-c74=&quot;&quot; class=&quot;ngx-overlay loading-foreground&quot; style=&quot;background-color: rgba(40, 40, 40, 0.3); border-radius: 0px;&quot;&gt;...&lt;/div&gt;`
+
+Fix this problem, or use {force: true} to disable error checking.
+
+https://on.cypress.io/element-cannot-be-interacted-with" type="CypressError"><![CDATA[CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element:
+
+`<sa-menu-item _ngcontent-mus-c332="" data-cy="processes" icon="play" title="Processes" _nghost-mus-c329="" class="ng-tns-c329-5 ng-star-inserted">...</sa-menu-item>`
+
+is being covered by another element:
+
+`<div _ngcontent-mus-c74="" class="ngx-overlay loading-foreground" style="background-color: rgba(40, 40, 40, 0.3); border-radius: 0px;">...</div>`
+
+Fix this problem, or use {force: true} to disable error checking.
+
+https://on.cypress.io/element-cannot-be-interacted-with
+    at ensureIsDescendent (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:112915:68)
+    at ensureDescendents (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:112966:5)
+    at ensureDescendentsAndScroll (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:112972:14)
+    at ensureElIsNotCovered (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:113103:5)
+    at runAllChecks (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:113302:52)
+    at retryActionability (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:113339:16)
+    at tryCatcher (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1830:23)
+    at Promise.attempt.Promise.try (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:4338:29)
+    at whenStable (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:143744:68)
+    at <unknown> (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:143685:14)
+    at tryCatcher (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1830:23)
+    at Promise._settlePromiseFromHandler (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1542:31)
+    at Promise._settlePromise (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1599:18)
+    at Promise._settlePromise0 (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1644:10)
+    at Promise._settlePromises (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1724:18)
+    at Promise._fulfill (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1668:18)
+    at <unknown> (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:5473:46)
+From Your Spec Code:
+    at eval (webpack://clm_cypress/./cypress/e2e/ScreenPerformance/Processes_Performance_test.cy.ts:43:0)
+at Array.forEach (<anonymous>)
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/ScreenPerformance/Processes_Performance_test.cy.ts:34:0)]]></failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Transaction Monitoring and Actions" timestamp="2025-01-16T13:28:21" tests="1" time="36.535" failures="0">
+    <testcase name="Transaction Monitoring and Actions Opens Transaction Monitoring menu items clicks each and navigates to the required page" time="34.090" classname="Opens Transaction Monitoring menu items clicks each and navigates to the required page">
+    </testcase>
+  </testsuite>
+  <testsuite name="Screening &amp; Electronic Identification" timestamp="2025-01-16T13:28:58" tests="1" time="60.004" failures="0">
+    <testcase name="Screening &amp; Electronic Identification Opens Screening &amp; Electronic Identification menu items clicks each and navigates to the required page" time="57.794" classname="Opens Screening &amp; Electronic Identification menu items clicks each and navigates to the required page">
+    </testcase>
+  </testsuite>
+  <testsuite name="Onboarding Portal" timestamp="2025-01-16T13:29:58" tests="1" time="49.356" failures="0">
+    <testcase name="Onboarding Portal Opens Onboarding portal menu items clicks each and navigates to the required page" time="47.150" classname="Opens Onboarding portal menu items clicks each and navigates to the required page">
+    </testcase>
+  </testsuite>
+  <testsuite name="Other Menu" timestamp="2025-01-16T13:30:47" tests="1" time="6.801" failures="1">
+    <testcase name="Other Menu &quot;before each&quot; hook for &quot;clicks all links and navigates to the right pages&quot;" time="0.000" classname="&quot;before each&quot; hook for &quot;clicks all links and navigates to the right pages&quot;">
+      <failure message="Timed out retrying after 4050ms: `cy.click()` failed because this element:
+
+`&lt;sa-menu-item _ngcontent-khr-c332=&quot;&quot; data-cy=&quot;processes&quot; icon=&quot;play&quot; title=&quot;Processes&quot; _nghost-khr-c329=&quot;&quot; class=&quot;ng-tns-c329-5 ng-star-inserted&quot;&gt;...&lt;/sa-menu-item&gt;`
+
+is being covered by another element:
+
+`&lt;div _ngcontent-khr-c74=&quot;&quot; class=&quot;ngx-overlay foreground-closing&quot; style=&quot;background-color: rgba(40, 40, 40, 0.3); border-radius: 0px;&quot;&gt;...&lt;/div&gt;`
+
+Fix this problem, or use {force: true} to disable error checking.
+
+https://on.cypress.io/element-cannot-be-interacted-with
+
+Because this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Other Menu`" type="CypressError"><![CDATA[CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element:
+
+`<sa-menu-item _ngcontent-khr-c332="" data-cy="processes" icon="play" title="Processes" _nghost-khr-c329="" class="ng-tns-c329-5 ng-star-inserted">...</sa-menu-item>`
+
+is being covered by another element:
+
+`<div _ngcontent-khr-c74="" class="ngx-overlay foreground-closing" style="background-color: rgba(40, 40, 40, 0.3); border-radius: 0px;">...</div>`
+
+Fix this problem, or use {force: true} to disable error checking.
+
+https://on.cypress.io/element-cannot-be-interacted-with
+
+Because this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Other Menu`
+    at ensureIsDescendent (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:112915:68)
+    at ensureDescendents (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:112966:5)
+    at ensureDescendentsAndScroll (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:112972:14)
+    at ensureElIsNotCovered (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:113103:5)
+    at runAllChecks (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:113302:52)
+    at retryActionability (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:113339:16)
+    at tryCatcher (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1830:23)
+    at Promise.attempt.Promise.try (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:4338:29)
+    at whenStable (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:143744:68)
+    at <unknown> (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:143685:14)
+    at tryCatcher (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1830:23)
+    at Promise._settlePromiseFromHandler (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1542:31)
+    at Promise._settlePromise (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1599:18)
+    at Promise._settlePromise0 (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1644:10)
+    at Promise._settlePromises (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1724:18)
+    at Promise._fulfill (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1668:18)
+    at <unknown> (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:5473:46)
+From Your Spec Code:
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/ScreenPerformance/Processes_Performance_test.cy.ts:160:0)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

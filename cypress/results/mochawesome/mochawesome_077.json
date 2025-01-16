@@ -1,0 +1,179 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 0,
+    "pending": 0,
+    "failures": 4,
+    "start": "2025-01-16T06:33:34.225Z",
+    "end": "2025-01-16T06:34:51.978Z",
+    "duration": 77753,
+    "testsRegistered": 4,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "36511a0c-bb59-4043-8764-e0e14a562e43",
+      "title": "",
+      "fullFile": "cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Ultimate_Beneficial_Owner_test.cy.ts",
+      "file": "cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Ultimate_Beneficial_Owner_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2b3ac7f3-a864-4064-9601-a9fb238c229c",
+          "title": "Ultimate Beneficial Owner",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Adds UBO",
+              "fullTitle": "Ultimate Beneficial Owner Adds UBO",
+              "timedOut": null,
+              "duration": 40342,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "(0, e2e_1.navigateToClientMenu)('Corporate');\ncy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Ultimate Beneficial Owner').click();\ncy.getByDataCy('addBeneficiary').click().wait(1000);\ncy.getByDataCy('clientShareholdersList').click();\ncy.getBySel('dynamicSelectBoxDropdownGrid').find('[aria-rowindex=\"1\"]').click().wait(500);\ncy.getByFormControlName('numberOfShares').type('0');\ncy.getByDataCy('weight-percentage').clear().type(faker_1.faker.number.int({ min: 50, max: 99 }).toString());\ncy.getByFormControlName('isControllingPerson').click();\ncy.getByFormControlName('appointmentDate').type(faker_1.faker.date.past().toISOString().slice(0, 10));\ncy.getByFormControlName('resignationDate').type(faker_1.faker.date.recent().toISOString().slice(0, 10));\ncy.getBySel('controllingPersonList').click().wait(1000);\ncy.getBySel('dynamicSelectBoxDropdownGrid').find('[aria-rowindex=\"2\"]').should('be.visible').click();\ncy.getByFormControlName('controllingPersonTypeOther').type(faker_1.faker.word.words(5));\ncy.get('#selectClient').click();\ncy.get('#clientsFilteringDataGrid [aria-rowindex=\"1\"]').click().wait(2000);\ncy.get('#addBeneficiaryForm').contains('Save').click().wait(2000);\ncy.contains('The beneficiary has been added.');\ncy.location('pathname').then(function (loc) {\n    location = loc;\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'The beneficiary has been added.' but never did.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'The beneficiary has been added.' but never did.\n    at Context.eval (webpack://clm_cypress/./cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Ultimate_Beneficial_Owner_test.cy.ts:24:0)",
+                "diff": null
+              },
+              "uuid": "b87969b2-b479-4a99-a164-93dd0734119a",
+              "parentUUID": "2b3ac7f3-a864-4064-9601-a9fb238c229c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edits UBO",
+              "fullTitle": "Ultimate Beneficial Owner Edits UBO",
+              "timedOut": null,
+              "duration": 7855,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(location).wait(2000);\ncy.get('#gridClientBeneficiary .dx-icon-chevrondoubleright').should('be.visible').eq(0).click({ force: true }).wait(2000);\ncy.get('#editClientBeneficiaryForm');\ncy.getByDataCy('weight-percentage').clear().type(faker_1.faker.number.int({ min: 10, max: 49 }).toString());\ncy.contains('div', 'Save & Close').click().wait(2000);\ncy.contains('The Beneficiary has been updated.');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#gridClientBeneficiary .dx-icon-chevrondoubleright`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#gridClientBeneficiary .dx-icon-chevrondoubleright`, but never found it.\n    at Context.eval (webpack://clm_cypress/./cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Ultimate_Beneficial_Owner_test.cy.ts:31:0)",
+                "diff": null
+              },
+              "uuid": "a7015bbe-dd42-4641-a369-c6baf41fad79",
+              "parentUUID": "2b3ac7f3-a864-4064-9601-a9fb238c229c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deletes UBO",
+              "fullTitle": "Ultimate Beneficial Owner Deletes UBO",
+              "timedOut": null,
+              "duration": 7848,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(location).wait(2000);\ncy.get('#gridClientBeneficiary .dx-icon-trash').should('be.visible').eq(0).click({ force: true });\ncy.contains('Yes').click().wait(2000);\ncy.contains('The beneficiary has been deleted.');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#gridClientBeneficiary .dx-icon-trash`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#gridClientBeneficiary .dx-icon-trash`, but never found it.\n    at Context.eval (webpack://clm_cypress/./cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Ultimate_Beneficial_Owner_test.cy.ts:39:0)",
+                "diff": null
+              },
+              "uuid": "f8913ab0-9e80-4094-a82b-0a2a38716766",
+              "parentUUID": "2b3ac7f3-a864-4064-9601-a9fb238c229c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deletes Authorized Person",
+              "fullTitle": "Ultimate Beneficial Owner Deletes Authorized Person",
+              "timedOut": null,
+              "duration": 21444,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "(0, e2e_1.navigateToClientMenu)('Corporate');\ncy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Shareholders/Partners').click();\ncy.get('#gridClientShareholders .dx-icon-trash').should('be.visible').eq(0).click({ force: true }).wait(1000);\ncy.contains('Yes').click().wait(1000);\ncy.contains('Shareholder has been deleted.');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Shareholder has been deleted.' but never did.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Shareholder has been deleted.' but never did.\n    at Context.eval (webpack://clm_cypress/./cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Ultimate_Beneficial_Owner_test.cy.ts:48:0)",
+                "diff": null
+              },
+              "uuid": "db6959ad-20d7-40a9-a458-e8402916e4cb",
+              "parentUUID": "2b3ac7f3-a864-4064-9601-a9fb238c229c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "b87969b2-b479-4a99-a164-93dd0734119a",
+            "a7015bbe-dd42-4641-a369-c6baf41fad79",
+            "f8913ab0-9e80-4094-a82b-0a2a38716766",
+            "db6959ad-20d7-40a9-a458-e8402916e4cb"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 77489,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

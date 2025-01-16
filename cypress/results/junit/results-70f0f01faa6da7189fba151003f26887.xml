@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="67.245" tests="3" failures="3">
+  <testsuite name="Root Suite" timestamp="2025-01-16T13:13:48" tests="0" file="cypress/e2e/IndividualClientFunctionality/Add_Edit_Delete_Client_MID_Accounts_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Add, Edit, Delete Client MID Accounts" timestamp="2025-01-16T13:13:59" tests="3" time="56.513" failures="3">
+    <testcase name="Add, Edit, Delete Client MID Accounts Add Client MID Accounts" time="0.000" classname="Add Client MID Accounts">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview .dx-datagrid-content&gt;.dx-datagrid-table &gt; tbody &gt; .dx-data-row &gt; td`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview .dx-datagrid-content>.dx-datagrid-table > tbody > .dx-data-row > td`, but never found it.
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/IndividualClientFunctionality/Add_Edit_Delete_Client_MID_Accounts_test.cy.ts:34:0)]]></failure>
+    </testcase>
+    <testcase name="Add, Edit, Delete Client MID Accounts Edit Client MID Accounts" time="0.000" classname="Edit Client MID Accounts">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `#gridMidAccounts table tbody tr td.dx-command-edit-with-icons a`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `#gridMidAccounts table tbody tr td.dx-command-edit-with-icons a`, but never found it.
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/IndividualClientFunctionality/Add_Edit_Delete_Client_MID_Accounts_test.cy.ts:55:0)]]></failure>
+    </testcase>
+    <testcase name="Add, Edit, Delete Client MID Accounts Delete client MID Accounts" time="0.000" classname="Delete client MID Accounts">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `.dx-command-edit-with-icons a`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `.dx-command-edit-with-icons a`, but never found it.
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/IndividualClientFunctionality/Add_Edit_Delete_Client_MID_Accounts_test.cy.ts:70:0)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

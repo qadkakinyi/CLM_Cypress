@@ -1,0 +1,125 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-16T12:52:21.199Z",
+    "end": "2025-01-16T12:52:52.701Z",
+    "duration": 31502,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "3cf6c1ee-c804-4ae8-89a5-1da2a455fa4e",
+      "title": "",
+      "fullFile": "cypress/e2e/Priority2/Administrator_Rules_test.cy.ts",
+      "file": "cypress/e2e/Priority2/Administrator_Rules_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "213e4d46-cf45-4287-add9-0df62df47d4e",
+          "title": "Add Rule",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Generate Regulation Group Hash Key",
+              "fullTitle": "Add Rule Generate Regulation Group Hash Key",
+              "timedOut": null,
+              "duration": 20407,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.wait(3000);\ncy.getByDataCy('system-settings-menu').scrollIntoView().click();\ncy.get('[title=\"Account\"]').click().wait(1000);\ncy.get('[icon=\"key\"] > .sa-button > .text').click().wait(1000);\ncy.get('.col-md-12 > .form-group > app-dynamic-selectbox > .sa-input-dropdown > .custom-selectbox > .dx-dropdowneditor-input-wrapper > .dx-texteditor-container > .dx-texteditor-buttons-container > .dx-widget > .dx-button-content > .dx-dropdowneditor-icon').click();\ncy.get('[aria-rowindex=\"5\"] > td').click();\ncy.get('#createHashKeyForm > fieldset > :nth-child(2) > .col-md-12 > .sa-input > .ng-untouched').clear();\ncy.get('#createHashKeyForm > fieldset > :nth-child(2) > .col-md-12 > .sa-input > .ng-untouched').type(getProviderKey());\ncy.get('.dx-dropdown-custom-style > .dx-dropdowneditor-input-wrapper > .dx-texteditor-container > .dx-texteditor-buttons-container > .dx-widget > .dx-button-content > .dx-dropdowneditor-icon').click().wait(500);\ncy.get('.dx-checkbox-container > .dx-checkbox-icon').eq(1).click();\ncy.getByFormControlName('dateOfRulesExpiration').type(faker_1.faker.date.future().toLocaleDateString('en-CA'));\ncy.get('app-create-hash-key > .sa-form > .custom-backround-transparent > .row > .col > [icon=\"save\"] > .sa-button > .text').click().wait(2000);\ncy.getByFormControlName('hashKey').invoke('val').then(function (value) {\n    hashValue = value;\n});\ncy.get('#createHashKeyForm > .custom-backround-transparent > .row > .col > [icon=\"times\"] > .sa-button > .text').click().wait(1000);",
+              "err": {},
+              "uuid": "f057773d-d276-4424-b1ae-d37100fd1b05",
+              "parentUUID": "213e4d46-cf45-4287-add9-0df62df47d4e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Adds A Rule",
+              "fullTitle": "Add Rule Adds A Rule",
+              "timedOut": null,
+              "duration": 10993,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/administration/rules').wait(2000);\ncy.contains('sa-button', 'Add').click().wait(1000);\ncy.get('dx-drop-down-box').eq(0).click().wait(500);\ncy.get('[aria-rowindex=\"1\"] > .dx-command-select > .dx-widget > .dx-checkbox-container > .dx-checkbox-icon').click().wait(500);\ncy.get('dx-drop-down-box').eq(0).click().wait(500); //closing the dropdown menu\ncy.getByFormControlName('securityHash').type(hashValue);\ncy.get('#addRuleFormFromHash [icon=\"save\"]').click().wait(2000);\ncy.contains('Rule has been added.').wait(1000);",
+              "err": {},
+              "uuid": "29cfb724-eea7-4112-a3af-8ec01c374954",
+              "parentUUID": "213e4d46-cf45-4287-add9-0df62df47d4e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f057773d-d276-4424-b1ae-d37100fd1b05",
+            "29cfb724-eea7-4112-a3af-8ec01c374954"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 31400,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

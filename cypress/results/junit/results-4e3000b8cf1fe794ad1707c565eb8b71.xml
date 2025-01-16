@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="123.443" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T07:14:38" tests="0" file="cypress/e2e/ScreenPerformance/Client_Detail_Lines_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Client Detail Lines Performance" timestamp="2025-01-16T07:14:50" tests="1" time="111.682" failures="0">
+    <testcase name="Client Detail Lines Performance should navigate to each client detail line within 10 seconds" time="123.270" classname="should navigate to each client detail line within 10 seconds">
+    </testcase>
+  </testsuite>
+</testsuites>

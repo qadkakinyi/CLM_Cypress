@@ -1,0 +1,125 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-16T08:31:41.325Z",
+    "end": "2025-01-16T08:31:59.592Z",
+    "duration": 18267,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "47680316-172f-4964-a17e-2d1bb326ae6a",
+      "title": "",
+      "fullFile": "cypress/e2e/ScreenPerformance/Administration/Administration_Level_1_Submenus_test.cy.ts",
+      "file": "cypress/e2e/ScreenPerformance/Administration/Administration_Level_1_Submenus_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3ddeea59-ec34-4d22-b877-f466f22b83bf",
+          "title": "Administration Submenu Level 1",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Opens Account",
+              "fullTitle": "Administration Submenu Level 1 Opens Account",
+              "timedOut": null,
+              "duration": 12309,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByDataCy(\"administration-menu\").find(\"ul>li\").eq(0).click();\ncy.location(\"pathname\").should(\"equal\", \"/administration/account\");\ncy.get('#activeUsers');\ncy.contains(\"Active Users\");\ncy.get('.sk-ball-spin-clockwise').should(\"not.be.visible\");",
+              "err": {},
+              "uuid": "8ae63ce6-6f26-4406-bed2-f889834db2c1",
+              "parentUUID": "3ddeea59-ec34-4d22-b877-f466f22b83bf",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Opens release notes",
+              "fullTitle": "Administration Submenu Level 1 Opens release notes",
+              "timedOut": null,
+              "duration": 5880,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByDataCy(\"administration-menu\").find(\"ul>li\").eq(1).click();\ncy.location(\"pathname\").should(\"equal\", \"/administration/release-notes\");\ncy.contains(\"Release Notes\");\ncy.get('.sk-ball-spin-clockwise').should(\"not.be.visible\");",
+              "err": {},
+              "uuid": "475a44df-774e-414c-b064-97a8ec9f20aa",
+              "parentUUID": "3ddeea59-ec34-4d22-b877-f466f22b83bf",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8ae63ce6-6f26-4406-bed2-f889834db2c1",
+            "475a44df-774e-414c-b064-97a8ec9f20aa"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 18189,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-16T07:28:13.484Z",
+    "end": "2025-01-16T07:29:32.876Z",
+    "duration": 79392,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "151e6053-9186-429d-b4e9-14413fbb710f",
+      "title": "",
+      "fullFile": "cypress/e2e/SideMenu/PowerBi_Reports_test.cy.ts",
+      "file": "cypress/e2e/SideMenu/PowerBi_Reports_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9bb68ec7-d140-4f20-a418-f41f0f904884",
+          "title": "Power Bi Reports",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Opens power bi menu and menu shows menu items",
+              "fullTitle": "Power Bi Reports Opens power bi menu and menu shows menu items",
+              "timedOut": null,
+              "duration": 11185,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.location(\"pathname\").should(\"include\", \"dashboard\");",
+              "err": {},
+              "uuid": "6eeec080-b26d-4cf7-8ca0-3651650fd213",
+              "parentUUID": "9bb68ec7-d140-4f20-a418-f41f0f904884",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Risk assessment report first redesign",
+              "fullTitle": "Power Bi Reports Risk assessment report first redesign",
+              "timedOut": null,
+              "duration": 15413,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('span', 'Risk Assessment Report').click();\ncy.wait(10000);\ncy.location(\"pathname\").should('include', '/main/power-bi/report/c245eca4');",
+              "err": {},
+              "uuid": "44d31667-b82b-4eb1-8d34-735122fb53dc",
+              "parentUUID": "9bb68ec7-d140-4f20-a418-f41f0f904884",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Transaction monitoring report",
+              "fullTitle": "Power Bi Reports Transaction monitoring report",
+              "timedOut": null,
+              "duration": 15739,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('span', 'Transaction Monitoring Report').click();\ncy.wait(10000);\ncy.location(\"pathname\").should('include', '/main/power-bi/report/1a49d3d7');",
+              "err": {},
+              "uuid": "d293f735-0d99-48d5-88a0-2c502fb86384",
+              "parentUUID": "9bb68ec7-d140-4f20-a418-f41f0f904884",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Transaction screening",
+              "fullTitle": "Power Bi Reports Transaction screening",
+              "timedOut": null,
+              "duration": 16001,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('span', 'Transaction Screening').click();\ncy.wait(10000);\ncy.location(\"pathname\").should('include', '/main/power-bi/report/ff080714');",
+              "err": {},
+              "uuid": "08069a43-aca2-4b7e-9a0a-fe4bd90e5d43",
+              "parentUUID": "9bb68ec7-d140-4f20-a418-f41f0f904884",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Transaction screening performance",
+              "fullTitle": "Power Bi Reports Transaction screening performance",
+              "timedOut": null,
+              "duration": 15542,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('span', 'Transaction Screening Performance').click();\ncy.wait(10000);\ncy.location(\"pathname\").should('include', '/main/power-bi/report/d2df14c1');",
+              "err": {},
+              "uuid": "73e2c8dc-bda3-431f-baf0-da5ba0b35476",
+              "parentUUID": "9bb68ec7-d140-4f20-a418-f41f0f904884",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6eeec080-b26d-4cf7-8ca0-3651650fd213",
+            "44d31667-b82b-4eb1-8d34-735122fb53dc",
+            "d293f735-0d99-48d5-88a0-2c502fb86384",
+            "08069a43-aca2-4b7e-9a0a-fe4bd90e5d43",
+            "73e2c8dc-bda3-431f-baf0-da5ba0b35476"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 73880,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

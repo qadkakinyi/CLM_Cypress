@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-16T06:38:57.638Z",
+    "end": "2025-01-16T06:39:21.362Z",
+    "duration": 23724,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "651953cf-3ea3-46d6-86df-64d452feaf3a",
+      "title": "",
+      "fullFile": "cypress/e2e/CorporateClientFunctionality/Workflow_Task_History_test.cy.ts",
+      "file": "cypress/e2e/CorporateClientFunctionality/Workflow_Task_History_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "296e3f61-c675-4519-8abf-d998e1c37fd1",
+          "title": "Workflow Task History",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Navigates to Workflow Task History",
+              "fullTitle": "Workflow Task History Navigates to Workflow Task History",
+              "timedOut": null,
+              "duration": 23663,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Navigate to specific client\n(0, e2e_1.navigateToClientMenu)('Corporate');\ncy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('Workflow Task History').click().wait(1000);\ncy.get('#gridTaskHistory');\ncy.contains('h1', 'Workflow Tasks History');",
+              "err": {},
+              "uuid": "f4fa5c06-ed75-42a9-a60b-cdf4a92a0e37",
+              "parentUUID": "296e3f61-c675-4519-8abf-d998e1c37fd1",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f4fa5c06-ed75-42a9-a60b-cdf4a92a0e37"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 23663,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

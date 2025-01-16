@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="66.805" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T12:21:38" tests="0" file="cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Client_Action_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Add, Edit, Delete Client Action (Task) - Corporate" timestamp="2025-01-16T12:21:50" tests="3" time="55.241" failures="0">
+    <testcase name="Add, Edit, Delete Client Action (Task) - Corporate Add Client Action" time="49.676" classname="Add Client Action">
+    </testcase>
+    <testcase name="Add, Edit, Delete Client Action (Task) - Corporate Edit Action" time="11.965" classname="Edit Action">
+    </testcase>
+    <testcase name="Add, Edit, Delete Client Action (Task) - Corporate Delete Action" time="5.013" classname="Delete Action">
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="53.284" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T06:48:23" tests="0" file="cypress/e2e/IndividualClientFunctionality/Add_Edit_Delete_Client_Application_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Add, Edit, Delete Client Applications" timestamp="2025-01-16T06:48:34" tests="3" time="42.745" failures="0">
+    <testcase name="Add, Edit, Delete Client Applications Add Client Applications" time="33.921" classname="Add Client Applications">
+    </testcase>
+    <testcase name="Add, Edit, Delete Client Applications Edit client application" time="10.150" classname="Edit client application">
+    </testcase>
+    <testcase name="Add, Edit, Delete Client Applications Delete client applications" time="9.080" classname="Delete client applications">
+    </testcase>
+  </testsuite>
+</testsuites>

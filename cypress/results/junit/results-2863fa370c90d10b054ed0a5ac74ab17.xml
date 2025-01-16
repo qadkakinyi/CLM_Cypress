@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="56.614" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T13:12:48" tests="0" file="cypress/e2e/IndividualClientFunctionality/Add_Edit_Delete_Client_Investment_Account_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Add, Edit, Delete Client Investment Account" timestamp="2025-01-16T13:12:59" tests="3" time="45.636" failures="0">
+    <testcase name="Add, Edit, Delete Client Investment Account Add Client Investment Account" time="35.031" classname="Add Client Investment Account">
+    </testcase>
+    <testcase name="Add, Edit, Delete Client Investment Account Edit client investment account" time="10.665" classname="Edit client investment account">
+    </testcase>
+    <testcase name="Add, Edit, Delete Client Investment Account Delete client investment account" time="10.769" classname="Delete client investment account">
+    </testcase>
+  </testsuite>
+</testsuites>

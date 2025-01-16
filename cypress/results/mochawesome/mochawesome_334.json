@@ -1,0 +1,145 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-16T08:38:26.279Z",
+    "end": "2025-01-16T08:39:00.489Z",
+    "duration": 34210,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5db22506-cd94-4e10-b55d-678236b6a8eb",
+      "title": "",
+      "fullFile": "cypress/e2e/ScreenPerformance/Reports&Lists/Onboarding_Portal_Menu_test.cy.ts",
+      "file": "cypress/e2e/ScreenPerformance/Reports&Lists/Onboarding_Portal_Menu_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3a530b41-6f74-482f-8912-56e32c4feb54",
+          "title": "Reports/Lists module",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Open reports level 1 menu",
+              "fullTitle": "Reports/Lists module Open reports level 1 menu",
+              "timedOut": null,
+              "duration": 12080,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByDataCy(\"reports-menu\").click().wait(2000).find(\"ul>li\").should(\"have.length\", 7).wait(2000);",
+              "err": {},
+              "uuid": "45cce583-2860-46c1-b742-69b57fc93ac6",
+              "parentUUID": "3a530b41-6f74-482f-8912-56e32c4feb54",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "45cce583-2860-46c1-b742-69b57fc93ac6"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 12080,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "28617576-dcb6-41f1-9cde-671cb18c3a18",
+          "title": "Onboarding Portal",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Opens menu under the section and navigates to the expected pages",
+              "fullTitle": "Onboarding Portal Opens menu under the section and navigates to the expected pages",
+              "timedOut": null,
+              "duration": 22029,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var routes = [\n    { index: 0, el: \"Onboarding Client Registrations\", route: \"/reports/onboarding-client-registrations-report\", assertion: \"Onboarding Client Registrations\" },\n    { index: 0, el: \"Onboarding Client Registrations Application Progress Report\", route: \"/reports/onboarding-client-registrations-application-progress-report\", assertion: \"Onboarding Client Registrations Progress Report\" }\n];\nroutes.forEach(function (route, i) {\n    cy.contains(\"span\", route.el).eq(route.index).click();\n    cy.location(\"pathname\").should(\"equal\", route.route);\n    cy.contains(route.assertion);\n    cy.wait(5000);\n    // after this 5 seconds the data should have loades and spinner should not be visible\n    cy.get('.sk-ball-spin-clockwise').should(\"not.be.visible\");\n    if (i < routes.length - 1) {\n        cy.visit(\"/main/dashboard\").wait(1000);\n        cy.getByDataCy(\"reports-menu\").click();\n        cy.contains(\"span\", \"Onboarding Portal\").click().wait(1500);\n    }\n});",
+              "err": {},
+              "uuid": "faf2971e-c492-4848-9cfd-846f36e84451",
+              "parentUUID": "28617576-dcb6-41f1-9cde-671cb18c3a18",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "faf2971e-c492-4848-9cfd-846f36e84451"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 22029,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

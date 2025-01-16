@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="27.337" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T07:56:47" tests="0" file="cypress/e2e/HelperFunctionalities/ClientProfiling/MID_Classes_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="MID Classes" timestamp="2025-01-16T07:56:53" tests="3" time="21.584" failures="0">
+    <testcase name="MID Classes Adds an MID Class" time="11.759" classname="Adds an MID Class">
+    </testcase>
+    <testcase name="MID Classes Edits an MID class" time="9.468" classname="Edits an MID class">
+    </testcase>
+    <testcase name="MID Classes Deletes an MID Class" time="5.966" classname="Deletes an MID Class">
+    </testcase>
+  </testsuite>
+</testsuites>

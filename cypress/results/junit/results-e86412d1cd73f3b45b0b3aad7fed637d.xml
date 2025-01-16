@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="47.899" tests="3" failures="3">
+  <testsuite name="Root Suite" timestamp="2025-01-16T12:38:05" tests="0" file="cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Client_Wallets_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Add, Edit, Delete Client Wallets" timestamp="2025-01-16T12:38:17" tests="3" time="35.413" failures="3">
+    <testcase name="Add, Edit, Delete Client Wallets Add Client Cards" time="0.000" classname="Add Client Cards">
+      <failure message="Timed out retrying after 4000ms: Expected to find content: &apos;Wallets&apos; within the element: &lt;a.ng-tns-c329-6.ng-star-inserted&gt; and with the selector: &apos;span&apos; but never did." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Wallets' within the element: <a.ng-tns-c329-6.ng-star-inserted> and with the selector: 'span' but never did.
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Client_Wallets_test.cy.ts:11:0)]]></failure>
+    </testcase>
+    <testcase name="Add, Edit, Delete Client Wallets Edit client Cards" time="0.000" classname="Edit client Cards">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `[data-test=gridClientWallets]`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=gridClientWallets]`, but never found it.
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Client_Wallets_test.cy.ts:30:0)]]></failure>
+    </testcase>
+    <testcase name="Add, Edit, Delete Client Wallets Delete client Cards" time="0.000" classname="Delete client Cards">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `[data-test=gridClientWallets]`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=gridClientWallets]`, but never found it.
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Client_Wallets_test.cy.ts:46:0)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

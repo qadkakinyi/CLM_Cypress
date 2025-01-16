@@ -1,0 +1,298 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 9,
+    "passes": 9,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-16T08:07:33.357Z",
+    "end": "2025-01-16T08:09:31.370Z",
+    "duration": 118013,
+    "testsRegistered": 9,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "19912c09-a181-48ed-9443-0270bee9e5bf",
+      "title": "",
+      "fullFile": "cypress/e2e/HelperFunctionalities/KnowYourFirm/Firm_Evaluation_Grades_test.cy.ts",
+      "file": "cypress/e2e/HelperFunctionalities/KnowYourFirm/Firm_Evaluation_Grades_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4735cdd0-ae83-4a71-9fde-8d804e25ed99",
+          "title": "Firm Impact Score",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Adds a Firm Impact Score",
+              "fullTitle": "Firm Impact Score Adds a Firm Impact Score",
+              "timedOut": null,
+              "duration": 15889,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Add').click().wait(1000);\ncy.getByFormControlName('name').eq(0).type('Test DKA');\n//regulation group\ncy.get('dx-drop-down-box').eq(0).click().wait(500);\ncy.get('#dynamicSelectBoxDropdownGrid').find('.dx-datagrid-rowsview').find('tr > td').first().click().wait(500);\ncy.getByFormControlName('riskPointFrom').eq(0).type('1');\ncy.getByFormControlName('riskPointTo').eq(0).type('3');\n//color\ncy.get('dx-drop-down-box').eq(1).click().wait(500);\ncy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview .dx-datagrid-content tr td').contains('Coral').click({ force: true }).wait(500);\ncy.get('[icon=\"save\"]').eq(0).click().wait(1000);\ncy.contains('The firm impact score has been added').wait(1000);",
+              "err": {},
+              "uuid": "4bb9a9e0-c4c8-442b-8e6d-c408d24b4dc9",
+              "parentUUID": "4735cdd0-ae83-4a71-9fde-8d804e25ed99",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edits a Firm Impact Score",
+              "fullTitle": "Firm Impact Score Edits a Firm Impact Score",
+              "timedOut": null,
+              "duration": 12331,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#gridFirmImpactScores tr .dx-first-cell .dx-texteditor-input').type('Test DKA', { force: true }).wait(2000);\ncy.get('#gridFirmImpactScores tr td').find('.dx-icon-edit').eq(0).click({ force: true }).wait(1000);\ncy.get('#gridFirmImpactScores .dx-datagrid-table .dx-texteditor-container > .dx-texteditor-input-container > .dx-texteditor-input').as('scores');\ncy.get('@scores').eq(5).clear().wait(1000).type('Test Impact Score DKA', { force: true }).wait(1000);\ncy.get('tr td').find('.dx-icon-save').eq(1).click().wait(1500);\ncy.contains(\"The firm impact score has been updated.\").wait(1000);",
+              "err": {},
+              "uuid": "fd6b5ed3-dc03-4475-9997-6bffc8049c4f",
+              "parentUUID": "4735cdd0-ae83-4a71-9fde-8d804e25ed99",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deletes a Firm Impact Score",
+              "fullTitle": "Firm Impact Score Deletes a Firm Impact Score",
+              "timedOut": null,
+              "duration": 9689,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#gridFirmImpactScores tr .dx-first-cell .dx-texteditor-input').type('Test Impact Score DKA', { force: true }).wait(2000);\ncy.get('#gridFirmImpactScores tr td').find('.dx-icon-trash').eq(1).click({ force: true }).wait(1000);\ncy.get('.dx-popup-normal').contains('Yes').click({ force: true }).wait(1000);\ncy.contains(\"The firm impact score has been deleted.\").wait(1000);",
+              "err": {},
+              "uuid": "e3c818a5-1a02-4d74-a7ed-9cec14cbfab9",
+              "parentUUID": "4735cdd0-ae83-4a71-9fde-8d804e25ed99",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4bb9a9e0-c4c8-442b-8e6d-c408d24b4dc9",
+            "fd6b5ed3-dc03-4475-9997-6bffc8049c4f",
+            "e3c818a5-1a02-4d74-a7ed-9cec14cbfab9"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 37909,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "dbb97546-5701-42ee-8c9a-9cdf06b95cc3",
+          "title": "Firm Residual Risk",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Adds a Firm Residual Risk",
+              "fullTitle": "Firm Residual Risk Adds a Firm Residual Risk",
+              "timedOut": null,
+              "duration": 12260,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Add').click().wait(1000);\ncy.getByFormControlName('name').eq(1).type('Test DKA');\n//regulation group\ncy.get('dx-drop-down-box').eq(2).click().wait(500);\ncy.get('#dynamicSelectBoxDropdownGrid').find('.dx-datagrid-rowsview').find('tr > td').first().click().wait(500);\ncy.getByFormControlName('riskPoint').eq(0).type('1');\n//color\ncy.get('dx-drop-down-box').eq(3).click().wait(500);\ncy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview .dx-datagrid-content tr td').contains('Coral').click({ force: true }).wait(500);\ncy.get('[icon=\"save\"]').eq(1).click().wait(1000);\ncy.contains('The firm residual risk has been added').wait(1000);",
+              "err": {},
+              "uuid": "791aafb5-7013-4520-8214-207c861b5f63",
+              "parentUUID": "dbb97546-5701-42ee-8c9a-9cdf06b95cc3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edits a Firm Residual Risk",
+              "fullTitle": "Firm Residual Risk Edits a Firm Residual Risk",
+              "timedOut": null,
+              "duration": 14891,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#gridFirmResidualRisks tr .dx-first-cell .dx-texteditor-input').type('Test DKA', { force: true }).wait(2000);\ncy.get('#gridFirmResidualRisks tr td').find('.dx-icon-edit').eq(0).click({ force: true }).wait(1000);\ncy.get('#gridFirmResidualRisks .dx-datagrid-table .dx-texteditor-container > .dx-texteditor-input-container > .dx-texteditor-input').as('scores');\ncy.get('@scores').eq(4).clear().wait(1000).type('Test Residual Risk DKA', { force: true }).wait(1000);\ncy.get('tr td').find('.dx-icon-save').eq(1).click().wait(1500);\ncy.contains(\"The firm residual risk has been updated.\").wait(1000);",
+              "err": {},
+              "uuid": "c9b277bb-6481-42c7-8e14-dc070b36d697",
+              "parentUUID": "dbb97546-5701-42ee-8c9a-9cdf06b95cc3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deletes a Firm Residual Risk",
+              "fullTitle": "Firm Residual Risk Deletes a Firm Residual Risk",
+              "timedOut": null,
+              "duration": 11974,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#gridFirmResidualRisks tr .dx-first-cell .dx-texteditor-input').type('Test Residual Risk DKA', { force: true }).wait(2000);\ncy.get('#gridFirmResidualRisks tr td').find('.dx-icon-trash').eq(1).click({ force: true }).wait(1000);\ncy.get('.dx-popup-normal').contains('Yes').click({ force: true }).wait(1000);\ncy.contains(\"The firm residual risk has been deleted.\").wait(1000);",
+              "err": {},
+              "uuid": "0dbeadc4-d032-438c-a7f2-d731824a67b3",
+              "parentUUID": "dbb97546-5701-42ee-8c9a-9cdf06b95cc3",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "791aafb5-7013-4520-8214-207c861b5f63",
+            "c9b277bb-6481-42c7-8e14-dc070b36d697",
+            "0dbeadc4-d032-438c-a7f2-d731824a67b3"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 39125,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "da8a1837-8747-45c3-ad9a-6b802242edcd",
+          "title": "Firm Overall Risk Score",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Adds a Firm Overall Risk Score",
+              "fullTitle": "Firm Overall Risk Score Adds a Firm Overall Risk Score",
+              "timedOut": null,
+              "duration": 13098,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Add').click().wait(1000);\ncy.getByFormControlName('name').eq(2).type('Test DKA');\n//regulation group\ncy.get('dx-drop-down-box').eq(4).click().wait(500);\ncy.get('#dynamicSelectBoxDropdownGrid').find('.dx-datagrid-rowsview').find('tr > td').first().click().wait(500);\ncy.getByFormControlName('riskPointFrom').eq(1).type('1');\ncy.getByFormControlName('riskPointTo').eq(1).type('4');\n//color\ncy.get('dx-drop-down-box').eq(5).click().wait(500);\ncy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview .dx-datagrid-content tr td').contains('Coral').click({ force: true }).wait(500);\ncy.getByFormControlName('nextEvaluationDays').type('30');\ncy.get('[icon=\"save\"]').eq(2).click().wait(1000);\ncy.contains('The firm overall risk score has been added').wait(1000);",
+              "err": {},
+              "uuid": "2720475c-0701-45d1-bf15-558513b16c8e",
+              "parentUUID": "da8a1837-8747-45c3-ad9a-6b802242edcd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edits a Firm Overall Risk Score",
+              "fullTitle": "Firm Overall Risk Score Edits a Firm Overall Risk Score",
+              "timedOut": null,
+              "duration": 15091,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#gridFirmOverallRiskScores tr .dx-first-cell .dx-texteditor-input').type('Test DKA', { force: true }).wait(2000);\ncy.get('#gridFirmOverallRiskScores tr td').find('.dx-icon-edit').eq(0).click({ force: true }).wait(1000);\ncy.get('#gridFirmOverallRiskScores .dx-datagrid-table .dx-texteditor-container > .dx-texteditor-input-container > .dx-texteditor-input').as('scores');\ncy.get('@scores').eq(6).clear().wait(1000).type('Test Overall Risk Score DKA', { force: true }).wait(1000);\ncy.get('tr td').find('.dx-icon-save').eq(1).click().wait(1500);\ncy.contains(\"The firm overall risk score has been updated.\").wait(1000);",
+              "err": {},
+              "uuid": "af8b8dcf-9b00-44ad-864a-c1732e8862bf",
+              "parentUUID": "da8a1837-8747-45c3-ad9a-6b802242edcd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deletes a Firm Overall Risk Score",
+              "fullTitle": "Firm Overall Risk Score Deletes a Firm Overall Risk Score",
+              "timedOut": null,
+              "duration": 12362,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#gridFirmOverallRiskScores tr .dx-first-cell .dx-texteditor-input').type('Test Overall Risk Score DKA', { force: true }).wait(2000);\ncy.get('#gridFirmOverallRiskScores tr td').find('.dx-icon-trash').eq(1).click({ force: true }).wait(1000);\ncy.get('.dx-popup-normal').contains('Yes').click({ force: true }).wait(1000);\ncy.contains(\"The firm overall risk score has been deleted.\").wait(1000);",
+              "err": {},
+              "uuid": "0805eef9-7ea7-4b76-bc06-cc208daa2ff1",
+              "parentUUID": "da8a1837-8747-45c3-ad9a-6b802242edcd",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "2720475c-0701-45d1-bf15-558513b16c8e",
+            "af8b8dcf-9b00-44ad-864a-c1732e8862bf",
+            "0805eef9-7ea7-4b76-bc06-cc208daa2ff1"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 40551,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

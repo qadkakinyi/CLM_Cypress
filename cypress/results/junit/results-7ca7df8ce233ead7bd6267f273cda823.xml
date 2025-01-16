@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="118.457" tests="4" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T12:54:23" tests="0" file="cypress/e2e/Priority2/Handle_Rules_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Handle Rules" timestamp="2025-01-16T12:54:29" tests="4" time="112.341" failures="0">
+    <testcase name="Handle Rules Execute Rule" time="29.082" classname="Execute Rule">
+    </testcase>
+    <testcase name="Handle Rules Update Rule Status" time="32.792" classname="Update Rule Status">
+    </testcase>
+    <testcase name="Handle Rules Update Schedule" time="26.479" classname="Update Schedule">
+    </testcase>
+    <testcase name="Handle Rules Synchronize Rule" time="29.900" classname="Synchronize Rule">
+    </testcase>
+  </testsuite>
+</testsuites>

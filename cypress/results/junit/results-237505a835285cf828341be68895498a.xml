@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="53.331" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T12:26:36" tests="0" file="cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Client_Checklist_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Add, Edit, Delete Client Checklist" timestamp="2025-01-16T12:26:47" tests="3" time="41.963" failures="0">
+    <testcase name="Add, Edit, Delete Client Checklist Add Client Checklist" time="35.674" classname="Add Client Checklist">
+    </testcase>
+    <testcase name="Add, Edit, Delete Client Checklist Edit client checklist" time="7.458" classname="Edit client checklist">
+    </testcase>
+    <testcase name="Add, Edit, Delete Client Checklist Delete client checklist" time="4.059" classname="Delete client checklist">
+    </testcase>
+  </testsuite>
+</testsuites>

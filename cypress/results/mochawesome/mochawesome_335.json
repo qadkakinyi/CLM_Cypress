@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-16T08:39:01.883Z",
+    "end": "2025-01-16T08:39:40.313Z",
+    "duration": 38430,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "18a3e8cb-dc4c-4649-be84-e7b3432a69e1",
+      "title": "",
+      "fullFile": "cypress/e2e/ScreenPerformance/Reports&Lists/Other_test.cy.ts",
+      "file": "cypress/e2e/ScreenPerformance/Reports&Lists/Other_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "40abfa15-e5cb-47d1-be61-127d85d861ad",
+          "title": "Other",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Opens menu under the section and navigates to the expected pages",
+              "fullTitle": "Other Opens menu under the section and navigates to the expected pages",
+              "timedOut": null,
+              "duration": 38350,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var routes = [\n    { index: 0, route: \"/reports/thresholds-per-segment-report\", assertion: \"Auto Calculated Thresholds Per Segment\" },\n    { index: 1, route: \"/reports/thresholds-performance-per-client-report\", assertion: \"Auto Calculated Thresholds Performance Per Client\" },\n    { index: 2, route: \"/reports/clients-gaming-account-history-report\", assertion: \"Clients Gaming Account History Report\" },\n    { index: 3, route: \"/reports/eGOV-requests-report\", assertion: \"eGOV Requests Report\" }\n];\nroutes.forEach(function (route, i) {\n    cy.get(\"@other-links\").eq(route.index).click();\n    cy.location(\"pathname\").should(\"equal\", route.route);\n    cy.wait(3000);\n    cy.contains(route.assertion);\n    // after this 5 seconds the data should have loades and spinner should not be visible\n    cy.get('.sk-ball-spin-clockwise').should(\"not.be.visible\");\n    if (i < routes.length - 1) {\n        cy.visit(\"/main/dashboard\");\n        cy.getByDataCy(\"reports-menu\").click();\n        cy.getByDataCy(\"other-menu\").scrollIntoView();\n        cy.getByDataCy(\"other-menu\").click().as('other-menu');\n        cy.getByDataCy(\"other-links\").as(\"other-links\");\n    }\n});",
+              "err": {},
+              "uuid": "16f68c06-6732-4b6c-b89c-c37b1caf7eac",
+              "parentUUID": "40abfa15-e5cb-47d1-be61-127d85d861ad",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "16f68c06-6732-4b6c-b89c-c37b1caf7eac"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 38350,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

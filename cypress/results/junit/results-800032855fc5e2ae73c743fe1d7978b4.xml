@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="40.039" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T12:42:50" tests="0" file="cypress/e2e/CorporateClientFunctionality/Additional_External_Refences_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Add, Edit, Delete Additional External References" timestamp="2025-01-16T12:43:00" tests="3" time="29.903" failures="0">
+    <testcase name="Add, Edit, Delete Additional External References Add Client external reference" time="27.404" classname="Add Client external reference">
+    </testcase>
+    <testcase name="Add, Edit, Delete Additional External References Edit Client Related website" time="6.320" classname="Edit Client Related website">
+    </testcase>
+    <testcase name="Add, Edit, Delete Additional External References Delete client external reference" time="6.171" classname="Delete client external reference">
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="39.876" tests="3" failures="1">
+  <testsuite name="Root Suite" timestamp="2025-01-16T08:25:37" tests="0" file="cypress/e2e/HelperFunctionalities/TransactionMonitoring&amp;Actions/Currency_Information_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Currency Information" timestamp="2025-01-16T08:25:43" tests="3" time="33.827" failures="1">
+    <testcase name="Currency Information Adds a Currency Information" time="15.429" classname="Adds a Currency Information">
+    </testcase>
+    <testcase name="Currency Information Edits a Currency Information" time="0.000" classname="Edits a Currency Information">
+      <failure message="Timed out retrying after 4000ms: Expected to find content: &apos;Saudi Riyal DKA has been updated.&apos; but never did." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Saudi Riyal DKA has been updated.' but never did.
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/HelperFunctionalities/TransactionMonitoring&Actions/Currency_Information_test.cy.ts:31:0)]]></failure>
+    </testcase>
+    <testcase name="Currency Information Deletes a Currency Information" time="8.772" classname="Deletes a Currency Information">
+    </testcase>
+  </testsuite>
+</testsuites>

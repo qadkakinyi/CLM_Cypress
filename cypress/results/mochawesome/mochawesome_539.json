@@ -1,0 +1,320 @@
+{
+  "stats": {
+    "suites": 6,
+    "tests": 7,
+    "passes": 7,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-16T13:24:43.399Z",
+    "end": "2025-01-16T13:30:16.271Z",
+    "duration": 332872,
+    "testsRegistered": 7,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d192a78e-ae07-43bf-ac4a-c0ab000245a1",
+      "title": "",
+      "fullFile": "cypress/e2e/ScreenPerformance/Processes_Performance_test.cy.ts",
+      "file": "cypress/e2e/ScreenPerformance/Processes_Performance_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1119c6e6-05b8-4df1-8b1c-d3b396f79f70",
+          "title": "Processes Menu",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Toggles first level menu list items visibility",
+              "fullTitle": "Processes Menu Toggles first level menu list items visibility",
+              "timedOut": null,
+              "duration": 7874,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByDataCy(\"processes\").click();\n//check if the menu is visible\ncy.getByDataCy(\"processes-menu-level-1\").find(\"li\").should(\"be.visible\").should(\"have.length.greaterThan\", 4);",
+              "err": {},
+              "uuid": "adffaac5-c912-47a8-b8f2-1ab5fa1b7a34",
+              "parentUUID": "1119c6e6-05b8-4df1-8b1c-d3b396f79f70",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "adffaac5-c912-47a8-b8f2-1ab5fa1b7a34"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7874,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "91875463-6528-4335-b539-22157fcf15b3",
+          "title": "Client Profiling",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Opens level 2 menu list under client profiling",
+              "fullTitle": "Client Profiling Opens level 2 menu list under client profiling",
+              "timedOut": null,
+              "duration": 6344,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//opening level 2 menu\ncy.get(\"@client-profiling-menu\").find(\"ul>li\").should(\"have.length.greaterThan\", 6).wait(1000);",
+              "err": {},
+              "uuid": "734417fe-c354-4deb-a0da-a28a46135a0b",
+              "parentUUID": "91875463-6528-4335-b539-22157fcf15b3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "opens Client profiling menu items and loads the right page",
+              "fullTitle": "Client Profiling opens Client profiling menu items and loads the right page",
+              "timedOut": null,
+              "duration": 77818,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Array holding all routes I expect to navigate to on this layer\nvar routes = [\n    { index: 0, route: '/processes/handle-client-documents', assertion: \"Handle Client Documents\" },\n    { index: 1, route: '/processes/handle-client-tags', assertion: \"Handle Client Tags\" },\n    { index: 2, route: '/processes/handle-clients-unified-scoring', assertion: 'Handle Clients Unified Scoring' },\n    { index: 3, route: '/processes/handle-documents', assertion: \"Handle Documents\" },\n    { index: 4, route: '/processes/handle-evaluations', assertion: \"Handle Evaluations\" },\n    { index: 5, route: '/processes/handle-profiles', assertion: \"Handle Profiles\" },\n    { index: 6, route: '/processes/handle-questionnaires', assertion: \"Handle Questionnaires\" }\n];\nroutes.forEach(function (route, i) {\n    cy.get(\"@client-profiling-list\").eq(route.index).scrollIntoView().click();\n    cy.location(\"pathname\").should(\"equal\", route.route);\n    cy.wait(5000);\n    cy.contains(route.assertion);\n    // after this 5 seconds the data should have loades and spinner should not be visible\n    cy.get('.sk-ball-spin-clockwise').should(\"not.be.visible\");\n    if (i < routes.length - 1) {\n        cy.visit('/main/dashboard');\n        cy.getByDataCy(\"processes\").click();\n        //opening level 2 menu again for the menu to be visible\n        cy.getByDataCy(\"client-profiling-menu\").should(\"be.visible\");\n        cy.getByDataCy(\"client-profiling-menu\").click().as('client-profiling-menu').wait(1500);\n        cy.get(\"@client-profiling-menu\").find(\"ul>li\").as(\"client-profiling-list\");\n    }\n});",
+              "err": {},
+              "uuid": "87577b0a-a4d6-4849-8570-23274d3b8f39",
+              "parentUUID": "91875463-6528-4335-b539-22157fcf15b3",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "734417fe-c354-4deb-a0da-a28a46135a0b",
+            "87577b0a-a4d6-4849-8570-23274d3b8f39"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 84162,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "1c1a81ea-7fe4-47bc-af4a-7264efce8e0a",
+          "title": "Transaction Monitoring and Actions",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Opens Transaction Monitoring menu items clicks each and navigates to the required page",
+              "fullTitle": "Transaction Monitoring and Actions Opens Transaction Monitoring menu items clicks each and navigates to the required page",
+              "timedOut": null,
+              "duration": 33860,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var routes = [\n    { index: 0, route: '/processes/handle-actions', assertion: 'Handle Actions' },\n    { index: 1, route: '/processes/handle-cases', assertion: 'Handle Cases' },\n    { index: 2, route: '/processes/handle-rules', assertion: 'Handle Rules' }\n];\nroutes.forEach(function (route, i) {\n    cy.get(\"@transaction-monitoring-list\").eq(route.index).click();\n    cy.location(\"pathname\").should(\"equal\", route.route);\n    cy.wait(5000);\n    cy.contains(route.assertion);\n    // after this 5 seconds the data should have loades and spinner should not be visible\n    cy.get('.sk-ball-spin-clockwise').should(\"not.be.visible\");\n    if (i < routes.length - 1) {\n        cy.visit('/main/dashboard');\n        cy.getByDataCy(\"processes\").click();\n        cy.getByDataCy(\"transaction-monitoring\").should(\"be.visible\");\n        cy.getByDataCy(\"transaction-monitoring\").click().as('transaction-monitoring-menu').wait(1500);\n        cy.get(\"@transaction-monitoring-menu\").find(\"ul>li\").as(\"transaction-monitoring-list\");\n    }\n});",
+              "err": {},
+              "uuid": "b617137a-1e7c-4a6d-b3f1-c5f7ed8a140e",
+              "parentUUID": "1c1a81ea-7fe4-47bc-af4a-7264efce8e0a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b617137a-1e7c-4a6d-b3f1-c5f7ed8a140e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 33860,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "776556d2-ec65-4e90-982d-ac1479992b66",
+          "title": "Screening & Electronic Identification",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Opens Screening & Electronic Identification menu items clicks each and navigates to the required page",
+              "fullTitle": "Screening & Electronic Identification Opens Screening & Electronic Identification menu items clicks each and navigates to the required page",
+              "timedOut": null,
+              "duration": 58103,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var routes = [\n    { index: 0, route: \"/processes/handle-auto-ongoing-monitoring-clients\", assertion: \"Handle Auto Ongoing Monitoring Clients\" },\n    { index: 1, route: \"/processes/handle-electronic-identifications\", assertion: \"Handle Electronic Identifications Clients\" },\n    { index: 2, route: \"/processes/handle-screening\", assertion: \"Handle Screening Process\" },\n    { index: 3, route: \"/processes/handle-transaction-screening-cases\", assertion: 'Handle Transaction Screening Cases' },\n    { index: 4, route: \"/processes/handle-client-worldcheck-references\", assertion: \"Handle Clients World Check References\" }\n];\nroutes.forEach(function (route, i) {\n    cy.get(\"@screening-and-identification-list\").eq(route.index).click();\n    cy.location(\"pathname\").should(\"equal\", route.route);\n    cy.wait(5000);\n    cy.contains(route.assertion);\n    // after this 5 seconds the data should have loades and spinner should not be visible\n    cy.get('.sk-ball-spin-clockwise').should(\"not.be.visible\");\n    if (i < routes.length - 1) {\n        cy.visit(\"/main/dashboard\");\n        cy.getByDataCy(\"processes\").click();\n        cy.getByDataCy(\"screening-and-identification\").should(\"be.visible\");\n        cy.getByDataCy(\"screening-and-identification\").click().as('screening-and-identification-menu').wait(1500);\n        cy.get(\"@screening-and-identification-menu\").find(\"ul>li\").as(\"screening-and-identification-list\");\n    }\n});",
+              "err": {},
+              "uuid": "20969ced-e39a-4b4a-90e8-a66de76950a9",
+              "parentUUID": "776556d2-ec65-4e90-982d-ac1479992b66",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "20969ced-e39a-4b4a-90e8-a66de76950a9"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 58103,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "373d1b9f-700c-4cf7-8b8e-bb0dc85af608",
+          "title": "Onboarding Portal",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Opens Onboarding portal menu items clicks each and navigates to the required page",
+              "fullTitle": "Onboarding Portal Opens Onboarding portal menu items clicks each and navigates to the required page",
+              "timedOut": null,
+              "duration": 44992,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var routes = [\n    { index: 0, route: \"/processes/handle-onboarding-clients\", assertion: \"Handle Onboarding Clients\" },\n    { index: 1, route: \"/processes/handle-onboarding-client-registrations\", assertion: \"Onboarding Portal\" },\n    { index: 2, route: \"/processes/handle-onboarding-users\", assertion: 'Handle Onboarding Users' },\n    { index: 3, route: \"/processes/handle-clients-portal-users\", assertion: \"Handle Portal Users of Clients\" },\n];\nroutes.forEach(function (route, i) {\n    cy.get(\"@onboarding-portal-list\").eq(route.index).click();\n    cy.location(\"pathname\").should(\"equal\", route.route);\n    cy.wait(5000);\n    cy.contains(route.assertion);\n    // after this 5 seconds the data should have loades and spinner should not be visible\n    cy.get('.sk-ball-spin-clockwise').should(\"not.be.visible\");\n    if (i < routes.length - 1) {\n        cy.visit(\"/main/dashboard\");\n        cy.getByDataCy(\"processes\").click();\n        cy.getByDataCy(\"onboarding-portal\").scrollIntoView().should(\"be.visible\");\n        cy.getByDataCy(\"onboarding-portal\").click().as('onboarding-portal-menu').wait(1500);\n        cy.get(\"@onboarding-portal-menu\").find(\"ul>li\").as(\"onboarding-portal-list\");\n    }\n});",
+              "err": {},
+              "uuid": "01578953-7c82-4288-860e-4985b3ea7d25",
+              "parentUUID": "373d1b9f-700c-4cf7-8b8e-bb0dc85af608",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "01578953-7c82-4288-860e-4985b3ea7d25"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 44992,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "82e00bfa-ca6e-4e50-baa8-61b863ef1625",
+          "title": "Other Menu",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "clicks all links and navigates to the right pages",
+              "fullTitle": "Other Menu clicks all links and navigates to the right pages",
+              "timedOut": null,
+              "duration": 93393,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var routes = [\n    { index: 0, route: '/processes/export-clients-xml', assertion: 'Export Clients XML' },\n    { index: 1, route: '/processes/handle-eGOV-requests', assertion: 'Handle eGOV Requests' },\n    { index: 2, route: '/processes/handle-kyb-registry-failed-documents', assertion: 'Handle KYB Registry Failed Documents' },\n    { index: 3, route: '/processes/handle-pending-fraud-detection-checks', assertion: 'Handle Pending Fraud Detection Checks' },\n    { index: 4, route: '/processes/handle-translations', assertion: 'Handle Translations' },\n    { index: 5, route: '/processes/handle-workflow-processes', assertion: \"Handle Workflow Processes\" },\n    { index: 6, route: '/processes/proposed-updates', assertion: \"Proposed Updates\" },\n    { index: 7, route: '/processes/trigger-external-notifications', assertion: \"Trigger External Notifications\" },\n];\nroutes.forEach(function (route, i) {\n    cy.get(\"@other-submenu-list\").eq(route.index).click();\n    cy.location(\"pathname\").should(\"equal\", route.route);\n    cy.wait(5000);\n    cy.contains(route.assertion);\n    // after this 5 seconds the data should have loades and spinner should not be visible\n    cy.get('.sk-ball-spin-clockwise').should(\"not.be.visible\");\n    if (i < routes.length - 1) {\n        cy.visit(\"/main/dashboard\");\n        cy.getByDataCy(\"processes\").click();\n        cy.getByDataCy(\"other-submenu\").scrollIntoView().should(\"be.visible\");\n        cy.getByDataCy(\"other-submenu\").click().as('other-submenu-menu').wait(1500);\n        cy.get(\"@other-submenu-menu\").find(\"ul>li\").as(\"other-submenu-list\");\n    }\n});",
+              "err": {},
+              "uuid": "26be2977-bd24-4c47-a23a-76d682f99fb8",
+              "parentUUID": "82e00bfa-ca6e-4e50-baa8-61b863ef1625",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "26be2977-bd24-4c47-a23a-76d682f99fb8"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 93393,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

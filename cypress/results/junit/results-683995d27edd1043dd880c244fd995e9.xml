@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="123.240" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T08:26:21" tests="0" file="cypress/e2e/HelperFunctionalities/TransactionMonitoring&amp;Actions/Currency_Rates_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Currency Rate" timestamp="2025-01-16T08:26:27" tests="3" time="117.176" failures="0">
+    <testcase name="Currency Rate Adds a Currency Rate" time="15.568" classname="Adds a Currency Rate">
+    </testcase>
+    <testcase name="Currency Rate Edits a Currency Rate" time="57.296" classname="Edits a Currency Rate">
+    </testcase>
+    <testcase name="Currency Rate Deletes a Currency Rate" time="50.230" classname="Deletes a Currency Rate">
+    </testcase>
+  </testsuite>
+</testsuites>

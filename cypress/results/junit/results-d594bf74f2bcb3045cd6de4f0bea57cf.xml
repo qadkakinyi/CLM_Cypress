@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="68.337" tests="8" failures="1">
+  <testsuite name="Root Suite" timestamp="2025-01-16T06:04:39" tests="0" file="cypress/e2e/DemonstrationFlow/Add_Client_Corporate_Process_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Add Corporate Client Process" timestamp="2025-01-16T06:04:45" tests="8" time="62.618" failures="1">
+    <testcase name="Add Corporate Client Process should add a corporate client" time="18.993" classname="should add a corporate client">
+    </testcase>
+    <testcase name="Add Corporate Client Process should add a client document" time="8.598" classname="should add a client document">
+    </testcase>
+    <testcase name="Add Corporate Client Process should update document status to collected" time="6.959" classname="should update document status to collected">
+    </testcase>
+    <testcase name="Add Corporate Client Process should perform internal monitoring" time="0.000" classname="should perform internal monitoring">
+      <failure message="`cy.request()` failed on:
+
+https://complytek-testing-api.regtek.co/api/clientCommon/480/internalBlackListsOngoingMonitoring
+
+The response we received from your web server was:
+
+  &gt; 400: Bad Request
+
+This was considered a failure because the status code was not `2xx` or `3xx`.
+
+If you do not want status codes to cause failures pass the option: `failOnStatusCode: false`
+
+-----------------------------------------------------------
+
+The request we sent was:
+
+Method: POST
+URL: https://complytek-testing-api.regtek.co/api/clientCommon/480/internalBlackListsOngoingMonitoring
+Headers: {
+  &quot;Connection&quot;: &quot;keep-alive&quot;,
+  &quot;Content-Type&quot;: &quot;application/json&quot;,
+  &quot;Authorization&quot;: &quot;Bearer eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI1RkM0QkM4NzM2QTE5NzkwQkUxQzU4NTc3NENCQjM4RDVDQzA1NTNDIiwidHlwIjoiYXQrand0In0.MkhG0hOmlk2xM7g9EOGK5VkA1pP5o6ySdbhj4J5r1MM8Nqvf7gTRSfYg3BuxaZW74iftq8fjStkBq1hKllZW993OU7OJI5wuup1Ws-KzrdymGoYJnzyit3xWcf3J6zFdYwViubGJGpMNkdG7hJ1AlrYnFv2kiJ87Ad6eKAdEiZYB9tl2RUOuDsDZz-lAXKCt1DPJ92u0wIM_WdIXmeI9djxjOJofqfd_2mhA9GhW5TQvwglQ54vODArQZuYWBmepi9zNyrxMHogcJgLBkzZqy__WRcGcUxzqt1G5v63qjNLYG92-TOH-g6UOZejEVkPnJa9C2jThRQYlIKJgH90QH0HdCJccS13rihE9xwn7lObQsuDLpi0AVZeOb1nOupww_sdyHjZN3QfkxPV5c6ldJGW2w3ZVTqMQJocRo3IH7ajyIc-EXQbUzNsKh3o1MCSWXMGHBoUd2Jd5oOjofBuXdlp0r5IxhqBiLB6oGJAlIg7pS6hoVD127CHE5t_8D5EPH1jHMtEHxCDor4PjdiAPFsGZpHQlVNFIdn_DE3a7PFeCPD4xN316Hd9QOajvPMZgwL8d7CAdO2GCAdgpzYuPb1tS7E0yDuAJXgm0Ri15T9qwjiGlyLC9fLCKplyH9QnpmNcjorXQC6kUN2xPPHJjmJXiUsHv2zwdF4eR6XK_snw.z-l7uzk5cC3cv5piT6JbdQ.PMxFUjLz55GUBWGcYkZAXFUvJK1VtwYpbmtFdnadEYlBsQ4I6qXVPEdC-1grtm2flwjmwCvuu4_U-eGAv0kyvGO-Z67fycRzH0KLCNMd-k1YBy7_T21rqE_AeGyr8s5mFTCwZoPndPqy_gRgyDdewNh3_pjqe9iNBqUAhvtxq4EQ4gZxqqyQV9NCA1WvvDZYVwNLvP0ou8cfw_iwOxkwrmfsADTHcULrCFzW2GpEq1P5yxvw_-LivDeR5ZixRzDWSN8FG-Ld4ivdGVZG3FQEfpLnVtpvVM3fhNIiyOncBBLKsS5zvj228QK9OgJ-20QSxYbIm6pLmK4HEEW6FoAp_W2PmMorhF2YXRCJBr6uUpbTbRNfGp7g94FPzRSedGyUvC-RaeAz37lTW7Uy1MroDP2-X66F1_cT28eXVebfb46o1xdxRd4uxa6zePGYedDZRjEM_7KC2thLVn6KNRRtGIxKAQXpMPq-Ao3BHCaW-oOHn_6hcEoSi6vRoHZTcfAGUeoAaru8w5qSSYsqBzVSVEc4x7td--f2Fp1IOqTyppgPagQT9CUM7C3GYo4Otexz2iIEalalyT5imMDIkyYqS_Y36HEmA0zlh5rTRHs2TL63tAKpG7of2jl696E2krOxZdNPe8O9ETxwsitP5nb2btNJ3ecqwhPD7Yicp572WtGrORdgo30HWEvGtmrC3idMbBIF1kzEe3Mei4-trUI3GWyBkirnHflSRgNMDF5LEOSV2zQMkkzg2LY7eZaar7fI4fEuDFPGo6RvLpWrNfDFPNzb4Ex_lHeTypwjfZdw54YB0EfnNRctv-cbdy59Ixr6Kn1gN_ee7FX87ZlZuPaJfwRafld4taHTbE0l-gWHsAAXF0Jr0afSsvRKF6ijHJdYV1PSluhuIfj3iNCQ-g-scoZ_U_3K4tKw0C-8ixNfttPTN9hAVkU2EneN0Lt8x0ZekWJAbAX8BmRwAnCgMO0sf4GSYgxEb1MYTnl36sufSKKQnAElRD6SKhgBRerptF1y0klp-2XFSLKXtI1AMfrSy_NfTUxByQUzMYO0DgCwIDHYbLhj5MidJhutBifSvDYx6T3N_e0VM2362XNqkFUJha2eSDkaWcvPk1YqfOB3UwzDkNpDrPPYZLEntYuxOXSEb7Ymd1iQQn7ALjpABpJNF95Cu_iV6pZBAIZ1c0_9J-U_aCfJD9fRI2fzLsG2kj2KjJue6K8VyCilEjVLDJWS6BqMRJR07mmMJHCvJtToZLP9vT6xnv6_fxdBXaKsMlFIT1ThVxd61XECsBSwb5eXu9S-FnMZ2B-cVGw77YN6RS-Pwp9UnqOX86UMiDSllN-PxT5kMhYDYprnLkPeO1DmRs2eaSt7Vx2fMUz2cNn_S1KWIme9jcq4URk93zj5ErRoniZZCA2P-TZAdnPNoreegFk45ATFQwWuKH0yCUKhyrSadyCu6mtlniO2b64IgKmLwpAtHwciU2NIMjM4TcuBs30VVB2x5wnAe44sjB4ecH-E4V-y34DAqPBq0vkP2gjQCypKdldyhlHF0EWIsF8DbiqD_55pf1W7UcfjMN_4MKfrqe6e9nFvfGjSzPQhH9HP6nfdFgf4yzdL3e9AmcSPrIGK7xDQM1KdR3fYAhAHWm9jEWSbmGhQvPQZFcpeT-CkMhIsmpGNZUJNJ2GJLHMBkGJWitCeS6eNoniEw6f5I5J1NwB6qXnN_rzCANYjgz7FEsD-mgukslJDViBy0duPEbtf7r8iS0AlIby8FK7oBpUjJhRneVi0PjeKEetIfcwScbXCIefQtrKxQDyz6K24v_oDJz1nwTbQGlc_keHeHfVpKT6vkcQr98ktHUv9ejyeByDXQfTWC8Fzq36D7PaKBZ9Z2H5bvLrY5H6HxlfOnggz_XcsIKd9LW_DeQeDybhD3lgSsTrNtLXV2gudpULoL9P_3v1cqN0FZpSleURh3h6eRFd0aDJzq-BzWnecBMudYnQpBcXY51J4H_kseGXJTqdlaDUwbLSJut9wrJD-pvB1o1x4dfWAeYnVbS40PTm1ykWmYqdnrlXO21CbROCUhYv749FxTPKiRWuEFGRr8iQQdpogurTbnIJhkTAam6uiCx_XaW6u_jX1eucgMNg4jvebEMegZprdT3Qun0D2gQiZizXyLkmXDhCyP35NLcNXlCqW_EQt9QEgGXGPd1JTP2uj1YKXRVVm7e3p6YKYtnOApDsgXx4Tkzif2vxa5DYdD5Vmxw44GcCa2EJ7ptbZfXu_c7RV5LmHjV6ToYXVra_c71PBqXputYkBh6rHSqgvyqMjhcyhVoIloONbGPpop146bFUIWPH_ETb3r1pfD3G1c0P0WYFj6o5xwKNR9GsfOmjfIBROyq6d7kjMz930NV3QWRBskGvCkiGopr9dgRhDlvU-bk2DFMSGT5iWJJDgRvR0UEYE7_GCRtW0RuYiYkhCMy8kiIcl9EZ_0-hxfs41N1Yg1MuaA68ITi1Nh8pKsh4K9bvT11KwE12ldaVk-PAswq2H-F1ERbvVnbhU9HYUsOGMzhRGbvOdRNwjFcLCV45F0jObmFnGSct_YJrzSw6_vaiD7mDPJIz-fdgXN78bYFMGksNdKQl0o1MpXv4eCyFCnRKoXR7kUJnDeTtsVE1oOPOFmIuhL_6XtyHBGNaEmuLGTjF1MtkwlAkSksoBDLFJvjQBGzm3VBWNQJjmBbP939l3vFMCw46h1r2C3U5hjxzk1vCtEhROEDFj7Hu8yCwqnVZ-fNBjV5FI_Thw6BPbkGKquE1Jvrl-4_uiXV4Er58HvDuVuVq9Dg6H4VRkMaVRP2GbBFh7wmTkbeJ-nfPOb4IX2hnyUceH4TP3rCh3pV9l2KBgazE7q3IOI0T4Z3xpWgKrs10ukbkrkMUPFfMN-jOFohEV0BeqUeFAnsd01mIYCGG8-hbQhFWBi348B2E_8u11k73NGDaCH_GbFiUCFjh8BnULfpFsjoAHwm6ZPs2jX7-4lBErzFdWZ2yP4-PTXf52sCDPOycjmVQAy4rmyoECuInvhudOHmjIQIx0YFPZtdzlrrhWyIoRJ07hHvb6TXphDWN4X2trh_6rOi3VQhOSS6tsq_HSaPWcT6ENqU0ySjQAMMqdMEwNc5w9nfFBzFfVIhYvUQdBWYrtr_fePg0v4bJXb146xJ2lnhbrlZbSE9wZpY6JWkshpigfjDgHRUeADaS14D_mNfPYVFLBkI9yyAhqAdLKahRTRVF6zbiSrNeJVmIMNk6BhHEXuGqdNbM3nLwMG8xl3GqWMG6Xfo-ba-b4NddxKih3DApcq8R1IVSUk7L1EDBaX-eTNfzMrrg_7o2urInmWkbwTa3k2zxgLtklwZDlkMpqYXtZb8kQnvsNyKt981foTSxgoP8uY667v88B9qVQ7DJQt7UQDa-s7-qEWyEmUPTw7JvLEVQ4vvkD7E6gZh1JQJN070XjGJRLCdfSlV4yZZQq_U5HLq5BArSuzWUMUZ4aePFBKYEFxw-VzHQHopy2ILRdNxjCa1wHcJowBnJzKo6_gqJE8tsWLWNd7Y850xBPWd2OxLIaYIvZgYQFx_ihsOMBOkHIGbnZ48r_37mvUCc7QISlFNIrFwXzZf1U6Yo-l2LfNV38fVbjnky2N8_Ex-_mfiHB_TdzIasvFGY6aqY0Z1QkoB0lB3SgxgotcYhi8UfCNV6s72mCDQxfxSEwMJ4VOc3LH2pplidr5YWvI-0MRCA-UP0sYpvdy0S5JhEBckfADeqRt3mavQGXN0fcGQAXJMxGVtp7hRH3Nbghs_0jyRSgqPnfYpGJlZq233__BmgsiYTqMdTgNXIQsbq7KYIAmD9h5PxPqbNA_YgXpWJelT9QxOqDwiWJmyy6TkvLOqfkH9W33et13xNVySJbR-U5Z5kNM8020spvcMrhvsuJKhJi84hR6UYdNeee6U5q5-iWusfhLhqQWMzrsKx3kQ-vFXwXqTyrx8bL1KVNQ08p-67sDAl6JCXXxHiakfs9122I33Fpo9pgOWGhkrKLi0e_eoj1FrN9HzhwejNyEtArG-n8Hr2XBQ2TiU1rwZprX1LBnVuIiiyBibC5H9TzZQSI2D22rGZdOccOmkZqS34_TfAnxQJ5djbTndhj6W0BQhNkZ8CSd7dCHig0Fo-V7GavXA27u9sFelZFZAmvZBMl04fv7GgSIh4s4nUcwKQFvwzlTQBlhy9tzmZP9K2OZBZPdJbUxd9sK5unDyR8ccUj6BSy87PieWYJTzeHe_zYqfvjo4h2fYcffAQ2rqJwT8hS8zJ_SRhXCM2BYG-Qn16qbGjSKBUBtnlYyCiSf7iZhCpzd2gTO1F_TlmNq4EqJX32mwUJAUkEud_KBfK-O6-KTbNd4xbS9zahWCRcPmTk5r6S66rrVEJgjuaDLZ6wkILQ.RxfsLhYuZVy1IeqwB7Q6fnec9YsmF3SojBqr29v-TZA&quot;,
+  &quot;user-agent&quot;: &quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/131.0.0.0 Safari/537.36&quot;,
+  &quot;accept&quot;: &quot;*/*&quot;,
+  &quot;accept-encoding&quot;: &quot;gzip, deflate&quot;,
+  &quot;content-length&quot;: 0
+}
+
+-----------------------------------------------------------
+
+The response we got was:
+
+Status: 400 - Bad Request
+Headers: {
+  &quot;date&quot;: &quot;Thu, 16 Jan 2025 06:05:21 GMT&quot;,
+  &quot;content-type&quot;: &quot;application/json; charset=utf-8&quot;,
+  &quot;content-length&quot;: &quot;260&quot;,
+  &quot;connection&quot;: &quot;keep-alive&quot;,
+  &quot;cf-cache-status&quot;: &quot;DYNAMIC&quot;,
+  &quot;report-to&quot;: &quot;{\&quot;endpoints\&quot;:[{\&quot;url\&quot;:\&quot;https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=ez3Ga6gJm6UQ1F7JU7SQZIUFTokuphoDNtD3OZugcXmLY46Z648OmG93e6BAXMZbKZ3mmaF8x6XAKbcB7u%2B8AGn0UxrxfnuHHRlM64FHU74iYAoxeGjgLlVDLCPqLNra9%2FETiZ5a6ULx3tEdg6N4HpY%3D\&quot;}],\&quot;group\&quot;:\&quot;cf-nel\&quot;,\&quot;max_age\&quot;:604800}&quot;,
+  &quot;nel&quot;: &quot;{\&quot;success_fraction\&quot;:0,\&quot;report_to\&quot;:\&quot;cf-nel\&quot;,\&quot;max_age\&quot;:604800}&quot;,
+  &quot;server&quot;: &quot;cloudflare&quot;,
+  &quot;cf-ray&quot;: &quot;902be9ce3b578f38-FRA&quot;,
+  &quot;server-timing&quot;: &quot;cfL4;desc=\&quot;?proto=TCP&amp;rtt=14485&amp;min_rtt=5686&amp;rtt_var=13407&amp;sent=194&amp;recv=173&amp;lost=0&amp;retrans=0&amp;sent_bytes=108845&amp;recv_bytes=103929&amp;delivery_rate=6309649&amp;cwnd=256&amp;unsent_bytes=0&amp;cid=5d5043a90399a797&amp;ts=33742&amp;x=0\&quot;&quot;
+}
+Body: [
+  {
+    &quot;title&quot;: &quot;Error&quot;,
+    &quot;description&quot;: &quot;The client cannot be added in the monitoring internal screening since the following fields: Identification Number are missing.&quot;,
+    &quot;exceptionInfo&quot;: {
+      &quot;exceptionMessage&quot;: null,
+      &quot;exceptionInnerMessage&quot;: null,
+      &quot;exceptionStackTrace&quot;: null
+    }
+  }
+]
+
+
+https://on.cypress.io/request" type="CypressError"><![CDATA[CypressError: `cy.request()` failed on:
+
+https://complytek-testing-api.regtek.co/api/clientCommon/480/internalBlackListsOngoingMonitoring
+
+The response we received from your web server was:
+
+  > 400: Bad Request
+
+This was considered a failure because the status code was not `2xx` or `3xx`.
+
+If you do not want status codes to cause failures pass the option: `failOnStatusCode: false`
+
+-----------------------------------------------------------
+
+The request we sent was:
+
+Method: POST
+URL: https://complytek-testing-api.regtek.co/api/clientCommon/480/internalBlackListsOngoingMonitoring
+Headers: {
+  "Connection": "keep-alive",
+  "Content-Type": "application/json",
+  "Authorization": "Bearer eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI1RkM0QkM4NzM2QTE5NzkwQkUxQzU4NTc3NENCQjM4RDVDQzA1NTNDIiwidHlwIjoiYXQrand0In0.MkhG0hOmlk2xM7g9EOGK5VkA1pP5o6ySdbhj4J5r1MM8Nqvf7gTRSfYg3BuxaZW74iftq8fjStkBq1hKllZW993OU7OJI5wuup1Ws-KzrdymGoYJnzyit3xWcf3J6zFdYwViubGJGpMNkdG7hJ1AlrYnFv2kiJ87Ad6eKAdEiZYB9tl2RUOuDsDZz-lAXKCt1DPJ92u0wIM_WdIXmeI9djxjOJofqfd_2mhA9GhW5TQvwglQ54vODArQZuYWBmepi9zNyrxMHogcJgLBkzZqy__WRcGcUxzqt1G5v63qjNLYG92-TOH-g6UOZejEVkPnJa9C2jThRQYlIKJgH90QH0HdCJccS13rihE9xwn7lObQsuDLpi0AVZeOb1nOupww_sdyHjZN3QfkxPV5c6ldJGW2w3ZVTqMQJocRo3IH7ajyIc-EXQbUzNsKh3o1MCSWXMGHBoUd2Jd5oOjofBuXdlp0r5IxhqBiLB6oGJAlIg7pS6hoVD127CHE5t_8D5EPH1jHMtEHxCDor4PjdiAPFsGZpHQlVNFIdn_DE3a7PFeCPD4xN316Hd9QOajvPMZgwL8d7CAdO2GCAdgpzYuPb1tS7E0yDuAJXgm0Ri15T9qwjiGlyLC9fLCKplyH9QnpmNcjorXQC6kUN2xPPHJjmJXiUsHv2zwdF4eR6XK_snw.z-l7uzk5cC3cv5piT6JbdQ.PMxFUjLz55GUBWGcYkZAXFUvJK1VtwYpbmtFdnadEYlBsQ4I6qXVPEdC-1grtm2flwjmwCvuu4_U-eGAv0kyvGO-Z67fycRzH0KLCNMd-k1YBy7_T21rqE_AeGyr8s5mFTCwZoPndPqy_gRgyDdewNh3_pjqe9iNBqUAhvtxq4EQ4gZxqqyQV9NCA1WvvDZYVwNLvP0ou8cfw_iwOxkwrmfsADTHcULrCFzW2GpEq1P5yxvw_-LivDeR5ZixRzDWSN8FG-Ld4ivdGVZG3FQEfpLnVtpvVM3fhNIiyOncBBLKsS5zvj228QK9OgJ-20QSxYbIm6pLmK4HEEW6FoAp_W2PmMorhF2YXRCJBr6uUpbTbRNfGp7g94FPzRSedGyUvC-RaeAz37lTW7Uy1MroDP2-X66F1_cT28eXVebfb46o1xdxRd4uxa6zePGYedDZRjEM_7KC2thLVn6KNRRtGIxKAQXpMPq-Ao3BHCaW-oOHn_6hcEoSi6vRoHZTcfAGUeoAaru8w5qSSYsqBzVSVEc4x7td--f2Fp1IOqTyppgPagQT9CUM7C3GYo4Otexz2iIEalalyT5imMDIkyYqS_Y36HEmA0zlh5rTRHs2TL63tAKpG7of2jl696E2krOxZdNPe8O9ETxwsitP5nb2btNJ3ecqwhPD7Yicp572WtGrORdgo30HWEvGtmrC3idMbBIF1kzEe3Mei4-trUI3GWyBkirnHflSRgNMDF5LEOSV2zQMkkzg2LY7eZaar7fI4fEuDFPGo6RvLpWrNfDFPNzb4Ex_lHeTypwjfZdw54YB0EfnNRctv-cbdy59Ixr6Kn1gN_ee7FX87ZlZuPaJfwRafld4taHTbE0l-gWHsAAXF0Jr0afSsvRKF6ijHJdYV1PSluhuIfj3iNCQ-g-scoZ_U_3K4tKw0C-8ixNfttPTN9hAVkU2EneN0Lt8x0ZekWJAbAX8BmRwAnCgMO0sf4GSYgxEb1MYTnl36sufSKKQnAElRD6SKhgBRerptF1y0klp-2XFSLKXtI1AMfrSy_NfTUxByQUzMYO0DgCwIDHYbLhj5MidJhutBifSvDYx6T3N_e0VM2362XNqkFUJha2eSDkaWcvPk1YqfOB3UwzDkNpDrPPYZLEntYuxOXSEb7Ymd1iQQn7ALjpABpJNF95Cu_iV6pZBAIZ1c0_9J-U_aCfJD9fRI2fzLsG2kj2KjJue6K8VyCilEjVLDJWS6BqMRJR07mmMJHCvJtToZLP9vT6xnv6_fxdBXaKsMlFIT1ThVxd61XECsBSwb5eXu9S-FnMZ2B-cVGw77YN6RS-Pwp9UnqOX86UMiDSllN-PxT5kMhYDYprnLkPeO1DmRs2eaSt7Vx2fMUz2cNn_S1KWIme9jcq4URk93zj5ErRoniZZCA2P-TZAdnPNoreegFk45ATFQwWuKH0yCUKhyrSadyCu6mtlniO2b64IgKmLwpAtHwciU2NIMjM4TcuBs30VVB2x5wnAe44sjB4ecH-E4V-y34DAqPBq0vkP2gjQCypKdldyhlHF0EWIsF8DbiqD_55pf1W7UcfjMN_4MKfrqe6e9nFvfGjSzPQhH9HP6nfdFgf4yzdL3e9AmcSPrIGK7xDQM1KdR3fYAhAHWm9jEWSbmGhQvPQZFcpeT-CkMhIsmpGNZUJNJ2GJLHMBkGJWitCeS6eNoniEw6f5I5J1NwB6qXnN_rzCANYjgz7FEsD-mgukslJDViBy0duPEbtf7r8iS0AlIby8FK7oBpUjJhRneVi0PjeKEetIfcwScbXCIefQtrKxQDyz6K24v_oDJz1nwTbQGlc_keHeHfVpKT6vkcQr98ktHUv9ejyeByDXQfTWC8Fzq36D7PaKBZ9Z2H5bvLrY5H6HxlfOnggz_XcsIKd9LW_DeQeDybhD3lgSsTrNtLXV2gudpULoL9P_3v1cqN0FZpSleURh3h6eRFd0aDJzq-BzWnecBMudYnQpBcXY51J4H_kseGXJTqdlaDUwbLSJut9wrJD-pvB1o1x4dfWAeYnVbS40PTm1ykWmYqdnrlXO21CbROCUhYv749FxTPKiRWuEFGRr8iQQdpogurTbnIJhkTAam6uiCx_XaW6u_jX1eucgMNg4jvebEMegZprdT3Qun0D2gQiZizXyLkmXDhCyP35NLcNXlCqW_EQt9QEgGXGPd1JTP2uj1YKXRVVm7e3p6YKYtnOApDsgXx4Tkzif2vxa5DYdD5Vmxw44GcCa2EJ7ptbZfXu_c7RV5LmHjV6ToYXVra_c71PBqXputYkBh6rHSqgvyqMjhcyhVoIloONbGPpop146bFUIWPH_ETb3r1pfD3G1c0P0WYFj6o5xwKNR9GsfOmjfIBROyq6d7kjMz930NV3QWRBskGvCkiGopr9dgRhDlvU-bk2DFMSGT5iWJJDgRvR0UEYE7_GCRtW0RuYiYkhCMy8kiIcl9EZ_0-hxfs41N1Yg1MuaA68ITi1Nh8pKsh4K9bvT11KwE12ldaVk-PAswq2H-F1ERbvVnbhU9HYUsOGMzhRGbvOdRNwjFcLCV45F0jObmFnGSct_YJrzSw6_vaiD7mDPJIz-fdgXN78bYFMGksNdKQl0o1MpXv4eCyFCnRKoXR7kUJnDeTtsVE1oOPOFmIuhL_6XtyHBGNaEmuLGTjF1MtkwlAkSksoBDLFJvjQBGzm3VBWNQJjmBbP939l3vFMCw46h1r2C3U5hjxzk1vCtEhROEDFj7Hu8yCwqnVZ-fNBjV5FI_Thw6BPbkGKquE1Jvrl-4_uiXV4Er58HvDuVuVq9Dg6H4VRkMaVRP2GbBFh7wmTkbeJ-nfPOb4IX2hnyUceH4TP3rCh3pV9l2KBgazE7q3IOI0T4Z3xpWgKrs10ukbkrkMUPFfMN-jOFohEV0BeqUeFAnsd01mIYCGG8-hbQhFWBi348B2E_8u11k73NGDaCH_GbFiUCFjh8BnULfpFsjoAHwm6ZPs2jX7-4lBErzFdWZ2yP4-PTXf52sCDPOycjmVQAy4rmyoECuInvhudOHmjIQIx0YFPZtdzlrrhWyIoRJ07hHvb6TXphDWN4X2trh_6rOi3VQhOSS6tsq_HSaPWcT6ENqU0ySjQAMMqdMEwNc5w9nfFBzFfVIhYvUQdBWYrtr_fePg0v4bJXb146xJ2lnhbrlZbSE9wZpY6JWkshpigfjDgHRUeADaS14D_mNfPYVFLBkI9yyAhqAdLKahRTRVF6zbiSrNeJVmIMNk6BhHEXuGqdNbM3nLwMG8xl3GqWMG6Xfo-ba-b4NddxKih3DApcq8R1IVSUk7L1EDBaX-eTNfzMrrg_7o2urInmWkbwTa3k2zxgLtklwZDlkMpqYXtZb8kQnvsNyKt981foTSxgoP8uY667v88B9qVQ7DJQt7UQDa-s7-qEWyEmUPTw7JvLEVQ4vvkD7E6gZh1JQJN070XjGJRLCdfSlV4yZZQq_U5HLq5BArSuzWUMUZ4aePFBKYEFxw-VzHQHopy2ILRdNxjCa1wHcJowBnJzKo6_gqJE8tsWLWNd7Y850xBPWd2OxLIaYIvZgYQFx_ihsOMBOkHIGbnZ48r_37mvUCc7QISlFNIrFwXzZf1U6Yo-l2LfNV38fVbjnky2N8_Ex-_mfiHB_TdzIasvFGY6aqY0Z1QkoB0lB3SgxgotcYhi8UfCNV6s72mCDQxfxSEwMJ4VOc3LH2pplidr5YWvI-0MRCA-UP0sYpvdy0S5JhEBckfADeqRt3mavQGXN0fcGQAXJMxGVtp7hRH3Nbghs_0jyRSgqPnfYpGJlZq233__BmgsiYTqMdTgNXIQsbq7KYIAmD9h5PxPqbNA_YgXpWJelT9QxOqDwiWJmyy6TkvLOqfkH9W33et13xNVySJbR-U5Z5kNM8020spvcMrhvsuJKhJi84hR6UYdNeee6U5q5-iWusfhLhqQWMzrsKx3kQ-vFXwXqTyrx8bL1KVNQ08p-67sDAl6JCXXxHiakfs9122I33Fpo9pgOWGhkrKLi0e_eoj1FrN9HzhwejNyEtArG-n8Hr2XBQ2TiU1rwZprX1LBnVuIiiyBibC5H9TzZQSI2D22rGZdOccOmkZqS34_TfAnxQJ5djbTndhj6W0BQhNkZ8CSd7dCHig0Fo-V7GavXA27u9sFelZFZAmvZBMl04fv7GgSIh4s4nUcwKQFvwzlTQBlhy9tzmZP9K2OZBZPdJbUxd9sK5unDyR8ccUj6BSy87PieWYJTzeHe_zYqfvjo4h2fYcffAQ2rqJwT8hS8zJ_SRhXCM2BYG-Qn16qbGjSKBUBtnlYyCiSf7iZhCpzd2gTO1F_TlmNq4EqJX32mwUJAUkEud_KBfK-O6-KTbNd4xbS9zahWCRcPmTk5r6S66rrVEJgjuaDLZ6wkILQ.RxfsLhYuZVy1IeqwB7Q6fnec9YsmF3SojBqr29v-TZA",
+  "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/131.0.0.0 Safari/537.36",
+  "accept": "*/*",
+  "accept-encoding": "gzip, deflate",
+  "content-length": 0
+}
+
+-----------------------------------------------------------
+
+The response we got was:
+
+Status: 400 - Bad Request
+Headers: {
+  "date": "Thu, 16 Jan 2025 06:05:21 GMT",
+  "content-type": "application/json; charset=utf-8",
+  "content-length": "260",
+  "connection": "keep-alive",
+  "cf-cache-status": "DYNAMIC",
+  "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=ez3Ga6gJm6UQ1F7JU7SQZIUFTokuphoDNtD3OZugcXmLY46Z648OmG93e6BAXMZbKZ3mmaF8x6XAKbcB7u%2B8AGn0UxrxfnuHHRlM64FHU74iYAoxeGjgLlVDLCPqLNra9%2FETiZ5a6ULx3tEdg6N4HpY%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+  "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+  "server": "cloudflare",
+  "cf-ray": "902be9ce3b578f38-FRA",
+  "server-timing": "cfL4;desc=\"?proto=TCP&rtt=14485&min_rtt=5686&rtt_var=13407&sent=194&recv=173&lost=0&retrans=0&sent_bytes=108845&recv_bytes=103929&delivery_rate=6309649&cwnd=256&unsent_bytes=0&cid=5d5043a90399a797&ts=33742&x=0\""
+}
+Body: [
+  {
+    "title": "Error",
+    "description": "The client cannot be added in the monitoring internal screening since the following fields: Identification Number are missing.",
+    "exceptionInfo": {
+      "exceptionMessage": null,
+      "exceptionInnerMessage": null,
+      "exceptionStackTrace": null
+    }
+  }
+]
+
+
+https://on.cypress.io/request
+    at <unknown> (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:132876:72)
+    at tryCatcher (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1830:23)
+    at Promise._settlePromiseFromHandler (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1542:31)
+    at Promise._settlePromise (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1599:18)
+    at Promise._settlePromise0 (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1644:10)
+    at Promise._settlePromises (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1724:18)
+    at _drainQueueStep (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:2430:12)
+    at _drainQueue (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:2423:9)
+    at Async._drainQueues (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:2439:5)
+    at Async.drainQueues (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:2309:14)
+From Your Spec Code:
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/DemonstrationFlow/Add_Client_Corporate_Process_test.cy.ts:145:0)]]></failure>
+    </testcase>
+    <testcase name="Add Corporate Client Process should perform internal blacklist search" time="8.886" classname="should perform internal blacklist search">
+    </testcase>
+    <testcase name="Add Corporate Client Process should add a shareholder" time="5.668" classname="should add a shareholder">
+    </testcase>
+    <testcase name="Add Corporate Client Process should add a capacity" time="7.523" classname="should add a capacity">
+    </testcase>
+    <testcase name="Add Corporate Client Process should archive a client(soft delete)" time="4.132" classname="should archive a client(soft delete)">
+    </testcase>
+  </testsuite>
+</testsuites>

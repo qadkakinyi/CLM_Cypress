@@ -1,0 +1,16 @@
+services:
+  cypress_chrome:
+    image: cypress/included:13.17.0
+    container_name: chrome_cypress
+    command: "--browser chrome"
+    working_dir: /cypress
+    volumes:
+      - ./:/cypress
+        
+  cypress_electron:
+    image: cypress/included:13.17.0
+    container_name: electron_cypress
+    command: "--browser electron"
+    working_dir: /cypress
+    volumes:
+      - ./:/cypress

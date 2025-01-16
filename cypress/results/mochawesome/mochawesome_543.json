@@ -1,0 +1,323 @@
+{
+  "stats": {
+    "suites": 4,
+    "tests": 9,
+    "passes": 8,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-01-16T13:30:55.592Z",
+    "end": "2025-01-16T13:33:39.636Z",
+    "duration": 164044,
+    "testsRegistered": 9,
+    "passPercent": 88.88888888888889,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "0499b79d-19dc-4f61-94db-6850bc6cc05d",
+      "title": "",
+      "fullFile": "cypress/e2e/SideMenu/Administration_test.cy.ts",
+      "file": "cypress/e2e/SideMenu/Administration_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "31bd9600-49e0-42cb-adca-b63d91216f6e",
+          "title": "Administration",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Opens the menu list under administration",
+              "fullTitle": "Administration Opens the menu list under administration",
+              "timedOut": null,
+              "duration": 9718,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByDataCy(\"administration-menu\").find(\"ul>li\").should(\"be.visible\");",
+              "err": {},
+              "uuid": "67f9bd3d-e7a3-4dc1-988b-e044616d8596",
+              "parentUUID": "31bd9600-49e0-42cb-adca-b63d91216f6e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Opens Account",
+              "fullTitle": "Administration Opens Account",
+              "timedOut": null,
+              "duration": 4905,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByDataCy(\"administration-menu\").find(\"ul>li\").eq(0).click();\ncy.location(\"pathname\").should(\"equal\", \"/administration/account\");\ncy.get('#activeUsers');\ncy.contains(\"Active Users\");",
+              "err": {},
+              "uuid": "a95b59b4-28a6-436d-bca2-9effac3d2724",
+              "parentUUID": "31bd9600-49e0-42cb-adca-b63d91216f6e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Opens release notes",
+              "fullTitle": "Administration Opens release notes",
+              "timedOut": null,
+              "duration": 3292,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByDataCy(\"administration-menu\").find(\"ul>li\").eq(1).click();\ncy.location(\"pathname\").should(\"equal\", \"/administration/release-notes\");\ncy.contains(\"Release Notes\");",
+              "err": {},
+              "uuid": "2d056b82-ad87-4fc7-9ee9-bb304e1c2771",
+              "parentUUID": "31bd9600-49e0-42cb-adca-b63d91216f6e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "67f9bd3d-e7a3-4dc1-988b-e044616d8596",
+            "a95b59b4-28a6-436d-bca2-9effac3d2724",
+            "2d056b82-ad87-4fc7-9ee9-bb304e1c2771"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 17915,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "d5d94420-7428-4b77-945d-ee3e609faa39",
+          "title": "User Management",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Opens User Management Menus",
+              "fullTitle": "User Management Opens User Management Menus",
+              "timedOut": null,
+              "duration": 3002,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"@user-mgmt-menu\").should(\"be.visible\").find(\"ul>li\").should(\"have.length\", 3);",
+              "err": {},
+              "uuid": "00326bb4-78e9-4a63-aec5-5fee5fd6d281",
+              "parentUUID": "d5d94420-7428-4b77-945d-ee3e609faa39",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Accesses all pages in the menu list",
+              "fullTitle": "User Management Accesses all pages in the menu list",
+              "timedOut": null,
+              "duration": 21551,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "data.forEach(function (route, i) {\n    cy.get(\"@user-menu-list\").eq(route.index).click();\n    cy.location(\"pathname\").should(\"equal\", route.route);\n    cy.wait(3000);\n    cy.contains(route.assertion);\n    if (i < data.length - 1) {\n        cy.visit('/main/dashboard');\n        cy.getByDataCy(\"administration-menu\").should(\"be.visible\").click();\n        cy.getByDataCy(\"administration-menu\").find(\"ul>li\").eq(2).click().as(\"user-mgmt-menu\");\n        cy.get(\"@user-mgmt-menu\").find(\"ul>li\").as(\"user-menu-list\");\n    }\n});",
+              "err": {},
+              "uuid": "b99251bc-d116-4eaf-8e68-5c96f13d35ca",
+              "parentUUID": "d5d94420-7428-4b77-945d-ee3e609faa39",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "00326bb4-78e9-4a63-aec5-5fee5fd6d281",
+            "b99251bc-d116-4eaf-8e68-5c96f13d35ca"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 24553,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "f156e2cf-9eb8-4a1b-bcd3-1352c604d7c4",
+          "title": "Audit Trail Extractions & Setups",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Opens Audit Trails Menus",
+              "fullTitle": "Audit Trail Extractions & Setups Opens Audit Trails Menus",
+              "timedOut": null,
+              "duration": 4469,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"@audit-trail-menu\").scrollIntoView().find(\"ul>li\").should(\"have.length\", 8);",
+              "err": {},
+              "uuid": "2dc79f9a-48cd-4509-bf15-11688ed77933",
+              "parentUUID": "f156e2cf-9eb8-4a1b-bcd3-1352c604d7c4",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Accesses all pages in the menu list",
+              "fullTitle": "Audit Trail Extractions & Setups Accesses all pages in the menu list",
+              "timedOut": null,
+              "duration": 44182,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "data.forEach(function (route, i) {\n    cy.get(\"@audit-trail-list\").eq(route.index).click();\n    cy.location(\"pathname\").should(\"equal\", route.route);\n    cy.wait(3000);\n    cy.contains(route.assertion);\n    if (i < data.length - 1) {\n        cy.visit('/main/dashboard');\n        cy.getByDataCy(\"administration-menu\").should(\"be.visible\").click();\n        cy.getByDataCy(\"administration-menu\").find(\"ul>li\").eq(3).click().as(\"audit-trail-menu\");\n        cy.get(\"@audit-trail-menu\").find(\"ul>li\").as(\"audit-trail-list\");\n    }\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<sa-menu-item.ng-tns-c329-27.ng-star-inserted>' to be 'visible'\n\nThis element `<sa-menu-item.ng-tns-c329-27.ng-star-inserted>` is not visible because it has CSS property: `position: fixed` and it's being covered by another element:\n\n`<div _ngcontent-jcb-c74=\"\" class=\"ngx-overlay loading-foreground\" style=\"background-color: rgba(40, 40, 40, 0.3); border-radius: 0px;\">...</div>`",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<sa-menu-item.ng-tns-c329-27.ng-star-inserted>' to be 'visible'\n\nThis element `<sa-menu-item.ng-tns-c329-27.ng-star-inserted>` is not visible because it has CSS property: `position: fixed` and it's being covered by another element:\n\n`<div _ngcontent-jcb-c74=\"\" class=\"ngx-overlay loading-foreground\" style=\"background-color: rgba(40, 40, 40, 0.3); border-radius: 0px;\">...</div>`\n    at eval (webpack://clm_cypress/./cypress/e2e/SideMenu/Administration_test.cy.ts:79:0)\nat Array.forEach (<anonymous>)\n    at Context.eval (webpack://clm_cypress/./cypress/e2e/SideMenu/Administration_test.cy.ts:72:0)",
+                "diff": null
+              },
+              "uuid": "b65bd114-4930-439a-9c08-680e3cbbaf66",
+              "parentUUID": "f156e2cf-9eb8-4a1b-bcd3-1352c604d7c4",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "2dc79f9a-48cd-4509-bf15-11688ed77933"
+          ],
+          "failures": [
+            "b65bd114-4930-439a-9c08-680e3cbbaf66"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 48651,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "4861e4cf-7b9d-48a8-9087-8d9cfb9e09eb",
+          "title": "Other Settings",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Opens Other Settings Menus",
+              "fullTitle": "Other Settings Opens Other Settings Menus",
+              "timedOut": null,
+              "duration": 4833,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"@other-settings-menu\").scrollIntoView().find(\"ul>li\").should(\"have.length\", 9);",
+              "err": {},
+              "uuid": "b8547d52-9bb9-4308-abb4-4479e8889928",
+              "parentUUID": "4861e4cf-7b9d-48a8-9087-8d9cfb9e09eb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Accesses all pages in the menu list",
+              "fullTitle": "Other Settings Accesses all pages in the menu list",
+              "timedOut": null,
+              "duration": 67413,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var data = [\n    { index: 0, route: \"/administration/check-transaction-screening\", assertion: \"Check Transaction Screening\" },\n    { index: 1, route: \"/administration/system-dynamic-reports\", assertion: \"Dynamic Reports\" },\n    { index: 2, route: \"/administration/event-engines\", assertion: \"Event Engines\" },\n    { index: 3, route: \"/administration/external-credentials-setups\", assertion: \"External Credentials Setups\" },\n    { index: 4, route: \"/administration/internal-blacklists-setup\", assertion: \"Internal Blacklists Setup\" },\n    { index: 5, route: \"/administration/query-templates\", assertion: \"Query Templates\" },\n    { index: 6, route: \"/administration/rules\", assertion: \"Rules\" },\n    { index: 7, route: \"/administration/task-scheduler\", assertion: \"Task Scheduler\" },\n    { index: 8, route: \"/administration/workflows\", assertion: \"Workflows\" }\n];\ndata.forEach(function (route, i) {\n    cy.get(\"@other-settings-list\").eq(route.index).click();\n    cy.location(\"pathname\").should(\"equal\", route.route);\n    cy.wait(3000);\n    cy.contains(route.assertion);\n    if (i < data.length - 1) {\n        cy.visit('/main/dashboard');\n        cy.getByDataCy(\"administration-menu\").scrollIntoView().click();\n        cy.getByDataCy(\"administration-menu\").find(\"ul>li\").eq(4).click().as(\"other-settings-menu\");\n        cy.get(\"@other-settings-menu\").find(\"ul>li\").as(\"audit-trail-list\");\n    }\n});",
+              "err": {},
+              "uuid": "347d0fd8-114b-40b1-9294-99a1172e26e9",
+              "parentUUID": "4861e4cf-7b9d-48a8-9087-8d9cfb9e09eb",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b8547d52-9bb9-4308-abb4-4479e8889928",
+            "347d0fd8-114b-40b1-9294-99a1172e26e9"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 72246,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

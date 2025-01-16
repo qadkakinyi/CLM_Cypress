@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="30.159" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T08:22:25" tests="0" file="cypress/e2e/HelperFunctionalities/TransactionMonitoring&amp;Actions/Case_Workflow_Statuses_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Case Workflow Statuses" timestamp="2025-01-16T08:22:31" tests="3" time="23.894" failures="0">
+    <testcase name="Case Workflow Statuses Adds a Case Workflow Status" time="12.768" classname="Adds a Case Workflow Status">
+    </testcase>
+    <testcase name="Case Workflow Statuses Edits a Tag" time="9.565" classname="Edits a Tag">
+    </testcase>
+    <testcase name="Case Workflow Statuses Deletes a Tag" time="7.709" classname="Deletes a Tag">
+    </testcase>
+  </testsuite>
+</testsuites>

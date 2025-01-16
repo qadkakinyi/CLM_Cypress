@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="76.526" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T13:14:48" tests="0" file="cypress/e2e/IndividualClientFunctionality/ZFinal_CleanUp.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Add, Edit, Delete Client Bank Account" timestamp="2025-01-16T13:14:59" tests="2" time="47.267" failures="0">
+    <testcase name="Add, Edit, Delete Client Bank Account Add Client Bank Account" time="42.813" classname="Add Client Bank Account">
+    </testcase>
+    <testcase name="Add, Edit, Delete Client Bank Account Edit client Bank Account" time="15.060" classname="Edit client Bank Account">
+    </testcase>
+  </testsuite>
+  <testsuite name="Cleans Up Created Objects That Were being Used By other Functionalities" timestamp="2025-01-16T13:15:46" tests="1" time="18.566" failures="0">
+    <testcase name="Cleans Up Created Objects That Were being Used By other Functionalities Delete client Bank Account" time="18.516" classname="Delete client Bank Account">
+    </testcase>
+  </testsuite>
+</testsuites>

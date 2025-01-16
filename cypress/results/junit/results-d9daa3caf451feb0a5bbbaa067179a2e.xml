@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="44.211" tests="3" failures="1">
+  <testsuite name="Root Suite" timestamp="2025-01-16T12:44:34" tests="0" file="cypress/e2e/CorporateClientFunctionality/Additional_External_Refences_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Add, Edit, Delete Additional External References" timestamp="2025-01-16T12:44:44" tests="3" time="33.632" failures="1">
+    <testcase name="Add, Edit, Delete Additional External References Add Client external reference" time="27.435" classname="Add Client external reference">
+    </testcase>
+    <testcase name="Add, Edit, Delete Additional External References Edit Client Related website" time="7.681" classname="Edit Client Related website">
+    </testcase>
+    <testcase name="Add, Edit, Delete Additional External References Delete client external reference" time="0.000" classname="Delete client external reference">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `.dx-overlay-content .dx-button-content`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `.dx-overlay-content .dx-button-content`, but never found it.
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/CorporateClientFunctionality/Additional_External_Refences_test.cy.ts:35:0)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="119.004" tests="8" failures="8">
+  <testsuite name="Root Suite" timestamp="2025-01-16T13:16:06" tests="0" file="cypress/e2e/Priority2/Adhoc_Screening_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Adhoc Screening Individual Client" timestamp="2025-01-16T13:16:19" tests="4" time="50.880" failures="4">
+    <testcase name="Adhoc Screening Individual Client Performs Person Search Using UI" time="0.000" classname="Performs Person Search Using UI">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `[formControlName=&quot;fullName&quot;]`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `[formControlName="fullName"]`, but never found it.
+    at Context.eval (webpack://clm_cypress/./cypress/support/commands.ts:68:0)]]></failure>
+    </testcase>
+    <testcase name="Adhoc Screening Individual Client Performs Person Monitoring and Refreshes Results" time="0.000" classname="Performs Person Monitoring and Refreshes Results">
+      <failure message="Timed out retrying after 4050ms: `cy.click()` failed because this element:
+
+          `&lt;div _ngcontent-sxn-c358=&quot;&quot; class=&quot;text&quot;&gt;Person ...&lt;/div&gt;`
+
+          has CSS `pointer-events: none`, inherited from this element:
+
+`&lt;a _ngcontent-sxn-c358=&quot;&quot; placement=&quot;bottom&quot; container=&quot;body&quot; triggers=&quot;mouseenter:mouseleave&quot; class=&quot;sa-button success left dark md with-icon disabled&quot; title=&quot;&quot; type=&quot;&quot; href=&quot;/main/client-individual/415/1/negative-lists&quot;&gt;...&lt;/a&gt;`
+
+          `pointer-events: none` prevents user mouse interaction.
+
+          Fix this problem, or use {force: true} to disable error checking.
+
+https://on.cypress.io/element-cannot-be-interacted-with" type="CypressError"><![CDATA[CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element:
+
+          `<div _ngcontent-sxn-c358="" class="text">Person ...</div>`
+
+          has CSS `pointer-events: none`, inherited from this element:
+
+`<a _ngcontent-sxn-c358="" placement="bottom" container="body" triggers="mouseenter:mouseleave" class="sa-button success left dark md with-icon disabled" title="" type="" href="/main/client-individual/415/1/negative-lists">...</a>`
+
+          `pointer-events: none` prevents user mouse interaction.
+
+          Fix this problem, or use {force: true} to disable error checking.
+
+https://on.cypress.io/element-cannot-be-interacted-with
+    at ensureElDoesNotHaveCSS (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:112856:66)
+    at ensureDescendents (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:112964:5)
+    at ensureDescendentsAndScroll (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:112972:14)
+    at ensureElIsNotCovered (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:113103:5)
+    at runAllChecks (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:113302:52)
+    at retryActionability (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:113339:16)
+    at tryCatcher (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1830:23)
+    at Promise.attempt.Promise.try (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:4338:29)
+    at whenStable (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:143744:68)
+    at <unknown> (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:143685:14)
+    at tryCatcher (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1830:23)
+    at Promise._settlePromiseFromHandler (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1542:31)
+    at Promise._settlePromise (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1599:18)
+    at Promise._settlePromise0 (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1644:10)
+    at Promise._settlePromises (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1724:18)
+    at Promise._fulfill (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1668:18)
+    at <unknown> (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:5473:46)
+From Your Spec Code:
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/Priority2/Adhoc_Screening_test.cy.ts:42:0)]]></failure>
+    </testcase>
+    <testcase name="Adhoc Screening Individual Client Removes Person Monitoring" time="0.000" classname="Removes Person Monitoring">
+      <failure message="Timed out retrying after 4050ms: `cy.click()` failed because this element:
+
+          `&lt;div _ngcontent-mtd-c358=&quot;&quot; class=&quot;text&quot;&gt;Remove ...&lt;/div&gt;`
+
+          has CSS `pointer-events: none`, inherited from this element:
+
+`&lt;a _ngcontent-mtd-c358=&quot;&quot; placement=&quot;bottom&quot; container=&quot;body&quot; triggers=&quot;mouseenter:mouseleave&quot; class=&quot;sa-button error left light sm with-icon disabled&quot; title=&quot;&quot; type=&quot;&quot; href=&quot;/main/client-individual/415/1/negative-lists&quot;&gt;...&lt;/a&gt;`
+
+          `pointer-events: none` prevents user mouse interaction.
+
+          Fix this problem, or use {force: true} to disable error checking.
+
+https://on.cypress.io/element-cannot-be-interacted-with" type="CypressError"><![CDATA[CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element:
+
+          `<div _ngcontent-mtd-c358="" class="text">Remove ...</div>`
+
+          has CSS `pointer-events: none`, inherited from this element:
+
+`<a _ngcontent-mtd-c358="" placement="bottom" container="body" triggers="mouseenter:mouseleave" class="sa-button error left light sm with-icon disabled" title="" type="" href="/main/client-individual/415/1/negative-lists">...</a>`
+
+          `pointer-events: none` prevents user mouse interaction.
+
+          Fix this problem, or use {force: true} to disable error checking.
+
+https://on.cypress.io/element-cannot-be-interacted-with
+    at ensureElDoesNotHaveCSS (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:112856:66)
+    at ensureDescendents (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:112964:5)
+    at ensureDescendentsAndScroll (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:112972:14)
+    at ensureElIsNotCovered (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:113103:5)
+    at runAllChecks (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:113302:52)
+    at retryActionability (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:113339:16)
+    at tryCatcher (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1830:23)
+    at Promise.attempt.Promise.try (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:4338:29)
+    at whenStable (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:143744:68)
+    at <unknown> (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:143685:14)
+    at tryCatcher (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1830:23)
+    at Promise._settlePromiseFromHandler (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1542:31)
+    at Promise._settlePromise (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1599:18)
+    at Promise._settlePromise0 (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1644:10)
+    at Promise._settlePromises (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1724:18)
+    at Promise._fulfill (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1668:18)
+    at <unknown> (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:5473:46)
+From Your Spec Code:
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/Priority2/Adhoc_Screening_test.cy.ts:50:0)]]></failure>
+    </testcase>
+    <testcase name="Adhoc Screening Individual Client Performs Person Search Using API" time="0.000" classname="Performs Person Search Using API">
+      <failure message="`cy.request()` failed on:
+
+https://complytek-testing-api.regtek.co/api/clientIndividuals/415/performPersonSearch
+
+The response we received from your web server was:
+
+  &gt; 400: Bad Request
+
+This was considered a failure because the status code was not `2xx` or `3xx`.
+
+If you do not want status codes to cause failures pass the option: `failOnStatusCode: false`
+
+-----------------------------------------------------------
+
+The request we sent was:
+
+Method: POST
+URL: https://complytek-testing-api.regtek.co/api/clientIndividuals/415/performPersonSearch
+Headers: {
+  &quot;Connection&quot;: &quot;keep-alive&quot;,
+  &quot;Content-Type&quot;: &quot;application/json&quot;,
+  &quot;Authorization&quot;: &quot;Bearer eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI1RkM0QkM4NzM2QTE5NzkwQkUxQzU4NTc3NENCQjM4RDVDQzA1NTNDIiwidHlwIjoiYXQrand0In0.BE-jEm-lvthw4m2w_ygSQGvvOC4u6KeQlWnc6uBZnQEYwIqRgTOb0cYt2W6j_uCLihJbzHfKE9wi7vOfqdhOnNQ6kd5joYstXuMAI57AjQ6ZlKqF_rzcuIEOK-cJVH9cdWnfEFC5gLG4U7_te7NPnDAAKtOAnvvtEUPlNvmjmOcnUtO5AJhOvjcyZXoT4Uj1P4KBk7a_YO-3Ffl1XhdtOIsHoFE6gG5A0K1CIJsPav22_rHZ2cPP9ZzY0MrJXdzATEcJhV0TSEggHs1IsUredCpD8LrFfWIW8IC8eaVABOLWjXyW0PYs0FNDbN-N7-IW7e5JqhEpzTzyd862j8_bHQnPgfdT10c3TyMs-bW0Ujs0NYa-GdDojvqZnCFTUtBXh9q_8lDilBAgbBWCC5orWSGVACiXlnchNBAAr3GHlayWB7godQ64UeFAV-m2jb0hss53y2NoZcsAqS1q8QXh6OT36Uqb3VJzfNJJfZu3XSD2CLpd4Nl6kbnfPfYqWgW5PFP2BAjxh9Ac1RDdZZ2hxF1NBkFimKSoYFx-GSAuYt3lxuAomm5wwJMcMc2P1MqsuVVpIaCFI0flZX7TNkcTRoDgSCc1QBwQPLT_G_kB18n9ZcTqVuxoV5VV_ho3XKzm1gVR4hSBP0fXR8dUMM3-3LAjbd1HI_vPtqphIaiuDVU.PCDuXlkOZAGhOt41Cj1-Mw.UqEH6jFANnthLL7qRJWnRlfdiWBKgFQTLdAKVohoUjojdDUHPs90rVDV17XMAAOEv2ixY4xbGytCpMo6lHpkBCaELS8SJTPCD7iplNKvfl0CoVXNdU3IDlMV0-Kg1ek77lgC4KfPqLCh9ahz52NcVNHpZmdMY8nP50JsJAhOaYSQ6QOc2JxvUy3MvrHVD40CAKRZJ-TxnoDqD-x9z9D80Wyqh63fLXCYZfUuCEPGNvl0ZFjKX8KyiZ-aEjkwLHQHwg1tZvDjP5rTzTt3WAvHZ91ejJSYZ2nghxDm_LlQFayAOWwE0xmzSt57Up91TaimQpIzgLO9nRwci66JTYg_RAo6ZeR9yrd6YmZuZrivXYMYRe7JOuWQCyU8CMzLLn6RkQnSmYSAIOGHQwHSJCjpYzf0IQrIQ6IVigJdV2570V5pUvleVD3W2ymIz10w-324BvEz9CyP085QQ-zNRXOrpxQl4fbqxIE3oecqx2srEDVrTV4tKoX8Ak3n6suz50tOqm5PfRwwBLLhsHgIJGx_5IDD-lftxWvHSfPzDrymbwt4vq1134kunaC8odJ8sisCVLZk5pGW13527plYyEI-lE7KeyQJVaceILwpnKugSx5jVqyylAyVyT8ZhWdvvmo14l3rDMZNgNtV9BxDUTw-22S8qJXlKU4KE-Ia4BniZgN9sCtWKzQZwvXSqEBUhmpBIG61ZibY0QOvZTnC-PeXiQTQvbMv06hkkpTLhuepHHQSsE2nTRGB5s-M5Yc2xy2dTz8n63Lqs0-g4hEqeNg7LjoNeW3eYAOESdAqi1Wb9UjOzlYaYeCyksngovmTJOL48-xjlwo-DMVJ2ZBpU10xIwvhlnqf41FiXciU9i04tPU8C69f5KSe6wMJYYqqd7c4c9e7XlaoR2FjBeQlAfOOBtEfjKZJHnuxjF9jaTMxxCtinhDhGTfT8URQktBFyW3xrJ3EdLOy1pA4HhTbC2VM8s_jr1fCuMVWRuWoEkz_EUF6e5Ui9uSjEoKTpsrFMmeyMkkTQoyEjy47e6A274we8q-TZH3UiMxRu0l3ISrae9uC6FslU3MPFrvDhQpFMUA6mPYANilJIIqvH-VM0p1M4yhP9uHX-qmYisJSbXbj2ZvAvXuD_UJV9MOyPo-3yTUa4toCRbGrZ5wB5gBjbhcaUvlHmQCMQTUIVaCg68TjyBJRofLrMAt7Y2Ge_HkwlaGCjX1sNUAU8RtDpwUPTn8YqLGJtUIKmtD9VuVGiOg3j03xe54tQLntSbtv-Hat8eg4we_CutP1FHICRPDCHgAQPFtP7C66CJ2bqvYIDrJm1s85czUkSLWEJO1OX3B8gKIlv3-0ZSVPJ6nZlU-M4doexP4KAU3cPqnqYA7UXDvp9OUAGMBiQYSd2iRmFCKMRL13etF-4gE7nUdBk1VHCQWq87nbQn5NiR0cO-nk1YahvmcYGgZrcjm04YRkT0MFqAfP1v4a74SNbuHoSHL95jUTXFcgZiaHUeZ0jIP16Er8qpAFC0JDukMlAw6tppH5U-qAqekTT4y9ygS8Q_VqCFX_C8ntDFnba9_dJJeuWwL1A0B7PoUX3t-l_naJhHOsocVeZq_xcCH6MRdt5sZ3221wL67F2XkRCmxrD_J8BeMD-eWWXbkGPcrUdqrtG0tPTo7oaSpJbrF8851MoNYTYRNi-FrQ76eEiTZmJAMK3-Bcy8Z1jsjG8ktKsiGzynQ-I_CZaQnGDyr-SdBGT9cu7VplRfNA1qsFt0PDACU2tEu1F3jZ6MEpxCev10ASSlU9bOFZOcQLnEVgOPq9ziN-C5TB3NunzFD-kO5rsGHFGCcZD4LeX18HbWldAneBKyIqIEorSJV1XOpme8WANBpqkRm9YI-MNJA15utsqiRYZvb4tpDSpLlgPY2K3T58g8EazD5rQNJ62-Th4cddv7AWptnmuEMP51RJP4wHCpJVOj7pkJ4DE9ZUahjMmkEDlBWKGVedOLP883oVmwvQ_uSyjm2Z1qSvmqqlTVXZk18EVsm_hYaWyzb0wbSBGRANG_8uc8A4EjliHstriiS4bpfKVOGyToP9HxaxIeZCe_rLtV7KtEHJS3fJ7ENOwTcADefILQvGxSzUna7NGEfCvcQwYP-Bmj3tovd-qBLIrHFOo5MtTzoofDKQu2dcpekIlKIfY8l2u6YNw2P9ISj2VCcUumsLCOJPVRqdG16McCYCsIfltHMdRfvKcfrAI8ENE2LnaulGTDeRpgslXA1bLXE0bR-DirijqTAW86sbyOeBJhIPgbzcjQGmX_E7xWgiZfvdDdZi-M7W2YWHW_TGMX1C3TUo4dJN-yMqC8GAeLU9ocFN5r5STcBe8I1jeSBKNbWfNHhZruL5Rq5niQNfNcEc7LAWJ1OlLSffT7mnoAbadJ0ulo6GaEjJDnOqEdPl8A73hkkJ1cZzGb2a-uga65IJGa8FP0rzxdlRf7s4SpASyPvNoI0bi0kOVZWxPK2RupmipQs00O9TRHyoKENwPg3xT-20ZYHKyiZI6x4MJI7J2tApdC3b-W6iIewY6X7mBTWVArsdubZWW44S2GV69geMkR4PSzCjTL7TywZw8K_0GjjELwoAhf-9M6t5qbrgAC6p38Xkox_BaugDvlogix_n7ON7g7m-4e7PlpawxZIdO8r5y4ZMB6NSWRL7eSGjGlzejdYrt4Yi7K76ViTdfPqOP4XXcwK08O_td1XMIm7B49OnltoGXFu41Z7DNmIyVtyY23sX62wzCmkTIgU1JIuhiIDa6p9zhb-0leUqoyMnEPWblAt3JFZr4kn0y0qkt_KLE5osGdBA1h_tbbejLY5Y_moW84TQ4HwwjCgaWj__rsBBWkn9TqnxK3N0JJN_E3rMT-w6jYh0fKoZUddNH0Abn_mZuZXMam9gcxb47MFQr_kLRKwjLyQ2lta_JYSTaOrOhIjqAGtAFonUMgK_GW_IWYz-7DeaizDkqXqORIudaQkej1BrI9m9irJcI_NRs_xCNDiiYeYea5W9T3yO33mesvTZ-OtL5_lF_gxnUqXquc-UnEndSGkOnRG7JfJ8AoDh6k21WEkiZPMX4Ne7OqGbsur978ofVwUtpI-7KHMHbpquR_D_oUXsFkx9ZODak5gKuTrT0KZBz4KIL9R_ncDBrAhRFVfWdRc1_P0BZk4PYgxHJt52785zpdXT5O6ifAql8OQLi-p-gskgOfrziBxWf4_VvjfvxZy7lEWed0njFp-NtrjKMgDYTZvu40jks-qR6Pdq2kUYlm5Uh0Yt07qjzcOW44b3lKr5h-Ijdmrjfo4ER37xcqVtAf7nwbkcB02TtCYhGjpMXWdPKVanIG_S2vz4HZPlz1srR6KtMwbLX5CqQpdzY0tG-qoqeUqfrQVBftlhKSKpv1xYDj6rVUHhGlLBZ6dNkvK85YBDEFrN7dBDbhaOU_gy70TSrL6MyOmyMEzIX9a8k2LD53KjR8TP4ixX5NIqarAQXf1vImIfjdvjnhHT6RGZUfrVvijOa86h0IbXtoOaLyhY7AF1Iw2HEiCUxxnt6xOEiXPkeuzzeUWYvywrAhgRppD6SYQIDBE6FZmq-Y_iQH9l8ujABgRZHn-1cwj3S6Yw2jI9U5DTUNKz_kR7U8zoEwnB0xsEWcOStz5s56IixdcIkAABUoCCt9IIASwK31dj7zt20bbtxUzaw2M6H9Md_Mud6IqGwsiCDHKXhGy5l60vYGBdIVYn-LqewFU0sdY0jzsUGJJE7CMROHkv1XFoQ6yopjJQ84FUaTeiJH6Cjsd44mfIXxwypA_-EE47OmEhY3eJQZR7Vg1FzwEp8zp3xsz-BOwm5j4ocRkYLL6AiZBoWUCFxl2gEJcc0miutpn875ew_5ks1bDgsNqXCGwQbpc6NXbEqXwk6_vgghRP4c_PY9I0kzcMHMJwVBbuGBakT9IC_PKvjI3-N-6o5Mkrm3G47L_S9DSpzlwhS7xG6xe5le29vUd-C-xdTNMFx75uU6mLWynikwdV_8YEHzxK7rMlEUlc1chMQMmJZoKcABPR0dbW1j_8gMvHjYlr1GOz4vjBYeSFLVILJC5hx_YKrkJ5_Jaeu9GnCdqDqLHYSEgyeD_0dmh5VRa0L9ZvxYz8MNxq80nazSBN95i2xTdzL-6QucMfehn93pC2Qkxw7iM24VbpNXTsYFFXwzMwN0AfPyiT2h9235VGyE9BOVpTFgF1fyxtHRRhotpiEOh9iO3Hfoq0zjrn8jsVbSDsHFHQNN62wwGGdIGWAkqeVdAjgfqJ20yHcMG6UNbkfjsI-84cNeAIELO_ARiFfcxbljaZ55cKdpU6GHRUjfRgBbOArVUJWlu3ifYmA3TA9dYqXJFXPB4OlFRkU8xGl9Q39OO0WZPSsQiDdX5SM4HDa42B99GmYZOZO0WnakwY.NT1FcqIn4HDTO4rN2fw5PDGj7luf21z3Wu8B3bbr0lM&quot;,
+  &quot;user-agent&quot;: &quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/131.0.0.0 Safari/537.36&quot;,
+  &quot;accept&quot;: &quot;*/*&quot;,
+  &quot;accept-encoding&quot;: &quot;gzip, deflate&quot;,
+  &quot;content-length&quot;: 113
+}
+Body: {&quot;acuris&quot;:{&quot;fullName&quot;:&quot;Putin&quot;,&quot;dateOfBirth&quot;:&quot;&quot;,&quot;address&quot;:&quot;&quot;,&quot;city&quot;:&quot;&quot;,&quot;country&quot;:&quot;&quot;,&quot;postcode&quot;:&quot;&quot;,&quot;threshold&quot;:90}}
+
+-----------------------------------------------------------
+
+The response we got was:
+
+Status: 400 - Bad Request
+Headers: {
+  &quot;date&quot;: &quot;Thu, 16 Jan 2025 13:17:09 GMT&quot;,
+  &quot;content-type&quot;: &quot;application/json; charset=utf-8&quot;,
+  &quot;content-length&quot;: &quot;625&quot;,
+  &quot;connection&quot;: &quot;keep-alive&quot;,
+  &quot;cf-cache-status&quot;: &quot;DYNAMIC&quot;,
+  &quot;report-to&quot;: &quot;{\&quot;endpoints\&quot;:[{\&quot;url\&quot;:\&quot;https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=aj3eOd3HumjIP0Tv5GbQ%2FVxHc5tEtgR6MK7Jpq8w5ljIaa%2FtPlIMa100e4vw4lr8qHY%2BchuzQV3CHqhGLjbLK36b%2BD%2FSMv%2BDb%2FvKsYN9XTJYahHRqIS03%2FpjiPYuU9ZPmy63WYJNRq%2FQ5iMnf%2FBJDEQ%3D\&quot;}],\&quot;group\&quot;:\&quot;cf-nel\&quot;,\&quot;max_age\&quot;:604800}&quot;,
+  &quot;nel&quot;: &quot;{\&quot;success_fraction\&quot;:0,\&quot;report_to\&quot;:\&quot;cf-nel\&quot;,\&quot;max_age\&quot;:604800}&quot;,
+  &quot;server&quot;: &quot;cloudflare&quot;,
+  &quot;cf-ray&quot;: &quot;902e62521f98dcd1-FRA&quot;,
+  &quot;server-timing&quot;: &quot;cfL4;desc=\&quot;?proto=TCP&amp;rtt=7897&amp;min_rtt=5776&amp;rtt_var=3729&amp;sent=363&amp;recv=363&amp;lost=0&amp;retrans=0&amp;sent_bytes=152871&amp;recv_bytes=198850&amp;delivery_rate=5285534&amp;cwnd=257&amp;unsent_bytes=0&amp;cid=5799c1ec1ad3a3e0&amp;ts=112749&amp;x=0\&quot;&quot;
+}
+Body: [
+  {
+    &quot;title&quot;: &quot; Error&quot;,
+    &quot;description&quot;: &quot;Something went wrong during screening &lt;br/&gt; Error:Object reference not set to an instance of an object.&quot;,
+    &quot;exceptionInfo&quot;: {
+      &quot;exceptionMessage&quot;: &quot;Object reference not set to an instance of an object.&quot;,
+      &quot;exceptionInnerMessage&quot;: null,
+      &quot;exceptionStackTrace&quot;: &quot;   at RegTech.Infrastructure.ScreeningHelperFunctions.PerformScreening(Int32 id, PersonSearchRequestVM individual, BusinessSearchRequestVM corporate, Boolean calledFromWorkflowOrExternal, Boolean getProfiles, Boolean ignoreEventEngine) in /home/palexandrou/WorkSpace/RegTech_Web/src/web/Infrastructure/ScreeningHelperFunctions.cs:line 207&quot;
+    }
+  }
+]
+
+
+https://on.cypress.io/request" type="CypressError"><![CDATA[CypressError: `cy.request()` failed on:
+
+https://complytek-testing-api.regtek.co/api/clientIndividuals/415/performPersonSearch
+
+The response we received from your web server was:
+
+  > 400: Bad Request
+
+This was considered a failure because the status code was not `2xx` or `3xx`.
+
+If you do not want status codes to cause failures pass the option: `failOnStatusCode: false`
+
+-----------------------------------------------------------
+
+The request we sent was:
+
+Method: POST
+URL: https://complytek-testing-api.regtek.co/api/clientIndividuals/415/performPersonSearch
+Headers: {
+  "Connection": "keep-alive",
+  "Content-Type": "application/json",
+  "Authorization": "Bearer eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI1RkM0QkM4NzM2QTE5NzkwQkUxQzU4NTc3NENCQjM4RDVDQzA1NTNDIiwidHlwIjoiYXQrand0In0.BE-jEm-lvthw4m2w_ygSQGvvOC4u6KeQlWnc6uBZnQEYwIqRgTOb0cYt2W6j_uCLihJbzHfKE9wi7vOfqdhOnNQ6kd5joYstXuMAI57AjQ6ZlKqF_rzcuIEOK-cJVH9cdWnfEFC5gLG4U7_te7NPnDAAKtOAnvvtEUPlNvmjmOcnUtO5AJhOvjcyZXoT4Uj1P4KBk7a_YO-3Ffl1XhdtOIsHoFE6gG5A0K1CIJsPav22_rHZ2cPP9ZzY0MrJXdzATEcJhV0TSEggHs1IsUredCpD8LrFfWIW8IC8eaVABOLWjXyW0PYs0FNDbN-N7-IW7e5JqhEpzTzyd862j8_bHQnPgfdT10c3TyMs-bW0Ujs0NYa-GdDojvqZnCFTUtBXh9q_8lDilBAgbBWCC5orWSGVACiXlnchNBAAr3GHlayWB7godQ64UeFAV-m2jb0hss53y2NoZcsAqS1q8QXh6OT36Uqb3VJzfNJJfZu3XSD2CLpd4Nl6kbnfPfYqWgW5PFP2BAjxh9Ac1RDdZZ2hxF1NBkFimKSoYFx-GSAuYt3lxuAomm5wwJMcMc2P1MqsuVVpIaCFI0flZX7TNkcTRoDgSCc1QBwQPLT_G_kB18n9ZcTqVuxoV5VV_ho3XKzm1gVR4hSBP0fXR8dUMM3-3LAjbd1HI_vPtqphIaiuDVU.PCDuXlkOZAGhOt41Cj1-Mw.UqEH6jFANnthLL7qRJWnRlfdiWBKgFQTLdAKVohoUjojdDUHPs90rVDV17XMAAOEv2ixY4xbGytCpMo6lHpkBCaELS8SJTPCD7iplNKvfl0CoVXNdU3IDlMV0-Kg1ek77lgC4KfPqLCh9ahz52NcVNHpZmdMY8nP50JsJAhOaYSQ6QOc2JxvUy3MvrHVD40CAKRZJ-TxnoDqD-x9z9D80Wyqh63fLXCYZfUuCEPGNvl0ZFjKX8KyiZ-aEjkwLHQHwg1tZvDjP5rTzTt3WAvHZ91ejJSYZ2nghxDm_LlQFayAOWwE0xmzSt57Up91TaimQpIzgLO9nRwci66JTYg_RAo6ZeR9yrd6YmZuZrivXYMYRe7JOuWQCyU8CMzLLn6RkQnSmYSAIOGHQwHSJCjpYzf0IQrIQ6IVigJdV2570V5pUvleVD3W2ymIz10w-324BvEz9CyP085QQ-zNRXOrpxQl4fbqxIE3oecqx2srEDVrTV4tKoX8Ak3n6suz50tOqm5PfRwwBLLhsHgIJGx_5IDD-lftxWvHSfPzDrymbwt4vq1134kunaC8odJ8sisCVLZk5pGW13527plYyEI-lE7KeyQJVaceILwpnKugSx5jVqyylAyVyT8ZhWdvvmo14l3rDMZNgNtV9BxDUTw-22S8qJXlKU4KE-Ia4BniZgN9sCtWKzQZwvXSqEBUhmpBIG61ZibY0QOvZTnC-PeXiQTQvbMv06hkkpTLhuepHHQSsE2nTRGB5s-M5Yc2xy2dTz8n63Lqs0-g4hEqeNg7LjoNeW3eYAOESdAqi1Wb9UjOzlYaYeCyksngovmTJOL48-xjlwo-DMVJ2ZBpU10xIwvhlnqf41FiXciU9i04tPU8C69f5KSe6wMJYYqqd7c4c9e7XlaoR2FjBeQlAfOOBtEfjKZJHnuxjF9jaTMxxCtinhDhGTfT8URQktBFyW3xrJ3EdLOy1pA4HhTbC2VM8s_jr1fCuMVWRuWoEkz_EUF6e5Ui9uSjEoKTpsrFMmeyMkkTQoyEjy47e6A274we8q-TZH3UiMxRu0l3ISrae9uC6FslU3MPFrvDhQpFMUA6mPYANilJIIqvH-VM0p1M4yhP9uHX-qmYisJSbXbj2ZvAvXuD_UJV9MOyPo-3yTUa4toCRbGrZ5wB5gBjbhcaUvlHmQCMQTUIVaCg68TjyBJRofLrMAt7Y2Ge_HkwlaGCjX1sNUAU8RtDpwUPTn8YqLGJtUIKmtD9VuVGiOg3j03xe54tQLntSbtv-Hat8eg4we_CutP1FHICRPDCHgAQPFtP7C66CJ2bqvYIDrJm1s85czUkSLWEJO1OX3B8gKIlv3-0ZSVPJ6nZlU-M4doexP4KAU3cPqnqYA7UXDvp9OUAGMBiQYSd2iRmFCKMRL13etF-4gE7nUdBk1VHCQWq87nbQn5NiR0cO-nk1YahvmcYGgZrcjm04YRkT0MFqAfP1v4a74SNbuHoSHL95jUTXFcgZiaHUeZ0jIP16Er8qpAFC0JDukMlAw6tppH5U-qAqekTT4y9ygS8Q_VqCFX_C8ntDFnba9_dJJeuWwL1A0B7PoUX3t-l_naJhHOsocVeZq_xcCH6MRdt5sZ3221wL67F2XkRCmxrD_J8BeMD-eWWXbkGPcrUdqrtG0tPTo7oaSpJbrF8851MoNYTYRNi-FrQ76eEiTZmJAMK3-Bcy8Z1jsjG8ktKsiGzynQ-I_CZaQnGDyr-SdBGT9cu7VplRfNA1qsFt0PDACU2tEu1F3jZ6MEpxCev10ASSlU9bOFZOcQLnEVgOPq9ziN-C5TB3NunzFD-kO5rsGHFGCcZD4LeX18HbWldAneBKyIqIEorSJV1XOpme8WANBpqkRm9YI-MNJA15utsqiRYZvb4tpDSpLlgPY2K3T58g8EazD5rQNJ62-Th4cddv7AWptnmuEMP51RJP4wHCpJVOj7pkJ4DE9ZUahjMmkEDlBWKGVedOLP883oVmwvQ_uSyjm2Z1qSvmqqlTVXZk18EVsm_hYaWyzb0wbSBGRANG_8uc8A4EjliHstriiS4bpfKVOGyToP9HxaxIeZCe_rLtV7KtEHJS3fJ7ENOwTcADefILQvGxSzUna7NGEfCvcQwYP-Bmj3tovd-qBLIrHFOo5MtTzoofDKQu2dcpekIlKIfY8l2u6YNw2P9ISj2VCcUumsLCOJPVRqdG16McCYCsIfltHMdRfvKcfrAI8ENE2LnaulGTDeRpgslXA1bLXE0bR-DirijqTAW86sbyOeBJhIPgbzcjQGmX_E7xWgiZfvdDdZi-M7W2YWHW_TGMX1C3TUo4dJN-yMqC8GAeLU9ocFN5r5STcBe8I1jeSBKNbWfNHhZruL5Rq5niQNfNcEc7LAWJ1OlLSffT7mnoAbadJ0ulo6GaEjJDnOqEdPl8A73hkkJ1cZzGb2a-uga65IJGa8FP0rzxdlRf7s4SpASyPvNoI0bi0kOVZWxPK2RupmipQs00O9TRHyoKENwPg3xT-20ZYHKyiZI6x4MJI7J2tApdC3b-W6iIewY6X7mBTWVArsdubZWW44S2GV69geMkR4PSzCjTL7TywZw8K_0GjjELwoAhf-9M6t5qbrgAC6p38Xkox_BaugDvlogix_n7ON7g7m-4e7PlpawxZIdO8r5y4ZMB6NSWRL7eSGjGlzejdYrt4Yi7K76ViTdfPqOP4XXcwK08O_td1XMIm7B49OnltoGXFu41Z7DNmIyVtyY23sX62wzCmkTIgU1JIuhiIDa6p9zhb-0leUqoyMnEPWblAt3JFZr4kn0y0qkt_KLE5osGdBA1h_tbbejLY5Y_moW84TQ4HwwjCgaWj__rsBBWkn9TqnxK3N0JJN_E3rMT-w6jYh0fKoZUddNH0Abn_mZuZXMam9gcxb47MFQr_kLRKwjLyQ2lta_JYSTaOrOhIjqAGtAFonUMgK_GW_IWYz-7DeaizDkqXqORIudaQkej1BrI9m9irJcI_NRs_xCNDiiYeYea5W9T3yO33mesvTZ-OtL5_lF_gxnUqXquc-UnEndSGkOnRG7JfJ8AoDh6k21WEkiZPMX4Ne7OqGbsur978ofVwUtpI-7KHMHbpquR_D_oUXsFkx9ZODak5gKuTrT0KZBz4KIL9R_ncDBrAhRFVfWdRc1_P0BZk4PYgxHJt52785zpdXT5O6ifAql8OQLi-p-gskgOfrziBxWf4_VvjfvxZy7lEWed0njFp-NtrjKMgDYTZvu40jks-qR6Pdq2kUYlm5Uh0Yt07qjzcOW44b3lKr5h-Ijdmrjfo4ER37xcqVtAf7nwbkcB02TtCYhGjpMXWdPKVanIG_S2vz4HZPlz1srR6KtMwbLX5CqQpdzY0tG-qoqeUqfrQVBftlhKSKpv1xYDj6rVUHhGlLBZ6dNkvK85YBDEFrN7dBDbhaOU_gy70TSrL6MyOmyMEzIX9a8k2LD53KjR8TP4ixX5NIqarAQXf1vImIfjdvjnhHT6RGZUfrVvijOa86h0IbXtoOaLyhY7AF1Iw2HEiCUxxnt6xOEiXPkeuzzeUWYvywrAhgRppD6SYQIDBE6FZmq-Y_iQH9l8ujABgRZHn-1cwj3S6Yw2jI9U5DTUNKz_kR7U8zoEwnB0xsEWcOStz5s56IixdcIkAABUoCCt9IIASwK31dj7zt20bbtxUzaw2M6H9Md_Mud6IqGwsiCDHKXhGy5l60vYGBdIVYn-LqewFU0sdY0jzsUGJJE7CMROHkv1XFoQ6yopjJQ84FUaTeiJH6Cjsd44mfIXxwypA_-EE47OmEhY3eJQZR7Vg1FzwEp8zp3xsz-BOwm5j4ocRkYLL6AiZBoWUCFxl2gEJcc0miutpn875ew_5ks1bDgsNqXCGwQbpc6NXbEqXwk6_vgghRP4c_PY9I0kzcMHMJwVBbuGBakT9IC_PKvjI3-N-6o5Mkrm3G47L_S9DSpzlwhS7xG6xe5le29vUd-C-xdTNMFx75uU6mLWynikwdV_8YEHzxK7rMlEUlc1chMQMmJZoKcABPR0dbW1j_8gMvHjYlr1GOz4vjBYeSFLVILJC5hx_YKrkJ5_Jaeu9GnCdqDqLHYSEgyeD_0dmh5VRa0L9ZvxYz8MNxq80nazSBN95i2xTdzL-6QucMfehn93pC2Qkxw7iM24VbpNXTsYFFXwzMwN0AfPyiT2h9235VGyE9BOVpTFgF1fyxtHRRhotpiEOh9iO3Hfoq0zjrn8jsVbSDsHFHQNN62wwGGdIGWAkqeVdAjgfqJ20yHcMG6UNbkfjsI-84cNeAIELO_ARiFfcxbljaZ55cKdpU6GHRUjfRgBbOArVUJWlu3ifYmA3TA9dYqXJFXPB4OlFRkU8xGl9Q39OO0WZPSsQiDdX5SM4HDa42B99GmYZOZO0WnakwY.NT1FcqIn4HDTO4rN2fw5PDGj7luf21z3Wu8B3bbr0lM",
+  "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/131.0.0.0 Safari/537.36",
+  "accept": "*/*",
+  "accept-encoding": "gzip, deflate",
+  "content-length": 113
+}
+Body: {"acuris":{"fullName":"Putin","dateOfBirth":"","address":"","city":"","country":"","postcode":"","threshold":90}}
+
+-----------------------------------------------------------
+
+The response we got was:
+
+Status: 400 - Bad Request
+Headers: {
+  "date": "Thu, 16 Jan 2025 13:17:09 GMT",
+  "content-type": "application/json; charset=utf-8",
+  "content-length": "625",
+  "connection": "keep-alive",
+  "cf-cache-status": "DYNAMIC",
+  "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=aj3eOd3HumjIP0Tv5GbQ%2FVxHc5tEtgR6MK7Jpq8w5ljIaa%2FtPlIMa100e4vw4lr8qHY%2BchuzQV3CHqhGLjbLK36b%2BD%2FSMv%2BDb%2FvKsYN9XTJYahHRqIS03%2FpjiPYuU9ZPmy63WYJNRq%2FQ5iMnf%2FBJDEQ%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+  "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+  "server": "cloudflare",
+  "cf-ray": "902e62521f98dcd1-FRA",
+  "server-timing": "cfL4;desc=\"?proto=TCP&rtt=7897&min_rtt=5776&rtt_var=3729&sent=363&recv=363&lost=0&retrans=0&sent_bytes=152871&recv_bytes=198850&delivery_rate=5285534&cwnd=257&unsent_bytes=0&cid=5799c1ec1ad3a3e0&ts=112749&x=0\""
+}
+Body: [
+  {
+    "title": " Error",
+    "description": "Something went wrong during screening <br/> Error:Object reference not set to an instance of an object.",
+    "exceptionInfo": {
+      "exceptionMessage": "Object reference not set to an instance of an object.",
+      "exceptionInnerMessage": null,
+      "exceptionStackTrace": "   at RegTech.Infrastructure.ScreeningHelperFunctions.PerformScreening(Int32 id, PersonSearchRequestVM individual, BusinessSearchRequestVM corporate, Boolean calledFromWorkflowOrExternal, Boolean getProfiles, Boolean ignoreEventEngine) in /home/palexandrou/WorkSpace/RegTech_Web/src/web/Infrastructure/ScreeningHelperFunctions.cs:line 207"
+    }
+  }
+]
+
+
+https://on.cypress.io/request
+    at <unknown> (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:132876:72)
+    at tryCatcher (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1830:23)
+    at Promise._settlePromiseFromHandler (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1542:31)
+    at Promise._settlePromise (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1599:18)
+    at Promise._settlePromise0 (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1644:10)
+    at Promise._settlePromises (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1724:18)
+    at _drainQueueStep (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:2430:12)
+    at _drainQueue (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:2423:9)
+    at Async._drainQueues (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:2439:5)
+    at Async.drainQueues (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:2309:14)
+From Your Spec Code:
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/Priority2/Adhoc_Screening_test.cy.ts:62:0)]]></failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Adhoc Screening Corporate Client" timestamp="2025-01-16T13:17:09" tests="4" time="55.319" failures="4">
+    <testcase name="Adhoc Screening Corporate Client Performs Business Search Using UI" time="0.000" classname="Performs Business Search Using UI">
+      <failure message="Timed out retrying after 4050ms: `cy.click()` failed because this element is not visible:
+
+`&lt;div _ngcontent-tgg-c358=&quot;&quot; class=&quot;text&quot;&gt;Search&lt;/div&gt;`
+
+This element `&lt;div.text&gt;` is not visible because its parent `&lt;div.modal.fade&gt;` has CSS property: `display: none`
+
+Fix this problem, or use `{force: true}` to disable error checking.
+
+https://on.cypress.io/element-cannot-be-interacted-with" type="CypressError"><![CDATA[CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is not visible:
+
+`<div _ngcontent-tgg-c358="" class="text">Search</div>`
+
+This element `<div.text>` is not visible because its parent `<div.modal.fade>` has CSS property: `display: none`
+
+Fix this problem, or use `{force: true}` to disable error checking.
+
+https://on.cypress.io/element-cannot-be-interacted-with
+    at runVisibilityCheck (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:144957:58)
+    at Object.isStrictlyVisible (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:144971:10)
+    at runAllChecks (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:113271:26)
+    at retryActionability (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:113339:16)
+    at tryCatcher (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1830:23)
+    at Promise.attempt.Promise.try (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:4338:29)
+    at whenStable (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:143744:68)
+    at <unknown> (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:143685:14)
+    at tryCatcher (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1830:23)
+    at Promise._settlePromiseFromHandler (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1542:31)
+    at Promise._settlePromise (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1599:18)
+    at Promise._settlePromise0 (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1644:10)
+    at Promise._settlePromises (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1724:18)
+    at Promise._fulfill (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1668:18)
+    at <unknown> (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:5473:46)
+From Your Spec Code:
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/Priority2/Adhoc_Screening_test.cy.ts:96:0)]]></failure>
+    </testcase>
+    <testcase name="Adhoc Screening Corporate Client Performs Business Monitoring and Refreshes results" time="0.000" classname="Performs Business Monitoring and Refreshes results">
+      <failure message="Timed out retrying after 4050ms: `cy.click()` failed because this element:
+
+          `&lt;div _ngcontent-vyg-c358=&quot;&quot; class=&quot;text&quot;&gt;Busines...&lt;/div&gt;`
+
+          has CSS `pointer-events: none`, inherited from this element:
+
+`&lt;a _ngcontent-vyg-c358=&quot;&quot; placement=&quot;bottom&quot; container=&quot;body&quot; triggers=&quot;mouseenter:mouseleave&quot; class=&quot;sa-button success left dark md with-icon disabled&quot; title=&quot;&quot; type=&quot;&quot; href=&quot;/main/client-structure/491/2/client-corporate/491/2/negative-lists&quot;&gt;...&lt;/a&gt;`
+
+          `pointer-events: none` prevents user mouse interaction.
+
+          Fix this problem, or use {force: true} to disable error checking.
+
+https://on.cypress.io/element-cannot-be-interacted-with" type="CypressError"><![CDATA[CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element:
+
+          `<div _ngcontent-vyg-c358="" class="text">Busines...</div>`
+
+          has CSS `pointer-events: none`, inherited from this element:
+
+`<a _ngcontent-vyg-c358="" placement="bottom" container="body" triggers="mouseenter:mouseleave" class="sa-button success left dark md with-icon disabled" title="" type="" href="/main/client-structure/491/2/client-corporate/491/2/negative-lists">...</a>`
+
+          `pointer-events: none` prevents user mouse interaction.
+
+          Fix this problem, or use {force: true} to disable error checking.
+
+https://on.cypress.io/element-cannot-be-interacted-with
+    at ensureElDoesNotHaveCSS (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:112856:66)
+    at ensureDescendents (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:112964:5)
+    at ensureDescendentsAndScroll (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:112972:14)
+    at ensureElIsNotCovered (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:113103:5)
+    at runAllChecks (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:113302:52)
+    at retryActionability (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:113339:16)
+    at tryCatcher (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1830:23)
+    at Promise.attempt.Promise.try (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:4338:29)
+    at whenStable (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:143744:68)
+    at <unknown> (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:143685:14)
+    at tryCatcher (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1830:23)
+    at Promise._settlePromiseFromHandler (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1542:31)
+    at Promise._settlePromise (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1599:18)
+    at Promise._settlePromise0 (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1644:10)
+    at Promise._settlePromises (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1724:18)
+    at Promise._fulfill (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1668:18)
+    at <unknown> (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:5473:46)
+From Your Spec Code:
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/Priority2/Adhoc_Screening_test.cy.ts:102:0)]]></failure>
+    </testcase>
+    <testcase name="Adhoc Screening Corporate Client Removes Business Monitoring" time="0.000" classname="Removes Business Monitoring">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `#bot2-Msg1`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `#bot2-Msg1`, but never found it.
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/Priority2/Adhoc_Screening_test.cy.ts:111:0)]]></failure>
+    </testcase>
+    <testcase name="Adhoc Screening Corporate Client Performs Business Search Using API" time="0.000" classname="Performs Business Search Using API">
+      <failure message="`cy.request()` failed on:
+
+https://complytek-testing-api.regtek.co/api/clientCorporates/491/performBusinessSearch
+
+The response we received from your web server was:
+
+  &gt; 400: Bad Request
+
+This was considered a failure because the status code was not `2xx` or `3xx`.
+
+If you do not want status codes to cause failures pass the option: `failOnStatusCode: false`
+
+-----------------------------------------------------------
+
+The request we sent was:
+
+Method: POST
+URL: https://complytek-testing-api.regtek.co/api/clientCorporates/491/performBusinessSearch
+Headers: {
+  &quot;Connection&quot;: &quot;keep-alive&quot;,
+  &quot;Content-Type&quot;: &quot;application/json&quot;,
+  &quot;Authorization&quot;: &quot;Bearer eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI1RkM0QkM4NzM2QTE5NzkwQkUxQzU4NTc3NENCQjM4RDVDQzA1NTNDIiwidHlwIjoiYXQrand0In0.BE-jEm-lvthw4m2w_ygSQGvvOC4u6KeQlWnc6uBZnQEYwIqRgTOb0cYt2W6j_uCLihJbzHfKE9wi7vOfqdhOnNQ6kd5joYstXuMAI57AjQ6ZlKqF_rzcuIEOK-cJVH9cdWnfEFC5gLG4U7_te7NPnDAAKtOAnvvtEUPlNvmjmOcnUtO5AJhOvjcyZXoT4Uj1P4KBk7a_YO-3Ffl1XhdtOIsHoFE6gG5A0K1CIJsPav22_rHZ2cPP9ZzY0MrJXdzATEcJhV0TSEggHs1IsUredCpD8LrFfWIW8IC8eaVABOLWjXyW0PYs0FNDbN-N7-IW7e5JqhEpzTzyd862j8_bHQnPgfdT10c3TyMs-bW0Ujs0NYa-GdDojvqZnCFTUtBXh9q_8lDilBAgbBWCC5orWSGVACiXlnchNBAAr3GHlayWB7godQ64UeFAV-m2jb0hss53y2NoZcsAqS1q8QXh6OT36Uqb3VJzfNJJfZu3XSD2CLpd4Nl6kbnfPfYqWgW5PFP2BAjxh9Ac1RDdZZ2hxF1NBkFimKSoYFx-GSAuYt3lxuAomm5wwJMcMc2P1MqsuVVpIaCFI0flZX7TNkcTRoDgSCc1QBwQPLT_G_kB18n9ZcTqVuxoV5VV_ho3XKzm1gVR4hSBP0fXR8dUMM3-3LAjbd1HI_vPtqphIaiuDVU.PCDuXlkOZAGhOt41Cj1-Mw.UqEH6jFANnthLL7qRJWnRlfdiWBKgFQTLdAKVohoUjojdDUHPs90rVDV17XMAAOEv2ixY4xbGytCpMo6lHpkBCaELS8SJTPCD7iplNKvfl0CoVXNdU3IDlMV0-Kg1ek77lgC4KfPqLCh9ahz52NcVNHpZmdMY8nP50JsJAhOaYSQ6QOc2JxvUy3MvrHVD40CAKRZJ-TxnoDqD-x9z9D80Wyqh63fLXCYZfUuCEPGNvl0ZFjKX8KyiZ-aEjkwLHQHwg1tZvDjP5rTzTt3WAvHZ91ejJSYZ2nghxDm_LlQFayAOWwE0xmzSt57Up91TaimQpIzgLO9nRwci66JTYg_RAo6ZeR9yrd6YmZuZrivXYMYRe7JOuWQCyU8CMzLLn6RkQnSmYSAIOGHQwHSJCjpYzf0IQrIQ6IVigJdV2570V5pUvleVD3W2ymIz10w-324BvEz9CyP085QQ-zNRXOrpxQl4fbqxIE3oecqx2srEDVrTV4tKoX8Ak3n6suz50tOqm5PfRwwBLLhsHgIJGx_5IDD-lftxWvHSfPzDrymbwt4vq1134kunaC8odJ8sisCVLZk5pGW13527plYyEI-lE7KeyQJVaceILwpnKugSx5jVqyylAyVyT8ZhWdvvmo14l3rDMZNgNtV9BxDUTw-22S8qJXlKU4KE-Ia4BniZgN9sCtWKzQZwvXSqEBUhmpBIG61ZibY0QOvZTnC-PeXiQTQvbMv06hkkpTLhuepHHQSsE2nTRGB5s-M5Yc2xy2dTz8n63Lqs0-g4hEqeNg7LjoNeW3eYAOESdAqi1Wb9UjOzlYaYeCyksngovmTJOL48-xjlwo-DMVJ2ZBpU10xIwvhlnqf41FiXciU9i04tPU8C69f5KSe6wMJYYqqd7c4c9e7XlaoR2FjBeQlAfOOBtEfjKZJHnuxjF9jaTMxxCtinhDhGTfT8URQktBFyW3xrJ3EdLOy1pA4HhTbC2VM8s_jr1fCuMVWRuWoEkz_EUF6e5Ui9uSjEoKTpsrFMmeyMkkTQoyEjy47e6A274we8q-TZH3UiMxRu0l3ISrae9uC6FslU3MPFrvDhQpFMUA6mPYANilJIIqvH-VM0p1M4yhP9uHX-qmYisJSbXbj2ZvAvXuD_UJV9MOyPo-3yTUa4toCRbGrZ5wB5gBjbhcaUvlHmQCMQTUIVaCg68TjyBJRofLrMAt7Y2Ge_HkwlaGCjX1sNUAU8RtDpwUPTn8YqLGJtUIKmtD9VuVGiOg3j03xe54tQLntSbtv-Hat8eg4we_CutP1FHICRPDCHgAQPFtP7C66CJ2bqvYIDrJm1s85czUkSLWEJO1OX3B8gKIlv3-0ZSVPJ6nZlU-M4doexP4KAU3cPqnqYA7UXDvp9OUAGMBiQYSd2iRmFCKMRL13etF-4gE7nUdBk1VHCQWq87nbQn5NiR0cO-nk1YahvmcYGgZrcjm04YRkT0MFqAfP1v4a74SNbuHoSHL95jUTXFcgZiaHUeZ0jIP16Er8qpAFC0JDukMlAw6tppH5U-qAqekTT4y9ygS8Q_VqCFX_C8ntDFnba9_dJJeuWwL1A0B7PoUX3t-l_naJhHOsocVeZq_xcCH6MRdt5sZ3221wL67F2XkRCmxrD_J8BeMD-eWWXbkGPcrUdqrtG0tPTo7oaSpJbrF8851MoNYTYRNi-FrQ76eEiTZmJAMK3-Bcy8Z1jsjG8ktKsiGzynQ-I_CZaQnGDyr-SdBGT9cu7VplRfNA1qsFt0PDACU2tEu1F3jZ6MEpxCev10ASSlU9bOFZOcQLnEVgOPq9ziN-C5TB3NunzFD-kO5rsGHFGCcZD4LeX18HbWldAneBKyIqIEorSJV1XOpme8WANBpqkRm9YI-MNJA15utsqiRYZvb4tpDSpLlgPY2K3T58g8EazD5rQNJ62-Th4cddv7AWptnmuEMP51RJP4wHCpJVOj7pkJ4DE9ZUahjMmkEDlBWKGVedOLP883oVmwvQ_uSyjm2Z1qSvmqqlTVXZk18EVsm_hYaWyzb0wbSBGRANG_8uc8A4EjliHstriiS4bpfKVOGyToP9HxaxIeZCe_rLtV7KtEHJS3fJ7ENOwTcADefILQvGxSzUna7NGEfCvcQwYP-Bmj3tovd-qBLIrHFOo5MtTzoofDKQu2dcpekIlKIfY8l2u6YNw2P9ISj2VCcUumsLCOJPVRqdG16McCYCsIfltHMdRfvKcfrAI8ENE2LnaulGTDeRpgslXA1bLXE0bR-DirijqTAW86sbyOeBJhIPgbzcjQGmX_E7xWgiZfvdDdZi-M7W2YWHW_TGMX1C3TUo4dJN-yMqC8GAeLU9ocFN5r5STcBe8I1jeSBKNbWfNHhZruL5Rq5niQNfNcEc7LAWJ1OlLSffT7mnoAbadJ0ulo6GaEjJDnOqEdPl8A73hkkJ1cZzGb2a-uga65IJGa8FP0rzxdlRf7s4SpASyPvNoI0bi0kOVZWxPK2RupmipQs00O9TRHyoKENwPg3xT-20ZYHKyiZI6x4MJI7J2tApdC3b-W6iIewY6X7mBTWVArsdubZWW44S2GV69geMkR4PSzCjTL7TywZw8K_0GjjELwoAhf-9M6t5qbrgAC6p38Xkox_BaugDvlogix_n7ON7g7m-4e7PlpawxZIdO8r5y4ZMB6NSWRL7eSGjGlzejdYrt4Yi7K76ViTdfPqOP4XXcwK08O_td1XMIm7B49OnltoGXFu41Z7DNmIyVtyY23sX62wzCmkTIgU1JIuhiIDa6p9zhb-0leUqoyMnEPWblAt3JFZr4kn0y0qkt_KLE5osGdBA1h_tbbejLY5Y_moW84TQ4HwwjCgaWj__rsBBWkn9TqnxK3N0JJN_E3rMT-w6jYh0fKoZUddNH0Abn_mZuZXMam9gcxb47MFQr_kLRKwjLyQ2lta_JYSTaOrOhIjqAGtAFonUMgK_GW_IWYz-7DeaizDkqXqORIudaQkej1BrI9m9irJcI_NRs_xCNDiiYeYea5W9T3yO33mesvTZ-OtL5_lF_gxnUqXquc-UnEndSGkOnRG7JfJ8AoDh6k21WEkiZPMX4Ne7OqGbsur978ofVwUtpI-7KHMHbpquR_D_oUXsFkx9ZODak5gKuTrT0KZBz4KIL9R_ncDBrAhRFVfWdRc1_P0BZk4PYgxHJt52785zpdXT5O6ifAql8OQLi-p-gskgOfrziBxWf4_VvjfvxZy7lEWed0njFp-NtrjKMgDYTZvu40jks-qR6Pdq2kUYlm5Uh0Yt07qjzcOW44b3lKr5h-Ijdmrjfo4ER37xcqVtAf7nwbkcB02TtCYhGjpMXWdPKVanIG_S2vz4HZPlz1srR6KtMwbLX5CqQpdzY0tG-qoqeUqfrQVBftlhKSKpv1xYDj6rVUHhGlLBZ6dNkvK85YBDEFrN7dBDbhaOU_gy70TSrL6MyOmyMEzIX9a8k2LD53KjR8TP4ixX5NIqarAQXf1vImIfjdvjnhHT6RGZUfrVvijOa86h0IbXtoOaLyhY7AF1Iw2HEiCUxxnt6xOEiXPkeuzzeUWYvywrAhgRppD6SYQIDBE6FZmq-Y_iQH9l8ujABgRZHn-1cwj3S6Yw2jI9U5DTUNKz_kR7U8zoEwnB0xsEWcOStz5s56IixdcIkAABUoCCt9IIASwK31dj7zt20bbtxUzaw2M6H9Md_Mud6IqGwsiCDHKXhGy5l60vYGBdIVYn-LqewFU0sdY0jzsUGJJE7CMROHkv1XFoQ6yopjJQ84FUaTeiJH6Cjsd44mfIXxwypA_-EE47OmEhY3eJQZR7Vg1FzwEp8zp3xsz-BOwm5j4ocRkYLL6AiZBoWUCFxl2gEJcc0miutpn875ew_5ks1bDgsNqXCGwQbpc6NXbEqXwk6_vgghRP4c_PY9I0kzcMHMJwVBbuGBakT9IC_PKvjI3-N-6o5Mkrm3G47L_S9DSpzlwhS7xG6xe5le29vUd-C-xdTNMFx75uU6mLWynikwdV_8YEHzxK7rMlEUlc1chMQMmJZoKcABPR0dbW1j_8gMvHjYlr1GOz4vjBYeSFLVILJC5hx_YKrkJ5_Jaeu9GnCdqDqLHYSEgyeD_0dmh5VRa0L9ZvxYz8MNxq80nazSBN95i2xTdzL-6QucMfehn93pC2Qkxw7iM24VbpNXTsYFFXwzMwN0AfPyiT2h9235VGyE9BOVpTFgF1fyxtHRRhotpiEOh9iO3Hfoq0zjrn8jsVbSDsHFHQNN62wwGGdIGWAkqeVdAjgfqJ20yHcMG6UNbkfjsI-84cNeAIELO_ARiFfcxbljaZ55cKdpU6GHRUjfRgBbOArVUJWlu3ifYmA3TA9dYqXJFXPB4OlFRkU8xGl9Q39OO0WZPSsQiDdX5SM4HDa42B99GmYZOZO0WnakwY.NT1FcqIn4HDTO4rN2fw5PDGj7luf21z3Wu8B3bbr0lM&quot;,
+  &quot;user-agent&quot;: &quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/131.0.0.0 Safari/537.36&quot;,
+  &quot;accept&quot;: &quot;*/*&quot;,
+  &quot;accept-encoding&quot;: &quot;gzip, deflate&quot;,
+  &quot;content-length&quot;: 108
+}
+Body: {&quot;acuris&quot;:{&quot;businessName&quot;:&quot;Flatley LLC&quot;,&quot;address&quot;:&quot;&quot;,&quot;city&quot;:&quot;&quot;,&quot;country&quot;:&quot;&quot;,&quot;postalCode&quot;:&quot;&quot;,&quot;threshold&quot;:90}}
+
+-----------------------------------------------------------
+
+The response we got was:
+
+Status: 400 - Bad Request
+Headers: {
+  &quot;date&quot;: &quot;Thu, 16 Jan 2025 13:18:04 GMT&quot;,
+  &quot;content-type&quot;: &quot;application/json; charset=utf-8&quot;,
+  &quot;content-length&quot;: &quot;625&quot;,
+  &quot;connection&quot;: &quot;keep-alive&quot;,
+  &quot;cf-cache-status&quot;: &quot;DYNAMIC&quot;,
+  &quot;report-to&quot;: &quot;{\&quot;endpoints\&quot;:[{\&quot;url\&quot;:\&quot;https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=9E%2BwvFcosK5hQQ4CscwcAcMXWdKsEu%2BT2H%2FinaWZMbuQLRMryOek9OY%2FjeoGr5jmxGv%2BFlMIJaelFEUmritVvmiBBM%2BZfHzWfp%2FUdhgZ0Lpl4ok0NJqR7VYRjnwZq02obSjJSjHq24ShB2IljV5cUOc%3D\&quot;}],\&quot;group\&quot;:\&quot;cf-nel\&quot;,\&quot;max_age\&quot;:604800}&quot;,
+  &quot;nel&quot;: &quot;{\&quot;success_fraction\&quot;:0,\&quot;report_to\&quot;:\&quot;cf-nel\&quot;,\&quot;max_age\&quot;:604800}&quot;,
+  &quot;server&quot;: &quot;cloudflare&quot;,
+  &quot;cf-ray&quot;: &quot;902e63abc93fbba7-FRA&quot;,
+  &quot;server-timing&quot;: &quot;cfL4;desc=\&quot;?proto=TCP&amp;rtt=9169&amp;min_rtt=5678&amp;rtt_var=6257&amp;sent=366&amp;recv=429&amp;lost=0&amp;retrans=0&amp;sent_bytes=154589&amp;recv_bytes=299975&amp;delivery_rate=3181329&amp;cwnd=257&amp;unsent_bytes=0&amp;cid=d3375f1b965c6057&amp;ts=106221&amp;x=0\&quot;&quot;
+}
+Body: [
+  {
+    &quot;title&quot;: &quot; Error&quot;,
+    &quot;description&quot;: &quot;Something went wrong during screening &lt;br/&gt; Error:Object reference not set to an instance of an object.&quot;,
+    &quot;exceptionInfo&quot;: {
+      &quot;exceptionMessage&quot;: &quot;Object reference not set to an instance of an object.&quot;,
+      &quot;exceptionInnerMessage&quot;: null,
+      &quot;exceptionStackTrace&quot;: &quot;   at RegTech.Infrastructure.ScreeningHelperFunctions.PerformScreening(Int32 id, PersonSearchRequestVM individual, BusinessSearchRequestVM corporate, Boolean calledFromWorkflowOrExternal, Boolean getProfiles, Boolean ignoreEventEngine) in /home/palexandrou/WorkSpace/RegTech_Web/src/web/Infrastructure/ScreeningHelperFunctions.cs:line 207&quot;
+    }
+  }
+]
+
+
+https://on.cypress.io/request" type="CypressError"><![CDATA[CypressError: `cy.request()` failed on:
+
+https://complytek-testing-api.regtek.co/api/clientCorporates/491/performBusinessSearch
+
+The response we received from your web server was:
+
+  > 400: Bad Request
+
+This was considered a failure because the status code was not `2xx` or `3xx`.
+
+If you do not want status codes to cause failures pass the option: `failOnStatusCode: false`
+
+-----------------------------------------------------------
+
+The request we sent was:
+
+Method: POST
+URL: https://complytek-testing-api.regtek.co/api/clientCorporates/491/performBusinessSearch
+Headers: {
+  "Connection": "keep-alive",
+  "Content-Type": "application/json",
+  "Authorization": "Bearer eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiI1RkM0QkM4NzM2QTE5NzkwQkUxQzU4NTc3NENCQjM4RDVDQzA1NTNDIiwidHlwIjoiYXQrand0In0.BE-jEm-lvthw4m2w_ygSQGvvOC4u6KeQlWnc6uBZnQEYwIqRgTOb0cYt2W6j_uCLihJbzHfKE9wi7vOfqdhOnNQ6kd5joYstXuMAI57AjQ6ZlKqF_rzcuIEOK-cJVH9cdWnfEFC5gLG4U7_te7NPnDAAKtOAnvvtEUPlNvmjmOcnUtO5AJhOvjcyZXoT4Uj1P4KBk7a_YO-3Ffl1XhdtOIsHoFE6gG5A0K1CIJsPav22_rHZ2cPP9ZzY0MrJXdzATEcJhV0TSEggHs1IsUredCpD8LrFfWIW8IC8eaVABOLWjXyW0PYs0FNDbN-N7-IW7e5JqhEpzTzyd862j8_bHQnPgfdT10c3TyMs-bW0Ujs0NYa-GdDojvqZnCFTUtBXh9q_8lDilBAgbBWCC5orWSGVACiXlnchNBAAr3GHlayWB7godQ64UeFAV-m2jb0hss53y2NoZcsAqS1q8QXh6OT36Uqb3VJzfNJJfZu3XSD2CLpd4Nl6kbnfPfYqWgW5PFP2BAjxh9Ac1RDdZZ2hxF1NBkFimKSoYFx-GSAuYt3lxuAomm5wwJMcMc2P1MqsuVVpIaCFI0flZX7TNkcTRoDgSCc1QBwQPLT_G_kB18n9ZcTqVuxoV5VV_ho3XKzm1gVR4hSBP0fXR8dUMM3-3LAjbd1HI_vPtqphIaiuDVU.PCDuXlkOZAGhOt41Cj1-Mw.UqEH6jFANnthLL7qRJWnRlfdiWBKgFQTLdAKVohoUjojdDUHPs90rVDV17XMAAOEv2ixY4xbGytCpMo6lHpkBCaELS8SJTPCD7iplNKvfl0CoVXNdU3IDlMV0-Kg1ek77lgC4KfPqLCh9ahz52NcVNHpZmdMY8nP50JsJAhOaYSQ6QOc2JxvUy3MvrHVD40CAKRZJ-TxnoDqD-x9z9D80Wyqh63fLXCYZfUuCEPGNvl0ZFjKX8KyiZ-aEjkwLHQHwg1tZvDjP5rTzTt3WAvHZ91ejJSYZ2nghxDm_LlQFayAOWwE0xmzSt57Up91TaimQpIzgLO9nRwci66JTYg_RAo6ZeR9yrd6YmZuZrivXYMYRe7JOuWQCyU8CMzLLn6RkQnSmYSAIOGHQwHSJCjpYzf0IQrIQ6IVigJdV2570V5pUvleVD3W2ymIz10w-324BvEz9CyP085QQ-zNRXOrpxQl4fbqxIE3oecqx2srEDVrTV4tKoX8Ak3n6suz50tOqm5PfRwwBLLhsHgIJGx_5IDD-lftxWvHSfPzDrymbwt4vq1134kunaC8odJ8sisCVLZk5pGW13527plYyEI-lE7KeyQJVaceILwpnKugSx5jVqyylAyVyT8ZhWdvvmo14l3rDMZNgNtV9BxDUTw-22S8qJXlKU4KE-Ia4BniZgN9sCtWKzQZwvXSqEBUhmpBIG61ZibY0QOvZTnC-PeXiQTQvbMv06hkkpTLhuepHHQSsE2nTRGB5s-M5Yc2xy2dTz8n63Lqs0-g4hEqeNg7LjoNeW3eYAOESdAqi1Wb9UjOzlYaYeCyksngovmTJOL48-xjlwo-DMVJ2ZBpU10xIwvhlnqf41FiXciU9i04tPU8C69f5KSe6wMJYYqqd7c4c9e7XlaoR2FjBeQlAfOOBtEfjKZJHnuxjF9jaTMxxCtinhDhGTfT8URQktBFyW3xrJ3EdLOy1pA4HhTbC2VM8s_jr1fCuMVWRuWoEkz_EUF6e5Ui9uSjEoKTpsrFMmeyMkkTQoyEjy47e6A274we8q-TZH3UiMxRu0l3ISrae9uC6FslU3MPFrvDhQpFMUA6mPYANilJIIqvH-VM0p1M4yhP9uHX-qmYisJSbXbj2ZvAvXuD_UJV9MOyPo-3yTUa4toCRbGrZ5wB5gBjbhcaUvlHmQCMQTUIVaCg68TjyBJRofLrMAt7Y2Ge_HkwlaGCjX1sNUAU8RtDpwUPTn8YqLGJtUIKmtD9VuVGiOg3j03xe54tQLntSbtv-Hat8eg4we_CutP1FHICRPDCHgAQPFtP7C66CJ2bqvYIDrJm1s85czUkSLWEJO1OX3B8gKIlv3-0ZSVPJ6nZlU-M4doexP4KAU3cPqnqYA7UXDvp9OUAGMBiQYSd2iRmFCKMRL13etF-4gE7nUdBk1VHCQWq87nbQn5NiR0cO-nk1YahvmcYGgZrcjm04YRkT0MFqAfP1v4a74SNbuHoSHL95jUTXFcgZiaHUeZ0jIP16Er8qpAFC0JDukMlAw6tppH5U-qAqekTT4y9ygS8Q_VqCFX_C8ntDFnba9_dJJeuWwL1A0B7PoUX3t-l_naJhHOsocVeZq_xcCH6MRdt5sZ3221wL67F2XkRCmxrD_J8BeMD-eWWXbkGPcrUdqrtG0tPTo7oaSpJbrF8851MoNYTYRNi-FrQ76eEiTZmJAMK3-Bcy8Z1jsjG8ktKsiGzynQ-I_CZaQnGDyr-SdBGT9cu7VplRfNA1qsFt0PDACU2tEu1F3jZ6MEpxCev10ASSlU9bOFZOcQLnEVgOPq9ziN-C5TB3NunzFD-kO5rsGHFGCcZD4LeX18HbWldAneBKyIqIEorSJV1XOpme8WANBpqkRm9YI-MNJA15utsqiRYZvb4tpDSpLlgPY2K3T58g8EazD5rQNJ62-Th4cddv7AWptnmuEMP51RJP4wHCpJVOj7pkJ4DE9ZUahjMmkEDlBWKGVedOLP883oVmwvQ_uSyjm2Z1qSvmqqlTVXZk18EVsm_hYaWyzb0wbSBGRANG_8uc8A4EjliHstriiS4bpfKVOGyToP9HxaxIeZCe_rLtV7KtEHJS3fJ7ENOwTcADefILQvGxSzUna7NGEfCvcQwYP-Bmj3tovd-qBLIrHFOo5MtTzoofDKQu2dcpekIlKIfY8l2u6YNw2P9ISj2VCcUumsLCOJPVRqdG16McCYCsIfltHMdRfvKcfrAI8ENE2LnaulGTDeRpgslXA1bLXE0bR-DirijqTAW86sbyOeBJhIPgbzcjQGmX_E7xWgiZfvdDdZi-M7W2YWHW_TGMX1C3TUo4dJN-yMqC8GAeLU9ocFN5r5STcBe8I1jeSBKNbWfNHhZruL5Rq5niQNfNcEc7LAWJ1OlLSffT7mnoAbadJ0ulo6GaEjJDnOqEdPl8A73hkkJ1cZzGb2a-uga65IJGa8FP0rzxdlRf7s4SpASyPvNoI0bi0kOVZWxPK2RupmipQs00O9TRHyoKENwPg3xT-20ZYHKyiZI6x4MJI7J2tApdC3b-W6iIewY6X7mBTWVArsdubZWW44S2GV69geMkR4PSzCjTL7TywZw8K_0GjjELwoAhf-9M6t5qbrgAC6p38Xkox_BaugDvlogix_n7ON7g7m-4e7PlpawxZIdO8r5y4ZMB6NSWRL7eSGjGlzejdYrt4Yi7K76ViTdfPqOP4XXcwK08O_td1XMIm7B49OnltoGXFu41Z7DNmIyVtyY23sX62wzCmkTIgU1JIuhiIDa6p9zhb-0leUqoyMnEPWblAt3JFZr4kn0y0qkt_KLE5osGdBA1h_tbbejLY5Y_moW84TQ4HwwjCgaWj__rsBBWkn9TqnxK3N0JJN_E3rMT-w6jYh0fKoZUddNH0Abn_mZuZXMam9gcxb47MFQr_kLRKwjLyQ2lta_JYSTaOrOhIjqAGtAFonUMgK_GW_IWYz-7DeaizDkqXqORIudaQkej1BrI9m9irJcI_NRs_xCNDiiYeYea5W9T3yO33mesvTZ-OtL5_lF_gxnUqXquc-UnEndSGkOnRG7JfJ8AoDh6k21WEkiZPMX4Ne7OqGbsur978ofVwUtpI-7KHMHbpquR_D_oUXsFkx9ZODak5gKuTrT0KZBz4KIL9R_ncDBrAhRFVfWdRc1_P0BZk4PYgxHJt52785zpdXT5O6ifAql8OQLi-p-gskgOfrziBxWf4_VvjfvxZy7lEWed0njFp-NtrjKMgDYTZvu40jks-qR6Pdq2kUYlm5Uh0Yt07qjzcOW44b3lKr5h-Ijdmrjfo4ER37xcqVtAf7nwbkcB02TtCYhGjpMXWdPKVanIG_S2vz4HZPlz1srR6KtMwbLX5CqQpdzY0tG-qoqeUqfrQVBftlhKSKpv1xYDj6rVUHhGlLBZ6dNkvK85YBDEFrN7dBDbhaOU_gy70TSrL6MyOmyMEzIX9a8k2LD53KjR8TP4ixX5NIqarAQXf1vImIfjdvjnhHT6RGZUfrVvijOa86h0IbXtoOaLyhY7AF1Iw2HEiCUxxnt6xOEiXPkeuzzeUWYvywrAhgRppD6SYQIDBE6FZmq-Y_iQH9l8ujABgRZHn-1cwj3S6Yw2jI9U5DTUNKz_kR7U8zoEwnB0xsEWcOStz5s56IixdcIkAABUoCCt9IIASwK31dj7zt20bbtxUzaw2M6H9Md_Mud6IqGwsiCDHKXhGy5l60vYGBdIVYn-LqewFU0sdY0jzsUGJJE7CMROHkv1XFoQ6yopjJQ84FUaTeiJH6Cjsd44mfIXxwypA_-EE47OmEhY3eJQZR7Vg1FzwEp8zp3xsz-BOwm5j4ocRkYLL6AiZBoWUCFxl2gEJcc0miutpn875ew_5ks1bDgsNqXCGwQbpc6NXbEqXwk6_vgghRP4c_PY9I0kzcMHMJwVBbuGBakT9IC_PKvjI3-N-6o5Mkrm3G47L_S9DSpzlwhS7xG6xe5le29vUd-C-xdTNMFx75uU6mLWynikwdV_8YEHzxK7rMlEUlc1chMQMmJZoKcABPR0dbW1j_8gMvHjYlr1GOz4vjBYeSFLVILJC5hx_YKrkJ5_Jaeu9GnCdqDqLHYSEgyeD_0dmh5VRa0L9ZvxYz8MNxq80nazSBN95i2xTdzL-6QucMfehn93pC2Qkxw7iM24VbpNXTsYFFXwzMwN0AfPyiT2h9235VGyE9BOVpTFgF1fyxtHRRhotpiEOh9iO3Hfoq0zjrn8jsVbSDsHFHQNN62wwGGdIGWAkqeVdAjgfqJ20yHcMG6UNbkfjsI-84cNeAIELO_ARiFfcxbljaZ55cKdpU6GHRUjfRgBbOArVUJWlu3ifYmA3TA9dYqXJFXPB4OlFRkU8xGl9Q39OO0WZPSsQiDdX5SM4HDa42B99GmYZOZO0WnakwY.NT1FcqIn4HDTO4rN2fw5PDGj7luf21z3Wu8B3bbr0lM",
+  "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/131.0.0.0 Safari/537.36",
+  "accept": "*/*",
+  "accept-encoding": "gzip, deflate",
+  "content-length": 108
+}
+Body: {"acuris":{"businessName":"Flatley LLC","address":"","city":"","country":"","postalCode":"","threshold":90}}
+
+-----------------------------------------------------------
+
+The response we got was:
+
+Status: 400 - Bad Request
+Headers: {
+  "date": "Thu, 16 Jan 2025 13:18:04 GMT",
+  "content-type": "application/json; charset=utf-8",
+  "content-length": "625",
+  "connection": "keep-alive",
+  "cf-cache-status": "DYNAMIC",
+  "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=9E%2BwvFcosK5hQQ4CscwcAcMXWdKsEu%2BT2H%2FinaWZMbuQLRMryOek9OY%2FjeoGr5jmxGv%2BFlMIJaelFEUmritVvmiBBM%2BZfHzWfp%2FUdhgZ0Lpl4ok0NJqR7VYRjnwZq02obSjJSjHq24ShB2IljV5cUOc%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+  "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+  "server": "cloudflare",
+  "cf-ray": "902e63abc93fbba7-FRA",
+  "server-timing": "cfL4;desc=\"?proto=TCP&rtt=9169&min_rtt=5678&rtt_var=6257&sent=366&recv=429&lost=0&retrans=0&sent_bytes=154589&recv_bytes=299975&delivery_rate=3181329&cwnd=257&unsent_bytes=0&cid=d3375f1b965c6057&ts=106221&x=0\""
+}
+Body: [
+  {
+    "title": " Error",
+    "description": "Something went wrong during screening <br/> Error:Object reference not set to an instance of an object.",
+    "exceptionInfo": {
+      "exceptionMessage": "Object reference not set to an instance of an object.",
+      "exceptionInnerMessage": null,
+      "exceptionStackTrace": "   at RegTech.Infrastructure.ScreeningHelperFunctions.PerformScreening(Int32 id, PersonSearchRequestVM individual, BusinessSearchRequestVM corporate, Boolean calledFromWorkflowOrExternal, Boolean getProfiles, Boolean ignoreEventEngine) in /home/palexandrou/WorkSpace/RegTech_Web/src/web/Infrastructure/ScreeningHelperFunctions.cs:line 207"
+    }
+  }
+]
+
+
+https://on.cypress.io/request
+    at <unknown> (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:132876:72)
+    at tryCatcher (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1830:23)
+    at Promise._settlePromiseFromHandler (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1542:31)
+    at Promise._settlePromise (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1599:18)
+    at Promise._settlePromise0 (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1644:10)
+    at Promise._settlePromises (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1724:18)
+    at _drainQueueStep (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:2430:12)
+    at _drainQueue (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:2423:9)
+    at Async._drainQueues (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:2439:5)
+    at Async.drainQueues (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:2309:14)
+From Your Spec Code:
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/Priority2/Adhoc_Screening_test.cy.ts:125:0)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

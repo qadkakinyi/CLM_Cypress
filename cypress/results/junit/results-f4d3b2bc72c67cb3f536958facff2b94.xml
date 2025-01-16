@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="59.511" tests="3" failures="1">
+  <testsuite name="Root Suite" timestamp="2025-01-16T06:27:55" tests="0" file="cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Client_Transaction_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Add, Edit, Delete Client Transactions - Corporate" timestamp="2025-01-16T06:28:05" tests="3" time="48.972" failures="1">
+    <testcase name="Add, Edit, Delete Client Transactions - Corporate Add Client Transactions" time="33.568" classname="Add Client Transactions">
+    </testcase>
+    <testcase name="Add, Edit, Delete Client Transactions - Corporate Edit client Transactions" time="15.156" classname="Edit client Transactions">
+    </testcase>
+    <testcase name="Add, Edit, Delete Client Transactions - Corporate Delete client Transactions" time="0.000" classname="Delete client Transactions">
+      <failure message="Timed out retrying after 4000ms: `cy.eq()` failed because the page updated as a result of this command, but you tried to continue the command chain. The subject is no longer attached to the DOM, and Cypress cannot requery the page after commands such as `cy.eq()`.
+
+Common situations why this happens:
+  - Your JS framework re-rendered asynchronously
+  - Your app code reacted to an event firing and removed the element
+
+You can typically solve this by breaking up a chain. For example, rewrite:
+
+&gt; `cy.get(&apos;button&apos;).click().should(&apos;have.class&apos;, &apos;active&apos;)`
+
+to
+
+&gt; `cy.get(&apos;button&apos;).as(&apos;btn&apos;).click()`
+&gt; `cy.get(&apos;@btn&apos;).should(&apos;have.class&apos;, &apos;active&apos;)`
+
+https://on.cypress.io/element-has-detached-from-dom" type="CypressError"><![CDATA[CypressError: Timed out retrying after 4000ms: `cy.eq()` failed because the page updated as a result of this command, but you tried to continue the command chain. The subject is no longer attached to the DOM, and Cypress cannot requery the page after commands such as `cy.eq()`.
+
+Common situations why this happens:
+  - Your JS framework re-rendered asynchronously
+  - Your app code reacted to an event firing and removed the element
+
+You can typically solve this by breaking up a chain. For example, rewrite:
+
+> `cy.get('button').click().should('have.class', 'active')`
+
+to
+
+> `cy.get('button').as('btn').click()`
+> `cy.get('@btn').should('have.class', 'active')`
+
+https://on.cypress.io/element-has-detached-from-dom
+    at isAttached (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:144980:58)
+    at validateType (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:144850:9)
+    at Object.isType (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:144885:7)
+    at <unknown> (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:135247:24)
+    at Object.subjectFn (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:143866:16)
+    at $Cy.verifyUpcomingAssertions (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:143205:31)
+    at onRetry (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:143857:15)
+    at tryCatcher (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1830:23)
+    at Promise.attempt.Promise.try (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:4338:29)
+    at whenStable (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:143744:68)
+    at <unknown> (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:143685:14)
+    at tryCatcher (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1830:23)
+    at Promise._settlePromiseFromHandler (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1542:31)
+    at Promise._settlePromise (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1599:18)
+    at Promise._settlePromise0 (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1644:10)
+    at Promise._settlePromises (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1724:18)
+    at Promise._fulfill (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:1668:18)
+    at <unknown> (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:5473:46)
+From Your Spec Code:
+    at goToTransactionByReference (webpack://clm_cypress/./cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Client_Transaction_test.cy.ts:10:0)
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Client_Transaction_test.cy.ts:66:0)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

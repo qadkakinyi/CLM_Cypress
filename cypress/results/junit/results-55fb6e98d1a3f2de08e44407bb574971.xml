@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="50.528" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T12:42:29" tests="0" file="cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Tax-Residency_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Adds, Edits and Deletes Tax Residency - Corporate" timestamp="2025-01-16T12:42:39" tests="3" time="39.737" failures="0">
+    <testcase name="Adds, Edits and Deletes Tax Residency - Corporate Adds Tax Residency" time="30.855" classname="Adds Tax Residency">
+    </testcase>
+    <testcase name="Adds, Edits and Deletes Tax Residency - Corporate Edits a Tax Residency" time="10.448" classname="Edits a Tax Residency">
+    </testcase>
+    <testcase name="Adds, Edits and Deletes Tax Residency - Corporate Deletes a Tax Residency" time="9.080" classname="Deletes a Tax Residency">
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,144 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-16T08:23:33.091Z",
+    "end": "2025-01-16T08:25:34.916Z",
+    "duration": 121825,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d3e074cc-7f51-48c7-9175-dfdc30d3080c",
+      "title": "",
+      "fullFile": "cypress/e2e/HelperFunctionalities/TransactionMonitoring&Actions/Currency_Rates_test.cy.ts",
+      "file": "cypress/e2e/HelperFunctionalities/TransactionMonitoring&Actions/Currency_Rates_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "645a7fd2-81ac-4723-866e-d88dad87f378",
+          "title": "Currency Rate",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Adds a Currency Rate",
+              "fullTitle": "Currency Rate Adds a Currency Rate",
+              "timedOut": null,
+              "duration": 14947,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/settings/currency-rates').wait(2000);\ncy.contains('sa-button', 'Add').click().wait(1000);\n// cy.getByDataCy('fromCurrency').click().wait(500)\ncy.get('dx-drop-down-box').eq(0).click().wait(500);\ncy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview .dx-datagrid-content tr td').eq(1).click({ force: true }).wait(500);\n// cy.getByDataCy('toCurrency').click().wait(500)\ncy.get('dx-drop-down-box').eq(1).click().wait(500);\ncy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview .dx-datagrid-content tr td').eq(20).click({ force: true }).wait(500);\ncy.getByFormControlName('date').type('2024-09-23');\ncy.getByFormControlName('rate').eq(0).type(rate);\ncy.contains('sa-button', 'Save').click().wait(1500);\ncy.contains('The currency rate has been added.');",
+              "err": {},
+              "uuid": "5890c913-8755-4ee8-899e-b1cdf238407c",
+              "parentUUID": "645a7fd2-81ac-4723-866e-d88dad87f378",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edits a Currency Rate",
+              "fullTitle": "Currency Rate Edits a Currency Rate",
+              "timedOut": null,
+              "duration": 56979,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/settings/currency-rates').wait(25000);\ncy.get('#gridCurrencyRates tr [aria-colindex=\"4\"] .dx-texteditor-input').type(rate, { force: true }).wait(25000);\ncy.get('#gridCurrencyRates tr td').find('.dx-icon-edit').eq(0).click({ force: true }).wait(1000);\ncy.get('#gridCurrencyRates .dx-datagrid-table .dx-texteditor-container > .dx-texteditor-input-container > .dx-texteditor-input').as('rates');\ncy.get('@rates').eq(3).clear().wait(1000).type(new_rate, { force: true }).wait(1000);\ncy.get('tr td').find('.dx-icon-save').eq(1).click().wait(1500);\ncy.contains(\"Currency rate has been updated.\");",
+              "err": {},
+              "uuid": "3b1d362b-d46e-4aba-ac9f-995c975aa728",
+              "parentUUID": "645a7fd2-81ac-4723-866e-d88dad87f378",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deletes a Currency Rate",
+              "fullTitle": "Currency Rate Deletes a Currency Rate",
+              "timedOut": null,
+              "duration": 49763,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/settings/currency-rates').wait(25000);\ncy.get('#gridCurrencyRates tr [aria-colindex=\"4\"] .dx-texteditor-input').type(new_rate, { force: true }).wait(20000);\ncy.get('#gridCurrencyRates tr td').find('.dx-icon-trash').eq(1).click({ force: true }).wait(1000);\ncy.get('.dx-popup-normal').contains('Yes').click({ force: true }).wait(1000);\ncy.contains(\"Currency rate has been deleted.\");",
+              "err": {},
+              "uuid": "ce19126d-76d6-47a0-8f10-0f1072d7ba38",
+              "parentUUID": "645a7fd2-81ac-4723-866e-d88dad87f378",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5890c913-8755-4ee8-899e-b1cdf238407c",
+            "3b1d362b-d46e-4aba-ac9f-995c975aa728",
+            "ce19126d-76d6-47a0-8f10-0f1072d7ba38"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 121689,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

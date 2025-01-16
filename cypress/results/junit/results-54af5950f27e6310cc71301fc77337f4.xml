@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="53.145" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T12:33:05" tests="0" file="cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Client_Gaming_Account_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Add, Edit, Delete Client Gaming Accounts" timestamp="2025-01-16T12:33:16" tests="3" time="42.671" failures="0">
+    <testcase name="Add, Edit, Delete Client Gaming Accounts Add Client Gaming Accounts" time="33.221" classname="Add Client Gaming Accounts">
+    </testcase>
+    <testcase name="Add, Edit, Delete Client Gaming Accounts Edit client Gaming Accounts" time="10.461" classname="Edit client Gaming Accounts">
+    </testcase>
+    <testcase name="Add, Edit, Delete Client Gaming Accounts Delete client Gaming Accounts" time="9.310" classname="Delete client Gaming Accounts">
+    </testcase>
+  </testsuite>
+</testsuites>

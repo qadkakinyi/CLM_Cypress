@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="45.174" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T06:29:49" tests="0" file="cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Self-Declaration-UBO_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Self-Declaration UBO" timestamp="2025-01-16T06:30:00" tests="3" time="34.814" failures="0">
+    <testcase name="Self-Declaration UBO Adds Self Declaration UBO" time="31.036" classname="Adds Self Declaration UBO">
+    </testcase>
+    <testcase name="Self-Declaration UBO Edits Self Declaration UBO" time="8.649" classname="Edits Self Declaration UBO">
+    </testcase>
+    <testcase name="Self-Declaration UBO Deletes Self Declaration UBO" time="5.315" classname="Deletes Self Declaration UBO">
+    </testcase>
+  </testsuite>
+</testsuites>

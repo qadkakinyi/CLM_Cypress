@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="9.862" tests="0" failures="1">
+  <testsuite name="Root Suite" timestamp="2025-01-16T08:28:09" tests="0" file="cypress/e2e/HelperFunctionalities/TransactionMonitoring&amp;Actions/Investment_Account_Types_test.cy.ts" time="9.861" failures="1">
+    <testcase name="Investment Account Types &quot;before all&quot; hook for &quot;Adds an Investment Account Type&quot;" time="0.000" classname="&quot;before all&quot; hook for &quot;Adds an Investment Account Type&quot;">
+      <failure message="Timed out retrying after 4000ms: expected &apos;https://complytek-testing.regtek.co/auth/login&apos; to include &apos;dashboard&apos;
+
+Because this error occurred during a `before all` hook we are skipping all of the remaining tests." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: expected 'https://complytek-testing.regtek.co/auth/login' to include 'dashboard'
+
+Because this error occurred during a `before all` hook we are skipping all of the remaining tests.
+    at Context.eval (webpack://clm_cypress/./cypress/support/commands.ts:53:0)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

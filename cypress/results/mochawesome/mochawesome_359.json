@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-16T08:51:31.036Z",
+    "end": "2025-01-16T08:52:30.596Z",
+    "duration": 59560,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "753c421e-0edd-46e1-b676-b0416c60faff",
+      "title": "",
+      "fullFile": "cypress/e2e/ScreenPerformance/Settings/Client_Profiling/Client_Profiling_Performance(16-22).cy.ts",
+      "file": "cypress/e2e/ScreenPerformance/Settings/Client_Profiling/Client_Profiling_Performance(16-22).cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b271218e-2a44-4f77-a1b5-d1b58c29b6a6",
+          "title": "Client Profiling",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Client Profiling Pages (submenus 16 to 22)",
+              "fullTitle": "Client Profiling Client Profiling Pages (submenus 16 to 22)",
+              "timedOut": null,
+              "duration": 59464,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var routes = [\n    { index: 16, route: \"/settings/mid-types\", assertion: \"MID Types\" },\n    { index: 17, route: \"/settings/monitoring-visit-type\", assertion: \"Monitoring Visit Type\" },\n    { index: 18, route: \"/settings/reasonsForTin\", assertion: \"Reasons For TIN\" },\n    { index: 19, route: \"/settings/regulation-groups\", assertion: \"Regulation Groups\" },\n    { index: 20, route: \"/settings/related-website-types\", assertion: \"Related Website Types\" },\n    { index: 21, route: \"/settings/sub-groups\", assertion: \"Sub-Groups\" },\n    { index: 22, route: \"/settings/tags\", assertion: \"Tags\" }\n];\nroutes.forEach(function (route, i) {\n    cy.getByDataCy(\"settings-menu\").click().wait(2000);\n    cy.getByDataCy(\"client-profiling-menu\").should(\"be.visible\");\n    cy.getByDataCy(\"client-profiling-menu\").click().as('client-profiling-menu');\n    cy.get(\"@client-profiling-menu\").find(\"ul>li\").as(\"client-profiling-links\");\n    cy.get(\"@client-profiling-links\").eq(route.index).click();\n    // cy.wait(4000)\n    cy.location(\"pathname\").should(\"equal\", route.route);\n    cy.contains(route.assertion);\n    // after this 4 seconds the data should have loaded and spinner should not be visible\n    cy.get('.sk-ball-spin-clockwise').should(\"not.be.visible\");\n    if (i < routes.length - 1) {\n        cy.visit(\"/main/dashboard\").wait(2000);\n    }\n});",
+              "err": {},
+              "uuid": "16f382fc-54c2-4d78-8bd6-c0574e31fc94",
+              "parentUUID": "b271218e-2a44-4f77-a1b5-d1b58c29b6a6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "16f382fc-54c2-4d78-8bd6-c0574e31fc94"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 59464,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

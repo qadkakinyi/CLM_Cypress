@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="78.208" tests="5" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T13:35:55" tests="0" file="cypress/e2e/SideMenu/PowerBi_Reports_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Power Bi Reports" timestamp="2025-01-16T13:36:01" tests="5" time="72.435" failures="0">
+    <testcase name="Power Bi Reports Opens power bi menu and menu shows menu items" time="11.247" classname="Opens power bi menu and menu shows menu items">
+    </testcase>
+    <testcase name="Power Bi Reports Risk assessment report first redesign" time="15.384" classname="Risk assessment report first redesign">
+    </testcase>
+    <testcase name="Power Bi Reports Transaction monitoring report" time="15.432" classname="Transaction monitoring report">
+    </testcase>
+    <testcase name="Power Bi Reports Transaction screening" time="15.358" classname="Transaction screening">
+    </testcase>
+    <testcase name="Power Bi Reports Transaction screening performance" time="15.371" classname="Transaction screening performance">
+    </testcase>
+  </testsuite>
+</testsuites>

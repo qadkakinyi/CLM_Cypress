@@ -1,0 +1,125 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 2,
+    "failures": -1,
+    "start": "2025-01-16T12:10:57.441Z",
+    "end": "2025-01-16T12:11:03.182Z",
+    "duration": 5741,
+    "testsRegistered": 2,
+    "passPercent": null,
+    "pendingPercent": 100,
+    "other": 1,
+    "hasOther": true,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "6c93ef08-9e71-4273-a5c2-cf90af25f591",
+      "title": "",
+      "fullFile": "cypress/e2e/Auth/User_Login_test.cy.ts",
+      "file": "cypress/e2e/Auth/User_Login_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "42fa8a86-53d1-40a8-ac50-80eeff0f4f19",
+          "title": "User Login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "successfully logs in a user",
+              "fullTitle": "User Login successfully logs in a user",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "cy.login(login_details.username, \"Password1!\");\ncy.get(\"\");",
+              "err": {},
+              "uuid": "d7d77421-cf10-49c9-a21a-4458711f7b10",
+              "parentUUID": "42fa8a86-53d1-40a8-ac50-80eeff0f4f19",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "denies authentication with incorrect user details",
+              "fullTitle": "User Login denies authentication with incorrect user details",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "cy.login(\"systemadmin\", \"Password1!\");\ncy.get(\"\");",
+              "err": {},
+              "uuid": "387acce6-c92f-43dc-aeb9-0d763acfb3d8",
+              "parentUUID": "42fa8a86-53d1-40a8-ac50-80eeff0f4f19",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [],
+          "pending": [
+            "d7d77421-cf10-49c9-a21a-4458711f7b10",
+            "387acce6-c92f-43dc-aeb9-0d763acfb3d8"
+          ],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

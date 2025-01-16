@@ -1,0 +1,144 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-16T07:01:21.434Z",
+    "end": "2025-01-16T07:02:18.310Z",
+    "duration": 56876,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "758bcc3e-18dc-4bd9-bc51-e2d9413301ee",
+      "title": "",
+      "fullFile": "cypress/e2e/IndividualClientFunctionality/Add_Edit_Delete_Client_Transaction_test.cy.ts",
+      "file": "cypress/e2e/IndividualClientFunctionality/Add_Edit_Delete_Client_Transaction_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6e026878-ee98-447e-bc5c-ce44a707bfd7",
+          "title": "Add, Edit, Delete Client Transactions - Individual",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add Client Transactions",
+              "fullTitle": "Add, Edit, Delete Client Transactions - Individual Add Client Transactions",
+              "timedOut": null,
+              "duration": 32894,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Click on Know your Clients navigation item\n(0, e2e_1.navigateToClientMenu)('Individual');\ncy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Transactions').click();\n// Add new Client Transaction\ncy.getBySel('addClientTransaction').click();\ncy.location('pathname').then(function (pathname) {\n    var pathSections = pathname.split('/');\n    client_id = pathSections[3];\n});\ncy.get('#addClientTransactionForm .datetimeDevExtreme.transactionDate .dx-texteditor-input').type('03');\ncy.get('#addClientTransactionForm .datetimeDevExtreme.approvalDate .dx-texteditor-input').type('03');\ncy.get('#addClientTransactionForm input[name=\"baseAmount\"]').type(faker_1.faker.finance.amount({ min: 5, max: 10000 }));\ncy.getBySel('transactionTypesList').should('be.visible').click();\ncy.get('.dx-overlay-wrapper.dx-popup-wrapper.dx-dropdowneditor-overlay .dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true });\ncy.getBySel('transactionMethodsList').should('be.visible').click();\ncy.get('.dx-overlay-wrapper.dx-popup-wrapper.dx-dropdowneditor-overlay #dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true });\ncy.getBySel('countriesList').should('be.visible').click();\ncy.get('.dx-overlay-wrapper.dx-popup-wrapper.dx-dropdowneditor-overlay #dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true });\ncy.getBySel('outgoingCountryList').should('be.visible').click();\ncy.get('.dx-overlay-wrapper.dx-popup-wrapper.dx-dropdowneditor-overlay #dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true });\ncy.get('#addClientTransactionForm input[name=\"counterpartyName\"]').type(faker_1.faker.company.name());\ncy.get('#addClientTransactionForm input[name=\"counterpartyAccount\"]').type(faker_1.faker.finance.accountNumber(16));\ncy.get('#addClientTransactionForm input[name=\"externalReference\"]').type(transactionReference);\ncy.getBySel('clientAccountsList').should('be.visible').click();\ncy.get('.dx-overlay-wrapper.dx-popup-wrapper.dx-dropdowneditor-overlay #dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true });\ncy.get('#addClientTransactionForm input[name=\"foreignAmount\"]').type(faker_1.faker.finance.amount({ min: 5, max: 10000 }));\ncy.getBySel('foreignCurrencyList').should('be.visible').click();\ncy.get('.dx-overlay-wrapper.dx-popup-wrapper.dx-dropdowneditor-overlay #dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true });\ncy.get('#addClientTransactionForm textarea[name=\"description\"]').type(faker_1.faker.lorem.sentence());\n// custom fields section\ncy.get('app-add-transaction .fa-plus').eq(0).click();\ncy.get('#CustomField_Payment_Details').type('BankXYZ');\ncy.get('#CustomField_Transaction_Update_Date').type(faker_1.faker.date.past({ refDate: 1 }).toISOString().slice(0, 10));\ncy.getBySel('saveClientTransaction').click().wait(2000);",
+              "err": {},
+              "uuid": "dc227235-e074-4471-bc95-89217703f70f",
+              "parentUUID": "6e026878-ee98-447e-bc5c-ce44a707bfd7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edit client Transactions",
+              "fullTitle": "Add, Edit, Delete Client Transactions - Individual Edit client Transactions",
+              "timedOut": null,
+              "duration": 12841,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Edit Transaction\ntry {\n    goToTransactionByReference(transactionReference);\n    transactionReference = faker_1.faker.string.alphanumeric(12);\n    cy.get('#editClientTransactionForm input[name=\"externalReference\"]').clear();\n    cy.get('#editClientTransactionForm input[name=\"externalReference\"]').type(transactionReference);\n    cy.getBySel('saveAndCloseButton').click().wait(2000);\n}\ncatch (error) {\n    cy.log(error);\n}",
+              "err": {},
+              "uuid": "2ef1dc05-b3e5-4d87-9a8a-a90deb6365b6",
+              "parentUUID": "6e026878-ee98-447e-bc5c-ce44a707bfd7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Delete client Transactions",
+              "fullTitle": "Add, Edit, Delete Client Transactions - Individual Delete client Transactions",
+              "timedOut": null,
+              "duration": 10998,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "try {\n    goToTransactionByReference(transactionReference);\n    // Delete Transactions\n    cy.getBySel('deleteTransaction').should('be.visible').click();\n    cy.get('#bot2-Msg1').contains('Yes').click().wait(2000);\n}\ncatch (error) {\n    cy.log(error);\n}",
+              "err": {},
+              "uuid": "fad71e37-d0fa-4d31-9c24-e68ba2b0a643",
+              "parentUUID": "6e026878-ee98-447e-bc5c-ce44a707bfd7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "dc227235-e074-4471-bc95-89217703f70f",
+            "2ef1dc05-b3e5-4d87-9a8a-a90deb6365b6",
+            "fad71e37-d0fa-4d31-9c24-e68ba2b0a643"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 56733,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

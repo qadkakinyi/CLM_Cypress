@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-16T12:14:18.429Z",
+    "end": "2025-01-16T12:14:43.418Z",
+    "duration": 24989,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "94acbf89-eccf-4a3e-900a-746bf335be84",
+      "title": "",
+      "fullFile": "cypress/e2e/CorporateClientFunctionality/AML_Segment_Detail_test.cy.ts",
+      "file": "cypress/e2e/CorporateClientFunctionality/AML_Segment_Detail_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "bcc86043-b502-444a-a91a-1babe0eeaa2b",
+          "title": "AML Segment Details",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Navigates to AML Segement Page",
+              "fullTitle": "AML Segment Details Navigates to AML Segement Page",
+              "timedOut": null,
+              "duration": 24931,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Navigate to specific client\n(0, e2e_1.navigateToClientMenu)('Corporate');\ncy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('AML Segment Detail').click();\ncy.wait(1000);\ncy.contains('Aml Segment Details');",
+              "err": {},
+              "uuid": "305c1b9c-1515-49f2-8ee3-c43597d70948",
+              "parentUUID": "bcc86043-b502-444a-a91a-1babe0eeaa2b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "305c1b9c-1515-49f2-8ee3-c43597d70948"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 24931,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

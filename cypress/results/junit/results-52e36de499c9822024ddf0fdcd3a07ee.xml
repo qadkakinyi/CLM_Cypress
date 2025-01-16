@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="29.472" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T12:45:19" tests="0" file="cypress/e2e/CorporateClientFunctionality/Audit_Trails_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="System logs" timestamp="2025-01-16T12:45:31" tests="1" time="17.482" failures="0">
+    <testcase name="System logs Navigates to system logs" time="29.415" classname="Navigates to system logs">
+    </testcase>
+  </testsuite>
+</testsuites>

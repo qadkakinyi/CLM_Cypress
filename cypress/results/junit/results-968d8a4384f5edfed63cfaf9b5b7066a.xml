@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="69.619" tests="7" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T06:26:09" tests="0" file="cypress/e2e/CorporateClientFunctionality/Add_Edit_Delete_Client_Policy_Payments_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Add, Edit, Delete Client Policy Payments" timestamp="2025-01-16T06:26:19" tests="7" time="59.482" failures="0">
+    <testcase name="Add, Edit, Delete Client Policy Payments Go to Policy Payments detail line" time="22.709" classname="Go to Policy Payments detail line">
+    </testcase>
+    <testcase name="Add, Edit, Delete Client Policy Payments Add Client Policy Payment Collection" time="7.440" classname="Add Client Policy Payment Collection">
+    </testcase>
+    <testcase name="Add, Edit, Delete Client Policy Payments Edit client Policy collection" time="7.277" classname="Edit client Policy collection">
+    </testcase>
+    <testcase name="Add, Edit, Delete Client Policy Payments Delete client policy collection" time="5.744" classname="Delete client policy collection">
+    </testcase>
+    <testcase name="Add, Edit, Delete Client Policy Payments Add Client Policy Payment Transaction" time="9.253" classname="Add Client Policy Payment Transaction">
+    </testcase>
+    <testcase name="Add, Edit, Delete Client Policy Payments Edit client Policy payment transaction" time="8.590" classname="Edit client Policy payment transaction">
+    </testcase>
+    <testcase name="Add, Edit, Delete Client Policy Payments Delete client policy transaction" time="8.203" classname="Delete client policy transaction">
+    </testcase>
+  </testsuite>
+</testsuites>

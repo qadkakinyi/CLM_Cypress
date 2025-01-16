@@ -1,0 +1,220 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 7,
+    "passes": 7,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-16T06:56:24.650Z",
+    "end": "2025-01-16T06:57:41.760Z",
+    "duration": 77110,
+    "testsRegistered": 7,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9c7ad316-a69b-4bef-bc22-9d36317de141",
+      "title": "",
+      "fullFile": "cypress/e2e/IndividualClientFunctionality/Add_Edit_Delete_Client_Policy_Payments_test.cy.ts",
+      "file": "cypress/e2e/IndividualClientFunctionality/Add_Edit_Delete_Client_Policy_Payments_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7c169022-9fec-4f4f-bb34-ddb89d0b2e34",
+          "title": "Add, Edit, Delete Client Policy Payments",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Go to Policy Payments detail line",
+              "fullTitle": "Add, Edit, Delete Client Policy Payments Go to Policy Payments detail line",
+              "timedOut": null,
+              "duration": 23108,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Click on Know your Clients navigation item\n(0, e2e_1.navigateToClientMenu)('Individual');\ncy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Policy Payments').click();\ncy.wait(500);\n//get the current client id\ncy.location('pathname').then(function (pathname) {\n    var pathSections = pathname.split('/');\n    client_id = pathSections[3];\n});",
+              "err": {},
+              "uuid": "c8ed1c6a-2f5e-47b4-bf5e-acee51ac7e49",
+              "parentUUID": "7c169022-9fec-4f4f-bb34-ddb89d0b2e34",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Add Client Policy Payment Collection",
+              "fullTitle": "Add, Edit, Delete Client Policy Payments Add Client Policy Payment Collection",
+              "timedOut": null,
+              "duration": 7282,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Add new Client Policies\ncy.visit(\"/main/client-individual/\".concat(client_id, \"/1/contract-payments\")).wait(2000);\ncy.getBySel('addContractCollection').click();\ncy.getBySel('addClientContractCollectionForm').should('be.visible');\ncy.getBySel('clientContractPolicyNumbers').click();\ncy.get('.dx-overlay-wrapper.dx-popup-wrapper.dx-dropdowneditor-overlay .dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true });\ncy.getBySel('transactionPaymentMethods').click();\ncy.get('.dx-overlay-wrapper.dx-popup-wrapper.dx-dropdowneditor-overlay .dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true });\ncy.get('#addClientContractCollectionForm input[name=\"paymentAmount\"]').type(faker_1.faker.finance.amount({ min: 1, max: 19999 }));\ncy.get('#addClientContractCollectionForm input[name=\"paymentDate\"]').type(faker_1.faker.date.anytime().toISOString().slice(0, 10));\ncy.get('#addClientContractCollectionForm input[name=\"paymentDescription\"]').type(faker_1.faker.lorem.word());\ncy.get('#addClientContractCollectionForm input[name=\"reasonForTransaction\"]').type(faker_1.faker.lorem.word());\ncy.getBySel('savePaymentCollection').click().wait(1500);",
+              "err": {},
+              "uuid": "50352600-9c09-4d04-833a-6220f3258bbe",
+              "parentUUID": "7c169022-9fec-4f4f-bb34-ddb89d0b2e34",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edit client Policy collection",
+              "fullTitle": "Add, Edit, Delete Client Policy Payments Edit client Policy collection",
+              "timedOut": null,
+              "duration": 9636,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Edit Policy contract collection\ncy.visit(\"/main/client-individual/\".concat(client_id, \"/1/contract-payments\"));\ncy.wait(3000);\ncy.getBySel('gridClientContractCollections').should('be.visible');\ncy.get('#gridClientContractCollections table tbody tr td.dx-command-edit-with-icons a').eq(0).click({ force: true }).wait(1000);\ncy.get('#editClientContractCollectionForm').should('be.visible');\ncy.get('#editClientContractCollectionForm input[name=\"paymentDescription\"]').should('be.visible').clear();\ncy.get('#editClientContractCollectionForm input[name=\"paymentDescription\"]').type(faker_1.faker.lorem.sentence());\ncy.getBySel('saveAndCloseButton').click().wait(1500);",
+              "err": {},
+              "uuid": "ad642f71-586d-4d59-bc87-6fd7eeaafcec",
+              "parentUUID": "7c169022-9fec-4f4f-bb34-ddb89d0b2e34",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Delete client policy collection",
+              "fullTitle": "Add, Edit, Delete Client Policy Payments Delete client policy collection",
+              "timedOut": null,
+              "duration": 8029,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Delete policy contract collection\ncy.visit(\"/main/client-individual/\".concat(client_id, \"/1/contract-payments\"));\ncy.wait(2000);\ncy.getBySel('gridClientContractCollections').should('be.visible');\ncy.get('#gridClientContractCollections table tbody tr td.dx-command-edit-with-icons a').eq(0).click({ force: true });\ncy.getBySel('deleteContractCollection').should('be.visible').click();\ncy.get('#bot2-Msg1').contains('Yes').click().wait(1000);",
+              "err": {},
+              "uuid": "912773f4-ee30-458d-ace0-5abe6dedcd3c",
+              "parentUUID": "7c169022-9fec-4f4f-bb34-ddb89d0b2e34",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Add Client Policy Payment Transaction",
+              "fullTitle": "Add, Edit, Delete Client Policy Payments Add Client Policy Payment Transaction",
+              "timedOut": null,
+              "duration": 8893,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Add new Client Policies\ncy.visit(\"/main/client-individual/\".concat(client_id, \"/1/contract-payments\"));\ncy.wait(2000);\ncy.get('.dx-item.dx-tab .dx-template-wrapper.dx-item-content').contains('span', 'Transactions').should('be.visible').click();\ncy.getBySel('addContractTransaction').click();\ncy.wait(1000);\ncy.getBySel('addClientContractTransactionForm').should('be.visible');\n// cy.getBySel('policyNumbers').click();\n// cy.get('.dx-overlay-wrapper.dx-popup-wrapper.dx-dropdowneditor-overlay .dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true });\ncy.get('#addClientContractTransactionForm input[name=\"paymentAmount\"]').type(faker_1.faker.finance.amount({ min: 1, max: 19999 }));\ncy.get('#addClientContractTransactionForm input[name=\"paymentDate\"]').type(faker_1.faker.date.anytime().toISOString().slice(0, 10));\ncy.get('#addClientContractTransactionForm input[name=\"paymentDescription\"]').type(faker_1.faker.lorem.word());\ncy.get('#addClientContractTransactionForm input[name=\"reasonForTransaction\"]').type(faker_1.faker.lorem.word());\ncy.getBySel('saveContractTransaction').click().wait(1500);",
+              "err": {},
+              "uuid": "f90f1a1f-3809-4e02-8985-b943852fe248",
+              "parentUUID": "7c169022-9fec-4f4f-bb34-ddb89d0b2e34",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edit client Policy payment transaction",
+              "fullTitle": "Add, Edit, Delete Client Policy Payments Edit client Policy payment transaction",
+              "timedOut": null,
+              "duration": 9863,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Edit Policy contract transaction\ncy.visit(\"/main/client-individual/\".concat(client_id, \"/1/contract-payments\"));\ncy.wait(2000);\ncy.get('.dx-item.dx-tab .dx-template-wrapper.dx-item-content').contains('span', 'Transactions').should('be.visible').click();\ncy.getBySel('gridClientContractTransactions').should('be.visible');\ncy.get('#gridClientContractTransactions table tbody tr td.dx-command-edit-with-icons a').eq(0).click({ force: true });\ncy.get('#editClientContractTransactionForm').should('be.visible');\ncy.get('#editClientContractTransactionForm input[name=\"paymentDescription\"]').should('be.visible').clear();\ncy.get('#editClientContractTransactionForm input[name=\"paymentDescription\"]').type(faker_1.faker.lorem.sentence());\ncy.getBySel('saveAndCloseButton').click().wait(1500);",
+              "err": {},
+              "uuid": "c66de629-288e-48a3-9303-874a8a08c3bf",
+              "parentUUID": "7c169022-9fec-4f4f-bb34-ddb89d0b2e34",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Delete client policy transaction",
+              "fullTitle": "Add, Edit, Delete Client Policy Payments Delete client policy transaction",
+              "timedOut": null,
+              "duration": 9999,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"/main/client-individual/\".concat(client_id, \"/1/contract-payments\"));\ncy.wait(2000);\ncy.get('.dx-item.dx-tab .dx-template-wrapper.dx-item-content').contains('span', 'Transactions').should('be.visible').click();\n// Delete policy contract transaction\ncy.getBySel('gridClientContractTransactions').should('be.visible');\ncy.get('#gridClientContractTransactions table tbody tr td.dx-command-edit-with-icons a').eq(0).click({ force: true });\ncy.getBySel('deleteContractTransaction').should('be.visible').click();\ncy.get('#bot2-Msg1').contains('Yes').click().wait(1000);",
+              "err": {},
+              "uuid": "62a35434-d878-48ce-bc9f-e8df9f814cc4",
+              "parentUUID": "7c169022-9fec-4f4f-bb34-ddb89d0b2e34",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c8ed1c6a-2f5e-47b4-bf5e-acee51ac7e49",
+            "50352600-9c09-4d04-833a-6220f3258bbe",
+            "ad642f71-586d-4d59-bc87-6fd7eeaafcec",
+            "912773f4-ee30-458d-ace0-5abe6dedcd3c",
+            "f90f1a1f-3809-4e02-8985-b943852fe248",
+            "c66de629-288e-48a3-9303-874a8a08c3bf",
+            "62a35434-d878-48ce-bc9f-e8df9f814cc4"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 76810,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

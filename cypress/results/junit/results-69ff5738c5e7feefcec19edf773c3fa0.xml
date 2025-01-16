@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="68.136" tests="2" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T08:36:40" tests="0" file="cypress/e2e/ScreenPerformance/Administration/Other_Settings_Menu_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Other Settings" timestamp="2025-01-16T08:36:46" tests="2" time="62.033" failures="0">
+    <testcase name="Other Settings Opens Other Settings Menus" time="9.411" classname="Opens Other Settings Menus">
+    </testcase>
+    <testcase name="Other Settings Accesses all pages in the menu list" time="58.536" classname="Accesses all pages in the menu list">
+    </testcase>
+  </testsuite>
+</testsuites>

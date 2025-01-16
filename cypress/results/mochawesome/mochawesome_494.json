@@ -1,0 +1,144 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-16T13:04:07.143Z",
+    "end": "2025-01-16T13:04:52.137Z",
+    "duration": 44994,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "56b16a67-ccc5-4356-a10f-dea826ca73a6",
+      "title": "",
+      "fullFile": "cypress/e2e/IndividualClientFunctionality/Add_Edit_Delete_Client_Additional_External_Reference_test.cy.ts",
+      "file": "cypress/e2e/IndividualClientFunctionality/Add_Edit_Delete_Client_Additional_External_Reference_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ee6969d7-74ca-42a0-9564-b8edff1b67aa",
+          "title": "Add, Delete Client additional external reference",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add Client additional external reference",
+              "fullTitle": "Add, Delete Client additional external reference Add Client additional external reference",
+              "timedOut": null,
+              "duration": 26558,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "(0, e2e_1.navigateToClientMenu)('Individual');\ncy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Additional External References').click();\n//get the current client id\ncy.location('pathname').then(function (pathname) {\n    var pathSections = pathname.split('/');\n    client_id = pathSections[3];\n});\n// Add new Client Additional External Reference\ncy.getBySel('addAdditionalExternalReference').click();\ncy.wait(1000);\ncy.get('#addClientAdditionalExternalReferenceForm input[name=\"additionalExternalReference\"]').type(externalReference);\ncy.getBySel('saveAdditionalExternalReference').click().wait(2000);",
+              "err": {},
+              "uuid": "f90535a5-a4e8-456d-8191-53d4a780cbca",
+              "parentUUID": "ee6969d7-74ca-42a0-9564-b8edff1b67aa",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edit client additional external reference",
+              "fullTitle": "Add, Delete Client additional external reference Edit client additional external reference",
+              "timedOut": null,
+              "duration": 12068,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Edit additional external reference\ncy.visit(\"/main/client-individual/\".concat(client_id, \"/1/additional-external-references\"));\ncy.wait(2000);\ncy.getBySel('gridClientAdditionalExternalReferences').should('be.visible');\ncy.get('.dx-datagrid-filter-row .dx-texteditor-input-container input').eq(0).type(externalReference).wait(2000);\ncy.getBySel('gridClientAdditionalExternalReferences').wait(2000).then(function () {\n    cy.get('.dx-icon-edit').eq(0).click({ force: true });\n    externalReference = faker_1.faker.string.alphanumeric(16);\n    cy.get('.dx-datagrid-rowsview .dx-texteditor-input-container').eq(0).clear();\n    cy.get('.dx-datagrid-rowsview .dx-texteditor-input-container').eq(0).type(externalReference);\n});\ncy.get('#gridClientAdditionalExternalReferences .dx-link.dx-icon-save').eq(0).click({ force: true }).wait(2000);",
+              "err": {},
+              "uuid": "6234dcac-27fa-4faa-a586-11354dea914e",
+              "parentUUID": "ee6969d7-74ca-42a0-9564-b8edff1b67aa",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Delete client additional external reference",
+              "fullTitle": "Add, Delete Client additional external reference Delete client additional external reference",
+              "timedOut": null,
+              "duration": 6231,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Delete additional external reference\ncy.visit(\"/main/client-individual/\".concat(client_id, \"/1/additional-external-references\"));\ncy.wait(1500);\ncy.getBySel('gridClientAdditionalExternalReferences').should('be.visible');\ncy.get('#gridClientAdditionalExternalReferences .dx-link.dx-icon-trash').eq(0).click({ force: true });\ncy.get('.dx-dialog-buttons .dx-button-content').contains('span', 'Yes').click({ force: true }).wait(1000);\ncy.contains('The additional external reference has been deleted.');",
+              "err": {},
+              "uuid": "4f32de2b-e0b2-4c49-81a2-5abc3595e975",
+              "parentUUID": "ee6969d7-74ca-42a0-9564-b8edff1b67aa",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f90535a5-a4e8-456d-8191-53d4a780cbca",
+            "6234dcac-27fa-4faa-a586-11354dea914e",
+            "4f32de2b-e0b2-4c49-81a2-5abc3595e975"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 44857,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="28.951" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T07:47:24" tests="0" file="cypress/e2e/HelperFunctionalities/ClientProfiling/Addresses_Types_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Addresses Types" timestamp="2025-01-16T07:47:29" tests="3" time="23.174" failures="0">
+    <testcase name="Addresses Types Adds Address Types" time="13.080" classname="Adds Address Types">
+    </testcase>
+    <testcase name="Addresses Types Edits Address type" time="8.323" classname="Edits Address type">
+    </testcase>
+    <testcase name="Addresses Types Deletes Address type" time="7.430" classname="Deletes Address type">
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="24.862" tests="3" failures="0" skipped="1">
+  <testsuite name="Root Suite" timestamp="2025-01-16T08:13:32" tests="0" file="cypress/e2e/HelperFunctionalities/Evaluation&amp;Questionairre/6.Questionnaire_Types_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Questionnaire Types" timestamp="2025-01-16T08:13:38" tests="3" time="18.961" failures="0">
+    <testcase name="Questionnaire Types Adds a Questionnaire Type" time="12.440" classname="Adds a Questionnaire Type">
+    </testcase>
+    <testcase name="Questionnaire Types Edits a Questionnaire Type" time="12.355" classname="Edits a Questionnaire Type">
+    </testcase>
+  </testsuite>
+</testsuites>

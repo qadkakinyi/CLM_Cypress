@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="33.751" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T08:01:47" tests="0" file="cypress/e2e/HelperFunctionalities/Countries/Cities&amp;Ports_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Cities And Ports" timestamp="2025-01-16T08:01:53" tests="3" time="27.699" failures="0">
+    <testcase name="Cities And Ports Imports Cities/Ports from file" time="12.697" classname="Imports Cities/Ports from file">
+    </testcase>
+    <testcase name="Cities And Ports Edits A City/Port" time="10.905" classname="Edits A City/Port">
+    </testcase>
+    <testcase name="Cities And Ports Deletes a City/Port" time="10.052" classname="Deletes a City/Port">
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="16.974" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T08:38:08" tests="0" file="cypress/e2e/ScreenPerformance/Reports&amp;Lists/Machine_Learning_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Machine Learning" timestamp="2025-01-16T08:38:13" tests="1" time="11.243" failures="0">
+    <testcase name="Machine Learning Opens menu under the section and navigates to the expected pages" time="16.925" classname="Opens menu under the section and navigates to the expected pages">
+    </testcase>
+  </testsuite>
+</testsuites>

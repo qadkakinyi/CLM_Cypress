@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-16T12:50:42.431Z",
+    "end": "2025-01-16T12:51:50.327Z",
+    "duration": 67896,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "de616ed5-4bb7-4044-8164-503ee6d4e87d",
+      "title": "",
+      "fullFile": "cypress/e2e/IndividualClientFunctionality/Add_Client_Questionnaire_test.cy.ts",
+      "file": "cypress/e2e/IndividualClientFunctionality/Add_Client_Questionnaire_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "22a778ed-9891-4198-b314-221b5bc02002",
+          "title": "Add a client questionnaire",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Adds questionnaire type, creates question categories, creates a question then adds a questionnaire",
+              "fullTitle": "Add a client questionnaire Adds questionnaire type, creates question categories, creates a question then adds a questionnaire",
+              "timedOut": null,
+              "duration": 67835,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/main/clients');\ncy.wait(2000);\n(0, e2e_1.navigateToClientMenu)('Individual');\ncy.wait(2000);\ncy.contains('Questionnaires').click();\ncy.wait(1000);\ncy.getByDataCy('create-questionnaire').click();\ncy.wait(1000);\n//step 1\ncy.getByDataCy('reasonForQuestionnaire').then(function (el) {\n    if (el.is(':visible')) {\n        cy.getByDataCy('questionnaire-type').click();\n        cy.wait(1000);\n        cy.get('#dynamicSelectBoxDropdownGrid td').contains('Open Ended').click({ force: true });\n        cy.wait(500);\n        cy.getByDataCy('reason-for-questionnaire').type(faker_1.faker.word.verb());\n        cy.getByDataCy(\"Questionnaire-next-step-btn\").click().wait(1000);\n    }\n});\n//step 2\ncy.getByDataCy('step2-complete-the-questions').then(function (el) {\n    if (el.is(':visible')) {\n        cy.getByDataCy('proceed-to-step3').click().wait(3000);\n    }\n});\n//step 3\ncy.getByDataCy('finish-questionnaire');\ncy.getByDataCy('finalize-btn').click();\ncy.wait(3000);\ncy.contains('Finalized').wait(1000);",
+              "err": {},
+              "uuid": "ca15dadb-f48f-409c-b3c8-fb3932be5a9c",
+              "parentUUID": "22a778ed-9891-4198-b314-221b5bc02002",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ca15dadb-f48f-409c-b3c8-fb3932be5a9c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 67835,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

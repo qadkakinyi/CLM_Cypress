@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-16T08:43:31.571Z",
+    "end": "2025-01-16T08:44:30.592Z",
+    "duration": 59021,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "7c69b6fa-5152-486a-ba1e-f8dc3f93c002",
+      "title": "",
+      "fullFile": "cypress/e2e/ScreenPerformance/Settings/Evaluation&Questionnaire.test.cy.ts",
+      "file": "cypress/e2e/ScreenPerformance/Settings/Evaluation&Questionnaire.test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1703ea30-aa35-4c19-b390-8b6b321832bd",
+          "title": "Evaluation & Questionnaire",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "checks for performance test",
+              "fullTitle": "Evaluation & Questionnaire checks for performance test",
+              "timedOut": null,
+              "duration": 58912,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var routes = [\n    { index: 0, route: \"/settings/evaluation-types\", assertion: \"Adhoc Evaluation Types\" },\n    { index: 1, route: \"/settings/criteria\", assertion: \"Criteria\" },\n    { index: 2, route: \"/settings/criteria-categories\", assertion: \"Criteria Categories\" },\n    { index: 3, route: \"/settings/evaluation-grades\", assertion: \"Evaluation Grades\" },\n    { index: 4, route: \"/settings/questionnaire-grades\", assertion: \"Questionnaire Grades\" },\n    { index: 5, route: \"/settings/questionnaire-types\", assertion: \"Questionnaire Types\" },\n    { index: 6, route: \"/settings/questions\", assertion: \"Questions\" },\n    { index: 7, route: \"/settings/questions-categories\", assertion: \"Questionnaire Categories\" },\n];\nroutes.forEach(function (route, i) {\n    cy.getByDataCy(\"settings-menu\").click().wait(1000);\n    cy.getByDataCy(\"evaluation-menu\").should(\"be.visible\");\n    cy.getByDataCy(\"evaluation-menu\").click().as('evaluation-menu');\n    cy.getByDataCy(\"evaluation-links\").as(\"evaluation-links\");\n    cy.get(\"@evaluation-links\").eq(route.index).click();\n    cy.location(\"pathname\").should(\"equal\", route.route);\n    cy.contains(route.assertion);\n    cy.get('.sk-ball-spin-clockwise').should(\"not.be.visible\");\n    if (i < routes.length - 1) {\n        cy.visit(\"/main/dashboard\").wait(2000);\n    }\n});",
+              "err": {},
+              "uuid": "afeb0e7d-7d1c-4d9c-8749-30cf29349342",
+              "parentUUID": "1703ea30-aa35-4c19-b390-8b6b321832bd",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "afeb0e7d-7d1c-4d9c-8749-30cf29349342"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 58912,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

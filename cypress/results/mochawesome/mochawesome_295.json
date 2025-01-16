@@ -1,0 +1,144 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-16T08:19:56.244Z",
+    "end": "2025-01-16T08:20:23.927Z",
+    "duration": 27683,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "00a6d7e8-465f-4d20-8ff4-cdf5cdbd882d",
+      "title": "",
+      "fullFile": "cypress/e2e/HelperFunctionalities/TransactionMonitoring&Actions/Case_Workflow_Statuses_test.cy.ts",
+      "file": "cypress/e2e/HelperFunctionalities/TransactionMonitoring&Actions/Case_Workflow_Statuses_test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3f0f0fca-1a4a-40dc-843a-fb953086d584",
+          "title": "Case Workflow Statuses",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Adds a Case Workflow Status",
+              "fullTitle": "Case Workflow Statuses Adds a Case Workflow Status",
+              "timedOut": null,
+              "duration": 11863,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/settings/case-workflow-statuses').wait(1500);\ncy.contains('Add').click().wait(1000);\ncy.getByFormControlName('name').type(name);\ncy.getByFormControlName('mappingReference').type(faker_1.faker.string.alphanumeric(13));\ncy.contains('sa-button', 'Save').click().wait(1500);\ncy.contains('The Case Workflow Status has been added.');",
+              "err": {},
+              "uuid": "4d6f068e-4685-473e-b49c-2473101a9313",
+              "parentUUID": "3f0f0fca-1a4a-40dc-843a-fb953086d584",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edits a Tag",
+              "fullTitle": "Case Workflow Statuses Edits a Tag",
+              "timedOut": null,
+              "duration": 9468,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/settings/case-workflow-statuses').wait(2000);\ncy.get('#gridCaseWorkflowStatuses tr .dx-first-cell .dx-texteditor-input').type(name, { force: true }).wait(1000);\ncy.get('tr td').find('.fa-angle-double-right').eq(1).click({ force: true }).wait(1000);\ncy.get('#editCaseWorkflowStatusForm');\ncy.getByFormControlName('name').clear().type(name + faker_1.faker.string.alphanumeric(1));\ncy.getBySel('saveAndCloseButton').click().wait(2000);\ncy.contains('The Case Workflow Status has been updated.');",
+              "err": {},
+              "uuid": "aecdaa1b-a517-400c-ad6a-4d1948b3385f",
+              "parentUUID": "3f0f0fca-1a4a-40dc-843a-fb953086d584",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deletes a Tag",
+              "fullTitle": "Case Workflow Statuses Deletes a Tag",
+              "timedOut": null,
+              "duration": 6232,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/settings/case-workflow-statuses').wait(2000);\ncy.get('#gridCaseWorkflowStatuses tr .dx-first-cell .dx-texteditor-input').type(name, { force: true }).wait(1000);\ncy.get('tr td').find('.fa-angle-double-right').eq(1).click({ force: true }).wait(1000);\ncy.get('sa-button').contains('Delete').click();\ncy.get('.MessageBoxButtonSection').contains('button', 'Yes').click();\ncy.contains('The case workflow status has been deleted.');",
+              "err": {},
+              "uuid": "807ef9de-9a49-440e-85c2-7ceafc084510",
+              "parentUUID": "3f0f0fca-1a4a-40dc-843a-fb953086d584",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4d6f068e-4685-473e-b49c-2473101a9313",
+            "aecdaa1b-a517-400c-ad6a-4d1948b3385f",
+            "807ef9de-9a49-440e-85c2-7ceafc084510"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 27563,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

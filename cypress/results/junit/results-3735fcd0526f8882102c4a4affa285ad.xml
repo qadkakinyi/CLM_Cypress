@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="10.117" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-01-16T13:33:52" tests="0" file="cypress/e2e/SideMenu/Know_Your_Clients_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Know Your Clients" timestamp="2025-01-16T13:33:58" tests="1" time="4.256" failures="0">
+    <testcase name="Know Your Clients Load the list of clients" time="10.072" classname="Load the list of clients">
+    </testcase>
+  </testsuite>
+</testsuites>

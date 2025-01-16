@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="66.077" tests="6" failures="6">
+  <testsuite name="Root Suite" timestamp="2025-01-16T13:19:00" tests="0" file="cypress/e2e/Priority2/Client_Evaluation_test.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Perform Client Evaluation Using Staging APIs" timestamp="2025-01-16T13:19:06" tests="6" time="60.349" failures="6">
+    <testcase name="Perform Client Evaluation Using Staging APIs Generate Regulation Group Hash Key" time="0.000" classname="Generate Regulation Group Hash Key">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `span.ng-tns-c329-33`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `span.ng-tns-c329-33`, but never found it.
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/Priority2/Client_Evaluation_test.cy.ts:51:0)]]></failure>
+    </testcase>
+    <testcase name="Perform Client Evaluation Using Staging APIs Creates a Regulation Group" time="0.000" classname="Creates a Regulation Group">
+      <failure message="`cy.type()` cannot accept an empty string. You need to actually type something.
+
+https://on.cypress.io/type" type="CypressError"><![CDATA[CypressError: `cy.type()` cannot accept an empty string. You need to actually type something.
+
+https://on.cypress.io/type
+    at Context.type (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:115388:68)
+    at wrapped (https://complytek-testing.regtek.co/__cypress/runner/cypress_runner.js:138092:19)
+From Your Spec Code:
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/Priority2/Client_Evaluation_test.cy.ts:77:0)]]></failure>
+    </testcase>
+    <testcase name="Perform Client Evaluation Using Staging APIs Adds a Criteria and Its Answers" time="0.000" classname="Adds a Criteria and Its Answers">
+      <failure message="Timed out retrying after 4000ms: Expected to find content: &apos;DKA Regulation Group 4&apos; within the element: &lt;td&gt; but never did." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find content: 'DKA Regulation Group 4' within the element: <td> but never did.
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/Priority2/Client_Evaluation_test.cy.ts:89:0)]]></failure>
+    </testcase>
+    <testcase name="Perform Client Evaluation Using Staging APIs Add Individual Client To The New Regulation Group" time="0.000" classname="Add Individual Client To The New Regulation Group">
+      <failure message="Timed out retrying after 4000ms: Expected to find content: &apos;DKA Regulation Group 4&apos; within the element: &lt;td&gt; but never did." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find content: 'DKA Regulation Group 4' within the element: <td> but never did.
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/Priority2/Client_Evaluation_test.cy.ts:119:0)]]></failure>
+    </testcase>
+    <testcase name="Perform Client Evaluation Using Staging APIs Navigates to the newly created client dashboard" time="0.000" classname="Navigates to the newly created client dashboard">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `.dx-command-edit-with-icons a`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `.dx-command-edit-with-icons a`, but never found it.
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/Priority2/Client_Evaluation_test.cy.ts:139:0)]]></failure>
+    </testcase>
+    <testcase name="Perform Client Evaluation Using Staging APIs Adds an evaluation" time="0.000" classname="Adds an evaluation">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `.dx-command-edit-with-icons a`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `.dx-command-edit-with-icons a`, but never found it.
+    at NavigateToClientDashboard (webpack://clm_cypress/./cypress/e2e/Priority2/Client_Evaluation_test.cy.ts:24:0)
+    at Context.eval (webpack://clm_cypress/./cypress/e2e/Priority2/Client_Evaluation_test.cy.ts:142:0)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
