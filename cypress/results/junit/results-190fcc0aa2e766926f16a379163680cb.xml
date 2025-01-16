@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="23.737" tests="1" failures="0">
-  <testsuite name="Root Suite" timestamp="2025-01-16T06:36:30" tests="0" file="cypress/e2e/CorporateClientFunctionality/Dashboard_test.cy.ts" time="0.000" failures="0">
-  </testsuite>
-  <testsuite name="Views the Client Dashboard" timestamp="2025-01-16T06:36:42" tests="1" time="12.038" failures="0">
-    <testcase name="Views the Client Dashboard Checks if the dashboard loads correctly" time="23.664" classname="Checks if the dashboard loads correctly">
-    </testcase>
-  </testsuite>
-</testsuites>

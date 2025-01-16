@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="24.246" tests="1" failures="0">
-  <testsuite name="Root Suite" timestamp="2025-01-16T06:38:23" tests="0" file="cypress/e2e/CorporateClientFunctionality/Fraud_Risk_Analysis_test.cy.ts" time="0.000" failures="0">
-  </testsuite>
-  <testsuite name="Fraud Risk Analysis" timestamp="2025-01-16T06:38:34" tests="1" time="13.065" failures="0">
-    <testcase name="Fraud Risk Analysis Navigates to Fraud Risk Analysis" time="24.185" classname="Navigates to Fraud Risk Analysis">
-    </testcase>
-  </testsuite>
-</testsuites>

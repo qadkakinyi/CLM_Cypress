@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="30.563" tests="2" failures="0" skipped="1">
-  <testsuite name="Root Suite" timestamp="2025-01-16T12:44:53" tests="0" file="cypress/e2e/CorporateClientFunctionality/Edit_Corporate_Client_Profile_test.cy.ts" time="0.000" failures="0">
-  </testsuite>
-  <testsuite name="Edit Corporate Client Profile" timestamp="2025-01-16T12:45:05" tests="2" time="19.110" failures="0">
-    <testcase name="Edit Corporate Client Profile Edit Corporate Profile" time="30.500" classname="Edit Corporate Profile">
-    </testcase>
-  </testsuite>
-</testsuites>

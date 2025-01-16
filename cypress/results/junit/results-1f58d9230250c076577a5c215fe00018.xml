@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="122.636" tests="1" failures="0">
-  <testsuite name="Root Suite" timestamp="2025-01-16T06:02:34" tests="0" file="cypress/e2e/ClientCommonComponents/Navigate_Through_Client_Individual_Detail_Lines_test.cy.ts" time="0.000" failures="0">
-  </testsuite>
-  <testsuite name="Navigate through Client individual detail lines" timestamp="2025-01-16T06:02:45" tests="1" time="110.933" failures="0">
-    <testcase name="Navigate through Client individual detail lines Client Individual Detail Lines" time="122.561" classname="Client Individual Detail Lines">
-    </testcase>
-  </testsuite>
-</testsuites>

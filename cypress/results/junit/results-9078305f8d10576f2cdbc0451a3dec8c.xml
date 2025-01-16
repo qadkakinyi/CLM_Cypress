@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="23.793" tests="1" failures="0">
-  <testsuite name="Root Suite" timestamp="2025-01-16T12:47:43" tests="0" file="cypress/e2e/CorporateClientFunctionality/Evaluation_Status_History_test.cy.ts" time="0.000" failures="0">
-  </testsuite>
-  <testsuite name="Evaluation Status History" timestamp="2025-01-16T12:47:53" tests="1" time="13.282" failures="0">
-    <testcase name="Evaluation Status History Navigates to Evaluation Status History Page" time="23.744" classname="Navigates to Evaluation Status History Page">
-    </testcase>
-  </testsuite>
-</testsuites>

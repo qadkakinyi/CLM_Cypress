@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="62.385" tests="1" failures="0">
-  <testsuite name="Root Suite" timestamp="2025-01-16T08:47:13" tests="0" file="cypress/e2e/ScreenPerformance/Settings/Evaluation&amp;Questionnaire.test.cy.ts" time="0.000" failures="0">
-  </testsuite>
-  <testsuite name="Evaluation &amp; Questionnaire" timestamp="2025-01-16T08:47:19" tests="1" time="56.465" failures="0">
-    <testcase name="Evaluation &amp; Questionnaire checks for performance test" time="62.290" classname="checks for performance test">
-    </testcase>
-  </testsuite>
-</testsuites>

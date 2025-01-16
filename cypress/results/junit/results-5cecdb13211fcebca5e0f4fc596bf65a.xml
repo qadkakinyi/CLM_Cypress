@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="24.855" tests="1" failures="0">
-  <testsuite name="Root Suite" timestamp="2025-01-16T12:47:40" tests="0" file="cypress/e2e/CorporateClientFunctionality/Screening_test.cy.ts" time="0.000" failures="0">
-  </testsuite>
-  <testsuite name="Screening" timestamp="2025-01-16T12:47:51" tests="1" time="13.508" failures="0">
-    <testcase name="Screening Navigates to Screening Page" time="24.710" classname="Navigates to Screening Page">
-    </testcase>
-  </testsuite>
-</testsuites>

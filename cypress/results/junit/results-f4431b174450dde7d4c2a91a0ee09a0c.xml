@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="18.930" tests="1" failures="0">
-  <testsuite name="Root Suite" timestamp="2025-01-16T07:08:22" tests="0" file="cypress/e2e/Priority2/Check_Live_Transactions_test.cy.ts" time="0.000" failures="0">
-  </testsuite>
-  <testsuite name="Checks live transaction" timestamp="2025-01-16T07:08:28" tests="1" time="13.067" failures="0">
-    <testcase name="Checks live transaction Check live transaction through API" time="18.898" classname="Check live transaction through API">
-    </testcase>
-  </testsuite>
-</testsuites>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="19.167" tests="1" failures="0">
-  <testsuite name="Root Suite" timestamp="2025-01-16T07:27:53" tests="0" file="cypress/e2e/SideMenu/Navigation_test.cy.ts" time="0.000" failures="0">
-  </testsuite>
-  <testsuite name="Click on navigation menu of RegTek" timestamp="2025-01-16T07:27:59" tests="1" time="13.057" failures="0">
-    <testcase name="Click on navigation menu of RegTek Start clicking on navigation items" time="19.113" classname="Start clicking on navigation items">
-    </testcase>
-  </testsuite>
-</testsuites>

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="6.340" tests="2" failures="-1" skipped="2">
-  <testsuite name="Root Suite" timestamp="2025-01-16T12:11:01" tests="0" file="cypress/e2e/Auth/User_Login_test.cy.ts" time="0.000" failures="0">
-  </testsuite>
-  <testsuite name="User Login" timestamp="2025-01-16T12:11:07" tests="2" time="0.199" failures="0">
-  </testsuite>
-</testsuites>

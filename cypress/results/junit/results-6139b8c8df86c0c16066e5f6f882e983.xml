@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="6.193" tests="3" failures="-2" skipped="3">
-  <testsuite name="Root Suite" timestamp="2025-01-16T06:01:37" tests="0" file="cypress/e2e/ClientCommonComponents/Add_Edit_Delete_Client_Policy_test.cy.ts" time="0.000" failures="0">
-  </testsuite>
-  <testsuite name="Add, Edit, Delete Client Policy" timestamp="2025-01-16T06:01:43" tests="3" time="0.046" failures="0">
-  </testsuite>
-</testsuites>

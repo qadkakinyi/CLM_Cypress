@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="33.163" tests="1" failures="0">
-  <testsuite name="Root Suite" timestamp="2025-01-16T13:26:16" tests="0" file="cypress/e2e/ScreenPerformance/Management_test.cy.ts" time="0.000" failures="0">
-  </testsuite>
-  <testsuite name="Management Module" timestamp="2025-01-16T13:26:21" tests="1" time="27.504" failures="0">
-    <testcase name="Management Module Visits all links and loads the correct pages" time="33.060" classname="Visits all links and loads the correct pages">
-    </testcase>
-  </testsuite>
-</testsuites>

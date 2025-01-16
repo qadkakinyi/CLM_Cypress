@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="24.989" tests="1" failures="0">
-  <testsuite name="Root Suite" timestamp="2025-01-16T12:14:18" tests="0" file="cypress/e2e/CorporateClientFunctionality/AML_Segment_Detail_test.cy.ts" time="0.000" failures="0">
-  </testsuite>
-  <testsuite name="AML Segment Details" timestamp="2025-01-16T12:14:30" tests="1" time="13.266" failures="0">
-    <testcase name="AML Segment Details Navigates to AML Segement Page" time="24.931" classname="Navigates to AML Segement Page">
-    </testcase>
-  </testsuite>
-</testsuites>

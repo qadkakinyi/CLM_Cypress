@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="47.782" tests="1" failures="0">
-  <testsuite name="Root Suite" timestamp="2025-01-16T06:11:02" tests="0" file="cypress/e2e/CorporateClientFunctionality/Add_Edit_Client_FATCA_test.cy.ts" time="0.000" failures="0">
-  </testsuite>
-  <testsuite name="Add, Edit Client FATCA - Corporate" timestamp="2025-01-16T06:11:14" tests="1" time="36.385" failures="0">
-    <testcase name="Add, Edit Client FATCA - Corporate Add Client FATCA" time="47.725" classname="Add Client FATCA">
-    </testcase>
-  </testsuite>
-</testsuites>

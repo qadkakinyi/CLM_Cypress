@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="24.797" tests="1" failures="0">
-  <testsuite name="Root Suite" timestamp="2025-01-16T06:40:04" tests="0" file="cypress/e2e/CorporateClientFunctionality/Workflow_Task_History_test.cy.ts" time="0.000" failures="0">
-  </testsuite>
-  <testsuite name="Workflow Task History" timestamp="2025-01-16T06:40:15" tests="1" time="13.477" failures="0">
-    <testcase name="Workflow Task History Navigates to Workflow Task History" time="24.741" classname="Navigates to Workflow Task History">
-    </testcase>
-  </testsuite>
-</testsuites>

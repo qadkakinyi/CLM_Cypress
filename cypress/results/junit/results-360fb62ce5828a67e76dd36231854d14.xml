@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="59.271" tests="1" failures="0">
-  <testsuite name="Root Suite" timestamp="2025-01-16T13:01:43" tests="0" file="cypress/e2e/IndividualClientFunctionality/Add_Edit_Delete_Client_Evaluation_test.cy.ts" time="0.000" failures="0">
-  </testsuite>
-  <testsuite name="Add Client Evaluation" timestamp="2025-01-16T13:01:53" tests="1" time="49.124" failures="0">
-    <testcase name="Add Client Evaluation Adds an evaluation" time="59.201" classname="Adds an evaluation">
-    </testcase>
-  </testsuite>
-</testsuites>

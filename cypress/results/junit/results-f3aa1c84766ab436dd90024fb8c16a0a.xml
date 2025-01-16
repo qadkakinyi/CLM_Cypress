@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="22.127" tests="1" failures="0">
-  <testsuite name="Root Suite" timestamp="2025-01-16T08:22:00" tests="0" file="cypress/e2e/HelperFunctionalities/TransactionMonitoring&amp;Actions/Case_Suspicion_Levels_Risk_Points_test.cy.ts" time="0.000" failures="0">
-  </testsuite>
-  <testsuite name="Case Suspicion Levels Risk Point" timestamp="2025-01-16T08:22:06" tests="1" time="15.914" failures="0">
-    <testcase name="Case Suspicion Levels Risk Point Edits a Case Suspicion Levels Risk Point" time="22.078" classname="Edits a Case Suspicion Levels Risk Point">
-    </testcase>
-  </testsuite>
-</testsuites>
