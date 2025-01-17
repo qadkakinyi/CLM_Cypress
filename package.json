@@ -6,7 +6,8 @@
   "scripts": {
     "cypress:open": "cypress open",
     "cypress:run": "npm run prereport && cypress run --browser chrome",
-    "delete:reports": "rm -rf ./app/cypress/results/* || true",
+    "cypress:run-specific": "npm run prereport && cypress run --browser chrome --spec \"/app/cypress/e2e/AddClients/Add_ClientIndividual_test.cy.ts\"",
+    "delete:reports": "rm -rf /app/cypress/results/* || true",
     "prereport": "npm run delete:reports",
     "mochawesome:merge": "npx mochawesome-merge \"cypress/results/mochawesome/*.json\" > mochawesome.json && npx marge mochawesome.json",
     "junit:merge": "npx junit-merge -d cypress/results/junit -o cypress/results/junit/result.xml",

@@ -6,3 +6,13 @@ services:
     volumes:
       - ./cypress.config.ts:/app/cypress.config.ts:ro
       - ./mochawesome-report:/app/mochawesome-report
+  
+  clm-cypress-hosting:
+    image: nginx:latest
+    container_name: clm-cypress-hosting
+    restart: unless-stopped
+    ports:
+      - 9876:80
+    volumes:
+      - ./mochawesome-report:/usr/share/nginx/html
+      - ./nginx.conf:/etc/nginx/nginx.conf

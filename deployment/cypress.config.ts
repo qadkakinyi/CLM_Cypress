@@ -23,7 +23,7 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
-    baseUrl: 'https://complytek-testing.regtek.co',
+    baseUrl: 'https://complytek-testing-hotfix.regtek.co',
     supportFile: './cypress/support/e2e.ts',
     projectId: "s2jddr",
     //experimentalSessionAndOrigin: true, //allow visiting different protocols 
