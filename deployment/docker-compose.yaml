@@ -4,4 +4,5 @@ services:
     container_name: clm-cypress-builder
     restart: no
     volumes:
+      - ./cypress.config.ts:/app/cypress.config.ts:ro
       - ./mochawesome-report:/app/mochawesome-report
