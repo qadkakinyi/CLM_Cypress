@@ -1,1 +1,7 @@
 /node_modules
+
+cypress/results
+mochawesome-report
+
+deployment/Release
+.idea
