@@ -9,7 +9,7 @@ function getProviderKey(){
 }
 
 let hashValue = '';
-let regulation_group_name = 'DKA Regulation Group '+faker.number.int({max:10});
+let regulation_group_name = 'DKA Regulation Group '+faker.number.int({max:100});
 let criteria_mappingReference = faker.string.alphanumeric(13);
 
 let firstName = faker.person.firstName('male');
@@ -20,8 +20,8 @@ function NavigateToClientDashboard(){
     cy.visit('main/clients').wait(3000);
     cy.get('#gridClients').should('be.visible');
 
-    // cy.get('[aria-colindex="4"]  .dx-texteditor-input-container > .dx-texteditor-input').eq(0).type(firstName+' '+lastName).wait(2500)
-    cy.get('[aria-colindex="4"]  .dx-texteditor-input-container > .dx-texteditor-input').eq(0).type('Leon Gulg').wait(2500)
+    cy.get('[aria-colindex="4"]  .dx-texteditor-input-container > .dx-texteditor-input').eq(0).type(firstName+' '+lastName).wait(2500)
+    // cy.get('[aria-colindex="4"]  .dx-texteditor-input-container > .dx-texteditor-input').eq(0).type('Leon Gulg').wait(2500)
 
     cy.get('#gridClients table tr td .dx-header-filter-indicator').eq(0).click({force:true});
 
@@ -56,9 +56,9 @@ describe('Perform Client Evaluation Using Staging APIs', ()=>{
     
     it('Generate Regulation Group Hash Key', function() {
 
-        cy.get('span.ng-tns-c329-33').click();
-        cy.get('a.ng-tns-c329-34 > .ng-tns-c329-34').click();
-        cy.get('[icon="key"] > .sa-button > .text').click();
+        cy.getByDataCy('system-settings-menu').scrollIntoView().click();
+        cy.get('[title="Account"]').click().wait(1000);
+        cy.get('[icon="key"] > .sa-button > .text').click().wait(1000);
         cy.get('.col-md-12 > .form-group > app-dynamic-selectbox > .sa-input-dropdown > .custom-selectbox > .dx-dropdowneditor-input-wrapper > .dx-texteditor-container > .dx-texteditor-buttons-container > .dx-widget > .dx-button-content > .dx-dropdowneditor-icon').click();
         cy.get('[aria-rowindex="4"] > td').click();
         cy.get('#createHashKeyForm > fieldset > :nth-child(2) > .col-md-12 > .sa-input > .ng-untouched').clear();
@@ -163,7 +163,7 @@ describe('Perform Client Evaluation Using Staging APIs', ()=>{
         cy.visit('main/clients').wait(3000);
         cy.get('#gridClients').should('be.visible');
         
-        cy.get('[aria-colindex="4"]  .dx-texteditor-input-container > .dx-texteditor-input').eq(0).type('Leon Gulg').wait(2500)
+        cy.get('[aria-colindex="4"]  .dx-texteditor-input-container > .dx-texteditor-input').eq(0).type(`${firstName} ${lastName}`).wait(2500)
 
         cy.get('#gridClients table tr td .dx-header-filter-indicator').eq(0).click({force:true});
 

@@ -45,11 +45,11 @@ describe('Shareholders/Partners', ()=>{
         cy.contains('Shareholder has been updated.')
     })
     
-    // it('Deletes Authorized Person', ()=>{
-    //     cy.visit(location).wait(2000)
-    //     cy.get('#gridClientShareholders .dx-icon-trash').should('be.visible').eq(0).click({force:true})
-    //     cy.contains('Yes').click().wait(500)
-    //     cy.contains('Shareholder has been deleted.')
-    // })
+    it('Deletes Authorized Person', ()=>{
+        cy.visit(location).wait(2000)
+        cy.get('#gridClientShareholders .dx-icon-trash').should('be.visible').eq(0).click({force:true})
+        cy.contains('Yes').click().wait(500)
+        cy.contains('Shareholder has been deleted.')
+    })
 
 })

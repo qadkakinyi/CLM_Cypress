@@ -37,7 +37,7 @@ describe('Add, Edit, Delete Client Document', () => {
     cy.getByDataCy('clientType').click().wait(500)
     cy.getBySel('dynamicSelectBoxDropdownGrid').contains('Corporate').click().wait(500)
     cy.getByDataCy('regulationGroup').click().wait(500)
-    cy.getBySel('dynamicSelectBoxDropdownGrid').contains('BERMUDA').click().wait(500)
+    cy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview .dx-datagrid-content').eq(2).find('tr td').eq(0).click().wait(500)
     // cy.get('#documentCategory').click().wait(500)
     // cy.getBySel('dynamicSelectBoxDropdownGrid').contains('Test Category').click().wait(500)
     // cy.getByDataCy('capacityList').click().wait(500)

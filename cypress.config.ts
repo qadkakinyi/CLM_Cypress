@@ -1,5 +1,7 @@
 const { defineConfig } = require("cypress");
 
+export const baseUrl =  'https://complytek-testing.regtek.co'
+
 module.exports = defineConfig({
   //numTestsKeptInMemory: 0, //prevents `aw snap` error from appearing
   viewportWidth: 1680,
@@ -22,8 +24,9 @@ module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
       // implement node event listeners here
+      return config;
     },
-    baseUrl: 'https://complytek-testing.regtek.co',
+    baseUrl: baseUrl,
     supportFile: './cypress/support/e2e.ts',
     projectId: "s2jddr",
     //experimentalSessionAndOrigin: true, //allow visiting different protocols 

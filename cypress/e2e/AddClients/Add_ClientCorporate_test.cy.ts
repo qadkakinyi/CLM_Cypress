@@ -34,7 +34,7 @@ describe('Add Client Corporate', () => {
 
     cy.get('#addClientCorporateForm input[name="ipAddress"]').type(faker.internet.ipv4());
     cy.get('#addClientCorporateForm textarea[name="notes"]').type(faker.lorem.paragraph(5));
-    cy.get('#saveClientCorporate').click().wait(2000);
+    cy.get('#saveClientCorporate').click().wait(3500);
     cy.contains('The Client Corporate has been added.')
   })
 })

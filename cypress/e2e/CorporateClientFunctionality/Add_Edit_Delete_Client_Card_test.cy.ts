@@ -5,7 +5,7 @@ import {navigateToClientMenu} from "../../support/e2e";
 let cardNumberTest = faker.finance.creditCardNumber('visa');
 let location:string = ''
 
-describe('Add, Edit, Delete Client Cards', () => {
+describe('Add, Edit, Delete Client Cards - Corporate', () => {
   it('Add Client Cards', () => {
     
     //add bank account required
@@ -34,13 +34,13 @@ describe('Add, Edit, Delete Client Cards', () => {
       cy.getBySel('accountsList').should('be.visible').click();
       cy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true })
 
-      cy.getBySel('saveClientCardForm').click();
+      cy.getBySel('saveClientCardForm').click().wait(2000);
     });
   });
 
   it('Edit client Cards', () => {
     
-    cy.visit(location)
+    cy.visit(location).wait(3000)
     
     // Edit Cards
     cy.getBySel('gridClientCards').should('be.visible').then(() => {
@@ -65,7 +65,7 @@ describe('Add, Edit, Delete Client Cards', () => {
 
   it('Delete client Cards', () => {
 
-    cy.visit(location)
+    cy.visit(location).wait(3000)
     
     cy.getBySel('gridClientCards').should('be.visible');
     cy.get('.dx-datagrid-filter-row .dx-texteditor-input-container input').eq(2).type(cardNumberTest);

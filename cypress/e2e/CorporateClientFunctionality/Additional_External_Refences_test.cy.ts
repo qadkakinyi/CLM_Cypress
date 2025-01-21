@@ -5,7 +5,7 @@ let code = faker.string.numeric(16);
 
 let location = '';
 
-describe('Add, Edit, Delete Additional External References', () => {
+describe('Add, Edit, Delete Additional External References - Corporate', () => {
 
     it('Add Client external reference', () => {
         // Click on Know your Clients navigation item
@@ -28,18 +28,18 @@ describe('Add, Edit, Delete Additional External References', () => {
         cy.contains('The additional external reference has been added.')
     });
 
-    it('Edit Client Related website', () => {
+    it('Edit Client external reference', () => {
         // Edit external reference
-        cy.visit(location).wait(2000)
-        cy.get('#gridClientAdditionalExternalReferences table tbody tr td .dx-icon-edit').eq(0).click({ force: true }).wait(2000);
-        cy.get('#gridClientAdditionalExternalReferences table tbody tr td div .dx-texteditor-input').eq(1).clear().type(faker.internet.url(),{ force: true });
+        cy.visit(location).wait(3000)
+        cy.get('#gridClientAdditionalExternalReferences table tbody tr td .dx-icon-edit').eq(0).click({ force: true }).wait(3000);
+        cy.get('#gridClientAdditionalExternalReferences table tbody tr td div .dx-texteditor-input').wait(1000).eq(1).clear().type(faker.internet.url(),{ force: true });
         cy.get('#gridClientAdditionalExternalReferences table tbody tr td .dx-icon-save').eq(0).click({ force: true }).wait(1000);
         cy.contains('The additional external reference has been updated.')
     })
 
-    it('Delete client external reference', () => {
+    it('Delete Client external reference', () => {
 
-        cy.visit(location).wait(2000)
+        cy.visit(location).wait(3000)
         cy.get('#gridClientAdditionalExternalReferences table tbody tr td .dx-icon-trash').eq(0).click({ force: true }).wait(1000);
         // Delete external reference
         cy.get('.dx-overlay-content .dx-button-content').contains('Yes').click().wait(1000);
