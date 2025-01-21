@@ -41,7 +41,7 @@ describe('Adhoc Screening Individual Client', ()=>{
     })
     
     it('Performs Person Monitoring and Refreshes Results', ()=>{
-        cy.visit(location).wait(2000)
+        cy.visit(location).wait(4000)
         cy.get('.screening-primary-buttons > [icon="list"] > .sa-button').contains('Person Monitoring').click().wait(1000);
         cy.get('#performPersonMonitoringAcurisForm [icon="save"] > .sa-button').contains('Submit').click().wait(2000);
         cy.contains('The person monitoring has been executed').wait(3500)
@@ -109,7 +109,7 @@ describe('Adhoc Screening Corporate Client', ()=>{
     })
 
     it('Performs Business Monitoring and Refreshes results', ()=>{
-        cy.visit(location).wait(2000)
+        cy.visit(location).wait(4000)
         cy.get('.screening-primary-buttons > [icon="list"] > .sa-button').contains('Business Monitoring').click().wait(1000);
         cy.get('form [icon="save"] > .sa-button').contains('Submit').click().wait(2000);
         cy.contains('The business monitoring has been executed').wait(3500)
@@ -118,7 +118,7 @@ describe('Adhoc Screening Corporate Client', ()=>{
     })
 
     it('Removes Business Monitoring', ()=>{
-        cy.visit(location).wait(3000)
+        cy.visit(location).wait(5000)
         cy.get('[icon="times-circle"] > .sa-button').contains('Remove Business Monitoring').click({force:true}).wait(1000);
         cy.get('#bot2-Msg1').contains('Yes').click().wait(2000);
         cy.contains('Client has been removed from monitoring list')

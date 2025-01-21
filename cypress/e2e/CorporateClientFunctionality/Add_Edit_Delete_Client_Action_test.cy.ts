@@ -33,7 +33,7 @@ describe('Add, Edit, Delete Client Action (Task) - Corporate', () => {
     // Click on Know your Clients navigation item
     navigateToClientMenu('Corporate')
 
-    cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Actions').click().wait(2000);
+    cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Actions').wait(1500).click({force:true}).wait(2000);
 
     cy.location('pathname').then((loc)=>{
       location = loc

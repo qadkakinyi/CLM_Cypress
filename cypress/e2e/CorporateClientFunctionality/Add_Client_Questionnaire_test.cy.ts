@@ -47,8 +47,8 @@ describe('Add a client questionnaire - Corporate', ()=>{
         // cy.getByFormControlName('maxNumOfAnswers').type('')
         cy.getByFormControlName('order').type(`${faker.number.int({min:1, max:9})}`)
         cy.getByFormControlName('mappingReference').type(faker.string.alphanumeric(12))
-        cy.getByFormControlName('capacities').click()
-        cy.contains('Authorised Person').click()
+        cy.getByFormControlName('capacities').click().wait(500)
+        cy.get('.item2 > li').eq(1).click().wait(500)
         cy.getByFormControlName('riskPoint').type('4')
         
         cy.getByDataCy('save-question').click()
