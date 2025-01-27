@@ -79,8 +79,7 @@ describe('Add, Edit, Delete Client Trade', () => {
 
       cy.wait(2000);
 
-      let gridTrades = cy.wrap('#gridClientTrades table tbody tr td');
-      gridTrades.get('.dx-command-edit-with-icons a').eq(0).click({ force: true });
+      cy.get('#gridClientTrades .fa-angle-double-right').eq(0).click({ force: true });
 
       cy.get('#editClientTradeForm').should('be.visible');
 
@@ -98,8 +97,7 @@ describe('Add, Edit, Delete Client Trade', () => {
 
     cy.wait(2000);
 
-    let gridWallets = cy.wrap('#gridClientTrades table tbody tr td');
-    gridWallets.get('.dx-command-edit-with-icons a').eq(0).click({ force: true });
+    cy.get('#gridClientTrades .fa-angle-double-right').eq(0).click({ force: true });
 
     // Delete Cards
     cy.getBySel('deleteTrade').should('be.visible').click();
