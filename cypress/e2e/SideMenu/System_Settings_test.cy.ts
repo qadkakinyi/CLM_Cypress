@@ -1,3 +1,16 @@
+let routes = [
+    {index:0, route: '/system-settings/account', assertion: 'Account'},
+    {index:1, route: '/system-settings/case-statuses', assertion: 'Case Statuses'},
+    {index:2, route: '/system-settings/defaults', assertion: 'Defaults'},
+    {index:3, route: '/system-settings/id-verification-data-supports', assertion: 'eIDV Data Supports'},
+    {index:4, route: '/system-settings/event-engines-setup', assertion: 'Event Engines Setup'},
+    {index:5, route: '/system-settings/languages-setup', assertion: 'Language Setup'},
+    {index:6, route: '/system-settings/parameter-queries', assertion: 'Parameter Queries'},
+    {index:7, route: '/system-settings/portal-setup', assertion: 'Portal Setup'},
+    {index:8, route: '/system-settings/system-logs', assertion: 'System Logs'},
+    {index:9, route: '/system-settings/hangfire-details', assertion: 'Last heartbeat'}
+]
+
 describe("System Settings", ()=>{
     it("Click system settings menu and opens the submenus", ()=>{
 
@@ -8,26 +21,15 @@ describe("System Settings", ()=>{
         
         cy.visit("/main/dashboard")
         
-        let routes = [
-            {index:0, route: '/system-settings/account'},
-            {index:1, route: '/system-settings/case-statuses'},
-            {index:2, route: '/system-settings/defaults'},
-            {index:3, route: '/system-settings/id-verification-data-supports'},
-            {index:4, route: '/system-settings/event-engines-setup'},
-            {index:5, route: '/system-settings/languages-setup'},
-            {index:6, route: '/system-settings/parameter-queries'},
-            {index:7, route: '/system-settings/portal-setup'},
-            {index:8, route: '/system-settings/system-logs'},
-            {index:9, route: '/system-settings/hangfire-details'}
-        ]
-        
+       
         // routes.forEach((route, i)=>{
             cy.getByDataCy("system-settings-menu").scrollIntoView().click()
 
-            cy.get("[data-cy='system-settings-menu'] ul>li").each(el=>{
+            cy.get("[data-cy='system-settings-menu'] ul>li").each((el, index)=>{
                 cy.wrap(el).click();
                 cy.wait(3000)
                 cy.getByDataCy("system-settings-menu").scrollIntoView().click()
+                cy.contains(routes[index].assertion)
             })
         // })
     })

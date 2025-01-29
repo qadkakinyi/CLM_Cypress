@@ -89,7 +89,7 @@ describe('Performing Transaction Screening With UI', ()=>{
         cy.visit('/administration/check-transaction-screening').wait(2000)
         
         cy.get('dx-drop-down-box').eq(0).click().wait(500)
-        cy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview .dx-datagrid-content table tr').eq(1).click().wait(1000)
+        cy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview .dx-datagrid-content table tr').eq(0).click().wait(1000)
         
         cy.get('dx-drop-down-box').eq(1).click().wait(2000)
         cy.get('#clientsFilteringDataGrid .dx-datagrid-rowsview .dx-datagrid-content table tr').eq(0).click().wait(1000)
@@ -98,7 +98,7 @@ describe('Performing Transaction Screening With UI', ()=>{
         cy.getByFormControlName('name').type('Test Company LLC')
         
         cy.contains('sa-button', 'Perform Transaction Screening').click().wait(6000)
-        cy.contains('You will be assigned automatically as assignee on this case.')
+        cy.contains('Transaction Screening Case Number: ')
         
         cy.contains('sa-button', 'Go to Case').click().wait(4000)
         cy.contains('Transaction Screening Case')

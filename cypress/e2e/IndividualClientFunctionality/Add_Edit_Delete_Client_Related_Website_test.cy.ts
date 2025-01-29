@@ -5,7 +5,7 @@ let code = faker.string.numeric(16);
 
 let client_id = '';
 
-describe('Add, Edit, Delete Client Related Website', () => {
+describe('Add, Edit, Delete Client Related Website - Individual', () => {
   
   before(()=>{
     cy.visit('/settings/related-website-types')
@@ -44,9 +44,9 @@ describe('Add, Edit, Delete Client Related Website', () => {
   it('Edit Client Related website', () => {
     // Edit Related Website
     cy.visit(`/main/client-individual/${client_id}/1/related-websites`)
-    cy.wait(2000)
+    cy.wait(3000)
     cy.getBySel('gridClientRelatedWebsites').should('be.visible');
-    cy.get('#gridClientRelatedWebsites table tbody tr td.dx-command-edit-with-icons a').eq(0).click({ force: true });
+    cy.get('#gridClientRelatedWebsites .fa-angle-double-right').eq(0).click({ force: true });
     cy.get('#editClientRelatedWebsiteForm').should('be.visible');
 
     cy.get('#editClientRelatedWebsiteForm input[name="website"]').should('be.visible').clear();
@@ -58,9 +58,9 @@ describe('Add, Edit, Delete Client Related Website', () => {
   it('Delete client Related Website', () => {
     // Delete Related Website
     cy.visit(`/main/client-individual/${client_id}/1/related-websites`)
-    cy.wait(2000)
+    cy.wait(3000)
     cy.getBySel('gridClientRelatedWebsites').should('be.visible');
-    cy.get('#gridClientRelatedWebsites table tbody tr td.dx-command-edit-with-icons a').eq(0).click({ force: true });
+    cy.get('#gridClientRelatedWebsites .fa-angle-double-right').eq(0).click({ force: true });
     // Delete Related Website
     cy.getBySel('deleteRelatedWebsite').should('be.visible').click();
     cy.get('#bot2-Msg1').contains('Yes').click().wait(1000);

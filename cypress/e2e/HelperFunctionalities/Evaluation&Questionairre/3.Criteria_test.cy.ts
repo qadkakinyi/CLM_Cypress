@@ -55,7 +55,7 @@ describe('Criteria', ()=>{
         cy.contains(`The criterion has been deleted.`).wait(1000)
     })
 
-    it('Deletes an Evaluation Type', () => {
+    it('Deletes a Criteria Category', () => {
         cy.visit('/settings/criteria-categories').wait(2000)
         cy.get('#gridCriteriaCategories tr .dx-first-cell .dx-texteditor-input').type('DKA Test Category', {force:true}).wait(2000)
         cy.get('#gridCriteriaCategories tr td').find('.dx-icon-trash').eq(1).click({force: true}).wait(1000)

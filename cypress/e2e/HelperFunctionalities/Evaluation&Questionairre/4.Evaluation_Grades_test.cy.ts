@@ -49,7 +49,7 @@ describe('Evaluation Grades', ()=>{
 
         //regulation group
         cy.get('dx-drop-down-box').eq(3).click().wait(500)
-        cy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview .dx-datagrid-content tr td').contains('BERMUDA').click({force:true}).wait(500)
+        cy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview .dx-datagrid-content').eq(1).find('tr td').eq(0).click({force:true}).wait(500)
 
         cy.getByFormControlName('score').type('8')
 

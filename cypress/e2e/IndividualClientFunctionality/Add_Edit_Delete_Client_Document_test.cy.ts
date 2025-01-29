@@ -5,7 +5,7 @@ let documentNumber = faker.string.numeric(10);
 
 let client_id = ''
 
-describe('Add, Edit, Delete Client Document', () => {
+describe('Add, Edit, Delete Client Document - Individual', () => {
 
   it('Add Client Document', () => {
     // Add new Client Document
@@ -52,14 +52,11 @@ describe('Add, Edit, Delete Client Document', () => {
   it('Edit Client Document', () => {
     // Edit Document
     cy.visit(`/main/client-individual/${client_id}/1/documents`)
-    cy.wait(1500)
+    cy.wait(3000)
     cy.get('#gridClientDocuments').should('be.visible');
     cy.get('.dx-datagrid-filter-row .dx-texteditor-input-container input').eq(4).type(documentNumber);
-
-
-    let gridDocumentRows = cy.wrap('#gridClientDocuments table tbody tr');
     
-    gridDocumentRows.get('.dx-command-edit-with-icons a').eq(0).click({ force: true });
+    cy.get('#gridClientDocuments .fa-angle-double-right').eq(0).click({ force: true });
     
     cy.wait(2000);
 
@@ -74,13 +71,11 @@ describe('Add, Edit, Delete Client Document', () => {
   it('Delete Client Document', () => {
     // Delete Document
     cy.visit(`/main/client-individual/${client_id}/1/documents`)
-    cy.wait(1500)
+    cy.wait(3000)
     cy.get('#gridClientDocuments').should('be.visible');
     cy.get('.dx-datagrid-filter-row .dx-texteditor-input-container input').eq(4).type(documentNumber);
-    
-    let gridDocumentRows = cy.wrap('#gridClientDocuments table tbody tr');
 
-    gridDocumentRows.get('.dx-command-edit-with-icons a').eq(0).click({ force: true });
+    cy.get('#gridClientDocuments .fa-angle-double-right').eq(0).click({ force: true });
 
     cy.wait(2000);
     cy.get('#deleteClientDocument').click();

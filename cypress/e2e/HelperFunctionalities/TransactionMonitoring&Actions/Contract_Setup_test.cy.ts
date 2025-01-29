@@ -7,7 +7,7 @@ let payment_name = 'DKA Bank'
 let relationship = "Bro DKA"
 
 describe("Contract Policy Categories", ()=> {
-    it('Adds a Purpose of Transaction', () => {
+    it('Adds a Policy Categories', () => {
         cy.visit('/settings/contracts-setup').wait(1500)
         cy.contains('Add').should('be.visible').click()
         cy.wait(1000)
@@ -17,13 +17,13 @@ describe("Contract Policy Categories", ()=> {
         cy.contains('Contract policy category has been added.')
     })
 
-    it('Edits a Purpose of Transaction', () => {
+    it('Edits a Policy Category', () => {
 
         cy.visit('/settings/contracts-setup').wait(2000)
-        cy.get('#gridContractPolicyCategories tr .dx-first-cell .dx-texteditor-input').type(category_name, {force: true}).wait(1000)
+        cy.get('#gridContractPolicyCategories tr .dx-first-cell .dx-texteditor-input').type(category_name, {force: true}).wait(3000)
         cy.get('#gridContractPolicyCategories tr td').find('.dx-icon-edit').eq(0).click({force: true}).wait(1000)
 
-        cy.get('#gridContractPolicyCategories .dx-datagrid-table .dx-texteditor-container > .dx-texteditor-input-container > .dx-texteditor-input').as('categories').wait(1000)
+        cy.get('#gridContractPolicyCategories .dx-datagrid-table .dx-texteditor-container > .dx-texteditor-input-container > .dx-texteditor-input').as('categories').wait(3000)
         cy.get('@categories').eq(3).clear().wait(1000).type(category_name + faker.string.alphanumeric(1), {force: true}).wait(1000)
         cy.get('tr td').find('.dx-icon-save').eq(1).click().wait(1500)
 

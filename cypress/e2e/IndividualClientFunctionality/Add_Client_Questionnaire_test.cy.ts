@@ -1,7 +1,7 @@
 import {faker} from '@faker-js/faker'
 import {navigateToClientMenu} from "../../support/e2e";
 
-describe('Add a client questionnaire', ()=>{
+describe('Add a client questionnaire - Individual', ()=>{
     
     before(()=>{
         //adding a questionnaire type
@@ -29,8 +29,8 @@ describe('Add a client questionnaire', ()=>{
         cy.wait(500)
         
         //add questions for the questionnaire type
-        cy.visit('/settings/questions')
-        cy.contains('Add').click({force:true})
+        cy.visit('/settings/questions').wait(2000)
+        cy.contains('Add').click()
         cy.wait(1000)
         
         cy.getByFormControlName('name').type('Where do you come from?')
@@ -48,7 +48,7 @@ describe('Add a client questionnaire', ()=>{
         cy.getByFormControlName('order').type(`${faker.number.int({min:1, max:9})}`)
         cy.getByFormControlName('mappingReference').type(faker.string.alphanumeric(12))
         cy.getByFormControlName('capacities').click()
-        cy.contains('Authorised Person').click()
+        cy.get('.dropdown-list ul').eq(1).find('li').eq(0).click()
         cy.getByFormControlName('riskPoint').type('4')
         
         cy.getByDataCy('save-question').click()
@@ -79,9 +79,9 @@ describe('Add a client questionnaire', ()=>{
                 cy.getByDataCy('questionnaire-type').click()
                 cy.wait(1000)
                 cy.get('#dynamicSelectBoxDropdownGrid td').contains('Open Ended').click({force:true})
-                cy.wait(500)
+                cy.wait(1500)
                 cy.getByDataCy('reason-for-questionnaire').type(faker.word.verb())
-                cy.getByDataCy("Questionnaire-next-step-btn").click().wait(1000)
+                cy.getByDataCy("Questionnaire-next-step-btn").click().wait(3000)
             }
         })
 

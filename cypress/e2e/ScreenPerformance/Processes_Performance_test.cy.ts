@@ -132,7 +132,7 @@ describe("Screening & Electronic Identification", ()=>{
             cy.location("pathname").should("equal", route.route)
             cy.wait(5000)
             cy.contains(route.assertion)
-            // after this 5 seconds the data should have loades and spinner should not be visible
+            // after this 5 seconds the data should have loaded and spinner should not be visible
             cy.get('.sk-ball-spin-clockwise').should(`not.be.visible`)
             
             if(i < routes.length - 1){

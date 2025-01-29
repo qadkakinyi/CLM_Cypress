@@ -22,6 +22,7 @@ describe('Criteria Categories', ()=>{
         cy.get('#gridCriteriaCategories .dx-datagrid-table .dx-texteditor-container > .dx-texteditor-input-container > .dx-texteditor-input').as('categories')
 
         cy.get('@categories').eq(4).clear().wait(1000).type('DKA Test Category', {force: true}).wait(1000)
+            
         cy.get('tr td').find('.dx-icon-save').eq(1).click().wait(1500)
 
         cy.contains(`The criteria category has been updated.`).wait(1000)
