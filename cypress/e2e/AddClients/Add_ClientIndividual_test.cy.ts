@@ -8,7 +8,7 @@ describe('Add Client Individual', () => {
     // cy.intercept('GET','http://localhost:5140/api/settings/customFields/form/1/0', []).as('getCustomFields')
     // Click on Know your Clients navigation item
     cy.get('a[href*="main/clients"]').click();
-    cy.get('#addIndividual').click();
+    cy.get('#addIndividual').click().wait(2000);
 
     let firstName = faker.person.firstName('male');
     cy.get('#addClientIndividualForm input[name="firstName"]').type(firstName);
@@ -40,16 +40,16 @@ describe('Add Client Individual', () => {
     cy.get('#addClientIndividualForm input[name="ipAddress"]').type(faker.internet.ipv4());
     cy.get('#addClientIndividualForm textarea[name="notes"]').type(faker.lorem.paragraph());
 
-    cy.get('#saveClientIndividual').click().wait(3500);
-    cy.contains('Client individual has been added')
+    cy.get('#saveClientIndividual').click().wait(5500);
+    cy.contains('Client individual has been added').wait(2000)
   })
   
-  it.skip('Delete a client', ()=>{
-    cy.visit('/main/clients')
-
-    cy.get('.dx-datagrid-content-fixed > .dx-datagrid-table > tbody > [aria-rowindex="1"] > .dx-command-edit > span > .dx-template-wrapper > .dx-link > .fa').click();
-    cy.get('a.ng-tns-c463-199 > .ng-trigger').click();
-    cy.get('[icon="archive"] > .sa-button > .text').click();
-    cy.get('#bot2-Msg1').click();
-  })
+  // it.skip('Delete a client', ()=>{
+  //   cy.visit('/main/clients')
+  //
+  //   cy.get('.dx-datagrid-content-fixed > .dx-datagrid-table > tbody > [aria-rowindex="1"] > .dx-command-edit > span > .dx-template-wrapper > .dx-link > .fa').click();
+  //   cy.get('a.ng-tns-c463-199 > .ng-trigger').click();
+  //   cy.get('[icon="archive"] > .sa-button > .text').click();
+  //   cy.get('#bot2-Msg1').click();
+  // })
 })
