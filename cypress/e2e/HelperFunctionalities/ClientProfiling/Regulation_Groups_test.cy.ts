@@ -11,10 +11,11 @@ let hashValue = '';
 describe('Regulation Groups', ()=>{
     
     it('Generate Regulation Group Hash Key', function() {
-        
-        cy.get('span.ng-tns-c329-33').click();
-        cy.get('a.ng-tns-c329-34 > .ng-tns-c329-34').click();
-        cy.get('[icon="key"] > .sa-button > .text').click();
+
+        cy.wait(3000)
+        cy.getByDataCy('system-settings-menu').scrollIntoView().click();
+        cy.get('[title="Account"]').click().wait(1000);
+        cy.get('[icon="key"] > .sa-button > .text').click().wait(1000);
         cy.get('.col-md-12 > .form-group > app-dynamic-selectbox > .sa-input-dropdown > .custom-selectbox > .dx-dropdowneditor-input-wrapper > .dx-texteditor-container > .dx-texteditor-buttons-container > .dx-widget > .dx-button-content > .dx-dropdowneditor-icon').click();
         cy.get('[aria-rowindex="4"] > td').click();
         cy.get('#createHashKeyForm > fieldset > :nth-child(2) > .col-md-12 > .sa-input > .ng-untouched').clear();

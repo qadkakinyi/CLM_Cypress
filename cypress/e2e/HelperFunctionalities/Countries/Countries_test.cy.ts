@@ -15,7 +15,7 @@ describe('Countries', ()=>{
         cy.get('#gridCountries tr .dx-first-cell .dx-texteditor-input').clear().type('Kenia').wait(3000)
         cy.get('#gridCountries tr td').find('.dx-icon-edit').eq(0).click({force:true}).wait(1000)
 
-        cy.get('#gridCountries .dx-datagrid-table .dx-texteditor-container > .dx-texteditor-input-container > .dx-texteditor-input').as('countries').wait(100)
+        cy.get('#gridCountries .dx-datagrid-table .dx-texteditor-container > .dx-texteditor-input-container > .dx-texteditor-input').as('countries').wait(2000)
         cy.get('@countries').eq(9).clear().wait(1000).type('Kenya', {force:true}).wait(1000)
         cy.get('tr td').find('.dx-icon-save').eq(1).click().wait(2000)
 

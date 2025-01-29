@@ -15,7 +15,7 @@ describe('Capacity', ()=>{
         cy.getByFormControlName('includePercentageOfShares').click()
         
         cy.get('#addCapacityForm').contains('Save').click().wait(2000)
-        cy.contains('The capacity has been added.')
+        cy.contains('The capacity has been added.').wait(1000)
     })
     
     it('Edits A Capacity', ()=>{
@@ -27,7 +27,7 @@ describe('Capacity', ()=>{
         cy.get('#gridCapacities .dx-datagrid-table .dx-texteditor-container > .dx-texteditor-input-container > .dx-texteditor-input').as('capacityInputs')
         cy.get('@capacityInputs').eq(8).clear().wait(1000).type('CEO Test '+faker.string.alphanumeric(3), {force:true}).wait(1000)
         cy.get('tr td').find('.dx-icon-save').eq(1).click().wait(1000)
-        cy.contains('The capacity has been updated')
+        cy.contains('The capacity has been updated').wait(1000)
     })
     
     it('Delete A Capacity', ()=>{

@@ -11,11 +11,11 @@ describe('Currency Rate', ()=>{
 
         // cy.getByDataCy('fromCurrency').click().wait(500)
         cy.get('dx-drop-down-box').eq(0).click().wait(500)
-        cy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview .dx-datagrid-content tr td').eq(1).click({force:true}).wait(500)
+        cy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview .dx-datagrid-content tr td').eq(2).click({force:true}).wait(500)
         // cy.getByDataCy('toCurrency').click().wait(500)
         cy.get('dx-drop-down-box').eq(1).click().wait(500)
-        cy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview .dx-datagrid-content tr td').eq(20).click({force:true}).wait(500)
-        cy.getByFormControlName('date').type('2024-09-23')
+        cy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview .dx-datagrid-content tr td').eq(19).click({force:true}).wait(500)
+        cy.getByFormControlName('date').type('2024-09-24')
         cy.getByFormControlName('rate').eq(0).type(rate)
 
         cy.contains('sa-button', 'Save').click().wait(1500)

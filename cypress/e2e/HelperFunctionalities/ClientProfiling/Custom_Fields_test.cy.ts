@@ -10,7 +10,7 @@ describe('Custom Fields', ()=>{
         cy.getByFormControlName('mappingReference').type(faker.string.alphanumeric(12))
         cy.getByFormControlName('order').type('0')
         cy.getByFormControlName('referenceTable').select('Custom Fields')
-        cy.getByFormControlName('regulationGroupId').select('BERMUDA')
+        cy.getByFormControlName('regulationGroupId').select(1)
         cy.getByFormControlName('fieldType').select('Text')
         cy.getByFormControlName('isNullable').click()
 
