@@ -1,12 +1,15 @@
 import {faker} from "@faker-js/faker";
+const api_baseUrl = Cypress.env('api_baseUrl')
 
 let companyName = faker.company.name()
 let token = "";
 let location = '';
 let clientId = '';
+let differentUserID = '';
 let DocNumber = faker.number.int(8)
 let newDocID = '';
 let birthDay = `${faker.date.past({years:20}).toISOString()}`
+
 
 describe("Add Corporate Client Process", ()=>{
 
@@ -14,7 +17,7 @@ describe("Add Corporate Client Process", ()=>{
         //get authorization token
         cy.request({
             method:"POST",
-            url:'https://complytek-testing-api.regtek.co/token',
+            url:`${api_baseUrl}/token`,
             body:{
                 "grant_type": 'password',
                 "username": 'systemadmin',
@@ -33,7 +36,7 @@ describe("Add Corporate Client Process", ()=>{
         //add client api call
         cy.request({
             method: "POST",
-            url: "https://complytek-testing-api.regtek.co/api/Staging/clientCorporate",
+            url: `${api_baseUrl}/api/Staging/clientCorporate`,
             headers:{
                 "Content-Type": "application/json",
                 'Authorization':   `Bearer ${token}`
@@ -75,12 +78,12 @@ describe("Add Corporate Client Process", ()=>{
     });
 
     it('should add a client document', () => {
-        cy.visit(location).wait(2000)
+        cy.visit(location).wait(3000)
         cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('Documents').scrollIntoView().click().wait(2000);
 
         cy.request({
             method: "POST",
-            url: `https://complytek-testing-api.regtek.co/api/clientCommon/${clientId}/documents`,
+            url: `${api_baseUrl}/api/clientCommon/${clientId}/documents`,
             headers:{
                 "Content-Type": "application/json",
                 'Authorization': `Bearer ${token}`
@@ -109,12 +112,12 @@ describe("Add Corporate Client Process", ()=>{
     });
 
     it('should update document status to collected', () => {
-        cy.visit(location).wait(2000)
+        cy.visit(location).wait(3000)
         cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('Documents').scrollIntoView().click().wait(2000);
 
         cy.request({
             method: "PUT",
-            url: `https://complytek-testing-api.regtek.co/api/clientCommon/${clientId}/documents`,
+            url: `${api_baseUrl}/api/clientCommon/${clientId}/documents`,
             headers:{
                 "Content-Type": "application/json",
                 'Authorization': `Bearer ${token}`
@@ -149,11 +152,11 @@ describe("Add Corporate Client Process", ()=>{
     });
 
     it('should perform internal monitoring', () => {
-        cy.visit(location).wait(2000)
+        cy.visit(location).wait(3000)
         cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('Internal Screening').scrollIntoView().click().wait(2000);
         cy.request({
             method: "POST",
-            url : `https://complytek-testing-api.regtek.co/api/clientCommon/${clientId}/internalBlackListsOngoingMonitoring`,
+            url : `${api_baseUrl}/api/clientCommon/${clientId}/internalBlackListsOngoingMonitoring`,
             headers:{
                 "Content-Type": "application/json",
                 'Authorization':   `Bearer ${token}`
@@ -165,12 +168,12 @@ describe("Add Corporate Client Process", ()=>{
     });
 
     it('should perform internal blacklist search', () => {
-        cy.visit(location).wait(2000)
+        cy.visit(location).wait(3000)
         cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('Internal Screening').scrollIntoView().click().wait(2000);
 
         cy.request({
             method: "POST",
-            url: `https://complytek-testing-api.regtek.co/api/clientCommon/${clientId}/internalBlackListsSearch`,
+            url: `${api_baseUrl}/api/clientCommon/${clientId}/internalBlackListsSearch`,
             headers:{
                 "Content-Type": "application/json",
                 'Authorization':   `Bearer ${token}`
@@ -189,14 +192,14 @@ describe("Add Corporate Client Process", ()=>{
     });
 
     it('should add a shareholder', () => {
-        cy.visit(location).wait(2000)
+        cy.visit(location).wait(3000)
         cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Shareholders/Partners').click();
         
         //get current count of shareholders
         let totalStakeholdersCount 
         cy.request({
             method: 'GET',
-            url: `https://complytek-testing-api.regtek.co/api/paging/${clientId}/shareholders?skip=0&requireTotalCount=true`,
+            url: `${api_baseUrl}/api/paging/${clientId}/shareholders?skip=0&requireTotalCount=true`,
             headers:{
                 "Content-Type": "application/json",
                 'Authorization':   `Bearer ${token}`
@@ -207,7 +210,7 @@ describe("Add Corporate Client Process", ()=>{
         
         cy.request({
             method: 'POST',
-            url: `https://complytek-testing-api.regtek.co/api/clientCorporates/${clientId}/shareholders`,
+            url: `${api_baseUrl}/api/clientCorporates/${clientId}/shareholders`,
             headers:{
                 "Content-Type": "application/json",
                 'Authorization':   `Bearer ${token}`
@@ -238,7 +241,7 @@ describe("Add Corporate Client Process", ()=>{
             //expecting the count to be plus 1
             cy.request({
                 method: 'GET',
-                url: `https://complytek-testing-api.regtek.co/api/paging/${clientId}/shareholders?skip=0&requireTotalCount=true`,
+                url: `${api_baseUrl}/api/paging/${clientId}/shareholders?skip=0&requireTotalCount=true`,
                 headers:{
                     "Content-Type": "application/json",
                     'Authorization':   `Bearer ${token}`
@@ -251,14 +254,14 @@ describe("Add Corporate Client Process", ()=>{
     });
 
     it('should add a capacity', () => {
-        cy.visit(location).wait(2000)
+        cy.visit(location).wait(3000)
         cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Capacity').click();
 
         //get current count of shareholders
         let totalCapacityCount
         cy.request({
             method: 'GET',
-            url: `https://complytek-testing-api.regtek.co/api/paging/${clientId}/authorizedPersons?skip=0&requireTotalCount=true`,
+            url: `${api_baseUrl}/api/paging/${clientId}/authorizedPersons?skip=0&requireTotalCount=true`,
             headers:{
                 "Content-Type": "application/json",
                 'Authorization':   `Bearer ${token}`
@@ -266,46 +269,62 @@ describe("Add Corporate Client Process", ()=>{
         }).then(res=>{
             totalCapacityCount = res.body.totalCount
         })
-
+        
+        // get Clients to select one who will be given a capacity since this current user cannot be given a capacity
         cy.request({
             method: 'POST',
-            url: `https://complytek-testing-api.regtek.co/api/clientCommon/${clientId}/authorizedPersons`,
+            url: `${api_baseUrl}/api/paging/clients`,
             headers:{
                 "Content-Type": "application/json",
                 'Authorization':   `Bearer ${token}`
             },
-            body: {
-                "clientId": clientId,
-                "capacityId": 7,
-                "includeInEvaluation": true,
-                "isNominee": false,
-                "isLegalRepresentative": false,
-                "isControllingPerson": false,
-                "profileId": clientId,
-                "rateWeightPercentage": 72,
-                "clientType": "1",
-                "externalReference": null,
-                "ignoreAutoOngoingMonitoringStatus": false,
-                "clientCorporate": {
-                    "customFields": {}
-                },
-                "appointmentDate": "2024-11-11",
-                "resignationDate": "2024-11-12",
-                "customFields": {}
-        }
-        }).then(res =>{
-            // get current count of capacities
-            //expecting the count to be plus 1
+            body:{
+                "skip":0,
+                "take":1
+            }
+        }).then(res=>{
+            differentUserID = res.body.data[0].id
+            let userClientType = res.body.data[0].clientType
+            
             cy.request({
-                method: 'GET',
-                url: `https://complytek-testing-api.regtek.co/api/paging/${clientId}/authorizedPersons?skip=0&requireTotalCount=true`,
+                method: 'POST',
+                url: `${api_baseUrl}/api/clientCommon/${clientId}/authorizedPersons`,
                 headers:{
                     "Content-Type": "application/json",
                     'Authorization':   `Bearer ${token}`
-                }
-            }).then(res=>{
-                let updatedCapacityCount = res.body.totalCount
-                expect(updatedCapacityCount).to.equal(totalCapacityCount + 1);
+                },
+                body: {
+                    "clientId": clientId,
+                    "capacityId": 4,
+                    "includeInEvaluation": true,
+                    "isNominee": false,
+                    "isLegalRepresentative": false,
+                    "isControllingPerson": false,
+                    "profileId":  differentUserID,
+                    "rateWeightPercentage": 72,
+                    "clientType": userClientType,
+                    "ignoreAutoOngoingMonitoringStatus": false,
+                    "clientCorporate": {
+                        "customFields": {}
+                    },
+                    "appointmentDate": "2024-11-11",
+                    "resignationDate": "2024-11-12",
+                    "customFields": {}
+            }
+            }).then(res =>{
+                // get current count of capacities
+                //expecting the count to be plus 1
+                cy.request({
+                    method: 'GET',
+                    url: `${api_baseUrl}/api/paging/${clientId}/authorizedPersons?skip=0&requireTotalCount=true`,
+                    headers:{
+                        "Content-Type": "application/json",
+                        'Authorization':   `Bearer ${token}`
+                    }
+                }).then(res=>{
+                    let updatedCapacityCount = res.body.totalCount
+                    expect(updatedCapacityCount).to.equal(totalCapacityCount + 1);
+                })
             })
         })
     });
@@ -314,7 +333,7 @@ describe("Add Corporate Client Process", ()=>{
 
         cy.request({
             method: 'DELETE',
-            url: `https://complytek-testing-api.regtek.co/api/clientCommon/${clientId}/soft`,
+            url: `${api_baseUrl}/api/clientCommon/${clientId}/soft`,
             headers:{
                 "Content-Type": "application/json",
                 'Authorization':   `Bearer ${token}`

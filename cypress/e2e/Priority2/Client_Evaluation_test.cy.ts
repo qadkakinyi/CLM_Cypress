@@ -1,6 +1,6 @@
 import {faker} from "@faker-js/faker";
 import {filterClientType, navigateToClientMenu} from "../../support/e2e";
-
+let api_baseUrl = Cypress.env('api_baseUrl')
 function getProviderKey(){
     let today = new Date();
     let formattedDate = today.getFullYear().toString() + ('0' + (today.getMonth() +1)).slice(-2) + ('0' + today.getDate()).slice(-2)
@@ -41,7 +41,7 @@ describe('Perform Client Evaluation Using Staging APIs', ()=>{
         //get authorization token
         cy.request({
             method:"POST", 
-            url:'https://complytek-testing-api.regtek.co/token', 
+            url:`${api_baseUrl}/token`, 
             body:{
             "grant_type": 'password',
             "username": 'systemadmin',
@@ -102,7 +102,7 @@ describe('Perform Client Evaluation Using Staging APIs', ()=>{
         cy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview .dx-datagrid-content tr td').contains(regulation_group_name).click({force:true}).wait(500)
         // criteria category
         cy.get('dx-drop-down-box').eq(1).click().wait(500)
-        cy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview .dx-datagrid-content tr td').contains('Other').click({force:true}).wait(500)
+        cy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview .dx-datagrid-content').eq(1).find(' tr td').eq(0).click({force:true}).wait(500)
         // client type
         cy.get('dx-drop-down-box').eq(2).click().wait(500)
         cy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview .dx-datagrid-content tr td').contains('Individual').click({force:true}).wait(500)
@@ -189,7 +189,7 @@ describe('Perform Client Evaluation Using Staging APIs', ()=>{
                 
                 cy.request({
                     method: 'POST',
-                    url: 'https://complytek-testing-api.regtek.co/api/staging/addClientEvaluation',
+                    url: `${api_baseUrl}/api/staging/addClientEvaluation`,
                     headers:{
                       'Content-Type': 'application/json',
                       'Authorization':   `Bearer ${token}`
@@ -212,7 +212,7 @@ describe('Perform Client Evaluation Using Staging APIs', ()=>{
                     
                     cy.request({
                         method:'POST', 
-                        url: 'https://complytek-testing-api.regtek.co/api/staging/createClientEvaluation',
+                        url: `${api_baseUrl}/api/staging/createClientEvaluation`,
                         headers:{
                             'Content-Type':'application/json',
                             'Authorization': `Bearer ${token}`
@@ -240,7 +240,7 @@ describe('Perform Client Evaluation Using Staging APIs', ()=>{
                         
                         cy.request({
                             method: 'PUT',
-                            url: `https://complytek-testing-api.regtek.co/api/clientCommon/${clientId}/evaluations/${evaluationID}`,
+                            url: `${api_baseUrl}/api/clientCommon/${clientId}/evaluations/${evaluationID}`,
                             body:{
                                 "id": evaluationID,
                                 "clientId": clientId,
@@ -264,7 +264,7 @@ describe('Perform Client Evaluation Using Staging APIs', ()=>{
                             cy.wait(2000)
                             cy.request({
                                 method:'POST',
-                                url:`https://complytek-testing-api.regtek.co/api/clientCommon/${clientId}/evaluations/${evaluationID}/perform`,
+                                url:`${api_baseUrl}/api/clientCommon/${clientId}/evaluations/${evaluationID}/perform`,
                                 body:{
                                     "clientId": clientId,
                                     "reasonForEvaluation": `Test Request Using Cypress ${faker.number.int()}`

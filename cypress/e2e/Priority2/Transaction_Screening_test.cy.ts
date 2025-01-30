@@ -1,12 +1,12 @@
 let user_token = '';
 let userId = '';
 let case_Id = '';
-
+let api_baseUrl = Cypress.env('api_baseUrl')
 before(()=>{
     //get authorization token
     cy.request({
         method:"POST",
-        url:'https://complytek-testing-api.regtek.co/token',
+        url:`${api_baseUrl}/token`,
         body:{
             "grant_type": 'password',
             "username": 'systemadmin',
@@ -25,7 +25,7 @@ describe('Transaction Screening with APIS', ()=>{
         // get client ID
         cy.request({
             method: "GET",
-            url: "https://complytek-testing-api.regtek.co/api/reportFilters/filter?customFilters={%22isClient%22:null,%22isArchived%22:false,%22isDeleted%22:false,%22clientTypes%22:[1,2],%22regulationGroups%22:[1],%22subGroups%22:null}&skip=0&take=50&requireTotalCount=true&_=1728980328740",
+            url: `${api_baseUrl}/api/reportFilters/filter?customFilters={%22isClient%22:null,%22isArchived%22:false,%22isDeleted%22:false,%22clientTypes%22:[1,2],%22regulationGroups%22:[1],%22subGroups%22:null}&skip=0&take=50&requireTotalCount=true&_=1728980328740`,
             headers:{
                 'Content-Type':'application/json',
                 'Authorization': `Bearer ${user_token}`
@@ -37,7 +37,7 @@ describe('Transaction Screening with APIS', ()=>{
                 cy.wait(2000)
                 cy.request({
                     method: "POST",
-                    url: "https://complytek-testing-api.regtek.co/api/IkycCalls/transactionScreening",
+                    url: `${api_baseUrl}/api/IkycCalls/transactionScreening`,
                     body: {
                         "swiftMt": "",
                         "sepa": "",

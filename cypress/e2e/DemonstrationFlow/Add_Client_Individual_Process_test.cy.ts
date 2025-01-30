@@ -1,4 +1,5 @@
 import {faker} from "@faker-js/faker";
+const api_baseUrl = Cypress.env('api_baseUrl')
 
 let firstName = faker.person.firstName()
 let lastName = faker.person.lastName()
@@ -15,7 +16,7 @@ describe("Add Individual Client Process", ()=>{
         //get authorization token
         cy.request({
             method:"POST",
-            url:'https://complytek-testing-api.regtek.co/token',
+            url:`${api_baseUrl}/token`,
             body:{
                 "grant_type": 'password',
                 "username": 'systemadmin',
@@ -34,7 +35,7 @@ describe("Add Individual Client Process", ()=>{
         //add client api call
         cy.request({
             method: "POST",
-            url: "https://complytek-testing-api.regtek.co/api/Staging/clientIndividual",
+            url: `${api_baseUrl}/api/Staging/clientIndividual`,
             headers:{
                 "Content-Type": "application/json",
                 'Authorization':   `Bearer ${token}`
@@ -83,7 +84,7 @@ describe("Add Individual Client Process", ()=>{
         
         cy.request({
             method: "POST",
-            url: `https://complytek-testing-api.regtek.co/api/clientCommon/${clientId}/documents`,
+            url: `${api_baseUrl}/api/clientCommon/${clientId}/documents`,
             headers:{
                 "Content-Type": "application/json",
                 'Authorization': `Bearer ${token}`
@@ -117,7 +118,7 @@ describe("Add Individual Client Process", ()=>{
 
         cy.request({
             method: "PUT",
-            url: `https://complytek-testing-api.regtek.co/api/clientCommon/${clientId}/documents`,
+            url: `${api_baseUrl}/api/clientCommon/${clientId}/documents`,
             headers:{
                 "Content-Type": "application/json",
                 'Authorization': `Bearer ${token}`
@@ -156,7 +157,7 @@ describe("Add Individual Client Process", ()=>{
         cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('Internal Screening').scrollIntoView().click().wait(2000);
         cy.request({
             method: "POST",
-            url : `https://complytek-testing-api.regtek.co/api/clientCommon/${clientId}/internalBlackListsOngoingMonitoring`,
+            url : `${api_baseUrl}/api/clientCommon/${clientId}/internalBlackListsOngoingMonitoring`,
             headers:{
                 "Content-Type": "application/json",
                 'Authorization':   `Bearer ${token}`
@@ -173,7 +174,7 @@ describe("Add Individual Client Process", ()=>{
         
         cy.request({
             method: "POST",
-            url: `https://complytek-testing-api.regtek.co/api/clientCommon/${clientId}/internalBlackListsSearch`,
+            url: `${api_baseUrl}/api/clientCommon/${clientId}/internalBlackListsSearch`,
             headers:{
                 "Content-Type": "application/json",
                 'Authorization':   `Bearer ${token}`
@@ -196,7 +197,7 @@ describe("Add Individual Client Process", ()=>{
         
         cy.request({
             method: 'DELETE',
-            url: `https://complytek-testing-api.regtek.co/api/clientCommon/${clientId}/soft`,
+            url: `${api_baseUrl}/api/clientCommon/${clientId}/soft`,
             headers:{
                 "Content-Type": "application/json",
                 'Authorization':   `Bearer ${token}`

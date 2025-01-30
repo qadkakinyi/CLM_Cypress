@@ -1,6 +1,6 @@
 const { defineConfig } = require("cypress");
 
-export const baseUrl =  'https://complytek-testing.regtek.co'
+export const baseUrl =  'https://complytek-testing-hotfix.regtek.co'
 
 module.exports = defineConfig({
   //numTestsKeptInMemory: 0, //prevents `aw snap` error from appearing
@@ -38,5 +38,8 @@ module.exports = defineConfig({
       bundler: 'webpack',
     },
     specPattern: '**/*.cy.ts'
+  },
+  env:{
+    api_baseUrl :  'https://complytek-testing-hotfix-api.regtek.co'
   }
 });

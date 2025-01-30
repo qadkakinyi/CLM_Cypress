@@ -40,7 +40,7 @@ describe('Add Client Individual', () => {
     cy.get('#addClientIndividualForm input[name="ipAddress"]').type(faker.internet.ipv4());
     cy.get('#addClientIndividualForm textarea[name="notes"]').type(faker.lorem.paragraph());
 
-    cy.get('#saveClientIndividual').click().wait(5500);
+    cy.get('#saveClientIndividual').click().wait(6000);
     cy.contains('Client individual has been added').wait(2000)
   })
   

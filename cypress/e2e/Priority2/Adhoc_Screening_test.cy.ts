@@ -1,28 +1,30 @@
 import {navigateToClientMenu} from "../../support/e2e";
+let api_baseUrl = Cypress.env('api_baseUrl')
 
 let location = '';
 let clientId = '';
 let token = '';
 let clientName = '';
 
-before(()=>{
-    //get authorization token
-    cy.request({
-        method:"POST",
-        url:'https://complytek-testing-api.regtek.co/token',
-        body:{
-            "grant_type": 'password',
-            "username": 'systemadmin',
-            "password": 'Password1!'
-        },
-        headers:{
-            "Content-Type": "application/x-www-form-urlencoded"
-        }}).then(res=>{
-        token = res.body.access_token
-    })
-})
-
 describe('Adhoc Screening Individual Client', ()=>{
+    before(()=>{
+        //get authorization token
+        cy.request({
+            method:"POST",
+            url:`${api_baseUrl}/token`,
+            body:{
+                "grant_type": 'password',
+                "username": 'systemadmin',
+                "password": 'Password1!'
+            },
+            headers:{
+                "Content-Type": "application/x-www-form-urlencoded"
+            }}).then(res=>{
+            token = res.body.access_token
+        })
+        cy.wait(2000)
+    })
+
 
     it('Performs Person Search Using UI', ()=>{
         navigateToClientMenu('Individual')
@@ -33,7 +35,7 @@ describe('Adhoc Screening Individual Client', ()=>{
             location = path
             clientId = path.split('/')[3]
         })
-        cy.getByFormControlName('fullName').clear().type('Putin')
+        // cy.getByFormControlName('fullName').clear().type('Putin')
         cy.getByFormControlName('dateOfBirth').eq(0).clear()
         cy.get('#performPersonSearchAcurisForm [icon="search"] > .sa-button').contains('Search').click().wait(2000);
         cy.contains('The person search has been executed.')
@@ -66,7 +68,7 @@ describe('Adhoc Screening Individual Client', ()=>{
             if(clientId){
                 cy.request({
                     method:'POST',
-                    url: `https://complytek-testing-api.regtek.co/api/clientIndividuals/${clientId}/performPersonSearch`,
+                    url: `${api_baseUrl}/api/clientIndividuals/${clientId}/performPersonSearch`,
                     headers:{
                         'Content-Type':'application/json',
                         'Authorization': `Bearer ${token}`
@@ -137,7 +139,7 @@ describe('Adhoc Screening Corporate Client', ()=>{
             if(clientId){
                 cy.request({
                     method:'POST',
-                    url: `https://complytek-testing-api.regtek.co/api/clientCorporates/${clientId}/performBusinessSearch`,
+                    url: `${api_baseUrl}/api/clientCorporates/${clientId}/performBusinessSearch`,
                     headers:{
                         'Content-Type':'application/json',
                         'Authorization': `Bearer ${token}`

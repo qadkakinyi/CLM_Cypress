@@ -6,12 +6,13 @@
 // }
 let token= '';
 let user:any;
+let api_baseUrl = Cypress.env('api_baseUrl')
 describe('Checks live transaction', ()=>{
     before(()=>{
         // get authorization token
         cy.request({
             method:"POST",
-            url:'https://complytek-testing-api.regtek.co/token',
+            url:`${api_baseUrl}/token`,
             body:{
                 "grant_type": 'password',
                 "username": 'systemadmin',
@@ -22,8 +23,6 @@ describe('Checks live transaction', ()=>{
             }}).then(res=>{
             token = res.body.access_token
         })
-        
-        
     })
     
     it('Check live transaction through API', ()=>{
@@ -31,7 +30,7 @@ describe('Checks live transaction', ()=>{
         cy.wait(1000)
         cy.request({
             method: "POST",
-            url: 'https://complytek-testing-api.regtek.co/api/paging/clients',
+            url: `${api_baseUrl}/api/paging/clients`,
             headers:{
                 "Content-Type": "application/x-www-form-urlencoded",
                 'Authorization':   `Bearer ${token}`
@@ -50,7 +49,7 @@ describe('Checks live transaction', ()=>{
                 cy.log(user.id)
                 cy.request({
                     method: "POST",
-                    url: 'https://complytek-testing-api.regtek.co/api/LiveRules/checkLiveTransaction/78',
+                    url: `${api_baseUrl}/api/LiveRules/checkLiveTransaction/78`,
                     headers:{
                         'Content-Type': 'application/json',
                         'Authorization':   `Bearer ${token}`

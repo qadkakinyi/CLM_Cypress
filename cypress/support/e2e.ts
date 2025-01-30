@@ -17,7 +17,6 @@
 import '@percy/cypress';
 
 import './commands';
-
 // import fs from 'fs-extra'
 Cypress.on('uncaught:exception', (err, runnable, promise) => {
   // returning false here prevents Cypress from failing the test
@@ -58,8 +57,7 @@ before(() => {
 
 export function filterClientType(type:string){
     cy.wait(1500)
-    cy.get('#gridClients .dx-datagrid-headers  .dx-datagrid-filter-row>[aria-colindex="3"] .dx-button-content').eq(0).click()
-    // cy.get('.dx-focused > :nth-child(1) > .dx-editor-container > .dx-show-invalid-badge > .dx-dropdowneditor-input-wrapper > .dx-texteditor-container > .dx-texteditor-input-container > .dx-texteditor-input').click()
+    cy.get('#gridClients .dx-datagrid-headers  .dx-datagrid-filter-row>[aria-colindex="2"] .dx-button-content').eq(0).click()
     cy.wait(500).get('.dx-scrollview-content').contains(type).click().wait(2000)
 }
 
@@ -72,6 +70,6 @@ export function navigateToClientMenu(type:string){
     filterClientType(type)
 
     let gridClientsRows = cy.wrap('#gridClients table tbody tr');
-    gridClientsRows.get('.dx-command-edit-with-icons a').eq(0).click({ force: true })
+    gridClientsRows.get('.dx-command-edit-with-icons a').eq(1).click({ force: true })
     cy.wait(3000);
 }

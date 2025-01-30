@@ -6,7 +6,7 @@ describe('Add Client Corporate', () => {
     // Click on Know your Clients navigation item
     cy.get('a[href*="main/clients"]').click();
     cy.get('#addCorporate').should('be.visible').click();
-    cy.wait(1000)
+    cy.wait(1500)
 
     let companyName = faker.company.name();
 
@@ -34,7 +34,7 @@ describe('Add Client Corporate', () => {
 
     cy.get('#addClientCorporateForm input[name="ipAddress"]').type(faker.internet.ipv4());
     cy.get('#addClientCorporateForm textarea[name="notes"]').type(faker.lorem.paragraph(5));
-    cy.get('#saveClientCorporate').click().wait(3500);
+    cy.get('#saveClientCorporate').click().wait(6000);
     cy.contains('The Client Corporate has been added.')
   })
 })
