@@ -2,7 +2,6 @@ import {faker} from "@faker-js/faker";
 import {navigateToClientMenu} from "../../support/e2e";
 
 describe('Add Client Evaluation', ()=>{
-    
     it('Adds an evaluation', ()=>{
         
         navigateToClientMenu('Individual')
@@ -45,5 +44,4 @@ describe('Add Client Evaluation', ()=>{
         })
         
     })
-    
 })

@@ -2,7 +2,7 @@ import {faker} from "@faker-js/faker";
 import {navigateToClientMenu} from "../../support/e2e";
 
 let IdNumber = 12345678
-
+let location = '';
 describe('Internal Screening - Individual', ()=>{
     before(()=>{
         // add blacklist reason
@@ -28,7 +28,7 @@ describe('Internal Screening - Individual', ()=>{
         cy.getByFormControlName('firstName').type(faker.person.firstName())
         cy.getByFormControlName('lastName').type(faker.person.lastName())
         cy.getByFormControlName('dateOfBirth').type(faker.date.birthdate().toISOString().slice(0, 10))
-        cy.getByFormControlName('idNumber').type(IdNumber.toString())
+        cy.getByFormControlName('taxIdentificationNumber').eq(0).type(IdNumber.toString())
         // cy.getByFormControlName('taxIdentificationNumber').type(faker.string.alphanumeric(15))
         cy.getByDataCy('blacklistedReason').click()
         cy.get('#dynamicSelectBoxDropdownGrid table').contains('td', 'Fraud').click({ force: true });
@@ -38,25 +38,32 @@ describe('Internal Screening - Individual', ()=>{
         cy.wait(1000)
 
     })
+
     
     it('Performs Internal blacklists search', ()=>{
         navigateToClientMenu('Individual')
 
-        cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Internal Screening').click();
-        
-        cy.wait(1000)
+        cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Internal Screening').click().wait(2000);
+
+        cy.location('pathname').then((loc)=>{
+            location = loc
+        })
         
         cy.contains('Internal Black Lists Search').click()
         cy.wait(1000)
-        cy.getByFormControlName('firstName').clear()
-        cy.getByFormControlName('lastName').clear()
-        cy.getByFormControlName('dateOfBirth').clear()
-        cy.getByFormControlName('idNumber').type(IdNumber.toString())
+        // cy.getByFormControlName('firstName').clear()
+        // cy.getByFormControlName('lastName').clear()
+        // cy.getByFormControlName('dateOfBirth').clear()
+        cy.getByFormControlName('taxIdentificationNumber').type(IdNumber.toString())
         cy.getByDataCy('search-blacklisted-individual').click()
         cy.contains('Internal search has been executed.')
         
         // cy.getByDataCy('search-results').find('tbody>tr').contains('12345678')
+        
+
+        cy.wait(1500)
     })
+    
     
     // it('Performs internal monitoring', ()=>{
     //    

@@ -54,7 +54,7 @@ describe('Add, Edit, Delete Client Document', () => {
     // Click on Know your Clients navigation item
     navigateToClientMenu('Corporate')
 
-    cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Documents').click();
+    cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Documents').click().wait(3000);
     
     cy.get('#addClientDocument').click();
 

@@ -54,10 +54,16 @@ before(() => {
 // export function deleteFolder(){
 //     return fs.remove(screenshotsDir)
 // }
-
+let colIndex = ''
 export function filterClientType(type:string){
     cy.wait(1500)
-    cy.get('#gridClients .dx-datagrid-headers  .dx-datagrid-filter-row>[aria-colindex="2"] .dx-button-content').eq(0).click()
+    //get index of td with text `Client Type`
+    cy.get('#gridClients tr').find('td[aria-label="Column Client Type"]')
+    cy.get('#gridClients tr').find('td[aria-label="Column Client Type"]').then(td=>{
+        colIndex = td.attr('aria-colindex')
+        cy.log('ColIndex '+colIndex)
+    })
+    cy.get(`#gridClients .dx-datagrid-headers  .dx-datagrid-filter-row>[aria-colindex="${colIndex}"] .dx-button-content`).eq(0).click()
     cy.wait(500).get('.dx-scrollview-content').contains(type).click().wait(2000)
 }
 

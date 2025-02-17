@@ -1,5 +1,5 @@
 
-describe('Firm Sanction Impact Score', ()=>{
+describe('Firm Sanction Evaluation Grades', ()=>{
 
     beforeEach(()=>{
         cy.visit('/settings/firm-sanction-evaluation-grades').wait(2000)
@@ -14,7 +14,7 @@ describe('Firm Sanction Impact Score', ()=>{
         cy.get('dx-drop-down-box').eq(6).click().wait(500)
         cy.get('#dynamicSelectBoxDropdownGrid').find('.dx-datagrid-rowsview').find('tr > td').first().click().wait(500)
         
-        cy.getByFormControlName('riskPoint').eq(1).type('3')
+        cy.getByFormControlName('riskPoint').eq(1).type('6')
 
         //color
         cy.get('dx-drop-down-box').eq(7).click().wait(500)

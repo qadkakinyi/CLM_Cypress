@@ -102,6 +102,7 @@ describe('Performing Transaction Screening With UI', ()=>{
         
         cy.contains('sa-button', 'Go to Case').click().wait(4000)
         cy.contains('Transaction Screening Case')
+        cy.contains('Unexpected Error').should('not.exist')
         cy.contains(case_Id+1)
     })
 })

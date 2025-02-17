@@ -37,7 +37,7 @@ describe('Adhoc Screening Individual Client', ()=>{
         })
         // cy.getByFormControlName('fullName').clear().type('Putin')
         cy.getByFormControlName('dateOfBirth').eq(0).clear()
-        cy.get('#performPersonSearchAcurisForm [icon="search"] > .sa-button').contains('Search').click().wait(2000);
+        cy.get('#performPersonSearchAcurisForm [icon="search"] > .sa-button').contains('Search').click().wait(3000);
         cy.contains('The person search has been executed.')
         cy.wait(2000)
     })
@@ -105,7 +105,7 @@ describe('Adhoc Screening Corporate Client', ()=>{
             clientId = path.split('/')[3]
         })
         // cy.contains('button', 'I Understand').click().wait(2000)
-        cy.get('form [icon="search"] > .sa-button').contains('Search').click().wait(2000);
+        cy.get('form [icon="search"] > .sa-button').contains('Search').click().wait(3000);
         cy.contains('The business search has been executed.')
         cy.wait(2000)
     })

@@ -1,11 +1,12 @@
 const { defineConfig } = require("cypress");
 
-export const baseUrl =  'https://complytek-testing-hotfix.regtek.co'
+const baseUrl =  'https://complytek-testing-hotfix.regtek.co'
 
 module.exports = defineConfig({
-  //numTestsKeptInMemory: 0, //prevents `aw snap` error from appearing
+  //numTestsKeptInMemory: 5, //prevents `aw snap` error from appearing
   viewportWidth: 1680,
   viewportHeight: 1000,
+  video: false,
   screenshotsFolder: "cypress/screenshots",
   reporter: "cypress-multi-reporters",
   reporterOptions: {
@@ -30,7 +31,9 @@ module.exports = defineConfig({
     supportFile: './cypress/support/e2e.ts',
     projectId: "s2jddr",
     //experimentalSessionAndOrigin: true, //allow visiting different protocols 
-    experimentalStudio: true
+    experimentalStudio: true,
+    // experimentalRunAllSpecs: true,
+    // experimentalMemoryManagement: true
   },
   component: {
     devServer: {
