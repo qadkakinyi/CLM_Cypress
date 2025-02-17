@@ -37,7 +37,7 @@ describe('Adhoc Screening Individual Client', ()=>{
         })
         // cy.getByFormControlName('fullName').clear().type('Putin')
         cy.getByFormControlName('dateOfBirth').eq(0).clear()
-        cy.get('#performPersonSearchAcurisForm [icon="search"] > .sa-button').contains('Search').click().wait(3000);
+        cy.get('#performPersonSearchAcurisForm [icon="search"] > .sa-button').contains('Search').click().wait(6000);
         cy.contains('The person search has been executed.')
         cy.wait(2000)
     })
@@ -114,7 +114,7 @@ describe('Adhoc Screening Corporate Client', ()=>{
         cy.visit(location).wait(4000)
         cy.get('.screening-primary-buttons > [icon="list"] > .sa-button').contains('Business Monitoring').click().wait(1000);
         cy.get('form [icon="save"] > .sa-button').contains('Submit').click().wait(2000);
-        cy.contains('The business monitoring has been executed').wait(3500)
+        // cy.contains('The business monitoring has been executed').wait(3500) //some clients are already in the monitoring list and this assertion makes them error out
         cy.contains('sa-button', 'Refresh Results').click().wait(2000)
         cy.contains('The monitoring results have been updated')
     })

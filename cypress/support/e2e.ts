@@ -60,11 +60,12 @@ export function filterClientType(type:string){
     //get index of td with text `Client Type`
     cy.get('#gridClients tr').find('td[aria-label="Column Client Type"]')
     cy.get('#gridClients tr').find('td[aria-label="Column Client Type"]').then(td=>{
-        colIndex = td.attr('aria-colindex')
+        let colIndex = td.attr('aria-colindex')
         cy.log('ColIndex '+colIndex)
+        cy.get(`#gridClients .dx-datagrid-headers  .dx-datagrid-filter-row>[aria-colindex="${colIndex}"] .dx-button-content`).eq(0).click()
+        cy.wait(500).get('.dx-scrollview-content').contains(type).click().wait(2000)
     })
-    cy.get(`#gridClients .dx-datagrid-headers  .dx-datagrid-filter-row>[aria-colindex="${colIndex}"] .dx-button-content`).eq(0).click()
-    cy.wait(500).get('.dx-scrollview-content').contains(type).click().wait(2000)
+    
 }
 
 export function navigateToClientMenu(type:string){
