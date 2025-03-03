@@ -5,7 +5,7 @@ describe('Criteria Categories', ()=>{
         cy.visit('/settings/criteria-categories').wait(2000)
     })
 
-    it('Adds an Evaluation Type', ()=>{
+    it('Adds Criteria Category', ()=>{
         cy.contains('sa-button', 'Add').click().wait(1000)
         cy.getByFormControlName('name').eq(0).type('Test Category DKA')
         cy.getByFormControlName('mappingReference').eq(0).type(faker.string.alphanumeric(13))
@@ -14,7 +14,7 @@ describe('Criteria Categories', ()=>{
         cy.contains('Criteria category has been added')
     })
 
-    it('Edits an Evaluation Type', () => {
+    it('Edits a criteria category', () => {
 
         cy.get('#gridCriteriaCategories tr .dx-first-cell .dx-texteditor-input').type('Test Category DKA', {force:true}).wait(2000)
         cy.get('#gridCriteriaCategories tr td').find('.dx-icon-edit').eq(0).click({force:true}).wait(1000)

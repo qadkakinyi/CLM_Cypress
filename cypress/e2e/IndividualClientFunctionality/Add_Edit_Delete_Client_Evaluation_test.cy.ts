@@ -1,10 +1,10 @@
 import {faker} from "@faker-js/faker";
-import {navigateToClientMenu} from "../../support/e2e";
+import {navigateToClientMenu, navigateToNewestClientMenu} from "../../support/e2e";
 
 describe('Add Client Evaluation', ()=>{
     it('Adds an evaluation', ()=>{
-        
-        navigateToClientMenu('Individual')
+
+        navigateToNewestClientMenu('Individual')
 
         cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Evaluations').click();
         cy.get('[primary-buttons=""] > sa-button.ng-star-inserted > .sa-button > .text').click();
@@ -29,10 +29,10 @@ describe('Add Client Evaluation', ()=>{
                         
                         cy.get('@list').find('.dropdown-btn span').eq(0).then((el)=>{
                             cy.get('@list').find('.dropdown-list .item2>li>[type="checkbox"]').eq(0).scrollIntoView().check({force:true})
-                            cy.getByDataCy('criteria-dropdowns').eq(index).click({force: true}).wait(500)
+                            cy.getByDataCy('criteria-dropdowns').eq(index).click({force: true}).wait(500)//closing the opened options
                         })
                         
-                        cy.wait(1000)
+                        //cy.wait(500)
                         
                     })
                 }

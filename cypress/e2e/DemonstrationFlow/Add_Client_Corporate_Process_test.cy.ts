@@ -61,7 +61,7 @@ describe("Add Corporate Client Process", ()=>{
             }
         }).then((res) =>{
             if(res.body){
-                cy.get('[aria-colindex="4"]  .dx-texteditor-input-container > .dx-texteditor-input').eq(0).type(companyName).wait(2500)
+                cy.get('[aria-colindex="5"]  .dx-texteditor-input-container > .dx-texteditor-input').eq(0).type(companyName).wait(2500)
 
                 cy.get('#gridClients table tr td .dx-header-filter-indicator').eq(0).click({force:true});
 

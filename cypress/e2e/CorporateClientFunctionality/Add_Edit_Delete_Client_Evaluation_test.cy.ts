@@ -1,5 +1,5 @@
 import {faker} from "@faker-js/faker";
-import {navigateToClientMenu} from "../../support/e2e";
+import {navigateToClientMenu, navigateToNewestClientMenu} from "../../support/e2e";
 
 let location = '';
 
@@ -8,7 +8,7 @@ describe('Add Corporate Client Evaluation', ()=>{
     
     it('Adds an evaluation', ()=>{
 
-        navigateToClientMenu('Corporate')
+        navigateToNewestClientMenu('Corporate')
 
         cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Evaluations').click().wait(2000);
         
@@ -23,31 +23,32 @@ describe('Add Corporate Client Evaluation', ()=>{
             if(el.is(':visible')){
                 cy.wrap(el).type(faker.word.words(2))
                 cy.wait(1000)
-                cy.get('.col > [icon="arrow-right"] > .sa-button').click().wait(2000);
+                cy.get('.col > [icon="arrow-right"] > .sa-button').click().wait(4000);
                 cy.getByDataCy('criterion-dropdown')
             }
 
             //step 2
-            cy.wait(7000)
+            cy.wait(3000)
             cy.getByDataCy('criterion-dropdown').then((el)=> {
                 if(el.is(':visible')) {
-                    //loops in every member instanceof TreeWalker structure
+                    
                     cy.get('app-create-evaluation-wizard sa-tree-view span').as('company-members')
                     
                     cy.get('app-create-evaluation-wizard sa-tree-view span').each((el, index) =>{
+                        //loops in every member instanceof TreeWalker structure
                         cy.get('@company-members').eq(index).click().then(el =>{
                             // loops on every criterion and selects a value in each
                             cy.getByDataCy('criterion-dropdown').each((el, index) => {
 
-                                cy.getByDataCy('criterion-dropdown').eq(index).click().as('list')
-                                cy.wait(500)
+                                cy.getByDataCy('criterion-dropdown').eq(index).scrollIntoView().click({force:true}).as('list')
+                                cy.wait(200)
 
                                 cy.get('@list').find('.dropdown-btn span').eq(0).then((el)=>{
-                                    cy.get('@list').find('.dropdown-list .item2>li>[type="checkbox"]').eq(0).scrollIntoView().check({force:true})
-                                    cy.getByDataCy('criterion-dropdown').eq(index).click({force: true}).wait(500)
+                                    cy.get('@list').find('.dropdown-list .item2>li>[type="checkbox"]').eq(0).check({force:true})
+                                    cy.getByDataCy('criterion-dropdown').eq(index).click({force:true}).wait(200)//closing the opened options
                                 })
 
-                                cy.wait(1000)
+                                // cy.wait(1000)
 
                             })
                         })
@@ -76,7 +77,7 @@ describe('Add Corporate Client Evaluation', ()=>{
                 cy.wrap(el).type(faker.word.words(2))
                 cy.wait(1000)
                 // cy.getByDataCy('next-eval-step')
-                cy.get('[icon="arrow-right"] > .sa-button > .text').eq(1).click().wait(500);
+                cy.contains('#initializeEvaluationForm sa-button', 'Next').click().wait(2500);
                 cy.getByDataCy('criterion-dropdown').wait(1000)
             }
 
@@ -91,7 +92,7 @@ describe('Add Corporate Client Evaluation', ()=>{
             //step 3
             cy.getByDataCy('evaluate-btn').click()
             cy.wait(5000)
-            cy.get('sa-button').contains('Complete').scrollIntoView().click()
+            cy.get('sa-button').contains('Complete').scrollIntoView().click({force:true})
 
         })
 
@@ -123,15 +124,16 @@ describe('Add Corporate Client Evaluation', ()=>{
     })
     
     it('Ignores need re-evaluation', ()=>{
-        //re-evaluation happens when there is a change in the criteria or after a certain time frame eg - 1 year
-        cy.visit('/settings/criteria').wait(3000)
+        //re-evaluation happens when there is a change in the criteria or after a certain time frame(interval) eg - annually , weekly
+        cy.visit('/settings/criteria').wait(6000)
+        cy.get('.dx-datagrid-content-fixed > .dx-datagrid-table > tbody > :nth-child(2) > .dx-datagrid-expand > .dx-datagrid-group-opened').click().wait(6000)
         cy.get('#gridCriteria .dx-group-row').contains('Client Type: Corporate')
         //cy.get('#gridCriteria [aria-rowindex="12"] [aria-colindex="3"] .dx-datagrid-group-closed').click()//opens the accordion - not a must
         //open the edit page
-        cy.get('#gridCriteria [aria-rowindex="12"] > [aria-colindex="10"] .fa-angle-double-right').eq(1).click().wait(2000)
+        cy.get('#gridCriteria .fa-angle-double-right').eq(1).click().wait(2000)
         //edit icon first item in table
         cy.get('table tr>td> .dx-icon-edit ').eq(0).click({force:true})
-        cy.get('[aria-rowindex="1"] > [aria-colindex="4"] .dx-texteditor-buttons-container').click()
+        cy.get('[aria-rowindex="1"] > [aria-colindex="5"] .dx-texteditor-buttons-container').click({force:true})
         cy.get('.dx-scrollview-content>.dx-list-item').contains('Medium').click().wait(500)
         cy.get('table tr>td> .dx-icon-save ').eq(0).click({force:true}).wait(1000)
         cy.contains('The criterion answer has been updated')
@@ -155,7 +157,7 @@ describe('Add Corporate Client Evaluation', ()=>{
         cy.get('#gridCriteria [aria-rowindex="12"] > [aria-colindex="10"] .fa-angle-double-right').eq(1).click().wait(2000)
         //edit icon first item in table
         cy.get('table tr>td> .dx-icon-edit ').eq(0).click({force:true})
-        cy.get('[aria-rowindex="1"] > [aria-colindex="4"] .dx-texteditor-buttons-container').click()
+        cy.get('[aria-rowindex="1"] > [aria-colindex="5"] .dx-texteditor-buttons-container').click()
         cy.get('.dx-scrollview-content>.dx-list-item').contains('Low').click().wait(500)
         cy.get('table tr>td> .dx-icon-save ').eq(0).click({force:true}).wait(1000)
     })

@@ -9,7 +9,7 @@ describe("Reports/Lists module", ()=>{
 describe("Onboarding Portal", ()=>{
 
     beforeEach(()=>{
-        cy.visit("/main/dashboard")
+        cy.visit("/main/dashboard").wait(3000)
         cy.getByDataCy("reports-menu").click()
         cy.contains("span", "Onboarding Portal").click().wait(1000)
     })
@@ -30,9 +30,8 @@ describe("Onboarding Portal", ()=>{
             cy.get('.sk-ball-spin-clockwise').should(`not.be.visible`)
 
             if(i < routes.length - 1){
-                cy.visit("/main/dashboard").wait(1000)
                 cy.getByDataCy("reports-menu").click()
-                cy.contains("span", "Onboarding Portal").click().wait(1500)
+                // cy.contains("span", "Onboarding Portal").click().wait(1500)
             }
 
         })
