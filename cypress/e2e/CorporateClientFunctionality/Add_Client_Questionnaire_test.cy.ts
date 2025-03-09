@@ -52,15 +52,14 @@ describe('Add a client questionnaire - Corporate', ()=>{
         cy.getByFormControlName('riskPoint').type('4')
         
         cy.getByDataCy('save-question').click()
-        cy.wait(2000)
+        cy.wait(4000)
         
         //Adding an answer to the question above
-        cy.contains('Add').click({force:true})
-        cy.wait(2000)
+        cy.get('[icon="plus"] > .sa-button').scrollIntoView().click().wait(3000)
         cy.get('#addAnswerForm ').find('[formcontrolname="value"]').type('Yes')
         cy.get('#addAnswerForm [icon="save"]').click().wait(2000)
-        cy.contains('Add').click({force:true})
-        cy.wait(2000)
+        cy.get('[icon="plus"] > .sa-button').scrollIntoView().click()
+        cy.wait(3000)
         cy.get('#addAnswerForm ').find('[formcontrolname="value"]').type('No')
         cy.get('#addAnswerForm [icon="save"]').click().wait(2000)
     })

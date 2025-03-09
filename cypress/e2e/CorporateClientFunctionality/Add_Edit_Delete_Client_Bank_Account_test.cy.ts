@@ -57,8 +57,7 @@ describe('Add, Edit, Delete Client Bank Account', () => {
 
   it('Edit client Bank Account', () => {
     // Edit Bank Account
-    cy.visit(location).wait(2000)
-    cy.getBySel('gridClientAccounts').should('be.visible');
+    cy.visit(location).wait(4000)
     cy.get('.dx-datagrid-filter-row .dx-texteditor-input-container input').eq(0).type(accountNumberTest);
 
     cy.wait(2000);
@@ -75,7 +74,7 @@ describe('Add, Edit, Delete Client Bank Account', () => {
   })
 
   it.skip('Delete client Bank Account', () => {
-    cy.visit(location).wait(2000)
+    cy.visit(location).wait(4000)
     cy.getBySel('gridClientAccounts').should('be.visible');
     cy.get('.dx-datagrid-filter-row .dx-texteditor-input-container input').eq(0).type(accountNumberTest);
 

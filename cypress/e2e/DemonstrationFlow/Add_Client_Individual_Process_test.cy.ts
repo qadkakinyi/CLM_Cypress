@@ -62,24 +62,40 @@ describe("Add Individual Client Process", ()=>{
             }
         }).then((res) =>{
             if(res.body){
-                cy.get('[aria-colindex="4"]  .dx-texteditor-input-container > .dx-texteditor-input').eq(0).type(firstName+' '+lastName).wait(2500)
 
-                cy.get('#gridClients table tr td .dx-header-filter-indicator').eq(0).click({force:true});
+                cy.get('#gridClients tr').find('td[aria-label="Column Client Name"]').then(td=>{
+                    let columnIndex = td.attr('aria-colindex')
+                    cy.log('ColIndex '+columnIndex)
 
-                let gridClientsRows = cy.wrap('#gridClients table tbody tr');
-                gridClientsRows.get('.dx-command-edit-with-icons a').eq(0).click({ force: true }).wait(2000);
-                cy.contains(firstName+' '+lastName)
-                cy.location('pathname').then(url =>{
-                    location = url
-                    const pathSections = url.split('/');
-                    clientId = pathSections[3]
-                }).wait(1500)
+                    cy.get(`#gridClients .dx-datagrid-content tr[aria-rowindex="2"] td[aria-colindex="${columnIndex}"]`).then(el=>{
+                        // navigate to client dashboard
+                        cy.wait(2000)
+
+                        cy.get(`[aria-colindex="${columnIndex}"]  .dx-texteditor-input-container > .dx-texteditor-input`).eq(0).type(firstName+' '+lastName).wait(2500)
+
+                        cy.get('#gridClients table tr td .dx-header-filter-indicator').eq(0).click({force:true});
+
+                        let gridClientsRows = cy.wrap('#gridClients table tbody tr');
+                        gridClientsRows.get('.dx-command-edit-with-icons a').eq(0).click({ force: true }).wait(2000);
+                        cy.contains(firstName+' '+lastName)
+                        cy.location('pathname').then(url =>{
+                            location = url
+                            const pathSections = url.split('/');
+                            clientId = pathSections[3]
+                        }).wait(1500)
+                        
+                    })
+
+                })
+                
+                
+                
             }
         })
     });
 
     it('should add a client document', () => {
-        cy.visit(location).wait(2000)
+        cy.visit(location).wait(4000)
         cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('Documents').scrollIntoView().click().wait(2000);
         
         cy.request({

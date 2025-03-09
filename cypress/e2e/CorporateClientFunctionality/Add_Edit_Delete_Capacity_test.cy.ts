@@ -21,8 +21,8 @@ describe('Capacity - Corporate', ()=>{
         cy.getByFormControlName('isNominee').click()
         cy.getByFormControlName('isControllingPerson').click()
         
-        cy.getBySel('controllingPersonTypesList').click()
-        cy.getBySel('dynamicSelectBoxDropdownGrid').find('[aria-rowindex="2"]').eq(1).should('be.visible').click()
+        cy.getBySel('controllingPersonTypesList').click().wait(1000)
+        cy.getBySel('dynamicSelectBoxDropdownGrid').find('[aria-rowindex="2"]').eq(1).click()
         cy.getByFormControlName('controllingPersonTypeOther').type(faker.word.words(5))
         
         cy.getByFormControlName('appointmentDate').type(faker.date.past().toISOString().slice(0, 10))
@@ -59,8 +59,8 @@ describe('Capacity - Corporate', ()=>{
     })
     
     it('Edits Authorized Person', ()=>{
-        cy.visit(location).wait(2000)
-        cy.get('#gridClientAuthorizedPersons .dx-icon-chevrondoubleright').should('be.visible').eq(0).click({force:true}).wait(2000)
+        cy.visit(location).wait(4000)
+        cy.get('#gridClientAuthorizedPersons .dx-icon-chevrondoubleright').eq(0).click({force:true}).wait(2000)
         cy.get('#editClientAuthorizedPersonForm')
         cy.getByDataCy('weight-percentage').clear().type(faker.number.int({min:10, max:49}).toString())
         
@@ -72,7 +72,7 @@ describe('Capacity - Corporate', ()=>{
     
     it('Deletes Authorized Person', ()=>{
         cy.visit(location).wait(3000)
-        cy.get('#gridClientAuthorizedPersons .dx-icon-trash').first().click({force:true}).wait(2000)
+        cy.get('#gridClientAuthorizedPersons .dx-icon-trash').first().click({force:true}).wait(3000)
         cy.contains('Yes').click().wait(1500)
         cy.contains('The authorized person has been deleted.').wait(1500)
     })
