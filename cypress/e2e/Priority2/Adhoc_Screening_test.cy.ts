@@ -1,4 +1,4 @@
-import {navigateToClientMenu} from "../../support/e2e";
+import {filterClientType, navigateToClientMenu} from "../../support/e2e";
 let api_baseUrl = Cypress.env('api_baseUrl')
 
 let location = '';
@@ -27,7 +27,22 @@ describe('Adhoc Screening Individual Client', ()=>{
 
 
     it('Performs Person Search Using UI', ()=>{
-        navigateToClientMenu('Individual')
+        
+        cy.visit('main/clients').wait(2000)
+        
+        cy.get('#gridClients').should('be.visible');
+
+        cy.get('#gridClients table tr td .dx-header-filter-indicator').eq(0).click({force:true});
+
+        filterClientType('Individual')
+        //this is to order from the newest to oldest
+        cy.get('#gridClients tr').find('td[aria-label="Column Client Type"]').click().wait(5000)
+
+        let gridClientsRows = cy.wrap('#gridClients table tbody tr');
+        gridClientsRows.get('.dx-command-edit-with-icons a').eq(0).click({ force: true })
+        cy.wait(3000);
+        
+        
         cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('Screening').click().wait(2000)
         
         cy.get('.screening-primary-buttons > [icon="search"] > .sa-button').contains('Person Search').click().wait(1000);
@@ -60,15 +75,16 @@ describe('Adhoc Screening Individual Client', ()=>{
         // deactivate person monitoring when client is added to the monitoring list
     })
     
-    it('Performs Person Search Using API', ()=>{
-        navigateToClientMenu('Individual')
+    it('Performs Person Search Using API - Acuris', ()=>{
+        // navigateToClientMenu('Individual')
+        cy.visit(location).wait(3000)
         cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('Screening').click().wait(2000)
         cy.location('pathname').then(path=>{
             clientId = path.split('/')[3]
             if(clientId){
                 cy.request({
                     method:'POST',
-                    url: `${api_baseUrl}/api/clientIndividuals/${clientId}/performPersonSearch`,
+                url: `${api_baseUrl}/api/clientIndividuals/${clientId}/performPersonSearch`,
                     headers:{
                         'Content-Type':'application/json',
                         'Authorization': `Bearer ${token}`
@@ -91,12 +107,62 @@ describe('Adhoc Screening Individual Client', ()=>{
         }).wait(2000)
         
     })
+
+    it('Performs Person Search Using API - Bridger', ()=>{
+        // navigateToClientMenu('Individual')
+        cy.visit(location).wait(3000)
+        cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('Screening').click().wait(2000)
+        cy.location('pathname').then(path=>{
+            clientId = path.split('/')[3]
+            if(clientId){
+                cy.request({
+                    method:'POST',
+                    url: `${api_baseUrl}/api/clientIndividuals/${clientId}/performPersonSearch`,
+                    headers:{
+                        'Content-Type':'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: {
+                        "bridger": {
+                            "firstname": "John",
+                            "middlename": "Putin",
+                            "lastname": "Doe",
+                            "dateOfBirth": "",
+                            "addressLine1": "",
+                            "addressLine2": "",
+                            "city": "",
+                            "country": "",
+                            "postalCode": "",
+                            "idNumber": "12345678",
+                            "gender": "",
+                            "threshold": 90
+                        }
+
+                    }
+                }).wait(2000)
+                cy.reload()
+            }
+        }).wait(2000)
+
+    })
 })
 
 describe('Adhoc Screening Corporate Client', ()=>{
 
     it('Performs Business Search Using UI', ()=>{
-        navigateToClientMenu('Corporate')
+        cy.visit('main/clients').wait(2000);
+        cy.get('#gridClients').should('be.visible');
+
+        cy.get('#gridClients table tr td .dx-header-filter-indicator').eq(0).click({force:true});
+
+        filterClientType('Corporate')
+        //this is to order from the newest to oldest
+        cy.get('#gridClients tr').find('td[aria-label="Column Client Type"]').click().wait(5000)
+
+        let gridClientsRows = cy.wrap('#gridClients table tbody tr');
+        gridClientsRows.get('.dx-command-edit-with-icons a').eq(0).click({ force: true })
+        cy.wait(3000);
+
         cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('Screening').click().wait(2000)
 
         cy.get('.screening-primary-buttons > [icon="search"] > .sa-button').contains('Business Search').click().wait(1000);
@@ -114,7 +180,7 @@ describe('Adhoc Screening Corporate Client', ()=>{
         cy.visit(location).wait(4000)
         cy.get('.screening-primary-buttons > [icon="list"] > .sa-button').contains('Business Monitoring').click().wait(1000);
         cy.get('form [icon="save"] > .sa-button').contains('Submit').click().wait(2000);
-        // cy.contains('The business monitoring has been executed').wait(3500) //some clients are already in the monitoring list and this assertion makes them error out
+        cy.contains('The business monitoring has been executed').wait(3500) //some clients are already in the monitoring list and this assertion makes them error out
         cy.contains('sa-button', 'Refresh Results').click().wait(2000)
         cy.contains('The monitoring results have been updated')
     })
@@ -128,8 +194,10 @@ describe('Adhoc Screening Corporate Client', ()=>{
         // deactivate business monitoring when client is added to the monitoring list
     })
 
-    it('Performs Business Search Using API', ()=>{
-        navigateToClientMenu('Corporate')
+    it('Performs Business Search Using API - Acuris', ()=>{
+        // navigateToClientMenu('Corporate')
+        cy.visit(location).wait(5000)
+        cy.wait(2000)
         cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('Screening').click().wait(2000)
         cy.get('.client-name > h2').invoke('text').then((text)=>{
             clientName = text.trim()
@@ -151,6 +219,44 @@ describe('Adhoc Screening Corporate Client', ()=>{
                             "city": "",
                             "country": "",
                             "postalCode": "",
+                            "threshold": 90
+                        }
+
+                    }
+                }).wait(2000)
+                cy.reload()
+            }
+        }).wait(2000)
+
+    })
+
+    it('Performs Business Search Using API - Bridger', ()=>{
+        // navigateToClientMenu('Corporate')
+        cy.visit(location).wait(5000)
+        cy.wait(2000)
+        cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('Screening').click().wait(2000)
+        cy.get('.client-name > h2').invoke('text').then((text)=>{
+            clientName = text.trim()
+        })
+        cy.location('pathname').then(path=>{
+            clientId = path.split('/')[3]
+            if(clientId){
+                cy.request({
+                    method:'POST',
+                    url: `${api_baseUrl}/api/clientCorporates/${clientId}/performBusinessSearch`,
+                    headers:{
+                        'Content-Type':'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: {
+                        "bridger": {
+                            "businessName": clientName,
+                            "addressLIne1": "",
+                            "addressLIne2": "",
+                            "city": "",
+                            "postalCode": "",
+                            "country": "",
+                            "idNUmber": "",
                             "threshold": 90
                         }
 

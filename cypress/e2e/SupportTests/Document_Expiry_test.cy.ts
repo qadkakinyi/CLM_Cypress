@@ -1,3 +1,5 @@
+import {navigateToNewestClientMenu} from "../../support/e2e";
+
 let today = new Date()
 describe('Check If Expired Documents Counter Is Valid', () => {
     it('Checks each document to confirm if the current date exceeds expiry date', () => {

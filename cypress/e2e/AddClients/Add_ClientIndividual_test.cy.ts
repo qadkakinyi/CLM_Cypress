@@ -16,7 +16,7 @@ describe('Add Client Individual', () => {
     cy.get('#addClientIndividualForm input[name="middleName"]').type(faker.person.middleName('male'));
 
     cy.get('#clientStatusesDropdown').click();
-    cy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true })
+    cy.get('#dynamicSelectBoxDropdownGrid').eq(0).find('.dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true })
     
     cy.get('#regulationGroupsDropdown').should('be.visible').click()
     

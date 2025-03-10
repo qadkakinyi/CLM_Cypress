@@ -58,7 +58,7 @@ let colIndex = ''
 export function filterClientType(type:string){
     cy.wait(1500)
     //get index of td with text `Client Type`
-    cy.get('#gridClients tr').find('td[aria-label="Column Client Type"]')
+    
     cy.get('#gridClients tr').find('td[aria-label="Column Client Type"]').then(td=>{
         let colIndex = td.attr('aria-colindex')
         cy.log('ColIndex '+colIndex)
@@ -73,10 +73,24 @@ export function navigateToClientMenu(type:string){
     cy.get('#gridClients').should('be.visible');
 
     cy.get('#gridClients table tr td .dx-header-filter-indicator').eq(0).click({force:true});
+    
+    filterClientType(type)
+        
+    let gridClientsRows = cy.wrap('#gridClients table tbody tr');
+    gridClientsRows.get('.dx-command-edit-with-icons a').eq(0).click({ force: true })
+    cy.wait(3000);
+}
+
+export function navigateToNewestClientMenu(type:string){
+    cy.visit('main/clients').wait(2000);
+    cy.get('#gridClients').should('be.visible');
+
+    cy.get('#gridClients table tr td .dx-header-filter-indicator').eq(0).click({force:true});
 
     filterClientType(type)
+    cy.get('#gridClients tr').find('td[aria-label="Column Client Type"]').click().wait(2000)
 
     let gridClientsRows = cy.wrap('#gridClients table tbody tr');
-    gridClientsRows.get('.dx-command-edit-with-icons a').eq(1).click({ force: true })
+    gridClientsRows.get('.dx-command-edit-with-icons a').eq(0).click({ force: true })
     cy.wait(3000);
 }

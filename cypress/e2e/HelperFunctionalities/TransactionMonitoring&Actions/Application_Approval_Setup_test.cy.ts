@@ -31,6 +31,6 @@ describe("Application Approval Setup", ()=> {
         cy.get('#gridPurposeOfTransactions tr td').find('.dx-icon-trash').eq(1).click({force: true}).wait(1000)
         cy.get('.dx-popup-normal').contains('Yes').click({force: true}).wait(1000);
 
-        cy.contains('has been ')
+        cy.contains('The purpose of transaction has been deleted')
     })
 })

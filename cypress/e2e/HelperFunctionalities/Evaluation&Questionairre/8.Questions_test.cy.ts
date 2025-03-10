@@ -9,7 +9,7 @@ describe('Questions', ()=>{
         cy.getByDataCy('regulation-group-list').click()
         cy.get('#dynamicSelectBoxDropdownGrid').find('.dx-datagrid-rowsview').find('tr > td').first().click()
         cy.getByFormControlName('questionsCategoryId').click()
-        cy.get('.dx-popup-content .dx-scrollable-container').contains('Questionnaire Type DKA').click()
+        cy.get('.dx-popup-content .dx-scrollable-container').contains('Closed Ended Questions Edited DKA').click()
         cy.getByDataCy('client-type').click()
         cy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-content>table tr>td').contains('Individual').click()
         cy.getByDataCy('question-setup-type').click()
@@ -17,8 +17,8 @@ describe('Questions', ()=>{
         cy.getByFormControlName('order').type(`1`)
         cy.getByFormControlName('mappingReference').type(faker.string.alphanumeric(12))
         //--this causes an error when deleting due to the relationship created unless you first remove the relationship
-        // cy.getByFormControlName('capacities').click() 
-        // cy.contains('Authorised Person').click()
+        cy.getByFormControlName('capacities').click().wait(200)
+        cy.get('.dropdown-list .item2 li').eq(0).click().wait(200)
         cy.getByFormControlName('riskPoint').type('4')
 
         cy.getByDataCy('save-question').click()
@@ -36,6 +36,10 @@ describe('Questions', ()=>{
         //status disable
         cy.get('dx-drop-down-box').eq(3).click().wait(500)
         cy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview .dx-datagrid-content tr td').contains('Disabled').click({force:true}).wait(500)
+        
+        //capacities unlink
+        cy.getByFormControlName('capacities').eq(0).click().wait(200)
+        cy.get('.dropdown-list .item2 li').eq(0).click().wait(200)
 
         cy.getBySel('saveAndCloseButton').click().wait(1500)
 

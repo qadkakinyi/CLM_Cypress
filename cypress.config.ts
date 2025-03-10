@@ -3,7 +3,7 @@ const { defineConfig } = require("cypress");
 const baseUrl =  'https://complytek-testing-hotfix.regtek.co'
 
 module.exports = defineConfig({
-  //numTestsKeptInMemory: 5, //prevents `aw snap` error from appearing
+  numTestsKeptInMemory: 1, //prevents `aw snap` error from appearing
   viewportWidth: 1680,
   viewportHeight: 1000,
   video: false,

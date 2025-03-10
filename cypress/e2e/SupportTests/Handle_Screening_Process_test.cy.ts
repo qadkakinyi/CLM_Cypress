@@ -25,16 +25,35 @@ describe('Handle Screening Process', ()=>{
         cy.visit(location).wait(2000)
 
         cy.get('.informer > .count').wait(2000).invoke('text').then(recordsCount=>{
+            
             cy.get('sa-info-bar .stat > span').eq(1).invoke('text').then(screeningStatus=>{
+                cy.get('app-negative-lists sa-alert span').eq(1).invoke('text').then(resultsFoundAlert=>{
+                    cy.log('Screening status: '+resultsFoundAlert)
+                    expect(resultsFoundAlert).to.not.equal('Not Applicable')
+                })
                 if(recordsCount == 0){
                     expect(screeningStatus).to.not.equal('Pending Action')
                     expect(screeningStatus).to.not.equal('Match')
                 }else if(recordsCount > 1){
                     expect(screeningStatus).to.not.equal('No Match')
-                }
+                } 
             })
         })
 
         cy.wait(1500)
     })
+    
+    it('Tests `Cancel` button navigation', ()=>{
+        cy.visit(location).wait(3000)
+        
+        cy.get('#gridNegativeLists .dx-icon-chevrondoubleright').eq(0).click({force:true}).wait(5000)
+        
+        //find cancel button and click it
+        cy.contains('sa-action-buttons sa-button', 'Cancel').click().wait(2000)
+        cy.location('pathname').then(pathname=>{
+            expect(location).to.include(pathname)
+            
+        })
+    })
+    
 })

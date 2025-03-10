@@ -1,4 +1,4 @@
-import {navigateToClientMenu} from "../../support/e2e";
+import {navigateToClientMenu, navigateToNewestClientMenu} from "../../support/e2e";
 import {faker} from "@faker-js/faker";
 
 let location = '';
@@ -6,7 +6,7 @@ let authorized_Capital = ''
 describe('Shareholders/Partners', ()=>{
 
     it('Adds Shareholder', ()=>{
-        navigateToClientMenu('Corporate')
+        navigateToNewestClientMenu('Corporate')
 
         cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Shareholders/Partners').click().wait(2000);
         cy.getByDataCy('add-stakeholder').click().wait(1000)
@@ -15,12 +15,12 @@ describe('Shareholders/Partners', ()=>{
             location = loc
         })
         
-        cy.getBySel('capacitiesList').click()
-        cy.getBySel('dynamicSelectBoxDropdownGrid').find('[aria-rowindex="2"]').click()
+        cy.getBySel('capacitiesList').click().wait(1000)
+        cy.getBySel('dynamicSelectBoxDropdownGrid').contains('Shareholder').click().wait(1000)
         
-        cy.getByDataCy('weight-percentage').clear().type(faker.number.int({min:0, max:19}).toString())
+        cy.getByDataCy('weight-percentage').clear().type(faker.number.int({min:1, max:19}).toString())
         
-        cy.getByFormControlName('numberOfShares').clear().type(faker.number.int({min:0, max:10}).toString())
+        cy.getByFormControlName('numberOfShares').wait(500).clear().type(faker.number.int({min:1, max:10}).toString())
         cy.getByFormControlName('isNominee').click()
         cy.getByFormControlName('isControllingPerson').click()
         
@@ -29,7 +29,7 @@ describe('Shareholders/Partners', ()=>{
         cy.getByFormControlName('controllingPersonTypeOther').type(faker.word.words(5))
         
         cy.getByFormControlName('appointmentDate').type(faker.date.past().toISOString().slice(0, 10))
-        cy.getByFormControlName('resignationDate').type(faker.date.recent().toISOString().slice(0, 10))
+        // cy.getByFormControlName('resignationDate').type(faker.date.recent().toISOString().slice(0, 10))
         
         cy.get('#clientsFilteringDataGrid').click()
         cy.get('#clientsFilteringDataGrid [aria-rowindex="1"]').click().wait(2000)

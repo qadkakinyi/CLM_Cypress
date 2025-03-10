@@ -1,3 +1,5 @@
+import {navigateToNewestClientMenu} from "../../support/e2e";
+
 let menu_items = [
     "Dashboard",
     "Know Your Clients",
@@ -22,5 +24,12 @@ describe('Admin User Permissions', ()=>{
         menu_items.forEach(item=>{
             cy.contains('sa-menu-item', item).wait(500).should('be.visible')
         })
+    })
+    
+    it('Drills into a client dashboard',()=>{
+        navigateToNewestClientMenu('Corporate')
+        cy.contains('Client Options')
+        cy.contains('Dashboard')
+        cy.contains('Profile')
     })
 })

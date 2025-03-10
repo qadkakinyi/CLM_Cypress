@@ -18,8 +18,8 @@ describe('Documents', ()=>{
         // cy.getBySel('dynamicSelectBoxDropdownGrid').contains('Default').click().wait(500)
         // cy.get('#documentCategory').click().wait(500)
         // cy.getBySel('dynamicSelectBoxDropdownGrid').contains('Test Category').click().wait(500)
-        // cy.getByDataCy('capacityList').click().wait(500)
-        // cy.get('.dropdown-list > ul').eq(1).find('li').eq(0).click().wait(500)
+        cy.getByDataCy('capacityList').click().wait(500)
+        cy.get('.dropdown-list .item2 li').eq(0).click().wait(500)
         // cy.getByDataCy('clientCategory').click().wait(500)
         // cy.get('.dropdown-list > ul').contains('Test Client').click().wait(500)
         //close the popup
@@ -35,6 +35,10 @@ describe('Documents', ()=>{
 
         cy.get('#editDocumentForm')
         cy.getByFormControlName('name').clear().type('DKA Document Test '+faker.word.sample())
+        // un-populate capacity
+        cy.getByFormControlName('capacities').click().wait(500)
+        cy.get('.dropdown-list .item2 li').eq(0).click().wait(500)
+        
         cy.getBySel('saveAndCloseButton').click().wait(1000)
         cy.contains('The document has been updated.').wait(1000)
     })
@@ -44,6 +48,11 @@ describe('Documents', ()=>{
 
         cy.get('#gridDocuments tr .dx-first-cell .dx-texteditor-input').type('DKA Document Test', {force:true}).wait(2000)
         cy.get('tr td').find('.fa-angle-double-right').eq(1).click({force:true}).wait(1000)
+        
+        //check that capacities is not populated
+        cy.get('[formcontrolname="capacities"] span[class="dropdown-btn"] span').eq(0).invoke('text').then(capacity=>{
+            expect(capacity).to.equal('Select')
+        })
         cy.get('sa-button').contains('Delete').click()
         cy.get('.MessageBoxButtonSection').contains('button', 'Yes').click().wait(1000)
 
