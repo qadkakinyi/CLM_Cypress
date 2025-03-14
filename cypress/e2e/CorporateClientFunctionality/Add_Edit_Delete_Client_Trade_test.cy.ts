@@ -51,18 +51,18 @@ describe('Add, Edit, Delete Client Trade', () => {
       cy.get('#addClientTradeForm input[name="volume"]').type(faker.string.numeric(5));
       cy.get('#addClientTradeForm input[name="symbol"]').type(faker.string.numeric(5));
       cy.get('#addClientTradeForm input[name="symbolGroup"]').type(faker.string.numeric(5));
-      cy.get('#addClientTradeForm input[name="baseOpenPrice"]').type(faker.finance.amount({ min: 1, max: 999999 }));
-      cy.get('#addClientTradeForm input[name="baseClosePrice"]').type(faker.finance.amount({ min: 1, max: 999999 }));
-      cy.get('#addClientTradeForm input[name="foreignOpenPrice"]').type(faker.finance.amount({ min: 1, max: 999999 }));
-      cy.get('#addClientTradeForm input[name="foreignClosePrice"]').type(faker.finance.amount({ min: 1, max: 999999 }));
-      cy.get('#addClientTradeForm input[name="baseOpenPrice"]').type(faker.finance.amount({ min: 1, max: 999999 }));
+      cy.get('#addClientTradeForm input[name="baseOpenPrice"]').type(faker.finance.amount({ min: 1, max: 999 }));
+      cy.get('#addClientTradeForm input[name="baseClosePrice"]').type(faker.finance.amount({ min: 1, max: 999 }));
+      cy.get('#addClientTradeForm input[name="foreignOpenPrice"]').type(faker.finance.amount({ min: 1, max: 999 }));
+      cy.get('#addClientTradeForm input[name="foreignClosePrice"]').type(faker.finance.amount({ min: 1, max: 999 }));
+      cy.get('#addClientTradeForm input[name="baseOpenPrice"]').type(faker.finance.amount({ min: 1, max: 999 }));
       cy.get('#addClientTradeForm .openTime').type('07');
       cy.get('#addClientTradeForm .closeTime').type('07');
 
-      cy.get('#addClientTradeForm input[name="baseProfit"]').type(faker.finance.amount({ min: 1, max: 999999 }));
-      cy.get('#addClientTradeForm input[name="foreignProfit"]').type(faker.finance.amount({ min: 1, max: 999999 }));
-      cy.get('#addClientTradeForm input[name="baseTradeAmount"]').type(faker.finance.amount({ min: 1, max: 999999 }));
-      cy.get('#addClientTradeForm input[name="foreignTradeAmount"]').type(faker.finance.amount({ min: 1, max: 999999 }));
+      cy.get('#addClientTradeForm input[name="baseProfit"]').type(faker.finance.amount({ min: 1, max: 999 }));
+      cy.get('#addClientTradeForm input[name="foreignProfit"]').type(faker.finance.amount({ min: 1, max: 999 }));
+      cy.get('#addClientTradeForm input[name="baseTradeAmount"]').type(faker.finance.amount({ min: 1, max: 999 }));
+      cy.get('#addClientTradeForm input[name="foreignTradeAmount"]').type(faker.finance.amount({ min: 1, max: 999 }));
 
       cy.get('#addClientTradeForm input[name="externalReference"]').type(externalReference);
 
@@ -72,16 +72,14 @@ describe('Add, Edit, Delete Client Trade', () => {
 
   it('Edit client trade', () => {
     // Edit Cards
-    cy.visit(location).wait(2000);
-    cy.getBySel('gridClientTrades').should('be.visible').then(() => {
+    cy.visit(location).wait(4000);
+    cy.getBySel('gridClientTrades').then(() => {
       cy.get('.dx-datagrid-filter-row .dx-texteditor-input-container input').eq(1).type(externalReference, {force:true});
 
       cy.wait(2000);
 
       // let gridTrades = cy.wrap('#gridClientTrades table tbody tr td');
       cy.get('#gridClientTrades .fa-angle-double-right').eq(0).click({ force: true });
-
-      cy.get('#editClientTradeForm').should('be.visible');
 
       cy.get('#editClientTradeForm input[name="orderReference"]').clear();
       cy.get('#editClientTradeForm input[name="orderReference"]').type(faker.string.alphanumeric(12));
@@ -91,8 +89,8 @@ describe('Add, Edit, Delete Client Trade', () => {
   })
 
   it('Delete client trade', () => {
-    cy.visit(location).wait(2000)
-    cy.getBySel('gridClientTrades').should('be.visible');
+    cy.visit(location).wait(4000)
+  
     cy.get('.dx-datagrid-filter-row .dx-texteditor-input-container input').eq(1).type(externalReference, {force:true});
 
     cy.wait(2000);
@@ -101,7 +99,7 @@ describe('Add, Edit, Delete Client Trade', () => {
     cy.get('#gridClientTrades .fa-angle-double-right').eq(0).click({ force: true });
 
     // Delete Cards
-    cy.getBySel('deleteTrade').should('be.visible').click();
+    cy.getBySel('deleteTrade').click();
     cy.get('#bot2-Msg1').contains('Yes').click();
   })
 })

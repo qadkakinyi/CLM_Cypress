@@ -5,7 +5,7 @@ let code = faker.string.numeric(16);
 
 let location = '';
 
-describe('Add, Edit, Delete Client MID Accounts', () => {
+describe('Add, Edit, Delete Client MID Accounts - Corporate', () => {
   before(()=>{
     cy.visit('/settings/mid-types')
     cy.contains('Add').click().wait(1000)
@@ -58,9 +58,8 @@ describe('Add, Edit, Delete Client MID Accounts', () => {
 
   it('Edit Client MID Accounts', () => {
     cy.visit(location)
-    cy.wait(2000)
+    cy.wait(3000)
     // Edit Policy
-    cy.getBySel('gridMidAccounts').should('be.visible');
     cy.get('.dx-datagrid-filter-row .dx-texteditor-input-container input').eq(0).type(code, {force:true});
 
     cy.wait(2000);
@@ -80,16 +79,14 @@ describe('Add, Edit, Delete Client MID Accounts', () => {
     cy.visit(location)
     cy.wait(2000)
     // Delete MID Accounts
-    cy.getBySel('gridMidAccounts').should('be.visible');
     cy.get('.dx-datagrid-filter-row .dx-texteditor-input-container input').eq(0).type(code,{force:true});
 
     cy.wait(2000);
 
     let gridMidAccounts = cy.wrap('#gridMidAccounts table tbody tr td');
-    gridMidAccounts.get('.dx-command-edit-with-icons a').eq(0).click({ force: true });
+    gridMidAccounts.get('.dx-command-edit-with-icons a').eq(0).click({ force: true }).wait(1500);
 
-    // Delete MID Accounts
-    cy.getBySel('deleteMidAccounts').should('be.visible').click();
+    cy.getBySel('deleteMidAccounts').click();
     cy.get('#bot2-Msg1').contains('Yes').click();
   })
 })

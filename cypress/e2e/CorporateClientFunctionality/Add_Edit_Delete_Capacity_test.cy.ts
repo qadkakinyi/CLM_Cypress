@@ -8,6 +8,8 @@ describe('Capacity - Corporate', ()=>{
 
     it('Adds Authorized Person', ()=>{
         navigateToNewestClientMenu('Corporate')
+        
+        cy.wait(3000)
 
         cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Capacity').click();
         cy.getBySel('addAuthorizedPerson').click().wait(1000)

@@ -22,7 +22,7 @@ describe('Add Client Individual', () => {
     
     cy.wait(1000)
     
-    cy.get('.dx-overlay-wrapper.dx-popup-wrapper.dx-dropdowneditor-overlay .dx-datagrid-rowsview table tbody tr td').eq(1).click({ force: true });
+    cy.get('.dx-overlay-wrapper.dx-popup-wrapper.dx-dropdowneditor-overlay .dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true });
 
     // cy.wait('@getRegulation')
     // cy.wait('@getCustomFields')

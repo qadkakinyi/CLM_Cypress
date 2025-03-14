@@ -29,7 +29,7 @@ describe('Add Corporate Client Evaluation', ()=>{
 
             //step 2
             cy.wait(3000)
-            cy.getByDataCy('criterion-dropdown').then((el)=> {
+            cy.getByDataCy('criterio    n-dropdown').then((el)=> {
                 if(el.is(':visible')) {
                     
                     cy.get('app-create-evaluation-wizard sa-tree-view span').as('company-members')

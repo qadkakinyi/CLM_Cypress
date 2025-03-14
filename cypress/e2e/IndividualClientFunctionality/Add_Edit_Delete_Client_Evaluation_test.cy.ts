@@ -25,11 +25,11 @@ describe('Add Client Evaluation', ()=>{
                     cy.getByDataCy('criteria-dropdowns').each((el, index) => {
                         
                         cy.getByDataCy('criteria-dropdowns').eq(index).click().as('list')
-                        cy.wait(500)
+                        cy.wait(200)
                         
                         cy.get('@list').find('.dropdown-btn span').eq(0).then((el)=>{
                             cy.get('@list').find('.dropdown-list .item2>li>[type="checkbox"]').eq(0).scrollIntoView().check({force:true})
-                            cy.getByDataCy('criteria-dropdowns').eq(index).click({force: true}).wait(500)//closing the opened options
+                            cy.getByDataCy('criteria-dropdowns').eq(index).click({force: true}).wait(200)//closing the opened options
                         })
                         
                         //cy.wait(500)

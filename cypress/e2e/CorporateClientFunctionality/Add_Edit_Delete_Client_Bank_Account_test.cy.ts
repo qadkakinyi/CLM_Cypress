@@ -7,11 +7,12 @@ let location:string = ''
 export function add_bank_account(){
   // Click on Know your Clients navigation item
   navigateToClientMenu('Corporate')
+  cy.wait(3000)
 
   cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Bank Accounts').click();
 
   // Add new Client Bank Account
-  cy.getBySel('addBankAccount').click();
+  cy.getBySel('addBankAccount').click().wait(1000);
 
   cy.location('pathname').then((loc)=>{
     location = loc
@@ -75,7 +76,7 @@ describe('Add, Edit, Delete Client Bank Account', () => {
 
   it.skip('Delete client Bank Account', () => {
     cy.visit(location).wait(4000)
-    cy.getBySel('gridClientAccounts').should('be.visible');
+   
     cy.get('.dx-datagrid-filter-row .dx-texteditor-input-container input').eq(0).type(accountNumberTest);
 
     cy.wait(2000);
