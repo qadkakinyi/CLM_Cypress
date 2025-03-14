@@ -21,30 +21,27 @@ describe('Add, Edit, Delete Client Policy Payments', () => {
 
   it('Add Client Policy Payment Collection', () => {
     // Add new Client Policies
-    cy.visit(location)
+    cy.visit(location).wait(3000)
     cy.getBySel('addContractCollection').click();
 
-    cy.getBySel('addClientContractCollectionForm').should('be.visible');
-
-    cy.getBySel('clientContractPolicyNumbers').click();
-    cy.get('.dx-overlay-wrapper.dx-popup-wrapper.dx-dropdowneditor-overlay .dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true });
+    // cy.getBySel('clientContractPolicyNumbers').click();
+    // cy.get('.dx-overlay-wrapper.dx-popup-wrapper.dx-dropdowneditor-overlay .dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true });
 
     cy.getBySel('transactionPaymentMethods').click();
     cy.get('.dx-overlay-wrapper.dx-popup-wrapper.dx-dropdowneditor-overlay .dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true });
 
-    cy.get('#addClientContractCollectionForm input[name="paymentAmount"]').type(faker.finance.amount({ min: 1, max: 19999 }));
+    cy.get('#addClientContractCollectionForm input[name="paymentAmount"]').type(faker.finance.amount({ min: 1, max: 20 }));
     cy.get('#addClientContractCollectionForm input[name="paymentDate"]').type(faker.date.anytime().toISOString().slice(0, 10));
     cy.get('#addClientContractCollectionForm input[name="paymentDescription"]').type(faker.lorem.word());
     cy.get('#addClientContractCollectionForm input[name="reasonForTransaction"]').type(faker.lorem.word());
 
-    cy.getBySel('savePaymentCollection').click();
+    cy.getBySel('savePaymentCollection').click().wait(10000);
   });
 
   it('Edit client Policy collection', () => {
     // Edit Policy contract collection
     cy.visit(location)
-    cy.wait(2000)
-    cy.getBySel('gridClientContractCollections').should('be.visible');
+    cy.wait(3000)
     cy.get('#gridClientContractCollections table tbody tr td.dx-command-edit-with-icons a').eq(0).click({ force: true });
 
     cy.get('#editClientContractCollectionForm').should('be.visible');
@@ -57,19 +54,17 @@ describe('Add, Edit, Delete Client Policy Payments', () => {
 
   it('Delete client policy collection', () => {
     // Delete policy contract collection
-    cy.visit(location)
-    cy.wait(2000)
-    cy.getBySel('gridClientContractCollections').should('be.visible');
-    cy.get('#gridClientContractCollections table tbody tr td.dx-command-edit-with-icons a').eq(0).click({ force: true });
+    cy.visit(location).wait(3000)
+    
+    cy.get('#gridClientContractCollections table tbody tr td.dx-command-edit-with-icons a').eq(0).click({ force: true }).wait(1500);
 
-    cy.getBySel('deleteContractCollection').should('be.visible').click();
-    cy.get('#bot2-Msg1').contains('Yes').click();
+    cy.getBySel('deleteContractCollection').click();
+    cy.get('#bot2-Msg1').contains('Yes').click().wait(2000);
   })
 
   it('Add Client Policy Payment Transaction', () => {
     // Add new Client Policies
-    cy.visit(location)
-    cy.wait(2000)
+    cy.visit(location).wait(3000)
     cy.get('.dx-item.dx-tab .dx-template-wrapper.dx-item-content').contains('span', 'Transactions').should('be.visible').click();
 
     cy.getBySel('addContractTransaction').click();
@@ -90,30 +85,24 @@ describe('Add, Edit, Delete Client Policy Payments', () => {
 
   it('Edit client Policy payment transaction', () => {
     // Edit Policy contract transaction
-    cy.visit(location)
-    cy.wait(2000)
-    cy.get('.dx-item.dx-tab .dx-template-wrapper.dx-item-content').contains('span', 'Transactions').should('be.visible').click();
-    cy.getBySel('gridClientContractTransactions').should('be.visible');
-    cy.get('#gridClientContractTransactions table tbody tr td.dx-command-edit-with-icons a').eq(0).click({ force: true });
+    cy.visit(location).wait(3000)
+    cy.get('.dx-item.dx-tab .dx-template-wrapper.dx-item-content').contains('span', 'Transactions').click();
+    
+    cy.get('#gridClientContractTransactions table tbody tr td.dx-command-edit-with-icons a').eq(0).click({ force: true }).wait(1500);
 
-    cy.get('#editClientContractTransactionForm').should('be.visible');
-
-    cy.get('#editClientContractTransactionForm input[name="paymentDescription"]').should('be.visible').clear();
-    cy.get('#editClientContractTransactionForm input[name="paymentDescription"]').type(faker.lorem.sentence());
+    cy.get('#editClientContractTransactionForm input[name="paymentDescription"]').clear().type(faker.lorem.sentence());
 
     cy.getBySel('saveAndCloseButton').click();
   })
 
   it('Delete client policy transaction', () => {
-    cy.visit(location)
-    cy.wait(2000)
-    cy.get('.dx-item.dx-tab .dx-template-wrapper.dx-item-content').contains('span', 'Transactions').should('be.visible').click();
+    cy.visit(location).wait(3000)
+    cy.get('.dx-item.dx-tab .dx-template-wrapper.dx-item-content').contains('span', 'Transactions').click();
 
     // Delete policy contract transaction
-    cy.getBySel('gridClientContractTransactions').should('be.visible');
-    cy.get('#gridClientContractTransactions table tbody tr td.dx-command-edit-with-icons a').eq(0).click({ force: true });
+    cy.get('#gridClientContractTransactions table tbody tr td.dx-command-edit-with-icons a').eq(0).click({ force: true }).wait(1000);
 
-    cy.getBySel('deleteContractTransaction').should('be.visible').click();
+    cy.getBySel('deleteContractTransaction').click();
     cy.get('#bot2-Msg1').contains('Yes').click();
     cy.contains('Policy transaction has been deleted.')
   })

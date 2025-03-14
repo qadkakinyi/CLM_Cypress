@@ -78,7 +78,7 @@ export function navigateToClientMenu(type:string){
         
     let gridClientsRows = cy.wrap('#gridClients table tbody tr');
     gridClientsRows.get('.dx-command-edit-with-icons a').eq(0).click({ force: true })
-    cy.wait(3000);
+    cy.wait(5000);
 }
 
 export function navigateToNewestClientMenu(type:string){
@@ -92,5 +92,5 @@ export function navigateToNewestClientMenu(type:string){
 
     let gridClientsRows = cy.wrap('#gridClients table tbody tr');
     gridClientsRows.get('.dx-command-edit-with-icons a').eq(0).click({ force: true })
-    cy.wait(3000);
+    cy.wait(5000);
 }

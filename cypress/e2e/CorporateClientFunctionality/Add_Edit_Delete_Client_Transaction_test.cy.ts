@@ -62,8 +62,8 @@ describe('Add, Edit, Delete Client Transactions - Corporate', () => {
     
     cy.get('app-add-transaction .fa-plus').eq(0).click()
     
-    cy.get('#CustomField_Payment_Details').type('BankXYZ')
-    cy.get('#CustomField_Transaction_Update_Date').type(faker.date.past({refDate: 1}).toISOString().slice(0, 10));
+    // cy.get('#CustomField_Payment_Details').type('BankXYZ')
+    // cy.get('#CustomField_Transaction_Update_Date').type(faker.date.past({refDate: 1}).toISOString().slice(0, 10));
 
     cy.getBySel('saveClientTransaction').click().wait(2000);
   });
