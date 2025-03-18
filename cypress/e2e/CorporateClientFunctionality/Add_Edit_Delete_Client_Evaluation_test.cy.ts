@@ -29,7 +29,7 @@ describe('Add Corporate Client Evaluation', ()=>{
 
             //step 2
             cy.wait(3000)
-            cy.getByDataCy('criterio    n-dropdown').then((el)=> {
+            cy.getByDataCy('criterion-dropdown').then((el)=> {
                 if(el.is(':visible')) {
                     
                     cy.get('app-create-evaluation-wizard sa-tree-view span').as('company-members')
@@ -41,11 +41,11 @@ describe('Add Corporate Client Evaluation', ()=>{
                             cy.getByDataCy('criterion-dropdown').each((el, index) => {
 
                                 cy.getByDataCy('criterion-dropdown').eq(index).scrollIntoView().click({force:true}).as('list')
-                                cy.wait(200)
+                                cy.wait(100)
 
                                 cy.get('@list').find('.dropdown-btn span').eq(0).then((el)=>{
                                     cy.get('@list').find('.dropdown-list .item2>li>[type="checkbox"]').eq(0).check({force:true})
-                                    cy.getByDataCy('criterion-dropdown').eq(index).click({force:true}).wait(200)//closing the opened options
+                                    cy.getByDataCy('criterion-dropdown').eq(index).click({force:true}).wait(50)//closing the opened options
                                 })
 
                                 // cy.wait(1000)
@@ -133,7 +133,7 @@ describe('Add Corporate Client Evaluation', ()=>{
         cy.get('#gridCriteria .fa-angle-double-right').eq(1).click().wait(2000)
         //edit icon first item in table
         cy.get('table tr>td> .dx-icon-edit ').eq(0).click({force:true})
-        cy.get('[aria-rowindex="1"] > [aria-colindex="5"] .dx-texteditor-buttons-container').click({force:true})
+        cy.get('[aria-rowindex="1"] > [aria-colindex="4"] .dx-texteditor-buttons-container').click({force:true})
         cy.get('.dx-scrollview-content>.dx-list-item').contains('Medium').click().wait(500)
         cy.get('table tr>td> .dx-icon-save ').eq(0).click({force:true}).wait(1000)
         cy.contains('The criterion answer has been updated')

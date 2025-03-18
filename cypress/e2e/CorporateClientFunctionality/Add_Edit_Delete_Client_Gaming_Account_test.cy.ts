@@ -72,7 +72,7 @@ describe('Add, Edit, Delete Client Gaming Accounts', () => {
     let gridGamingAccounts = cy.wrap('#gridClientGamingAccounts table tbody tr td');
     gridGamingAccounts.get('.dx-command-edit-with-icons a').eq(0).click({ force: true });
 
-    cy.getBySel('deleteGamingAccount').should('be.visible').click();
+    cy.getBySel('deleteGamingAccount').scrollIntoView().click();
     cy.get('#bot2-Msg1').contains('Yes').click();
     cy.contains('The gaming account has been deleted.')
   });

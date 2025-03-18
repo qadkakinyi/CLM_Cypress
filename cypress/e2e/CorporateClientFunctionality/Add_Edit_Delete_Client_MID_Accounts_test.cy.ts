@@ -42,6 +42,8 @@ describe('Add, Edit, Delete Client MID Accounts - Corporate', () => {
     cy.get('#dynamicSelectBoxDropdownGrid tbody > .dx-data-row > td').eq(2).click({ force: true });
     
     cy.wait(500)
+    cy.getBySel('currencies').click()
+    cy.get('#dynamicSelectBoxDropdownGrid').eq(3).find(' tbody > .dx-data-row > td').click({ force: true });
 
     cy.getBySel('midTypes').click();
     cy.wait(500)
@@ -58,26 +60,24 @@ describe('Add, Edit, Delete Client MID Accounts - Corporate', () => {
 
   it('Edit Client MID Accounts', () => {
     cy.visit(location)
-    cy.wait(3000)
+    cy.wait(4000)
     // Edit Policy
     cy.get('.dx-datagrid-filter-row .dx-texteditor-input-container input').eq(0).type(code, {force:true});
 
-    cy.wait(2000);
+    cy.wait(3000);
 
     cy.get('#gridMidAccounts table tbody tr td.dx-command-edit-with-icons a').eq(0).click({ force: true });
-    cy.get('#editClientMidAccountForm').should('be.visible');
 
     code = faker.string.numeric(16);
 
-    cy.get('#editClientMidAccountForm input[name="code"]').should('be.visible').clear();
-    cy.get('#editClientMidAccountForm input[name="code"]').type(code);
+    cy.get('#editClientMidAccountForm input[name="code"]').clear().type(code);
 
     cy.getBySel('saveAndCloseButton').click();
   })
 
   it('Delete client MID Accounts', () => {
     cy.visit(location)
-    cy.wait(2000)
+    cy.wait(3000)
     // Delete MID Accounts
     cy.get('.dx-datagrid-filter-row .dx-texteditor-input-container input').eq(0).type(code,{force:true});
 
