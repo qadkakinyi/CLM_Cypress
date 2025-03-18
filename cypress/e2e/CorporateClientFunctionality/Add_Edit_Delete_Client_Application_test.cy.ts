@@ -81,7 +81,7 @@ describe('Add, Edit, Delete Client Applications', () => {
     let gridApplications = cy.wrap('#gridClientApplications table tbody tr td');
     gridApplications.get('.dx-command-edit-with-icons a').eq(0).click({ force: true });
 
-    cy.getBySel('deleteApplication').should('be.visible').click();
+    cy.getBySel('deleteApplication').scrollIntoView().click();
     cy.get('#bot2-Msg1').contains('Yes').click().wait(2000);
     cy.contains('The application has been deleted.')
   })

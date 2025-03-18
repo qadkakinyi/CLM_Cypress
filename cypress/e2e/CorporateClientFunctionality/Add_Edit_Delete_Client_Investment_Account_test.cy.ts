@@ -87,7 +87,7 @@ describe('Add, Edit, Delete Client Investment Account', () => {
     gridWallets.get('.dx-command-edit-with-icons a').eq(0).click({ force: true });
 
     // Delete Cards
-    cy.getBySel('deleteInvestmentAccount').should('be.visible').click().wait(2000);
+    cy.getBySel('deleteInvestmentAccount').scrollIntoView().click().wait(2000);
     cy.get('#bot2-Msg1').contains('Yes').click().wait(1000);
     cy.contains('Investment account has been deleted.')
   })
