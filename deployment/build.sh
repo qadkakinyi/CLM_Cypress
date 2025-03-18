@@ -1,4 +1,4 @@
-version="v.1.0.2"
+version="v.1.0.3"
 folder_path="Release"
 
 if [ -d "$folder_path" ]; then
