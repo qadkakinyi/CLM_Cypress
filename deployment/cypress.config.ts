@@ -1,7 +1,8 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  //numTestsKeptInMemory: 0, //prevents `aw snap` error from appearing
+  defaultCommandTimeout: 16000,
+  numTestsKeptInMemory: 1, //prevents `aw snap` error from appearing
   viewportWidth: 1680,
   viewportHeight: 1000,
   screenshotsFolder: "cypress/screenshots",
