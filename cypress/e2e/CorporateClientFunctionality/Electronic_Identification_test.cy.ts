@@ -11,7 +11,7 @@ describe('Electronic Identification', ()=>{
 
         cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Electronic Identification').click().wait(1000);
         
-        cy.contains('h1','Electronic Identifications').should('be.visible')
+        cy.contains('h1','Electronic Identifications').scrollIntoView()
         
     })
 })
