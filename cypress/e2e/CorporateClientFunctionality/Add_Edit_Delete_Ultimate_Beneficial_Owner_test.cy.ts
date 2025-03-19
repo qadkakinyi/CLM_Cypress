@@ -56,7 +56,7 @@ describe('Ultimate Beneficial Owner - Corporate', ()=>{
         cy.getByFormControlName('resignationDate').type(faker.date.recent().toISOString().slice(0, 10))
         
         cy.getBySel('controllingPersonList').click().wait(1000)
-        cy.getBySel('dynamicSelectBoxDropdownGrid').find('[aria-rowindex="2"]').should('be.visible').click()
+        cy.getBySel('dynamicSelectBoxDropdownGrid').eq(1).find('td').eq(0).click()
         cy.getByFormControlName('controllingPersonTypeOther').type(faker.word.words(5))
         
         

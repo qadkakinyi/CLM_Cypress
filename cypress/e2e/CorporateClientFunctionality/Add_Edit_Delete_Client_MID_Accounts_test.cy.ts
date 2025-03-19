@@ -37,13 +37,10 @@ describe('Add, Edit, Delete Client MID Accounts - Corporate', () => {
     cy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview .dx-datagrid-content>.dx-datagrid-table > tbody > .dx-data-row > td').eq(0).click({ force: true });
 
     cy.get('#addMidAccountForm input[name="name"]').type(faker.finance.accountName());
-
-    cy.getBySel('currencies').click();
-    cy.get('#dynamicSelectBoxDropdownGrid tbody > .dx-data-row > td').eq(2).click({ force: true });
-    
     cy.wait(500)
+    
     cy.getBySel('currencies').click()
-    cy.get('#dynamicSelectBoxDropdownGrid').eq(3).find(' tbody > .dx-data-row > td').click({ force: true });
+    cy.get('[data-test="dynamicSelectBoxDropdownGrid"] > .dx-gridbase-container > .dx-datagrid-rowsview').eq(1).find(' tbody > .dx-data-row > td').eq(0).click();
 
     cy.getBySel('midTypes').click();
     cy.wait(500)
