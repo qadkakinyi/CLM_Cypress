@@ -33,9 +33,9 @@ describe('Regulation Groups', ()=>{
     it('Duplicates a Regulation Group', ()=>{
         cy.visit('/settings/regulation-groups').wait(1500)
         cy.get('header > div .fa-clone').last().click().wait(1000)
-        cy.getByFormControlName('newName').type('DKA Duplicate Group')
+        cy.getByFormControlName('newName').type('DKA Duplicate Group '+faker.string.alphanumeric(3))
         cy.getByFormControlName('hash').eq(1).type(hashValue)
-        cy.get('#duplicateRegulationGroupForm [icon="save"]').click().wait(11000)
+        cy.get('#duplicateRegulationGroupForm [icon="save"]').click().wait(7000)
         cy.contains('Duplicated regulation group has been added.').wait(1000)
     })
 
@@ -71,7 +71,7 @@ describe('Regulation Groups', ()=>{
         cy.get('[primary-buttons=""] > [icon="trash"] > .sa-button').click({force:true}).wait(1000)
         cy.get('.col > [icon="trash"]').click()
         cy.get('.MessageBoxButtonSection').contains('button', 'Yes').click()
-        cy.wait(39000)
+        cy.wait(35000)
         cy.contains('The Regulation Group has been deleted.')
     })
 

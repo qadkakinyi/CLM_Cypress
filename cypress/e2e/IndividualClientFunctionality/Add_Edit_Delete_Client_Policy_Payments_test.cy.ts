@@ -1,5 +1,5 @@
 import { faker } from "@faker-js/faker";
-import {navigateToClientMenu} from "../../support/e2e";
+import {navigateToClientMenu, navigateToNewestClientMenu} from "../../support/e2e";
 
 let policyNumber = faker.number.int(8).toString()
 
@@ -8,7 +8,7 @@ let client_id = '';
 describe('Add, Edit, Delete Client Policy Payments', () => {
   it('Go to Policy Payments detail line', () => {
     // Click on Know your Clients navigation item
-    navigateToClientMenu('Individual')
+    navigateToNewestClientMenu('Individual')
 
     cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Policy Payments').click();
     cy.wait(500)

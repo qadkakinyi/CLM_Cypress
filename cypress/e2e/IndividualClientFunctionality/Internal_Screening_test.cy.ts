@@ -28,7 +28,7 @@ describe('Internal Screening - Individual', ()=>{
         cy.getByFormControlName('firstName').type(faker.person.firstName())
         cy.getByFormControlName('lastName').type(faker.person.lastName())
         cy.getByFormControlName('dateOfBirth').type(faker.date.birthdate().toISOString().slice(0, 10))
-        cy.getByFormControlName('taxIdentificationNumber').eq(0).type(IdNumber.toString())
+        // cy.getByFormControlName('taxIdentificationNumber').eq(0).type(IdNumber.toString())
         // cy.getByFormControlName('taxIdentificationNumber').type(faker.string.alphanumeric(15))
         cy.getByDataCy('blacklistedReason').click()
         cy.get('#dynamicSelectBoxDropdownGrid table').contains('td', 'Fraud').click({ force: true });
@@ -54,7 +54,7 @@ describe('Internal Screening - Individual', ()=>{
         // cy.getByFormControlName('firstName').clear()
         // cy.getByFormControlName('lastName').clear()
         // cy.getByFormControlName('dateOfBirth').clear()
-        cy.getByFormControlName('taxIdentificationNumber').type(IdNumber.toString())
+        // cy.getByFormControlName('taxIdentificationNumber').type(IdNumber.toString())
         cy.getByDataCy('search-blacklisted-individual').click()
         cy.contains('Internal search has been executed.')
         
