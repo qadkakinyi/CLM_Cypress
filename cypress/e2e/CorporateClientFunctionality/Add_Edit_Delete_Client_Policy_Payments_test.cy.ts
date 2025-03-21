@@ -23,12 +23,13 @@ describe('Add, Edit, Delete Client Policy Payments', () => {
     // Add new Client Policies
     cy.visit(location).wait(3000)
     cy.getBySel('addContractCollection').click();
+    cy.wait(1500)
 
     // cy.getBySel('clientContractPolicyNumbers').click();
     // cy.get('.dx-overlay-wrapper.dx-popup-wrapper.dx-dropdowneditor-overlay .dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true });
 
     cy.getBySel('transactionPaymentMethods').click();
-    cy.get('.dx-overlay-wrapper.dx-popup-wrapper.dx-dropdowneditor-overlay .dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true });
+    cy.get('.dx-overlay-wrapper.dx-popup-wrapper.dx-dropdowneditor-overlay .dx-datagrid-rowsview table tbody tr td').eq(0).click();
 
     cy.get('#addClientContractCollectionForm input[name="paymentAmount"]').type(faker.finance.amount({ min: 1, max: 20 }));
     cy.get('#addClientContractCollectionForm input[name="paymentDate"]').type(faker.date.anytime().toISOString().slice(0, 10));

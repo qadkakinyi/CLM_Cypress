@@ -76,7 +76,7 @@ describe('Add, Edit, Delete Client Cards - Corporate', () => {
     gridCards.get('.dx-command-edit-with-icons a').eq(0).click({ force: true });
 
     // Delete Cards
-    cy.getBySel('deleteCard').should('be.visible').click();
+    cy.getBySel('deleteCard').scrollIntoView().click();
     cy.get('#bot2-Msg1').contains('Yes').click().wait(2000);
     cy.contains('The card has been deleted')
   })

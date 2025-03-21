@@ -76,7 +76,7 @@ describe('Add, Edit, Delete Client Trade', () => {
     cy.getBySel('gridClientTrades').then(() => {
       cy.get('.dx-datagrid-filter-row .dx-texteditor-input-container input').eq(1).type(externalReference, {force:true});
 
-      cy.wait(2000);
+      cy.wait(4000);
 
       // let gridTrades = cy.wrap('#gridClientTrades table tbody tr td');
       cy.get('#gridClientTrades .fa-angle-double-right').eq(0).click({ force: true });
@@ -93,7 +93,7 @@ describe('Add, Edit, Delete Client Trade', () => {
   
     cy.get('.dx-datagrid-filter-row .dx-texteditor-input-container input').eq(1).type(externalReference, {force:true});
 
-    cy.wait(2000);
+    cy.wait(4000);
 
     // let gridTrades = cy.wrap('#gridClientTrades table tbody tr td');
     cy.get('#gridClientTrades .fa-angle-double-right').eq(0).click({ force: true });
