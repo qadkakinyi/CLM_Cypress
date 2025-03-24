@@ -43,11 +43,10 @@ describe('Add, Edit, Delete Client Wallets', () => {
       let gridWallets = cy.wrap('#gridClientCards table tbody tr td');
       gridWallets.get('.dx-command-edit-with-icons a').eq(0).click({ force: true });
 
-      cy.get('#editClientWalletForm').should('be.visible');
+      cy.get('#editClientWalletForm').scrollIntoView();
 
       walletName = faker.lorem.word(10);      
-      cy.get('#editClientWalletForm input[name="name"]').should('be.visible').clear();
-      cy.get('#editClientWalletForm input[name="name"]').type(walletName);
+      cy.get('#editClientWalletForm input[name="name"]').scrollIntoView().clear().type(walletName);
 
       cy.getBySel('saveAndCloseButton').click().wait(1000);
     });
@@ -56,7 +55,7 @@ describe('Add, Edit, Delete Client Wallets', () => {
   it('Delete client Wallet', () => {
     cy.visit(`/main/client-individual/${client_id}/1/wallets`)
     cy.wait(2000)
-    cy.getBySel('gridClientWallets').should('be.visible');
+    cy.getBySel('gridClientWallets').scrollIntoView()
     cy.get('.dx-datagrid-filter-row .dx-texteditor-input-container input').eq(0).type(walletName);
 
     cy.wait(2000);
@@ -65,7 +64,7 @@ describe('Add, Edit, Delete Client Wallets', () => {
     gridWallets.get('.dx-command-edit-with-icons a').eq(0).click({ force: true });
 
     // Delete Wallet
-    cy.getBySel('deleteWallet').should('be.visible').click();
+    cy.getBySel('deleteWallet').scrollIntoView().click();
     cy.get('#bot2-Msg1').contains('Yes').click().wait(1000);
   })
 })

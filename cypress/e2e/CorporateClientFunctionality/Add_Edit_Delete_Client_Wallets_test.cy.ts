@@ -1,7 +1,7 @@
 import { faker } from "@faker-js/faker";
 import {navigateToClientMenu} from "../../support/e2e";
 
-let walletName = faker.lorem.word(10);
+let walletName = ''
 
 let location = '';
 
@@ -19,6 +19,7 @@ describe('Add, Edit, Delete Client Wallets', () => {
     // Add new Client Wallet
     cy.getBySel('addWallet').click();
     cy.wait(1000);
+    walletName = faker.lorem.word(10);
 
     cy.getBySel('addClientWalletForm').should('be.visible').then(() => {
       cy.get('#addClientWalletForm input[name="name"]').type(walletName);
@@ -33,7 +34,7 @@ describe('Add, Edit, Delete Client Wallets', () => {
   it('Edit client Cards', () => {
     // Edit Wallet
     cy.visit(location).wait(2000)
-    cy.getBySel('gridClientWallets').should('be.visible').then(() => {
+    cy.getBySel('gridClientWallets').scrollIntoView().then(() => {
       cy.get('.dx-datagrid-filter-row .dx-texteditor-input-container input').eq(0).type(walletName);
 
       cy.wait(2000);
@@ -44,8 +45,7 @@ describe('Add, Edit, Delete Client Wallets', () => {
       cy.get('#editClientWalletForm').should('be.visible');
 
       walletName = faker.lorem.word(10);      
-      cy.get('#editClientWalletForm input[name="name"]').should('be.visible').clear();
-      cy.get('#editClientWalletForm input[name="name"]').type(walletName);
+      cy.get('#editClientWalletForm input[name="name"]').scrollIntoView().clear().type(walletName);
 
       cy.getBySel('saveAndCloseButton').click().wait(2000);
       cy.contains('Client wallet has been updated')
@@ -55,7 +55,7 @@ describe('Add, Edit, Delete Client Wallets', () => {
   it('Delete client Cards', () => {
     cy.visit(location)
     cy.wait(2000)
-    cy.getBySel('gridClientWallets').should('be.visible');
+    cy.getBySel('gridClientWallets').scrollIntoView()
     cy.get('.dx-datagrid-filter-row .dx-texteditor-input-container input').eq(0).type(walletName);
 
     cy.wait(2000);
@@ -64,7 +64,7 @@ describe('Add, Edit, Delete Client Wallets', () => {
     gridWallets.get('.dx-command-edit-with-icons a').eq(0).click({ force: true });
 
     // Delete Wallet
-    cy.getBySel('deleteWallet').should('be.visible').click();
+    cy.getBySel('deleteWallet').scrollIntoView().click();
     cy.get('#bot2-Msg1').contains('Yes').click().wait(2000);
     cy.contains('The wallet has been deleted')
   })

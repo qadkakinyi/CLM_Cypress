@@ -1,5 +1,5 @@
 import { faker } from "@faker-js/faker";
-import {navigateToClientMenu} from "../../support/e2e";
+import { navigateToNewestClientMenu} from "../../support/e2e";
 let externalReference = faker.string.alphanumeric(12);
 
 let location = '';
@@ -19,7 +19,7 @@ describe('Add, Edit, Delete Client Trade', () => {
   
   it('Add Client Trade', () => {
     // Click on Know your Clients navigation item
-   navigateToClientMenu('Corporate')
+   navigateToNewestClientMenu('Corporate')
 
     cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Trades').click();
 
@@ -79,10 +79,9 @@ describe('Add, Edit, Delete Client Trade', () => {
       cy.wait(4000);
 
       // let gridTrades = cy.wrap('#gridClientTrades table tbody tr td');
-      cy.get('#gridClientTrades .fa-angle-double-right').eq(0).click({ force: true });
+      cy.get('#gridClientTrades .fa-angle-double-right').eq(0).click({ force: true }).wait(1000);
 
-      cy.get('#editClientTradeForm input[name="orderReference"]').clear();
-      cy.get('#editClientTradeForm input[name="orderReference"]').type(faker.string.alphanumeric(12));
+      cy.get('#editClientTradeForm input[name="orderReference"]').clear().type(faker.string.alphanumeric(12));
 
       cy.getBySel('saveAndCloseButton').click();
     });
@@ -96,7 +95,7 @@ describe('Add, Edit, Delete Client Trade', () => {
     cy.wait(4000);
 
     // let gridTrades = cy.wrap('#gridClientTrades table tbody tr td');
-    cy.get('#gridClientTrades .fa-angle-double-right').eq(0).click({ force: true });
+    cy.get('#gridClientTrades .fa-angle-double-right').eq(0).click({ force: true }).wait(1000);
 
     // Delete Cards
     cy.getBySel('deleteTrade').click();
