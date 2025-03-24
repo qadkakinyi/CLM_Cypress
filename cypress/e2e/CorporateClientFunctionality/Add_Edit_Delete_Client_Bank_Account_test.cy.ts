@@ -74,21 +74,21 @@ describe('Add, Edit, Delete Client Bank Account', () => {
     cy.contains('The bank account has been updated')
   })
 
-  it.skip('Delete client Bank Account', () => {
-    cy.visit(location).wait(4000)
-   
-    cy.get('.dx-datagrid-filter-row .dx-texteditor-input-container input').eq(0).type(accountNumberTest);
-
-    cy.wait(2000);
-
-    let gridClientAccounts = cy.wrap('#gridClientAccounts table tbody tr');
-    gridClientAccounts.get('.dx-command-edit-with-icons a').eq(0).click({ force: true });
-
-    cy.wait(2000);
-    
-    // Delete Bank Account
-    cy.getBySel('deleteClientAccountButton').should('be.visible').click();
-    cy.get('#bot2-Msg1').contains('Yes').click().wait(2000);
-    cy.contains('The bank account has been deleted')
-  })
+  // it.skip('Delete client Bank Account', () => {
+  //   cy.visit(location).wait(4000)
+  // 
+  //   cy.get('.dx-datagrid-filter-row .dx-texteditor-input-container input').eq(0).type(accountNumberTest);
+  //
+  //   cy.wait(2000);
+  //
+  //   let gridClientAccounts = cy.wrap('#gridClientAccounts table tbody tr');
+  //   gridClientAccounts.get('.dx-command-edit-with-icons a').eq(0).click({ force: true });
+  //
+  //   cy.wait(2000);
+  //  
+  //   // Delete Bank Account
+  //   cy.getBySel('deleteClientAccountButton').should('be.visible').click();
+  //   cy.get('#bot2-Msg1').contains('Yes').click().wait(2000);
+  //   cy.contains('The bank account has been deleted')
+  // })
 })

@@ -1,5 +1,5 @@
 import {faker} from '@faker-js/faker'
-import {navigateToClientMenu} from "../../support/e2e";
+import { navigateToNewestClientMenu } from "../../support/e2e";
 
 describe('Add a client questionnaire - Individual', ()=>{
     
@@ -53,6 +53,14 @@ describe('Add a client questionnaire - Individual', ()=>{
         
         cy.getByDataCy('save-question').click()
         cy.wait(2000)
+
+        //  ADD question ANSWER
+        cy.contains('[icon="plus"]', 'Add').click().wait(1000)
+        cy.getByFormControlName('value').type('Test')
+        cy.getByFormControlName('minimumValue').type('1')
+        cy.getByFormControlName('maximumValue').type('4')
+        cy.getByFormControlName('isDefault').check()
+        cy.get('#addAnswerForm > .custom-backround-transparent > .row > .col > [icon="save"] > .sa-button').click().wait(2000)
         
     })
 
@@ -61,7 +69,7 @@ describe('Add a client questionnaire - Individual', ()=>{
         cy.visit('/main/clients')
         cy.wait(2000)
 
-        navigateToClientMenu('Individual')
+        navigateToNewestClientMenu('Individual')
         
         cy.wait(2000)
         

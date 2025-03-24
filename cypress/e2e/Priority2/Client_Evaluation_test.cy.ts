@@ -1,5 +1,5 @@
 import {faker} from "@faker-js/faker";
-import {filterClientType, navigateToClientMenu} from "../../support/e2e";
+import {filterClientType, navigateToClientMenu, navigateToNewestClientMenu} from "../../support/e2e";
 let api_baseUrl = Cypress.env('api_baseUrl')
 function getProviderKey(){
     let today = new Date();
@@ -12,8 +12,8 @@ let hashValue = '';
 let regulation_group_name = 'DKA Regulation Group '+faker.number.int({max:100});
 let criteria_mappingReference = faker.string.alphanumeric(13);
 
-let firstName = faker.person.firstName('male');
-let lastName = faker.person.lastName('male')
+let firstName = ''
+let lastName = ''
 let clientId = '';
 let token = '';
 function NavigateToClientDashboard(){
@@ -128,6 +128,9 @@ describe('Perform Client Evaluation Using Staging APIs', ()=>{
         cy.visit("/main/clients").wait(2000);
         cy.get('#addIndividual').click().wait(1500);
         
+        firstName = faker.person.firstName('male');
+        lastName = faker.person.lastName('male');
+        
         cy.get('#addClientIndividualForm input[name="firstName"]').type(firstName);
         cy.get('#addClientIndividualForm input[name="lastName"]').type(lastName);
         cy.get('#addClientIndividualForm input[name="middleName"]').type(faker.person.middleName('male'));
@@ -160,20 +163,15 @@ describe('Perform Client Evaluation Using Staging APIs', ()=>{
     })
     
     it('Navigates to the newly created client dashboard', ()=>{
-        cy.visit('main/clients').wait(3000);
-        cy.get('#gridClients').should('be.visible');
+        navigateToNewestClientMenu('Individual')
+        cy.wait(2000)
         
-        cy.get('[aria-colindex="4"]  .dx-texteditor-input-container > .dx-texteditor-input').eq(0).type(`${firstName} ${lastName}`).wait(2500)
-
-        cy.get('#gridClients table tr td .dx-header-filter-indicator').eq(0).click({force:true});
-
-        let gridClientsRows = cy.wrap('#gridClients table tbody tr');
-        gridClientsRows.get('.dx-command-edit-with-icons a').eq(0).click({ force: true }).wait(2000);
+        cy.contains(`${firstName} ${lastName}`).wait(1500)
         
     })
 
     it('Adds an evaluation', ()=>{
-        NavigateToClientDashboard()
+        navigateToNewestClientMenu('Individual')
         
         cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Evaluations').click().wait(2000);
         getClientID();

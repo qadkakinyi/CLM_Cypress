@@ -8,7 +8,7 @@ describe('External Notification Templates', ()=>{
     
     it('Adds an external notification template', ()=>{
         
-        cy.contains('Add').click().wait(2000)
+        cy.get('sa-button[icon="plus"]').click().wait(2000)
         
         cy.getByFormControlName('reference').type(faker.string.alphanumeric(13))
         cy.getByFormControlName('title').type('Test DKA');

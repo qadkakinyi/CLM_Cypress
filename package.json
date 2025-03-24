@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "cypress:open": "cypress open",
-    "cypress:run": "npm run prereport && cypress run --browser chrome",
+    "cypress:run": "npm run prereport && cypress run --browser electron",
     "cypress:run-specific": "cypress run --browser chrome --spec \"/app/cypress/e2e/IndividualClientFunctionality/Add_Edit_Delete_Client_Evaluation_test.cy.ts\"",
     "delete:reports": "rm -rf /app/cypress/results/* || true",
     "prereport": "npm run delete:reports",

@@ -33,18 +33,18 @@ describe('Add, Edit, Delete Client Trade', () => {
     })
 
     cy.getBySel('addClientTradeForm').should('be.visible').then(() => {
-      cy.getBySel('tradeFrequenciesEnum').should('be.visible').click();
+      cy.getBySel('tradeFrequenciesEnum').scrollIntoView().click();
       cy.get('.dx-overlay-wrapper.dx-popup-wrapper.dx-dropdowneditor-overlay .dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true });
 
-      cy.getBySel('tradeTypes').should('be.visible').click();
+      cy.getBySel('tradeTypes').scrollIntoView().click();
       cy.get('.dx-overlay-wrapper.dx-popup-wrapper.dx-dropdowneditor-overlay .dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true });
 
-      cy.getBySel('currenciesList').should('be.visible').click();
+      cy.getBySel('currenciesList').scrollIntoView().click();
       cy.get('.dx-overlay-wrapper.dx-popup-wrapper.dx-dropdowneditor-overlay .dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true });
 
       cy.get('#addClientTradeForm input[name="createdOn"]').type(faker.date.anytime().toISOString().slice(0, 10));
 
-      cy.getBySel('clientInvestmentAccountsList').should('be.visible').click();
+      cy.getBySel('clientInvestmentAccountsList').scrollIntoView().click();
       cy.get('.dx-overlay-wrapper.dx-popup-wrapper.dx-dropdowneditor-overlay .dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true });
 
 
@@ -74,14 +74,14 @@ describe('Add, Edit, Delete Client Trade', () => {
   it('Edit client trade', () => {
     // Edit Cards
     cy.visit(`/main/client-individual/${client_id}/1/trades`).wait(2000);
-    cy.getBySel('gridClientTrades').should('be.visible').then(() => {
+    cy.getBySel('gridClientTrades').scrollIntoView().then(() => {
       cy.get('.dx-datagrid-filter-row .dx-texteditor-input-container input').eq(1).type(externalReference);
 
       cy.wait(2000);
 
       cy.get('#gridClientTrades .fa-angle-double-right').eq(0).click({ force: true });
 
-      cy.get('#editClientTradeForm').should('be.visible');
+      cy.get('#editClientTradeForm').scrollIntoView();
 
       cy.get('#editClientTradeForm input[name="orderReference"]').clear();
       cy.get('#editClientTradeForm input[name="orderReference"]').type(faker.string.alphanumeric(12));
@@ -92,7 +92,7 @@ describe('Add, Edit, Delete Client Trade', () => {
 
   it('Delete client trade', () => {
     cy.visit(`/main/client-individual/${client_id}/1/trades`).wait(2000);
-    cy.getBySel('gridClientTrades').should('be.visible');
+    cy.getBySel('gridClientTrades').scrollIntoView();
     cy.get('.dx-datagrid-filter-row .dx-texteditor-input-container input').eq(1).type(externalReference);
 
     cy.wait(2000);
@@ -100,7 +100,7 @@ describe('Add, Edit, Delete Client Trade', () => {
     cy.get('#gridClientTrades .fa-angle-double-right').eq(0).click({ force: true });
 
     // Delete Cards
-    cy.getBySel('deleteTrade').should('be.visible').click();
+    cy.getBySel('deleteTrade').scrollIntoView().click();
     cy.get('#bot2-Msg1').contains('Yes').click();
   })
 })

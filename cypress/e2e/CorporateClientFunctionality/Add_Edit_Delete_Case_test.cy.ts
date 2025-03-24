@@ -1,4 +1,4 @@
-import {navigateToClientMenu} from "../../support/e2e";
+import {navigateToNewestClientMenu} from "../../support/e2e";
 import {faker} from "@faker-js/faker";
 
 let location = '';
@@ -43,7 +43,7 @@ describe('Cases - Corporate', ()=>{
     })
     
     it('Adds A Case', ()=>{
-        navigateToClientMenu('Corporate')
+        navigateToNewestClientMenu('Corporate')
 
         cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Cases').click();
         cy.getByDataCy('addCaseBtn').click().wait(1000)

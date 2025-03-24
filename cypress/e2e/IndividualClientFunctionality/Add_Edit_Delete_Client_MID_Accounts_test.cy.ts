@@ -39,8 +39,8 @@ describe('Add, Edit, Delete Client MID Accounts', () => {
 
     cy.get('#addMidAccountForm input[name="name"]').type(faker.finance.accountName());
 
-    cy.getBySel('currencies').click();
-    cy.get('#dynamicSelectBoxDropdownGrid tbody > .dx-data-row > td').eq(2).click({ force: true });
+    cy.getBySel('currencies').click()
+    cy.get('[data-test="dynamicSelectBoxDropdownGrid"] > .dx-gridbase-container > .dx-datagrid-rowsview').eq(1).find(' tbody > .dx-data-row > td').eq(0).click();
     
     cy.wait(500)
 
