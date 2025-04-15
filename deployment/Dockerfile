@@ -2,8 +2,8 @@ FROM cypress/included:13.7.3
 
 WORKDIR /app
 
-# Copy the entry.sh script from deployment folder to /app
-COPY ./deployment/entry.sh /app/entry.sh
+# Copy the entire project folder (including package.json) into /app
+COPY . /app
 
 # Install npm dependencies
 RUN npm install
