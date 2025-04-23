@@ -1,9 +1,15 @@
-#bin/sh
+#!/bin/sh
 
+# Run Cypress tests
 npm run cypress:run
-#npm run cypress:run-specific
+
+# Optionally run a specific test suite (if needed)
+# npm run cypress:run-specific
+
+# Merge Mochawesome reports
 npm run mochawesome:merge
 
 echo "Test Execution Completed"
 
-#tail -f /dev/null
+# Keep the container running if needed
+# tail -f /dev/null
