@@ -6,8 +6,8 @@ describe('Self-Declaration UBO', ()=>{
     
     it('Adds Self Declaration UBO', ()=>{
         navigateToClientMenu('Corporate')
-
-        cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Self-Declaration UBO').click();    
+        cy.wait(2000)
+        cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Self-Declaration UBO').click().wait(2000);    
         cy.getByDataCy('Add-UBO').click().wait(1000)
         cy.location('pathname').then((loc)=>{
             location = loc
@@ -24,8 +24,8 @@ describe('Self-Declaration UBO', ()=>{
         cy.getByFormControlName('controllingPersonTypeOther').type(faker.word.words(5))
         cy.getByDataCy('existing-profile').click()
         cy.get('#clientsFilteringDataGrid').find('[aria-rowindex="1"]').click().wait(2000)
-        cy.get('#addUltimateBeneficialOwnerForm').contains('Save').click()
-        cy.contains('The ultimate beneficial owner has been added.')
+        cy.get('#addUltimateBeneficialOwnerForm').contains('Save').click().wait(1000)
+        cy.contains('The ultimate beneficial owner has been added.').wait(2000)
     })
 
     it('Edits Self Declaration UBO', ()=>{
@@ -34,7 +34,7 @@ describe('Self-Declaration UBO', ()=>{
         cy.get('#editClientUltimateBeneficialOwnerForm')
         cy.getByFormControlName('percentageOfShares').clear().type(faker.number.int({min:0, max:20}).toString())
         cy.contains('div','Save & Close').click().wait(500)
-        cy.contains('The Ultimate Beneficial Owner has been updated.')
+        cy.contains('The Ultimate Beneficial Owner has been updated.').wait(2000)
     })
 
     it('Deletes Self Declaration UBO', ()=>{

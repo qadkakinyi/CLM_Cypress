@@ -4,7 +4,7 @@ import { faker } from "@faker-js/faker";
 describe('Add Client Corporate', () => {
   it('Add Client Corporate', () => {
     // Click on Know your Clients navigation item
-    cy.get('a[href*="main/clients"]').click();
+    cy.getByDataCy('know-clients-btn').click().wait(3000);
     cy.get('#addCorporate').should('be.visible').click();
     cy.wait(1500)
 

@@ -1,5 +1,5 @@
 import {faker} from "@faker-js/faker";
-import {filterClientType, navigateToClientMenu, navigateToNewestClientMenu} from "../../support/e2e";
+import { navigateToNewestClientMenu } from "../../support/e2e";
 let api_baseUrl = Cypress.env('api_baseUrl')
 function getProviderKey(){
     let today = new Date();
@@ -23,7 +23,7 @@ function NavigateToClientDashboard(){
     cy.get('[aria-colindex="4"]  .dx-texteditor-input-container > .dx-texteditor-input').eq(0).type(firstName+' '+lastName).wait(2500)
     // cy.get('[aria-colindex="4"]  .dx-texteditor-input-container > .dx-texteditor-input').eq(0).type('Leon Gulg').wait(2500)
 
-    cy.get('#gridClients table tr td .dx-header-filter-indicator').eq(0).click({force:true});
+    cy.get('#gridClients table tr td .dx-header-filter-indicator').eq(0).click();
 
     let gridClientsRows = cy.wrap('#gridClients table tbody tr');
     gridClientsRows.get('.dx-command-edit-with-icons a').eq(0).click({ force: true }).wait(2000);
@@ -57,7 +57,7 @@ describe('Perform Client Evaluation Using Staging APIs', ()=>{
     it('Generate Regulation Group Hash Key', function() {
 
         cy.getByDataCy('system-settings-menu').scrollIntoView().click();
-        cy.get('[title="Account"]').click().wait(1000);
+        cy.contains('ul sa-menu-item span',"Account").click().wait(1000);
         cy.get('[icon="key"] > .sa-button > .text').click().wait(1000);
         cy.get('.col-md-12 > .form-group > app-dynamic-selectbox > .sa-input-dropdown > .custom-selectbox > .dx-dropdowneditor-input-wrapper > .dx-texteditor-container > .dx-texteditor-buttons-container > .dx-widget > .dx-button-content > .dx-dropdowneditor-icon').click();
         cy.get('[aria-rowindex="4"] > td').click();
@@ -75,8 +75,8 @@ describe('Perform Client Evaluation Using Staging APIs', ()=>{
     });
 
     it('Creates a Regulation Group', ()=>{
-        cy.visit('/settings/regulation-groups').wait(1500)
-        cy.contains('Add').click().wait(1000)
+        cy.visit('/settings/regulation-groups').wait(3500)
+        cy.contains('sa-button[icon="plus"]','Add').should('be.visible').click().wait(1000)
         cy.getByFormControlName('name').type(regulation_group_name)
         cy.getByFormControlName('mappingReference').type(faker.string.alphanumeric(13))
         // cy.getByDataCy('countries').click().wait(500)
@@ -86,12 +86,12 @@ describe('Perform Client Evaluation Using Staging APIs', ()=>{
         cy.get('dx-drop-down-box').eq(1).click().wait(500)
         cy.contains('0x').click({force:true}).wait(1000)
         cy.getByFormControlName('hash').eq(0).type(hashValue)
-        cy.contains('sa-button','Save').click().wait(1500)
+        cy.contains('#addRegulationGroupForm sa-button[icon="save"]','Save').scrollIntoView().click().wait(1500)
         cy.contains('Regulation group has been added.').wait(1000)
     })
 
     it('Adds a Criteria and Its Answers', ()=>{
-        cy.visit('/settings/criteria').wait(2000)
+        cy.visit('/settings/criteria').wait(3500)
         cy.contains('sa-button', 'Add').click().wait(1000)
 
         cy.getByFormControlName('name').eq(0).type('Test')
@@ -112,15 +112,15 @@ describe('Perform Client Evaluation Using Staging APIs', ()=>{
 
         cy.getByFormControlName('includeInEvaluation').check()
 
-        cy.contains('sa-button', 'Save').click().wait(1000)
-        cy.contains('The criterion has been added').wait(2000)
+        cy.contains('#addCriterionForm sa-button[icon="save"]', 'Save').click().wait(1000)
+        cy.contains('The criterion has been added').wait(4000)
         
         //  ADD CRITERION ANSWER
         cy.contains('[icon="plus"]', 'Add').click().wait(1000)
         cy.getByFormControlName('value').type('Test')
         cy.getByFormControlName('evaluationGrade').select('Low')
         cy.getByFormControlName('isDefault').check()
-        cy.get('#addAnswerForm > .custom-backround-transparent > .row > .col > [icon="save"] > .sa-button').click().wait(2000)
+        cy.get("#addAnswerForm sa-button[icon='save']").click().wait(2000)
     })
 
     it('Add Individual Client To The New Regulation Group', () => {

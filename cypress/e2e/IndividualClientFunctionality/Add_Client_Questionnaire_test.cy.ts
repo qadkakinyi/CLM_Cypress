@@ -33,7 +33,7 @@ describe('Add a client questionnaire - Individual', ()=>{
         cy.contains('Add').click()
         cy.wait(1000)
         
-        cy.getByFormControlName('name').type('Where do you come from?')
+        cy.getByFormControlName('name').type('Where do you come from? '+ faker.string.alphanumeric(3))
         cy.getByDataCy('regulation-group-list').click()
         cy.get('#dynamicSelectBoxDropdownGrid').find('.dx-datagrid-rowsview').find('tr > td').first().click()
         cy.getByFormControlName('questionsCategoryId').click()

@@ -43,9 +43,8 @@ describe('Add, Edit, Delete Client Related Website - Individual', () => {
 
   it('Edit Client Related website', () => {
     // Edit Related Website
-    cy.visit(`/main/client-individual/${client_id}/1/related-websites`)
-    cy.wait(3000)
-    cy.getBySel('gridClientRelatedWebsites').should('be.visible');
+    cy.visit(`/main/client-individual/${client_id}/1/related-websites`).wait(3000)
+   
     cy.get('#gridClientRelatedWebsites .fa-angle-double-right').eq(0).click({ force: true });
     cy.get('#editClientRelatedWebsiteForm').should('be.visible');
 
@@ -57,9 +56,8 @@ describe('Add, Edit, Delete Client Related Website - Individual', () => {
 
   it('Delete client Related Website', () => {
     // Delete Related Website
-    cy.visit(`/main/client-individual/${client_id}/1/related-websites`)
-    cy.wait(3000)
-    cy.getBySel('gridClientRelatedWebsites').should('be.visible');
+    cy.visit(`/main/client-individual/${client_id}/1/related-websites`).wait(3000)
+    
     cy.get('#gridClientRelatedWebsites .fa-angle-double-right').eq(0).click({ force: true });
     // Delete Related Website
     cy.getBySel('deleteRelatedWebsite').should('be.visible').click();

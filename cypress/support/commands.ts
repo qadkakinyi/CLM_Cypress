@@ -77,20 +77,33 @@ Cypress.Commands.add("visualSnapshot", (maybeName) => {
 });
 
 Cypress.Commands.add("login", (username: string, password: string) => {
-  cy.visit('/').wait(2000);
-
-  cy.url().should('includes', 'login');
-  cy.get('input[name="username"]').should('be.visible').type(username);
-  cy.get('input[name="password"]').should('be.visible').type(password);
-
-  cy.get('#loginFormSubmitButton').type('Cypress.io{enter}').wait(1000)
   
-  //get 'session active modal' and click `yes`
-  // cy.get('#Msg1').find('#bot2-Msg1').click().wait(1000)
+    cy.visit('/').wait(2000);
 
-  // Ensure that dashboard loaded after user login
-  cy.url().should('includes', 'dashboard');
-  cy.location("pathname").should("equal", "/main/dashboard")
+    cy.url().should('includes', 'login');
+    cy.get('input[name="username"]').should('be.visible').type(username);
+    cy.get('input[name="password"]').should('be.visible').type(password);
+
+    cy.get('#loginFormSubmitButton').type('Cypress.io{enter}').wait(1000)
+
+    //get 'session active modal' and click `yes`
+    // cy.get('#Msg1').find('#bot2-Msg1').click().wait(1000)
+
+    // Ensure that dashboard loaded after user login
+    cy.location("pathname").should("equal", "/main/dashboard")
+
+    // pin the main menu
+  cy.get('aside').then(el =>{
+    let unpin_icon = el.find('.dx-icon-unpin')
+    
+    if (unpin_icon.length > 0){
+      cy.wrap(unpin_icon).click().wait(1000)
+    }else{
+      cy.log('Unpin icon missing')
+    }
+  })
+    // cy.get('.dx-icon-unpin').click().wait(1000)
+  
 });
 
 // cypress/support/commands.ts

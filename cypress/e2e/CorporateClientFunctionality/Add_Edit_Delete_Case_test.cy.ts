@@ -11,6 +11,17 @@ describe('Cases - Corporate', ()=>{
         cy.get('#gridRules .dx-datagrid-rowsview .dx-datagrid-content tbody tr').then(el=>{
             if(el.length > 2){
                 cy.log(`${el.length}`)
+                //activate the rule for manual create cases
+                cy.get('#gridRules table tbody tr .fa-angle-double-right').eq(0).click({force:true}).wait(2000)
+
+                cy.get('#editRuleForm')
+                cy.getByFormControlName('status').select('Active')
+
+                cy.get('#clientCaseOptions-widget .fa-plus').click().wait(500)
+                cy.getByFormControlName('manualCreateCases').check()
+
+                cy.contains('sa-button', 'Save').click().wait(2000)
+                cy.contains('Rule has been updated')
                 return;
             }else{
                 cy.log(`${el.length}`)
@@ -33,7 +44,7 @@ describe('Cases - Corporate', ()=>{
                 cy.getByFormControlName('status').select('Active')
 
                 cy.get('#clientCaseOptions-widget .fa-plus').click().wait(500)
-                cy.getByFormControlName('manualCreateCases').click()
+                cy.getByFormControlName('manualCreateCases').check()
 
                 cy.contains('sa-button', 'Save').click().wait(2000)
                 cy.contains('Rule has been updated')
@@ -55,7 +66,7 @@ describe('Cases - Corporate', ()=>{
         cy.getByDataCy('assignee').click().wait(500)
         cy.get('#dynamicSelectBoxDropdownGrid table tbody [aria-rowindex="1"] [aria-colindex="1"]').eq(2).click().wait(500)
         
-        cy.get('#CustomField_Fraud_Status').select('False Positive')
+        // cy.get('#CustomField_Fraud_Status').select('False Positive')
 
         cy.get('#addClientCaseForm').contains('Save').click().wait(3000)
         cy.contains('The case has been added')

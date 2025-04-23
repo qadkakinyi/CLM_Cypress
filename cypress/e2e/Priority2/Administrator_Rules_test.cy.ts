@@ -12,7 +12,7 @@ describe('Add Rule', ()=>{
     it('Generate Regulation Group Hash Key', function() {
         cy.wait(3000)
         cy.getByDataCy('system-settings-menu').scrollIntoView().click();
-        cy.get('[title="Account"]').click().wait(1000);
+        cy.contains('ul sa-menu-item span',"Account").click().wait(1000);
         cy.get('[icon="key"] > .sa-button > .text').click().wait(1000);
         cy.get('.col-md-12 > .form-group > app-dynamic-selectbox > .sa-input-dropdown > .custom-selectbox > .dx-dropdowneditor-input-wrapper > .dx-texteditor-container > .dx-texteditor-buttons-container > .dx-widget > .dx-button-content > .dx-dropdowneditor-icon').click();
         cy.get('[aria-rowindex="5"] > td').click();
