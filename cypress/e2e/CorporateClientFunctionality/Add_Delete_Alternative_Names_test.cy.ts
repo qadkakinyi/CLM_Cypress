@@ -21,7 +21,7 @@ describe('Add and Delete Alternative Names - Corporate', ()=>{
 
     it('Deletes Alternative Names',()=>{
         cy.visit(location).wait(3000)
-        cy.get('.dx-command-edit > .dx-link').first().click({force:true})
+        cy.get('.dx-icon-trash').last().should('be.visible').click()
         cy.wait(3000)
         cy.contains('Yes').click({force:true}).wait(1000)
         cy.contains('The alternative name has been deleted').wait(1000)

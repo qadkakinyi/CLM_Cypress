@@ -1,4 +1,4 @@
-import {filterClientType, navigateToClientMenu} from "../../support/e2e";
+import {filterClientType, navigateToClientMenu, navigateToNewestClientMenu} from "../../support/e2e";
 let api_baseUrl = Cypress.env('api_baseUrl')
 
 let location = '';
@@ -28,20 +28,8 @@ describe('Adhoc Screening Individual Client', ()=>{
 
     it('Performs Person Search Using UI', ()=>{
         
-        cy.visit('main/clients').wait(2000)
-        
-        cy.get('#gridClients').should('be.visible');
-
-        cy.get('#gridClients table tr td .dx-header-filter-indicator').eq(0).click({force:true});
-
-        filterClientType('Individual')
-        //this is to order from the newest to oldest
-        cy.get('#gridClients tr').find('td[aria-label="Column Client Type"]').click().wait(5000)
-
-        let gridClientsRows = cy.wrap('#gridClients table tbody tr');
-        gridClientsRows.get('.dx-command-edit-with-icons a').eq(0).click({ force: true })
-        cy.wait(3000);
-        
+        navigateToNewestClientMenu('Individual')
+        cy.wait(2000)
         
         cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('Screening').click().wait(2000)
         
@@ -91,7 +79,7 @@ describe('Adhoc Screening Individual Client', ()=>{
                     },
                     body: {
                         "acuris": {
-                            "fullName": "Putin",
+                            "fullName": "Michael King",
                             "dateOfBirth": "",
                             "address": "",
                             "city": "",
@@ -150,18 +138,8 @@ describe('Adhoc Screening Individual Client', ()=>{
 describe('Adhoc Screening Corporate Client', ()=>{
 
     it('Performs Business Search Using UI', ()=>{
-        cy.visit('main/clients').wait(2000);
-        cy.get('#gridClients').should('be.visible');
-
-        cy.get('#gridClients table tr td .dx-header-filter-indicator').eq(0).click({force:true});
-
-        filterClientType('Corporate')
-        //this is to order from the newest to oldest
-        cy.get('#gridClients tr').find('td[aria-label="Column Client Type"]').click().wait(5000)
-
-        let gridClientsRows = cy.wrap('#gridClients table tbody tr');
-        gridClientsRows.get('.dx-command-edit-with-icons a').eq(0).click({ force: true })
-        cy.wait(3000);
+        navigateToNewestClientMenu('Corporate')
+        cy.wait(2000);
 
         cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('Screening').click().wait(2000)
 

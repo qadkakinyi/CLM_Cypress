@@ -5,6 +5,7 @@ let client_id = '';
 describe('Adds, Edits and Deletes Tax Residency - Individual', ()=>{
     it('Adds Tax Residency', ()=>{
         navigateToClientMenu('Individual')
+        cy.wait(3000)
 
         cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Tax Residency').click();
         cy.wait(1000)

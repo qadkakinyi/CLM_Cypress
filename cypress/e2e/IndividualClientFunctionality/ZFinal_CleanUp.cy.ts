@@ -1,9 +1,9 @@
-import {navigateToClientMenu} from "../../support/e2e";
+import {navigateToClientMenu, navigateToNewestClientMenu} from "../../support/e2e";
 // import {accountNumberTest} from "./Add_Edit_Delete_Client_Bank_Account_test.cy";
 
 describe('Cleans Up Created Objects That Were being Used By other Functionalities', ()=>{
     it('Delete client Bank Account', () => {
-        navigateToClientMenu('Individual')
+        navigateToNewestClientMenu('Individual')
         cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Bank Accounts').click();
         cy.getBySel('gridClientAccounts').should('be.visible');
         // cy.get('.dx-datagrid-filter-row .dx-texteditor-input-container input').eq(0).type(accountNumberTest);

@@ -1,12 +1,12 @@
 import { faker } from "@faker-js/faker";
-import {navigateToClientMenu} from "../../support/e2e";
+import {navigateToNewestClientMenu} from "../../support/e2e";
 
 export const accountNumberTest = faker.finance.accountNumber(12);
 let client_id:string = ''
 
 export function add_bank_account(){
   // Click on Know your Clients navigation item
-  navigateToClientMenu('Individual')
+  navigateToNewestClientMenu('Individual')
 
   cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Bank Accounts').click();
 

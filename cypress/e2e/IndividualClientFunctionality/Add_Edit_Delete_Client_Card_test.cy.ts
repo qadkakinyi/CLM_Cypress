@@ -1,5 +1,5 @@
 import { faker } from "@faker-js/faker";
-import {navigateToClientMenu} from "../../support/e2e";
+import { navigateToNewestClientMenu} from "../../support/e2e";
 
 let cardNumberTest = faker.finance.creditCardNumber('visa');
 let client_id:string = ''
@@ -10,7 +10,7 @@ describe('Add, Edit, Delete Client Cards', () => {
     //add bank account required
     
     // Click on Know your Clients navigation item
-    navigateToClientMenu('Individual')
+    navigateToNewestClientMenu('Individual')
 
     cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Cards').click();
 

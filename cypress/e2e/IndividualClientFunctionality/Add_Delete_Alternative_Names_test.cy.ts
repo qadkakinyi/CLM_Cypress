@@ -22,8 +22,8 @@ describe('Add and Delete Alternative Names', ()=>{
     })
 
     it('Deletes Alternative Names',()=>{
-        cy.visit(location).wait(2500)
-        cy.get('.dx-command-edit > .dx-link').last().click({force:true})
+        cy.visit(location).wait(3500)
+        cy.get('.dx-icon-trash').last().should('be.visible').click()
         cy.wait(2000)
         cy.contains('Yes').click().wait(1000)
         cy.contains('The alternative name has been deleted')

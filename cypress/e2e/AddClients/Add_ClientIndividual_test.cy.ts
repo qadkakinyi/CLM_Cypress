@@ -7,7 +7,7 @@ describe('Add Client Individual', () => {
     // cy.intercept('GET','http://localhost:5140/api/settings/regulationGroup/1/subGroups', []).as('getRegulation')
     // cy.intercept('GET','http://localhost:5140/api/settings/customFields/form/1/0', []).as('getCustomFields')
     // Click on Know your Clients navigation item
-    cy.get('a[href*="main/clients"]').click();
+    cy.getByDataCy('know-clients-btn').click().wait(2000);
     cy.get('#addIndividual').click().wait(2000);
 
     let firstName = faker.person.firstName('male');
