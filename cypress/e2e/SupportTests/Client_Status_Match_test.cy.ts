@@ -1,6 +1,6 @@
 
 describe('Client Status Match', ()=>{
-    it('It checks client status in `Know your Clients page` vs in the client Profile ', ()=>{
+    it('It checks client status in `Client Management page` vs in the client Profile ', ()=>{
         cy.visit('main/clients').wait(2000);
         cy.get('#gridClients').should('be.visible');
 

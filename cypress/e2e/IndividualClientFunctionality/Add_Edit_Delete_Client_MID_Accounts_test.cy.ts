@@ -8,17 +8,17 @@ let client_id = '';
 describe('Add, Edit, Delete Client MID Accounts', () => {
   before(()=>{
     cy.visit('/settings/mid-types').wait(2000)
-    cy.contains('Add').click({force:true}).wait(1000)
+    cy.contains('sa-button','Add').click().wait(1000)
     cy.getByFormControlName('name').type('Test MID type')
     cy.getByFormControlName('mappingReference').type(faker.string.alphanumeric(13))
-    cy.contains('Save').click()
+    cy.contains('#addMidTypeForm [icon="save"]','Save').click()
     cy.wait(1000)
     
     cy.visit('/settings/mid-classes').wait(2000)
-    cy.contains('Add').click({force:true}).wait(1000)
+    cy.contains('sa-button','Add').click().wait(1000)
     cy.getByFormControlName('name').type('Test MID class')
     cy.getByFormControlName('mappingReference').type(faker.string.alphanumeric(13))
-    cy.contains('Save').click()
+    cy.contains('#addMidClassForm [icon="save"]','Save').click()
     cy.wait(1000)
   })
   it('Add Client MID Accounts', () => {

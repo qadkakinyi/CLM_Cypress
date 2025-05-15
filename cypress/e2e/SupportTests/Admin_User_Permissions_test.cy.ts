@@ -2,14 +2,13 @@ import {navigateToNewestClientMenu} from "../../support/e2e";
 
 let menu_items = [
     "Dashboard",
-    "Know Your Clients",
-    "Know Your Transactions",
-    "My Tasks",
+    "Client Management",
+    "Transaction Insights",
     "Know Your Firm",
     "Power-BI Reports",
-    "Processes",
+    "Batch Processes",
     "Management",
-    "Reports/Lists",
+    "Reports",
     "Settings",
     "Administration",
 ]

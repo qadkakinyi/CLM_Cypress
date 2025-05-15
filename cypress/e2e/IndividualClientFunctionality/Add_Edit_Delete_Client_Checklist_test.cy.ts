@@ -7,7 +7,7 @@ describe('Add, Edit, Delete Client Checklist', () => {
   
   before(()=>{
     cy.visit('/settings/checklists')
-    cy.contains('Add').click()
+    cy.contains('sa-button','Add').click()
     cy.wait(1000)
     cy.getByFormControlName('name').type('Test Checklist')
     cy.getByFormControlName('priority').type('5')

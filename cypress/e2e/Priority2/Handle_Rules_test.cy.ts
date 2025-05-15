@@ -2,8 +2,8 @@ import {faker} from "@faker-js/faker";
 
 describe('Handle Rules', ()=>{
     beforeEach(()=>{
-        cy.visit('/processes/handle-rules').wait(10000)
-        cy.get('#gridHandleRules [aria-colindex="4"] .dx-texteditor-input-container > .dx-texteditor-input').type('3A').wait(6000)
+        cy.visit('/processes/handle-rules').wait(5000)
+        cy.get('#gridHandleRules [aria-colindex="4"] .dx-texteditor-input-container > .dx-texteditor-input').type('3A').wait(3000)
         cy.get('[aria-rowindex="2"] > .dx-command-select > .dx-widget > .dx-checkbox-container > .dx-checkbox-icon').click().wait(1000)
     })
     
@@ -17,14 +17,15 @@ describe('Handle Rules', ()=>{
         cy.contains('sa-button', 'Update Status').click().wait(1000)
         cy.get('#updateRuleStatusForm dx-drop-down-box').click().wait(500)
         cy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-table tbody tr').eq(4).click().wait(500)
-        cy.contains('sa-button', 'Save').click().wait(3000)
-        cy.contains('The rules has been updated').wait(1000)
+        cy.get('#updateRuleStatusForm [icon="save"] > .sa-button').click().wait(3000)
+        cy.contains('has been updated').wait(1000)
         
         // activate the rule
         cy.contains('sa-button', 'Update Status').click().wait(1000)
         cy.get('#updateRuleStatusForm dx-drop-down-box').click().wait(500)
-        cy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-table tbody tr').eq(2).click().wait(500)
-        cy.contains('sa-button', 'Save').click().wait(3000)
+        cy.contains('#dynamicSelectBoxDropdownGrid .dx-datagrid-table tbody tr', 'Active').click().wait(500)
+        cy.get('#updateRuleStatusForm [icon="save"] > .sa-button').click().wait(3000)
+
     })
 
     it('Update Schedule', ()=>{

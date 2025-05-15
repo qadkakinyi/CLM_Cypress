@@ -12,7 +12,7 @@ describe('Add, Edit Client FATCA - Corporate', () => {
   before(()=>{
     //add fatca status
     cy.visit('/settings/fatca-setup')
-    cy.contains('Add').click()
+    cy.contains('sa-button', 'Add').click()
     cy.wait(1000)
     cy.get('#addFatcaStatusForm .status-name').type(fatca_status)
     cy.get('#addFatcaStatusForm .status-ref').type(faker.string.alphanumeric(10))
@@ -26,7 +26,7 @@ describe('Add, Edit Client FATCA - Corporate', () => {
 
     //add fatca category
     cy.contains('FATCA Entities Categorization').click()
-    cy.contains('Add').click()
+    cy.contains('sa-button', 'Add').click()
     cy.wait(1000)
     cy.get('#addFatcaEntityCategorizationForm .category-name').type(fatca_category)
     cy.get('#addFatcaEntityCategorizationForm .category-ref').type(faker.string.alphanumeric(10))
@@ -40,7 +40,7 @@ describe('Add, Edit Client FATCA - Corporate', () => {
 
     //add fatca document
     cy.contains('FATCA Documents').click()
-    cy.contains('Add').click()
+    cy.contains('sa-button', 'Add').click()
     cy.wait(1000)
     cy.get('#addFatcaDocumentForm .document-name').type(fatca_doc)
     cy.get('#addFatcaDocumentForm .document-ref').type(faker.string.alphanumeric(10))
@@ -54,7 +54,7 @@ describe('Add, Edit Client FATCA - Corporate', () => {
 
     //add fatca CRS Categorization
     cy.contains('FATCA CRS Entities Categorization').click()
-    cy.contains('Add').click()
+    cy.contains('sa-button', 'Add').click()
     cy.wait(1000)
     cy.get('#addFatcaCrsEntityCategorizationForm .crs-name').type(fatca_crs)
     cy.get('#addFatcaCrsEntityCategorizationForm .crs-ref').type(faker.string.alphanumeric(10))

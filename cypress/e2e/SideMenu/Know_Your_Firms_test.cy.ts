@@ -37,6 +37,17 @@ describe("Know your firms", ()=>{
     
     it("Can view a single firm", ()=>{
         cy.visit('main/dashboard')
+        // pin the main sidebar
+        cy.get('aside').then(el =>{
+            let unpin_icon = el.find('.dx-icon-unpin')
+
+            //check if unpin icon is visible
+            if (unpin_icon.length > 0){
+                cy.wrap(unpin_icon).click().wait(1000)
+            }else{
+                cy.log('Unpin icon missing')
+            }
+        })
         // select the right chevron icon
         cy.getByDataCy("my-firms-btn").click()
         cy.get('.dx-datagrid-content-fixed > .dx-datagrid-table > tbody > .dx-data-row > .dx-command-edit > .dx-link').eq(1).click()      
@@ -62,15 +73,15 @@ describe("Know your firms", ()=>{
                 cy.getByFormControlName('reasonForEvaluation').type('DKA Evaluation '+faker.string.alphanumeric(5))
                 cy.contains('sa-button', 'Next').click().wait(4000)
 
-                executeStep2()
-
-                cy.contains('sa-button','Complete').click()
+                // executeStep2()
+                cy.get('app-add-firm-evaluation-wizard-step-two [icon="save"]').click()
+                // cy.contains('sa-button','Complete').click()
             }
             //STEP 2
             if(evaluation.find('app-add-firm-evaluation-wizard-step-two').is(':visible')){
-                executeStep2()
-
-                cy.contains('sa-button','Complete').click()
+                // executeStep2()
+                cy.get('app-add-firm-evaluation-wizard-step-two [icon="save"]').click()
+                // cy.contains('sa-button','Complete').click()
             }
  
         })

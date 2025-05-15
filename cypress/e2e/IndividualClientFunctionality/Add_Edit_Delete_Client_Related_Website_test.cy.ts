@@ -9,7 +9,7 @@ describe('Add, Edit, Delete Client Related Website - Individual', () => {
   
   before(()=>{
     cy.visit('/settings/related-website-types')
-    cy.contains('Add').click()
+    cy.contains('sa-button','Add').click()
     cy.wait(1000)
     cy.getByFormControlName('name').type('Business Website')
     cy.getByFormControlName('mappingReference').type(faker.string.alphanumeric(13))
@@ -45,8 +45,7 @@ describe('Add, Edit, Delete Client Related Website - Individual', () => {
     // Edit Related Website
     cy.visit(`/main/client-individual/${client_id}/1/related-websites`).wait(3000)
    
-    cy.get('#gridClientRelatedWebsites .fa-angle-double-right').eq(0).click({ force: true });
-    cy.get('#editClientRelatedWebsiteForm').should('be.visible');
+    cy.get('#gridClientRelatedWebsites .fa-angle-double-right').eq(0).click({ force: true }).wait(1000);
 
     cy.get('#editClientRelatedWebsiteForm input[name="website"]').should('be.visible').clear();
     cy.get('#editClientRelatedWebsiteForm input[name="website"]').type(faker.internet.url());

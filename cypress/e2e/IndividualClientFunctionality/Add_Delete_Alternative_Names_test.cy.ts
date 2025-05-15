@@ -18,7 +18,8 @@ describe('Add and Delete Alternative Names', ()=>{
         cy.get('sa-button').contains('Add').click()
         cy.wait(1000)
         cy.getByFormControlName('alternativeName').type(faker.word.noun())
-        cy.get('sa-button').contains('Save').click()
+        cy.contains('#addClientAlternativeNameForm [icon="save"]','Save').click().wait(1500)
+        cy.contains('The alternative name has been added').wait(1000)
     })
 
     it('Deletes Alternative Names',()=>{

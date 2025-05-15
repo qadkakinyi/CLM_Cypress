@@ -177,6 +177,9 @@ describe("Add Individual Client Process", ()=>{
             headers:{
                 "Content-Type": "application/json",
                 'Authorization':   `Bearer ${token}`
+            },
+            body: {
+                "clientId": clientId,
             }
         })
         cy.reload()

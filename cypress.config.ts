@@ -1,9 +1,11 @@
 const { defineConfig } = require("cypress");
 
 const baseUrl =  'https://complytek-testing-hotfix.regtek.co'
+// const baseUrl =  'https://complytek-testing.regtek.co'
 
 module.exports = defineConfig({
-  defaultCommandTimeout: 16000,
+  projectId: 's2jddr',
+  defaultCommandTimeout: 10000,
   numTestsKeptInMemory: 1, //prevents `aw snap` error from appearing
   viewportWidth: 1680,
   viewportHeight: 1000,

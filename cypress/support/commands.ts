@@ -92,17 +92,17 @@ Cypress.Commands.add("login", (username: string, password: string) => {
     // Ensure that dashboard loaded after user login
     cy.location("pathname").should("equal", "/main/dashboard")
 
-    // pin the main menu
+    // pin the main sidebar
   cy.get('aside').then(el =>{
     let unpin_icon = el.find('.dx-icon-unpin')
     
+    //check if unpin icon is visible
     if (unpin_icon.length > 0){
       cy.wrap(unpin_icon).click().wait(1000)
     }else{
       cy.log('Unpin icon missing')
     }
   })
-    // cy.get('.dx-icon-unpin').click().wait(1000)
   
 });
 

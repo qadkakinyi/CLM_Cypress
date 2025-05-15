@@ -21,16 +21,27 @@ describe("System Settings", ()=>{
         
         cy.visit("/main/dashboard")
         
+        // pin the main sidebar
+        cy.get('aside').then(el =>{
+            let unpin_icon = el.find('.dx-icon-unpin')
+
+            //check if unpin icon is visible
+            if (unpin_icon.length > 0){
+                cy.wrap(unpin_icon).click().wait(1000)
+            }else{
+                cy.log('Unpin icon missing')
+            }
+        })
        
         // routes.forEach((route, i)=>{
-            cy.getByDataCy("system-settings-menu").scrollIntoView().click()
+        cy.getByDataCy("system-settings-menu").scrollIntoView().click()
 
-            cy.get("[data-cy='system-settings-menu'] ul>li").each((el, index)=>{
-                cy.wrap(el).click();
-                cy.wait(3000)
-                cy.getByDataCy("system-settings-menu").scrollIntoView().click()
-                cy.contains(routes[index].assertion)
-            })
+        cy.get("[data-cy='system-settings-menu'] ul>li").each((el, index)=>{
+            cy.wrap(el).click();
+            cy.wait(2500)
+            // cy.getByDataCy("system-settings-menu").scrollIntoView().click()
+            cy.contains(routes[index].assertion)
+        })
         // })
     })
 })

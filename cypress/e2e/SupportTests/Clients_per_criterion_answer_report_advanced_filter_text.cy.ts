@@ -1,8 +1,14 @@
 describe('Clients per criterion answer report', ()=>{
     it('Performs advanced filter, ensures regulation group and statuses are populated', ()=>{
-        cy.visit('/reports/clients-per-criterion-answer-report').wait(2000)
+        cy.visit('/reports').wait(2000)
         
-        cy.contains('.dx-button', 'Advanced Filter').click().wait(500)
+        cy.get('dx-select-box').eq(0).click()
+        cy.contains('Client Evaluations & Documents').click().wait(500)
+
+        cy.get('dx-select-box').eq(1).click()
+        cy.contains('Clients Per Criterion Answer Report').click().wait(500)
+        
+        // cy.contains('.dx-button', 'Advanced Filter').click().wait(500)
         cy.getByFormControlName('regulationGroup').click()
         cy.get('.dropdown-list').eq(0).find('.item2 li').eq(0).click().wait(500)
         cy.getByFormControlName('regulationGroup').click() // to close the popup

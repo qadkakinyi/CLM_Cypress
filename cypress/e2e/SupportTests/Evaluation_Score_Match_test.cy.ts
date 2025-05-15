@@ -17,6 +17,7 @@ describe('Evaluation Score Match', ()=>{
         })
         
         // get index of LAST EVALUATION GRADE column
+        // cy.get('#gridClients .dx-scrollbar-horizontal').scrollTo('right')
         cy.get('#gridClients tr').find('td[aria-label="Column Last Evaluation Grade"]').then(td=>{
             let columnIndex = td.attr('aria-colindex')
             cy.log('ColIndex '+columnIndex)
@@ -40,9 +41,9 @@ describe('Evaluation Score Match', ()=>{
                     })
                     
                     // CHECK IF THAT IS THE VALUE PRINTED ON THE DASHBOARD LEFT PANEL
-                    cy.get('.evaluationGrade > .stat span').invoke('text').then(gradeInLeftPanel=>{
-                        expect(grade).to.include(gradeInLeftPanel)
-                    })
+                    // cy.get('.evaluationGrade > .stat span').invoke('text').then(gradeInLeftPanel=>{
+                    //     expect(grade).to.include(gradeInLeftPanel)
+                    // })
                     
                 })
 

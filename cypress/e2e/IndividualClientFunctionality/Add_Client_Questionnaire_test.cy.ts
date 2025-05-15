@@ -6,7 +6,7 @@ describe('Add a client questionnaire - Individual', ()=>{
     before(()=>{
         //adding a questionnaire type
         cy.visit('/settings/questionnaire-types')
-        cy.contains('Add').click()
+        cy.contains('sa-button','Add').click()
         cy.wait(1000)
             
         cy.getByDataCy('questionnaire-type-name').type('Open Ended')

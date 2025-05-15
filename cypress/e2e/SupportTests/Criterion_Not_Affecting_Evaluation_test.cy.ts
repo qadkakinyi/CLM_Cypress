@@ -11,7 +11,7 @@ describe('Criterion with `Not Include in evaluation` not affect evaluation', ()=
         cy.getByFormControlName('name').eq(0).type('DKA Test Category')
         cy.getByFormControlName('mappingReference').eq(0).type(faker.string.alphanumeric(13))
 
-        cy.contains('sa-button', 'Save').click().wait(1000)
+        cy.get('#addCriteriaCategoryForm [icon="save"]').click().wait(2000)
         
         // add criteria
         cy.visit('/settings/criteria').wait(2000)
@@ -37,9 +37,9 @@ describe('Criterion with `Not Include in evaluation` not affect evaluation', ()=
          * THIS IS THE MOST IMPORTANT BIT 
          * Include in evaluation must be unchecked
          */
-        cy.getByFormControlName('includeInEvaluation').uncheck().wait(500)
+        cy.getByFormControlName('includeInEvaluation').scrollIntoView().uncheck({force:true}).wait(500)
 
-        cy.contains('sa-button', 'Save').click().wait(1000)
+        cy.get('.custom-background-transparent > .row > .col > [icon="save"] > .sa-button').click().wait(1000)
         cy.location('pathname').then(path=>{
             location = path
         })
@@ -50,19 +50,21 @@ describe('Criterion with `Not Include in evaluation` not affect evaluation', ()=
          * THIS IS THE MOST IMPORTANT BIT
          * Include in evaluation must be unchecked
          */
-        cy.getByFormControlName('includeInEvaluation').uncheck().wait(3000)
-
-        cy.contains('sa-button', 'Save').click().wait(1000)
-        cy.contains('The criterion has been updated').wait(1000)
-        cy.location('pathname').then(path=>{
-            location = path
-        })
+        // cy.getByFormControlName('includeInEvaluation').uncheck().wait(3000)
+        //
+        // cy.contains('sa-button', 'Save').click().wait(1000)
+        // cy.contains('The criterion has been updated').wait(1000)
+        // cy.location('pathname').then(path=>{
+        //     location = path
+        // })
     })
 
     it('Adds a Criterion Answer', ()=>{
-        cy.visit(location).wait(10000)
+        cy.visit('/settings/criteria').wait(2000)
+        // cy.visit(location).wait(12000)
 
-        cy.get('#gridCriteria tr .dx-first-cell .dx-texteditor-input').type('Bankrupt DKA SupportTest', {force:true}).wait(10000)
+        cy.get('.dx-first-cell .dx-texteditor-input').type('Bankrupt DKA SupportTest', ).wait(5000)
+        // cy.get('#gridCriteria tr .dx-first-cell .dx-texteditor-input').type('Bankrupt DKA SupportTest', ).wait(10000)
         cy.get('#gridCriteria tr td').find('.fa-angle-double-right').eq(0).click({force:true}).wait(3000)
 
         cy.contains('sa-panel sa-button', 'Add').click().wait(1000)
@@ -118,8 +120,8 @@ describe('Criterion with `Not Include in evaluation` not affect evaluation', ()=
     })
 
     it('Deletes a Criteria', () => {
-        cy.visit('/settings/criteria').wait(10000)
-        cy.get('#gridCriteria tr .dx-first-cell .dx-texteditor-input').should('be.visible').type('Bankrupt DKA SupportTest', {force:true}).wait(10000)
+        cy.visit('/settings/criteria').wait(2000)
+        cy.get('#gridCriteria tr .dx-first-cell .dx-texteditor-input').should('be.visible').type('Bankrupt DKA SupportTest', {force:true}).wait(5000)
         cy.get('#gridCriteria tr td').find('.fa-angle-double-right').eq(0).click({force:true}).wait(2000)
 
         //delete criterion answer

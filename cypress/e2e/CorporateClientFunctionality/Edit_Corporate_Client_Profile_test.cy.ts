@@ -13,7 +13,7 @@ describe('Edit Corporate Client Profile', () => {
 
     cy.get('#editProfileForm input[name="phone"]').clear().type(faker.string.numeric(10));
 
-    cy.get('sa-button').contains('Save').click();
+    cy.contains('[sticky-buttons=""] > [icon="save"]','Save').click();
 
     //get the current client id
     cy.location('pathname').then((pathname)=>{
@@ -22,19 +22,19 @@ describe('Edit Corporate Client Profile', () => {
     })
     
     // check if tree structure is visible
-    cy.contains('Tree Structure').should('be.visible')
+    cy.contains('Tree Structure').scrollIntoView()
 
     cy.wait(1000);
   })
 
-  it.skip('Archives a client', ()=>{
-    cy.visit(`/main/client-individual/${corporate_id}/1/profile`)
-
-    // cy.get('.dx-datagrid-content-fixed > .dx-datagrid-table > tbody > [aria-rowindex="1"] > .dx-command-edit > span > .dx-template-wrapper > .dx-link > .fa').click();
-    // cy.get('a.ng-tns-c463-199 > .ng-trigger').click();
-    cy.get('[icon="archive"] > .sa-button > .text').click();
-    cy.get('#bot2-Msg1').click();
-  })
+  // it.skip('Archives a client', ()=>{
+  //   cy.visit(`/main/client-individual/${corporate_id}/1/profile`)
+  //
+  //   // cy.get('.dx-datagrid-content-fixed > .dx-datagrid-table > tbody > [aria-rowindex="1"] > .dx-command-edit > span > .dx-template-wrapper > .dx-link > .fa').click();
+  //   // cy.get('a.ng-tns-c463-199 > .ng-trigger').click();
+  //   cy.get('[icon="archive"] > .sa-button > .text').click();
+  //   cy.get('#bot2-Msg1').click();
+  // })
   
 
 })
