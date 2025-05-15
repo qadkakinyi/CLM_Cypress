@@ -43,12 +43,12 @@ describe('Add, Edit, Delete Client Bank Account', () => {
   
   before(()=>{
     cy.visit('/settings/banks')
-    cy.contains('Add').click()
+    cy.contains('sa-button','Add').click()
     cy.wait(1000)
     cy.getByDataCy("bank-name").type(`Test Bank`) 
     cy.getByDataCy("bank-code").type(faker.string.alphanumeric(20))
     cy.getByDataCy("bank-mapping-reference").type(faker.string.alphanumeric(20))
-    cy.contains('Save').click()
+    cy.contains('#addBankForm [icon="save"]','Save').click()
     cy.wait(2000)
   })
 

@@ -125,16 +125,19 @@ describe('Add Corporate Client Evaluation', ()=>{
     
     it('Ignores need re-evaluation', ()=>{
         //re-evaluation happens when there is a change in the criteria or after a certain time frame(interval) eg - annually , weekly
-        cy.visit('/settings/criteria').wait(6000)
-        cy.get('.dx-datagrid-content-fixed > .dx-datagrid-table > tbody > :nth-child(2) > .dx-datagrid-expand > .dx-datagrid-group-opened').click().wait(6000)
+        cy.visit('/settings/criteria').wait(3000)
+        cy.get('.dx-datagrid-content-fixed > .dx-datagrid-table > tbody > :nth-child(2) > .dx-datagrid-expand > .dx-datagrid-group-opened').click().wait(4000)
         cy.get('#gridCriteria .dx-group-row').contains('Client Type: Corporate')
+        
+        //search for specific criteria
+        cy.get('.dx-first-cell .dx-texteditor-input-container > .dx-texteditor-input').type('Adverse Media').wait(4000)
         //cy.get('#gridCriteria [aria-rowindex="12"] [aria-colindex="3"] .dx-datagrid-group-closed').click()//opens the accordion - not a must
         //open the edit page
-        cy.get('#gridCriteria .fa-angle-double-right').eq(1).click().wait(2000)
+        cy.get('#gridCriteria .fa-angle-double-right').eq(1).click({force:true}).wait(2000)
         //edit icon first item in table
-        cy.get('table tr>td> .dx-icon-edit ').eq(0).click({force:true})
-        cy.get('[aria-rowindex="1"] > [aria-colindex="4"] .dx-texteditor-buttons-container').click({force:true})
-        cy.get('.dx-scrollview-content>.dx-list-item').contains('Medium').click().wait(500)
+        cy.get('#gridCriterionAnswers table').find(' tr>td> .dx-icon-edit ').eq(0).click({force:true})
+        cy.get('[aria-rowindex="1"] > [aria-colindex="2"] .dx-texteditor-input').clear().type('5')
+        // cy.get('.dx-scrollview-content>.dx-list-item').contains('Medium').click().wait(500)
         cy.get('table tr>td> .dx-icon-save ').eq(0).click({force:true}).wait(1000)
         cy.contains('The criterion answer has been updated')
         cy.getBySel('saveAndCloseButton').click().wait(2000)
@@ -156,9 +159,9 @@ describe('Add Corporate Client Evaluation', ()=>{
         //open the edit page
         cy.get('#gridCriteria [aria-rowindex="12"] > [aria-colindex="10"] .fa-angle-double-right').eq(1).click().wait(2000)
         //edit icon first item in table
-        cy.get('table tr>td> .dx-icon-edit ').eq(0).click({force:true})
-        cy.get('[aria-rowindex="1"] > [aria-colindex="5"] .dx-texteditor-buttons-container').click()
-        cy.get('.dx-scrollview-content>.dx-list-item').contains('Low').click().wait(500)
+        cy.get('#gridCriterionAnswers table').find(' tr>td> .dx-icon-edit ').eq(0).click({force:true})
+        cy.get('[aria-rowindex="1"] > [aria-colindex="2"] .dx-texteditor-input').clear().type('0')
+        // cy.get('.dx-scrollview-content>.dx-list-item').contains('Low').click().wait(500)
         cy.get('table tr>td> .dx-icon-save ').eq(0).click({force:true}).wait(1000)
     })
     

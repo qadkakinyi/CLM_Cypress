@@ -9,13 +9,13 @@ describe('Add, Edit, Delete Client Investment Account', () => {
   
   before(()=>{
     cy.visit('/settings/investment-account-types')
-    cy.contains('Add').click()
+    cy.contains('sa-button','Add').click()
     cy.wait(1000)
     
     cy.getByDataCy("investment-account-type-name").type('Fixed Account-test')
     cy.getByDataCy("investment-account-type-mapping-reference").type('fixed-acc-types')
     
-    cy.contains('Save').click()
+    cy.contains('#addInvestmentAccountTypeForm [icon="save"]','Save').click()
     cy.wait(1000)
     
   })

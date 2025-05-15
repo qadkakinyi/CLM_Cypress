@@ -7,7 +7,7 @@ describe('Add a client questionnaire - Corporate', ()=>{
     before(()=>{
         //adding a questionnaire type
         cy.visit('/settings/questionnaire-types').wait(2000)
-        cy.contains('Add').click()
+        cy.contains('sa-button','Add').click()
         cy.wait(1000)
             
         cy.getByDataCy('questionnaire-type-name').type('Open Ended')
@@ -18,7 +18,7 @@ describe('Add a client questionnaire - Corporate', ()=>{
         
         //add question category
         cy.visit('/settings/questions-categories')
-        cy.contains('Add').click()
+        cy.contains('sa-button','Add').click()
         cy.wait(1000)
         cy.getByDataCy('question-category-name').type('Leading Questions')
         cy.getByDataCy('question-category-mapping-reference').type(faker.string.alphanumeric(15))
@@ -30,7 +30,7 @@ describe('Add a client questionnaire - Corporate', ()=>{
         
         //add questions for the questionnaire type
         cy.visit('/settings/questions').wait(3000)
-        cy.contains('Add').click({force:true})
+        cy.contains('sa-button','Add').click()
         cy.wait(2000)
         
         cy.getByFormControlName('name').type('Are there compliance companies in your country?'+ faker.string.alphanumeric(5), {force: true})

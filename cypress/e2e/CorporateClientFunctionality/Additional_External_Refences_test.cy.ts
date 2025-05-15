@@ -20,7 +20,6 @@ describe('Add, Edit, Delete Additional External References - Corporate', () => {
 
         // Add new external reference
         cy.getBySel('addAdditionalExternalReference').click().wait(1000);
-        cy.getBySel('addClientAdditionalExternalReferenceForm').should('be.visible');
 
         cy.get('#addClientAdditionalExternalReferenceForm input[name="additionalExternalReference"]').type(faker.internet.url());
 

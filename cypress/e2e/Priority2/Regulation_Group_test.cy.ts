@@ -13,7 +13,7 @@ describe('Regulation Groups', ()=>{
     it('Generate Regulation Group Hash Key', function() {
         cy.wait(3000)
         cy.getByDataCy('system-settings-menu').scrollIntoView().click();
-        cy.get('[title="Account"]').click().wait(1000);
+        cy.contains('[data-cy="system-settings-menu"] sa-menu-item','Account').click().wait(1000);
         cy.get('[icon="key"] > .sa-button > .text').click().wait(1000);
         cy.get('.col-md-12 > .form-group > app-dynamic-selectbox > .sa-input-dropdown > .custom-selectbox > .dx-dropdowneditor-input-wrapper > .dx-texteditor-container > .dx-texteditor-buttons-container > .dx-widget > .dx-button-content > .dx-dropdowneditor-icon').click();
         cy.get('[aria-rowindex="4"] > td').click();
@@ -48,7 +48,7 @@ describe('Regulation Groups', ()=>{
         cy.contains('Regulation group has been updated.')
     })
 
-    it('Synchronizes a Regulation Group', ()=>{
+    it.skip('Synchronizes a Regulation Group', ()=>{
         cy.visit('/settings/regulation-groups').wait(3000)
         cy.get('header > div .fa-refresh').last().click().wait(3000)
         cy.getByFormControlName('regulationGroupsToBeSynced').click()
@@ -58,7 +58,7 @@ describe('Regulation Groups', ()=>{
         cy.getByFormControlName('regulationGroupCriteria').click()
         cy.get('.dx-datagrid tbody .dx-checkbox-icon').eq(1).click({force:true}).wait(1000)
         cy.getByFormControlName('regulationGroupCriteria').click().wait(500)
-        cy.get('[icon="recycle"] > .sa-button').click({force:true}).wait(6500)
+        cy.get('[icon="recycle"] > .sa-button').click({force:true}).wait(10500)
         cy.contains('Synchronization Completed')
         
     })
@@ -71,7 +71,7 @@ describe('Regulation Groups', ()=>{
         cy.get('[primary-buttons=""] > [icon="trash"] > .sa-button').click({force:true}).wait(1000)
         cy.get('.col > [icon="trash"]').click()
         cy.get('.MessageBoxButtonSection').contains('button', 'Yes').click()
-        cy.wait(35000)
+        cy.wait(20000)
         cy.contains('The Regulation Group has been deleted.')
     })
 

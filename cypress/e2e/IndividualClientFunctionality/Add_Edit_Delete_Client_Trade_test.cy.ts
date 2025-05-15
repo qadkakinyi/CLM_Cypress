@@ -7,12 +7,12 @@ describe('Add, Edit, Delete Client Trade', () => {
   
   before(()=>{
     cy.visit('/settings/trade-types')
-    cy.contains('Add').click()
+    cy.contains('sa-button','Add').click()
     cy.wait(1000)
     cy.getByDataCy('trade-type-name').type('Day trading')
     cy.getByDataCy("trade-type-mapping-reference").type(faker.string.alphanumeric(20))
-    
-    cy.contains('Save').click()
+
+    cy.contains('#addTradeTypeForm [icon="save"]','Save').click()
     
     cy.wait(1000)
   })
@@ -33,18 +33,18 @@ describe('Add, Edit, Delete Client Trade', () => {
     })
 
     cy.getBySel('addClientTradeForm').should('be.visible').then(() => {
-      cy.getBySel('tradeFrequenciesEnum').scrollIntoView().click();
+      cy.getBySel('tradeFrequenciesEnum').should('be.visible').click().wait(500);
       cy.get('.dx-overlay-wrapper.dx-popup-wrapper.dx-dropdowneditor-overlay .dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true });
 
-      cy.getBySel('tradeTypes').scrollIntoView().click();
+      cy.getBySel('tradeTypes').should('be.visible').click().wait(500);
       cy.get('.dx-overlay-wrapper.dx-popup-wrapper.dx-dropdowneditor-overlay .dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true });
 
-      cy.getBySel('currenciesList').scrollIntoView().click();
+      cy.getBySel('currenciesList').should('be.visible').click().wait(500);
       cy.get('.dx-overlay-wrapper.dx-popup-wrapper.dx-dropdowneditor-overlay .dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true });
 
       cy.get('#addClientTradeForm input[name="createdOn"]').type(faker.date.anytime().toISOString().slice(0, 10));
 
-      cy.getBySel('clientInvestmentAccountsList').scrollIntoView().click();
+      cy.getBySel('clientInvestmentAccountsList').should('be.visible').click().wait(500);
       cy.get('.dx-overlay-wrapper.dx-popup-wrapper.dx-dropdowneditor-overlay .dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true });
 
 
@@ -67,7 +67,8 @@ describe('Add, Edit, Delete Client Trade', () => {
 
       cy.get('#addClientTradeForm input[name="externalReference"]').type(externalReference);
 
-      cy.getBySel('saveTrade').click();
+      cy.getBySel('saveTrade').click().wait(1500);
+      cy.contains('New trade has been added')
     });
   });
 

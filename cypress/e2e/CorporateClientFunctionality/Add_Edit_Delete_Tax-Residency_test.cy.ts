@@ -22,7 +22,7 @@ describe('Adds, Edits and Deletes Tax Residency - Corporate', ()=>{
         // cy.get('#dynamicSelectBoxDropdownGrid td').contains('Tin Test').click()
         cy.getByFormControlName('notes').type(faker.word.words(5))
         cy.getByFormControlName('explanation').type(faker.word.words(15))
-        cy.get('#addTaxResidencyForm').contains('Save').click()
+        cy.contains('[data-test="saveTaxResidency"]','Save').click().wait(500)
         cy.contains('Tax residency has been added.').wait(2000)
     })
     

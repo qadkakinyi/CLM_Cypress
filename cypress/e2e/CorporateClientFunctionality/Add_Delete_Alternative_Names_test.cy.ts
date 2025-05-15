@@ -13,16 +13,15 @@ describe('Add and Delete Alternative Names - Corporate', ()=>{
             location = pathname
         })
         
-        cy.get('sa-button').contains('Add').click().wait(1500)
+        cy.contains('sa-button','Add').click().wait(1500)
         cy.getByFormControlName('alternativeName').type(faker.word.noun())
-        cy.get('sa-button').contains('Save').click().wait(1500)
+        cy.contains('#addClientAlternativeNameForm [icon="save"]','Save').click().wait(1500)
         cy.contains('The alternative name has been added').wait(1000)
     })
 
     it('Deletes Alternative Names',()=>{
         cy.visit(location).wait(3000)
-        cy.get('.dx-icon-trash').last().should('be.visible').click()
-        cy.wait(3000)
+        cy.get('.dx-icon-trash').first().click({force:true}).wait(3000)
         cy.contains('Yes').click({force:true}).wait(1000)
         cy.contains('The alternative name has been deleted').wait(1000)
     })

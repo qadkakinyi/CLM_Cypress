@@ -9,7 +9,7 @@ describe('Add, Edit, Delete Client Related Website', () => {
   
   before(()=>{
     cy.visit('/settings/related-website-types')
-    cy.contains('Add').click()
+    cy.contains('sa-button','Add').click()
     cy.wait(1000)
     cy.getByFormControlName('name').type('Business Website')
     cy.getByFormControlName('mappingReference').type(faker.string.alphanumeric(13))

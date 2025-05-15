@@ -14,7 +14,7 @@ describe('Add, Edit, Delete Client Document', () => {
     cy.get('#addDocumentCategoryForm')
     cy.getByFormControlName('name').type('Test Category')
     cy.getByFormControlName('mappingReference').type(faker.string.alphanumeric(11))
-    cy.get('sa-button').contains('Save').click().wait(2000);
+    cy.get('#addDocumentCategoryForm [icon="save"]').contains('Save').click().wait(2000);
     
     //add client category
     cy.visit('/settings/client-categories')
@@ -22,7 +22,7 @@ describe('Add, Edit, Delete Client Document', () => {
     cy.get('#addClientCategoryForm')
     cy.getByFormControlName('name').type('Test Client')
     cy.getByFormControlName('mappingReference').type(faker.string.alphanumeric(11))
-    cy.get('sa-button').contains('Save').click().wait(2000);
+    cy.get('#addClientCategoryForm [icon="save"]').contains('Save').click().wait(2000);
     
     //add document in settings
     cy.visit('/settings/documents')
@@ -46,7 +46,7 @@ describe('Add, Edit, Delete Client Document', () => {
     // cy.get('.dropdown-list > ul').contains('Test Client').click().wait(500)
     //close the popup
     // cy.getByDataCy('clientCategory').click().wait(500)
-    cy.get('sa-button').contains('Save').click().wait(2000);
+    cy.get('#addDocumentForm [icon="save"]').contains('Save').click().wait(2000);
   })
 
   it('Add Client Document', () => {

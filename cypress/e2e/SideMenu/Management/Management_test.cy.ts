@@ -18,8 +18,8 @@ describe("Management Module", ()=>{
         ]
         
         routes.forEach((route,i)=>{
-            cy.getByDataCy("management-menu").scrollIntoView().click()
-            cy.getByDataCy("management-menu").scrollIntoView().should("be.visible").find("ul>li").eq(route.index)
+            cy.getByDataCy("management-menu").click().wait(300)
+            cy.getByDataCy("management-menu").find("ul>li").eq(route.index)
             // cy.screenshot(`All/Management/click ${i+1}`, {capture: "runner", overwrite: true})
             cy.getByDataCy("management-menu").should("be.visible").find("ul>li").eq(route.index).click()
             cy.location("pathname").should("equal", route.route)

@@ -5,22 +5,29 @@ let client_id = ''
 describe('Add, Edit, Delete Client Action (Task)', () => {
   
   before(()=>{
-    cy.visit('/settings/actions-setup')
-    cy.contains('Add').click()
-    
+    cy.visit('/settings/actions-setup').wait(3000)
+    cy.contains('sa-button','Add').click()
+
     //Add Action Category
     cy.wait(1000)
-    cy.getByDataCy('category-name').type(faker.word.noun())
+    cy.getByDataCy('category-name').type('Action Category Test')
     cy.getByDataCy('mapping-ref').type(faker.string.alphanumeric(20))
-    cy.getByDataCy('save-category-btn').click()
-    
+    cy.getByDataCy('save-category-btn').click().wait(1000)
+
+    // cy.get('p:contains("Action Category already exists.")').then(el=>{
+    //   if(el.is(':visible')){
+    //     cy.contains('sa-button', 'Close').click().wait(1000)
+    //   }
+    // })
+
     // add Action status
+    cy.visit('/settings/actions-setup').wait(3000)
     cy.get('span').contains('Action Statuses').click()
-    cy.contains('Add').click()
+    cy.contains('sa-button','Add').click()
     cy.wait(1000)
-    cy.getByDataCy('action-name').type(faker.word.verb())
+    cy.getByDataCy('action-name').type('Action Status Test')
     cy.getByDataCy('mapping-ref-action').type(faker.string.alphanumeric(30))
-    cy.getByDataCy('create-action-btn').click()
+    cy.getByDataCy('create-action-btn').click().wait(2000)
   })
   
 

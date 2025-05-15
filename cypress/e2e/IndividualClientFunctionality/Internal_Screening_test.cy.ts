@@ -8,7 +8,7 @@ describe('Internal Screening - Individual', ()=>{
         // add blacklist reason
         cy.visit('/administration/internal-blacklists-setup').wait(3000)
         cy.get('span').contains('Internal Blacklist Reasons').click().wait(1500)
-        cy.contains('Add').click().wait(1000)
+        cy.contains('sa-button','Add').click().wait(1000)
         cy.getByFormControlName('name').type('Fraud')
         cy.getByFormControlName('externalReference').type(faker.string.alphanumeric(12))
         cy.getByDataCy('save-blacklist-reason').click()
@@ -23,7 +23,7 @@ describe('Internal Screening - Individual', ()=>{
         // add internal blacklist
         cy.visit('/administration/internal-blacklists-setup').wait(3000)
         cy.get('span').contains('Individuals').click()
-        cy.contains('Add').click()
+        cy.contains('sa-button','Add').click()
         cy.wait(1000)
         cy.getByFormControlName('firstName').type(faker.person.firstName())
         cy.getByFormControlName('lastName').type(faker.person.lastName())
@@ -55,6 +55,7 @@ describe('Internal Screening - Individual', ()=>{
         // cy.getByFormControlName('lastName').clear()
         // cy.getByFormControlName('dateOfBirth').clear()
         // cy.getByFormControlName('taxIdentificationNumber').type(IdNumber.toString())
+        cy.getByFormControlName('idNumber').type(IdNumber.toString())
         cy.getByDataCy('search-blacklisted-individual').click()
         cy.contains('Internal search has been executed.')
         

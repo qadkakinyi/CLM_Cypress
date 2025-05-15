@@ -11,29 +11,35 @@ let routes =[
 
 describe("Other Menu", ()=>{
 
-    beforeEach(()=>{
-        cy.visit("/main/dashboard")
-        cy.getByDataCy("processes").click()
-        cy.getByDataCy("other-submenu").scrollIntoView().should("be.visible")
-        cy.getByDataCy("other-submenu").click().as('other-submenu-menu')
-        cy.get("@other-submenu-menu").find("ul>li").as("other-submenu-list")
-    })
-
-    
-
     routes.forEach((route)=>{
         it(`opens ${route.assertion} pages`, ()=>{
-            cy.get("@other-submenu-list").eq(route.index).click()
-            cy.location("pathname").should("equal", route.route)
-            cy.wait(3000)
-            cy.contains(route.assertion)
-
-            if(route.index < routes.length - 1){
+            
+            if(route.index <= routes.length - 1){
                 cy.visit("/main/dashboard")
+                // pin the main sidebar
+                cy.get('aside').then(el =>{
+                    let unpin_icon = el.find('.dx-icon-unpin')
+
+                    //check if unpin icon is visible
+                    if (unpin_icon.length > 0){
+                        cy.wrap(unpin_icon).click().wait(1000)
+                    }else{
+                        cy.log('Unpin icon missing')
+                    }
+                })
+                
                 cy.getByDataCy("processes").click()
                 cy.getByDataCy("other-submenu").scrollIntoView().should("be.visible")
                 cy.getByDataCy("other-submenu").click().as('other-submenu-menu')
                 cy.get("@other-submenu-menu").find("ul>li").as("other-submenu-list")
+                
+                //assertion
+                cy.get("@other-submenu-list").eq(route.index).click()
+                cy.location("pathname").should("equal", route.route)
+                cy.wait(3000)
+                cy.contains(route.assertion)
+            }else{
+                cy.visit('/main/dashboard')
             }
         })
     })

@@ -20,7 +20,7 @@ describe('Cases - Corporate', ()=>{
                 cy.get('#clientCaseOptions-widget .fa-plus').click().wait(500)
                 cy.getByFormControlName('manualCreateCases').check()
 
-                cy.contains('sa-button', 'Save').click().wait(2000)
+                cy.contains('[primary-buttons=""] > [icon="save"]', 'Save').click().wait(2000)
                 cy.contains('Rule has been updated')
                 return;
             }else{
@@ -35,7 +35,7 @@ describe('Cases - Corporate', ()=>{
                 cy.get('table [aria-rowindex="5"] .dx-checkbox-icon').click().wait(500)
                 cy.getByDataCy('rulesToAdd').click().wait(500) // close the list
 
-                cy.get('#addPredefinedOrCustomizedRulesForm').contains('Save').click().wait(2000)
+                cy.contains('#addPredefinedOrCustomizedRulesForm','Save').click().wait(2000)
                 
                 //activate the rule for manual create cases
                 cy.get('#gridRules table tbody tr .fa-angle-double-right').last().click().wait(2000)

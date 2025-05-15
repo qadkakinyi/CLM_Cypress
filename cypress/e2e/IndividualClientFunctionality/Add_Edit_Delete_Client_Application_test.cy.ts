@@ -9,10 +9,10 @@ describe('Add, Edit, Delete Client Applications', () => {
   
   before(()=>{
     cy.visit('/settings/application-approval-setup')
-    cy.contains('Add').click().wait(1000)
+    cy.contains('sa-button','Add').click().wait(1000)
     cy.getByFormControlName('name').type('Money Transfer')
     cy.getByFormControlName('mappingReference').type(faker.string.alphanumeric(12))
-    cy.contains('Save').click()
+    cy.contains('#addPurposeOfTransactionForm [icon="save"]','Save').click()
     cy.wait(1000)
   })
   

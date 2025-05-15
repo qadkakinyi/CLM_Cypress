@@ -8,7 +8,7 @@ describe('Add, Delete Client FATCA', () => {
   before(()=>{
     //add fatca status
     cy.visit('/settings/fatca-setup').wait(2000)
-    cy.contains('Add').click()
+    cy.contains('sa-button','Add').click()
     cy.wait(1000)
     cy.get('#addFatcaStatusForm .status-name').type('Active')
     cy.get('#addFatcaStatusForm .status-ref').type(faker.string.alphanumeric(10))
@@ -23,7 +23,7 @@ describe('Add, Delete Client FATCA', () => {
     //add fatca category
     cy.visit('/settings/fatca-setup').wait(2000)
     cy.contains('FATCA Entities Categorization').click()
-    cy.contains('Add').click()
+    cy.contains('sa-button','Add').click()
     cy.wait(1000)
     cy.get('#addFatcaEntityCategorizationForm .category-name').type('Test Category')
     cy.get('#addFatcaEntityCategorizationForm .category-ref').type(faker.string.alphanumeric(10))
@@ -38,7 +38,7 @@ describe('Add, Delete Client FATCA', () => {
     //add fatca document
     cy.visit('/settings/fatca-setup').wait(2000)
     cy.contains('FATCA Documents').click()
-    cy.contains('Add').click()
+    cy.contains('sa-button','Add').click()
     cy.wait(1000)
     cy.get('#addFatcaDocumentForm .document-name').type('Test Document')
     cy.get('#addFatcaDocumentForm .document-ref').type(faker.string.alphanumeric(10))
@@ -53,7 +53,7 @@ describe('Add, Delete Client FATCA', () => {
     //add fatca CRS Categorization
     cy.visit('/settings/fatca-setup').wait(2000)
     cy.contains('FATCA CRS Entities Categorization').click()
-    cy.contains('Add').click()
+    cy.contains('sa-button','Add').click()
     cy.wait(1000)
     cy.get('#addFatcaCrsEntityCategorizationForm .crs-name').type('Test CRS')
     cy.get('#addFatcaCrsEntityCategorizationForm .crs-ref').type(faker.string.alphanumeric(10))

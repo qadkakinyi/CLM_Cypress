@@ -1,10 +1,12 @@
 const { defineConfig } = require("cypress");
 
-const baseUrl = 'https://complytek-testing-hotfix.regtek.co'
+const baseUrl =  'https://complytek-testing-hotfix.regtek.co'
+// const baseUrl =  'https://complytek-testing.regtek.co'
 
 module.exports = defineConfig({
-  defaultCommandTimeout: 16000,
-  numTestsKeptInMemory: 1,
+  projectId: 's2jddr',
+  defaultCommandTimeout: 10000,
+  numTestsKeptInMemory: 1, //prevents `aw snap` error from appearing
   viewportWidth: 1680,
   viewportHeight: 1000,
   video: false,
@@ -12,25 +14,29 @@ module.exports = defineConfig({
   reporter: "cypress-multi-reporters",
   reporterOptions: {
     reporterEnabled: "mochawesome, mocha-junit-reporter",
-    mochawesomeReporterOptions: {
+    mochawesomeReporterOptions:{
       reportDir: 'cypress/results/mochawesome',
       overwrite: false,
       html: true,
       json: true
     },
-    mochaJunitReporterReporterOptions: {
+    mochaJunitReporterReporterOptions:{
       mochaFile: 'cypress/results/junit/results-[hash].xml',
     }
+
   },
   e2e: {
     setupNodeEvents(on, config) {
-      require('cypress-mochawesome-reporter/plugin')(on);
+      // implement node event listeners here
       return config;
     },
     baseUrl: baseUrl,
     supportFile: './cypress/support/e2e.ts',
     projectId: "s2jddr",
-    experimentalStudio: true
+    //experimentalSessionAndOrigin: true, //allow visiting different protocols 
+    experimentalStudio: true,
+    // experimentalRunAllSpecs: true,
+    // experimentalMemoryManagement: true
   },
   component: {
     devServer: {
@@ -39,7 +45,7 @@ module.exports = defineConfig({
     },
     specPattern: '**/*.cy.ts'
   },
-  env: {
-    api_baseUrl: 'https://complytek-testing-hotfix-api.regtek.co'
+  env:{
+    api_baseUrl :  'https://complytek-testing-hotfix-api.regtek.co'
   }
 });

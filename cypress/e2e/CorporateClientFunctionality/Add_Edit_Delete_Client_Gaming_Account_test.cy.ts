@@ -10,7 +10,7 @@ describe('Add, Edit, Delete Client Gaming Accounts', () => {
   before(()=>{
     cy.visit('/settings/gaming-setups')
     cy.get('span').contains('Gaming Account Statuses').click()
-    cy.contains('Add').click()
+    cy.contains('sa-button','Add').click()
     cy.wait(1000)
     
     cy.getByDataCy('gaming-account-status').type('Active')
