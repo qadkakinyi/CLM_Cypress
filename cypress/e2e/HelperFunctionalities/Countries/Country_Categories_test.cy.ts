@@ -4,10 +4,10 @@ let name = 'DKA European State '+faker.number.int({min:0, max:10})
 describe("Country Category", ()=>{
     it('Adds a Country Category', ()=>{
         cy.visit('/settings/country-categories').wait(1500)
-        cy.contains('Add').click().wait(1000)
+        cy.contains('sa-button','Add').click().wait(1000)
         cy.getByFormControlName('name').type(name)
         cy.getByFormControlName('mappingReference').type(faker.string.alphanumeric(13))
-        cy.contains('sa-button','Save').click().wait(1500)
+        cy.get('#addCountryCategoryForm [icon="save"] > .sa-button').click().wait(2000)
         cy.contains('The country category has been added.')
     })
 

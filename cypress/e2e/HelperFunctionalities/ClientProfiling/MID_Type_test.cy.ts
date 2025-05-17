@@ -1,17 +1,17 @@
 import {faker} from "@faker-js/faker";
 
 let name = 'Test dka '+faker.number.int({min:0, max:10})
-describe('MID Styles', ()=>{
+describe('MID Type', ()=>{
     it('Adds a MID Types', ()=>{
         cy.visit('/settings/mid-types').wait(1500)
-        cy.contains('Add').click().wait(1000)
+        cy.contains('sa-button','Add').click().wait(1000)
         cy.getByFormControlName('name').type(name)
         cy.getByFormControlName('mappingReference').type(faker.string.alphanumeric(13))
-        cy.contains('sa-button','Save').click().wait(1500)
+        cy.get('#addMidTypeForm  [icon="save"] > .sa-button').click().wait(2000)
         cy.contains('MID type has been added.')
     })
 
-    it('Edits an MID class', ()=>{
+    it('Edits an MID Type', ()=>{
 
         cy.visit('/settings/mid-types').wait(2000)
         cy.get('#gridMidTypes tr .dx-first-cell .dx-texteditor-input').type(name, {force:true}).wait(1000)

@@ -10,7 +10,7 @@ describe('AdHoc Evaluation Types', ()=>{
         cy.getByFormControlName('name').eq(0).type('AdHoc Evaluation Type1 DKA')
         cy.getByFormControlName('mappingReference').eq(0).type(faker.string.alphanumeric(13))
 
-        cy.contains('sa-button', 'Save').click().wait(1000)
+        cy.get('#addEvaluationTypeForm [icon="save"] > .sa-button').click().wait(2000)
         cy.contains('Evaluation Type has been added')
     })
 

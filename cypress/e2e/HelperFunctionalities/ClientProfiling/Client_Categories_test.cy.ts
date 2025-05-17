@@ -8,7 +8,7 @@ describe('Client Categories', ()=>{
         cy.get('#addClientCategoryForm')
         cy.getByFormControlName('name').type('Client Category Test')
         cy.getByFormControlName('mappingReference').type(faker.string.alphanumeric(11))
-        cy.get('sa-button').contains('Save').click().wait(2000);
+        cy.get('#addClientCategoryForm [icon="save"] > .sa-button').contains('Save').click().wait(2000);
         cy.contains('Client category has been added.')
     })
     

@@ -1,8 +1,10 @@
+import {faker} from "@faker-js/faker";
+
 describe('Know your transactions - Support', ()=>{
     
     beforeEach(()=>{
         cy.visit( "/know-your-transactions/transactions").wait(2500)
-        cy.contains("Know your Transactions")
+        cy.contains("Transaction Insights")
 
         cy.getByFormControlName('dateFrom').type('2024-12-12')
         cy.getByFormControlName('transactionOrigins').click().wait(1000)
@@ -20,9 +22,24 @@ describe('Know your transactions - Support', ()=>{
         cy.contains('.nav-tabs li ', 'Actions').scrollIntoView().click().wait(1000)
         cy.contains('.dx-tabs span', 'Case Actions').click().wait(2000)
         
+        //add a case action
+        cy.getBySel('addClientAction').click().wait(2000)
+        cy.get('#addActionForm').scrollIntoView()
+
+        //action categories
+        cy.get('#addActionForm dx-drop-down-box').eq(1).click().wait(300)
+        cy.get('#dynamicSelectBoxDropdownGrid').find('.dx-datagrid-rowsview').find('tr > td').first().click().wait(500)
+
+        //action status
+        cy.get('#addActionForm dx-drop-down-box').eq(3).click().wait(300)
+        cy.get('[data-test="dynamicSelectBoxDropdownGrid"] [aria-rowindex="1"] > td').eq(2).click().wait(500)
+        
+        cy.getByFormControlName('targetDate').type(faker.date.soon().toISOString().slice(0, 10))
+        cy.get('[data-test="saveClientAction"] > .sa-button').click().wait(1500)
+        
         //navigate to single case action
-        cy.get('.dx-datagrid-table td .fa-angle-double-right').eq(0).click({force:true}).wait(2000)
-        cy.contains('sa-lg-breadcrumbs', 'Edit Action').wait(2000)
+        cy.get('#gridCaseActions .fa-angle-double-right').eq(0).click({force:true}).wait(2000)
+        cy.contains('.page-title > h1', 'Edit Action').wait(2000)
     })
     
     it('Differentiates `Save` vs `Save & Close` in Live Transaction', ()=>{

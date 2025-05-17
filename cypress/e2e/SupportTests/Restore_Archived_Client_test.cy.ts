@@ -30,8 +30,8 @@ describe('Restore archived client', ()=>{
                 'Authorization':   `Bearer ${token}`
             },
             body:{
-                "clientId": 542,
-                "registeredName": "Cronin LLC",
+                "clientId": 473,
+                "registeredName": "Test Archive Client ",
                 "registrationNumber": "ZTys0YdzlNcQ6",
                 "clientStatusId": 8, //active
                 "isClient": false,
@@ -39,7 +39,7 @@ describe('Restore archived client', ()=>{
                 "ignoreAutoOngoingMonitoringStatus": true,
                 "defaultFullStructureEvaluation": 1,
                 "regulationGroupId": 1,
-                "isArchived": false,                
+                "isArchived": true,                
                 "isDeleted": false,
                 "authorisedCapital": "50000"
             }

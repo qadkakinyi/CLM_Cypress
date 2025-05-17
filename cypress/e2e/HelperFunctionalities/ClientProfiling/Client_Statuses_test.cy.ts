@@ -13,7 +13,7 @@ describe('Client Statuses', ()=>{
         // cy.getByDataCy('status').click().wait(500)
         cy.get('dx-drop-down-box').eq(1).click().wait(500)
         cy.get('#dynamicSelectBoxDropdownGrid [aria-rowindex="1"]').eq(1).click().wait(500)
-        cy.get('sa-button').contains('Save').click().wait(2000);
+        cy.get('#addClientStatusForm [icon="save"] > .sa-button').contains('Save').click().wait(2000);
         cy.contains('The client status has been added.')
     })
     

@@ -24,7 +24,7 @@ describe('Documents', ()=>{
         // cy.get('.dropdown-list > ul').contains('Test Client').click().wait(500)
         //close the popup
         // cy.getByDataCy('clientCategory').click().wait(500)
-        cy.get('sa-button').contains('Save').click().wait(1000);
+        cy.get('#addDocumentForm [icon="save"] > .sa-button').click().wait(2000);
         cy.contains('Document has been added.').wait(1000)
     })
     

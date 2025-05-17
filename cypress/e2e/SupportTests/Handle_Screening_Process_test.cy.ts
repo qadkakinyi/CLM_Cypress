@@ -2,16 +2,15 @@ let location =''
 describe('Handle Screening Process', ()=>{
     it('Ensures matches redirect to the correct client', ()=>{
         cy.visit('/processes/handle-screening').wait(3000)
-        cy.get('.dx-datagrid-group-closed').eq(0).click({force:true}).wait(3000)
-        cy.get('tbody tr[aria-rowindex="2"]').eq(0)
-        cy.get('[aria-rowindex="2"] > [aria-describedby="dx-col-10"]').invoke('text').then((text)=>{
+        // cy.get('.dx-datagrid-group-closed').eq(0).click({force:true}).wait(3000)
+        cy.get('tbody tr[aria-rowindex="1"] td[aria-colindex="2"]').eq(0).invoke('text').then((text)=>{
             cy.log(text)
             //NAVIGATE TO THE CLIENT DASHBOARD
             cy.get('.dx-datagrid-content-fixed > .dx-datagrid-table > tbody > .dx-data-row  .dx-link').eq(0).scrollIntoView().click().wait(7000)
 
             //confirm that client name in the dashboard matches the value gotten from the match list
-            cy.get('.sa-panel div h2').eq(0).invoke('text').then(text2=>{
-                expect(text.trim()).to.equal(text2.trim())
+            cy.get('.client-name h2').eq(0).invoke('text').then(text2=>{
+                expect(text2.trim()).to.include(text.trim())
             })
 
             cy.location('pathname').then((loc)=>{

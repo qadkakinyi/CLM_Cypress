@@ -4,10 +4,10 @@ let name = 'Test Website dka '+faker.number.int({min:0, max:10})
 describe("Related Website Types", ()=>{
     it('Adds a Related Website Type', ()=>{
         cy.visit('/settings/related-website-types').wait(1500)
-        cy.contains('Add').click().wait(1000)
+        cy.contains('sa-button','Add').click().wait(1000)
         cy.getByFormControlName('name').type(name)
         cy.getByFormControlName('mappingReference').type(faker.string.alphanumeric(13))
-        cy.contains('sa-button','Save').click().wait(1500)
+        cy.get('#addRelatedWebsiteTypeForm [icon="save"] > .sa-button').click().wait(2000)
         cy.contains('Related website type has been added.')
     })
 

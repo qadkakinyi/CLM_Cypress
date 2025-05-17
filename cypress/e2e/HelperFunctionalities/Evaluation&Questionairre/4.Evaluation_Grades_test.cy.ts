@@ -21,7 +21,7 @@ describe('Evaluation Grades', ()=>{
         cy.get('dx-drop-down-box').eq(1).click().wait(500)
         cy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview .dx-datagrid-content tr td').eq(14).click({force:true}).wait(500)
 
-        cy.contains('sa-button', 'Save').click().wait(1000)
+        cy.get('#addOverallEvaluationGradeForm [icon="save"] > .sa-button').click().wait(1000)
         cy.contains('The overall evaluation grade has been added')
     })
 

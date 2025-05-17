@@ -1,6 +1,6 @@
 import {faker} from "@faker-js/faker";
 
-describe('Client Categories', ()=>{
+describe('Client Categorization', ()=>{
     it('Adds A Client Categorization', ()=>{
         //add client category
         cy.visit('/settings/client-categorizations').wait(1000)
@@ -8,7 +8,7 @@ describe('Client Categories', ()=>{
         cy.get('#addClientCategorizationForm')
         cy.getByFormControlName('name').type('Client Categorization Test')
         cy.getByFormControlName('mappingReference').type(faker.string.alphanumeric(11))
-        cy.get('sa-button').contains('Save').click().wait(2000);
+        cy.get('#addClientCategorizationForm [icon="save"] > .sa-button').contains('Save').click().wait(2000);
         cy.contains('The client categorization has been added.')
     })
 

@@ -7,7 +7,7 @@ describe('Questionnaire Types', ()=>{
 
     it('Adds a Questionnaire Type', ()=>{
         
-        cy.contains('Add').click().wait(1000)
+        cy.contains('sa-button','Add').click().wait(1000)
 
         cy.getByDataCy('questionnaire-type-name').type('Type DKA Test')
         cy.getByDataCy('questionnaire-type-mapping-reference').type(faker.string.alphanumeric((15)))

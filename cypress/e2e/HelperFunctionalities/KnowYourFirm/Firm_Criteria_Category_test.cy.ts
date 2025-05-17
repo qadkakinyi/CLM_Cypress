@@ -8,13 +8,13 @@ describe('Firm Criteria Categories', ()=>{
 
     it('Adds a Criteria Category', ()=>{
 
-        cy.contains('Add').click().wait(1000)
+        cy.contains('sa-button','Add').click().wait(1000)
         cy.getByFormControlName('name').type('Test DKA')
 
         cy.get('dx-drop-down-box').eq(0).click().wait(500)
         cy.get('#dynamicSelectBoxDropdownGrid').find('.dx-datagrid-rowsview').find('tr > td').first().click().wait(500)
 
-        cy.get('[icon="save"]').click().wait(1000)
+        cy.get('#addFirmCriteriaCategoryForm [icon="save"] > .sa-button').click().wait(1000)
 
         cy.contains('The Firm Criteria Category has been added').wait(1000)
     })

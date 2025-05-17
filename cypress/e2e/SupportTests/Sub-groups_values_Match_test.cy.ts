@@ -1,13 +1,13 @@
 let sub_group_name = '';
 
 describe('Sub-group values Match', ()=>{
-    it('checks if subgroup values under screening possible matches (Home screen) match the values in the profile', ()=>{
+    it('checks if subgroup values under screening possible matches (Main Dashboard - Actions for review) match the values in the profile', ()=>{
         cy.wait(2000)
         
         cy.get('#screeningActionsForReview').click().wait(2500)
 
         cy.get(`#gridScreeningPendingActions .dx-datagrid-rowsview table [aria-rowindex="2"] td`).eq(9).invoke('text').then(text => {
-            sub_group_name = text
+            sub_group_name = text.trim()
             
             cy.log('SubGroup '+sub_group_name)
             cy.get("#gridScreeningPendingActions .fa-angle-double-right").eq(0).click({force:true}).wait(4000)

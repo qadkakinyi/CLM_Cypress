@@ -3,7 +3,7 @@ import {faker} from "@faker-js/faker";
 describe('Checklist', ()=>{
     it('Adds A Checklist', ()=>{
         cy.visit('/settings/checklists').wait(3000)
-        cy.contains('Add').click().wait(2000)
+        cy.contains('sa-button','Add').click().wait(2000)
         cy.getByFormControlName('name').type('Test Checklist')
         cy.getByFormControlName('priority').type('5')
         cy.getByFormControlName('mappingReference').type(faker.string.alphanumeric(10))

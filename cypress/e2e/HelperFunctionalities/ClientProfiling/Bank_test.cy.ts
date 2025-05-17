@@ -3,13 +3,12 @@ import {faker} from "@faker-js/faker";
 describe('Bank', ()=>{
     it('Add bank', ()=>{
         cy.visit('/settings/banks')
-        cy.contains('Add').click()
-        cy.wait(1000)
+        cy.contains('sa-button','Add').click().wait(1000)
         cy.getByDataCy("bank-name").type(`Xyz Test Bank`)
         cy.getByDataCy("bank-code").type(faker.string.alphanumeric(20))
         cy.getByDataCy("bank-mapping-reference").type(faker.string.alphanumeric(20))
-        cy.contains('Save').click().wait(2000)
-        cy.contains('The bank has been added')
+        cy.get('#addBankForm  [icon="save"] > .sa-button').click().wait(2000)
+        cy.contains('The bank has been added').wait(1000)
     })
 
     it("Edits Address type", ()=>{
