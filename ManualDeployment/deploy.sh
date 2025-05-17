@@ -1,4 +1,4 @@
-version="v.1.0.2"
+version="v.1.0.4"
 
 # Login to Azure Container Registry Repository
 (docker login complytek.azurecr.io -u complytek -p fGPEM4fYV36Bthu6gKzpLtoGo0WvMesVs4mY/c9QS9+ACRCxzkB5)
