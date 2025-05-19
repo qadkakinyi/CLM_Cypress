@@ -4,10 +4,10 @@ let name = 'Test visit dka '+faker.number.int({min:0, max:10})
 describe('Monitoring Visit Types', ()=>{
     it('Adds a Visit Type', ()=>{
         cy.visit('/settings/monitoring-visit-type').wait(1500)
-        cy.contains('Add').click().wait(1000)
+        cy.contains('sa-button','Add').click().wait(1000)
         cy.getByFormControlName('name').type(name)
         cy.getByFormControlName('mappingReference').type(faker.string.alphanumeric(13))
-        cy.contains('sa-button','Save').click().wait(1500)
+        cy.get('#addMonitoringVisitTypeForm  [icon="save"] > .sa-button').click().wait(2000)
         cy.contains('Monitoring visit type has been added.')
     })
 

@@ -14,7 +14,7 @@ describe('Custom Fields', ()=>{
         cy.getByFormControlName('fieldType').select('Text')
         cy.getByFormControlName('isNullable').click()
 
-        cy.get('sa-button').contains('Save').click().wait(2000);
+        cy.get('#addCustomFieldForm [icon="save"] > .sa-button').click().wait(2000);
         cy.contains('The custom field has been added.')
     })
     

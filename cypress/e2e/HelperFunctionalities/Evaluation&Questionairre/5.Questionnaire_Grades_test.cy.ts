@@ -22,7 +22,7 @@ describe('Questionnaire Grades', ()=>{
         
         cy.getByFormControlName('mappingReference').eq(0).type(faker.string.alphanumeric(13))
 
-        cy.contains('sa-button', 'Save').click().wait(1000)
+        cy.get('#addQuestionnaireGradeForm [icon="save"] > .sa-button').click().wait(1000)
         cy.contains('Questionnaire Grade has been added').wait(1000)
     })
 

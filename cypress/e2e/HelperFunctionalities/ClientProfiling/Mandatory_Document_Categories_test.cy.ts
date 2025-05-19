@@ -23,7 +23,7 @@ describe('Mandatory Document Categories (MDC)', ()=>{
 
         cy.getByFormControlName('numOfMandatoryDocuments').type('1')
 
-        cy.get('sa-button').contains('Save').click().wait(2000);
+        cy.get('#addMandatoryDocumentsCategoryForm  [icon="save"] > .sa-button').click().wait(2000)
         cy.contains('Mandatory documents category has been added.')
     })
 

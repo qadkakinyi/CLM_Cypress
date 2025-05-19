@@ -14,7 +14,7 @@ describe('Regulation Groups', ()=>{
 
         cy.wait(3000)
         cy.getByDataCy('system-settings-menu').scrollIntoView().click();
-        cy.get('[title="Account"]').click().wait(1000);
+        cy.contains('[data-cy="system-settings-menu"] sa-menu-item','Account').click().wait(1000);
         cy.get('[icon="key"] > .sa-button > .text').click().wait(1000);
         cy.get('.col-md-12 > .form-group > app-dynamic-selectbox > .sa-input-dropdown > .custom-selectbox > .dx-dropdowneditor-input-wrapper > .dx-texteditor-container > .dx-texteditor-buttons-container > .dx-widget > .dx-button-content > .dx-dropdowneditor-icon').click();
         cy.get('[aria-rowindex="4"] > td').click();
@@ -33,7 +33,7 @@ describe('Regulation Groups', ()=>{
     
     it('Add a Regulation Group', ()=>{
         cy.visit('/settings/regulation-groups').wait(1500)
-        cy.contains('Add').click().wait(1000)
+        cy.contains('sa-button','Add').click().wait(1000)
         cy.getByFormControlName('name').type('DKA Test Group')
         cy.getByFormControlName('mappingReference').type(faker.string.alphanumeric(13))
         // cy.getByDataCy('countries').click().wait(500)
@@ -43,7 +43,7 @@ describe('Regulation Groups', ()=>{
         cy.get('dx-drop-down-box').eq(1).click().wait(500)
         cy.contains('0x').click({force:true}).wait(1000)
         cy.getByFormControlName('hash').eq(0).type(hashValue)
-        cy.contains('sa-button','Save').click().wait(1500)
+        cy.get('#addRegulationGroupForm [icon="save"] > .sa-button').click().wait(2000)
         cy.contains('Regulation group has been added.').wait(1000)
     })
 

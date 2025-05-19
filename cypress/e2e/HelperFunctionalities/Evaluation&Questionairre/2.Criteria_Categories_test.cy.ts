@@ -10,7 +10,7 @@ describe('Criteria Categories', ()=>{
         cy.getByFormControlName('name').eq(0).type('Test Category DKA')
         cy.getByFormControlName('mappingReference').eq(0).type(faker.string.alphanumeric(13))
 
-        cy.contains('sa-button', 'Save').click().wait(1000)
+        cy.get('#addCriteriaCategoryForm [icon="save"] > .sa-button').click().wait(2000)
         cy.contains('Criteria category has been added')
     })
 

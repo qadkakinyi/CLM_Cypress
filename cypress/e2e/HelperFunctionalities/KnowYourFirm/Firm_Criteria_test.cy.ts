@@ -8,7 +8,7 @@ describe('Firm Criteria', ()=>{
 
     it('Adds a Firm Criteria', ()=>{
         
-        cy.contains('Add').click().wait(1000)
+        cy.contains('sa-button','Add').click().wait(1000)
         cy.getByFormControlName('name').type('Test DKA')
         
         cy.get('dx-drop-down-box').eq(0).click().wait(500)
@@ -18,8 +18,8 @@ describe('Firm Criteria', ()=>{
 
         cy.get('dx-drop-down-box').eq(1).click().wait(500)
         cy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview .dx-datagrid-content tr td').contains('Audit Services').click({force:true}).wait(500)
-        
-        cy.get('[icon="save"]').click().wait(1000)
+
+        cy.get('#addFirmCriterionForm [icon="save"] > .sa-button').click().wait(1000)
 
         cy.contains('The firm criterion has been added').wait(1000)
     })
@@ -29,9 +29,9 @@ describe('Firm Criteria', ()=>{
         cy.get('#gridFirmCriteria tr .dx-first-cell .dx-texteditor-input').type('Test DKA', {force:true}).wait(2000)
         cy.get('#gridFirmCriteria tr td').find('.dx-icon-edit').eq(0).click({force:true}).wait(1000)
 
-        cy.get('#gridFirmCriteria .dx-datagrid-table .dx-texteditor-container > .dx-texteditor-input-container > .dx-texteditor-input').as('criteria')
+        // cy.get('#gridFirmCriteria .dx-datagrid-table .dx-texteditor-container > .dx-texteditor-input-container > .dx-texteditor-input').as('criteria')
 
-        cy.get('@criteria').eq(5).clear().wait(1000).type('Test Criterion DKA', {force: true}).wait(1000)
+        cy.get('#gridFirmCriteria tr .dx-first-cell .dx-texteditor-input').clear().wait(1000).type('Test Criterion DKA', {force: true}).wait(1000)
         cy.get('tr td').find('.dx-icon-save').eq(1).click().wait(1500)
 
         cy.contains(`The firm criterion has been updated.`).wait(1000)

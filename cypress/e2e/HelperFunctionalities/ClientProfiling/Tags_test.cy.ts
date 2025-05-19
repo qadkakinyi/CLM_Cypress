@@ -4,10 +4,10 @@ let name = 'Test Tags dka '+faker.number.int({min:0, max:10})
 describe("Tags", ()=>{
     it('Adds a Tag', ()=>{
         cy.visit('/settings/tags').wait(1500)
-        cy.contains('Add').click().wait(1000)
+        cy.contains('sa-button','Add').click().wait(1000)
         cy.getByFormControlName('name').type(name)
         cy.getByFormControlName('mappingReference').type(faker.string.alphanumeric(13))
-        cy.contains('sa-button','Save').click().wait(1500)
+        cy.get('#addTagForm [icon="save"] > .sa-button').click().wait(2000)
         cy.contains('Tag has been added.')
     })
 

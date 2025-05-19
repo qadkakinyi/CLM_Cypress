@@ -17,8 +17,8 @@ describe('Default Address', ()=>{
         cy.getByFormControlName('locality').eq(0).type('Nyeri - Kenya')
         cy.getByFormControlName('province').eq(0).type('Central')
         cy.getByFormControlName('district').eq(0).type('NYeri Central')
-        
-        cy.get('sa-button').contains('Save').click().wait(2000);
+
+        cy.get('#addDefaultAddressForm [icon="save"] > .sa-button').click().wait(2000);
         cy.contains('Default address has been added.')
     })
 

@@ -24,7 +24,7 @@ describe('Criteria', ()=>{
 
         cy.getByFormControlName('includeInEvaluation').uncheck()
 
-        cy.contains('sa-button', 'Save').click().wait(1000)
+        cy.get('.custom-background-transparent > .row > .col > [icon="save"] > .sa-button').click().wait(500)
         cy.contains('The criterion has been added').wait(1000)
     })
 

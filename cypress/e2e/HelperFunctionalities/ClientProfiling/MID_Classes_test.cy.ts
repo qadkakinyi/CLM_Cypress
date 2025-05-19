@@ -4,10 +4,10 @@ let name = 'Test dka '+faker.number.int({min:0, max:10})
 describe('MID Classes', ()=>{
     it('Adds an MID Class', ()=>{
         cy.visit('/settings/mid-classes').wait(1500)
-        cy.contains('Add').click().wait(1000)
+        cy.contains('sa-button','Add').click().wait(1000)
         cy.getByFormControlName('name').type(name)
         cy.getByFormControlName('mappingReference').type(faker.string.alphanumeric(13))
-        cy.contains('sa-button','Save').click().wait(1500)
+        cy.get('#addMidClassForm  [icon="save"] > .sa-button').click().wait(2000)
         cy.contains('MID class has been added.')
     })
     

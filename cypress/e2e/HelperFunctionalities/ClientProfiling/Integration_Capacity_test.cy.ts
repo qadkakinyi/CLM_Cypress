@@ -5,11 +5,11 @@ describe('Integration Capacity', ()=>{
         //add fatca CRS Categorization
         cy.visit('/settings/integration-capacities').wait(2000)
         
-        cy.contains('Add').click().wait(1000)
+        cy.contains('sa-button','Add').click().wait(1000)
         cy.get('#addIntegrationCapacityForm')
         cy.getByFormControlName('name').type('Test Capacity')
         cy.getByFormControlName('mappingReference').type(faker.string.alphanumeric(10))
-        cy.get('sa-button').contains('Save').click().wait(2000)
+        cy.get('#addIntegrationCapacityForm  [icon="save"] > .sa-button').click().wait(2000)
         cy.contains('Integration capacity has been added.')
     })
 

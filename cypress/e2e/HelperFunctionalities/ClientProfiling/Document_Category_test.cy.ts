@@ -8,7 +8,7 @@ describe('Document Categories', ()=>{
         cy.get('#addDocumentCategoryForm')
         cy.getByFormControlName('name').type('Test Ledger')
         cy.getByFormControlName('mappingReference').type(faker.string.alphanumeric(11))
-        cy.get('sa-button').contains('Save').click().wait(2000);
+        cy.get('#addDocumentCategoryForm [icon="save"] > .sa-button').click().wait(2000);
         cy.contains('Document category has been added.')
     })
 
