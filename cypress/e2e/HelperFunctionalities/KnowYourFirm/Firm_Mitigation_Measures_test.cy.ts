@@ -7,7 +7,7 @@ describe('Firm Mitigation Measures', ()=>{
 
     it('Adds a Firm Mitigation Measure', ()=>{
 
-        cy.contains('Add').click().wait(1000)
+        cy.contains('sa-button','Add').click().wait(1000)
         cy.getByFormControlName('name').eq(0).type('Test DKA')
 
         //regulation group
@@ -17,7 +17,7 @@ describe('Firm Mitigation Measures', ()=>{
         cy.get('dx-drop-down-box').eq(1).click().wait(500)
         cy.get('[aria-rowindex="1"] > .dx-command-select > .dx-widget > .dx-checkbox-container > .dx-checkbox-icon').click({force:true}).wait(500)
 
-        cy.get('[icon="save"]').eq(0).click().wait(1000)
+        cy.get('#addFirmMitigationActionForm > .custom-backround-transparent > .row > .col > [icon="save"] > .sa-button').click().wait(1000)
 
         cy.contains('The Firm Mitigation Measure has been added').wait(1000)
     })
@@ -31,8 +31,8 @@ describe('Firm Mitigation Measures', ()=>{
         
         cy.get('dx-drop-down-box').eq(3).click().wait(500)
         cy.get('[aria-rowindex="1"] > .dx-command-select > .dx-widget > .dx-checkbox-container > .dx-checkbox-icon').click({force:true}).wait(500)
-        
-        cy.get('[icon="save"]').eq(1).click().wait(1000)
+
+        cy.get('#editFirmMitigationActionForm > .custom-backround-transparent > .row > .col > [icon="save"] > .sa-button').click().wait(1000)
         
         cy.contains(`The Firm Mitigation Measure has been modified.`).wait(1000)
     })

@@ -7,7 +7,7 @@ describe('Firm Impact Score', ()=>{
 
     it('Adds a Firm Impact Score', ()=>{
 
-        cy.contains('Add').click().wait(1000)
+        cy.contains('sa-button','Add').click().wait(1000)
         cy.getByFormControlName('name').eq(0).type('Test DKA')
 
         //regulation group
@@ -21,7 +21,7 @@ describe('Firm Impact Score', ()=>{
         cy.get('dx-drop-down-box').eq(1).click().wait(500)
         cy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview .dx-datagrid-content tr td').contains('Coral').click({force:true}).wait(500)
 
-        cy.get('[icon="save"]').eq(0).click().wait(1000)
+        cy.get('#addFirmImpactScoreForm > .custom-backround-transparent > .row > .col > [icon="save"]').eq(0).click().wait(1000)
 
         cy.contains('The firm impact score has been added').wait(1000)
     })
@@ -59,7 +59,7 @@ describe('Firm Residual Risk', ()=>{
 
     it('Adds a Firm Residual Risk', ()=>{
 
-        cy.contains('Add').click().wait(1000)
+        cy.contains('sa-button','Add').click().wait(1000)
         cy.getByFormControlName('name').eq(1).type('Test DKA')
 
         //regulation group
@@ -72,7 +72,7 @@ describe('Firm Residual Risk', ()=>{
         cy.get('dx-drop-down-box').eq(3).click().wait(500)
         cy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview .dx-datagrid-content tr td').contains('Coral').click({force:true}).wait(500)
 
-        cy.get('[icon="save"]').eq(1).click().wait(1000)
+        cy.get('#addFirmResidualRiskForm > .custom-backround-transparent > .row > .col > [icon="save"] > .sa-button').click().wait(1000)
 
         cy.contains('The firm residual risk has been added').wait(1000)
     })
@@ -111,7 +111,7 @@ describe('Firm Overall Risk Score', ()=>{
 
     it('Adds a Firm Overall Risk Score', ()=>{
 
-        cy.contains('Add').click().wait(1000)
+        cy.contains('sa-button','Add').click().wait(1000)
         cy.getByFormControlName('name').eq(2).type('Test DKA')
 
         //regulation group
@@ -127,7 +127,7 @@ describe('Firm Overall Risk Score', ()=>{
         
         cy.getByFormControlName('nextEvaluationDays').type('30')
 
-        cy.get('[icon="save"]').eq(2).click().wait(1000)
+        cy.get('#addFirmOverallRiskScoreForm > .custom-backround-transparent > .row > .col > [icon="save"] > .sa-button').click().wait(1000)
 
         cy.contains('The firm overall risk score has been added').wait(1000)
     })

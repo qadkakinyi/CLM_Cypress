@@ -5,7 +5,7 @@ let location = '';
 describe('Payment Method',()=>{
     before(()=>{
         cy.visit('/settings/payment-methods').wait(1000)
-        cy.contains('Add').click().wait(1000)
+        cy.contains('sa-button','Add').click().wait(1000)
         cy.getByFormControlName('name').type('PayPal Test')
         cy.getByFormControlName('mappingReference').type(faker.string.alphanumeric(11))
         cy.getByDataCy('history-record-type').click()

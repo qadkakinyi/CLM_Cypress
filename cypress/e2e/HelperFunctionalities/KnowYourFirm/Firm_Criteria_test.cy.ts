@@ -29,10 +29,10 @@ describe('Firm Criteria', ()=>{
         cy.get('#gridFirmCriteria tr .dx-first-cell .dx-texteditor-input').type('Test DKA', {force:true}).wait(2000)
         cy.get('#gridFirmCriteria tr td').find('.dx-icon-edit').eq(0).click({force:true}).wait(1000)
 
-        // cy.get('#gridFirmCriteria .dx-datagrid-table .dx-texteditor-container > .dx-texteditor-input-container > .dx-texteditor-input').as('criteria')
-
-        cy.get('#gridFirmCriteria tr .dx-first-cell .dx-texteditor-input').clear().wait(1000).type('Test Criterion DKA', {force: true}).wait(1000)
-        cy.get('tr td').find('.dx-icon-save').eq(1).click().wait(1500)
+        cy.get('#gridFirmCriteria .dx-datagrid-table .dx-texteditor-container > .dx-texteditor-input-container > .dx-texteditor-input').as('criteria')
+        // cy.get('[aria-describedby="dx-col-8"] > .dx-show-invalid-badge > .dx-texteditor-container > .dx-texteditor-input-container > .dx-texteditor-input')
+        cy.get('@criteria').eq(6).clear().wait(1000).type('Test Criterion DKA', {force: true}).wait(1000)
+        cy.get('.dx-datagrid-table > tbody > .dx-edit-row > .dx-command-edit > .dx-link-save').eq(1).click().wait(1500)
 
         cy.contains(`The firm criterion has been updated.`).wait(1000)
     })

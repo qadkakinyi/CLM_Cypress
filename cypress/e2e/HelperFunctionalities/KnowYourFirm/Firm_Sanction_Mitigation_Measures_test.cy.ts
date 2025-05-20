@@ -1,5 +1,5 @@
-
-describe('Firm Sanction Mitigation Measures', ()=>{
+//THIS TEST IS NO LONGER VALID AS THIS FUNCTIONALITY HAS BEEN REMOVED
+describe.skip('Firm Sanction Mitigation Measures', ()=>{
 
     beforeEach(()=>{
         cy.visit('/settings/firm-sanction-mitigation-measures').wait(2000)
@@ -7,7 +7,7 @@ describe('Firm Sanction Mitigation Measures', ()=>{
 
     it('Adds a Firm Sanction Mitigation Measure', ()=>{
 
-        cy.contains('Add').click().wait(1000)
+        cy.contains('sa-button','Add').click().wait(1000)
         cy.getByFormControlName('name').eq(0).type('Sanction Mitigation Measure DKA')
 
         //regulation group
