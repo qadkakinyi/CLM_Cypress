@@ -10,7 +10,7 @@ describe('Trade Types', ()=>{
         cy.getByFormControlName('name').eq(0).type('Trade Type DKA')
         cy.getByFormControlName('mappingReference').eq(0).type(faker.string.alphanumeric(13))
 
-        cy.contains('sa-button', 'Save').click().wait(1000)
+        cy.get('#addTradeTypeForm > .custom-backround-transparent > .row > .col > [icon="save"] > .sa-button').click().wait(1000)
         cy.contains('Trade type has been added')
     })
 

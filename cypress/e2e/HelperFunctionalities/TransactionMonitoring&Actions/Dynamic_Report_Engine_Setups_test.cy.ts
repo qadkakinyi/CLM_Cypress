@@ -24,8 +24,8 @@ describe('Dynamic Report Engine Setups', ()=>{
         
         cy.get('dx-drop-down-box').eq(2).click().wait(500)
         cy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview .dx-datagrid-content tr td').contains('DKA Email Test').click({force:true}).wait(500)
-        
-        cy.contains('sa-button', 'Save').click().wait(1000)
+
+        cy.get('#addDynamicReportEngineSetupForm > .custom-backround-transparent > .row > .col > [icon="save"] > .sa-button').click().wait(1000)
         cy.contains('The Dynamic report setup has been added').wait(2000)
     })
     

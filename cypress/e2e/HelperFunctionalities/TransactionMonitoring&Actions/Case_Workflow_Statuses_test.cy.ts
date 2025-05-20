@@ -4,14 +4,14 @@ let name = 'Test Workflow Status '
 describe("Case Workflow Statuses", ()=>{
     it('Adds a Case Workflow Status', ()=>{
         cy.visit('/settings/case-workflow-statuses').wait(1500)
-        cy.contains('Add').click().wait(1000)
+        cy.contains('sa-button','Add').click().wait(1000)
         cy.getByFormControlName('name').type(name)
         cy.getByFormControlName('mappingReference').type(faker.string.alphanumeric(13))
-        cy.contains('sa-button','Save').click().wait(1500)
+        cy.get('#addCaseWorkflowStatusForm > .custom-backround-transparent > .row > .col > [icon="save"] > .sa-button').click().wait(1500)
         cy.contains('The Case Workflow Status has been added.')
     })
 
-    it('Edits a Tag', ()=>{
+    it('Edits a Case Workflow Status', ()=>{
 
         cy.visit('/settings/case-workflow-statuses').wait(2000)
         cy.get('#gridCaseWorkflowStatuses tr .dx-first-cell .dx-texteditor-input').type(name, {force:true}).wait(1000)
@@ -24,7 +24,7 @@ describe("Case Workflow Statuses", ()=>{
         cy.contains('The Case Workflow Status has been updated.')
     })
 
-    it('Deletes a Tag', ()=>{
+    it('Deletes a Case Workflow Status', ()=>{
         cy.visit('/settings/case-workflow-statuses').wait(2000)
 
         cy.get('#gridCaseWorkflowStatuses tr .dx-first-cell .dx-texteditor-input').type(name, {force:true}).wait(1000)

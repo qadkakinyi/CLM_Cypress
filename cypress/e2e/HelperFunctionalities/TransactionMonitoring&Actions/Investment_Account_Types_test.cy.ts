@@ -10,7 +10,7 @@ describe('Investment Account Types', ()=>{
         cy.getByFormControlName('name').eq(0).type('Trust Account DKA')
         cy.getByFormControlName('mappingReference').eq(0).type(faker.string.alphanumeric(13))
 
-        cy.contains('sa-button', 'Save').click().wait(1000)
+        cy.get('#addInvestmentAccountTypeForm > .custom-backround-transparent > .row > .col > [icon="save"] > .sa-button').click().wait(1000)
         cy.contains('Investment account type has been added')
     })
 

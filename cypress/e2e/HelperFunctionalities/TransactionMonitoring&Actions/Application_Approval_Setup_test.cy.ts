@@ -4,10 +4,10 @@ let name = 'DKA Test Transaction Approval'
 describe("Application Approval Setup", ()=> {
     it('Adds a Purpose of Transaction', () => {
         cy.visit('/settings/application-approval-setup')
-        cy.contains('Add').click().wait(1000)
+        cy.contains('sa-button', 'Add').click().wait(1000)
         cy.getByFormControlName('name').type(name)
         cy.getByFormControlName('mappingReference').type(faker.string.alphanumeric(20))
-        cy.contains('sa-button', 'Save').click().wait(1500)
+        cy.get('#addPurposeOfTransactionForm > .custom-backround-transparent > .row > .col > [icon="save"] > .sa-button').click().wait(1500)
         cy.contains('The purpose of transaction has been added.')
     })
 

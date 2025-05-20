@@ -1,7 +1,7 @@
 import {faker} from "@faker-js/faker";
 
-let code = 'DKA'
-let currency_name = `${faker.finance.currency().name} DKA`
+let code = 'DKA Dollar'
+let currency_name = `${faker.finance.currency().name} DKA_USD`
 describe('Currency Information', ()=>{
     beforeEach(()=>{
         cy.visit('/settings/currency-informations').wait(2000)
@@ -20,8 +20,8 @@ describe('Currency Information', ()=>{
         // cy.getByDataCy('status').click()
         cy.get('dx-drop-down-box').eq(1).click().wait(500)
         cy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview .dx-datagrid-content').contains('Enabled').click().wait(500)
-        
-        cy.contains('sa-button', 'Save').click().wait(1500)
+
+        cy.get('#addCurrencyInformationForm > .custom-backround-transparent > .row > .col > [icon="save"] > .sa-button').click().wait(1500)
         cy.contains('The currency information has been added.')
     })
 

@@ -10,7 +10,7 @@ describe('Rule Categories', ()=>{
         cy.getByFormControlName('name').eq(0).type('Rule Test DKA')
         cy.getByFormControlName('mappingReference').eq(0).type(faker.string.alphanumeric(13))
 
-        cy.contains('sa-button', 'Save').click().wait(1000)
+        cy.get('#addRuleCategoryForm > .custom-backround-transparent > .row > .col > [icon="save"] > .sa-button').click().wait(1000)
         cy.contains('Rule category has been added')
     })
 
