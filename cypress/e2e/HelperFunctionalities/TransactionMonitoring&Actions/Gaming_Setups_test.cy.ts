@@ -9,8 +9,8 @@ describe('Game Types', ()=>{
         cy.contains('sa-button', 'Add').click().wait(1000)
         cy.getByFormControlName('name').eq(0).type('Action Games')
         cy.getByFormControlName('mappingReference').eq(0).type(faker.string.alphanumeric(13))
-        
-        cy.contains('sa-button', 'Save').click().wait(1000)
+
+        cy.get('#addGameTypeForm > .custom-backround-transparent > .row > .col > [icon="save"] > .sa-button').click().wait(1000)
         cy.contains('Game type has been added')
     })
 

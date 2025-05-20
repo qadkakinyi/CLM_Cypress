@@ -18,7 +18,7 @@ describe('Currency Rate', ()=>{
         cy.getByFormControlName('date').type('2024-09-24')
         cy.getByFormControlName('rate').eq(0).type(rate)
 
-        cy.contains('sa-button', 'Save').click().wait(1500)
+        cy.get('#addCurrencyRateForm > .custom-backround-transparent > .row > .col > [icon="save"] > .sa-button').click().wait(1500)
         cy.contains('The currency rate has been added.')
     })
 

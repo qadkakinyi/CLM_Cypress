@@ -10,7 +10,7 @@ describe('Transaction Types', ()=>{
         cy.getByFormControlName('name').eq(1).type('Transfer DKA')
         cy.getByFormControlName('mappingReference').eq(1).type(faker.string.alphanumeric(13))
 
-        cy.contains('sa-button', 'Save').click().wait(1000)
+        cy.get('[data-test="saveTransactionType"] > .sa-button').click().wait(1000)
         cy.contains('Transaction type has been added')
     })
 

@@ -9,7 +9,7 @@ let relationship = "Bro DKA"
 describe("Contract Policy Categories", ()=> {
     it('Adds a Policy Categories', () => {
         cy.visit('/settings/contracts-setup').wait(1500)
-        cy.contains('Add').should('be.visible').click()
+        cy.contains('sa-button','Add').click()
         cy.wait(1000)
         cy.getByDataCy('contract-category-name').type(category_name)
         cy.getByDataCy('contract-category-ref').type(faker.string.alphanumeric(13))
@@ -49,7 +49,7 @@ describe("Contract Products", ()=> {
     })
     
     it('Adds a Contract product', () => {
-        cy.contains('Add').click()
+        cy.contains('sa-button','Add').click()
         cy.wait(1000)
         cy.get('#addContractPolicyProductForm .product-name').type(product_name)
         cy.get('#addContractPolicyProductForm .product-reference').type(faker.string.alphanumeric(13))
@@ -100,7 +100,7 @@ describe("Contract Status", ()=> {
     })
 
     it('Adds a Contract Status', () => {
-        cy.contains('Add').click()
+        cy.contains('sa-button','Add').click()
         cy.wait(1000)
         cy.get('#addContractPolicyStatusForm')
         cy.getByFormControlName('name').eq(3).type(status_name)
@@ -141,7 +141,7 @@ describe("Contract Transaction Payment Method", ()=> {
     })
 
     it('Adds a Transaction Payment Method', () => {
-        cy.contains('Add').click()
+        cy.contains('sa-button','Add').click()
         cy.wait(1000)
         cy.get('#addContractTransactionPaymentMethodForm')
         cy.getByFormControlName('name').eq(4).type(payment_name)
@@ -182,14 +182,13 @@ describe("Contract Beneficiary Relations", ()=> {
     })
 
     it('Adds a Beneficiary Relations', () => {
-        cy.contains('Add').click()
+        cy.contains('sa-button','Add').click()
         cy.wait(1000)
         cy.get('#addContractPolicyBeneficiaryRelationForm')
         cy.getByFormControlName('name').eq(0).type(relationship)
         cy.getByFormControlName('mappingReference').eq(0).type(faker.string.alphanumeric(13))
-        
-        cy.contains('sa-button', 'Save').should('be.visible').click()
-        cy.wait(1000)
+
+        cy.get('#addContractPolicyBeneficiaryRelationForm > .custom-backround-transparent > .row > .col > [icon="save"] > .sa-button').click().wait(1000)
         cy.contains('Contract policy beneficiary relation has been added.')
     })
 
