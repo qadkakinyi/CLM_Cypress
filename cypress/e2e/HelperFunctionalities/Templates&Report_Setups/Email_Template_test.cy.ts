@@ -5,15 +5,15 @@ describe('Email Template', ()=>{
 
     it('Adds an Email Template', ()=>{
         cy.visit('/settings/email-templates').wait(2000)
-        cy.contains('Add').click().wait(1000)
+        cy.contains('sa-button','Add').click().wait(1000)
         cy.getByFormControlName('subject').type('Test Template DKA')
         
         cy.get('dx-drop-down-box').eq(0).click().wait(500)
         cy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview .dx-datagrid-content tr td').contains('Test DKA').click({force:true}).wait(500)
 
         cy.get('ngx-editor div div').type('Good afternoon, ...')
-
-        cy.get('[icon="save"]').click().wait(1000)
+        
+        cy.get('#addEmailTemplateForm > .custom-backround-transparent > .row > .col > [icon="save"] > .sa-button').click().wait(1000)
 
         cy.contains('Email Template has been added').wait(1000)
     })

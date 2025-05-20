@@ -7,20 +7,20 @@ describe('Firm Sanction Evaluation Grades', ()=>{
 
     it('Adds a Firm Sanction Impact Score', ()=>{
 
-        cy.contains('Add').click().wait(1000)
-        cy.getByFormControlName('name').eq(3).type('Test DKA')
+        cy.contains('sa-button','Add').click().wait(1000)
+        cy.getByFormControlName('name').eq(2).type('Test DKA')
 
         //regulation group
-        cy.get('dx-drop-down-box').eq(6).click().wait(500)
+        cy.get('#addFirmImpactScoreForm dx-drop-down-box').eq(0).click().wait(500)
         cy.get('#dynamicSelectBoxDropdownGrid').find('.dx-datagrid-rowsview').find('tr > td').first().click().wait(500)
         
-        cy.getByFormControlName('riskPoint').eq(1).type('6')
+        cy.getByFormControlName('riskPoint').eq(0).type('6')
 
         //color
-        cy.get('dx-drop-down-box').eq(7).click().wait(500)
+        cy.get('#addFirmImpactScoreForm dx-drop-down-box').eq(1).click().wait(500)
         cy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview .dx-datagrid-content tr td').contains('Coral').click({force:true}).wait(500)
 
-        cy.get('[icon="save"]').eq(3).click().wait(1000)
+        cy.get('#addFirmImpactScoreForm > .custom-backround-transparent > .row > .col > [icon="save"]').click().wait(1000)
 
         cy.contains('Sanction impact score has been added').wait(1000)
     })

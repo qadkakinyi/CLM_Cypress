@@ -7,13 +7,13 @@ describe('Intro & Endings', ()=>{
 
     it('Adds an Intro And Ending', ()=>{
 
-        cy.contains('Add').click().wait(1000)
+        cy.contains('sa-button','Add').click().wait(1000)
         cy.getByFormControlName('name').type('Test DKA')
         cy.getByFormControlName('intro').type('Test Introduction')
 
         cy.get('ngx-editor div div').type('Test Ending')
 
-        cy.get('[icon="save"]').click().wait(1000)
+        cy.get('#addIntroEndingForm > .custom-backround-transparent > .row > .col > [icon="save"] > .sa-button').click().wait(1000)
 
         cy.contains('Intro Ending has been added').wait(1000)
     })

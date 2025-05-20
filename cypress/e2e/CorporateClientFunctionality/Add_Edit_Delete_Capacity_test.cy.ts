@@ -51,8 +51,8 @@ describe('Capacity - Corporate', ()=>{
         cy.get('#addAuthorizedPersonForm input[name="dateOfBirth"]').type(faker.date.birthdate({ min: 18, max: 65, mode: 'age' }).toISOString().slice(0, 10));
         
         cy.get('#addAuthorizedPersonForm textarea[name="notes"]').type(faker.lorem.paragraph());
-        
-        cy.get('#addAuthorizedPersonForm').contains('Save').click().wait(3500)
+
+        cy.get('[data-test="saveClientAuthorizedPerson"] > .sa-button').click().wait(3500)
         cy.contains('The authorized person has been added.').wait(1500)
 
         cy.location('pathname').then((loc)=>{

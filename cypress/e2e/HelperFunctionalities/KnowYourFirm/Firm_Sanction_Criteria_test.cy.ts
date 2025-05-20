@@ -7,7 +7,7 @@ describe('Firm Sanction Criteria', ()=>{
 
     it('Adds a Firm Sanction Criteria', ()=>{
 
-        cy.contains('Add').click().wait(1000)
+        cy.contains('sa-button','Add').click().wait(1000)
         cy.getByFormControlName('name').eq(0).type('Test DKA')
         cy.getByFormControlName('riskPoint').eq(0).type('4')
 
@@ -19,7 +19,7 @@ describe('Firm Sanction Criteria', ()=>{
         cy.get('dx-drop-down-box').eq(1).click().wait(500)
         cy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview .dx-datagrid-content tr td').contains('Client Base').click({force:true}).wait(500)
 
-        cy.get('[icon="save"]').eq(0).click().wait(1000)
+        cy.get('.custom-background-transparent > .row > .col > [icon="save"] > .sa-button').click().wait(1000)
 
         cy.contains('The criterion has been added').wait(1000)
     })
@@ -34,8 +34,9 @@ describe('Firm Sanction Criteria', ()=>{
         // disable status
         cy.get('dx-drop-down-box').eq(2).click().wait(500)
         cy.contains('Disabled').click().wait(500)
-
-        cy.get('[icon="save"]').eq(0).click().wait(1000)
+        
+        cy.get('.caret').wait(500).click()
+        cy.get('.save-and-close-link').click().wait(1000)
 
         cy.contains(`The Firm Sanction Criterion has been updated.`).wait(1000)
     })
