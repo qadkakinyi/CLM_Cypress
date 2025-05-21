@@ -9,27 +9,35 @@ let routes = [
     {index: 7, route: "/settings/questions-categories", assertion: "Questionnaire Categories"},
 ]
 describe('Evaluation And Questionnaire', ()=>{
-    beforeEach(()=>{
-        cy.visit("/main/dashboard").wait(2000)
-        cy.getByDataCy("settings-menu").click().wait(1000)
-        cy.getByDataCy("evaluation-menu").scrollIntoView()
-        cy.getByDataCy("evaluation-menu").click().as('evaluation-menu')
-        cy.get("@evaluation-menu").find("ul>li").as("evaluation-links")
-    })
 
     routes.forEach((route) => {
         it(`Visits ${route.assertion} page`, () => {
-            cy.get("@evaluation-links").eq(route.index).click()
-            cy.location("pathname").should("equal", route.route)
-            cy.wait(2000)
-            cy.contains(route.assertion)
+            if(route.index <= routes.length - 1) {
+                cy.visit('/main/dashboard')
+                // pin the main sidebar
+                cy.get('aside').then(el => {
+                    let unpin_icon = el.find('.dx-icon-unpin')
 
-            if(route.index < routes.length - 1){
-                cy.visit("/main/dashboard").wait(2000)
+                    //check if unpin icon is visible
+                    if (unpin_icon.length > 0) {
+                        cy.wrap(unpin_icon).click().wait(1000)
+                    } else {
+                        cy.log('Unpin icon missing')
+                    }
+                })
                 cy.getByDataCy("settings-menu").click().wait(2000)
                 cy.getByDataCy("evaluation-menu").scrollIntoView()
                 cy.getByDataCy("evaluation-menu").click().as('evaluation-menu')
                 cy.get("@evaluation-menu").find("ul>li").as("evaluation-links")
+                cy.get("@evaluation-links").eq(route.index).click()
+                
+                //assertion
+                cy.location("pathname").should("equal", route.route)
+                cy.wait(2000)
+                cy.contains(route.assertion)
+
+            }else{
+                cy.visit("/main/dashboard").wait(2000)
             }
         })
     })
