@@ -1,14 +1,5 @@
 describe('Transaction Monitoring & Actions', ()=>{
-
-    beforeEach(()=>{
-        cy.visit("/main/dashboard").wait(2000)
-        cy.getByDataCy("settings-menu").click().wait(1000)
-        cy.getByDataCy("transaction-menu").should("be.visible")
-        cy.getByDataCy("transaction-menu").click().as('transaction-menu')
-        cy.getByDataCy("transaction-links").as("transaction-links")
-    })
-
-    it("Transaction Monitoring & Actions pages", () => {
+    
         let routes = [
             {index: 0, route: "/settings/actions-setup", assertion: "Actions Setup"},
             {index: 1, route: "/settings/application-approval-setup", assertion: "Application Approval Setup"},
@@ -28,18 +19,33 @@ describe('Transaction Monitoring & Actions', ()=>{
         ]
 
         routes.forEach((route, i) => {
-            cy.get("@transaction-links").eq(route.index).click()
-            cy.location("pathname").should("equal", route.route)
-            cy.wait(2000)
-            cy.contains(route.assertion)
+            it(`Visits ${route.assertion} page`, () => {
+                if(route.index <= routes.length - 1) {
+                    cy.visit('/main/dashboard')
+                    // pin the main sidebar
+                    cy.get('aside').then(el => {
+                        let unpin_icon = el.find('.dx-icon-unpin')
 
-            if(i < routes.length - 1){
-                cy.visit("/main/dashboard").wait(2000)
-                cy.getByDataCy("settings-menu").click().wait(2000)
-                cy.getByDataCy("transaction-menu").should("be.visible")
-                cy.getByDataCy("transaction-menu").click().as('transaction-menu')
-                cy.getByDataCy("transaction-links").as("transaction-links")
-            }
+                        //check if unpin icon is visible
+                        if (unpin_icon.length > 0) {
+                            cy.wrap(unpin_icon).click().wait(1000)
+                        } else {
+                            cy.log('Unpin icon missing')
+                        }
+                    })
+                    cy.getByDataCy("settings-menu").click().wait(2000)
+                    cy.getByDataCy("transaction-menu").should("be.visible")
+                    cy.getByDataCy("transaction-menu").click().as('transaction-menu')
+                    cy.getByDataCy("transaction-links").as("transaction-links")
+                    cy.get("@transaction-links").eq(route.index).click()
+                    cy.location("pathname").should("equal", route.route)
+                    cy.wait(2000)
+                    cy.contains(route.assertion)
+
+                }else {
+                    cy.visit("/main/dashboard").wait(2000)
+                }
+            })
         })
-    })
+    
 })

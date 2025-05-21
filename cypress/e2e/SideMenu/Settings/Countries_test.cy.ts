@@ -5,29 +5,34 @@ let routes = [
     {index: 3, route: "/settings/country-evaluation-grades", assertions: "Country Evaluation Grades"}
 ]
 describe("Countries", ()=>{
-
-    beforeEach(()=>{
-        cy.visit("/main/dashboard").wait(2000)
-        cy.getByDataCy("settings-menu").click().wait(1000)
-        cy.getByDataCy("country-menu").should("be.visible")
-        cy.getByDataCy("country-menu").click().as('country-menu')
-        cy.get("@country-menu").find("ul>li").as("country-links")
-    })
-
         
     routes.forEach((route) => {
         it(`Visits ${route.assertions} Page`, () => {
-            cy.get("@country-links").eq(route.index).click().wait(1000)
-            cy.location("pathname").should("equal", route.route)
-            cy.wait(2000)
-            cy.contains(route.assertions)
+            if(route.index <= routes.length - 1) {
+                cy.visit('/main/dashboard')
+                // pin the main sidebar
+                cy.get('aside').then(el => {
+                    let unpin_icon = el.find('.dx-icon-unpin')
 
-            if(route.index < routes.length - 1){
-                cy.visit("/main/dashboard").wait(2000)
+                    //check if unpin icon is visible
+                    if (unpin_icon.length > 0) {
+                        cy.wrap(unpin_icon).click().wait(1000)
+                    } else {
+                        cy.log('Unpin icon missing')
+                    }
+                })
                 cy.getByDataCy("settings-menu").click().wait(2000)
                 cy.getByDataCy("country-menu").should("be.visible")
                 cy.getByDataCy("country-menu").click().as('country-menu')
                 cy.get("@country-menu").find("ul>li").as("country-links")
+                cy.get("@country-links").eq(route.index).click().wait(1000)
+                
+                //assertion
+                cy.location("pathname").should("equal", route.route)
+                cy.wait(2000)
+                cy.contains(route.assertions)
+            }else{
+                cy.visit('/main/dashboard')
             }
         })
     })
