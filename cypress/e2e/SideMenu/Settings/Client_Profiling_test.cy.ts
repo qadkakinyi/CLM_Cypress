@@ -56,6 +56,7 @@ describe("Client Profiling", ()=>{
                 cy.get("@client-profiling-links").eq(route.index).click()
 
                 cy.wait(2000)
+                cy.get('.sk-ball-spin-clockwise').should(`not.be.visible`)
                 cy.location("pathname").should("equal", route.route)
                 cy.contains(route.assertion)
             }else{

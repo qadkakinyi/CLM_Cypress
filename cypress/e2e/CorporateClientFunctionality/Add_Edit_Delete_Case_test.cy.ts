@@ -66,6 +66,14 @@ describe('Cases - Corporate', ()=>{
         cy.getByDataCy('assignee').click().wait(500)
         cy.get('#dynamicSelectBoxDropdownGrid table tbody [aria-rowindex="1"] [aria-colindex="1"]').eq(2).click().wait(500)
         
+        // cy.get('select[required]').each((el)=>{
+        //     if (el.is('select')){
+        //         cy.wrap(el).select(0);
+        //     }else if(el.is('input[type="checkbox"]') || el.is('input[type="radio"]')){
+        //         cy.wrap(el).check();
+        //     }
+        // })
+        
         // cy.get('#CustomField_Fraud_Status').select('False Positive')
 
         cy.get('#addClientCaseForm').contains('Save').click().wait(3000)

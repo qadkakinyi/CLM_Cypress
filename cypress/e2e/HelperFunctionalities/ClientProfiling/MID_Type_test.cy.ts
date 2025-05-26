@@ -18,7 +18,7 @@ describe('MID Type', ()=>{
         cy.get('#gridMidTypes tr td').find('.dx-icon-edit').eq(0).click({force:true}).wait(1000)
 
         cy.get('#gridMidTypes .dx-datagrid-table .dx-texteditor-container > .dx-texteditor-input-container > .dx-texteditor-input').as('MidTypes')
-        cy.get('@MidTypes').eq(3).clear().wait(1000).type(name+ faker.string.alphanumeric(1), {force:true}).wait(1000)
+        cy.get('@MidTypes').eq(3).clear().wait(1000).type('DKA '+name+ faker.string.alphanumeric(1), {force:true}).wait(1000)
         cy.get('tr td').find('.dx-icon-save').eq(1).click().wait(1000)
 
         cy.contains('The MID type has been updated.')
@@ -27,7 +27,7 @@ describe('MID Type', ()=>{
     it('Deletes an MID Types', ()=>{
         cy.visit('/settings/mid-types').wait(2000)
 
-        cy.get('#gridMidTypes tr .dx-first-cell .dx-texteditor-input').type(name, {force:true}).wait(1000)
+        cy.get('#gridMidTypes tr .dx-first-cell .dx-texteditor-input').type('DKA '+name, {force:true}).wait(1000)
         cy.get('#gridMidTypes tr td').find('.dx-icon-trash').eq(1).click({ force: true }).wait(1000)
         cy.get('.dx-popup-normal').contains( 'Yes').click({ force: true }).wait(1000);
 

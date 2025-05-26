@@ -43,7 +43,8 @@ describe("Other Settings", ()=>{
     
                 //assertion
                 cy.location("pathname").should("equal", route.route)
-                cy.wait(3000)
+                cy.wait(2000)
+                cy.get('.sk-ball-spin-clockwise').should(`not.be.visible`)
                 cy.contains(route.assertion)
                 
             }else{

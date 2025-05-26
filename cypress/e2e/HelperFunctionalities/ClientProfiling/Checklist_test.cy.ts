@@ -20,7 +20,7 @@ describe('Checklist', ()=>{
         cy.get('tr td').find('.dx-icon-edit').eq(1).click({force:true}).wait(1000)
 
         cy.get('#gridChecklists .dx-datagrid-table .dx-texteditor-container > .dx-texteditor-input-container > .dx-texteditor-input').as('checklistInputs')
-        cy.get('@checklistInputs').eq(4).clear().wait(1000).type('Checklist Test '+faker.string.alphanumeric(3), {force:true}).wait(1000)
+        cy.get('@checklistInputs').eq(4).clear().wait(1000).type('DKA Checklist Test '+faker.string.alphanumeric(3), {force:true}).wait(1000)
         cy.get('tr td').find('.dx-icon-save').eq(1).click().wait(1000)
         cy.contains('Checklist has been updated')
     })
@@ -28,7 +28,7 @@ describe('Checklist', ()=>{
     it('Deletes A CheckList', ()=>{
         cy.visit('/settings/checklists').wait(2000)
 
-        cy.get('#gridChecklists tr .dx-first-cell .dx-texteditor-input').type('Checklist Test', {force:true}).wait(2000)
+        cy.get('#gridChecklists tr .dx-first-cell .dx-texteditor-input').type('DKA Checklist Test', {force:true}).wait(2000)
         cy.get('tr td').find('.dx-icon-trash').eq(1).click({ force: true }).wait(1000)
         cy.get('.dx-popup-normal').contains( 'Yes').click({ force: true }).wait(1000);
         cy.contains('Checklist has been deleted.')

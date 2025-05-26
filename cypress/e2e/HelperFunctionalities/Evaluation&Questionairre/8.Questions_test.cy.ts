@@ -5,11 +5,11 @@ describe('Questions', ()=>{
     it('Adds a Question', ()=>{
         cy.visit('/settings/questions').wait(2000)
         cy.contains('sa-button','Add').click().wait(1000)
-        cy.getByFormControlName('name').type('Are you An English Speaker?')
+        cy.getByFormControlName('name').type('Are you a Forex Trader?')
         cy.getByDataCy('regulation-group-list').click()
         cy.get('#dynamicSelectBoxDropdownGrid').find('.dx-datagrid-rowsview').find('tr > td').first().click()
         cy.getByFormControlName('questionsCategoryId').click()
-        cy.get('.dx-popup-content .dx-scrollable-container').contains('Closed Ended Questions DKA Edited').click()
+        cy.get('.dx-popup-content .dx-scrollable-container').contains('DKA Edited Closed Ended Questions').click()
         cy.getByDataCy('client-type').click()
         cy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-content>table tr>td').contains('Individual').click()
         cy.getByDataCy('question-setup-type').click()
@@ -29,10 +29,10 @@ describe('Questions', ()=>{
 
     it('Edits a Question', () => {
         cy.visit('/settings/questions').wait(2000)
-        cy.get('#gridQuestions tr .dx-first-cell .dx-texteditor-input').type('Are you An English Speaker?', {force:true}).wait(2000)
+        cy.get('#gridQuestions tr .dx-first-cell .dx-texteditor-input').type('Are you a Forex Trader?', {force:true}).wait(2000)
         cy.get('#gridQuestions tr td').find('.fa-angle-double-right').eq(0).click({force:true}).wait(2000)
 
-        cy.getByFormControlName('name').clear().type('Are you An English Native Speaker?').wait(500)
+        cy.getByFormControlName('name').clear().type('Are you a Legit Forex Trader?').wait(500)
         //status disable
         cy.get('dx-drop-down-box').eq(3).click().wait(500)
         cy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview .dx-datagrid-content tr td').contains('Disabled').click({force:true}).wait(500)
@@ -62,7 +62,7 @@ describe('Questions', ()=>{
 
     it('Deletes a Question Category', () => {
         cy.visit('/settings/questions-categories').wait(2000)
-        cy.get('#gridQuestionsCategories tr .dx-first-cell .dx-texteditor-input').type('Closed Ended Questions DKA Edited', {force:true}).wait(2000)
+        cy.get('#gridQuestionsCategories tr .dx-first-cell .dx-texteditor-input').type('DKA Edited Closed Ended Questions', {force:true}).wait(2000)
         cy.get('#gridQuestionsCategories tr td').find('.dx-icon-trash').eq(1).click({force: true}).wait(1000)
         cy.get('.dx-popup-normal').contains('Yes').click({force: true}).wait(1000);
 
@@ -71,7 +71,7 @@ describe('Questions', ()=>{
 
     it('Deletes a Questionnaire Type', () => {
         cy.visit('/settings/questionnaire-types').wait(2000)
-        cy.get('#gridQuestionnaireTypes tr .dx-first-cell .dx-texteditor-input').type('Type DKA Test Updated', {force:true}).wait(2000)
+        cy.get('#gridQuestionnaireTypes tr .dx-first-cell .dx-texteditor-input').type('Questionnaire Type DKA Updated', {force:true}).wait(2000)
         cy.get('#gridQuestionnaireTypes tr td').find('.dx-icon-trash').eq(1).click({force: true}).wait(1000)
         cy.get('.dx-popup-normal').contains('Yes').click({force: true}).wait(1000);
 

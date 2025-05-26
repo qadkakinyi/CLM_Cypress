@@ -1,7 +1,8 @@
 /node_modules
 
 cypress/results
+cypress/screenshots
 mochawesome-report
-
+mochawesome.json
 deployment/Release
 .idea

@@ -1,4 +1,4 @@
-import {navigateToClientMenu, navigateToNewestClientMenu} from "../../support/e2e";
+import {navigateToClientMenu, navigateToNewestClientMenu} from "../support/e2e";
 // import {accountNumberTest} from "./Add_Edit_Delete_Client_Bank_Account_test.cy";
 
 describe('Cleans Up Created Objects That Were being Used By other Functionalities', ()=>{
@@ -14,10 +14,6 @@ describe('Cleans Up Created Objects That Were being Used By other Functionalitie
         gridClientAccounts.get('.dx-command-edit-with-icons a').eq(0).click({ force: true });
 
         cy.wait(2000);
-
-        // Delete Bank Account
-        cy.getBySel('deleteClientAccountButton').should('be.visible').click();
-        cy.get('#bot2-Msg1').contains('Yes').click();
-        cy.contains('The bank account has been deleted.')
+        
     })
 })

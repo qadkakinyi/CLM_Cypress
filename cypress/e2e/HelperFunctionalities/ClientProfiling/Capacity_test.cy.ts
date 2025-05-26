@@ -25,7 +25,7 @@ describe('Capacity', ()=>{
         cy.get('tr td').find('.dx-icon-edit').eq(1).click({force:true}).wait(1000)
 
         cy.get('#gridCapacities .dx-datagrid-table .dx-texteditor-container > .dx-texteditor-input-container > .dx-texteditor-input').as('capacityInputs')
-        cy.get('@capacityInputs').eq(8).clear().wait(1000).type('CEO Test '+faker.string.alphanumeric(3), {force:true}).wait(1000)
+        cy.get('@capacityInputs').eq(8).clear().wait(1000).type('DKA CEO Test '+faker.string.alphanumeric(3), {force:true}).wait(1000)
         cy.get('tr td').find('.dx-icon-save').eq(1).click().wait(1000)
         cy.contains('The capacity has been updated').wait(1000)
     })
@@ -33,7 +33,7 @@ describe('Capacity', ()=>{
     it('Delete A Capacity', ()=>{
         cy.visit('/settings/capacities').wait(2000)
 
-        cy.get('#gridCapacities tr .dx-first-cell .dx-texteditor-input').type('CEO Test', {force:true}).wait(2000)
+        cy.get('#gridCapacities tr .dx-first-cell .dx-texteditor-input').type('DKA CEO Test', {force:true}).wait(2000)
         cy.get('tr td').find('.dx-icon-trash').eq(1).click({ force: true }).wait(1000)
         cy.get('.dx-popup-normal').contains( 'Yes').click({ force: true }).wait(1000);
         cy.contains('The capacity has been deleted.')

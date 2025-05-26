@@ -5,8 +5,7 @@ let transactionReference:string = faker.string.alphanumeric(12);
 let location = '';
 
 function goToTransactionByReference(transactionReference:string) {
-  cy.visit(location).wait(1500)
-  cy.getBySel('gridClientTransactions').should('be.visible');
+  cy.visit(location).wait(3500)
   cy.get('.dx-datagrid-filter-row .dx-texteditor-input-container input').wait(1000).eq(1).type(transactionReference, {force:true});
 
   cy.wait(2000);

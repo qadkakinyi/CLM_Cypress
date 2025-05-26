@@ -18,7 +18,7 @@ describe('MID Classes', ()=>{
         cy.get('#gridMidClasses tr td').find('.dx-icon-edit').eq(0).click({force:true}).wait(1000)
 
         cy.get('#gridMidClasses .dx-datagrid-table .dx-texteditor-container > .dx-texteditor-input-container > .dx-texteditor-input').as('MidClasses')
-        cy.get('@MidClasses').eq(3).clear().wait(1000).type(name+ faker.string.alphanumeric(1), {force:true}).wait(1000)
+        cy.get('@MidClasses').eq(3).clear().wait(1000).type('DKA '+name+ faker.string.alphanumeric(1), {force:true}).wait(1000)
         cy.get('tr td').find('.dx-icon-save').eq(1).click().wait(1000)
         
         cy.contains('The MID class has been updated.')
@@ -27,7 +27,7 @@ describe('MID Classes', ()=>{
     it('Deletes an MID Class', ()=>{
         cy.visit('/settings/mid-classes').wait(2000)
 
-        cy.get('#gridMidClasses tr .dx-first-cell .dx-texteditor-input').type(name, {force:true}).wait(1000)
+        cy.get('#gridMidClasses tr .dx-first-cell .dx-texteditor-input').type('DKA '+name, {force:true}).wait(1000)
         cy.get('#gridMidClasses tr td').find('.dx-icon-trash').eq(1).click({ force: true }).wait(1000)
         cy.get('.dx-popup-normal').contains( 'Yes').click({ force: true }).wait(1000);
         
