@@ -38,8 +38,11 @@ describe('Transaction Monitoring & Actions', ()=>{
                     cy.getByDataCy("transaction-menu").click().as('transaction-menu')
                     cy.getByDataCy("transaction-links").as("transaction-links")
                     cy.get("@transaction-links").eq(route.index).click()
-                    cy.location("pathname").should("equal", route.route)
+                    
                     cy.wait(2000)
+                    cy.location("pathname").should("equal", route.route)
+                    
+                    cy.get('.sk-ball-spin-clockwise').should(`not.be.visible`)
                     cy.contains(route.assertion)
 
                 }else {

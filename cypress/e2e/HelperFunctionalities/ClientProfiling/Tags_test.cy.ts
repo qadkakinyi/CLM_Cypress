@@ -1,6 +1,6 @@
 import {faker} from "@faker-js/faker";
 
-let name = 'Test Tags dka '+faker.number.int({min:0, max:10})
+let name = 'New Test Tags dka '+faker.number.int({min:0, max:10})
 describe("Tags", ()=>{
     it('Adds a Tag', ()=>{
         cy.visit('/settings/tags').wait(1500)
@@ -18,17 +18,17 @@ describe("Tags", ()=>{
         cy.get('tr td').find('.fa-angle-double-right').eq(1).click({force:true}).wait(1000)
 
         cy.get('#editTagForm')
-        cy.getByFormControlName('name').clear().type(name+faker.string.alphanumeric(1))
+        cy.getByFormControlName('name').clear().type('DKA '+name+faker.string.alphanumeric(1))
         cy.getBySel('saveAndCloseButton').click().wait(2000)
 
         cy.contains('Tag has been updated.')
     })
 
     it('Deletes a Tag', ()=>{
-        cy.visit('/settings/tags').wait(2000)
+        cy.visit('/settings/tags').wait(2500)
 
-        cy.get('#gridTags tr .dx-first-cell .dx-texteditor-input').type(name, {force:true}).wait(1000)
-        cy.get('tr td').find('.fa-angle-double-right').eq(1).click({force:true}).wait(1000)
+        cy.get('#gridTags tr .dx-first-cell .dx-texteditor-input').type('DKA '+name, {force:true}).wait(2000)
+        cy.get('tr td').find('.fa-angle-double-right').eq(1).click({force:true}).wait(2000)
         cy.get('sa-button').contains('Delete').click()
         cy.get('.MessageBoxButtonSection').contains('button', 'Yes').click()
 

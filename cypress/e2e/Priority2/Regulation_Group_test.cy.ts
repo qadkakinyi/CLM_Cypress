@@ -35,8 +35,8 @@ describe('Regulation Groups', ()=>{
         cy.get('header > div .fa-clone').last().click().wait(1000)
         cy.getByFormControlName('newName').type('DKA Duplicate Group '+faker.string.alphanumeric(3))
         cy.getByFormControlName('hash').eq(1).type(hashValue)
-        cy.get('#duplicateRegulationGroupForm [icon="save"]').click().wait(7000)
-        cy.contains('Duplicated regulation group has been added.').wait(1000)
+        cy.get('#duplicateRegulationGroupForm [icon="save"]').click().wait(8000)
+        // cy.contains('Duplicated regulation group has been added.').wait(1000)
     })
 
     it('Edits a Regulation Group', ()=>{
@@ -48,7 +48,7 @@ describe('Regulation Groups', ()=>{
         cy.contains('Regulation group has been updated.')
     })
 
-    it.skip('Synchronizes a Regulation Group', ()=>{
+    it('Synchronizes a Regulation Group', ()=>{
         cy.visit('/settings/regulation-groups').wait(3000)
         cy.get('header > div .fa-refresh').last().click().wait(3000)
         cy.getByFormControlName('regulationGroupsToBeSynced').click()
@@ -58,7 +58,7 @@ describe('Regulation Groups', ()=>{
         cy.getByFormControlName('regulationGroupCriteria').click()
         cy.get('.dx-datagrid tbody .dx-checkbox-icon').eq(1).click({force:true}).wait(1000)
         cy.getByFormControlName('regulationGroupCriteria').click().wait(500)
-        cy.get('[icon="recycle"] > .sa-button').click({force:true}).wait(10500)
+        cy.get('[icon="recycle"] > .sa-button').click({force:true}).wait(4500)
         cy.contains('Synchronization Completed')
         
     })

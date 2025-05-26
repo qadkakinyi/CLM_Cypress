@@ -33,6 +33,7 @@ describe('Template and Report Setup', ()=>{
                 //assertion
                 cy.location("pathname").should("equal", route.route)
                 cy.wait(2000)
+                cy.get('.sk-ball-spin-clockwise').should(`not.be.visible`)
                 cy.contains(route.assertion)
 
             }else{

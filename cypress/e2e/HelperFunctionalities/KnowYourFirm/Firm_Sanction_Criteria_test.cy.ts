@@ -2,7 +2,7 @@
 describe('Firm Sanction Criteria', ()=>{
 
     beforeEach(()=>{
-        cy.visit('/settings/firm-sanction-criteria').wait(2000)
+        cy.visit('/settings/firm-sanction-criteria').wait(3000)
     })
 
     it('Adds a Firm Sanction Criteria', ()=>{
@@ -26,10 +26,10 @@ describe('Firm Sanction Criteria', ()=>{
 
     it('Edits a Firm Sanction Criteria', () => {
 
-        cy.get('#gridSanctionCriteria tr .dx-first-cell .dx-texteditor-input').type('Test DKA', {force:true}).wait(2000)
+        cy.get('#gridSanctionCriteria tr .dx-first-cell .dx-texteditor-input').type('Test DKA', {force:true}).wait(3000)
         cy.get('#gridSanctionCriteria tr td').find('.fa-angle-double-right').eq(0).click({force:true}).wait(1000)
 
-        cy.getByFormControlName('name').eq(0).clear().wait(200).type('Test Sanction Criteria DKA')
+        cy.getByFormControlName('name').eq(0).clear().wait(200).type('DKA Test Sanction Criteria')
 
         // disable status
         cy.get('dx-drop-down-box').eq(2).click().wait(500)
@@ -42,13 +42,13 @@ describe('Firm Sanction Criteria', ()=>{
     })
     
     it('Adds, Edits and Deletes a Criterion Answer', ()=>{
-        cy.get('#gridSanctionCriteria tr .dx-first-cell .dx-texteditor-input').type('Test Sanction Criteria DKA', {force:true}).wait(2000)
+        cy.get('#gridSanctionCriteria tr .dx-first-cell .dx-texteditor-input').type('DKA Test Sanction Criteria', {force:true}).wait(2000)
         cy.get('#gridSanctionCriteria tr td').find('.fa-angle-double-right').eq(0).click({force:true}).wait(1000)
         
         //add criterion answer
         cy.get('app-firm-sanction-criterion').contains('sa-button', 'Add').click().wait(500)
         cy.get('#addAnswerForm').getByFormControlName('name').eq(1).type('Test DKA').wait(500)
-        cy.get('#addAnswerForm').getByFormControlName('firmSanctionImpactScoreId').select(1)
+        cy.get('#addAnswerForm').getByFormControlName('firmSanctionImpactScoreId').select(0)
         cy.get('#addAnswerForm').getByFormControlName('isDefault').check()
 
         cy.get('#addAnswerForm [icon="save"]').click().wait(1000)
@@ -68,7 +68,7 @@ describe('Firm Sanction Criteria', ()=>{
 
     it('Deletes a Firm Sanction Criteria', () => {
 
-        cy.get('#gridSanctionCriteria tr .dx-first-cell .dx-texteditor-input').type('Test Sanction Criteria DKA', {force:true}).wait(2000)
+        cy.get('#gridSanctionCriteria tr .dx-first-cell .dx-texteditor-input').type('DKA Test Sanction Criteria', {force:true}).wait(2000)
         cy.get('#gridSanctionCriteria tr td').find('.fa-angle-double-right').eq(0).click({force: true}).wait(1000)
         cy.contains('sa-button', 'Delete').eq(0).click().wait(1000)
         cy.get('.MessageBoxContainer').contains('Yes').click({force: true}).wait(1000);

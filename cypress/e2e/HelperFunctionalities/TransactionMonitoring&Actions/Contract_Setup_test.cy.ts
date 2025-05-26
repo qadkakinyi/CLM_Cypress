@@ -125,7 +125,7 @@ describe("Contract Status", ()=> {
     it('Deletes a Contract Status', () => {
 
         cy.get('#gridContractPolicyStatuses tr .dx-first-cell .dx-texteditor-input').type(status_name, {force: true}).wait(1000)
-        cy.get('#gridContractPolicyStatuses tr td').find('.dx-icon-trash').eq(1).click({force: true}).wait(1500)
+        cy.get('#gridContractPolicyStatuses tr td').find('.dx-icon-trash').eq(1).click({force: true}).wait(2500)
         cy.get('.dx-popup-normal').contains('Yes').click().wait(1500);
 
         cy.contains('Contract policy status has been deleted.')

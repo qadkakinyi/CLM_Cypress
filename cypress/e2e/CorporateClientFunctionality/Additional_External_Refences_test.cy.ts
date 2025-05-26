@@ -38,7 +38,7 @@ describe('Add, Edit, Delete Additional External References - Corporate', () => {
 
     it('Delete Client external reference', () => {
 
-        cy.visit(location).wait(3000)
+        cy.visit(location).wait(4000)
         cy.get('#gridClientAdditionalExternalReferences table tbody tr td .dx-icon-trash').eq(0).click({ force: true }).wait(1000);
         // Delete external reference
         cy.get('.dx-overlay-content .dx-button-content').contains('Yes').click().wait(1000);

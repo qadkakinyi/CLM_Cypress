@@ -11,6 +11,7 @@ function getProviderKey(){
 let hashValue = '';
 let regulation_group_name = 'DKA Regulation Group '+faker.number.int({max:100});
 let criteria_mappingReference = faker.string.alphanumeric(13);
+let location = '';
 
 let firstName = ''
 let lastName = ''
@@ -123,7 +124,7 @@ describe('Perform Client Evaluation Using Staging APIs', ()=>{
         cy.get("#addAnswerForm sa-button[icon='save']").click().wait(2000)
     })
 
-    it('Add Individual Client To The New Regulation Group', () => {
+    it('Add Individual Client To The New Regulation Group and Navigates to the client dashboard', () => {
 
         cy.visit("/main/clients").wait(2000);
         cy.get('#addIndividual').click().wait(1500);
@@ -159,19 +160,16 @@ describe('Perform Client Evaluation Using Staging APIs', ()=>{
 
         cy.get('#saveClientIndividual').click().wait(2000);
         cy.contains('Client individual has been added').wait(2000)
-        
-    })
-    
-    it('Navigates to the newly created client dashboard', ()=>{
-        navigateToNewestClientMenu('Individual')
-        cy.wait(2000)
-        
+
+        cy.location('pathname').then((loc)=>{
+            location = loc
+        })
+        cy.wait(3000)
         cy.contains(`${firstName} ${lastName}`).wait(1500)
-        
     })
 
     it('Adds an evaluation', ()=>{
-        navigateToNewestClientMenu('Individual')
+        cy.visit(location).wait(2000)
         
         cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Evaluations').click().wait(2000);
         getClientID();
@@ -291,6 +289,18 @@ describe('Perform Client Evaluation Using Staging APIs', ()=>{
 
         })
 
+    })
+    
+    it('Deletes the Regulation Group', ()=>{
+        cy.visit('/settings/regulation-groups').wait(3000)
+
+        cy.get('.sa-panel header .fa-share-square-o').last().click({force:true}).wait(2000)
+
+        cy.get('[primary-buttons=""] > [icon="trash"] > .sa-button').click({force:true}).wait(1000)
+        cy.get('.col > [icon="trash"]').click()
+        cy.get('.MessageBoxButtonSection').contains('button', 'Yes').click()
+        cy.wait(20000)
+        cy.contains('The Regulation Group has been deleted.')
     })
 
 })

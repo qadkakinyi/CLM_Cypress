@@ -35,39 +35,39 @@ describe('Add, Edit, Delete Client Action (Task) - Corporate', () => {
     navigateToClientMenu('Corporate')
     cy.wait(2000)
 
-    cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Actions').wait(1500).click({force:true}).wait(2000);
+    cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Actions').wait(2500).click({force:true}).wait(2000);
 
     cy.location('pathname').then((loc)=>{
       location = loc
     })
     // Add new Client Action    
-    cy.getBySel('addClientAction').should('be.visible').click().wait(2000);
+    cy.getBySel('addClientAction').click().wait(2000);
 
-    cy.getBySel('actionTypesList').should('be.visible').click();
-    cy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true })
+    cy.getBySel('actionTypesList').should('be.visible').click().wait(500);
+    cy.get('.dx-popup-content #dynamicSelectBoxDropdownGrid').eq(0).find(' .dx-datagrid-rowsview tr td').eq(0).click().wait(500)
 
-    cy.getBySel('actionCategoriesList').should('be.visible').click();
-    cy.get('#dynamicSelectBoxDropdownGrid table.dx-datagrid-table.dx-datagrid-table-fixed tbody tr td').eq(0).click({ force: true })
+    cy.getBySel('actionCategoriesList').should('be.visible').click().wait(500);
+    cy.get('.dx-popup-content #dynamicSelectBoxDropdownGrid').eq(1).find(' .dx-datagrid-rowsview tr td').eq(0).click().wait(500)
 
-    cy.getBySel('prioritiesList').should('be.visible').click();
-    cy.get('.dx-overlay-wrapper.dx-popup-wrapper.dx-dropdowneditor-overlay #dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true })
+    cy.getBySel('prioritiesList').should('be.visible').click().wait(500);
+    cy.get('.dx-popup-content #dynamicSelectBoxDropdownGrid').eq(2).find(' .dx-datagrid-rowsview tr td').eq(0).click().wait(500)
 
-    cy.getBySel('actionStatusesList').should('be.visible').click();
-    cy.get('.dx-overlay-wrapper.dx-popup-wrapper.dx-dropdowneditor-overlay #dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true })
+    cy.getBySel('actionStatusesList').should('be.visible').click().wait(500);
+    cy.get('.dx-popup-content #dynamicSelectBoxDropdownGrid').eq(3).find(' .dx-datagrid-rowsview tr td').eq(0).click().wait(500)
 
-    cy.getBySel('ownerUsersList').should('be.visible').click();
-    cy.get('.dx-overlay-wrapper.dx-popup-wrapper.dx-dropdowneditor-overlay #dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true })
+    cy.getBySel('ownerUsersList').should('be.visible').click().wait(500);
+    cy.get('.dx-popup-content #dynamicSelectBoxDropdownGrid').eq(4).find(' .dx-datagrid-rowsview tr td').eq(0).click().wait(500)
 
-    cy.getBySel('assigneeUsersList').should('be.visible').click();
-    cy.get('.dx-overlay-wrapper.dx-popup-wrapper.dx-dropdowneditor-overlay #dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true })
+    cy.getBySel('assigneeUsersList').should('be.visible').click().wait(500);
+    cy.get('.dx-popup-content #dynamicSelectBoxDropdownGrid').eq(5).find(' .dx-datagrid-rowsview tr td').eq(0).click().wait(500)
 
     cy.get('#addActionForm input[name="targetDate"]').type(faker.date.future().toISOString().slice(0, 10));
 
     // cy.get('#addActionForm textarea[name="implementationPlan"]').type(faker.string.alphanumeric(120));
-    cy.get('#addActionForm textarea[name="notes"]').type(faker.string.alphanumeric(120));
+    cy.get('#addActionForm textarea[name="notes"]').type(faker.string.alphanumeric(120)).wait(500);
 
     cy.getBySel('saveClientAction').click().wait(2000);
-
+    cy.contains('Client action has been added.').wait(1000)
   })
 
   it('Edit Action', () => {

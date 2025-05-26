@@ -26,7 +26,7 @@ describe('Firm Criteria Categories', ()=>{
 
         cy.get('#gridFirmCriteriaCategories .dx-datagrid-table .dx-texteditor-container > .dx-texteditor-input-container > .dx-texteditor-input').as('criteria')
 
-        cy.get('@criteria').eq(3).clear().wait(1000).type('Test Criterion Category DKA', {force: true}).wait(1000)
+        cy.get('@criteria').eq(3).clear().wait(1000).type('DKA Test Criterion Category', {force: true}).wait(1000)
         cy.get('tr td').find('.dx-icon-save').eq(1).click().wait(1500)
 
         cy.contains(`The firm criteria category has been updated.`).wait(1000)
@@ -34,7 +34,7 @@ describe('Firm Criteria Categories', ()=>{
 
     it('Deletes a Criteria Category', () => {
 
-        cy.get('#gridFirmCriteriaCategories tr .dx-first-cell .dx-texteditor-input').type('Test Criterion Category DKA', {force:true}).wait(2000)
+        cy.get('#gridFirmCriteriaCategories tr .dx-first-cell .dx-texteditor-input').type('DKA Test Criterion Category', {force:true}).wait(2000)
         cy.get('#gridFirmCriteriaCategories tr td').find('.dx-icon-trash').eq(1).click({force: true}).wait(1000)
         cy.get('.dx-popup-normal').contains('Yes').click({force: true}).wait(1000);
 
