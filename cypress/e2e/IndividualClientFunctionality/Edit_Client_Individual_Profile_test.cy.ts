@@ -1,11 +1,14 @@
-import {navigateToClientMenu} from "../../support/e2e";
+import {navigateToClientMenu, navigateToNewestClientMenu} from "../../support/e2e";
 
 let client_id = '';
 
 describe('Edit Client Individual Profile', () => {
   it('Edit Individual Profile', () => {
-    // Click on Know your Clients navigation item
-    navigateToClientMenu('Individual')
+    let clientName;
+    cy.readFile('cypress/fixtures/client_individual.json').then((data) =>{
+      clientName = data.individualClientName
+      navigateToNewestClientMenu(clientName)
+    })
 
     cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a>span').eq(1).contains('Profile');
     cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').eq(1).click();

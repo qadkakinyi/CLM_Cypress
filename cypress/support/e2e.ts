@@ -27,9 +27,18 @@ Cypress.on('uncaught:exception', (err, runnable, promise) => {
 //   cy.login('admin', 'Admin1!');
 // })
 
-before(() => {
-    cy.login('systemadmin', 'Password1!');
-})
+// before(() => {
+//     cy.login('systemadmin', 'Password1!');
+// })
+
+beforeEach(() => {
+    cy.session('systemadmin', () => {
+        cy.visit('/')
+        cy.login('systemadmin', 'Password1!');
+    });
+    cy.visit('/main/dashboard')
+});
+
 // beforeEach(() => {
 //   Cypress.on('window:before:load', (win) => {
 //     cy.spy(win.console, 'error');
@@ -81,14 +90,16 @@ export function navigateToClientMenu(type:string){
     cy.wait(4000);
 }
 
-export function navigateToNewestClientMenu(type:string){
+export function navigateToNewestClientMenu(clientName:string){
     cy.visit('main/clients').wait(2000);
-    cy.get('#gridClients').should('be.visible');
 
     cy.get('#gridClients table tr td .dx-header-filter-indicator').eq(0).click({force:true});
 
-    filterClientType(type)
-    cy.get('#gridClients tr').find('td[aria-label="Column Client Type"]').click().wait(2000)
+    cy.get('#gridClients tr').find('td[aria-label="Column Client Name"]').then(td=>{
+        let colIndex = td.attr('aria-colindex')
+        cy.log('ColIndex '+colIndex)
+        cy.get(`#gridClients .dx-datagrid-headers  .dx-datagrid-filter-row>[aria-colindex="${colIndex}"]`).eq(0).click().type(clientName).wait(2000).click().wait(2000)
+    })
 
     let gridClientsRows = cy.wrap('#gridClients table tbody tr');
     gridClientsRows.get('.dx-command-edit-with-icons a').eq(0).click({ force: true })

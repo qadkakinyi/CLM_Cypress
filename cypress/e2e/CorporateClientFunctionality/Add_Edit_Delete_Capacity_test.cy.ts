@@ -7,7 +7,11 @@ let firstName = faker.person.firstName('male');
 describe('Capacity - Corporate', ()=>{
 
     it('Adds Authorized Person', ()=>{
-        navigateToNewestClientMenu('Corporate')
+        let clientName;
+        cy.readFile('cypress/fixtures/client_corporate.json').then((data) =>{
+            clientName = data.companyName
+            navigateToNewestClientMenu(clientName)
+        })
         
         cy.wait(3000)
 

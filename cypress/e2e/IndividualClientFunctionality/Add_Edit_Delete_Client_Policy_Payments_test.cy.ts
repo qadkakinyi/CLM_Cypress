@@ -7,8 +7,11 @@ let client_id = '';
 
 describe('Add, Edit, Delete Client Policy Payments', () => {
   it('Go to Policy Payments detail line', () => {
-    // Click on Know your Clients navigation item
-    navigateToNewestClientMenu('Individual')
+    let clientName;
+    cy.readFile('cypress/fixtures/client_individual.json').then((data) =>{
+      clientName = data.individualClientName
+      navigateToNewestClientMenu(clientName)
+    })
 
     cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Policy Payments').click();
     cy.wait(500)

@@ -4,9 +4,11 @@ describe('Missing Document', ()=>{
     it('Check missing document to be correctly missing', ()=>{
         // A missing document is considered missing if
         // collection status is `missing` or expiration date is due
-        
-        navigateToNewestClientMenu('Individual')
-        cy.wait(2000)
+        let clientName;
+        cy.readFile('cypress/fixtures/client_individual.json').then((data) =>{
+            clientName = data.individualClientName
+            navigateToNewestClientMenu(clientName)
+        })
         
         cy.get('.row').then(row=>{
             if(row.find('sa-status-box[title="Documents"]').length > 0){

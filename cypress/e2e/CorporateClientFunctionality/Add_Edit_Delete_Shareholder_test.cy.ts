@@ -6,7 +6,11 @@ let authorized_Capital = ''
 describe('Shareholders/Partners', ()=>{
 
     it('Adds Shareholder', ()=>{
-        navigateToNewestClientMenu('Corporate')
+        let clientName;
+        cy.readFile('cypress/fixtures/client_corporate.json').then((data) =>{
+            clientName = data.companyName
+            navigateToNewestClientMenu(clientName)
+        })
 
         cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Shareholders/Partners').click().wait(2000);
         cy.getByDataCy('add-stakeholder').click().wait(1000)

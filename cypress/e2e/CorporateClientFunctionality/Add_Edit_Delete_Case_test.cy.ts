@@ -54,7 +54,11 @@ describe('Cases - Corporate', ()=>{
     })
     
     it('Adds A Case', ()=>{
-        navigateToNewestClientMenu('Corporate')
+        let clientName;
+        cy.readFile('cypress/fixtures/client_corporate.json').then((data) =>{
+            clientName = data.companyName
+            navigateToNewestClientMenu(clientName)
+        })
 
         cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Cases').click();
         cy.getByDataCy('addCaseBtn').click().wait(1000)

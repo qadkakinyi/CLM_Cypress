@@ -1,5 +1,5 @@
 import { faker } from "@faker-js/faker";
-import {navigateToClientMenu} from "../../support/e2e";
+import {navigateToClientMenu, navigateToNewestClientMenu} from "../../support/e2e";
 
 let externalReference = faker.string.alphanumeric(16);
 
@@ -7,7 +7,11 @@ let client_id = '';
 
 describe('Add, Delete Client additional external reference', () => {
   it('Add Client additional external reference', () => {
-    navigateToClientMenu('Individual')
+    let clientName;
+    cy.readFile('cypress/fixtures/client_individual.json').then((data) =>{
+      clientName = data.individualClientName
+      navigateToNewestClientMenu(clientName)
+    })
 
     cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Additional External References').click();
     

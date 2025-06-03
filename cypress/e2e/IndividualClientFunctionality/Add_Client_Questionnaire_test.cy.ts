@@ -65,11 +65,11 @@ describe('Add a client questionnaire - Individual', ()=>{
     })
 
     it('Adds questionnaire type, creates question categories, creates a question then adds a questionnaire', ()=>{
-        
-        cy.visit('/main/clients')
-        cy.wait(2000)
-
-        navigateToNewestClientMenu('Individual')
+        let clientName;
+        cy.readFile('cypress/fixtures/client_individual.json').then((data) =>{
+            clientName = data.individualClientName
+            navigateToNewestClientMenu(clientName)
+        })
         
         cy.wait(2000)
         

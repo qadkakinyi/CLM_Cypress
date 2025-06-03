@@ -1,5 +1,5 @@
 import { faker } from "@faker-js/faker";
-import {navigateToClientMenu} from "../../support/e2e";
+import {navigateToClientMenu, navigateToNewestClientMenu} from "../../support/e2e";
 
 let externalReference = faker.string.alphanumeric(12);
 
@@ -17,8 +17,11 @@ describe('Add, Edit, Delete Client Applications', () => {
   })
   
   it('Add Client Applications', () => {
-    // Click on Know your Clients navigation item
-    navigateToClientMenu('Corporate')
+    let clientName;
+    cy.readFile('cypress/fixtures/client_corporate.json').then((data) =>{
+      clientName = data.companyName
+      navigateToNewestClientMenu(clientName)
+    })
 
     cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Applications').click();
 

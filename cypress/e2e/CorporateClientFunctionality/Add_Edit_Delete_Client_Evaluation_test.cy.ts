@@ -8,7 +8,11 @@ describe('Add Corporate Client Evaluation', ()=>{
     
     it('Adds an evaluation', ()=>{
 
-        navigateToNewestClientMenu('Corporate')
+        let clientName;
+        cy.readFile('cypress/fixtures/client_corporate.json').then((data) =>{
+            clientName = data.companyName
+            navigateToNewestClientMenu(clientName)
+        })
 
         cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Evaluations').click().wait(2000);
         

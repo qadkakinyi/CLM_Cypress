@@ -1,5 +1,5 @@
 import { faker } from "@faker-js/faker";
-import {navigateToClientMenu} from "../../support/e2e";
+import { navigateToNewestClientMenu} from "../../support/e2e";
 
 let transactionReference:string = faker.string.alphanumeric(12);
 let location = '';
@@ -16,9 +16,13 @@ function goToTransactionByReference(transactionReference:string) {
 
 describe('Add, Edit, Delete Client Transactions - Corporate', () => {
   it('Add Client Transactions', () => {
+    let clientName;
+    cy.readFile('cypress/fixtures/client_corporate.json').then((data) =>{
+      clientName = data.companyName
+      navigateToNewestClientMenu(clientName)
+    })
     // Click on Know your Clients navigation item
-    navigateToClientMenu('Corporate')
-
+    
     cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Transactions').click();
 
     // Add new Client Transaction
@@ -65,6 +69,7 @@ describe('Add, Edit, Delete Client Transactions - Corporate', () => {
     // cy.get('#CustomField_Transaction_Update_Date').type(faker.date.past({refDate: 1}).toISOString().slice(0, 10));
 
     cy.getBySel('saveClientTransaction').click().wait(2000);
+    cy.contains('The transaction has been added').wait(1000)
   });
 
   it('Edit client Transactions', () => {

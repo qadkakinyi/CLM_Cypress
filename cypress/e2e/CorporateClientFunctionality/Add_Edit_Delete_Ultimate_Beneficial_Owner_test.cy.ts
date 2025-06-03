@@ -1,11 +1,15 @@
-import {navigateToClientMenu} from "../../support/e2e";
+import {navigateToClientMenu, navigateToNewestClientMenu} from "../../support/e2e";
 import {faker} from "@faker-js/faker";
 
 let location = '';
 describe('Ultimate Beneficial Owner - Corporate', ()=>{
 
     it('Adds Shareholder', ()=>{
-        navigateToClientMenu('Corporate')
+        let clientName;
+        cy.readFile('cypress/fixtures/client_corporate.json').then((data) =>{
+            clientName = data.companyName
+            navigateToNewestClientMenu(clientName)
+        })
 
         cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Shareholders/Partners').click();
         cy.getByDataCy('add-stakeholder').click().wait(1000)
@@ -87,7 +91,11 @@ describe('Ultimate Beneficial Owner - Corporate', ()=>{
     })
 
     it('Deletes Authorized Person', ()=>{
-        navigateToClientMenu('Corporate')
+        let clientName;
+        cy.readFile('cypress/fixtures/client_corporate.json').then((data) =>{
+            clientName = data.companyName
+            navigateToNewestClientMenu(clientName)
+        })
         cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Shareholders/Partners').click();
         cy.get('#gridClientShareholders .dx-icon-trash').should('be.visible').eq(0).click({force:true}).wait(1000)
         cy.contains('Yes').click().wait(1000)

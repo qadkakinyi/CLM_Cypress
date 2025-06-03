@@ -1,5 +1,5 @@
 import { faker } from "@faker-js/faker";
-import {navigateToClientMenu} from "../../support/e2e";
+import { navigateToNewestClientMenu} from "../../support/e2e";
 
 let externalReference = faker.string.alphanumeric(12);
 let accountNumber = faker.finance.accountNumber();
@@ -21,8 +21,11 @@ describe('Add, Edit, Delete Client Investment Account', () => {
   })
   
   it('Add Client Investment Account', () => {
-    // Click on Know your Clients navigation item
-    navigateToClientMenu('Corporate')
+    let clientName;
+    cy.readFile('cypress/fixtures/client_corporate.json').then((data) =>{
+      clientName = data.companyName
+      navigateToNewestClientMenu(clientName)
+    })
 
     cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Investment Accounts').click();
 
@@ -59,7 +62,8 @@ describe('Add, Edit, Delete Client Investment Account', () => {
     // Edit Cards
     cy.visit(location).wait(2000)
     cy.getBySel('gridClientInvestmentAccounts').should('be.visible').then(() => {
-      cy.get('.dx-datagrid-filter-row .dx-texteditor-input-container input').eq(1).type(accountNumber);
+      cy.get('[aria-colindex="2"] .dx-texteditor-input-container > .dx-texteditor-input').type(accountNumber, {force:true});
+      // cy.get('.dx-datagrid-filter-row .dx-texteditor-input-container input').eq(1).type(accountNumber);
 
       cy.wait(2000);
 
@@ -79,7 +83,7 @@ describe('Add, Edit, Delete Client Investment Account', () => {
   it('Delete client investment account', () => {
     cy.visit(location).wait(2000)
     cy.getBySel('gridClientInvestmentAccounts').should('be.visible');
-    cy.get('.dx-datagrid-filter-row .dx-texteditor-input-container input').eq(1).type(accountNumber);
+    cy.get('[aria-colindex="2"] .dx-texteditor-input-container > .dx-texteditor-input').type(accountNumber, {force:true});
 
     cy.wait(2000);
 

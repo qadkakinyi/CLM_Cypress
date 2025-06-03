@@ -1,14 +1,16 @@
 import { faker } from "@faker-js/faker";
-import {navigateToClientMenu} from "../../support/e2e";
+import {navigateToClientMenu, navigateToNewestClientMenu} from "../../support/e2e";
 
 let walletName = faker.lorem.word(10);
 
 let client_id = '';
 
 describe('Add, Edit, Delete Client Wallets', () => {
-  it('Add Client Wallet', () => {
-    // Click on Know your Clients navigation item
-    navigateToClientMenu('Individual')
+  it('Add Client Wallet', () => {let clientName;
+    cy.readFile('cypress/fixtures/client_individual.json').then((data) =>{
+      clientName = data.individualClientName
+      navigateToNewestClientMenu(clientName)
+    })
 
     cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Wallets').click();
     cy.wait(1000)

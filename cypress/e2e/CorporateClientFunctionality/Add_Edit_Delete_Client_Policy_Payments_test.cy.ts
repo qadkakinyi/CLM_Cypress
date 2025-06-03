@@ -6,9 +6,11 @@ let policyNumber = faker.number.int(8).toString()
 let location = '';
 
 describe('Add, Edit, Delete Client Policy Payments', () => {
-  it('Go to Policy Payments detail line', () => {
-    // Click on Know your Clients navigation item
-    navigateToNewestClientMenu('Corporate')
+  it('Go to Policy Payments detail line', () => { let clientName;
+    cy.readFile('cypress/fixtures/client_corporate.json').then((data) =>{
+      clientName = data.companyName
+      navigateToNewestClientMenu(clientName)
+    })
 
     cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Policy Payments').click();
     cy.wait(500)

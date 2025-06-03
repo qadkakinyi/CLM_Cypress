@@ -18,8 +18,11 @@ describe('Add, Edit, Delete Client Trade', () => {
   })
   
   it('Add Client Trade', () => {
-    // Click on Know your Clients navigation item
-   navigateToNewestClientMenu('Corporate')
+    let clientName;
+    cy.readFile('cypress/fixtures/client_corporate.json').then((data) =>{
+      clientName = data.companyName
+      navigateToNewestClientMenu(clientName)
+    })
 
     cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Trades').click().wait(2000);
 

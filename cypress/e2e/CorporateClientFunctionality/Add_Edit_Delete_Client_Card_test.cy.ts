@@ -1,18 +1,18 @@
 import { faker } from "@faker-js/faker";
 import {add_bank_account} from "./Add_Edit_Delete_Client_Bank_Account_test.cy";
-import {navigateToClientMenu} from "../../support/e2e";
+import {navigateToClientMenu, navigateToNewestClientMenu} from "../../support/e2e";
 
 let cardNumberTest = faker.finance.creditCardNumber('visa');
 let location:string = ''
 
 describe('Add, Edit, Delete Client Cards - Corporate', () => {
   it('Add Client Cards', () => {
-    
-    //add bank account required
-    // add_bank_account()
-    
-    // Click on Know your Clients navigation item
-    navigateToClientMenu('Corporate')
+
+    let clientName;
+    cy.readFile('cypress/fixtures/client_corporate.json').then((data) =>{
+      clientName = data.companyName
+      navigateToNewestClientMenu(clientName)
+    })
 
     cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Cards').click();
 

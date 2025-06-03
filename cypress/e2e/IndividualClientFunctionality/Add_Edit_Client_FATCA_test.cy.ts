@@ -1,5 +1,5 @@
 import { faker } from "@faker-js/faker";
-import {navigateToClientMenu} from "../../support/e2e";
+import {navigateToClientMenu, navigateToNewestClientMenu} from "../../support/e2e";
 
 let tin = faker.string.alphanumeric(12);
 
@@ -68,8 +68,11 @@ describe('Add, Delete Client FATCA', () => {
   })
   
   it('Add Client FATCA', () => {
-    // Click on Know your Clients navigation item
-    navigateToClientMenu('Individual')
+    let clientName;
+    cy.readFile('cypress/fixtures/client_individual.json').then((data) =>{
+      clientName = data.individualClientName
+      navigateToNewestClientMenu(clientName)
+    })
 
     cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'FATCA').click();
     cy.wait(1000)

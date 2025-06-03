@@ -1,13 +1,15 @@
 import { faker } from "@faker-js/faker";
-import {navigateToClientMenu} from "../../support/e2e";
+import {navigateToClientMenu, navigateToNewestClientMenu} from "../../support/e2e";
 
 let accountNumberTest = faker.finance.accountNumber(12);
 let location:string = ''
 
 export function add_bank_account(){
-  // Click on Know your Clients navigation item
-  navigateToClientMenu('Corporate')
-  cy.wait(3000)
+  let clientName;
+  cy.readFile('cypress/fixtures/client_corporate.json').then((data) =>{
+    clientName = data.companyName
+    navigateToNewestClientMenu(clientName)
+  })
 
   cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Bank Accounts').click();
 

@@ -27,9 +27,11 @@ describe('Adhoc Screening Individual Client', ()=>{
 
 
     it('Performs Person Search Using UI', ()=>{
-        
-        navigateToNewestClientMenu('Individual')
-        cy.wait(2000)
+        let clientName;
+        cy.readFile('cypress/fixtures/client_individual.json').then((data) =>{
+            clientName = data.individualClientName
+            navigateToNewestClientMenu(clientName)
+        })
         
         cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('Screening').click().wait(2000)
         
@@ -97,7 +99,6 @@ describe('Adhoc Screening Individual Client', ()=>{
     })
 
     it('Performs Person Search Using API - Bridger', ()=>{
-        // navigateToClientMenu('Individual')
         cy.visit(location).wait(3000)
         cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('Screening').click().wait(2000)
         cy.location('pathname').then(path=>{
@@ -138,8 +139,11 @@ describe('Adhoc Screening Individual Client', ()=>{
 describe('Adhoc Screening Corporate Client', ()=>{
 
     it('Performs Business Search Using UI', ()=>{
-        navigateToNewestClientMenu('Corporate')
-        cy.wait(2000);
+        let clientName;
+        cy.readFile('cypress/fixtures/client_corporate.json').then((data) =>{
+            clientName = data.companyName
+            navigateToNewestClientMenu(clientName)
+        })
 
         cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('Screening').click().wait(2000)
 

@@ -5,8 +5,11 @@ export const accountNumberTest = faker.finance.accountNumber(12);
 let client_id:string = ''
 
 export function add_bank_account(){
-  // Click on Know your Clients navigation item
-  navigateToNewestClientMenu('Individual')
+  let clientName;
+  cy.readFile('cypress/fixtures/client_individual.json').then((data) =>{
+    clientName = data.individualClientName
+    navigateToNewestClientMenu(clientName)
+  })
 
   cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Bank Accounts').click();
 
