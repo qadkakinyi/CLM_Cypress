@@ -1,10 +1,14 @@
 import {faker} from "@faker-js/faker";
-import {navigateToClientMenu} from "../../support/e2e";
+import {navigateToClientMenu, navigateToNewestClientMenu} from "../../support/e2e";
 
 let location = '';
 describe('Adds, Edits and Deletes Tax Residency - Corporate', ()=>{
     it('Adds Tax Residency', ()=>{
-        navigateToClientMenu('Corporate')
+        let clientName;
+        cy.readFile('cypress/fixtures/client_corporate.json').then((data) =>{
+            clientName = data.companyName
+            navigateToNewestClientMenu(clientName)
+        })
 
         cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Tax Residency').click();
         cy.wait(1000)

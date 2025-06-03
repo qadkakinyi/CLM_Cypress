@@ -1,5 +1,5 @@
 describe('Administrator settings update settings', ()=>{
-    it('updates `Last Evaluation Grade based on` successfully', ()=>{
+    it('updates `Last Evaluation Grade based on`, successfully', ()=>{
         // this field can accept `Compliance Officer Grade`, `System Grade` or `Manager Grade`
         
         cy.visit('/administration/account').wait(2500)

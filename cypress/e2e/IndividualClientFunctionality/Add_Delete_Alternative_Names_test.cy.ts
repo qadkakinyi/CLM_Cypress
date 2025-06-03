@@ -1,11 +1,15 @@
 import {faker} from "@faker-js/faker";
-import {navigateToClientMenu} from "../../support/e2e";
+import {navigateToClientMenu, navigateToNewestClientMenu} from "../../support/e2e";
 
 let client_id = '';
 let location = '';
 describe('Add and Delete Alternative Names', ()=>{
     it('Adds Alternative Name', ()=>{
-        navigateToClientMenu('Individual')
+        let clientName;
+        cy.readFile('cypress/fixtures/client_individual.json').then((data) =>{
+            clientName = data.individualClientName
+            navigateToNewestClientMenu(clientName)
+        })
 
         cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Alternative Names').click();
         cy.wait(1000)

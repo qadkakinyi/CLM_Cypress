@@ -1,5 +1,5 @@
 import { faker } from "@faker-js/faker";
-import {navigateToClientMenu} from "../../support/e2e";
+import {navigateToClientMenu, navigateToNewestClientMenu} from "../../support/e2e";
 
 let tin = faker.string.alphanumeric(12);
 
@@ -7,7 +7,11 @@ let location = ''
 
 describe('Add, Delete Client Internal Notes - Corporate', () => {
   it('Add Client Internal Notes', () => {
-    navigateToClientMenu('Corporate')
+    let clientName;
+    cy.readFile('cypress/fixtures/client_corporate.json').then((data) =>{
+      clientName = data.companyName
+      navigateToNewestClientMenu(clientName)
+    })
 
     cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Internal Notes').click();
 

@@ -1,5 +1,5 @@
 import { faker } from "@faker-js/faker";
-import {navigateToClientMenu} from "../../support/e2e";
+import {navigateToClientMenu, navigateToNewestClientMenu} from "../../support/e2e";
 
 let documentNumber = faker.string.numeric(10);
 
@@ -8,9 +8,12 @@ let client_id = ''
 describe('Add, Edit, Delete Client Document - Individual', () => {
 
   it('Add Client Document', () => {
-    // Add new Client Document
-    // Click on Know your Clients navigation item
-    navigateToClientMenu('Individual')
+    let clientName;
+    cy.readFile('cypress/fixtures/client_individual.json').then((data) =>{
+      clientName = data.individualClientName
+      navigateToNewestClientMenu(clientName)
+    })
+    
     cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Documents').click().wait(3000);
     //get the current client id
     cy.location('pathname').then((pathname)=>{

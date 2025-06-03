@@ -1,5 +1,5 @@
 import {faker} from '@faker-js/faker'
-import {navigateToClientMenu} from "../../support/e2e";
+import {navigateToClientMenu, navigateToNewestClientMenu} from "../../support/e2e";
 
 let location = '';
 describe('Add a client questionnaire - Corporate', ()=>{
@@ -65,8 +65,11 @@ describe('Add a client questionnaire - Corporate', ()=>{
     })
 
     it('Adds questionnaire type, creates question categories, creates a question then adds a questionnaire', ()=>{
-
-        navigateToClientMenu('Corporate')
+        let clientName;
+        cy.readFile('cypress/fixtures/client_corporate.json').then((data) =>{
+            clientName = data.companyName
+            navigateToNewestClientMenu(clientName)
+        })
 
         cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Questionnaires').click().wait(1000);
 

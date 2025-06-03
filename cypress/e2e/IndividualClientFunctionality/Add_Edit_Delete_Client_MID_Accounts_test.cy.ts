@@ -1,5 +1,5 @@
 import { faker } from "@faker-js/faker";
-import {navigateToClientMenu} from "../../support/e2e";
+import {navigateToClientMenu, navigateToNewestClientMenu} from "../../support/e2e";
 import {add_bank_account} from "./Add_Edit_Delete_Client_Bank_Account_test.cy";
 
 let code = '';
@@ -29,9 +29,11 @@ describe('Add, Edit, Delete Client MID Accounts', () => {
   })
   
   it('Add Client MID Accounts', () => {
-  
-    // Click on Know your Clients navigation item
-    navigateToClientMenu('Individual')
+    let clientName;
+    cy.readFile('cypress/fixtures/client_individual.json').then((data) =>{
+      clientName = data.individualClientName
+      navigateToNewestClientMenu(clientName)
+    })
 
     cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'MID Accounts').click();
     cy.location('pathname').then((pathname)=>{

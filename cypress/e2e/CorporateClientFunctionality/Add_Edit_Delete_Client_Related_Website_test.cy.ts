@@ -1,5 +1,5 @@
 import { faker } from "@faker-js/faker";
-import {navigateToClientMenu} from "../../support/e2e";
+import {navigateToClientMenu, navigateToNewestClientMenu} from "../../support/e2e";
 
 let code = faker.string.numeric(16);
 
@@ -18,8 +18,11 @@ describe('Add, Edit, Delete Client Related Website', () => {
   })
   
   it('Add Client Related Website', () => {
-    // Click on Know your Clients navigation item
-    navigateToClientMenu('Corporate')
+    let clientName;
+    cy.readFile('cypress/fixtures/client_corporate.json').then((data) =>{
+      clientName = data.companyName
+      navigateToNewestClientMenu(clientName)
+    })
 
     cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Related Websites').click();
     cy.wait(1000)

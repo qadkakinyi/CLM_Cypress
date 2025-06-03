@@ -1,5 +1,5 @@
 import {faker} from "@faker-js/faker";
-import {navigateToClientMenu} from "../../support/e2e";
+import {navigateToClientMenu, navigateToNewestClientMenu} from "../../support/e2e";
 
 let IdNumber = 12345678
 let location = '';
@@ -41,7 +41,11 @@ describe('Internal Screening - Individual', ()=>{
 
     
     it('Performs Internal blacklists search', ()=>{
-        navigateToClientMenu('Individual')
+        let clientName;
+        cy.readFile('cypress/fixtures/client_individual.json').then((data) =>{
+            clientName = data.individualClientName
+            navigateToNewestClientMenu(clientName)
+        })
 
         cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Internal Screening').click().wait(2000);
 

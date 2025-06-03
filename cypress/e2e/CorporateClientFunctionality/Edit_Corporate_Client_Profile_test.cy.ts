@@ -1,12 +1,15 @@
-import {navigateToClientMenu} from "../../support/e2e";
+import {navigateToClientMenu, navigateToNewestClientMenu} from "../../support/e2e";
 import {faker} from "@faker-js/faker";
 
 let corporate_id = '';
 
 describe('Edit Corporate Client Profile', () => {
   it('Edit Corporate Profile', () => {
-    // Navigate to specific client
-    navigateToClientMenu('Corporate')
+    let clientName;
+    cy.readFile('cypress/fixtures/client_corporate.json').then((data) =>{
+      clientName = data.companyName
+      navigateToNewestClientMenu(clientName)
+    })
     
     cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a>span').eq(1).contains('Profile');
     cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').eq(1).click();

@@ -1,22 +1,3 @@
 {
-  "ClientStatusId":8,
-  "ClientCategoryId":"",
-  "ignoreAutoOngoingMonitoringStatus":false,
-  "RegulationGroupId":1,
-  "JoinedDate":"2024-07-11",
-  "Notes":"Test notes",
-  "FirstName":"John",
-  "LastName":"Doe",
-  "MiddleName":"James",
-  "externalReference":"ref-id-bcgdihhe-csuht",
-  "phone":"0712345678",
-  "Email":"john@yopmail.com",
-  "Gender":1,
-  "SSN":"SSN12345678",
-  "TaxIdentificationNumber":"A124F4646464",
-  "CountryOfBirthId":204,
-  "DateOfBirth":"2000-12-25",
-  "customFields":{},
-  "ipAddress":"178.10.10.64",
-  "SubGroupId":null
+  "individualClientName": "Mark Bechtelar"
 }

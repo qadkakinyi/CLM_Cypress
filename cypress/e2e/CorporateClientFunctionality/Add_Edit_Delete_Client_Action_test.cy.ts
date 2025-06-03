@@ -1,5 +1,5 @@
 import { faker } from "@faker-js/faker";
-import {navigateToClientMenu} from "../../support/e2e";
+import {navigateToClientMenu, navigateToNewestClientMenu} from "../../support/e2e";
 
 let location = ''
 describe('Add, Edit, Delete Client Action (Task) - Corporate', () => {
@@ -32,8 +32,11 @@ describe('Add, Edit, Delete Client Action (Task) - Corporate', () => {
 
   it('Add Client Action', () => {
     // Click on Know your Clients navigation item
-    navigateToClientMenu('Corporate')
-    cy.wait(2000)
+    let clientName;
+    cy.readFile('cypress/fixtures/client_corporate.json').then((data) =>{
+      clientName = data.companyName
+      navigateToNewestClientMenu(clientName)
+    })
 
     cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Actions').wait(2500).click({force:true}).wait(2000);
 

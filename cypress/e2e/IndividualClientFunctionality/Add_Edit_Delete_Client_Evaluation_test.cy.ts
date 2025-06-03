@@ -3,8 +3,11 @@ import {navigateToClientMenu, navigateToNewestClientMenu} from "../../support/e2
 
 describe('Add Client Evaluation', ()=>{
     it('Adds an evaluation', ()=>{
-
-        navigateToNewestClientMenu('Individual')
+        let clientName;
+        cy.readFile('cypress/fixtures/client_individual.json').then((data) =>{
+            clientName = data.individualClientName
+            navigateToNewestClientMenu(clientName)
+        })
 
         cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Evaluations').click();
         cy.get('[primary-buttons=""] > sa-button.ng-star-inserted > .sa-button > .text').click();

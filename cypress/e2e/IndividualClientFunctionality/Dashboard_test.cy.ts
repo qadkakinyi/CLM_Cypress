@@ -1,10 +1,12 @@
-import {filterClientType, navigateToClientMenu} from "../../support/e2e";
+import {filterClientType, navigateToClientMenu, navigateToNewestClientMenu} from "../../support/e2e";
 
 describe('Views the Individual Client Dashboard', ()=>{
     it('Checks if the dashboard loads correctly', ()=>{
-        
-        navigateToClientMenu('Individual')
-        cy.wait(2000)
+        let clientName;
+        cy.readFile('cypress/fixtures/client_individual.json').then((data) =>{
+            clientName = data.individualClientName
+            navigateToNewestClientMenu(clientName)
+        })
         
         cy.contains('Electronic Verification Statuses').should('be.visible')
         cy.contains('Client Behavior Summary').should('be.visible')

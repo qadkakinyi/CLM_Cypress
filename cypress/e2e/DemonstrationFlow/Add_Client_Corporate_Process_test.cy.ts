@@ -301,43 +301,54 @@ describe("Add Corporate Client Process", ()=>{
             let userClientType = res.body.data[0].clientType
             
             cy.request({
-                method: 'POST',
-                url: `${api_baseUrl}/api/clientCommon/${clientId}/authorizedPersons`,
+                method: 'GET',
+                url: `${api_baseUrl}/api/settings/capacities`,
                 headers:{
                     "Content-Type": "application/json",
                     'Authorization':   `Bearer ${token}`
-                },
-                body: {
-                    "clientId": clientId,
-                    "capacityId": 4,
-                    "includeInEvaluation": true,
-                    "isNominee": false,
-                    "isLegalRepresentative": false,
-                    "isControllingPerson": false,
-                    "profileId":  differentUserID,
-                    "rateWeightPercentage": 72,
-                    "clientType": userClientType,
-                    "ignoreAutoOngoingMonitoringStatus": false,
-                    "clientCorporate": {
-                        "customFields": {}
-                    },
-                    "appointmentDate": "2024-11-11",
-                    "resignationDate": "2024-11-12",
-                    "customFields": {}
-            }
-            }).then(res =>{
-                // get current count of capacities
-                //expecting the count to be plus 1
+                }
+            }).then(res=>{
+                let capacityId = res.body[0].id
+
                 cy.request({
-                    method: 'GET',
-                    url: `${api_baseUrl}/api/paging/${clientId}/authorizedPersons?skip=0&requireTotalCount=true`,
+                    method: 'POST',
+                    url: `${api_baseUrl}/api/clientCommon/${clientId}/authorizedPersons`,
                     headers:{
                         "Content-Type": "application/json",
                         'Authorization':   `Bearer ${token}`
+                    },
+                    body: {
+                        "clientId": clientId,
+                        "capacityId": capacityId,
+                        "includeInEvaluation": true,
+                        "isNominee": false,
+                        "isLegalRepresentative": false,
+                        "isControllingPerson": false,
+                        "profileId":  differentUserID,
+                        "rateWeightPercentage": 72,
+                        "clientType": userClientType,
+                        "ignoreAutoOngoingMonitoringStatus": false,
+                        "clientCorporate": {
+                            "customFields": {}
+                        },
+                        "appointmentDate": "2024-11-11",
+                        "resignationDate": "2024-11-12",
+                        "customFields": {}
                     }
-                }).then(res=>{
-                    let updatedCapacityCount = res.body.totalCount
-                    expect(updatedCapacityCount).to.equal(totalCapacityCount + 1);
+                }).then(res =>{
+                    // get current count of capacities
+                    //expecting the count to be plus 1
+                    cy.request({
+                        method: 'GET',
+                        url: `${api_baseUrl}/api/paging/${clientId}/authorizedPersons?skip=0&requireTotalCount=true`,
+                        headers:{
+                            "Content-Type": "application/json",
+                            'Authorization':   `Bearer ${token}`
+                        }
+                    }).then(res=>{
+                        let updatedCapacityCount = res.body.totalCount
+                        expect(updatedCapacityCount).to.equal(totalCapacityCount + 1);
+                    })
                 })
             })
         })

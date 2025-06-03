@@ -6,11 +6,11 @@ let client_id:string = ''
 
 describe('Add, Edit, Delete Client Cards', () => {
   it('Add Client Cards', () => {
-    
-    //add bank account required
-    
-    // Click on Know your Clients navigation item
-    navigateToNewestClientMenu('Individual')
+    let clientName;
+    cy.readFile('cypress/fixtures/client_individual.json').then((data) =>{
+      clientName = data.individualClientName
+      navigateToNewestClientMenu(clientName)
+    })
 
     cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Cards').click();
 

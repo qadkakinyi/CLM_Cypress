@@ -1,8 +1,11 @@
-import {navigateToClientMenu} from "../../support/e2e";
+import {navigateToClientMenu, navigateToNewestClientMenu} from "../../support/e2e";
 describe('Views the Client Dashboard', ()=>{
     it('Checks if the dashboard loads correctly', ()=>{
-        
-        navigateToClientMenu('Corporate')
+        let clientName;
+        cy.readFile('cypress/fixtures/client_corporate.json').then((data) =>{
+            clientName = data.companyName
+            navigateToNewestClientMenu(clientName)
+        })
         
         cy.contains('Client Behavior Summary').should('be.visible')
         cy.contains('Required Risk Evaluation Profiles').should('be.visible')

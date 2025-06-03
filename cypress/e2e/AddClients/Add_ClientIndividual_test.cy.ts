@@ -1,19 +1,20 @@
 import { faker } from "@faker-js/faker";
 
+let firstName = faker.person.firstName('male');
+let middleName = faker.person.middleName('male')
+let lastName = faker.person.lastName('male')
 
 describe('Add Client Individual', () => {
   
   it('Add Client Individual', () => {
-    // cy.intercept('GET','http://localhost:5140/api/settings/regulationGroup/1/subGroups', []).as('getRegulation')
-    // cy.intercept('GET','http://localhost:5140/api/settings/customFields/form/1/0', []).as('getCustomFields')
     // Click on Know your Clients navigation item
     cy.getByDataCy('know-clients-btn').click().wait(2000);
     cy.get('#addIndividual').click().wait(2000);
 
-    let firstName = faker.person.firstName('male');
+    
     cy.get('#addClientIndividualForm input[name="firstName"]').type(firstName);
-    cy.get('#addClientIndividualForm input[name="lastName"]').type(faker.person.lastName('male'));
-    cy.get('#addClientIndividualForm input[name="middleName"]').type(faker.person.middleName('male'));
+    cy.get('#addClientIndividualForm input[name="lastName"]').type(lastName);
+    cy.get('#addClientIndividualForm input[name="middleName"]').type(middleName);
 
     cy.get('#clientStatusesDropdown').click();
     cy.get('#dynamicSelectBoxDropdownGrid').eq(0).find('.dx-datagrid-rowsview table tbody tr td').eq(0).click({ force: true })
@@ -42,6 +43,7 @@ describe('Add Client Individual', () => {
 
     cy.get('#saveClientIndividual').click().wait(6000);
     cy.contains('Client individual has been added').wait(2000)
+    cy.writeFile('cypress/fixtures/client_individual.json', {individualClientName: `${firstName}`+' '+lastName}).wait(2000)
   })
   
   // it.skip('Delete a client', ()=>{
