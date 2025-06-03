@@ -33,8 +33,10 @@ Cypress.on('uncaught:exception', (err, runnable, promise) => {
 
 beforeEach(() => {
     cy.session('systemadmin', () => {
+        cy.visit('/')
         cy.login('systemadmin', 'Password1!');
     });
+    cy.visit('/main/dashboard')
 });
 
 // beforeEach(() => {
