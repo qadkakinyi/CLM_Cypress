@@ -81,28 +81,30 @@ Cypress.Commands.add("login", (username: string, password: string) => {
     cy.visit('/').wait(2000);
 
     cy.url().should('includes', 'login');
-    cy.get('input[name="username"]').should('be.visible').type(username);
-    cy.get('input[name="password"]').should('be.visible').type(password);
+    cy.get('input[name="username"]').should('be.visible').type(username, { delay: 50 });
+    cy.get('input[name="password"]').should('be.visible').type(password, { delay: 50 });
 
     cy.get('#loginFormSubmitButton').type('Cypress.io{enter}').wait(1000)
 
-    //get 'session active modal' and click `yes`
-    // cy.get('#Msg1').find('#bot2-Msg1').click().wait(1000)
-
-    // Ensure that dashboard loaded after user login
-    cy.location("pathname").should("equal", "/main/dashboard")
-
-    // pin the main sidebar
-  cy.get('aside').then(el =>{
-    let unpin_icon = el.find('.dx-icon-unpin')
-    
-    //check if unpin icon is visible
-    if (unpin_icon.length > 0){
-      cy.wrap(unpin_icon).click().wait(1000)
-    }else{
-      cy.log('Unpin icon missing')
+  // Dismiss active session modal if it appears
+  cy.get('body').then($body => {
+    if ($body.find('#Msg1').length > 0) {
+      cy.get('#Msg1').find('#bot2-Msg1').click().wait(1000);
     }
-  })
+  });
+
+  // Confirm navigation to dashboard
+  cy.location('pathname', { timeout: 10000 }).should('eq', '/main/dashboard');
+
+  // Ensure the sidebar is pinned
+  cy.get('aside').then($aside => {
+    const unpinIcon = $aside.find('.dx-icon-unpin');
+    if (unpinIcon.length > 0) {
+      cy.wrap(unpinIcon).click().wait(500);
+    } else {
+      cy.log('Sidebar already pinned or unpin icon missing.');
+    }
+  });
   
 });
 
