@@ -96,7 +96,7 @@ describe('Criterion with `Not Include in evaluation` not affect evaluation', ()=
         cy.get('.modal-content').then((el) => {
             //step 1
             if (el.find('[data-cy="reasonForEvaluation"]').is(':visible')) {
-                cy.wrap(el).type(faker.word.words(2))
+                cy.wrap(el).eq(0).type(faker.word.words(2))
                 cy.wait(1000)
                 cy.get('.col > [icon="arrow-right"] > .sa-button').click().wait(4000);
                 cy.getByDataCy('criteria-dropdowns')

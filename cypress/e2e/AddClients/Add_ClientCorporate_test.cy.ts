@@ -33,7 +33,7 @@ describe('Add Client Corporate', () => {
 
     cy.get('#addClientCorporateForm input[name="ipAddress"]').type(faker.internet.ipv4());
     cy.get('#addClientCorporateForm textarea[name="notes"]').type(faker.lorem.paragraph(5));
-    cy.get('#saveClientCorporate').click().wait(6000);
+    cy.get('#saveClientCorporate').click().wait(2000);
     cy.contains('The Client Corporate has been added.')
     cy.writeFile('cypress/fixtures/client_corporate.json', {companyName: companyName}).wait(2000)
   })

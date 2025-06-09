@@ -5,7 +5,7 @@ describe('Add a client questionnaire - Individual', ()=>{
     
     before(()=>{
         //adding a questionnaire type
-        cy.visit('/settings/questionnaire-types')
+        cy.visit('/settings/questionnaire-types').wait(2500)
         cy.contains('sa-button','Add').click()
         cy.wait(1000)
             
@@ -16,8 +16,8 @@ describe('Add a client questionnaire - Individual', ()=>{
         cy.wait(1000)
         
         //add question category
-        cy.visit('/settings/questions-categories')
-        cy.contains('Add').click()
+        cy.visit('/settings/questions-categories').wait(2500)
+        cy.contains('sa-button','Add').click()
         cy.wait(1000)
         cy.getByDataCy('question-category-name').type('Leading Questions')
         cy.getByDataCy('question-category-mapping-reference').type(faker.string.alphanumeric(15))
@@ -29,8 +29,8 @@ describe('Add a client questionnaire - Individual', ()=>{
         cy.wait(500)
         
         //add questions for the questionnaire type
-        cy.visit('/settings/questions').wait(2000)
-        cy.contains('Add').click()
+        cy.visit('/settings/questions').wait(2500)
+        cy.contains('sa-button','Add').click()
         cy.wait(1000)
         
         cy.getByFormControlName('name').type('Where do you come from? '+ faker.string.alphanumeric(3))
@@ -70,10 +70,8 @@ describe('Add a client questionnaire - Individual', ()=>{
             clientName = data.individualClientName
             navigateToNewestClientMenu(clientName)
         })
-        
-        cy.wait(2000)
-        
-        cy.contains('Questionnaires').click()
+
+        cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Questionnaire').click();
         
         cy.wait(1000)
         
