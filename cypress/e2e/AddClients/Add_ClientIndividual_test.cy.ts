@@ -3,6 +3,7 @@ import { faker } from "@faker-js/faker";
 let firstName = faker.person.firstName('male');
 let middleName = faker.person.middleName('male')
 let lastName = faker.person.lastName('male')
+let clientId;
 
 describe('Add Client Individual', () => {
   
@@ -41,9 +42,13 @@ describe('Add Client Individual', () => {
     cy.get('#addClientIndividualForm input[name="ipAddress"]').type(faker.internet.ipv4());
     cy.get('#addClientIndividualForm textarea[name="notes"]').type(faker.lorem.paragraph());
 
-    cy.get('#saveClientIndividual').click().wait(6000);
+    cy.get('#saveClientIndividual').click().wait(3000);
     cy.contains('Client individual has been added').wait(2000)
-    cy.writeFile('cypress/fixtures/client_individual.json', {individualClientName: `${firstName}`+' '+lastName}).wait(2000)
+    cy.location('pathname').then(path=>{
+      const parts = path.split('/');
+      clientId = parts[3];
+      cy.writeFile('cypress/fixtures/client_individual.json', {individualClientName: `${firstName}`+' '+lastName, clientId: clientId}).wait(1000)
+    })
   })
   
   // it.skip('Delete a client', ()=>{

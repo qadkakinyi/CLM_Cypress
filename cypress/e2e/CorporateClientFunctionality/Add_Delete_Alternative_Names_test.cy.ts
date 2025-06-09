@@ -1,6 +1,7 @@
 import {faker} from "@faker-js/faker";
 import { navigateToNewestClientMenu} from "../../support/e2e";
 
+let companyName = faker.company.name();
 
 let location = '';
 describe('Add and Delete Alternative Names - Corporate', ()=>{
@@ -18,7 +19,7 @@ describe('Add and Delete Alternative Names - Corporate', ()=>{
         })
         
         cy.contains('sa-button','Add').click().wait(1500)
-        cy.getByFormControlName('alternativeName').type(faker.word.noun())
+        cy.getByFormControlName('alternativeName').type(companyName)
         cy.contains('#addClientAlternativeNameForm [icon="save"]','Save').click().wait(1500)
         cy.contains('The alternative name has been added').wait(1000)
     })

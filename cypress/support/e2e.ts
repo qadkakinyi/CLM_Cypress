@@ -35,7 +35,14 @@ before(() => {
     cy.session('systemadmin', () => {
         cy.visit('/')
         cy.login('systemadmin', 'Password1!');
+    }, {
+        validate: ()=>{
+            cy.visit('/main/dashboard');
+        }
     });
+    
+    // loads this when session is restored
+    cy.visit('/main/dashboard')
 });
 
 // beforeEach(() => {
@@ -102,5 +109,5 @@ export function navigateToNewestClientMenu(clientName:string){
 
     let gridClientsRows = cy.wrap('#gridClients table tbody tr');
     gridClientsRows.get('.dx-command-edit-with-icons a').eq(0).click({ force: true })
-    cy.wait(4000);
+    cy.wait(3500);
 }

@@ -1,6 +1,6 @@
 
 describe('Evaluation Score Match', ()=>{
-    it('It checks evaluation score in `Know your Clients page` vs in the client Dashboard ', ()=>{
+    it('It checks evaluation score in `Client Management page` vs in the client Dashboard ', ()=>{
         cy.visit('main/clients').wait(2000);
         cy.get('#gridClients').should('be.visible');
 
@@ -21,7 +21,7 @@ describe('Evaluation Score Match', ()=>{
         cy.get('#gridClients tr').find('td[aria-label="Column Last Evaluation Grade"]').then(td=>{
             let columnIndex = td.attr('aria-colindex')
             cy.log('ColIndex '+columnIndex)
-            cy.get(`#gridClients .dx-datagrid-content tr[aria-rowindex="2"] td[aria-colindex="${columnIndex}"]`).then(el=>{
+            cy.get(`#gridClients .dx-datagrid-content tr[aria-rowindex="1"] td[aria-colindex="${columnIndex}"]`).then(el=>{
                 // navigate to client dashboard
                 cy.wait(2000)
                 cy.wrap(el).invoke('text').then(grade=>{

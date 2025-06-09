@@ -94,7 +94,7 @@ describe('Add, Edit, Delete Client Transactions - Corporate', () => {
       // Delete Transactions
       cy.getBySel('deleteTransaction').should('be.visible').click();
       cy.get('#bot2-Msg1').contains('Yes').click().wait(2000);
-      cy.contains('Transaction has been deleted.')
+      cy.contains('Transaction has been deleted').wait(1500)
     } catch (error) {
       cy.log(error);
     }

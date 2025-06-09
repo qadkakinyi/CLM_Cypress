@@ -11,7 +11,7 @@ describe('Bank', ()=>{
         cy.contains('The bank has been added').wait(1000)
     })
 
-    it("Edits Address type", ()=>{
+    it("Edits Bank", ()=>{
         cy.visit('/settings/banks').wait(2000)
 
         cy.get('#gridBanks tr .dx-first-cell .dx-texteditor-input').type('Xyz Test', {force:true}).wait(2500)
@@ -22,7 +22,7 @@ describe('Bank', ()=>{
         cy.contains('The bank has been updated')
     })
 
-    it("Deletes Address type", ()=>{
+    it("Deletes Bank", ()=>{
         cy.visit('/settings/banks').wait(2000)
 
         cy.get('#gridBanks tr .dx-first-cell .dx-texteditor-input').type('Xyz Bank', {force:true}).wait(2500)

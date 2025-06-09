@@ -41,7 +41,7 @@ describe('Mandatory Document Categories (MDC)', ()=>{
     it("Deletes a MDC", ()=>{
         cy.visit('/settings/mandatory-documents-categories').wait(3000)
 
-        cy.get('#gridMandatoryDocumentsCategories tr .dx-first-cell .dx-texteditor-input').type('Document Test 1', {force:true}).wait(2000)
+        cy.get('#gridMandatoryDocumentsCategories tr .dx-first-cell .dx-texteditor-input').type('Document Test 1', {force:true}).wait(3000)
         cy.get('tr td').find('.fa-angle-double-right').eq(1).click({force:true}).wait(1000)
         cy.get('sa-button').contains('Delete').click()
         cy.get('.MessageBoxButtonSection').contains('button', 'Yes').click()

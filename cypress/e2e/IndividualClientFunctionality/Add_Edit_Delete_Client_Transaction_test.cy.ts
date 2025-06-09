@@ -70,7 +70,8 @@ describe('Add, Edit, Delete Client Transactions - Individual', () => {
     // cy.get('#CustomField_Payment_Details').type('BankXYZ')
     // cy.get('#CustomField_Transaction_Update_Date').type(faker.date.past({refDate: 1}).toISOString().slice(0, 10));
 
-    cy.getBySel('saveClientTransaction').click().wait(2000);
+    cy.getBySel('saveClientTransaction').click().wait(1000);
+    cy.contains('The transaction has been added').wait(1500)
   });
 
   it('Edit client Transactions', () => {
@@ -81,7 +82,8 @@ describe('Add, Edit, Delete Client Transactions - Individual', () => {
       transactionReference = faker.string.alphanumeric(12);
       cy.get('#editClientTransactionForm input[name="externalReference"]').clear();
       cy.get('#editClientTransactionForm input[name="externalReference"]').type(transactionReference);
-      cy.getBySel('saveAndCloseButton').click().wait(2000);
+      cy.getBySel('saveAndCloseButton').click().wait(1000);
+      cy.contains('The transaction has been updated').wait(1500)
     } catch (error) {
       cy.log(error);
     }
@@ -94,6 +96,7 @@ describe('Add, Edit, Delete Client Transactions - Individual', () => {
       // Delete Transactions
       cy.getBySel('deleteTransaction').should('be.visible').click();
       cy.get('#bot2-Msg1').contains('Yes').click().wait(2000);
+      cy.contains('Transaction has been deleted').wait(1500)
     } catch (error) {
       cy.log(error);
     }

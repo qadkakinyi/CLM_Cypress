@@ -9,7 +9,7 @@ describe('Opens API Documentation', ()=>{
 
         cy.visit(`${ApiBaseUrl}/documentation/apidocumentation?`).wait(15000)
 
-        cy.origin('https://complytek-testing-hotfix-api.regtek.co', () => {
+        cy.origin(`${ApiBaseUrl}`, () => {
             cy.contains('RegTek+ API Documentation')
             cy.contains('Authentication')
         })
