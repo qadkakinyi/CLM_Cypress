@@ -1,11 +1,10 @@
 //This baseUrl has to be from this environment. it does not work with the complytek hotfix
 import {navigateToNewestClientMenu} from "../../support/e2e";
 
-let api_baseUrl = `https://complytek-testing-api.regtek.co`
+let api_baseUrl = Cypress.env('api_baseUrl')
 let token = ''
 let archivedClient;
 describe('Restore archived client', () => {
-
     before(() => {
         //get authorization token
         cy.request({
@@ -38,57 +37,30 @@ describe('Restore archived client', () => {
                 }
             }).then(res => {
                 console.log(res)
+                expect(res.status).to.eq(200)
+                expect(res.body).to.eq(Number(client_id))
             })
         })
 
     })
 
-    it('Selects one archived corporate client via API', () => {
+    it('Restores and archived client access their dashboard', () => {
 
-        let client_id;
+        cy.visit('/processes/handle-profiles').wait(2000)
+        let client_name;
         cy.readFile('cypress/fixtures/client_individual.json').then((data) => {
-            client_id = data.clientId
-            cy.request({
-                method: "PUT",
-                url: `${api_baseUrl}/api/staging/clientIndividual`,
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`
-                },
-                body: {
-                    "clientId": client_id,
-                    "registeredName": "Test Archive Client ",
-                    "registrationNumber": "ZTys0YdzlNcQ6",
-                    "clientStatusId": 8, //active
-                    "isClient": false,
-                    "externalReference": "ZS0LDJb2G4wcE",
-                    "ignoreAutoOngoingMonitoringStatus": true,
-                    "defaultFullStructureEvaluation": 1,
-                    "regulationGroupId": 1,
-                    "isArchived": false,
-                    "isDeleted": false,
-                    "authorisedCapital": "50000"
-                }
-            }).then(res => {
-                console.log(res)
-            })
-            cy.request({
-                method: "POST",
-                url: `${api_baseUrl}/api/paging/clients`,
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`
-                },
-                body: {
-                    'skip': 0,
-                    'take': 50
-                }
-            }).then(res => {
-                // console.log(res.body.data)
-                archivedClient = res.body.data.find(client => client.clientType == 2 && client.id == 542)
-                console.log(archivedClient)
-            })
+            client_name = data.individualClientName
+
+            cy.contains('Advanced Filter').click().wait(1000);
+            cy.getByFormControlName('includeArchived').check();
+            cy.contains('.grid-advance-filters-footer sa-button', 'Search').click().wait(2000);
+            cy.get('[aria-colindex="6"] .dx-texteditor-input-container > .dx-texteditor-input').click().clear().type(client_name).wait(3000);
+            cy.get('.dx-data-row .dx-checkbox-container > .dx-checkbox-icon').eq(1).click();
+            cy.contains('sa-button[icon="user-cog"]', 'Restore Profiles').click();
+            cy.get('#restoreProfilesForm [icon="save"]').click().wait(1500);
+            cy.contains('The selected profiles have been restored')
+            navigateToNewestClientMenu(client_name)
+            cy.get('body').should('not.contain', 'Client not found');
         })
     })
-
 })
