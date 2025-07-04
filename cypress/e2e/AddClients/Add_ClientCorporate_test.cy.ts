@@ -5,8 +5,8 @@ let companyName = faker.company.name();
 describe('Add Client Corporate', () => {
   it('Add Client Corporate', () => {
     // Click on Know your Clients navigation item
-    cy.getByDataCy('know-clients-btn').click().wait(3000);
-    cy.get('#addCorporate').should('be.visible').click();
+    cy.getByDataCy('know-clients-btn').click()
+    cy.poll('#addCorporate').click();
     cy.wait(1500)
 
     cy.get('#addClientCorporateForm input[name="registeredName"]').type(companyName);
@@ -33,8 +33,8 @@ describe('Add Client Corporate', () => {
 
     cy.get('#addClientCorporateForm input[name="ipAddress"]').type(faker.internet.ipv4());
     cy.get('#addClientCorporateForm textarea[name="notes"]').type(faker.lorem.paragraph(5));
-    cy.get('#saveClientCorporate').click().wait(2000);
-    cy.contains('The Client Corporate has been added.')
+    cy.get('#saveClientCorporate').click();
+    cy.poll('The Client Corporate has been added.')
     cy.writeFile('cypress/fixtures/client_corporate.json', {companyName: companyName}).wait(2000)
   })
 })

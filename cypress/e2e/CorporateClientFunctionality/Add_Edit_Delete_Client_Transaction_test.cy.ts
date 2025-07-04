@@ -5,8 +5,9 @@ let transactionReference:string = faker.string.alphanumeric(12);
 let location = '';
 
 function goToTransactionByReference(transactionReference:string) {
-  cy.visit(location).wait(3500)
-  cy.get('.dx-datagrid-filter-row .dx-texteditor-input-container input').wait(1000).eq(1).type(transactionReference, {force:true});
+  cy.visit(location).wait(3000)
+  cy.get('[aria-colindex="2"] .dx-texteditor-input').type(transactionReference, {force:true})
+  // cy.get('.dx-datagrid-filter-row .dx-texteditor-input-container input').wait(1000).eq(1).type();
 
   cy.wait(2000);
 

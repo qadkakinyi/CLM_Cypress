@@ -86,7 +86,7 @@ describe('Add a client questionnaire - Individual', ()=>{
                 cy.wait(1000)
                 cy.get('#dynamicSelectBoxDropdownGrid td').contains('Open Ended').click({force:true})
                 cy.wait(1500)
-                cy.getByDataCy('reason-for-questionnaire').type(faker.word.verb())
+                cy.getByDataCy('reason-for-questionnaire').type(`Questionnaire ${faker.number.int({min:1, max:5})}`)
                 cy.getByDataCy("Questionnaire-next-step-btn").click().wait(3000)
             }
         })
