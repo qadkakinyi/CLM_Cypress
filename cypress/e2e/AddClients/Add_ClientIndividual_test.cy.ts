@@ -9,8 +9,8 @@ describe('Add Client Individual', () => {
   
   it('Add Client Individual', () => {
     // Click on Know your Clients navigation item
-    cy.getByDataCy('know-clients-btn').click().wait(2000);
-    cy.get('#addIndividual').click().wait(2000);
+    cy.getByDataCy('know-clients-btn').click();
+    cy.poll('#addIndividual').click()
 
     
     cy.get('#addClientIndividualForm input[name="firstName"]').type(firstName);
@@ -42,8 +42,8 @@ describe('Add Client Individual', () => {
     cy.get('#addClientIndividualForm input[name="ipAddress"]').type(faker.internet.ipv4());
     cy.get('#addClientIndividualForm textarea[name="notes"]').type(faker.lorem.paragraph());
 
-    cy.get('#saveClientIndividual').click().wait(3000);
-    cy.contains('Client individual has been added').wait(2000)
+    cy.get('#saveClientIndividual').click();
+    cy.poll('Client individual has been added').wait(1000)
     cy.location('pathname').then(path=>{
       const parts = path.split('/');
       clientId = parts[3];

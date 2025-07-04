@@ -35,8 +35,8 @@ describe('Regulation Groups', ()=>{
         cy.get('header > div .fa-clone').last().click().wait(1000)
         cy.getByFormControlName('newName').type('DKA Duplicate Group '+faker.string.alphanumeric(3))
         cy.getByFormControlName('hash').eq(1).type(hashValue)
-        cy.get('#duplicateRegulationGroupForm [icon="save"]').click().wait(8000)
-        // cy.contains('Duplicated regulation group has been added.').wait(1000)
+        cy.get('#duplicateRegulationGroupForm [icon="save"]').click()
+        cy.poll('Duplicated regulation group has been added.').wait(1000)
     })
 
     it('Edits a Regulation Group', ()=>{
@@ -45,7 +45,7 @@ describe('Regulation Groups', ()=>{
         cy.get('.sa-panel header .fa-share-square-o').last().click({force:true}).wait(2000)
         cy.getByFormControlName('name').clear().type('DKA Duplicate Group Edited')
         cy.contains('sa-button','Save & Close').click().wait(1500)
-        cy.contains('Regulation group has been updated.')
+        cy.poll('Regulation group has been updated.')
     })
 
     it('Synchronizes a Regulation Group', ()=>{
@@ -58,8 +58,8 @@ describe('Regulation Groups', ()=>{
         cy.getByFormControlName('regulationGroupCriteria').click()
         cy.get('.dx-datagrid tbody .dx-checkbox-icon').eq(1).click({force:true}).wait(1000)
         cy.getByFormControlName('regulationGroupCriteria').click().wait(500)
-        cy.get('[icon="recycle"] > .sa-button').click({force:true}).wait(4500)
-        cy.contains('Synchronization Completed')
+        cy.get('[icon="recycle"] > .sa-button').click({force:true})
+        cy.poll('Synchronization Completed')
         
     })
 
@@ -71,8 +71,7 @@ describe('Regulation Groups', ()=>{
         cy.get('[primary-buttons=""] > [icon="trash"] > .sa-button').click({force:true}).wait(1000)
         cy.get('.col > [icon="trash"]').click()
         cy.get('.MessageBoxButtonSection').contains('button', 'Yes').click()
-        cy.wait(20000)
-        cy.contains('The Regulation Group has been deleted.')
+        cy.poll('The Regulation Group has been deleted.')
     })
 
 

@@ -25,9 +25,11 @@ describe('Add and Delete Alternative Names - Corporate', ()=>{
     })
 
     it('Deletes Alternative Names',()=>{
-        cy.visit(location).wait(3000)
-        cy.get('.dx-icon-trash').first().click({force:true}).wait(1500)
-        cy.contains('Yes').click({force:true}).wait(1000)
+        cy.visit(location)
+        cy.waitUntilLoaderDisappears()
+        cy.get('.dx-datagrid-content-fixed .dx-command-edit > .dx-link').eq(0).click().wait(1000)
+        // cy.get('.dx-icon-trash').eq(0).click().should('be.visible').wait(1500)
+        cy.contains('.dx-button-text', 'Yes').click().wait(1000)
         cy.contains('The alternative name has been deleted').wait(1000)
     })
 })

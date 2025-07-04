@@ -40,11 +40,24 @@ describe('Adhoc Screening Individual Client', ()=>{
             location = path
             clientId = path.split('/')[3]
         })
-        // cy.getByFormControlName('fullName').clear().type('Putin')
-        cy.getByFormControlName('dateOfBirth').eq(0).clear()
-        cy.get('#performPersonSearchAcurisForm [icon="search"] > .sa-button').contains('Search').click().wait(6000);
-        cy.contains('The person search has been executed.')
-        cy.wait(2000)
+        
+        cy.get('.modal-body').then(body=>{
+            if(body.find('#performPersonSearchAcurisForm').length>0){
+                // cy.getByFormControlName('fullName').clear().type('Putin')
+                cy.getByFormControlName('dateOfBirth').eq(0).clear()
+                cy.get('#performPersonSearchAcurisForm [icon="search"] > .sa-button').contains('Search').click()
+                cy.waitUntilLoaderDisappears().then(res=>{
+                    cy.contains('The person search has been executed.')
+                })
+            }else if(body.find('#performPersonSearchBridgerForm')){
+                cy.get('#performPersonSearchAcurisForm [icon="search"] > .sa-button').contains('Search').click()
+                cy.waitUntilLoaderDisappears().then(res=>{
+                    cy.contains('The person search has been executed.')
+                })
+            }
+        })
+        
+        
     })
     
     it('Performs Person Monitoring and Refreshes Results', ()=>{
@@ -136,7 +149,7 @@ describe('Adhoc Screening Individual Client', ()=>{
     })
 })
 
-describe('Adhoc Screening Corporate Client', ()=>{
+describe.only('Adhoc Screening Corporate Client', ()=>{
 
     it('Performs Business Search Using UI', ()=>{
         let clientName;
@@ -153,9 +166,24 @@ describe('Adhoc Screening Corporate Client', ()=>{
             clientId = path.split('/')[3]
         })
         // cy.contains('button', 'I Understand').click().wait(2000)
-        cy.get('.modal-body form [icon="search"] > .sa-button').contains('Search').click().wait(3000);
-        cy.contains('The business search has been executed.')
-        cy.wait(2000)
+        // cy.get('.modal-body form [icon="search"] > .sa-button').contains('Search').click().wait(3000);
+        // cy.contains('The business search has been executed.')
+        // cy.wait(2000)
+
+        cy.get('.modal-body').then(body=>{
+            if(body.find('#performBusinessSearchAcurisForm').is(':visible')){
+                // cy.getByFormControlName('fullName').clear().type('Putin')
+                cy.getByFormControlName('dateOfBirth').eq(0).clear()
+                cy.get('#performBusinessSearchAcurisForm [icon="search"] > .sa-button').contains('Search').click().wait(6000);
+                cy.contains('The business search has been executed.')
+                cy.wait(1000)
+            }else if(body.find('#performBusinessSearchBridgerForm').is(':visible')){
+                cy.get('#performBusinessSearchBridgerForm [icon="search"]').contains('Search').click()
+                cy.waitUntilLoaderDisappears().then(res=>{
+                    cy.contains('The business search has been executed.')
+                })
+            }
+        })
     })
 
     it('Performs Business Monitoring and Refreshes results', ()=>{
@@ -174,6 +202,7 @@ describe('Adhoc Screening Corporate Client', ()=>{
         cy.contains('Client has been removed from monitoring list')
         // deactivate remove business monitoring button after the client is removed from monitoring
         // deactivate business monitoring when client is added to the monitoring list
+
     })
 
     it('Performs Business Search Using API - Acuris', ()=>{

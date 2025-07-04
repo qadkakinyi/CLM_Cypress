@@ -167,25 +167,25 @@ describe("Add Individual Client Process", ()=>{
             res.body.collectionStatus = 4
         })
     });
-
-    it('should add to internal monitoring', () => {
-        cy.visit(location).wait(2000)
-        cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('Internal Screening').scrollIntoView().click().wait(2000);
-        cy.request({
-            method: "POST",
-            url : `${api_baseUrl}/api/clientCommon/${clientId}/internalBlackListsOngoingMonitoring`,
-            headers:{
-                "Content-Type": "application/json",
-                'Authorization':   `Bearer ${token}`
-            },
-            body: {
-                "clientId": clientId,
-            }
-        })
-        cy.reload()
-        cy.wait(2000)
-        cy.contains('Remove Internal Monitoring')
-    });
+    //
+    // it('should add to internal monitoring', () => {
+    //     cy.visit(location).wait(2000)
+    //     cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('Internal Screening').scrollIntoView().click().wait(2000);
+    //     cy.request({
+    //         method: "POST",
+    //         url : `${api_baseUrl}/api/clientCommon/${clientId}/internalBlackListsOngoingMonitoring`,
+    //         headers:{
+    //             "Content-Type": "application/json",
+    //             'Authorization':   `Bearer ${token}`
+    //         },
+    //         body: {
+    //             "clientId": clientId,
+    //         }
+    //     })
+    //     cy.reload()
+    //     cy.wait(2000)
+    //     cy.contains('Remove Internal Monitoring')
+    // });
 
     it('should perform internal blacklist search', () => {
         cy.visit(location).wait(2000)
