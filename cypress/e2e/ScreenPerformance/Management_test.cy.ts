@@ -13,9 +13,10 @@ describe("Management Module", ()=>{
         ]
 
         routes.forEach((route,i)=>{
-            cy.getByDataCy("management-menu").scrollIntoView().click()
-            cy.getByDataCy("management-menu").scrollIntoView().should("be.visible").find("ul>li").eq(route.index)
-            cy.getByDataCy("management-menu").should("be.visible").find("ul>li").eq(route.index).click()
+            //FAVorites menu was copied to share data-cy value
+            cy.getByDataCy("management-menu").eq(1).scrollIntoView().click()
+            cy.getByDataCy("management-menu").eq(1).scrollIntoView().should("be.visible").find("ul>li").eq(route.index)
+            cy.getByDataCy("management-menu").eq(1).should("be.visible").find("ul>li").eq(route.index).click()
             cy.location("pathname").should("equal", route.route)
             
             cy.contains(route.assertion)

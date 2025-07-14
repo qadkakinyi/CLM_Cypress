@@ -2,7 +2,7 @@ describe('Dynamic Report Engine Setups', ()=>{
     before(()=>{
         //add email template
         cy.visit('/settings/email-templates').wait(2000)
-        
+
         cy.contains('sa-button', 'Add').click().wait(1000)
         cy.get('app-add-email-template')
         cy.getByFormControlName('subject').type('DKA Email Test')
@@ -17,7 +17,7 @@ describe('Dynamic Report Engine Setups', ()=>{
         cy.visit('/settings/dynamic-report-engine-setups').wait(2000)
         cy.contains('sa-button', 'Add').click().wait(1000)
         cy.get('dx-drop-down-box').eq(0).click().wait(500)
-        cy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview .dx-datagrid-content tr td').eq(3).click({force:true}).wait(2000)
+        cy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview .dx-datagrid-content tr td').eq(0).click({force:true}).wait(2000)
         
         cy.get('dx-drop-down-box').eq(1).click().wait(500)
         cy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview .dx-datagrid-content').eq(1).find('tr td').eq(0).click({force:true}).wait(500)

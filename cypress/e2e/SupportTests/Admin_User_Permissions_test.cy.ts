@@ -26,9 +26,15 @@ describe('Admin User Permissions', ()=>{
     })
     
     it('Drills into a client dashboard',()=>{
-        navigateToNewestClientMenu('Corporate')
-        cy.contains('Client Options')
-        cy.contains('Dashboard')
-        cy.contains('Profile')
+        let clientName;
+        cy.readFile('cypress/fixtures/client_corporate.json').then((data) =>{
+            clientName = data.companyName
+            navigateToNewestClientMenu(clientName)
+
+            cy.contains('Client Options')
+            cy.contains('Dashboard')
+            cy.contains('Profile')
+        })
+        
     })
 })

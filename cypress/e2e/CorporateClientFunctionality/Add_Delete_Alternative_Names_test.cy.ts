@@ -26,7 +26,7 @@ describe('Add and Delete Alternative Names - Corporate', ()=>{
 
     it('Deletes Alternative Names',()=>{
         cy.visit(location)
-        cy.waitUntilLoaderDisappears()
+        // cy.waitUntilLoaderDisappears()
         cy.get('.dx-datagrid-content-fixed .dx-command-edit > .dx-link').eq(0).click().wait(1000)
         // cy.get('.dx-icon-trash').eq(0).click().should('be.visible').wait(1500)
         cy.contains('.dx-button-text', 'Yes').click().wait(1000)
