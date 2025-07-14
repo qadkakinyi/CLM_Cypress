@@ -38,9 +38,10 @@ before(() => {
     }, {
         validate: ()=>{
             cy.visit('/main/dashboard');
+            cy.contains('Dashboard')
         }
     });
-    
+
     // loads this when session is restored
     cy.visit('/main/dashboard')
 });

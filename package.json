@@ -34,9 +34,6 @@
     "typescript": "^5.7.3"
   },
   "devDependencies": {
-    "cypress": "^14.0.1" 
+    "cypress": "^14.5.1"
   }
-  
-}  
-
-
+}

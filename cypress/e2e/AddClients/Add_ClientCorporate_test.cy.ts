@@ -6,7 +6,7 @@ describe('Add Client Corporate', () => {
   it('Add Client Corporate', () => {
     // Click on Know your Clients navigation item
     cy.getByDataCy('know-clients-btn').click()
-    cy.poll('#addCorporate').click();
+    cy.get('#addCorporate').click();
     cy.wait(1500)
 
     cy.get('#addClientCorporateForm input[name="registeredName"]').type(companyName);

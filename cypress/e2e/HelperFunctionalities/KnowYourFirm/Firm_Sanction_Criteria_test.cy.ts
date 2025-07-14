@@ -48,7 +48,7 @@ describe('Firm Sanction Criteria', ()=>{
         //add criterion answer
         cy.get('app-firm-sanction-criterion').contains('sa-button', 'Add').click().wait(500)
         cy.get('#addAnswerForm').getByFormControlName('name').eq(1).type('Test DKA').wait(500)
-        cy.get('#addAnswerForm').getByFormControlName('firmSanctionImpactScoreId').select(0)
+        cy.get('#addAnswerForm').getByFormControlName('firmSanctionImpactScoreId').select(1)
         cy.get('#addAnswerForm').getByFormControlName('isDefault').check()
 
         cy.get('#addAnswerForm [icon="save"]').click().wait(1000)

@@ -1,6 +1,7 @@
 const { defineConfig } = require("cypress");
 
-const baseUrl =  'https://complytek-testing-hotfix.regtek.co'
+// const baseUrl =  'https://complytek-testing-hotfix.regtek.co'
+const baseUrl =  'https://complytek-testing.regtek.co'
 // const baseUrl =  'http://localhost:4340/'
 
 module.exports = defineConfig({
@@ -72,6 +73,7 @@ module.exports = defineConfig({
     specPattern: '**/*.cy.ts'
   },
   env:{
-    api_baseUrl :  'https://complytek-testing-hotfix-api.regtek.co'
+    // api_baseUrl :  'https://complytek-testing-hotfix-api.regtek.co'
+    api_baseUrl :  'https://complytek-testing-api.regtek.co'
   }
 });

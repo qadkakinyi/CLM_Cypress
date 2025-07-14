@@ -88,7 +88,7 @@ Cypress.Commands.add("login", (username: string, password: string) => {
     cy.get('aside').then($aside => {
         const unpinIcon = $aside.find('.dx-icon-unpin');
         if (unpinIcon.length > 0) {
-            cy.wrap(unpinIcon).click().wait(500);
+            cy.wrap(unpinIcon).click({force:true}).wait(500);
         } else {
             cy.log('Sidebar already pinned or unpin icon missing.');
         }
@@ -168,7 +168,7 @@ Cypress.Commands.add('poll', function (
         if (el.length === 0) return false;
         return el.text().includes(text!) ? el : false;
     }, {
-        timeout: 60000,
+        timeout: 90000,
         interval: 500,
         description: isTextOnly
             ? `Waiting for text "${selectorOrText}" to appear anywhere`

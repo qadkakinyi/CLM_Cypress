@@ -29,8 +29,10 @@ describe('Criteria', ()=>{
     })
 
     it('Edits a Criteria', () => {
-        cy.visit('/settings/criteria').wait(10000)
-        cy.get('#gridCriteria tr .dx-first-cell .dx-texteditor-input').type('Bankrupt DKA', {force:true}).wait(10000)
+        cy.visit('/settings/criteria')
+        cy.waitUntilLoaderDisappears();
+        cy.get('#gridCriteria tr .dx-first-cell .dx-texteditor-input').type('Bankrupt DKA').wait(3000)
+        cy.waitUntilLoaderDisappears();
         cy.get('#gridCriteria tr td').find('.fa-angle-double-right').eq(0).click({force:true}).wait(3000)
 
         cy.getByFormControlName('name').clear().type('Bankrupt Criteria DKA').wait(500)
@@ -45,8 +47,10 @@ describe('Criteria', ()=>{
     })
 
     it('Deletes a Criteria', () => {
-        cy.visit('/settings/criteria').wait(10000)
-        cy.get('#gridCriteria tr .dx-first-cell .dx-texteditor-input').should('be.visible').type('Bankrupt Criteria DKA', {force:true}).wait(10000)
+        cy.visit('/settings/criteria')
+        cy.waitUntilLoaderDisappears()
+        cy.get('#gridCriteria tr .dx-first-cell .dx-texteditor-input').should('be.visible').type('Bankrupt Criteria DKA').wait(3000)
+        cy.waitUntilLoaderDisappears()
         cy.get('#gridCriteria tr td').find('.fa-angle-double-right').eq(0).click({force:true}).wait(2000)
         
         cy.get('[icon="trash"]').eq(0).click().wait(3000)

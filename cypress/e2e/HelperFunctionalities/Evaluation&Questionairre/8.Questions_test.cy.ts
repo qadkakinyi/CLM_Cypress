@@ -41,9 +41,9 @@ describe('Questions', ()=>{
         cy.getByFormControlName('capacities').eq(0).click().wait(200)
         cy.get('.dropdown-list .item2 li').eq(0).click().wait(200)
 
-        cy.getBySel('saveAndCloseButton').click().wait(1500)
+        cy.getBySel('saveAndCloseButton').click()
 
-        cy.contains(`Question has been updated.`).wait(1000)
+        cy.poll(`Question has been updated.`).wait(1000)
         
     })
     
@@ -51,7 +51,7 @@ describe('Questions', ()=>{
 
     it('Deletes a Question', () => {
         cy.visit('/settings/questions').wait(2000)
-        cy.get('#gridQuestions tr .dx-first-cell .dx-texteditor-input').type('Are you An English Native Speaker?', {force:true}).wait(3000)
+        cy.get('#gridQuestions tr .dx-first-cell .dx-texteditor-input').type('Are you a Legit Forex Trader?', {force:true}).wait(3000)
         cy.get('#gridQuestions tr td').find('.fa-angle-double-right').eq(0).click({force:true}).wait(2000)
 
         cy.get('[icon="trash"]').eq(0).click().wait(1000)
