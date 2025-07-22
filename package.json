@@ -11,8 +11,8 @@
     "prereport": "npm run delete:reports",
     "mochawesome:merge": "npx mochawesome-merge \"cypress/results/mochawesome/*.json\" > mochawesome.json && npx marge mochawesome.json",
     "junit:merge": "npx junit-merge -d cypress/results/junit -o cypress/results/junit/result.xml",
-    "cypress:Priority1": "cypress run --record --parallel --group smoke --spec 'cypress/e2e/AddClients/*.cy.ts'",
-    "cypress:Priority2": "cypress run --record --parallel --group smoke --spec 'cypress/e2e/OtherTests/**/*.cy.ts'",
+    "cypress:Priority1": "cypress run --record --group smoke --spec 'cypress/e2e/AddClients/*.cy.ts'",
+    "cypress:Priority2": "cypress run --record --group smoke --spec 'cypress/e2e/OtherTests/**/*.cy.ts'",
     "cypress:record": "cypress run --record --key 84a81a28-ebac-46c5-ab74-9fc43f7e0f56"
   },
   "repository": {
