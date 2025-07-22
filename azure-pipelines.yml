@@ -4,8 +4,7 @@ trigger:
       - master
 pool:
   vmImage: 'ubuntu-latest'
-variables:
-  CYPRESS_RECORD_KEY: $(CYPRESS_RECORD_KEY)
+
 jobs:
   - job: AddClientsTests
     displayName: Run add-clients tests
@@ -25,11 +24,13 @@ jobs:
         inputs:
           key: cy | package-lock.json
           path: /home/vsts/.cache/Cypress
-          restoreKeys: cy | package-lock.jso
+          restoreKeys: cy | package-lock.json
       - script: npm ci --verbose --prefer-offline
       - script: npm run cypress:Priority1 -- --ci-build-id $BUILD_BUILDNUMBER
       - script: npx wait-on 'http-get://complytek-testing-hotfix.regtek.co'
         workingDirectory: $(Build.SourcesDirectory)
+        env:
+          CYPRESS_RECORD_KEY: $(CYPRESS_RECORD_KEY)
      
   - job: OtherTests
     displayName: Run cypress:Priority2 (OtherTests)
@@ -55,3 +56,5 @@ jobs:
       - script: npm ci --verbose --prefer-offline
       - script: npm run cypress:Priority2 -- --ci-build-id $BUILD_BUILDNUMBER
         displayName: 'Run OtherTests Priority2 tests'
+        env:
+          CYPRESS_RECORD_KEY: $(CYPRESS_RECORD_KEY)
