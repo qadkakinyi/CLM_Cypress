@@ -23,14 +23,18 @@ jobs:
           path: /home/vsts/.cache/Cypress
           restoreKeys: cy | package-lock.json
       - script: npm ci --prefer-offline
+        workingDirectory: $(Build.SourcesDirectory)
       # Starts web server for E2E tests - replace with your own server invocation
       # https://docs.cypress.io/guides/continuous-integration/introduction#Boot-your-server
       - script: npm start &
+        workingDirectory: $(Build.SourcesDirectory)
       - script: npx wait-on 'http-get://complytek-testing-hotfix.regtek.co' # Waits for above
+        workingDirectory: $(Build.SourcesDirectory)
       # Runs tests in parallel and records to Cypress Cloud
       # https://docs.cypress.io/guides/cloud/projects#Set-up-a-project-to-record
       # https://docs.cypress.io/guides/guides/parallelization
       - script: npx cypress run --record --parallel --ci-build-id $BUILD_BUILDNUMBER
+        workingDirectory: $(Build.SourcesDirectory)
         # For recording and parallelization to work you must set your CYPRESS_RECORD_KEY
         # in Azure DevOps → Your Pipeline → Edit → Variables
         env:
