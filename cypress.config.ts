@@ -5,7 +5,7 @@ const baseUrl =  'https://complytek-testing.regtek.co'
 // const baseUrl =  'http://localhost:4340/'
 
 module.exports = defineConfig({
-  projectId: 's2jddr',
+  projectId: 'cohpdi',
   defaultCommandTimeout: 10000,
   numTestsKeptInMemory: 1, //prevents `aw snap` error from appearing
   viewportWidth: 1680,
