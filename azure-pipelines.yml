@@ -35,8 +35,8 @@ jobs:
   - job: OtherTests
     displayName: Run cypress:Priority2 (OtherTests)
     dependsOn: AddClientsTests
-    strategy:
-      parallel: 2
+#    strategy:
+#      parallel: 2
     steps:
       - task: UseNode@1
         inputs:
