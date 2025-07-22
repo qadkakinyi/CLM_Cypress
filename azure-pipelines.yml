@@ -22,6 +22,14 @@ jobs:
           key: cy | package-lock.json
           path: /home/vsts/.cache/Cypress
           restoreKeys: cy | package-lock.json
+      - script: |
+          echo "Current Directory: $(pwd)"
+          echo "Files:"
+          ls -la
+          echo "package.json contents:"
+          cat package.json || echo "package.json not found"
+          echo "package-lock.json contents:"
+          cat package-lock.json || echo "package-lock.json not found"
       - script: npm ci --prefer-offline
         workingDirectory: $(Build.SourcesDirectory)
       # Starts web server for E2E tests - replace with your own server invocation
