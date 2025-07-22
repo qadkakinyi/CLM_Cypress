@@ -11,7 +11,7 @@
     "prereport": "npm run delete:reports",
     "mochawesome:merge": "npx mochawesome-merge \"cypress/results/mochawesome/*.json\" > mochawesome.json && npx marge mochawesome.json",
     "junit:merge": "npx junit-merge -d cypress/results/junit -o cypress/results/junit/result.xml",
-    "cypress:record": "cypress run --record --key 8adb12bc-ad45-4e3b-8fe2-fbc5492b5fc2"
+    "cypress:record": "cypress run --record --key 84a81a28-ebac-46c5-ab74-9fc43f7e0f56"
   },
   "repository": {
     "type": "git",

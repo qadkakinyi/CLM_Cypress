@@ -59,7 +59,7 @@ module.exports = defineConfig({
     },
     baseUrl: baseUrl,
     supportFile: './cypress/support/e2e.ts',
-    projectId: "s2jddr",
+    projectId: "cohpdi",
     //experimentalSessionAndOrigin: true, //allow visiting different protocols 
     experimentalStudio: true,
     // experimentalRunAllSpecs: true,
