@@ -30,7 +30,7 @@ jobs:
           cat package.json || echo "package.json not found"
           echo "package-lock.json contents:"
           cat package-lock.json || echo "package-lock.json not found"
-      - script: npm ci --prefer-offline
+      - script: npm ci --verbose --prefer-offline
         workingDirectory: $(Build.SourcesDirectory)
       # Starts web server for E2E tests - replace with your own server invocation
       # https://docs.cypress.io/guides/continuous-integration/introduction#Boot-your-server
