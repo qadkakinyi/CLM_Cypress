@@ -26,7 +26,7 @@ jobs:
           path: /home/vsts/.cache/Cypress
           restoreKeys: cy | package-lock.json
       - script: npm ci --verbose --prefer-offline
-      - script: npm run cypress:Priority1 -- --ci-build-id $BUILD_BUILDNUMBER
+      - script: npm run cypress:Priority1 -- --ci-build-id build-$(Build_BuildI)
       - script: npx wait-on 'http-get://complytek-testing-hotfix.regtek.co'
         workingDirectory: $(Build.SourcesDirectory)
         env:
@@ -54,7 +54,7 @@ jobs:
           path: /home/vsts/.cache/Cypress
           restoreKeys: cy | package-lock.json
       - script: npm ci --verbose --prefer-offline
-      - script: npm run cypress:Priority2 -- --ci-build-id $BUILD_BUILDNUMBER
+      - script: npm run cypress:Priority2 -- --ci-build-id build-$(Build_BuildId)
         displayName: 'Run OtherTests Priority2 tests'
         env:
           CYPRESS_RECORD_KEY: $(CYPRESS_RECORD_KEY)
