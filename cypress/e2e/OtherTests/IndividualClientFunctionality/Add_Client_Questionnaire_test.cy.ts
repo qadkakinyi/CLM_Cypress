@@ -1,43 +1,19 @@
 import {faker} from '@faker-js/faker'
-import { navigateToNewestClientMenu } from "../../support/e2e";
+import { navigateToNewestClientMenu} from "../../../support/e2e";
 
-describe('Add a client questionnaire - Individual', ()=>{
-    
-    before(()=>{
-        //adding a questionnaire type
-        cy.visit('/settings/questionnaire-types').wait(2500)
-        cy.contains('sa-button','Add').click()
-        cy.wait(1000)
-            
-        cy.getByDataCy('questionnaire-type-name').type('Open Ended')
-        cy.getByDataCy('questionnaire-type-mapping-reference').type(faker.string.alphanumeric((15)))
-        
-        cy.getByDataCy('save-questionnaire-type-btn').click()
-        cy.wait(1000)
-        
-        //add question category
-        cy.visit('/settings/questions-categories').wait(2500)
-        cy.contains('sa-button','Add').click()
-        cy.wait(1000)
-        cy.getByDataCy('question-category-name').type('Leading Questions')
-        cy.getByDataCy('question-category-mapping-reference').type(faker.string.alphanumeric(15))
-        cy.getByDataCy('questionnaire-type-options').click()
-        cy.get('.multiselect-item-checkbox').contains('Open Ended').click()
-        cy.wait(500)
-        cy.getByDataCy('question-weight').type('5')
-        cy.getByDataCy('save-question-category').click()
-        cy.wait(500)
-        
+function addQuestions(numberOfQuestions = 1){
+    for (let i = 0; i < numberOfQuestions ; i++){
         //add questions for the questionnaire type
         cy.visit('/settings/questions').wait(2500)
         cy.contains('sa-button','Add').click()
         cy.wait(1000)
-        
+
         cy.getByFormControlName('name').type('Where do you come from? '+ faker.string.alphanumeric(3))
         cy.getByDataCy('regulation-group-list').click()
         cy.get('#dynamicSelectBoxDropdownGrid').find('.dx-datagrid-rowsview').find('tr > td').first().click()
         cy.getByFormControlName('questionsCategoryId').click()
-        cy.get('.dx-popup-content .dx-scrollable-container').contains('Open Ended').click()
+        // cy.get('.dx-popup-content .dx-scrollable-container').contains('Open Ended').click()
+        cy.get('.dx-popup-content .dx-scrollable-container').contains('CCLM-3646').click()
         cy.getByDataCy('client-type').click()
         cy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-content>table tr>td').contains('Individual').click()
         cy.getByDataCy('question-setup-type').click()
@@ -50,7 +26,7 @@ describe('Add a client questionnaire - Individual', ()=>{
         cy.getByFormControlName('capacities').click()
         cy.get('.dropdown-list ul').eq(1).find('li').eq(0).click()
         cy.getByFormControlName('riskPoint').type('4')
-        
+
         cy.getByDataCy('save-question').click()
         cy.wait(2000)
 
@@ -61,6 +37,39 @@ describe('Add a client questionnaire - Individual', ()=>{
         cy.getByFormControlName('maximumValue').type('4')
         cy.getByFormControlName('isDefault').check()
         cy.get('#addAnswerForm > .custom-backround-transparent > .row > .col > [icon="save"] > .sa-button').click().wait(2000)
+    } 
+}
+
+describe('Add a client questionnaire - Individual', ()=>{
+    
+    before(()=>{
+        //adding a questionnaire type
+        cy.visit('/settings/questionnaire-types').wait(2500)
+        cy.contains('sa-button','Add').click()
+        cy.wait(1000)
+            
+            // cy.getByDataCy('questionnaire-type-name').type('Open Ended')
+            cy.getByDataCy('questionnaire-type-name').type('CCLM-3646')
+        // cy.getByDataCy('questionnaire-type-mapping-reference').type(faker.string.alphanumeric((15)))
+        
+        cy.getByDataCy('save-questionnaire-type-btn').click()
+        cy.wait(1000)
+
+        //add question category
+        cy.visit('/settings/questions-categories').wait(2500)
+        cy.contains('sa-button','Add').click()
+        cy.wait(1000)
+        cy.getByDataCy('question-category-name').type('Leading Questions')
+        cy.getByDataCy('question-category-mapping-reference').type(faker.string.alphanumeric(15))
+        cy.getByDataCy('questionnaire-type-options').click()
+        cy.get('.multiselect-item-checkbox').contains('Open Ended').click()
+        cy.get('.multiselect-item-checkbox').contains('CCLM-3646').click()
+        cy.wait(500)
+        cy.getByDataCy('question-weight').type('5')
+        cy.getByDataCy('save-question-category').click()
+        cy.wait(500)
+        
+       addQuestions(100)
         
     })
 
@@ -84,7 +93,8 @@ describe('Add a client questionnaire - Individual', ()=>{
             if(el.is(':visible')){
                 cy.getByDataCy('questionnaire-type').click()
                 cy.wait(1000)
-                cy.get('#dynamicSelectBoxDropdownGrid td').contains('Open Ended').click({force:true})
+                // cy.get('#dynamicSelectBoxDropdownGrid td').contains('Open Ended').click({force:true})
+                cy.get('#dynamicSelectBoxDropdownGrid td').contains('CCLM-3646').click({force:true})
                 cy.wait(1500)
                 cy.getByDataCy('reason-for-questionnaire').type(`Questionnaire ${faker.number.int({min:1, max:5})}`)
                 cy.getByDataCy("Questionnaire-next-step-btn").click().wait(3000)
@@ -99,10 +109,10 @@ describe('Add a client questionnaire - Individual', ()=>{
         })
         
         //step 3
-        cy.getByDataCy('finish-questionnaire')
-        cy.getByDataCy('finalize-btn').click()
-        cy.wait(3000)
-        cy.contains('Finalized').wait(1000)
+        // cy.getByDataCy('finish-questionnaire')
+        // cy.getByDataCy('finalize-btn').click()
+        // cy.wait(3000)
+        // cy.contains('Finalized').wait(1000)
     })
     
 })

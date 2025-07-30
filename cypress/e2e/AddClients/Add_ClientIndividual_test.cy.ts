@@ -12,7 +12,7 @@ describe('Add Client Individual', () => {
     cy.getByDataCy('know-clients-btn').click();
     cy.poll('#addIndividual').click()
     cy.waitUntilLoaderDisappears()
-    
+    cy.wait(2000)
     cy.get('#addClientIndividualForm input[name="firstName"]').type(firstName);
     cy.get('#addClientIndividualForm input[name="lastName"]').type(lastName);
     cy.get('#addClientIndividualForm input[name="middleName"]').type(middleName);

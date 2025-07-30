@@ -108,7 +108,8 @@ export function navigateToNewestClientMenu(clientName:string){
         cy.get(`#gridClients .dx-datagrid-headers  .dx-datagrid-filter-row>[aria-colindex="${colIndex}"]`).eq(0).click().type(clientName).wait(2000).click().wait(2000)
     })
 
-    let gridClientsRows = cy.wrap('#gridClients table tbody tr');
-    gridClientsRows.get('.dx-command-edit-with-icons a').eq(0).click({ force: true })
-    cy.wait(3500);
+    // click double-right icon to navigate to selected client
+    cy.get('.dx-datagrid-table > tbody > .dx-data-row > .dx-command-edit .dx-link > .fa').eq(0).click({ force: true })
+    
+    cy.wait(3000);
 }

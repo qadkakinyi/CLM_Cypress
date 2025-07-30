@@ -40,6 +40,7 @@ describe('Add, Edit, Delete Client Address', () => {
     cy.location('pathname').then((loc)=>{
       location = loc
     })
+    cy.get('.MessageBoxButtonSection #bot2-Msg1').click()
     cy.contains('Address has been added.').wait(1000)
 
   });

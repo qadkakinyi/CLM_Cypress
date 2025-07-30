@@ -1,5 +1,5 @@
 import { faker } from "@faker-js/faker";
-import { navigateToNewestClientMenu} from "../../support/e2e";
+import { navigateToNewestClientMenu} from "../../../support/e2e";
 let externalReference = faker.string.alphanumeric(12);
 
 let location = '';

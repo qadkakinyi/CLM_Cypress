@@ -1,4 +1,4 @@
-import { navigateToNewestClientMenu} from "../../support/e2e";
+import { navigateToNewestClientMenu} from "../../../support/e2e";
 describe('Electronic Identification', ()=>{
     it('Checks if the Identity verifications page loads', ()=>{
 

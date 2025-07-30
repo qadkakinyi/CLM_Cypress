@@ -1,4 +1,4 @@
-import {filterClientType, navigateToClientMenu, navigateToNewestClientMenu} from "../../support/e2e";
+import { navigateToNewestClientMenu} from "../../../support/e2e";
 
 describe('Views the Individual Client Dashboard', ()=>{
     it('Checks if the dashboard loads correctly', ()=>{

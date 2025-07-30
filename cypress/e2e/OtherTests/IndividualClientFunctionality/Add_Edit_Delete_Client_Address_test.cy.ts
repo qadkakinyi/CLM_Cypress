@@ -40,6 +40,7 @@ describe('Add, Edit, Delete Client Address', () => {
     cy.get('#dynamicSelectBoxDropdownGrid table').contains('td', 'Correspondence').click();
 
     cy.getBySel('saveClientAddress').click().wait(1000);
+    cy.get('.MessageBoxButtonSection #bot2-Msg1').click()
     cy.contains('Address has been added.')
   });
 
