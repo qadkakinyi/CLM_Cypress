@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+
+<instance-profile id="c"
+                 name="CCLM"
+                 start-page="starter-topic.md">
+
+    <toc-element topic="starter-topic.md"/>
+<!--    <toc-element topic="1-adhoc-evaluation-types-test-cy-ts.topic"/>-->
+<!--    <toc-element topic="1-processes-test-cy-ts.topic"/>-->
+<!--    <toc-element topic="2-criteria-categories-test-cy-ts.topic"/>-->
+</instance-profile>

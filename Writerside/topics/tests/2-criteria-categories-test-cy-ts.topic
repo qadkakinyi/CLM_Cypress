@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="2.Criteria_Categories_test" id="2-criteria-categories-test-cy-ts">
+
+    <show-structure for="chapter,procedure" depth="2"/>
+    
+    <chapter title="Overview">
+        <p><b>File:</b> <code>OtherTests/HelperFunctionalities/Evaluation&amp;Questionairre/2.Criteria_Categories_test.cy.ts</code></p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Criteria Categories">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Adds Criteria Category" id="test-1">
+            <step>Execute test case</step>
+            <step>Verify expected results</step>
+        </procedure>
+        <procedure title="Edits a criteria category" id="test-2">
+            <step>Execute test case</step>
+            <step>Verify expected results</step>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+        <chapter title="Run Individual Test">
+            <code-block lang="bash">
+                npx cypress run --spec "OtherTests/HelperFunctionalities/Evaluation&amp;Questionairre/2.Criteria_Categories_test.cy.ts"
+            </code-block>
+        </chapter>
+        
+        <chapter title="Run in Interactive Mode">
+            <code-block lang="bash">
+                npx cypress open --spec "OtherTests/HelperFunctionalities/Evaluation&amp;Questionairre/2.Criteria_Categories_test.cy.ts"
+            </code-block>
+        </chapter>
+    </chapter>
+
+    <chapter title="Source Code">
+        <code-block lang="typescript" src="cypress/e2e/OtherTests/HelperFunctionalities/Evaluation&amp;Questionairre/2.Criteria_Categories_test.cy.ts" />
+    </chapter>
+
+</topic>
