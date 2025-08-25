@@ -28,17 +28,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Remove existing webHelpIN2-all directory
-        run: rm -rf webHelpIN-all
+      - name: Remove existing webHelpC2-all directory
+        run: rm -rf webHelpC2-all
 
-      - name: Unzip webHelpIN2-all.zip
-        run: unzip -o webHelpIN2-all.zip -d webHelpIN2-all
+      - name: Unzip webHelpC2-all.zip
+        run: unzip -o webHelpC2-all.zip -d webHelpC2-all
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
-          source: ./webHelpIN2-all
+          source: ./webHelpC2-all
           destination: ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
