@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Administration Tests" id="category-administration">
+
+   <chapter title="Overview">
+       <p>Test files in the <code>OtherTests/SideMenu/Administration</code> directory.</p>
+       <p><b>Total Files:</b> 4</p>
+   </chapter>
+
+   <chapter title="Test Files">
+       <chapter title="Administration Module - Navigation">
+           <p><b>File:</b> <code>Administration_test.cy.ts</code></p>
+           <p>Validates the Administration menu navigation: ensuring menu visibility, opening menu items, and verifying pages load without visible loaders.</p>
+           <p><a href="administration-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Administration - Audit Trail Extractions & Setups">
+           <p><b>File:</b> <code>Audit_Trail_Extractions_And_Setups_test.cy.ts</code></p>
+           <p>Verifies that all Audit Trail-related menu items under Administration navigate to the correct pages, display expected content, and load without visible loaders.</p>
+           <p><a href="audit-trail-extractions-and-setups-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Administration - Other Settings Navigation">
+           <p><b>File:</b> <code>Other_Settings_test.cy.ts</code></p>
+           <p>Verifies that each menu item under "Other Settings" in the Administration menu navigates to the correct page, displays the expected content, and loads without visible loaders.</p>
+           <p><a href="other-settings-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Administration - User Management Navigation">
+           <p><b>File:</b> <code>User_Management_test.cy.ts</code></p>
+           <p>Verifies that each menu item under "User Management" in the Administration menu navigates to the correct page, displays the expected content, and loads without visible loaders.</p>
+           <p><a href="user-management-test.topic">View Test Details</a></p>
+       </chapter>
+   </chapter>
+
+</topic>

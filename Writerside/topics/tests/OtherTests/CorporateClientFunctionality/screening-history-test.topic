@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Screening History - Corporate" id="screening-history-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/CorporateClientFunctionality/Screening_History_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/CorporateClientFunctionality</code></p>
+        <p><b>Description:</b> Verifies navigation to the Screening History (Negative Lists History) section for corporate clients</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> screening, navigation, corporate</p>
+        <p><b>Dependencies:</b> client_corporate.json</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Screening History">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Navigates to Screening Page" id="test-1">
+            <p><b>Scenario:</b> Navigate to Screening History</p>
+            <p>Navigates to the Screening History section of the corporate client profile</p>
+            <step>Execute test case</step>
+            <step>Verify expected results</step>
+            <chapter title="Expected Results">
+                <p>• The Negative Lists History page is displayed successfully</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/CorporateClientFunctionality/Screening_History_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/CorporateClientFunctionality/Screening_History_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/CorporateClientFunctionality/Screening_History_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

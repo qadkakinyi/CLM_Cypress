@@ -1,3 +1,12 @@
+/**
+ * @testSuite Administration - User Management Navigation
+ * @description Verifies that each menu item under "User Management" in the Administration menu navigates to the correct page, displays the expected content, and loads without visible loaders.
+ * @priority Medium
+ * @owner QA Team
+ * @tags regression, navigation, administration, user-management
+ * @dependencies cypress, getByDataCy
+ * @fileDescription Iterates through the User Management submenu to validate route correctness, expected text, and loader behavior.
+ */
 
 describe("User Management", ()=>{
 
@@ -7,6 +16,15 @@ describe("User Management", ()=>{
         {index:2, route:"/administration/users", assertion:"Users"}
     ]
 
+    /**
+     * @suite User Management Menu Access
+     * @description Confirms that the User Management submenu under Administration contains the expected number of menu items.
+     * @prerequisites User is logged in and has access to the Administration menu.
+     * @steps Visit /main/dashboard.
+     * @steps Expand the Administration menu and click the 3rd item (User Management).
+     * @expectedResult The User Management submenu is visible and contains exactly 3 items.
+     * @priority Medium
+     */
     it("Opens User Management Menus", ()=>{
         cy.visit('/main/dashboard')
         cy.getByDataCy("administration-menu").should("be.visible").click()
@@ -16,6 +34,18 @@ describe("User Management", ()=>{
 
     routes.forEach((route)=>{
 
+        /**
+         * @scenario Access User Management Page
+         * @description Opens a specific User Management page and verifies URL, page heading, and loader behavior.
+         * @priority Medium
+         * @testData index = route.index, expectedPath = route.route, expectedText = route.assertion.
+         * @steps Visit /main/dashboard.
+         * @steps Pin the sidebar if necessary.
+         * @steps Expand the Administration menu and open the User Management submenu.
+         * @steps Click the submenu item by index and verify the path matches expected route.
+         * @steps Wait for page load, confirm loader ".sk-ball-spin-clockwise" is not visible, and assert presence of expected text.
+         * @expectedResult Page loads correctly with matching URL and assertion text, and loader is not visible.
+         */
         it(`Accesses ${route.assertion} page`, ()=> {
 
             if (route.index <= routes.length - 1) {
@@ -47,3 +77,4 @@ describe("User Management", ()=>{
         })
     })
 })
+

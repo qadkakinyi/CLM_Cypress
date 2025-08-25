@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Sub-group Values Match" id="sub-groups-values-match-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/SupportTests/Sub-groups_values_Match_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/SupportTests</code></p>
+        <p><b>Description:</b> Validates that the sub-group value under Screening Possible Matches in the Main Dashboard's "Actions for Review" matches the corresponding value in the client profile.</p>
+        <p><b>Priority:</b> High</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> screening, profile, regression</p>
+        <p><b>Dependencies:</b> cypress</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Sub-group values Match">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="checks if subgroup values under screening possible matches (Main Dashboard - Actions for review) match the values in the profile" id="test-1">
+            <p><b>Scenario:</b> Verify Sub-group Value Consistency</p>
+            <p>Checks if the sub-group value from Screening Possible Matches (Actions for Review) matches the sub-group value in the client profile.</p>
+            <p><b>Priority:</b> High</p>
+            <step>1. Wait for the dashboard to load. 2. Click on the "Screening Actions for Review" card. 3. Retrieve the sub-group name from the pending actions table. 4. Open the first client record from the list. 5. Navigate to the "Profile" section. 6. Assert that the sub-group value matches the retrieved one.</step>
+            <chapter title="Expected Results">
+                <p>• The sub-group value in the client profile matches the one displayed in the Screening Pending Actions list.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/SupportTests/Sub-groups_values_Match_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/SupportTests/Sub-groups_values_Match_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/SupportTests/Sub-groups_values_Match_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

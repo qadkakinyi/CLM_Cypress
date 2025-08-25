@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Client Management" id="clientmanagement-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/SideMenu/ClientManagement_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/SideMenu</code></p>
+        <p><b>Description:</b> Verifies that clicking the "Know Your Clients" button navigates to the Client Management page.</p>
+        <p><b>Priority:</b> High</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, navigation, client-management</p>
+        <p><b>Dependencies:</b> cypress, getByDataCy</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Client Management">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Load the list of clients" id="test-1">
+            <p><b>Scenario:</b> Load the List of Clients</p>
+            <p>Clicks the "Know Your Clients" button and validates correct page navigation and heading visibility.</p>
+            <p><b>Priority:</b> High</p>
+            <step>From dashboard → Click "Know Your Clients" button.</step>
+            <step>Confirm that the URL path is "/main/clients".</step>
+            <step>Verify that "Client Management" heading is visible.</step>
+            <chapter title="Expected Results">
+                <p>• User is navigated to the Client Management page with correct heading displayed.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/SideMenu/ClientManagement_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/SideMenu/ClientManagement_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/SideMenu/ClientManagement_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

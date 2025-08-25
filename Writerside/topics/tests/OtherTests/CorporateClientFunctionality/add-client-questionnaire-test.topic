@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="AddClientQuestionnaire - Corporate Questionnaire Flow" id="add-client-questionnaire-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/CorporateClientFunctionality/Add_Client_Questionnaire_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/CorporateClientFunctionality</code></p>
+        <p><b>Description:</b> Full workflow for creating a questionnaire type, adding question categories, adding questions and answers, and assigning a questionnaire to a corporate client.</p>
+        <p><b>Priority:</b> High</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, corporate, questionnaire</p>
+        <p><b>Dependencies:</b> regulation-group-data, questionnaire-types, faker-js, UI-capacity-menu</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Add a client questionnaire - Corporate">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Adds questionnaire type, creates question categories, creates a question then adds a questionnaire" id="test-1">
+            <p><b>Scenario:</b> Questionnaire Setup</p>
+            <p>Adds questionnaire type, question category, and questions with answers via settings screens.</p>
+            <p><b>Test Data:</b> Faker-generated values for names, references, and text</p>
+            <step>Visit Questionnaire Type settings and create one</step>
+            <step>Create Question Category and map to Questionnaire Type</step>
+            <step>Create Question and attach to Regulation Group and Category</step>
+            <step>Add answers to question</step>
+            <chapter title="Expected Results">
+                <p>• Questionnaire setup should be complete and visible in client questionnaire UI</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/CorporateClientFunctionality/Add_Client_Questionnaire_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/CorporateClientFunctionality/Add_Client_Questionnaire_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/CorporateClientFunctionality/Add_Client_Questionnaire_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

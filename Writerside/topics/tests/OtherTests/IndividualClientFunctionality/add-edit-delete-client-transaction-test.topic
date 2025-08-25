@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Client Transactions (Individual)" id="add-edit-delete-client-transaction-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/IndividualClientFunctionality/Add_Edit_Delete_Client_Transaction_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/IndividualClientFunctionality</code></p>
+        <p><b>Description:</b> Validates add/edit/delete flows for a client's Transactions detail line.</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA</p>
+        <p><b>Tags:</b> individual, transactions, crud</p>
+        <p><b>Dependencies:</b> navigateToNewestClientMenu</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Add, Edit, Delete Client Transactions - Individual">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Add Client Transactions" id="test-1">
+            <p>Navigates to the client’s Transactions grid and opens the first row matching the provided external reference.</p>
+            <step>Visit Transactions → filter by external reference → open first matching row</step>
+            <chapter title="Expected Results">
+                <p>• Edit form is opened for the targeted transaction.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Edit client Transactions" id="test-2">
+            <p>Navigates to the client’s Transactions grid and opens the first row matching the provided external reference.</p>
+            <step>Visit Transactions → filter by external reference → open first matching row</step>
+            <chapter title="Expected Results">
+                <p>• Edit form is opened for the targeted transaction.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Delete client Transactions" id="test-3">
+            <p>Navigates to the client’s Transactions grid and opens the first row matching the provided external reference.</p>
+            <step>Visit Transactions → filter by external reference → open first matching row</step>
+            <chapter title="Expected Results">
+                <p>• Edit form is opened for the targeted transaction.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/IndividualClientFunctionality/Add_Edit_Delete_Client_Transaction_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/IndividualClientFunctionality/Add_Edit_Delete_Client_Transaction_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/IndividualClientFunctionality/Add_Edit_Delete_Client_Transaction_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Transaction Screening Audit Trail Setup" id="11-audit-trail-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/TransactionScreening/11.Audit_Trail_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/TransactionScreening</code></p>
+        <p><b>Description:</b> Ensures audit trail setups exist for Transaction Screening Case fields: AutoStatus and CaseStatus.</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, administration, audit-trail, configuration</p>
+        <p><b>Dependencies:</b> cypress</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Transaction Screening Audit TRail Setup">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="should setup Audit logs for Auto Status Changes" id="test-1">
+            <p><b>Scenario:</b> Configure Audit Trail for Auto Status</p>
+            <p>Adds a field log setup entry for TransactionScreeningCase → AutoStatus under the Default context.</p>
+            <p><b>Priority:</b> Medium</p>
+            <step>1) Visit /administration/field-log-setups. 2) Click Add. 3) Select Context = Default. 4) Select Entity = TransactionScreeningCase. 5) Select Field = AutoStatus. 6) Save and accept either success or “already exists”.</step>
+            <chapter title="Expected Results">
+                <p>• A setup exists for AutoStatus (either newly added or already present).</p>
+            </chapter>
+        </procedure>
+        <procedure title="should setup Audit logs for Case Status Changes" id="test-2">
+            <p><b>Scenario:</b> Configure Audit Trail for Auto Status</p>
+            <p>Adds a field log setup entry for TransactionScreeningCase → AutoStatus under the Default context.</p>
+            <p><b>Priority:</b> Medium</p>
+            <step>1) Visit /administration/field-log-setups. 2) Click Add. 3) Select Context = Default. 4) Select Entity = TransactionScreeningCase. 5) Select Field = AutoStatus. 6) Save and accept either success or “already exists”.</step>
+            <chapter title="Expected Results">
+                <p>• A setup exists for AutoStatus (either newly added or already present).</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/TransactionScreening/11.Audit_Trail_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/TransactionScreening/11.Audit_Trail_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/TransactionScreening/11.Audit_Trail_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

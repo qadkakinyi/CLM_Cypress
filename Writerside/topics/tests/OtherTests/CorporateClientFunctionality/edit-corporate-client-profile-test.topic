@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Client Profile - Corporate" id="edit-corporate-client-profile-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/CorporateClientFunctionality/Edit_Corporate_Client_Profile_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/CorporateClientFunctionality</code></p>
+        <p><b>Description:</b> Tests related to editing the corporate client profile</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> client-profile, corporate</p>
+        <p><b>Dependencies:</b> client_corporate.json</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Edit Corporate Client Profile">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Edit Corporate Profile" id="test-1">
+            <p><b>Scenario:</b> Edit Corporate Profile</p>
+            <p>Updates the phone number on the corporate client profile and confirms page navigation</p>
+            <step>Execute test case</step>
+            <step>Verify expected results</step>
+            <chapter title="Expected Results">
+                <p>• Phone number is updated and 'Tree Structure' section is visible</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/CorporateClientFunctionality/Edit_Corporate_Client_Profile_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/CorporateClientFunctionality/Edit_Corporate_Client_Profile_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/CorporateClientFunctionality/Edit_Corporate_Client_Profile_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

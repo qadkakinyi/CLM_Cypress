@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Individual Client Documents" id="add-edit-delete-client-document-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/IndividualClientFunctionality/Add_Edit_Delete_Client_Document_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/IndividualClientFunctionality</code></p>
+        <p><b>Description:</b> Validates adding, editing, and deleting documents on an individual client profile</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, smoke, documents</p>
+        <p><b>Dependencies:</b> faker-js, navigateToNewestClientMenu</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Add, Edit, Delete Client Document - Individual">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Add Client Document" id="test-1">
+            <p><b>Scenario:</b> Add Client Document</p>
+            <p>Adds a new document to the individual client using a predefined document template</p>
+            <p><b>Priority:</b> Medium</p>
+            <p><b>Test Data:</b> Faker-generated document number and comment text</p>
+            <step>Load client from fixture and navigate to newest client</step>
+            <step>Open Documents section and click Add</step>
+            <step>Pick document, collection status, country, form; fill document number and comment</step>
+            <step>Pick certified/reviewed users and click Save</step>
+            <chapter title="Expected Results">
+                <p>• Document is saved and visible in the grid</p>
+            </chapter>
+        </procedure>
+        <procedure title="Edit Client Document" id="test-2">
+            <p><b>Scenario:</b> Add Client Document</p>
+            <p>Adds a new document to the individual client using a predefined document template</p>
+            <p><b>Priority:</b> Medium</p>
+            <p><b>Test Data:</b> Faker-generated document number and comment text</p>
+            <step>Load client from fixture and navigate to newest client</step>
+            <step>Open Documents section and click Add</step>
+            <step>Pick document, collection status, country, form; fill document number and comment</step>
+            <step>Pick certified/reviewed users and click Save</step>
+            <chapter title="Expected Results">
+                <p>• Document is saved and visible in the grid</p>
+            </chapter>
+        </procedure>
+        <procedure title="Delete Client Document" id="test-3">
+            <p><b>Scenario:</b> Add Client Document</p>
+            <p>Adds a new document to the individual client using a predefined document template</p>
+            <p><b>Priority:</b> Medium</p>
+            <p><b>Test Data:</b> Faker-generated document number and comment text</p>
+            <step>Load client from fixture and navigate to newest client</step>
+            <step>Open Documents section and click Add</step>
+            <step>Pick document, collection status, country, form; fill document number and comment</step>
+            <step>Pick certified/reviewed users and click Save</step>
+            <chapter title="Expected Results">
+                <p>• Document is saved and visible in the grid</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/IndividualClientFunctionality/Add_Edit_Delete_Client_Document_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/IndividualClientFunctionality/Add_Edit_Delete_Client_Document_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/IndividualClientFunctionality/Add_Edit_Delete_Client_Document_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

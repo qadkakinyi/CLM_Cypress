@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Additional External References - Corporate" id="additional-external-refences-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/CorporateClientFunctionality/Additional_External_Refences_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/CorporateClientFunctionality</code></p>
+        <p><b>Description:</b> Covers end-to-end operations for additional external references for a corporate client</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> client-profile, references, external</p>
+        <p><b>Dependencies:</b> faker-js, client_corporate.json</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Add, Edit, Delete Additional External References - Corporate">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Add Client external reference" id="test-1">
+            <p><b>Scenario:</b> Add Additional External Reference</p>
+            <p>Adds a new external reference URL to a corporate client</p>
+            <step>Execute test case</step>
+            <step>Verify expected results</step>
+            <chapter title="Expected Results">
+                <p>• Reference is saved successfully and confirmation message appears</p>
+            </chapter>
+        </procedure>
+        <procedure title="Edit Client external reference" id="test-2">
+            <p><b>Scenario:</b> Add Additional External Reference</p>
+            <p>Adds a new external reference URL to a corporate client</p>
+            <step>Execute test case</step>
+            <step>Verify expected results</step>
+            <chapter title="Expected Results">
+                <p>• Reference is saved successfully and confirmation message appears</p>
+            </chapter>
+        </procedure>
+        <procedure title="Delete Client external reference" id="test-3">
+            <p><b>Scenario:</b> Add Additional External Reference</p>
+            <p>Adds a new external reference URL to a corporate client</p>
+            <step>Execute test case</step>
+            <step>Verify expected results</step>
+            <chapter title="Expected Results">
+                <p>• Reference is saved successfully and confirmation message appears</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/CorporateClientFunctionality/Additional_External_Refences_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/CorporateClientFunctionality/Additional_External_Refences_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/CorporateClientFunctionality/Additional_External_Refences_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

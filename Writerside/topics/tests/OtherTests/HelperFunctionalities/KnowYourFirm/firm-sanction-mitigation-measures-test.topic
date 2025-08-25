@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Firm Sanction Mitigation Measures" id="firm-sanction-mitigation-measures-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/HelperFunctionalities/KnowYourFirm/Firm_Sanction_Mitigation_Measures_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/HelperFunctionalities/KnowYourFirm</code></p>
+        <p><b>Description:</b> This suite is skipped because the related functionality has been removed from the system.</p>
+        <p><b>Priority:</b> Low</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> firm, sanctions, mitigation, deprecated</p>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Adds a Firm Sanction Mitigation Measure" id="test-1">
+            <p><b>Scenario:</b> Add Firm Sanction Mitigation Measure</p>
+            <p>Adds a new sanction mitigation measure with regulation group and related selections</p>
+            <step>1. Navigate to Firm Sanction Mitigation Measures. 2. Click "Add". 3. Enter Name. 4. Select Regulation Group. 5. Select related checkboxes. 6. Save the record.</step>
+            <chapter title="Expected Results">
+                <p>• A new firm sanction mitigation measure is added with a confirmation message.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Edits a firm sanction mitigation measure" id="test-2">
+            <p><b>Scenario:</b> Add Firm Sanction Mitigation Measure</p>
+            <p>Adds a new sanction mitigation measure with regulation group and related selections</p>
+            <step>1. Navigate to Firm Sanction Mitigation Measures. 2. Click "Add". 3. Enter Name. 4. Select Regulation Group. 5. Select related checkboxes. 6. Save the record.</step>
+            <chapter title="Expected Results">
+                <p>• A new firm sanction mitigation measure is added with a confirmation message.</p>
+            </chapter>
+        </procedure>
+        <procedure title="should delete a firm mitigation" id="test-3">
+            <p><b>Scenario:</b> Add Firm Sanction Mitigation Measure</p>
+            <p>Adds a new sanction mitigation measure with regulation group and related selections</p>
+            <step>1. Navigate to Firm Sanction Mitigation Measures. 2. Click "Add". 3. Enter Name. 4. Select Regulation Group. 5. Select related checkboxes. 6. Save the record.</step>
+            <chapter title="Expected Results">
+                <p>• A new firm sanction mitigation measure is added with a confirmation message.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/HelperFunctionalities/KnowYourFirm/Firm_Sanction_Mitigation_Measures_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/HelperFunctionalities/KnowYourFirm/Firm_Sanction_Mitigation_Measures_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/HelperFunctionalities/KnowYourFirm/Firm_Sanction_Mitigation_Measures_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

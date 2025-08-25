@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="eGOV Requests Handling" id="handle-egov-requests-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/SupportTests/Handle_egov_requests_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/SupportTests</code></p>
+        <p><b>Description:</b> Verifies that the eGOV requests handling process works as expected, including selecting specific requests and attempting to send related emails.</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, processes, eGOV, email</p>
+        <p><b>Dependencies:</b> cypress</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="eGOV Requests">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="handles eGOV requests" id="test-1">
+            <p><b>Scenario:</b> Handle and Send eGOV Requests Emails</p>
+            <p>Selects an individual eGOV request (not all), processes it, attempts to send emails, and validates the inactive account message appears.</p>
+            <p><b>Priority:</b> Medium</p>
+            <step>1) Visit `/processes/handle-eGOV-requests`. 2) Skip the "Select All" checkbox and select the next checkbox (index 1). 3) Click "Handle eGOV Requests". 4) Click "Send Emails" in the send email modal. 5) Verify that a message appears indicating the eGOV account is inactive.</step>
+            <chapter title="Expected Results">
+                <p>• The process runs, attempts email sending, and the system displays "Your eGOV account is inactive".</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/SupportTests/Handle_egov_requests_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/SupportTests/Handle_egov_requests_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/SupportTests/Handle_egov_requests_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

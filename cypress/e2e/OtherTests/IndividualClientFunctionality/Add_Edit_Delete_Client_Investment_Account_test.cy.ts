@@ -5,21 +5,36 @@ let externalReference = faker.string.alphanumeric(12);
 let accountNumber = faker.finance.accountNumber();
 let client_id = '';
 
+/**
+ * @testSuite Client Investment Account Management
+ * @description Validates adding, editing, and deleting of client investment accounts.
+ * @priority High
+ * @owner QA
+ * @tags investment, client
+ * @expectedResult Users can add, update, and remove investment accounts successfully.
+ */
 describe('Add, Edit, Delete Client Investment Account', () => {
-  
+
   before(()=>{
     cy.visit('/settings/investment-account-types')
-    cy.contains('sa-button','Add').click()
-    cy.wait(1000)
-    
+    cy.contains('sa-button','Add').click().wait(1000)
+
     cy.getByDataCy("investment-account-type-name").type('Fixed Account-test')
     cy.getByDataCy("investment-account-type-mapping-reference").type('fixed-acc-types')
 
     cy.contains('#addInvestmentAccountTypeForm [icon="save"]','Save').click()
     cy.wait(1000)
-    
   })
-  
+
+  /**
+   * @scenario Add Client Investment Account
+   * @description Adds a new investment account to a client profile.
+   * @steps
+   * 1. Navigate to a client’s profile.
+   * 2. Open Investment Accounts.
+   * 3. Fill in account details and save.
+   * @expectedResult The new investment account is saved successfully.
+   */
   it('Add Client Investment Account', () => {
     let clientName;
     cy.readFile('cypress/fixtures/client_individual.json').then((data) =>{
@@ -59,8 +74,16 @@ describe('Add, Edit, Delete Client Investment Account', () => {
     });
   });
 
+  /**
+   * @scenario Edit Client Investment Account
+   * @description Updates the account number of an existing investment account.
+   * @steps
+   * 1. Navigate to Investment Accounts for the client.
+   * 2. Search for the account by account number.
+   * 3. Edit and update the account number.
+   * @expectedResult The account number is updated successfully.
+   */
   it('Edit client investment account', () => {
-    // Edit Cards
     cy.visit(`/main/client-individual/${client_id}/1/investmentaccounts`).wait(2000)
     cy.getBySel('gridClientInvestmentAccounts').should('be.visible').then(() => {
       cy.get('.dx-datagrid-filter-row .dx-texteditor-input-container input').eq(1).type(accountNumber);
@@ -78,8 +101,17 @@ describe('Add, Edit, Delete Client Investment Account', () => {
 
       cy.getBySel('saveAndCloseButton').click().wait(1000);
     });
-  })
+  });
 
+  /**
+   * @scenario Delete Client Investment Account
+   * @description Removes an existing investment account from a client profile.
+   * @steps
+   * 1. Navigate to Investment Accounts for the client.
+   * 2. Search for the account by account number.
+   * 3. Delete the account and confirm.
+   * @expectedResult The investment account is deleted successfully.
+   */
   it('Delete client investment account', () => {
     cy.visit(`/main/client-individual/${client_id}/1/investmentaccounts`).wait(2000)
     cy.getBySel('gridClientInvestmentAccounts').should('be.visible');
@@ -93,5 +125,6 @@ describe('Add, Edit, Delete Client Investment Account', () => {
     // Delete Cards
     cy.getBySel('deleteInvestmentAccount').scrollIntoView().click();
     cy.get('#bot2-Msg1').contains('Yes').click().wait(1000);
-  })
-})
+  });
+});
+

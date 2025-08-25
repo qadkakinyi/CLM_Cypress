@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Evaluation&Questionairre Tests" id="category-evaluation-questionairre">
+
+   <chapter title="Overview">
+       <p>Test files in the <code>OtherTests/HelperFunctionalities/Evaluation&Questionairre</code> directory.</p>
+       <p><b>Total Files:</b> 8</p>
+   </chapter>
+
+   <chapter title="Test Files">
+       <chapter title="AdHoc Evaluation Types">
+           <p><b>File:</b> <code>1.AdHoc_Evaluation_Types_test.cy.ts</code></p>
+           <p>Tests adding, editing, and deleting Evaluation Types in the settings section.</p>
+           <p><a href="1-adhoc-evaluation-types-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Criteria Categories">
+           <p><b>File:</b> <code>2.Criteria_Categories_test.cy.ts</code></p>
+           <p>Tests adding and editing criteria categories in the settings section.</p>
+           <p><a href="2-criteria-categories-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Criteria Management">
+           <p><b>File:</b> <code>3.Criteria_test.cy.ts</code></p>
+           <p>Tests adding, editing, and deleting criteria in the settings section.</p>
+           <p><a href="3-criteria-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Evaluation Grades Management">
+           <p><b>File:</b> <code>4.Evaluation_Grades_test.cy.ts</code></p>
+           <p>Tests adding, editing, and deleting both Overall and Answer Evaluation Grades in the settings section.</p>
+           <p><a href="4-evaluation-grades-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Questionnaire Grades Management">
+           <p><b>File:</b> <code>5.Questionnaire_Grades_test.cy.ts</code></p>
+           <p>Tests adding, editing, and deleting Questionnaire Grades in the settings section.</p>
+           <p><a href="5-questionnaire-grades-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Questionnaire Types Management">
+           <p><b>File:</b> <code>6.Questionnaire_Types_test.cy.ts</code></p>
+           <p>Tests adding and editing questionnaire types in the settings section.</p>
+           <p><a href="6-questionnaire-types-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Questionnaire Categories">
+           <p><b>File:</b> <code>7.Questions_Categories_test.cy.ts</code></p>
+           <p>Covers adding and editing questionnaire categories in the settings section.</p>
+           <p><a href="7-questions-categories-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Questions">
+           <p><b>File:</b> <code>8.Questions_test.cy.ts</code></p>
+           <p>Covers adding, editing, and deleting questions, as well as related questionnaire categories and types.</p>
+           <p><a href="8-questions-test.topic">View Test Details</a></p>
+       </chapter>
+   </chapter>
+
+</topic>

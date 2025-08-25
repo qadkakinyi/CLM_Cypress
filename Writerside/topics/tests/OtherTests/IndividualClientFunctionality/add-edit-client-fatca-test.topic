@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Individual Client FATCA" id="add-edit-client-fatca-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/IndividualClientFunctionality/Add_Edit_Client_FATCA_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/IndividualClientFunctionality</code></p>
+        <p><b>Description:</b> End-to-end validation of configuring FATCA prerequisites in Settings and assigning FATCA data to an individual client</p>
+        <p><b>Priority:</b> High</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, smoke, compliance, FATCA, individual</p>
+        <p><b>Dependencies:</b> faker-js, navigateToNewestClientMenu</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Add, Delete Client FATCA">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Add Client FATCA" id="test-1">
+            <p>Ensures required reference data exists before client-level FATCA can be added</p>
+            <step>Visit Settings → FATCA Setup</step>
+            <step>Add FATCA Status with random mapping reference and save</step>
+            <step>Add FATCA Entity Categorization (“Test Category”) and save</step>
+            <step>Add FATCA Document (“Test Document”) and save</step>
+            <step>Add FATCA CRS Entity Categorization (“Test CRS”) and save</step>
+            <chapter title="Expected Results">
+                <p>• All four reference records are present and selectable on the client FATCA form</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/IndividualClientFunctionality/Add_Edit_Client_FATCA_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/IndividualClientFunctionality/Add_Edit_Client_FATCA_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/IndividualClientFunctionality/Add_Edit_Client_FATCA_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Dynamic Report Engine Setups" id="dynamic-report-engine-setups-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/HelperFunctionalities/TransactionMonitoring&Actions/Dynamic_Report_Engine_Setups_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/HelperFunctionalities/TransactionMonitoring&Actions</code></p>
+        <p><b>Description:</b> Covers creation, modification, and deletion of dynamic report setups and related email templates</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> reporting, email, configuration</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Dynamic Report Engine Setups">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Adds Dynamic Report Setup" id="test-1">
+            <p><b>Scenario:</b> Precondition - Add Email Template</p>
+            <p>Creates an email template to be linked with a dynamic report setup</p>
+            <step>1. Navigate to Email Templates page 2. Click "Add" 3. Fill out Subject, select related Intro/Ending, and type email body 4. Save the template</step>
+            <chapter title="Expected Results">
+                <p>• Email template is saved successfully</p>
+            </chapter>
+        </procedure>
+        <procedure title="Edits a Dynamic Report Setup" id="test-2">
+            <p><b>Scenario:</b> Precondition - Add Email Template</p>
+            <p>Creates an email template to be linked with a dynamic report setup</p>
+            <step>1. Navigate to Email Templates page 2. Click "Add" 3. Fill out Subject, select related Intro/Ending, and type email body 4. Save the template</step>
+            <chapter title="Expected Results">
+                <p>• Email template is saved successfully</p>
+            </chapter>
+        </procedure>
+        <procedure title="Deletes a Dynamic Report Setup" id="test-3">
+            <p><b>Scenario:</b> Precondition - Add Email Template</p>
+            <p>Creates an email template to be linked with a dynamic report setup</p>
+            <step>1. Navigate to Email Templates page 2. Click "Add" 3. Fill out Subject, select related Intro/Ending, and type email body 4. Save the template</step>
+            <chapter title="Expected Results">
+                <p>• Email template is saved successfully</p>
+            </chapter>
+        </procedure>
+        <procedure title="Deletes an Email Template" id="test-4">
+            <p><b>Scenario:</b> Precondition - Add Email Template</p>
+            <p>Creates an email template to be linked with a dynamic report setup</p>
+            <step>1. Navigate to Email Templates page 2. Click "Add" 3. Fill out Subject, select related Intro/Ending, and type email body 4. Save the template</step>
+            <chapter title="Expected Results">
+                <p>• Email template is saved successfully</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/HelperFunctionalities/TransactionMonitoring&Actions/Dynamic_Report_Engine_Setups_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/HelperFunctionalities/TransactionMonitoring&Actions/Dynamic_Report_Engine_Setups_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/HelperFunctionalities/TransactionMonitoring&Actions/Dynamic_Report_Engine_Setups_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="ClientApplications - Corporate Application Management" id="add-edit-delete-client-application-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/CorporateClientFunctionality/Add_Edit_Delete_Client_Application_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/CorporateClientFunctionality</code></p>
+        <p><b>Description:</b> Covers adding, editing, and deleting applications for corporate clients</p>
+        <p><b>Priority:</b> High</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> corporate, applications, client-profile</p>
+        <p><b>Dependencies:</b> faker-js, application-approval-setup</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Add, Edit, Delete Client Applications">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Add Client Applications" id="test-1">
+            <p><b>Scenario:</b> Add Client Application</p>
+            <p>Adds a client application linked to a purpose of transaction and assignee</p>
+            <p><b>Test Data:</b> faker-generated reference, email, and comment</p>
+            <step>Open Applications tab under corporate client</step>
+            <step>Click Add, fill fields, submit</step>
+            <chapter title="Expected Results">
+                <p>• Application is created and saved successfully</p>
+            </chapter>
+        </procedure>
+        <procedure title="Edit client application" id="test-2">
+            <p><b>Scenario:</b> Add Client Application</p>
+            <p>Adds a client application linked to a purpose of transaction and assignee</p>
+            <p><b>Test Data:</b> faker-generated reference, email, and comment</p>
+            <step>Open Applications tab under corporate client</step>
+            <step>Click Add, fill fields, submit</step>
+            <chapter title="Expected Results">
+                <p>• Application is created and saved successfully</p>
+            </chapter>
+        </procedure>
+        <procedure title="Delete client applications" id="test-3">
+            <p><b>Scenario:</b> Add Client Application</p>
+            <p>Adds a client application linked to a purpose of transaction and assignee</p>
+            <p><b>Test Data:</b> faker-generated reference, email, and comment</p>
+            <step>Open Applications tab under corporate client</step>
+            <step>Click Add, fill fields, submit</step>
+            <chapter title="Expected Results">
+                <p>• Application is created and saved successfully</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/CorporateClientFunctionality/Add_Edit_Delete_Client_Application_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/CorporateClientFunctionality/Add_Edit_Delete_Client_Application_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/CorporateClientFunctionality/Add_Edit_Delete_Client_Application_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

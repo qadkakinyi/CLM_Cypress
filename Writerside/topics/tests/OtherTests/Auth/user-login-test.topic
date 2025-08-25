@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Authentication - User Login" id="user-login-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/Auth/User_Login_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/Auth</code></p>
+        <p><b>Description:</b> Validates login functionality with correct and incorrect credentials</p>
+        <p><b>Priority:</b> High</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, login, authentication, user-management</p>
+        <p><b>Dependencies:</b> login_details.json, custom cy.login() command</p>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="successfully logs in a user" id="test-1">
+            <p><b>Scenario:</b> Valid Login</p>
+            <p>Authenticates a user using valid credentials from fixture</p>
+            <p><b>Priority:</b> High</p>
+            <p><b>Test Data:</b> Valid login credentials from fixture file</p>
+            <step>Read login details from fixture</step>
+            <step>Call cy.login() with valid credentials</step>
+            <chapter title="Expected Results">
+                <p>• User is logged in and dashboard is loaded</p>
+            </chapter>
+        </procedure>
+        <procedure title="denies authentication with incorrect user details" id="test-2">
+            <p><b>Scenario:</b> Valid Login</p>
+            <p>Authenticates a user using valid credentials from fixture</p>
+            <p><b>Priority:</b> High</p>
+            <p><b>Test Data:</b> Valid login credentials from fixture file</p>
+            <step>Read login details from fixture</step>
+            <step>Call cy.login() with valid credentials</step>
+            <chapter title="Expected Results">
+                <p>• User is logged in and dashboard is loaded</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/Auth/User_Login_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/Auth/User_Login_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/Auth/User_Login_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

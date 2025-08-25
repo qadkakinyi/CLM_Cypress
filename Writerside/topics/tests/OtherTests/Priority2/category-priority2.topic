@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Priority2 Tests" id="category-priority2">
+
+   <chapter title="Overview">
+       <p>Test files in the <code>OtherTests/Priority2</code> directory.</p>
+       <p><b>Total Files:</b> 7</p>
+   </chapter>
+
+   <chapter title="Test Files">
+       <chapter title="Adhoc Screening - Individual Client">
+           <p><b>File:</b> <code>Adhoc_Screening_test.cy.ts</code></p>
+           <p>Tests screening, monitoring, and API interactions for individual clients</p>
+           <p><a href="adhoc-screening-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Add Rule">
+           <p><b>File:</b> <code>Administrator_Rules_test.cy.ts</code></p>
+           <p>Generates hash key and adds rule using the hash</p>
+           <p><a href="administrator-rules-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Live Transaction Check">
+           <p><b>File:</b> <code>Check_Live_Transactions_test.cy.ts</code></p>
+           <p>Validates live transaction evaluation via API and UI navigation to resulting case</p>
+           <p><a href="check-live-transactions-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Client Evaluation - Staging API & UI">
+           <p><b>File:</b> <code>Client_Evaluation_test.cy.ts</code></p>
+           <p>End-to-end flow that generates a provider hash key, creates a regulation group, defines a criterion and answer, adds an individual client mapped to that group, performs an evaluation via staging APIs, and tears down by deleting the regulation group.</p>
+           <p><a href="client-evaluation-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Handle Rules - Recurring Rules Management">
+           <p><b>File:</b> <code>Handle_Rules_test.cy.ts</code></p>
+           <p>Validates executing rules, updating rule status, editing schedules, and synchronizing rules via the Handle Rules page.</p>
+           <p><a href="handle-rules-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Regulation Groups - Management">
+           <p><b>File:</b> <code>Regulation_Group_test.cy.ts</code></p>
+           <p>Performs end-to-end operations on regulation groups: generate provider hash key, duplicate a group, edit, synchronize, and delete.</p>
+           <p><a href="regulation-group-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Transaction Screening - API & UI">
+           <p><b>File:</b> <code>Transaction_Screening_test.cy.ts</code></p>
+           <p>Validates transaction screening via APIs and UI: obtains token, screens a transaction, navigates to the created case, and verifies the case page.</p>
+           <p><a href="transaction-screening-test.topic">View Test Details</a></p>
+       </chapter>
+   </chapter>
+
+</topic>

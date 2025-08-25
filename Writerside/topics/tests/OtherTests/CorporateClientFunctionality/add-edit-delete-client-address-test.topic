@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="ClientAddresses - Corporate Client Address Management" id="add-edit-delete-client-address-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/CorporateClientFunctionality/Add_Edit_Delete_Client_Address_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/CorporateClientFunctionality</code></p>
+        <p><b>Description:</b> Validates the complete lifecycle of client address management: add, edit, and delete</p>
+        <p><b>Priority:</b> High</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> corporate, address, client-profile</p>
+        <p><b>Dependencies:</b> faker-js, client-corporate.json</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Add, Edit, Delete Client Address">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Add Client Address" id="test-1">
+            <p><b>Scenario:</b> Add Corporate Client Address</p>
+            <p>Adds a new address for an existing corporate client using valid location details</p>
+            <p><b>Test Data:</b> faker-generated street address, city, postal code, phone</p>
+            <step>Navigate to corporate client, open Addresses tab</step>
+            <step>Click Add Address, fill the form, and submit</step>
+            <chapter title="Expected Results">
+                <p>• Address is saved successfully and success message is shown</p>
+            </chapter>
+        </procedure>
+        <procedure title="Edit client address" id="test-2">
+            <p><b>Scenario:</b> Add Corporate Client Address</p>
+            <p>Adds a new address for an existing corporate client using valid location details</p>
+            <p><b>Test Data:</b> faker-generated street address, city, postal code, phone</p>
+            <step>Navigate to corporate client, open Addresses tab</step>
+            <step>Click Add Address, fill the form, and submit</step>
+            <chapter title="Expected Results">
+                <p>• Address is saved successfully and success message is shown</p>
+            </chapter>
+        </procedure>
+        <procedure title="Delete client address" id="test-3">
+            <p><b>Scenario:</b> Add Corporate Client Address</p>
+            <p>Adds a new address for an existing corporate client using valid location details</p>
+            <p><b>Test Data:</b> faker-generated street address, city, postal code, phone</p>
+            <step>Navigate to corporate client, open Addresses tab</step>
+            <step>Click Add Address, fill the form, and submit</step>
+            <chapter title="Expected Results">
+                <p>• Address is saved successfully and success message is shown</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/CorporateClientFunctionality/Add_Edit_Delete_Client_Address_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/CorporateClientFunctionality/Add_Edit_Delete_Client_Address_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/CorporateClientFunctionality/Add_Edit_Delete_Client_Address_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

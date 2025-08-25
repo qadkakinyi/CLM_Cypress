@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Client Status Verification" id="client-status-match-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/SupportTests/Client_Status_Match_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/SupportTests</code></p>
+        <p><b>Description:</b> Compares the client status displayed in the Client Management grid with the status in the client's Profile page.</p>
+        <p><b>Priority:</b> High</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, client-management, data-validation</p>
+        <p><b>Dependencies:</b> cypress</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Client Status Match">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="It checks client status in `Client Management page` vs in the client Profile " id="test-1">
+            <p><b>Scenario:</b> Verify Client Status Between Grid and Profile</p>
+            <p>Filters clients to "Individual" type, retrieves the most recent client’s status from the grid, navigates to their profile, and verifies the status matches.</p>
+            <p><b>Priority:</b> High</p>
+            <step>1. Visit the Client Management page (`/main/clients`). 2. Open the Client Type filter and select "Individual". 3. Sort clients so the latest appears first. 4. Get the Client Status value from the grid. 5. Open the client’s dashboard and go to the Profile tab. 6. Verify the Profile status matches the grid status.</step>
+            <chapter title="Expected Results">
+                <p>• Client status matches between the Client Management page and the Profile page.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/SupportTests/Client_Status_Match_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/SupportTests/Client_Status_Match_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/SupportTests/Client_Status_Match_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

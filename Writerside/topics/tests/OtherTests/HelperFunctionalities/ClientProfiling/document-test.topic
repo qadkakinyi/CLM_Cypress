@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Client Profiling - Documents" id="document-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/HelperFunctionalities/ClientProfiling/Document_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/HelperFunctionalities/ClientProfiling</code></p>
+        <p><b>Description:</b> CRUD operations for managing document definitions in the system</p>
+        <p><b>Priority:</b> High</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, settings, documents</p>
+        <p><b>Dependencies:</b> faker-js</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Documents">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Adds a document" id="test-1">
+            <p><b>Scenario:</b> Add Document</p>
+            <p>Creates a new document with faker-generated name and mapping reference, assigning type, client type, regulation group, and capacity.</p>
+            <p><b>Priority:</b> High</p>
+            <p><b>Test Data:</b> Name: "DKA Test Document <faker word>", Mapping Reference: faker-generated alphanumeric(11)</p>
+            <step>Navigate to Settings → Documents</step>
+            <step>Click Add to open the form</step>
+            <step>Fill in name, name in portal, mapping reference</step>
+            <step>Select document type, client type, regulation group, and capacity</step>
+            <step>Click Save</step>
+            <chapter title="Expected Results">
+                <p>• Toast: "Document has been added."</p>
+            </chapter>
+        </procedure>
+        <procedure title="Edits a document" id="test-2">
+            <p><b>Scenario:</b> Add Document</p>
+            <p>Creates a new document with faker-generated name and mapping reference, assigning type, client type, regulation group, and capacity.</p>
+            <p><b>Priority:</b> High</p>
+            <p><b>Test Data:</b> Name: "DKA Test Document <faker word>", Mapping Reference: faker-generated alphanumeric(11)</p>
+            <step>Navigate to Settings → Documents</step>
+            <step>Click Add to open the form</step>
+            <step>Fill in name, name in portal, mapping reference</step>
+            <step>Select document type, client type, regulation group, and capacity</step>
+            <step>Click Save</step>
+            <chapter title="Expected Results">
+                <p>• Toast: "Document has been added."</p>
+            </chapter>
+        </procedure>
+        <procedure title="Deletes a document" id="test-3">
+            <p><b>Scenario:</b> Add Document</p>
+            <p>Creates a new document with faker-generated name and mapping reference, assigning type, client type, regulation group, and capacity.</p>
+            <p><b>Priority:</b> High</p>
+            <p><b>Test Data:</b> Name: "DKA Test Document <faker word>", Mapping Reference: faker-generated alphanumeric(11)</p>
+            <step>Navigate to Settings → Documents</step>
+            <step>Click Add to open the form</step>
+            <step>Fill in name, name in portal, mapping reference</step>
+            <step>Select document type, client type, regulation group, and capacity</step>
+            <step>Click Save</step>
+            <chapter title="Expected Results">
+                <p>• Toast: "Document has been added."</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/HelperFunctionalities/ClientProfiling/Document_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/HelperFunctionalities/ClientProfiling/Document_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/HelperFunctionalities/ClientProfiling/Document_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

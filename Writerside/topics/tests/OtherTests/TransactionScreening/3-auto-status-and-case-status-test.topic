@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Transaction Screening Status Flow" id="3-auto-status-and-case-status-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/TransactionScreening/3.Auto_Status_And_Case_Status_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/TransactionScreening</code></p>
+        <p><b>Description:</b> Validates transaction screening flows for different entity combinations and expected Auto/Case statuses.</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Automation Team</p>
+        <p><b>Tags:</b> transaction-screening, regression, end-to-end</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Case 1: Auto Accepted -> Released">
+        </chapter>
+        <chapter title="Case 2A: Auto Manual Review -> New (Negative match)">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Performs transaction screening for individual client with corporateEntities only and asserts Auto Status and Case Status" id="test-1">
+            <p><b>Scenario:</b> Individual Client - Business Entity Only</p>
+            <p>Screens an individual client with only corporateEntities, verifies Auto Status transitions from "Auto Manual Review" to "Auto Accepted" and Case Status is "In Progress".</p>
+            <p><b>Priority:</b> Medium</p>
+            <step>1. Read individual client data from fixtures. 2. Open Transaction Screening page and select regulation group. 3. Select the client and add only a corporate entity. 4. Trigger screening and verify Auto Status is "Auto Manual Review". 5. Change match status to "No Match". 6. Re-run screening and verify Auto Status is "Auto Accepted" and Case Status is "In Progress".</step>
+            <chapter title="Expected Results">
+                <p>• Status changes correctly after screening is re-run with no matches.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Performs transaction screening for individual client with person only and asserts Auto Status and Case Status" id="test-2">
+            <p><b>Scenario:</b> Individual Client - Business Entity Only</p>
+            <p>Screens an individual client with only corporateEntities, verifies Auto Status transitions from "Auto Manual Review" to "Auto Accepted" and Case Status is "In Progress".</p>
+            <p><b>Priority:</b> Medium</p>
+            <step>1. Read individual client data from fixtures. 2. Open Transaction Screening page and select regulation group. 3. Select the client and add only a corporate entity. 4. Trigger screening and verify Auto Status is "Auto Manual Review". 5. Change match status to "No Match". 6. Re-run screening and verify Auto Status is "Auto Accepted" and Case Status is "In Progress".</step>
+            <chapter title="Expected Results">
+                <p>• Status changes correctly after screening is re-run with no matches.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Performs transaction screening for corporate client with personEntities only and asserts Auto Status" id="test-3">
+            <p><b>Scenario:</b> Individual Client - Business Entity Only</p>
+            <p>Screens an individual client with only corporateEntities, verifies Auto Status transitions from "Auto Manual Review" to "Auto Accepted" and Case Status is "In Progress".</p>
+            <p><b>Priority:</b> Medium</p>
+            <step>1. Read individual client data from fixtures. 2. Open Transaction Screening page and select regulation group. 3. Select the client and add only a corporate entity. 4. Trigger screening and verify Auto Status is "Auto Manual Review". 5. Change match status to "No Match". 6. Re-run screening and verify Auto Status is "Auto Accepted" and Case Status is "In Progress".</step>
+            <chapter title="Expected Results">
+                <p>• Status changes correctly after screening is re-run with no matches.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Performs transaction screening for corporate client with businessEntities only and asserts Auto Status" id="test-4">
+            <p><b>Scenario:</b> Individual Client - Business Entity Only</p>
+            <p>Screens an individual client with only corporateEntities, verifies Auto Status transitions from "Auto Manual Review" to "Auto Accepted" and Case Status is "In Progress".</p>
+            <p><b>Priority:</b> Medium</p>
+            <step>1. Read individual client data from fixtures. 2. Open Transaction Screening page and select regulation group. 3. Select the client and add only a corporate entity. 4. Trigger screening and verify Auto Status is "Auto Manual Review". 5. Change match status to "No Match". 6. Re-run screening and verify Auto Status is "Auto Accepted" and Case Status is "In Progress".</step>
+            <chapter title="Expected Results">
+                <p>• Status changes correctly after screening is re-run with no matches.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Performs transaction screening for individual client and asserts Auto Status and Case Status" id="test-5">
+            <p><b>Scenario:</b> Individual Client - Business Entity Only</p>
+            <p>Screens an individual client with only corporateEntities, verifies Auto Status transitions from "Auto Manual Review" to "Auto Accepted" and Case Status is "In Progress".</p>
+            <p><b>Priority:</b> Medium</p>
+            <step>1. Read individual client data from fixtures. 2. Open Transaction Screening page and select regulation group. 3. Select the client and add only a corporate entity. 4. Trigger screening and verify Auto Status is "Auto Manual Review". 5. Change match status to "No Match". 6. Re-run screening and verify Auto Status is "Auto Accepted" and Case Status is "In Progress".</step>
+            <chapter title="Expected Results">
+                <p>• Status changes correctly after screening is re-run with no matches.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/TransactionScreening/3.Auto_Status_And_Case_Status_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/TransactionScreening/3.Auto_Status_And_Case_Status_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/TransactionScreening/3.Auto_Status_And_Case_Status_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

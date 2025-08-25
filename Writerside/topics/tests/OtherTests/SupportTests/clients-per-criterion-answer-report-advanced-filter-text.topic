@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Clients Per Criterion Answer Report" id="clients-per-criterion-answer-report-advanced-filter-text">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/SupportTests/Clients_per_criterion_answer_report_advanced_filter_text.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/SupportTests</code></p>
+        <p><b>Description:</b> Validates that advanced filters work for the Clients Per Criterion Answer Report, ensuring regulation groups and statuses are populated correctly.</p>
+        <p><b>Priority:</b> High</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, reports, filters</p>
+        <p><b>Dependencies:</b> cypress</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Clients per criterion answer report">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Performs advanced filter, ensures regulation group and statuses are populated" id="test-1">
+            <p><b>Scenario:</b> Apply Filters and Search</p>
+            <p>Navigates to the Clients Per Criterion Answer Report, applies Regulation Group, Client Status, and Criterion filters, then performs a search.</p>
+            <p><b>Priority:</b> High</p>
+            <step>1. Visit `/reports`. 2. Select "Client Evaluations & Documents" from the first dropdown. 3. Select "Clients Per Criterion Answer Report" from the second dropdown. 4. Open and select a Regulation Group from the dropdown. 5. Open and select a Client Status from the dropdown. 6. Select a Criterion from the criterionId grid. 7. Click the "Search" button.</step>
+            <chapter title="Expected Results">
+                <p>• The system applies the selected filters and loads the filtered report results.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/SupportTests/Clients_per_criterion_answer_report_advanced_filter_text.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/SupportTests/Clients_per_criterion_answer_report_advanced_filter_text.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/SupportTests/Clients_per_criterion_answer_report_advanced_filter_text.cy.ts</code></p>
+   </chapter>
+
+</topic>

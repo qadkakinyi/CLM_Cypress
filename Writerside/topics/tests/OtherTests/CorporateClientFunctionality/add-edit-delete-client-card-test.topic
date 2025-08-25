@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="ClientCards - Corporate Client Card Management" id="add-edit-delete-client-card-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/CorporateClientFunctionality/Add_Edit_Delete_Client_Card_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/CorporateClientFunctionality</code></p>
+        <p><b>Description:</b> Covers the workflow for managing payment cards linked to corporate clients</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> client-profile, cards, payments</p>
+        <p><b>Dependencies:</b> bank-account-setup, faker-js, client-navigation</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Add, Edit, Delete Client Cards - Corporate">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Add Client Cards" id="test-1">
+            <p><b>Scenario:</b> Add Client Cards</p>
+            <p>Adds a new payment card to a corporate client’s profile and associates it with a bank account</p>
+            <p><b>Test Data:</b> faker-generated credit card number and holder details</p>
+            <step>Execute test case</step>
+            <step>Verify expected results</step>
+            <chapter title="Expected Results">
+                <p>• Card is successfully added and visible in the cards list</p>
+            </chapter>
+        </procedure>
+        <procedure title="Edit client Cards" id="test-2">
+            <p><b>Scenario:</b> Add Client Cards</p>
+            <p>Adds a new payment card to a corporate client’s profile and associates it with a bank account</p>
+            <p><b>Test Data:</b> faker-generated credit card number and holder details</p>
+            <step>Execute test case</step>
+            <step>Verify expected results</step>
+            <chapter title="Expected Results">
+                <p>• Card is successfully added and visible in the cards list</p>
+            </chapter>
+        </procedure>
+        <procedure title="Delete client Cards" id="test-3">
+            <p><b>Scenario:</b> Add Client Cards</p>
+            <p>Adds a new payment card to a corporate client’s profile and associates it with a bank account</p>
+            <p><b>Test Data:</b> faker-generated credit card number and holder details</p>
+            <step>Execute test case</step>
+            <step>Verify expected results</step>
+            <chapter title="Expected Results">
+                <p>• Card is successfully added and visible in the cards list</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/CorporateClientFunctionality/Add_Edit_Delete_Client_Card_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/CorporateClientFunctionality/Add_Edit_Delete_Client_Card_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/CorporateClientFunctionality/Add_Edit_Delete_Client_Card_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

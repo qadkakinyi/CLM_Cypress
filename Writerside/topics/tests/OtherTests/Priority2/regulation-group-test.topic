@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Regulation Groups - Management" id="regulation-group-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/Priority2/Regulation_Group_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/Priority2</code></p>
+        <p><b>Description:</b> Performs end-to-end operations on regulation groups: generate provider hash key, duplicate a group, edit, synchronize, and delete.</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, smoke, settings, regulation-groups, synchronization</p>
+        <p><b>Dependencies:</b> user-authentication, cypress, faker-js</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Regulation Groups">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Generate Regulation Group Hash Key" id="test-1">
+            <p><b>Scenario:</b> Generate Provider Hash Key</p>
+            <p>Generates a provider hash key required for subsequent regulation-group operations.</p>
+            <p><b>Priority:</b> Medium</p>
+            <p><b>Test Data:</b> providerKey = yyyyMMdd from getProviderKey(); ttl = "10".</p>
+            <step>Open System Settings menu and select "Account".</step>
+            <step>Open the key generator, choose a provider (row 4).</step>
+            <step>Enter provider key (yyyyMMdd) and TTL.</step>
+            <step>Save and capture the generated hash into "hashValue".</step>
+            <chapter title="Expected Results">
+                <p>• Hash key is generated and stored in "hashValue"; dialog is closed.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Duplicates a Regulation Group" id="test-2">
+            <p><b>Scenario:</b> Generate Provider Hash Key</p>
+            <p>Generates a provider hash key required for subsequent regulation-group operations.</p>
+            <p><b>Priority:</b> Medium</p>
+            <p><b>Test Data:</b> providerKey = yyyyMMdd from getProviderKey(); ttl = "10".</p>
+            <step>Open System Settings menu and select "Account".</step>
+            <step>Open the key generator, choose a provider (row 4).</step>
+            <step>Enter provider key (yyyyMMdd) and TTL.</step>
+            <step>Save and capture the generated hash into "hashValue".</step>
+            <chapter title="Expected Results">
+                <p>• Hash key is generated and stored in "hashValue"; dialog is closed.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Edits a Regulation Group" id="test-3">
+            <p><b>Scenario:</b> Generate Provider Hash Key</p>
+            <p>Generates a provider hash key required for subsequent regulation-group operations.</p>
+            <p><b>Priority:</b> Medium</p>
+            <p><b>Test Data:</b> providerKey = yyyyMMdd from getProviderKey(); ttl = "10".</p>
+            <step>Open System Settings menu and select "Account".</step>
+            <step>Open the key generator, choose a provider (row 4).</step>
+            <step>Enter provider key (yyyyMMdd) and TTL.</step>
+            <step>Save and capture the generated hash into "hashValue".</step>
+            <chapter title="Expected Results">
+                <p>• Hash key is generated and stored in "hashValue"; dialog is closed.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Synchronizes a Regulation Group" id="test-4">
+            <p><b>Scenario:</b> Generate Provider Hash Key</p>
+            <p>Generates a provider hash key required for subsequent regulation-group operations.</p>
+            <p><b>Priority:</b> Medium</p>
+            <p><b>Test Data:</b> providerKey = yyyyMMdd from getProviderKey(); ttl = "10".</p>
+            <step>Open System Settings menu and select "Account".</step>
+            <step>Open the key generator, choose a provider (row 4).</step>
+            <step>Enter provider key (yyyyMMdd) and TTL.</step>
+            <step>Save and capture the generated hash into "hashValue".</step>
+            <chapter title="Expected Results">
+                <p>• Hash key is generated and stored in "hashValue"; dialog is closed.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Deletes a Regulation Group" id="test-5">
+            <p><b>Scenario:</b> Generate Provider Hash Key</p>
+            <p>Generates a provider hash key required for subsequent regulation-group operations.</p>
+            <p><b>Priority:</b> Medium</p>
+            <p><b>Test Data:</b> providerKey = yyyyMMdd from getProviderKey(); ttl = "10".</p>
+            <step>Open System Settings menu and select "Account".</step>
+            <step>Open the key generator, choose a provider (row 4).</step>
+            <step>Enter provider key (yyyyMMdd) and TTL.</step>
+            <step>Save and capture the generated hash into "hashValue".</step>
+            <chapter title="Expected Results">
+                <p>• Hash key is generated and stored in "hashValue"; dialog is closed.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/Priority2/Regulation_Group_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/Priority2/Regulation_Group_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/Priority2/Regulation_Group_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

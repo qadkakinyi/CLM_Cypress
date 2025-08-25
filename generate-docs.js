@@ -7,12 +7,13 @@ class CypressJSDocParser {
         this.cypressPath = cypressPath;
         this.outputPath = outputPath;
         this.parsedData = [];
+        this.folderStructure = new Map(); // Track folder structure
     }
 
     // Parse JSDoc-style comments from test files
     parseJSDocComments(content, filePath) {
         const jsDocPattern = /\/\*\*([\s\S]*?)\*\//g;
-        const tagPattern = /@(\w+)\s+(.+?)(?=@\w+|$)/gs;
+        const tagPattern = /@(\w+)(?:\s+([^\r\n@]*(?:\r?\n(?!\s*\*\s*@)[^\r\n]*)*))?/g;
 
         let match;
         const blocks = [];
@@ -21,20 +22,31 @@ class CypressJSDocParser {
             const commentBlock = match[1];
             const tags = {};
 
+            // Reset regex for each comment block
+            tagPattern.lastIndex = 0;
+
             let tagMatch;
             while ((tagMatch = tagPattern.exec(commentBlock)) !== null) {
                 const tagName = tagMatch[1];
-                const tagValue = tagMatch[2].replace(/\s*\*\s*/g, ' ').trim();
+                let tagValue = tagMatch[2] || '';
 
-                if (tags[tagName]) {
-                    // Handle multiple values for same tag
-                    if (Array.isArray(tags[tagName])) {
-                        tags[tagName].push(tagValue);
+                // Clean up the tag value - remove asterisks and extra whitespace
+                tagValue = tagValue
+                    .replace(/^\s*\*\s*/gm, '') // Remove leading asterisks
+                    .replace(/\s+/g, ' ') // Normalize whitespace
+                    .trim();
+
+                if (tagValue) {
+                    if (tags[tagName]) {
+                        // Handle multiple values for same tag
+                        if (Array.isArray(tags[tagName])) {
+                            tags[tagName].push(tagValue);
+                        } else {
+                            tags[tagName] = [tags[tagName], tagValue];
+                        }
                     } else {
-                        tags[tagName] = [tags[tagName], tagValue];
+                        tags[tagName] = tagValue;
                     }
-                } else {
-                    tags[tagName] = tagValue;
                 }
             }
 
@@ -48,7 +60,8 @@ class CypressJSDocParser {
             blocks.push({
                 tags,
                 associatedCode,
-                lineNumber: content.substring(0, match.index).split('\n').length
+                lineNumber: content.substring(0, match.index).split('\n').length,
+                rawComment: match[0]
             });
         }
 
@@ -87,28 +100,50 @@ class CypressJSDocParser {
         return structure;
     }
 
+    // Get folder structure information
+    getFolderInfo(filePath) {
+        const relativePath = path.relative(this.cypressPath, filePath);
+        const pathParts = relativePath.split(path.sep);
+        const fileName = pathParts.pop(); // Remove filename
+        const folderPath = pathParts.join(path.sep);
+
+        return {
+            folderPath,
+            pathParts,
+            fileName,
+            relativePath
+        };
+    }
+
+    // Create sanitized folder and file names for WriterSide
+    sanitizeName(name) {
+        return name.replace(/[^a-z0-9]/gi, '-').toLowerCase().replace(/--+/g, '-');
+    }
+
     // Parse a single test file
     parseTestFile(filePath) {
         const content = fs.readFileSync(filePath, 'utf8');
-        const fileName = path.basename(filePath);
-        const relativePath = path.relative(this.cypressPath, filePath);
+        const folderInfo = this.getFolderInfo(filePath);
 
         const jsDocBlocks = this.parseJSDocComments(content, filePath);
         const testStructure = this.extractTestStructure(content);
 
         // Match JSDoc comments to test elements
         const enrichedData = {
-            fileName,
+            fileName: folderInfo.fileName,
             filePath,
-            relativePath,
+            relativePath: folderInfo.relativePath,
+            folderPath: folderInfo.folderPath,
+            pathParts: folderInfo.pathParts,
             metadata: {},
             testSuites: [],
             testCases: []
         };
 
-        // Find file-level metadata (usually before first describe)
+        // Find file-level metadata (comments with file-level tags)
         const fileMetadata = jsDocBlocks.find(block =>
-            block.tags.testSuite || block.tags.fileDescription || block.tags.module
+            block.tags.testSuite || block.tags.fileDescription || block.tags.module ||
+            block.tags.description || block.tags.priority || block.tags.owner
         );
 
         if (fileMetadata) {
@@ -117,9 +152,12 @@ class CypressJSDocParser {
 
         // Process test suites (describe blocks)
         testStructure.describes.forEach(describe => {
-            const associatedJSDoc = jsDocBlocks.find(block =>
-                Math.abs(block.lineNumber - describe.lineNumber) <= 3
-            );
+            // Look for JSDoc comments that are close to the describe block or contain suite-related tags
+            const associatedJSDoc = jsDocBlocks.find(block => {
+                const lineDistance = Math.abs(block.lineNumber - describe.lineNumber);
+                const hasSuiteTags = block.tags.suite || block.tags.description;
+                return lineDistance <= 5 || hasSuiteTags;
+            });
 
             enrichedData.testSuites.push({
                 title: describe.title,
@@ -130,9 +168,12 @@ class CypressJSDocParser {
 
         // Process test cases (it blocks)
         testStructure.tests.forEach(test => {
-            const associatedJSDoc = jsDocBlocks.find(block =>
-                Math.abs(block.lineNumber - test.lineNumber) <= 3
-            );
+            // Look for JSDoc comments that are close to the it block or contain test-related tags
+            const associatedJSDoc = jsDocBlocks.find(block => {
+                const lineDistance = Math.abs(block.lineNumber - test.lineNumber);
+                const hasTestTags = block.tags.scenario || block.tags.steps || block.tags.expectedResult;
+                return lineDistance <= 5 || hasTestTags;
+            });
 
             enrichedData.testCases.push({
                 title: test.title,
@@ -146,19 +187,24 @@ class CypressJSDocParser {
 
     // Generate Writerside topic from parsed data
     generateWritersideTopic(testData) {
-        const topicId = testData.fileName.replace(/[^a-z0-9]/gi, '-').toLowerCase();
+        const topicId = this.sanitizeName(testData.fileName.replace(/\.cy\.(ts|js)$/, ''));
         const title = testData.metadata.testSuite || testData.fileName.replace(/\.cy\.(ts|js)$/, '');
 
         let topic = `<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="${title}" id="${topicId}">
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="${title}" id="${topicId}">
 
-    <show-structure for="chapter,procedure" depth="2"/>
-    
-    <chapter title="Overview">
-        <p><b>File:</b> <code>${testData.relativePath}</code></p>`;
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>${testData.relativePath}</code></p>`;
+
+        // Add folder path information
+        if (testData.folderPath) {
+            topic += `\n        <p><b>Folder:</b> <code>${testData.folderPath}</code></p>`;
+        }
 
         // Add metadata if available
         if (testData.metadata.description) {
@@ -175,6 +221,18 @@ class CypressJSDocParser {
                 testData.metadata.tags.join(', ') : testData.metadata.tags;
             topic += `\n        <p><b>Tags:</b> ${tags}</p>`;
         }
+        if (testData.metadata.environment) {
+            topic += `\n        <p><b>Environment:</b> ${testData.metadata.environment}</p>`;
+        }
+        if (testData.metadata.lastUpdated) {
+            topic += `\n        <p><b>Last Updated:</b> ${testData.metadata.lastUpdated}</p>`;
+        }
+        if (testData.metadata.dependencies) {
+            topic += `\n        <p><b>Dependencies:</b> ${testData.metadata.dependencies}</p>`;
+        }
+        if (testData.metadata.testData) {
+            topic += `\n        <p><b>Test Data:</b> ${testData.metadata.testData}</p>`;
+        }
 
         topic += `\n    </chapter>`;
 
@@ -185,7 +243,8 @@ class CypressJSDocParser {
             testData.testSuites.forEach(suite => {
                 topic += `\n        <chapter title="${suite.title}">`;
 
-                if (suite.metadata.description) {
+                // Only add description if it's different from file-level description
+                if (suite.metadata.description && suite.metadata.description !== testData.metadata.description) {
                     topic += `\n            <p>${suite.metadata.description}</p>`;
                 }
 
@@ -212,8 +271,16 @@ class CypressJSDocParser {
             testData.testCases.forEach((testCase, index) => {
                 topic += `\n        <procedure title="${testCase.title}" id="test-${index + 1}">`;
 
+                if (testCase.metadata.scenario) {
+                    topic += `\n            <p><b>Scenario:</b> ${testCase.metadata.scenario}</p>`;
+                }
+
                 if (testCase.metadata.description) {
                     topic += `\n            <p>${testCase.metadata.description}</p>`;
+                }
+
+                if (testCase.metadata.priority) {
+                    topic += `\n            <p><b>Priority:</b> ${testCase.metadata.priority}</p>`;
                 }
 
                 if (testCase.metadata.testData) {
@@ -232,11 +299,31 @@ class CypressJSDocParser {
                 }
 
                 if (testCase.metadata.expectedResult) {
-                    topic += `\n            <p><b>Expected Result:</b> ${testCase.metadata.expectedResult}</p>`;
+                    const expectedResults = Array.isArray(testCase.metadata.expectedResult) ?
+                        testCase.metadata.expectedResult : [testCase.metadata.expectedResult];
+                    topic += `\n            <chapter title="Expected Results">`;
+                    expectedResults.forEach(result => {
+                        topic += `\n                <p>• ${result}</p>`;
+                    });
+                    topic += `\n            </chapter>`;
                 }
 
                 if (testCase.metadata.notes) {
-                    topic += `\n            <note>${testCase.metadata.notes}</note>`;
+                    const notes = Array.isArray(testCase.metadata.notes) ?
+                        testCase.metadata.notes : [testCase.metadata.notes];
+                    topic += `\n            <chapter title="Notes">`;
+                    notes.forEach(note => {
+                        topic += `\n                <note>${note}</note>`;
+                    });
+                    topic += `\n            </chapter>`;
+                }
+
+                if (testCase.metadata.performance) {
+                    topic += `\n            <p><b>Performance:</b> ${testCase.metadata.performance}</p>`;
+                }
+
+                if (testCase.metadata.integration) {
+                    topic += `\n            <p><b>Integration:</b> ${testCase.metadata.integration}</p>`;
                 }
 
                 topic += `\n        </procedure>`;
@@ -247,27 +334,146 @@ class CypressJSDocParser {
 
         // Add execution information
         topic += `\n\n    <chapter title="Execution">
-        <chapter title="Run Individual Test">
-            <code-block lang="bash">
-                npx cypress run --spec "${testData.relativePath}"
-            </code-block>
-        </chapter>
-        
-        <chapter title="Run in Interactive Mode">
-            <code-block lang="bash">
-                npx cypress open --spec "${testData.relativePath}"
-            </code-block>
-        </chapter>
-    </chapter>`;
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "${testData.relativePath}"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "${testData.relativePath}"
+           </code-block>
+       </chapter>
+   </chapter>`;
 
-        // Include source code
+        // Include file path from e2e root
         topic += `\n\n    <chapter title="Source Code">
-        <code-block lang="typescript" src="${testData.filePath}" />
-    </chapter>`;
+       <p><b>File Path:</b> <code>${testData.relativePath}</code></p>
+   </chapter>`;
 
         topic += `\n\n</topic>`;
 
         return { topicId, content: topic };
+    }
+
+    // Create folder structure in output directory
+    createFolderStructure(testData) {
+        if (testData.folderPath) {
+            const outputFolderPath = path.join(this.outputPath, testData.folderPath);
+            if (!fs.existsSync(outputFolderPath)) {
+                fs.mkdirSync(outputFolderPath, { recursive: true });
+            }
+            return outputFolderPath;
+        }
+        return this.outputPath;
+    }
+
+    // Build folder structure map for WriterSide tree
+    buildFolderStructureMap() {
+        const structureMap = new Map();
+
+        this.parsedData.forEach(testData => {
+            if (testData.folderPath) {
+                const parts = testData.pathParts;
+                let currentPath = '';
+
+                parts.forEach((part, index) => {
+                    const parentPath = currentPath;
+                    currentPath = currentPath ? `${currentPath}/${part}` : part;
+
+                    if (!structureMap.has(currentPath)) {
+                        structureMap.set(currentPath, {
+                            name: part,
+                            sanitizedName: this.sanitizeName(part),
+                            fullPath: currentPath,
+                            parentPath: parentPath || null,
+                            children: new Set(),
+                            files: [],
+                            isLeaf: false
+                        });
+                    }
+
+                    // Add to parent's children
+                    if (parentPath && structureMap.has(parentPath)) {
+                        structureMap.get(parentPath).children.add(currentPath);
+                    }
+                });
+
+                // Add file to its folder
+                if (structureMap.has(testData.folderPath)) {
+                    structureMap.get(testData.folderPath).files.push(testData);
+                }
+            }
+        });
+
+        return structureMap;
+    }
+
+    // Generate category pages for folders
+    generateFolderCategoryPages(structureMap) {
+        const generatedCategories = [];
+
+        structureMap.forEach((folderInfo, folderPath) => {
+            const categoryId = `category-${folderInfo.sanitizedName}`;
+            const title = folderInfo.name.charAt(0).toUpperCase() + folderInfo.name.slice(1);
+
+            let categoryContent = `<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="${title} Tests" id="${categoryId}">
+
+   <chapter title="Overview">
+       <p>Test files in the <code>${folderPath}</code> directory.</p>
+       <p><b>Total Files:</b> ${folderInfo.files.length}</p>
+   </chapter>`;
+
+            if (folderInfo.files.length > 0) {
+                categoryContent += `\n\n   <chapter title="Test Files">`;
+
+                folderInfo.files.forEach(file => {
+                    const topicId = this.sanitizeName(file.fileName.replace(/\.cy\.(ts|js)$/, ''));
+                    const title = file.metadata.testSuite || file.fileName.replace(/\.cy\.(ts|js)$/, '');
+
+                    categoryContent += `\n       <chapter title="${title}">
+           <p><b>File:</b> <code>${file.fileName}</code></p>`;
+
+                    if (file.metadata.description) {
+                        categoryContent += `\n           <p>${file.metadata.description}</p>`;
+                    }
+
+                    categoryContent += `\n           <p><a href="${topicId}.topic">View Test Details</a></p>
+       </chapter>`;
+                });
+
+                categoryContent += `\n   </chapter>`;
+            }
+
+            categoryContent += `\n\n</topic>`;
+
+            // Save category file in the appropriate folder
+            const outputDir = path.join(this.outputPath, folderPath);
+            if (!fs.existsSync(outputDir)) {
+                fs.mkdirSync(outputDir, { recursive: true });
+            }
+
+            const categoryFileName = `${categoryId}.topic`;
+            const categoryFilePath = path.join(outputDir, categoryFileName);
+
+            fs.writeFileSync(categoryFilePath, categoryContent);
+
+            generatedCategories.push({
+                id: categoryId,
+                file: categoryFileName,
+                path: folderPath,
+                folderInfo
+            });
+
+            console.log(`Generated category: ${categoryFileName} in ${folderPath}`);
+        });
+
+        return generatedCategories;
     }
 
     // Scan and process all test files
@@ -298,40 +504,64 @@ class CypressJSDocParser {
             fs.mkdirSync(this.outputPath, { recursive: true });
         }
 
-        // Generate topics
+        // Build folder structure map
+        const structureMap = this.buildFolderStructureMap();
+
+        // Generate folder category pages
+        const generatedCategories = this.generateFolderCategoryPages(structureMap);
+
+
+// Generate individual test topics
         const generatedTopics = [];
         this.parsedData.forEach(testData => {
             const topic = this.generateWritersideTopic(testData);
             const fileName = `${topic.topicId}.topic`;
-            const filePath = path.join(this.outputPath, fileName);
+
+            // Create folder structure and place file in correct folder
+            const outputDir = this.createFolderStructure(testData);
+            const filePath = path.join(outputDir, fileName);
 
             fs.writeFileSync(filePath, topic.content);
             generatedTopics.push({
                 id: topic.topicId,
                 file: fileName,
+                folder: testData.folderPath,
                 testData
             });
 
-            console.log(`Generated: ${fileName}`);
+            console.log(`Generated: ${fileName} in ${testData.folderPath || 'root'}`);
         });
 
-        this.generateSummaryReport(generatedTopics);
+        this.generateSummaryReport(generatedTopics, generatedCategories, structureMap);
 
         console.log(`\nGenerated ${generatedTopics.length} test documentation topics!`);
-        return generatedTopics;
+        console.log(`Generated ${generatedCategories.length} category pages!`);
+
+        return { topics: generatedTopics, categories: generatedCategories, structure: structureMap };
     }
 
-    // Generate summary report
-    generateSummaryReport(topics) {
+    // Generate enhanced summary report
+    generateSummaryReport(topics, categories, structureMap) {
         const report = {
             totalFiles: topics.length,
+            totalCategories: categories.length,
             totalTestSuites: topics.reduce((sum, topic) => sum + topic.testData.testSuites.length, 0),
             totalTestCases: topics.reduce((sum, topic) => sum + topic.testData.testCases.length, 0),
             filesWithMetadata: topics.filter(topic => Object.keys(topic.testData.metadata).length > 0).length,
+            folderStructure: {},
             priorities: {},
             owners: new Set(),
             tags: new Set()
         };
+
+        // Build folder summary
+        structureMap.forEach((folderInfo, folderPath) => {
+            report.folderStructure[folderPath] = {
+                fileCount: folderInfo.files.length,
+                testSuites: folderInfo.files.reduce((sum, file) => sum + file.testSuites.length, 0),
+                testCases: folderInfo.files.reduce((sum, file) => sum + file.testCases.length, 0)
+            };
+        });
 
         topics.forEach(topic => {
             const metadata = topic.testData.metadata;
@@ -349,10 +579,17 @@ class CypressJSDocParser {
 
         console.log('\n=== GENERATION SUMMARY ===');
         console.log(`Total test files: ${report.totalFiles}`);
+        console.log(`Total category pages: ${report.totalCategories}`);
         console.log(`Total test suites: ${report.totalTestSuites}`);
         console.log(`Total test cases: ${report.totalTestCases}`);
         console.log(`Files with metadata: ${report.filesWithMetadata}`);
-        console.log(`Unique owners: ${Array.from(report.owners).join(', ')}`);
+
+        console.log('\n=== FOLDER STRUCTURE ===');
+        Object.entries(report.folderStructure).forEach(([folder, stats]) => {
+            console.log(`${folder}: ${stats.fileCount} files, ${stats.testSuites} suites, ${stats.testCases} tests`);
+        });
+
+        console.log(`\nUnique owners: ${Array.from(report.owners).join(', ')}`);
         console.log(`Unique tags: ${Array.from(report.tags).join(', ')}`);
         console.log(`Priority distribution:`, report.priorities);
     }
@@ -360,4 +597,4 @@ class CypressJSDocParser {
 
 // Usage
 const parser = new CypressJSDocParser();
-parser.generate();
+parser.generate(); 

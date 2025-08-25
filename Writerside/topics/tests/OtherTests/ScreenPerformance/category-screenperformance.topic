@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="ScreenPerformance Tests" id="category-screenperformance">
+
+   <chapter title="Overview">
+       <p>Test files in the <code>OtherTests/ScreenPerformance</code> directory.</p>
+       <p><b>Total Files:</b> 2</p>
+   </chapter>
+
+   <chapter title="Test Files">
+       <chapter title="Client Detail Lines - Performance Navigation">
+           <p><b>File:</b> <code>Client_Detail_Lines_test.cy.ts</code></p>
+           <p>Validates that navigating across all client detail lines triggers a loader that then disappears quickly, indicating data loaded successfully.</p>
+           <p><a href="client-detail-lines-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Management Module - Navigation">
+           <p><b>File:</b> <code>Management_test.cy.ts</code></p>
+           <p>Verifies that all main links in the Management menu navigate to the correct pages, display expected content, and finish loading without visible spinners.</p>
+           <p><a href="management-test.topic">View Test Details</a></p>
+       </chapter>
+   </chapter>
+
+</topic>

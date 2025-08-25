@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="AddClients - Corporate Client Management" id="add-edit-delete-client-gaming-account-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/CorporateClientFunctionality/Add_Edit_Delete_Client_Gaming_Account_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/CorporateClientFunctionality</code></p>
+        <p><b>Description:</b> Test suite for managing client gaming accounts</p>
+        <p><b>Priority:</b> High</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, gaming, client-management</p>
+        <p><b>Dependencies:</b> user-authentication, faker-js</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Add, Edit, Delete Client Gaming Accounts">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Add Client Gaming Accounts" id="test-1">
+            <p><b>Scenario:</b> Add Gaming Account</p>
+            <p>Adds a new gaming account for a corporate client</p>
+            <p><b>Priority:</b> High</p>
+            <step>Execute test case</step>
+            <step>Verify expected results</step>
+            <chapter title="Expected Results">
+                <p>• Gaming account is added and visible in the grid</p>
+            </chapter>
+        </procedure>
+        <procedure title="Edit client Gaming Accounts" id="test-2">
+            <p><b>Scenario:</b> Add Gaming Account</p>
+            <p>Adds a new gaming account for a corporate client</p>
+            <p><b>Priority:</b> High</p>
+            <step>Execute test case</step>
+            <step>Verify expected results</step>
+            <chapter title="Expected Results">
+                <p>• Gaming account is added and visible in the grid</p>
+            </chapter>
+        </procedure>
+        <procedure title="Delete client Gaming Accounts" id="test-3">
+            <p><b>Scenario:</b> Add Gaming Account</p>
+            <p>Adds a new gaming account for a corporate client</p>
+            <p><b>Priority:</b> High</p>
+            <step>Execute test case</step>
+            <step>Verify expected results</step>
+            <chapter title="Expected Results">
+                <p>• Gaming account is added and visible in the grid</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/CorporateClientFunctionality/Add_Edit_Delete_Client_Gaming_Account_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/CorporateClientFunctionality/Add_Edit_Delete_Client_Gaming_Account_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/CorporateClientFunctionality/Add_Edit_Delete_Client_Gaming_Account_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

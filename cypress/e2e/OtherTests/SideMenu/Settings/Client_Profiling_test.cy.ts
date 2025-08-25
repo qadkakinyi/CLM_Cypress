@@ -1,4 +1,23 @@
+/**
+ * @testSuite Settings - Client Profiling Navigation
+ * @description Verifies that the Settings menu opens and that each Client Profiling settings link navigates to the correct page, shows expected content, and finishes loading without a visible spinner.
+ * @priority Medium
+ * @owner QA Team
+ * @tags regression, navigation, settings, client-profiling
+ * @dependencies cypress, getByDataCy
+ * @fileDescription Iterates through Client Profiling settings routes and asserts correct URL, heading text, and loader behavior.
+ */
+
 describe("Settings menu", () => {
+    /**
+     * @suite Settings Menu Access
+     * @description Opens the Settings menu from the dashboard.
+     * @prerequisites User is logged in and can access the dashboard.
+     * @steps Wait briefly for initial UI load.
+     * @steps Scroll to and click the Settings menu.
+     * @expectedResult The Settings menu expands and becomes interactable.
+     * @priority Medium
+     */
     it("Logs in and open level on menu", () => {
         cy.wait(2000)
         cy.getByDataCy("settings-menu").scrollIntoView().click()
@@ -6,7 +25,6 @@ describe("Settings menu", () => {
 })
 
 describe("Client Profiling", ()=>{
-    
 
     let routes = [
         {index: 0, route: "/settings/addressesTypes", assertion:"Addresses Types"},
@@ -34,7 +52,22 @@ describe("Client Profiling", ()=>{
         {index: 22, route: "/settings/tags", assertion:"Tags"}
     ]
 
+    /**
+     * @suite Client Profiling Settings Navigation
+     * @description Parameterized checks for each Client Profiling settings page.
+     * @prerequisites User is logged in; Settings → Client Profiling submenu is available; spinner selector is ".sk-ball-spin-clockwise".
+     */
     routes.forEach((route) => {
+        /**
+         * @scenario Visit Client Profiling Settings Page
+         * @description Opens a specific Client Profiling settings page and verifies URL, heading, and that the loader is not visible.
+         * @priority Medium
+         * @testData index = route.index, expectedPath = route.route, expectedText = route.assertion.
+         * @steps Visit /main/dashboard and pin the sidebar if needed.
+         * @steps Open Settings → Client Profiling and click the item by index.
+         * @steps Wait for loading, assert spinner not visible, confirm path equals expected route, and page contains expected text.
+         * @expectedResult Target settings page loads with correct URL and visible expected text; spinner is not visible.
+         */
         it(`Visits ${route.assertion} page`, () => {
             if(route.index <= routes.length - 1) {
                 cy.visit('/main/dashboard')
@@ -49,7 +82,7 @@ describe("Client Profiling", ()=>{
                         cy.log('Unpin icon missing')
                     }
                 })
-                
+
                 cy.getByDataCy("settings-menu").click().wait(500)
                 cy.getByDataCy("client-profiling-menu").click().as('client-profiling-menu')
                 cy.get("@client-profiling-menu").find("ul>li").as("client-profiling-links")
@@ -62,7 +95,7 @@ describe("Client Profiling", ()=>{
             }else{
                 cy.visit('/main/dashboard')
             }
-            
+
         })
     })
 
@@ -150,3 +183,4 @@ describe("Client Profiling", ()=>{
     //     })
     // })
 })
+

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Evaluation Score Match" id="evaluation-score-match-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/SupportTests/Evaluation_Score_Match_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/SupportTests</code></p>
+        <p><b>Description:</b> Validates that the evaluation score shown in Client Management matches the one in the client’s Dashboard and Evaluations page.</p>
+        <p><b>Priority:</b> High</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, evaluation, data-integrity, client-management</p>
+        <p><b>Dependencies:</b> cypress</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Evaluation Score Match">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="It checks evaluation score in `Client Management page` vs in the client Dashboard " id="test-1">
+            <p><b>Scenario:</b> Compare Evaluation Score Across Views</p>
+            <p>Filters clients to "Individual" type, retrieves the "Last Evaluation Grade" from the Client Management grid, navigates to the client dashboard, and ensures the same value appears in the Evaluations table and left panel.</p>
+            <p><b>Priority:</b> High</p>
+            <step>1) Visit Client Management page. 2) Filter "Client Type" to "Individual". 3) Read "Last Evaluation Grade" from the grid for the first listed client. 4) Open client dashboard via the edit icon. 5) Navigate to Evaluations tab and check that the first evaluation’s grade matches the grid value. 6) Check that the left panel dashboard value also matches.</step>
+            <chapter title="Expected Results">
+                <p>• Both the Evaluations table and left panel display the same grade as shown in the Client Management page.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/SupportTests/Evaluation_Score_Match_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/SupportTests/Evaluation_Score_Match_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/SupportTests/Evaluation_Score_Match_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Shareholders/Partners" id="add-edit-delete-shareholder-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/CorporateClientFunctionality/Add_Edit_Delete_Shareholder_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/CorporateClientFunctionality</code></p>
+        <p><b>Description:</b> Validates CRUD operations and validation behavior for shareholder/partner entities</p>
+        <p><b>Priority:</b> High</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> corporate, stakeholders, compliance</p>
+        <p><b>Dependencies:</b> client_corporate.json, faker-js</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Shareholders/Partners">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Adds Shareholder" id="test-1">
+            <p><b>Scenario:</b> Add Shareholder</p>
+            <p>Adds a shareholder with defined capacity and share allocation</p>
+            <step>Execute test case</step>
+            <step>Verify expected results</step>
+            <chapter title="Expected Results">
+                <p>• Shareholder is successfully added</p>
+            </chapter>
+        </procedure>
+        <procedure title="Should error out if shares exceed Authorized capital" id="test-2">
+            <p><b>Scenario:</b> Add Shareholder</p>
+            <p>Adds a shareholder with defined capacity and share allocation</p>
+            <step>Execute test case</step>
+            <step>Verify expected results</step>
+            <chapter title="Expected Results">
+                <p>• Shareholder is successfully added</p>
+            </chapter>
+        </procedure>
+        <procedure title="Edits Authorized Person" id="test-3">
+            <p><b>Scenario:</b> Add Shareholder</p>
+            <p>Adds a shareholder with defined capacity and share allocation</p>
+            <step>Execute test case</step>
+            <step>Verify expected results</step>
+            <chapter title="Expected Results">
+                <p>• Shareholder is successfully added</p>
+            </chapter>
+        </procedure>
+        <procedure title="Deletes Authorized Person" id="test-4">
+            <p><b>Scenario:</b> Add Shareholder</p>
+            <p>Adds a shareholder with defined capacity and share allocation</p>
+            <step>Execute test case</step>
+            <step>Verify expected results</step>
+            <chapter title="Expected Results">
+                <p>• Shareholder is successfully added</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/CorporateClientFunctionality/Add_Edit_Delete_Shareholder_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/CorporateClientFunctionality/Add_Edit_Delete_Shareholder_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/CorporateClientFunctionality/Add_Edit_Delete_Shareholder_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

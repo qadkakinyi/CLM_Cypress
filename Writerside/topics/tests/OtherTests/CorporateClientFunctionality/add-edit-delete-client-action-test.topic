@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="ClientActions - Corporate Tasks Management" id="add-edit-delete-client-action-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/CorporateClientFunctionality/Add_Edit_Delete_Client_Action_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/CorporateClientFunctionality</code></p>
+        <p><b>Description:</b> Handles automation for creation, editing, and deletion of client-related actions (tasks)</p>
+        <p><b>Priority:</b> High</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> corporate, actions, tasks, setup</p>
+        <p><b>Dependencies:</b> faker-js, client-corporate</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Add, Edit, Delete Client Action (Task) - Corporate">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Add Client Action" id="test-1">
+            <p><b>Scenario:</b> Setup Action Category and Status</p>
+            <p>Prepares required category and status data for action form dropdowns</p>
+            <step>Navigates to Action Setup, creates category and status</step>
+            <chapter title="Expected Results">
+                <p>• Action category and status are saved successfully</p>
+            </chapter>
+        </procedure>
+        <procedure title="Edit Action" id="test-2">
+            <p><b>Scenario:</b> Setup Action Category and Status</p>
+            <p>Prepares required category and status data for action form dropdowns</p>
+            <step>Navigates to Action Setup, creates category and status</step>
+            <chapter title="Expected Results">
+                <p>• Action category and status are saved successfully</p>
+            </chapter>
+        </procedure>
+        <procedure title="Delete Action" id="test-3">
+            <p><b>Scenario:</b> Setup Action Category and Status</p>
+            <p>Prepares required category and status data for action form dropdowns</p>
+            <step>Navigates to Action Setup, creates category and status</step>
+            <chapter title="Expected Results">
+                <p>• Action category and status are saved successfully</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/CorporateClientFunctionality/Add_Edit_Delete_Client_Action_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/CorporateClientFunctionality/Add_Edit_Delete_Client_Action_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/CorporateClientFunctionality/Add_Edit_Delete_Client_Action_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Intro & Endings" id="email-intro-endings-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/HelperFunctionalities/Templates&Report_Setups/Email_Intro&Endings_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/HelperFunctionalities/Templates&Report_Setups</code></p>
+        <p><b>Description:</b> Covers adding and editing intro and ending templates used in the system</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> intro-endings, templates</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Intro & Endings">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Adds an Intro And Ending" id="test-1">
+            <p><b>Scenario:</b> Add Intro And Ending</p>
+            <p>Adds a new intro and ending template</p>
+            <step>1. Navigate to Intro & Endings settings page. 2. Click "Add". 3. Enter Name. 4. Enter Intro text. 5. Enter Ending text. 6. Save the record.</step>
+            <chapter title="Expected Results">
+                <p>• Intro & Ending record is added and a confirmation message is shown.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Edits an Intro And Ending" id="test-2">
+            <p><b>Scenario:</b> Add Intro And Ending</p>
+            <p>Adds a new intro and ending template</p>
+            <step>1. Navigate to Intro & Endings settings page. 2. Click "Add". 3. Enter Name. 4. Enter Intro text. 5. Enter Ending text. 6. Save the record.</step>
+            <chapter title="Expected Results">
+                <p>• Intro & Ending record is added and a confirmation message is shown.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Deletes an Intro And Ending" id="test-3">
+            <p><b>Scenario:</b> Add Intro And Ending</p>
+            <p>Adds a new intro and ending template</p>
+            <step>1. Navigate to Intro & Endings settings page. 2. Click "Add". 3. Enter Name. 4. Enter Intro text. 5. Enter Ending text. 6. Save the record.</step>
+            <chapter title="Expected Results">
+                <p>• Intro & Ending record is added and a confirmation message is shown.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/HelperFunctionalities/Templates&Report_Setups/Email_Intro&Endings_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/HelperFunctionalities/Templates&Report_Setups/Email_Intro&Endings_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/HelperFunctionalities/Templates&Report_Setups/Email_Intro&Endings_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

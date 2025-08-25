@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Settings - Transaction Monitoring & Actions Navigation" id="transaction-monitoring-and-actions-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/SideMenu/Settings/Transaction_Monitoring_And_Actions_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/SideMenu/Settings</code></p>
+        <p><b>Description:</b> Verifies navigation for each submenu item under Settings → Transaction Monitoring, ensuring correct page loads, expected heading appears, and loader is hidden.</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, navigation, settings, transaction-monitoring, actions</p>
+        <p><b>Dependencies:</b> cypress, getByDataCy</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Transaction Monitoring & Actions">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Visits ${route.assertion} page" id="test-1">
+            <p><b>Scenario:</b> Visit Transaction Monitoring & Actions Page</p>
+            <p>Navigates to a specific Settings → Transaction Monitoring submenu item and validates its page.</p>
+            <p><b>Priority:</b> Medium</p>
+            <p><b>Test Data:</b> index = route.index, expectedPath = route.route, expectedText = route.assertion</p>
+            <step>Visit dashboard → Pin sidebar if unpinned.</step>
+            <step>Open Settings → Transaction Monitoring menu.</step>
+            <step>Click submenu item by index.</step>
+            <step>Validate URL, wait for spinner to disappear, and confirm heading text.</step>
+            <chapter title="Expected Results">
+                <p>• Correct page loads with matching URL and heading; spinner is not visible.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/SideMenu/Settings/Transaction_Monitoring_And_Actions_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/SideMenu/Settings/Transaction_Monitoring_And_Actions_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/SideMenu/Settings/Transaction_Monitoring_And_Actions_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

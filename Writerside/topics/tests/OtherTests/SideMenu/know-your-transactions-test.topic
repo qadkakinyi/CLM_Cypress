@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Transaction Insights" id="know-your-transactions-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/SideMenu/Know_Your_Transactions_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/SideMenu</code></p>
+        <p><b>Description:</b> Validates navigation to the "Know Your Transactions" page and confirms page content.</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, ui, navigation, transactions</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Transaction Insights">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Visits know your transactions page" id="test-1">
+            <p><b>Scenario:</b> Visit Know Your Transactions Page</p>
+            <p>Clicks the "Know Your Transactions" menu and verifies the correct route and heading are loaded.</p>
+            <p><b>Priority:</b> Medium</p>
+            <step>Click element with data-cy="know-your-transactions".</step>
+            <step>Assert that the pathname is "/know-your-transactions/transactions".</step>
+            <step>Verify that the page contains "Transaction Insights".</step>
+            <chapter title="Expected Results">
+                <p>• The Transaction Insights page is loaded and visible.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/SideMenu/Know_Your_Transactions_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/SideMenu/Know_Your_Transactions_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/SideMenu/Know_Your_Transactions_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

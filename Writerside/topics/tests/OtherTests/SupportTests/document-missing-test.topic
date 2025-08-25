@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Missing Document Verification" id="document-missing-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/SupportTests/Document_Missing_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/SupportTests</code></p>
+        <p><b>Description:</b> Confirms that a document is marked as missing when its collection status is "Missing" or its expiration date has passed.</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, documents, validation, client-profile</p>
+        <p><b>Dependencies:</b> cypress, navigateToNewestClientMenu, client_individual.json</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Missing Document">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Check missing document to be correctly missing" id="test-1">
+            <p><b>Scenario:</b> Validate Missing Document Conditions</p>
+            <p>Loads the newest client, opens the Documents section, inspects the first document, and verifies that it is considered missing if collection status is "Missing" or the expiration date is in the past.</p>
+            <p><b>Priority:</b> Medium</p>
+            <step>1) Read client name from fixture and navigate to the client dashboard. 2) If the "Documents" status box exists, open it and expand the first document. 3) Read collection status and expiration date. 4) Compute (expiry - today) in days. 5) Assert missing when status === "Missing" OR dateDifference < 0; otherwise fail.</step>
+            <chapter title="Expected Results">
+                <p>• The document is flagged as missing only under the defined conditions.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/SupportTests/Document_Missing_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/SupportTests/Document_Missing_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/SupportTests/Document_Missing_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

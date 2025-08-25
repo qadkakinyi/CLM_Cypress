@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Client Profiling - Related Website Types" id="related-website-types-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/HelperFunctionalities/ClientProfiling/Related_Website_Types_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/HelperFunctionalities/ClientProfiling</code></p>
+        <p><b>Description:</b> Validates the creation, editing, and deletion of Related Website Types in system settings</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, settings, related-website-types</p>
+        <p><b>Dependencies:</b> faker-js</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Related Website Types">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Adds a Related Website Type" id="test-1">
+            <p><b>Scenario:</b> Add Related Website Type</p>
+            <p>Adds a new Related Website Type entry in system settings</p>
+            <p><b>Priority:</b> Medium</p>
+            <p><b>Test Data:</b> Faker-generated related website type name and mapping reference</p>
+            <step>Navigate to Related Website Types settings</step>
+            <step>Click "Add", enter name, mapping reference, and save</step>
+            <chapter title="Expected Results">
+                <p>• New Related Website Type is added and confirmation message is displayed</p>
+            </chapter>
+        </procedure>
+        <procedure title="Edits a Related Website Type" id="test-2">
+            <p><b>Scenario:</b> Add Related Website Type</p>
+            <p>Adds a new Related Website Type entry in system settings</p>
+            <p><b>Priority:</b> Medium</p>
+            <p><b>Test Data:</b> Faker-generated related website type name and mapping reference</p>
+            <step>Navigate to Related Website Types settings</step>
+            <step>Click "Add", enter name, mapping reference, and save</step>
+            <chapter title="Expected Results">
+                <p>• New Related Website Type is added and confirmation message is displayed</p>
+            </chapter>
+        </procedure>
+        <procedure title="Deletes a Related Website Type" id="test-3">
+            <p><b>Scenario:</b> Add Related Website Type</p>
+            <p>Adds a new Related Website Type entry in system settings</p>
+            <p><b>Priority:</b> Medium</p>
+            <p><b>Test Data:</b> Faker-generated related website type name and mapping reference</p>
+            <step>Navigate to Related Website Types settings</step>
+            <step>Click "Add", enter name, mapping reference, and save</step>
+            <chapter title="Expected Results">
+                <p>• New Related Website Type is added and confirmation message is displayed</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/HelperFunctionalities/ClientProfiling/Related_Website_Types_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/HelperFunctionalities/ClientProfiling/Related_Website_Types_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/HelperFunctionalities/ClientProfiling/Related_Website_Types_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

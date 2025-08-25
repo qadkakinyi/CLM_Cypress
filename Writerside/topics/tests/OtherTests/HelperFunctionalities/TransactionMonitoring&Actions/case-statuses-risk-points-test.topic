@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Case Statuses Risk Point" id="case-statuses-risk-points-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/HelperFunctionalities/TransactionMonitoring&Actions/Case_Statuses_Risk_Points_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/HelperFunctionalities/TransactionMonitoring&Actions</code></p>
+        <p><b>Description:</b> Verifies that case status risk points can be edited and restored</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> settings, risk, case-status</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Case Statuses Risk Point">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Edits a Case Statuses Risk Point" id="test-1">
+            <p><b>Scenario:</b> Edit & Revert Case Status Risk Point</p>
+            <p>Updates the first case status risk point to 5, verifies success, then reverts to 1</p>
+            <step>1. Navigate to Settings → Case Statuses Risk Points. 2. Click Edit on the first row. 3. Change risk point to 5 and Save. 4. Confirm success toast. 5. Click Edit again and change risk point back to 1. 6. Save and confirm success.</step>
+            <chapter title="Expected Results">
+                <p>• Toast "The case status risk point has been updated." appears after each save.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/HelperFunctionalities/TransactionMonitoring&Actions/Case_Statuses_Risk_Points_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/HelperFunctionalities/TransactionMonitoring&Actions/Case_Statuses_Risk_Points_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/HelperFunctionalities/TransactionMonitoring&Actions/Case_Statuses_Risk_Points_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

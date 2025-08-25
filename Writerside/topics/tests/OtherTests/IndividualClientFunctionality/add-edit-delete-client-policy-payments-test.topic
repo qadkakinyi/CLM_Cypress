@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Client Policy Payments (Individual)" id="add-edit-delete-client-policy-payments-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/IndividualClientFunctionality/Add_Edit_Delete_Client_Policy_Payments_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/IndividualClientFunctionality</code></p>
+        <p><b>Description:</b> Navigates to Policy Payments, then performs CRUD flows for Collections and Transactions.</p>
+        <p><b>Priority:</b> High</p>
+        <p><b>Owner:</b> QA</p>
+        <p><b>Tags:</b> policy-payments, collections, transactions, individual, crud</p>
+        <p><b>Dependencies:</b> navigateToNewestClientMenu</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Add, Edit, Delete Client Policy Payments">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Go to Policy Payments detail line" id="test-1">
+            <p><b>Scenario:</b> Open Policy Payments detail line</p>
+            <p>Navigates to the client and opens the Policy Payments section to capture the client_id.</p>
+            <step>Load client from fixture → Navigate to Policy Payments → Capture client_id from URL</step>
+            <chapter title="Expected Results">
+                <p>• Policy Payments screen is visible and client_id is stored for later tests.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Add Client Policy Payment Collection" id="test-2">
+            <p><b>Scenario:</b> Open Policy Payments detail line</p>
+            <p>Navigates to the client and opens the Policy Payments section to capture the client_id.</p>
+            <step>Load client from fixture → Navigate to Policy Payments → Capture client_id from URL</step>
+            <chapter title="Expected Results">
+                <p>• Policy Payments screen is visible and client_id is stored for later tests.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Edit client Policy collection" id="test-3">
+            <p><b>Scenario:</b> Open Policy Payments detail line</p>
+            <p>Navigates to the client and opens the Policy Payments section to capture the client_id.</p>
+            <step>Load client from fixture → Navigate to Policy Payments → Capture client_id from URL</step>
+            <chapter title="Expected Results">
+                <p>• Policy Payments screen is visible and client_id is stored for later tests.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Delete client policy collection" id="test-4">
+            <p><b>Scenario:</b> Open Policy Payments detail line</p>
+            <p>Navigates to the client and opens the Policy Payments section to capture the client_id.</p>
+            <step>Load client from fixture → Navigate to Policy Payments → Capture client_id from URL</step>
+            <chapter title="Expected Results">
+                <p>• Policy Payments screen is visible and client_id is stored for later tests.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Add Client Policy Payment Transaction" id="test-5">
+            <p><b>Scenario:</b> Open Policy Payments detail line</p>
+            <p>Navigates to the client and opens the Policy Payments section to capture the client_id.</p>
+            <step>Load client from fixture → Navigate to Policy Payments → Capture client_id from URL</step>
+            <chapter title="Expected Results">
+                <p>• Policy Payments screen is visible and client_id is stored for later tests.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Edit client Policy payment transaction" id="test-6">
+            <p><b>Scenario:</b> Open Policy Payments detail line</p>
+            <p>Navigates to the client and opens the Policy Payments section to capture the client_id.</p>
+            <step>Load client from fixture → Navigate to Policy Payments → Capture client_id from URL</step>
+            <chapter title="Expected Results">
+                <p>• Policy Payments screen is visible and client_id is stored for later tests.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Delete client policy transaction" id="test-7">
+            <p><b>Scenario:</b> Open Policy Payments detail line</p>
+            <p>Navigates to the client and opens the Policy Payments section to capture the client_id.</p>
+            <step>Load client from fixture → Navigate to Policy Payments → Capture client_id from URL</step>
+            <chapter title="Expected Results">
+                <p>• Policy Payments screen is visible and client_id is stored for later tests.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/IndividualClientFunctionality/Add_Edit_Delete_Client_Policy_Payments_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/IndividualClientFunctionality/Add_Edit_Delete_Client_Policy_Payments_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/IndividualClientFunctionality/Add_Edit_Delete_Client_Policy_Payments_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

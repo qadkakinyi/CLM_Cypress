@@ -1,5 +1,16 @@
 import {faker} from "@faker-js/faker";
 import { navigateToNewestClientMenu } from "../../../support/e2e";
+
+/**
+ * @testSuite Client Evaluation - Staging API & UI
+ * @description End-to-end flow that generates a provider hash key, creates a regulation group, defines a criterion and answer, adds an individual client mapped to that group, performs an evaluation via staging APIs, and tears down by deleting the regulation group.
+ * @priority High
+ * @owner QA Team
+ * @tags regression, smoke, e2e, staging-api, regulation-groups, criteria, individual-clients, evaluations
+ * @dependencies user-authentication, faker-js, cypress, env-api_baseUrl
+ * @fileDescription Validates the staging-API-driven evaluation workflow and related UI flows from setup to cleanup.
+ */
+
 let api_baseUrl = Cypress.env('api_baseUrl')
 function getProviderKey(){
     let today = new Date();
@@ -36,17 +47,32 @@ function getClientID(){
         clientId = pathSections[3]
     })
 }
+
+/**
+ * @suite Staging API-Driven Client Evaluation
+ * @description Creates prerequisites (hash, regulation group, criterion & answer) and executes an evaluation for an Individual client using mixed UI + API steps.
+ * @prerequisites Logged-in user with permissions to manage Settings, Clients, and Evaluations.
+ * @prerequisites Environment variable "api_baseUrl" is configured and reachable.
+ * @prerequisites Backend supports provider key generation and accepts TTL "10".
+ * @prerequisites Mapping references "Criterion_Test" and "CriterionAnswer_Test" exist (or adjust API payload accordingly).
+ * @testData Faker-generated names/IDs; dynamic regulation group name "DKA Regulation Group <n>"; random criterion mapping reference.
+ */
 describe('Perform Client Evaluation Using Staging APIs', ()=>{
-    
+
+    /**
+     * @prerequisites Staging API bearer token is required for subsequent API requests.
+     * @steps Send POST {api_baseUrl}/token with username "systemadmin" and password "Password1!".
+     * @expectedResult Access token is stored in variable "token" for later API calls.
+     */
     before(()=>{
         //get authorization token
         cy.request({
-            method:"POST", 
-            url:`${api_baseUrl}/token`, 
+            method:"POST",
+            url:`${api_baseUrl}/token`,
             body:{
-            "grant_type": 'password',
-            "username": 'systemadmin',
-            "password": 'Password1!'
+                "grant_type": 'password',
+                "username": 'systemadmin',
+                "password": 'Password1!'
             },
             headers:{
                 "Content-Type": "application/x-www-form-urlencoded"
@@ -54,7 +80,18 @@ describe('Perform Client Evaluation Using Staging APIs', ()=>{
             token = res.body.access_token
         })
     })
-    
+
+    /**
+     * @scenario Generate Provider Hash Key
+     * @description Generates a provider hash key required for creating a regulation group.
+     * @priority High
+     * @testData Provider key = current date (yyyyMMdd) from getProviderKey(); TTL = "10".
+     * @steps Open System Settings → Account → Key generator.
+     * @steps Select a provider from the dropdown.
+     * @steps Enter provider key (yyyyMMdd) and TTL.
+     * @steps Save and capture the generated hash value.
+     * @expectedResult Hash key is generated and stored in variable "hashValue".
+     */
     it('Generate Regulation Group Hash Key', function() {
 
         cy.getByDataCy('system-settings-menu').scrollIntoView().click();
@@ -75,6 +112,18 @@ describe('Perform Client Evaluation Using Staging APIs', ()=>{
 
     });
 
+    /**
+     * @scenario Create Regulation Group
+     * @description Creates a new regulation group using the generated hash key.
+     * @priority High
+     * @testData Name = regulation_group_name; mappingReference = random alphanumeric(13); country/currency selected from dropdowns; hash = hashValue.
+     * @steps Navigate to Settings → Regulation Groups and click Add.
+     * @steps Enter name and mapping reference.
+     * @steps Select country and currency from the dropdown grids.
+     * @steps Enter/paste the generated hash value.
+     * @steps Save the regulation group.
+     * @expectedResult Toast "Regulation group has been added." is displayed and the group is created.
+     */
     it('Creates a Regulation Group', ()=>{
         cy.visit('/settings/regulation-groups').wait(3500)
         cy.contains('sa-button[icon="plus"]','Add').should('be.visible').click().wait(1000)
@@ -91,6 +140,18 @@ describe('Perform Client Evaluation Using Staging APIs', ()=>{
         cy.contains('Regulation group has been added.').wait(1000)
     })
 
+    /**
+     * @scenario Add Criterion and Default Answer
+     * @description Adds a criterion linked to the new regulation group and creates a default answer.
+     * @priority High
+     * @testData Criterion: name="Test", riskPoint=1, mappingReference=criteria_mappingReference; Client Type="Individual"; Setup Type="Custom".
+     * @steps Open Settings → Criteria and click Add.
+     * @steps Fill in name, risk point, and mapping reference.
+     * @steps Select regulation group, criteria category, client type (Individual), and setup type (Custom).
+     * @steps Enable Include in Evaluation and save.
+     * @steps Click Add to create an answer; set value="Test", grade="Low", mark as default; save.
+     * @expectedResult Toast "The criterion has been added" appears and the default answer is created.
+     */
     it('Adds a Criteria and Its Answers', ()=>{
         cy.visit('/settings/criteria').wait(3500)
         cy.contains('sa-button', 'Add').click().wait(1000)
@@ -115,7 +176,7 @@ describe('Perform Client Evaluation Using Staging APIs', ()=>{
 
         cy.contains('#addCriterionForm sa-button[icon="save"]', 'Save').click().wait(1000)
         cy.contains('The criterion has been added').wait(4000)
-        
+
         //  ADD CRITERION ANSWER
         cy.contains('[icon="plus"]', 'Add').click().wait(1000)
         cy.getByFormControlName('value').type('Test')
@@ -124,14 +185,26 @@ describe('Perform Client Evaluation Using Staging APIs', ()=>{
         cy.get("#addAnswerForm sa-button[icon='save']").click().wait(2000)
     })
 
+    /**
+     * @scenario Add Individual Client and Navigate to Dashboard
+     * @description Creates a new individual client and associates it with the newly created regulation group.
+     * @priority High
+     * @testData Faker-generated first/middle/last name; external reference, phone, email, SSN, TIN, DOB, IP; country="Albania".
+     * @steps Open Clients page and click Add Individual.
+     * @steps Fill in personal details and select Client Status.
+     * @steps Select the created regulation group from the dropdown.
+     * @steps Fill in identifiers and contact fields; select country; add IP and notes.
+     * @steps Save and capture the client page location for later use.
+     * @expectedResult Toast "Client individual has been added" appears and the client page shows the created name.
+     */
     it('Add Individual Client To The New Regulation Group and Navigates to the client dashboard', () => {
 
         cy.visit("/main/clients").wait(2000);
         cy.get('#addIndividual').click().wait(1500);
-        
+
         firstName = faker.person.firstName('male');
         lastName = faker.person.lastName('male');
-        
+
         cy.get('#addClientIndividualForm input[name="firstName"]').type(firstName);
         cy.get('#addClientIndividualForm input[name="lastName"]').type(lastName);
         cy.get('#addClientIndividualForm input[name="middleName"]').type(faker.person.middleName('male'));
@@ -168,9 +241,22 @@ describe('Perform Client Evaluation Using Staging APIs', ()=>{
         cy.contains(`${firstName} ${lastName}`).wait(1500)
     })
 
+    /**
+     * @scenario Create and Perform Evaluation (Staging APIs)
+     * @description Initializes, creates, updates, and performs a client evaluation using staging API calls with conditional UI handling.
+     * @priority High
+     * @testData reasonForEvaluation uses randomized faker number; mapping refs "Criterion_Test" and "CriterionAnswer_Test".
+     * @steps Navigate to the client's page and open Evaluations.
+     * @steps If the initialization form is visible, POST /api/staging/addClientEvaluation, close the dialog, and click New again.
+     * @steps If criteria dropdowns are visible, POST /api/staging/createClientEvaluation with mapping references; store evaluation ID.
+     * @steps PUT /api/clientCommon/{clientId}/evaluations/{evaluationID} to update metadata.
+     * @steps POST /api/clientCommon/{clientId}/evaluations/{evaluationID}/perform to complete evaluation.
+     * @steps Click "Save & Close" in the UI.
+     * @expectedResult Evaluation is created and performed successfully; the form closes without errors.
+     */
     it('Adds an evaluation', ()=>{
         cy.visit(location).wait(2000)
-        
+
         cy.get('.left-secondary-menu .left-menu-items.main-menu li>sa-menu-item>a').contains('span', 'Evaluations').click().wait(2000);
         getClientID();
         cy.get('[primary-buttons=""] > sa-button.ng-star-inserted > .sa-button > .text').click();
@@ -178,17 +264,17 @@ describe('Perform Client Evaluation Using Staging APIs', ()=>{
         cy.getByDataCy('reasonForEvaluation').then((el)=>{
             //step 1
             if(el.is(':visible')){
-                
+
                 cy.wait(1000)
-               
+
                 cy.log(clientId)
-                
+
                 cy.request({
                     method: 'POST',
                     url: `${api_baseUrl}/api/staging/addClientEvaluation`,
                     headers:{
-                      'Content-Type': 'application/json',
-                      'Authorization':   `Bearer ${token}`
+                        'Content-Type': 'application/json',
+                        'Authorization':   `Bearer ${token}`
                     },
                     body: {
                         "ClientId": clientId,
@@ -205,9 +291,9 @@ describe('Perform Client Evaluation Using Staging APIs', ()=>{
             //step 2
             cy.getByDataCy('criteria-dropdowns').then((el)=> {
                 if(el.is(':visible')) {
-                    
+
                     cy.request({
-                        method:'POST', 
+                        method:'POST',
                         url: `${api_baseUrl}/api/staging/createClientEvaluation`,
                         headers:{
                             'Content-Type':'application/json',
@@ -228,12 +314,12 @@ describe('Perform Client Evaluation Using Staging APIs', ()=>{
                                 }
                             ]
                         }}
-                        
+
                     ).then((response:any)=>{
                         cy.log(`${response.body.clientEvaluationID}`)
-                        
+
                         let evaluationID = response.body.clientEvaluationID;
-                        
+
                         cy.request({
                             method: 'PUT',
                             url: `${api_baseUrl}/api/clientCommon/${clientId}/evaluations/${evaluationID}`,
@@ -276,13 +362,13 @@ describe('Perform Client Evaluation Using Staging APIs', ()=>{
                                 // cy.get('sa-button').contains('Complete').click().wait(1000)
                             })
                         })
-                        
-                        
+
+
                     })
-                    
+
                 }
             })
-            
+
             // //step 3
             // cy.contains('Evaluate').click().wait(3000)
             // cy.get('sa-button').contains('Complete').click().wait(1000)
@@ -290,17 +376,24 @@ describe('Perform Client Evaluation Using Staging APIs', ()=>{
         })
 
     })
-    
-    it('Deletes the Regulation Group', ()=>{
-        cy.visit('/settings/regulation-groups').wait(3000)
 
-        cy.get('.sa-panel header .fa-share-square-o').last().click({force:true}).wait(2000)
+/**
+ * @scenario Delete Regulation Group (Teardown)
+ * @description Deletes the previously created regulation group to clean up test data.
+ * @priority High
+ * @steps Open Settings → Regulation Groups, open actions for the target group, click Delete, and confirm.
+ * @expectedResult Toast "The Regulation Group has been deleted." is displayed and the group is removed.
+ */
+it('Deletes the Regulation Group', ()=>{
+    cy.visit('/settings/regulation-groups').wait(3000)
 
-        cy.get('[primary-buttons=""] > [icon="trash"] > .sa-button').click({force:true}).wait(1000)
-        cy.get('.col > [icon="trash"]').click()
-        cy.get('.MessageBoxButtonSection').contains('button', 'Yes').click()
-        cy.wait(20000)
-        cy.contains('The Regulation Group has been deleted.')
-    })
+    cy.get('.sa-panel header .fa-share-square-o').last().click({force:true}).wait(2000)
+
+    cy.get('[primary-buttons=""] > [icon="trash"] > .sa-button').click({force:true}).wait(1000)
+    cy.get('.col > [icon="trash"]').click()
+    cy.get('.MessageBoxButtonSection').contains('button', 'Yes').click()
+    cy.wait(20000)
+    cy.contains('The Regulation Group has been deleted.')
+})
 
 })

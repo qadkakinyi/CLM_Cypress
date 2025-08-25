@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="SupportTests Tests" id="category-supporttests">
+
+   <chapter title="Overview">
+       <p>Test files in the <code>OtherTests/SupportTests</code> directory.</p>
+       <p><b>Total Files:</b> 17</p>
+   </chapter>
+
+   <chapter title="Test Files">
+       <chapter title="Admin User Permissions">
+           <p><b>File:</b> <code>Admin_User_Permissions_test.cy.ts</code></p>
+           <p>Validates that an Admin user can see all expected navigation menu items and access a client's dashboard.</p>
+           <p><a href="admin-user-permissions-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Administrator Settings Update">
+           <p><b>File:</b> <code>Administrator_settings_update_Details_test.cy.ts</code></p>
+           <p>Verifies that the 'Last Evaluation Grade based on' setting can be updated successfully to different values.</p>
+           <p><a href="administrator-settings-update-details-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Client Status Verification">
+           <p><b>File:</b> <code>Client_Status_Match_test.cy.ts</code></p>
+           <p>Compares the client status displayed in the Client Management grid with the status in the client's Profile page.</p>
+           <p><a href="client-status-match-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Clients Per Criterion Answer Report">
+           <p><b>File:</b> <code>Clients_per_criterion_answer_report_advanced_filter_text.cy.ts</code></p>
+           <p>Validates that advanced filters work for the Clients Per Criterion Answer Report, ensuring regulation groups and statuses are populated correctly.</p>
+           <p><a href="clients-per-criterion-answer-report-advanced-filter-text.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Criterion with "Not Include in evaluation" not affect evaluation">
+           <p><b>File:</b> <code>Criterion_Not_Affecting_Evaluation_test.cy.ts</code></p>
+           <p>Ensures that a criterion with "Include in evaluation" UNCHECKED does not affect the client's evaluation and that the full lifecycle (create criterion/category, add answer, run evaluation, delete) works as expected.</p>
+           <p><a href="criterion-not-affecting-evaluation-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Expired Documents Counter Validation">
+           <p><b>File:</b> <code>Document_Expiry_test.cy.ts</code></p>
+           <p>Verifies that the dashboard's "Expired Documents" counter matches the actual expiry status of each listed document.</p>
+           <p><a href="document-expiry-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Missing Document Verification">
+           <p><b>File:</b> <code>Document_Missing_test.cy.ts</code></p>
+           <p>Confirms that a document is marked as missing when its collection status is "Missing" or its expiration date has passed.</p>
+           <p><a href="document-missing-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Evaluation Score Match">
+           <p><b>File:</b> <code>Evaluation_Score_Match_test.cy.ts</code></p>
+           <p>Validates that the evaluation score shown in Client Management matches the one in the client’s Dashboard and Evaluations page.</p>
+           <p><a href="evaluation-score-match-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Export Clients XML">
+           <p><b>File:</b> <code>Export_Clients_XML_test.cy.ts</code></p>
+           <p>Verifies that the "Export Clients XML" process successfully sends the XML report to the specified email.</p>
+           <p><a href="export-clients-xml-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Handle Screening Process">
+           <p><b>File:</b> <code>Handle_Screening_Process_test.cy.ts</code></p>
+           <p>Validates that the screening process correctly redirects to the right client dashboard, checks screening status logic, and confirms that the "Cancel" button navigation works.</p>
+           <p><a href="handle-screening-process-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="eGOV Requests Handling">
+           <p><b>File:</b> <code>Handle_egov_requests_test.cy.ts</code></p>
+           <p>Verifies that the eGOV requests handling process works as expected, including selecting specific requests and attempting to send related emails.</p>
+           <p><a href="handle-egov-requests-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Know Your Transactions - Support">
+           <p><b>File:</b> <code>Know_Your_Transaction_Case_Actions_test.cy.ts</code></p>
+           <p>Validates case actions functionality and save operations in Live transactions within the Know Your Transactions module.</p>
+           <p><a href="know-your-transaction-case-actions-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Opens API Documentation">
+           <p><b>File:</b> <code>Open_API_Documentation_test.cy.ts</code></p>
+           <p>Validates that the RegTek+ API documentation page is accessible after logging out of the system.</p>
+           <p><a href="open-api-documentation-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Restore Archived Client">
+           <p><b>File:</b> <code>Restore_Archived_Client_test.cy.ts</code></p>
+           <p>Validates that an archived client can be restored via UI after being soft-deleted through the API, and that their dashboard becomes accessible again.</p>
+           <p><a href="restore-archived-client-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Save User Layout - Last Evaluation Results Report">
+           <p><b>File:</b> <code>Save_User_Layout(LastEvaluationResultsReport)_test.cy.ts</code></p>
+           <p>Validates that a user can successfully save their layout preferences in the Last Evaluation Results Report page.</p>
+           <p><a href="save-user-layout-lastevaluationresultsreport-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Specific Rules Execution">
+           <p><b>File:</b> <code>Specific_Rules_Executions_test.cy.ts</code></p>
+           <p>Validates that specific rules (Rule 55 and Rule 11) can be executed successfully through the administration panel.</p>
+           <p><a href="specific-rules-executions-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Sub-group Values Match">
+           <p><b>File:</b> <code>Sub-groups_values_Match_test.cy.ts</code></p>
+           <p>Validates that the sub-group value under Screening Possible Matches in the Main Dashboard's "Actions for Review" matches the corresponding value in the client profile.</p>
+           <p><a href="sub-groups-values-match-test.topic">View Test Details</a></p>
+       </chapter>
+   </chapter>
+
+</topic>

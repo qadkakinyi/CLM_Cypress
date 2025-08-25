@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="ClientCases - Corporate Case Management" id="add-edit-delete-case-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/CorporateClientFunctionality/Add_Edit_Delete_Case_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/CorporateClientFunctionality</code></p>
+        <p><b>Description:</b> Handles end-to-end testing for managing client cases under corporate clients</p>
+        <p><b>Priority:</b> High</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> corporate, cases, regression, rules</p>
+        <p><b>Dependencies:</b> faker-js, client-corporate</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Cases - Corporate">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Adds A Case" id="test-1">
+            <p><b>Scenario:</b> Ensure Rule for Case Exists and Activate</p>
+            <p>Checks if the rule "3A - Document Expiration Notice" exists, if not imports and activates it</p>
+            <step>Filter rules grid and check for the required rule</step>
+            <step>If missing, import rules and activate the specific rule</step>
+            <chapter title="Expected Results">
+                <p>• Rule is present and set to Active with Manual Case Creation enabled</p>
+            </chapter>
+        </procedure>
+        <procedure title="Edit A Case" id="test-2">
+            <p><b>Scenario:</b> Ensure Rule for Case Exists and Activate</p>
+            <p>Checks if the rule "3A - Document Expiration Notice" exists, if not imports and activates it</p>
+            <step>Filter rules grid and check for the required rule</step>
+            <step>If missing, import rules and activate the specific rule</step>
+            <chapter title="Expected Results">
+                <p>• Rule is present and set to Active with Manual Case Creation enabled</p>
+            </chapter>
+        </procedure>
+        <procedure title="Delete A Case" id="test-3">
+            <p><b>Scenario:</b> Ensure Rule for Case Exists and Activate</p>
+            <p>Checks if the rule "3A - Document Expiration Notice" exists, if not imports and activates it</p>
+            <step>Filter rules grid and check for the required rule</step>
+            <step>If missing, import rules and activate the specific rule</step>
+            <chapter title="Expected Results">
+                <p>• Rule is present and set to Active with Manual Case Creation enabled</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/CorporateClientFunctionality/Add_Edit_Delete_Case_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/CorporateClientFunctionality/Add_Edit_Delete_Case_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/CorporateClientFunctionality/Add_Edit_Delete_Case_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

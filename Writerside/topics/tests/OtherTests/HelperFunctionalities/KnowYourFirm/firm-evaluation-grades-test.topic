@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Firm Impact Score" id="firm-evaluation-grades-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/HelperFunctionalities/KnowYourFirm/Firm_Evaluation_Grades_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/HelperFunctionalities/KnowYourFirm</code></p>
+        <p><b>Description:</b> Covers adding, editing, and deleting firm impact scores in the settings.</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Firm Impact Score">
+        </chapter>
+        <chapter title="Firm Residual Risk">
+        </chapter>
+        <chapter title="Firm Overall Risk Score">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Adds a Firm Impact Score" id="test-1">
+            <p><b>Scenario:</b> Add a Firm Impact Score</p>
+            <p>Verifies a firm impact score can be created with required details.</p>
+            <step>1. Navigate to Firm Evaluation Grades. 2. Click "Add" and fill in the name, regulation group, risk points, and color. 3. Save the impact score.</step>
+            <chapter title="Expected Results">
+                <p>• The firm impact score is successfully added.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Edits a Firm Impact Score" id="test-2">
+            <p><b>Scenario:</b> Add a Firm Impact Score</p>
+            <p>Verifies a firm impact score can be created with required details.</p>
+            <step>1. Navigate to Firm Evaluation Grades. 2. Click "Add" and fill in the name, regulation group, risk points, and color. 3. Save the impact score.</step>
+            <chapter title="Expected Results">
+                <p>• The firm impact score is successfully added.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Deletes a Firm Impact Score" id="test-3">
+            <p><b>Scenario:</b> Add a Firm Impact Score</p>
+            <p>Verifies a firm impact score can be created with required details.</p>
+            <step>1. Navigate to Firm Evaluation Grades. 2. Click "Add" and fill in the name, regulation group, risk points, and color. 3. Save the impact score.</step>
+            <chapter title="Expected Results">
+                <p>• The firm impact score is successfully added.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Adds a Firm Residual Risk" id="test-4">
+            <p><b>Scenario:</b> Add a Firm Impact Score</p>
+            <p>Verifies a firm impact score can be created with required details.</p>
+            <step>1. Navigate to Firm Evaluation Grades. 2. Click "Add" and fill in the name, regulation group, risk points, and color. 3. Save the impact score.</step>
+            <chapter title="Expected Results">
+                <p>• The firm impact score is successfully added.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Edits a Firm Residual Risk" id="test-5">
+            <p><b>Scenario:</b> Add a Firm Impact Score</p>
+            <p>Verifies a firm impact score can be created with required details.</p>
+            <step>1. Navigate to Firm Evaluation Grades. 2. Click "Add" and fill in the name, regulation group, risk points, and color. 3. Save the impact score.</step>
+            <chapter title="Expected Results">
+                <p>• The firm impact score is successfully added.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Deletes a Firm Residual Risk" id="test-6">
+            <p><b>Scenario:</b> Add a Firm Impact Score</p>
+            <p>Verifies a firm impact score can be created with required details.</p>
+            <step>1. Navigate to Firm Evaluation Grades. 2. Click "Add" and fill in the name, regulation group, risk points, and color. 3. Save the impact score.</step>
+            <chapter title="Expected Results">
+                <p>• The firm impact score is successfully added.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Adds a Firm Overall Risk Score" id="test-7">
+            <p><b>Scenario:</b> Add a Firm Impact Score</p>
+            <p>Verifies a firm impact score can be created with required details.</p>
+            <step>1. Navigate to Firm Evaluation Grades. 2. Click "Add" and fill in the name, regulation group, risk points, and color. 3. Save the impact score.</step>
+            <chapter title="Expected Results">
+                <p>• The firm impact score is successfully added.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Edits a Firm Overall Risk Score" id="test-8">
+            <p><b>Scenario:</b> Add a Firm Impact Score</p>
+            <p>Verifies a firm impact score can be created with required details.</p>
+            <step>1. Navigate to Firm Evaluation Grades. 2. Click "Add" and fill in the name, regulation group, risk points, and color. 3. Save the impact score.</step>
+            <chapter title="Expected Results">
+                <p>• The firm impact score is successfully added.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Deletes a Firm Overall Risk Score" id="test-9">
+            <p><b>Scenario:</b> Add a Firm Impact Score</p>
+            <p>Verifies a firm impact score can be created with required details.</p>
+            <step>1. Navigate to Firm Evaluation Grades. 2. Click "Add" and fill in the name, regulation group, risk points, and color. 3. Save the impact score.</step>
+            <chapter title="Expected Results">
+                <p>• The firm impact score is successfully added.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/HelperFunctionalities/KnowYourFirm/Firm_Evaluation_Grades_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/HelperFunctionalities/KnowYourFirm/Firm_Evaluation_Grades_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/HelperFunctionalities/KnowYourFirm/Firm_Evaluation_Grades_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

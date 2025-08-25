@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Client MID Accounts (Individual)" id="add-edit-delete-client-mid-accounts-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/IndividualClientFunctionality/Add_Edit_Delete_Client_MID_Accounts_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/IndividualClientFunctionality</code></p>
+        <p><b>Description:</b> Adds prerequisites (MID Type/Class), adds a bank account, then validates add/edit/delete flows for client MID Accounts; finally cleans up the bank account.</p>
+        <p><b>Priority:</b> High</p>
+        <p><b>Owner:</b> QA</p>
+        <p><b>Tags:</b> mid-accounts, bank-accounts, individual, crud</p>
+        <p><b>Dependencies:</b> navigateToNewestClientMenu, add_bank_account</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Add, Edit, Delete Client MID Accounts">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Adds a bank account" id="test-1">
+            <p><b>Scenario:</b> Pre-setup for MID Accounts</p>
+            <p>Creates required MID Type and MID Class in Settings before running MID Account tests.</p>
+            <step>1. Create MID Type in Settings. 2. Create MID Class in Settings.</step>
+            <chapter title="Expected Results">
+                <p>• MID Type and MID Class exist and can be selected during MID Account creation.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Add Client MID Accounts" id="test-2">
+            <p><b>Scenario:</b> Pre-setup for MID Accounts</p>
+            <p>Creates required MID Type and MID Class in Settings before running MID Account tests.</p>
+            <step>1. Create MID Type in Settings. 2. Create MID Class in Settings.</step>
+            <chapter title="Expected Results">
+                <p>• MID Type and MID Class exist and can be selected during MID Account creation.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Edit Client MID Accounts" id="test-3">
+            <p><b>Scenario:</b> Pre-setup for MID Accounts</p>
+            <p>Creates required MID Type and MID Class in Settings before running MID Account tests.</p>
+            <step>1. Create MID Type in Settings. 2. Create MID Class in Settings.</step>
+            <chapter title="Expected Results">
+                <p>• MID Type and MID Class exist and can be selected during MID Account creation.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Delete client MID Accounts" id="test-4">
+            <p><b>Scenario:</b> Pre-setup for MID Accounts</p>
+            <p>Creates required MID Type and MID Class in Settings before running MID Account tests.</p>
+            <step>1. Create MID Type in Settings. 2. Create MID Class in Settings.</step>
+            <chapter title="Expected Results">
+                <p>• MID Type and MID Class exist and can be selected during MID Account creation.</p>
+            </chapter>
+        </procedure>
+        <procedure title="should delete a bank account" id="test-5">
+            <p><b>Scenario:</b> Pre-setup for MID Accounts</p>
+            <p>Creates required MID Type and MID Class in Settings before running MID Account tests.</p>
+            <step>1. Create MID Type in Settings. 2. Create MID Class in Settings.</step>
+            <chapter title="Expected Results">
+                <p>• MID Type and MID Class exist and can be selected during MID Account creation.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/IndividualClientFunctionality/Add_Edit_Delete_Client_MID_Accounts_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/IndividualClientFunctionality/Add_Edit_Delete_Client_MID_Accounts_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/IndividualClientFunctionality/Add_Edit_Delete_Client_MID_Accounts_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

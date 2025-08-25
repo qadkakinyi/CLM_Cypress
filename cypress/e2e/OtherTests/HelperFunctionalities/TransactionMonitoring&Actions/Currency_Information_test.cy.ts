@@ -6,11 +6,11 @@ describe('Currency Information', ()=>{
     beforeEach(()=>{
         cy.visit('/settings/currency-informations').wait(2000)
     })
-    
+
     it('Adds a Currency Information', ()=>{
 
         cy.contains('sa-button', 'Add').click().wait(1000)
-        
+
         cy.getByFormControlName('code').type(code)
         cy.getByFormControlName('name').eq(0).type(currency_name)
         // cy.getByDataCy('type').eq(0).click()

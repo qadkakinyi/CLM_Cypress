@@ -1,8 +1,28 @@
+/**
+ * @testSuite Criterion with "Not Include in evaluation" not affect evaluation
+ * @description Ensures that a criterion with "Include in evaluation" UNCHECKED does not affect the client's evaluation and that the full lifecycle (create criterion/category, add answer, run evaluation, delete) works as expected.
+ * @priority Medium
+ * @owner QA Team
+ * @tags regression, settings, evaluation, criteria
+ * @dependencies cypress, @faker-js/faker, navigateToNewestClientMenu
+ * @fileDescription Creates a criteria category and criterion (with Include in evaluation unchecked), adds an answer, performs an evaluation to confirm "Not to affect the client risk", and then cleans up by deleting the criterion and category.
+ */
+
 import {faker} from "@faker-js/faker";
 import {navigateToNewestClientMenu} from "../../../support/e2e";
-let location 
+let location
 
 describe('Criterion with `Not Include in evaluation` not affect evaluation', ()=>{
+
+    /**
+     * @scenario Create Criterion with Include in evaluation UNCHECKED
+     * @description Adds a new criteria category, then creates a criterion linked to it with "Include in evaluation" explicitly unchecked.
+     * @priority Medium
+     * @steps Visit /settings/criteria-categories → Add category → Save.
+     * @steps Visit /settings/criteria → Add criterion → set fields → uncheck includeInEvaluation → Save.
+     * @expectedResult Criterion is created with includeInEvaluation unchecked; success message displayed.
+     * @notes Verifies the previously reported bug where the field might be saved as checked.
+     */
     it('Creates a criterion with field `Not include in evaluation` unchecked', ()=>{
 
         // Add criteria category
@@ -12,7 +32,7 @@ describe('Criterion with `Not Include in evaluation` not affect evaluation', ()=
         cy.getByFormControlName('mappingReference').eq(0).type(faker.string.alphanumeric(13))
 
         cy.get('#addCriteriaCategoryForm [icon="save"]').click().wait(2000)
-        
+
         // add criteria
         cy.visit('/settings/criteria').wait(2000)
         cy.contains('sa-button', 'Add').click().wait(1000)
@@ -34,7 +54,7 @@ describe('Criterion with `Not Include in evaluation` not affect evaluation', ()=
         cy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview .dx-datagrid-content tr td').contains('Custom').click({force:true}).wait(500)
 
         /**
-         * THIS IS THE MOST IMPORTANT BIT 
+         * THIS IS THE MOST IMPORTANT BIT
          * Include in evaluation must be unchecked
          */
         cy.getByFormControlName('includeInEvaluation').scrollIntoView().uncheck({force:true}).wait(500)
@@ -59,6 +79,13 @@ describe('Criterion with `Not Include in evaluation` not affect evaluation', ()=
         // })
     })
 
+    /**
+     * @scenario Add Criterion Answer
+     * @description Adds a non-default answer to the newly created criterion.
+     * @priority Medium
+     * @steps Filter the criteria grid by name → expand row → Add answer → set fields → Save.
+     * @expectedResult Criterion answer saved successfully.
+     */
     it('Adds a Criterion Answer', ()=>{
         cy.visit('/settings/criteria').wait(2000)
         // cy.visit(location).wait(12000)
@@ -77,6 +104,13 @@ describe('Criterion with `Not Include in evaluation` not affect evaluation', ()=
         cy.get('#addAnswerForm [icon="save"]').click().wait(1000)
     })
 
+    /**
+     * @scenario Run Evaluation and Verify No Risk Impact
+     * @description Navigates to an existing client, starts an evaluation, picks the new criterion’s answer, and verifies it shows "Not to affect the client risk".
+     * @priority Medium
+     * @steps Read client name from fixture → navigate to client → open Evaluations → start evaluation → Step 1: set reason → next → Step 2: choose answer for created criterion.
+     * @expectedResult The UI shows "Not to affect the client risk" for the newly created criterion.
+     */
     it('Adds an evaluation', ()=> {
         let clientName;
         cy.readFile('cypress/fixtures/client_individual.json').then((data) =>{
@@ -111,7 +145,7 @@ describe('Criterion with `Not Include in evaluation` not affect evaluation', ()=
                     // Gets the paragraph with the text `Bankrupt DKA SUpportTest` and selects the second sibling the click to select a value
                     cy.contains('fieldset div > div> p','Bankrupt DKA SupportTest').scrollIntoView().siblings().click()
                     cy.get('app-evaluation-criterion').last().find('.dropdown-list .item2>li>[type="checkbox"]').eq(0).scrollIntoView().check({force:true}).wait(500)
-                    
+
                     cy.contains('fieldset div > div> p','Bankrupt DKA SupportTest').parent().siblings().invoke('text').then(impactScore=>{
                         expect(impactScore).to.include('Not to affect the client risk')
                     })
@@ -122,6 +156,13 @@ describe('Criterion with `Not Include in evaluation` not affect evaluation', ()=
         })
     })
 
+    /**
+     * @scenario Delete Criterion and Answer
+     * @description Cleans up by removing the criterion answer, disabling the criterion, and deleting it.
+     * @priority Medium
+     * @steps Filter criteria by name → expand → delete answer → set status Disabled → Save & Close → delete criterion.
+     * @expectedResult Criterion and its answer are deleted successfully.
+     */
     it('Deletes a Criteria', () => {
         cy.visit('/settings/criteria').wait(2000)
         cy.get('#gridCriteria tr .dx-first-cell .dx-texteditor-input').should('be.visible').type('Bankrupt DKA SupportTest', {force:true}).wait(5000)
@@ -139,13 +180,20 @@ describe('Criterion with `Not Include in evaluation` not affect evaluation', ()=
         cy.get('app-save-and-close .dropdown-toggle').click().wait(1000)
         cy.get('.save-and-close-link').click().wait(2000)
 
-        //final delete 
+        //final delete
         cy.get('[icon="trash"]').eq(0).click().wait(3000)
         cy.get('#bot2-Msg1').contains('Yes').click().wait(1000)
 
         cy.contains(`The criterion has been deleted.`).wait(1000)
     })
 
+    /**
+     * @scenario Delete Criteria Category
+     * @description Deletes the previously created criteria category.
+     * @priority Medium
+     * @steps Filter categories by name → delete → confirm.
+     * @expectedResult Criteria category is deleted successfully.
+     */
     it('Deletes a Criteria Category', () => {
         cy.visit('/settings/criteria-categories').wait(2000)
         cy.get('#gridCriteriaCategories tr .dx-first-cell .dx-texteditor-input').type('DKA Test Category', {force:true}).wait(2000)
@@ -155,3 +203,4 @@ describe('Criterion with `Not Include in evaluation` not affect evaluation', ()=
         cy.contains(`The criteria category has been deleted.`).wait(1000)
     })
 })
+

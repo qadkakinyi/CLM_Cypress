@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Power BI Reports" id="powerbi-reports-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/SideMenu/PowerBi_Reports_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/SideMenu</code></p>
+        <p><b>Description:</b> Validates navigation to Power BI reports from the dashboard menu.</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, reporting, ui</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Power Bi Reports">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Opens power bi menu and menu shows menu items" id="test-1">
+            <p><b>Scenario:</b> Open Power BI Menu and Check Items</p>
+            <p>Opens Power BI menu and verifies that menu items are clickable.</p>
+            <step>Visit dashboard, click on Power-BI Reports menu.</step>
+            <step>Click on "Risk Assessment Report first Redesign".</step>
+            <chapter title="Expected Results">
+                <p>• The selected report loads successfully.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Risk assessment report first redesign" id="test-2">
+            <p><b>Scenario:</b> Open Power BI Menu and Check Items</p>
+            <p>Opens Power BI menu and verifies that menu items are clickable.</p>
+            <step>Visit dashboard, click on Power-BI Reports menu.</step>
+            <step>Click on "Risk Assessment Report first Redesign".</step>
+            <chapter title="Expected Results">
+                <p>• The selected report loads successfully.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Transaction monitoring report" id="test-3">
+            <p><b>Scenario:</b> Open Power BI Menu and Check Items</p>
+            <p>Opens Power BI menu and verifies that menu items are clickable.</p>
+            <step>Visit dashboard, click on Power-BI Reports menu.</step>
+            <step>Click on "Risk Assessment Report first Redesign".</step>
+            <chapter title="Expected Results">
+                <p>• The selected report loads successfully.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Transaction screening" id="test-4">
+            <p><b>Scenario:</b> Open Power BI Menu and Check Items</p>
+            <p>Opens Power BI menu and verifies that menu items are clickable.</p>
+            <step>Visit dashboard, click on Power-BI Reports menu.</step>
+            <step>Click on "Risk Assessment Report first Redesign".</step>
+            <chapter title="Expected Results">
+                <p>• The selected report loads successfully.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Transaction screening performance" id="test-5">
+            <p><b>Scenario:</b> Open Power BI Menu and Check Items</p>
+            <p>Opens Power BI menu and verifies that menu items are clickable.</p>
+            <step>Visit dashboard, click on Power-BI Reports menu.</step>
+            <step>Click on "Risk Assessment Report first Redesign".</step>
+            <chapter title="Expected Results">
+                <p>• The selected report loads successfully.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/SideMenu/PowerBi_Reports_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/SideMenu/PowerBi_Reports_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/SideMenu/PowerBi_Reports_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

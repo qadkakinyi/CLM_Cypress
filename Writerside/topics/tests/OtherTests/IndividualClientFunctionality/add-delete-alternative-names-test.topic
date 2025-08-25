@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Individual Client Alternative Names" id="add-delete-alternative-names-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/IndividualClientFunctionality/Add_Delete_Alternative_Names_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/IndividualClientFunctionality</code></p>
+        <p><b>Description:</b> Validates adding and deleting of alternative names for an individual client</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, smoke, client-aliases, individual</p>
+        <p><b>Dependencies:</b> faker-js, navigateToNewestClientMenu</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Add and Delete Alternative Names">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Adds Alternative Name" id="test-1">
+            <p><b>Scenario:</b> Add Alternative Name</p>
+            <p>Adds a new alias to the individual client using a faker-generated first name</p>
+            <p><b>Priority:</b> Medium</p>
+            <p><b>Test Data:</b> Faker-generated firstName (duplicated to form "First First")</p>
+            <step>Load individual client from fixture and navigate to their profile</step>
+            <step>Navigate to Alternative Names section</step>
+            <step>Click Add, fill in name, click Save</step>
+            <chapter title="Expected Results">
+                <p>• The alternative name is saved and confirmation message is shown</p>
+            </chapter>
+        </procedure>
+        <procedure title="Deletes Alternative Names" id="test-2">
+            <p><b>Scenario:</b> Add Alternative Name</p>
+            <p>Adds a new alias to the individual client using a faker-generated first name</p>
+            <p><b>Priority:</b> Medium</p>
+            <p><b>Test Data:</b> Faker-generated firstName (duplicated to form "First First")</p>
+            <step>Load individual client from fixture and navigate to their profile</step>
+            <step>Navigate to Alternative Names section</step>
+            <step>Click Add, fill in name, click Save</step>
+            <chapter title="Expected Results">
+                <p>• The alternative name is saved and confirmation message is shown</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/IndividualClientFunctionality/Add_Delete_Alternative_Names_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/IndividualClientFunctionality/Add_Delete_Alternative_Names_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/IndividualClientFunctionality/Add_Delete_Alternative_Names_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

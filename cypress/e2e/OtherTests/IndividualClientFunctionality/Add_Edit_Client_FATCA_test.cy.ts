@@ -1,10 +1,31 @@
+/**
+ * @testSuite Individual Client FATCA
+ * @description End-to-end validation of configuring FATCA prerequisites in Settings and assigning FATCA data to an individual client
+ * @priority High
+ * @owner QA Team
+ * @tags regression, smoke, compliance, FATCA, individual
+ * @dependencies faker-js, navigateToNewestClientMenu
+ * @fileDescription Creates FATCA lookup data (Status, Entity Categorization, Document, CRS Categorization) then populates the client FATCA form and saves it
+ */
+
+/**
+ * @setup FATCA Prerequisites in Settings
+ * @description Ensures required reference data exists before client-level FATCA can be added
+ * @steps Visit Settings → FATCA Setup
+ * @steps Add FATCA Status with random mapping reference and save
+ * @steps Add FATCA Entity Categorization (“Test Category”) and save
+ * @steps Add FATCA Document (“Test Document”) and save
+ * @steps Add FATCA CRS Entity Categorization (“Test CRS”) and save
+ * @expectedResult All four reference records are present and selectable on the client FATCA form
+ */
+
 import { faker } from "@faker-js/faker";
 import {navigateToClientMenu, navigateToNewestClientMenu} from "../../../support/e2e";
 
 let tin = faker.string.alphanumeric(12);
 
 describe('Add, Delete Client FATCA', () => {
-  
+
   before(()=>{
     //add fatca status
     cy.visit('/settings/fatca-setup').wait(2000)
@@ -66,7 +87,19 @@ describe('Add, Delete Client FATCA', () => {
     cy.wait(2000)
 
   })
-  
+
+  /**
+   * @scenario Add Client FATCA
+   * @description Populates FATCA details for an individual client using the previously created reference data
+   * @priority High
+   * @testData Faker for random GIIN and references; Settings records: Active, Test Category, Test Document, Test CRS
+   * @steps Load individual client from fixture and navigate to profile
+   * @steps Open FATCA section from left menu
+   * @steps Select FATCA Status, Entity Categorization, Document(s), and CRS Entity Categorization
+   * @steps Enter GIIN and toggle FATCA Indicia checkbox
+   * @steps Click Save
+   * @expectedResult Toast shows “Client FATCA has been updated.” and data is persisted
+   */
   it('Add Client FATCA', () => {
     let clientName;
     cy.readFile('cypress/fixtures/client_individual.json').then((data) =>{
@@ -86,12 +119,12 @@ describe('Add, Delete Client FATCA', () => {
 
     cy.get('ng-multiselect-dropdown[name="clientFatcaDocuments"]').click({ force: true });
     cy.get('.multiselect-item-checkbox').eq(0).click({ force: true });
-    
+
     cy.getBySel('fatcaCrsEntityCategorizations').click();
     cy.get('#dynamicSelectBoxDropdownGrid .dx-datagrid-rowsview table tr td').contains('Test CRS').click();
 
     cy.get('#editClientFatcaForm input[name="fatcaGiin"]').type(faker.string.alphanumeric(12));
-    
+
     cy.get('#editClientFatcaForm input[name="fatcaIndicia"]').click({ force: true });
 
     cy.getBySel('saveFatca').click();
@@ -99,3 +132,4 @@ describe('Add, Delete Client FATCA', () => {
     cy.contains('Client FATCA has been updated.')
   });
 })
+

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="AddClients - Joint Client Management" id="add-clientjoint-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>AddClients/Add_ClientJoint_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>AddClients</code></p>
+        <p><b>Description:</b> Test suite for adding joint clients to the system</p>
+        <p><b>Priority:</b> Low</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, joint-clients, client-management</p>
+        <p><b>Dependencies:</b> user-authentication, faker-js</p>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Start add client joint..." id="test-1">
+            <p><b>Scenario:</b> Complete Joint Client Creation</p>
+            <p>Adds a joint client by selecting existing clients and filling required form fields</p>
+            <p><b>Priority:</b> Medium</p>
+            <p><b>Test Data:</b> Faker-generated joint client name, reference number, phone and notes</p>
+            <step>Navigate to Know Your Clients section</step>
+            <step>Click Add Joint button</step>
+            <step>Select a regulation group</step>
+            <step>Choose at least two clients to form a joint client</step>
+            <step>Fill in all required fields including status, evaluation, phone and notes</step>
+            <step>Submit the form</step>
+            <chapter title="Expected Results">
+                <p>• Joint client is successfully added</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "AddClients/Add_ClientJoint_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "AddClients/Add_ClientJoint_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>AddClients/Add_ClientJoint_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

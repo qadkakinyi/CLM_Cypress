@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Administration - Other Settings Navigation" id="other-settings-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/SideMenu/Administration/Other_Settings_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/SideMenu/Administration</code></p>
+        <p><b>Description:</b> Verifies that each menu item under "Other Settings" in the Administration menu navigates to the correct page, displays the expected content, and loads without visible loaders.</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, navigation, administration, other-settings</p>
+        <p><b>Dependencies:</b> cypress, getByDataCy</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Other Settings">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Opens Other Settings Menus" id="test-1">
+            <p>Confirms that the Other Settings submenu under Administration contains the expected number of menu items.</p>
+            <p><b>Priority:</b> Medium</p>
+            <step>Visit /main/dashboard.</step>
+            <step>Expand the Administration menu and click the 5th item (Other Settings).</step>
+            <chapter title="Expected Results">
+                <p>• The Other Settings submenu is visible and contains exactly routes.length items.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Accesses ${route.assertion} page" id="test-2">
+            <p>Confirms that the Other Settings submenu under Administration contains the expected number of menu items.</p>
+            <p><b>Priority:</b> Medium</p>
+            <step>Visit /main/dashboard.</step>
+            <step>Expand the Administration menu and click the 5th item (Other Settings).</step>
+            <chapter title="Expected Results">
+                <p>• The Other Settings submenu is visible and contains exactly routes.length items.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/SideMenu/Administration/Other_Settings_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/SideMenu/Administration/Other_Settings_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/SideMenu/Administration/Other_Settings_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

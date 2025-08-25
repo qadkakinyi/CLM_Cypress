@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Add, Edit, and Delete Contract Policies" id="add-edit-delete-contract-policies-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/IndividualClientFunctionality/PendingCompletion/Add_Edit_Delete_Contract_Policies_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/IndividualClientFunctionality/PendingCompletion</code></p>
+        <p><b>Description:</b> Creates required Contract Policy configurations in settings, then navigates to a client to add a new Contract Policy.</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, contract-policy</p>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Add a contract policy" id="test-1">
+            <step>Visit contract setup settings page</step>
+            <step>Add a Contract Policy Category</step>
+            <step>Add a Contract Status</step>
+            <chapter title="Expected Results">
+                <p>• Contract Policy Category and Status exist for later test execution</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/IndividualClientFunctionality/PendingCompletion/Add_Edit_Delete_Contract_Policies_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/IndividualClientFunctionality/PendingCompletion/Add_Edit_Delete_Contract_Policies_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/IndividualClientFunctionality/PendingCompletion/Add_Edit_Delete_Contract_Policies_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

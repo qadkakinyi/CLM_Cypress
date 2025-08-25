@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Navigation Menu - RegTek" id="navigation-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/SideMenu/Navigation_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/SideMenu</code></p>
+        <p><b>Description:</b> Validates that all main navigation menu items in RegTek are clickable.</p>
+        <p><b>Priority:</b> High</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, navigation, ui</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Click on navigation menu of RegTek">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Start clicking on navigation items" id="test-1">
+            <p><b>Scenario:</b> Click All Main Navigation Items</p>
+            <p>Logs in as system admin and clicks all items in the main navigation menu.</p>
+            <p><b>Priority:</b> High</p>
+            <step>Login as "systemadmin" with "Password1!".</step>
+            <step>Select all "ul.main-menu>li>sa-menu-item>a" elements.</step>
+            <step>Click each menu item (multiple mode).</step>
+            <chapter title="Expected Results">
+                <p>• All main navigation menu items are clicked without errors.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/SideMenu/Navigation_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/SideMenu/Navigation_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/SideMenu/Navigation_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

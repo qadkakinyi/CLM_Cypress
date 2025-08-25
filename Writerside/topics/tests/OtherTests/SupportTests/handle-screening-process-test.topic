@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Handle Screening Process" id="handle-screening-process-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/SupportTests/Handle_Screening_Process_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/SupportTests</code></p>
+        <p><b>Description:</b> Validates that the screening process correctly redirects to the right client dashboard, checks screening status logic, and confirms that the "Cancel" button navigation works.</p>
+        <p><b>Priority:</b> High</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, processes, screening, navigation</p>
+        <p><b>Dependencies:</b> cypress</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Handle Screening Process">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Ensures matches redirect to the correct client" id="test-1">
+            <p><b>Scenario:</b> Redirect from Screening Match to Client Dashboard</p>
+            <p>Ensures that when a screening match is selected, the system redirects to the correct client dashboard and the client name matches the one from the screening list.</p>
+            <p><b>Priority:</b> High</p>
+            <step>1) Visit `/processes/handle-screening`. 2) Get the first match's client name from the grid. 3) Click the link to open the client dashboard. 4) Verify the client name in the dashboard matches the match list. 5) Store the client location path for later tests.</step>
+            <chapter title="Expected Results">
+                <p>• The dashboard displays the correct client name matching the screening match record.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Checks for correct screening status" id="test-2">
+            <p><b>Scenario:</b> Redirect from Screening Match to Client Dashboard</p>
+            <p>Ensures that when a screening match is selected, the system redirects to the correct client dashboard and the client name matches the one from the screening list.</p>
+            <p><b>Priority:</b> High</p>
+            <step>1) Visit `/processes/handle-screening`. 2) Get the first match's client name from the grid. 3) Click the link to open the client dashboard. 4) Verify the client name in the dashboard matches the match list. 5) Store the client location path for later tests.</step>
+            <chapter title="Expected Results">
+                <p>• The dashboard displays the correct client name matching the screening match record.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Tests `Cancel` button navigation" id="test-3">
+            <p><b>Scenario:</b> Redirect from Screening Match to Client Dashboard</p>
+            <p>Ensures that when a screening match is selected, the system redirects to the correct client dashboard and the client name matches the one from the screening list.</p>
+            <p><b>Priority:</b> High</p>
+            <step>1) Visit `/processes/handle-screening`. 2) Get the first match's client name from the grid. 3) Click the link to open the client dashboard. 4) Verify the client name in the dashboard matches the match list. 5) Store the client location path for later tests.</step>
+            <chapter title="Expected Results">
+                <p>• The dashboard displays the correct client name matching the screening match record.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/SupportTests/Handle_Screening_Process_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/SupportTests/Handle_Screening_Process_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/SupportTests/Handle_Screening_Process_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="ClientProfiling Tests" id="category-clientprofiling">
+
+   <chapter title="Overview">
+       <p>Test files in the <code>OtherTests/HelperFunctionalities/ClientProfiling</code> directory.</p>
+       <p><b>Total Files:</b> 21</p>
+   </chapter>
+
+   <chapter title="Test Files">
+       <chapter title="Client Profiling - Address Types Settings">
+           <p><b>File:</b> <code>Addresses_Types_test.cy.ts</code></p>
+           <p>Manages the creation, editing, and deletion of Address Types in system settings</p>
+           <p><a href="addresses-types-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Client Profiling - Bank">
+           <p><b>File:</b> <code>Bank_test.cy.ts</code></p>
+           <p>Validates the ability to add, edit, and delete bank entries in the system settings</p>
+           <p><a href="bank-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Client Profiling - Capacity Management">
+           <p><b>File:</b> <code>Capacity_test.cy.ts</code></p>
+           <p>Validates adding, editing, and deleting capacities in system settings</p>
+           <p><a href="capacity-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Client Profiling - Checklist Management">
+           <p><b>File:</b> <code>Checklist_test.cy.ts</code></p>
+           <p>Validates adding, editing, and deleting checklists in system settings</p>
+           <p><a href="checklist-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Client_Categories_test">
+           <p><b>File:</b> <code>Client_Categories_test.cy.ts</code></p>
+           <p>Creates a new client category with a faker-generated mapping reference</p>
+           <p><a href="client-categories-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Client Profiling - Client Categorization Settings">
+           <p><b>File:</b> <code>Client_Categorizations_test.cy.ts</code></p>
+           <p>CRUD tests for Client Categorizations in Settings</p>
+           <p><a href="client-categorizations-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Client Profiling - Client Statuses Settings">
+           <p><b>File:</b> <code>Client_Statuses_test.cy.ts</code></p>
+           <p>CRUD tests for Client Statuses in Settings</p>
+           <p><a href="client-statuses-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Client Profiling - Custom Fields">
+           <p><b>File:</b> <code>Custom_Fields_test.cy.ts</code></p>
+           <p>CRUD tests for managing Custom Fields in Settings</p>
+           <p><a href="custom-fields-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Client Profiling - Default Address">
+           <p><b>File:</b> <code>Default_Address_test.cy.ts</code></p>
+           <p>CRUD tests for managing Default Addresses in Settings</p>
+           <p><a href="default-address-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Client Profiling - Document Categories">
+           <p><b>File:</b> <code>Document_Category_test.cy.ts</code></p>
+           <p>CRUD tests for managing document categories in the system</p>
+           <p><a href="document-category-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Client Profiling - Documents">
+           <p><b>File:</b> <code>Document_test.cy.ts</code></p>
+           <p>CRUD operations for managing document definitions in the system</p>
+           <p><a href="document-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Client Profiling - FATCA Management">
+           <p><b>File:</b> <code>FATCA_Setup_test.cy.ts</code></p>
+           <p>CRUD operations for FATCA setup, entity categorizations, documents, and CRS categorizations.</p>
+           <p><a href="fatca-setup-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Client Profiling - Integration Capacities">
+           <p><b>File:</b> <code>Integration_Capacity_test.cy.ts</code></p>
+           <p>Validates the CRUD operations for Integration Capacity in the Settings module.</p>
+           <p><a href="integration-capacity-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Client Profiling - MID Classes">
+           <p><b>File:</b> <code>MID_Classes_test.cy.ts</code></p>
+           <p>Validates CRUD operations for MID Classes in the Settings module.</p>
+           <p><a href="mid-classes-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Client Profiling - MID Types">
+           <p><b>File:</b> <code>MID_Type_test.cy.ts</code></p>
+           <p>Validates CRUD operations for MID Types in the Settings module.</p>
+           <p><a href="mid-type-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Client Profiling - Mandatory Document Categories (MDC)">
+           <p><b>File:</b> <code>Mandatory_Document_Categories_test.cy.ts</code></p>
+           <p>Validates CRUD operations for Mandatory Document Categories in the Settings module.</p>
+           <p><a href="mandatory-document-categories-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Client Profiling - Monitoring Visit Types">
+           <p><b>File:</b> <code>Monitoring_Visit_Types_test.cy.ts</code></p>
+           <p>Validates CRUD operations for Monitoring Visit Types in the Settings module.</p>
+           <p><a href="monitoring-visit-types-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Client Profiling - Reasons for TIN">
+           <p><b>File:</b> <code>Reason_for_TIN_test.cy.ts</code></p>
+           <p>Validates the creation, editing, and deletion of Reasons for TIN in the system settings</p>
+           <p><a href="reason-for-tin-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Client Profiling - Related Website Types">
+           <p><b>File:</b> <code>Related_Website_Types_test.cy.ts</code></p>
+           <p>Validates the creation, editing, and deletion of Related Website Types in system settings</p>
+           <p><a href="related-website-types-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Client Profiling - Sub-groups">
+           <p><b>File:</b> <code>Sub_Groups_test.cy.ts</code></p>
+           <p>Validates the creation, editing, and deletion of Sub-groups in system settings</p>
+           <p><a href="sub-groups-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Client Profiling - Tags">
+           <p><b>File:</b> <code>Tags_test.cy.ts</code></p>
+           <p>Validates the creation, editing, and deletion of Tags in system settings</p>
+           <p><a href="tags-test.topic">View Test Details</a></p>
+       </chapter>
+   </chapter>
+
+</topic>

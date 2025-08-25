@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Templates&Report_Setups Tests" id="category-templates-report-setups">
+
+   <chapter title="Overview">
+       <p>Test files in the <code>OtherTests/HelperFunctionalities/Templates&Report_Setups</code> directory.</p>
+       <p><b>Total Files:</b> 4</p>
+   </chapter>
+
+   <chapter title="Test Files">
+       <chapter title="Intro & Endings">
+           <p><b>File:</b> <code>Email_Intro&Endings_test.cy.ts</code></p>
+           <p>Covers adding and editing intro and ending templates used in the system</p>
+           <p><a href="email-intro-endings-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Email Template">
+           <p><b>File:</b> <code>Email_Template_test.cy.ts</code></p>
+           <p>Covers creation, modification, and deletion of email templates and associated intro/endings</p>
+           <p><a href="email-template-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="External Notification Templates">
+           <p><b>File:</b> <code>External_Notification_Templates_test.cy.ts</code></p>
+           <p>Covers adding, editing, and deleting external notification templates in the settings module.</p>
+           <p><a href="external-notification-templates-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Report Engine Setups">
+           <p><b>File:</b> <code>Report_Engine_Setups_test.cy.ts</code></p>
+           <p>Covers adding, editing, and deleting report engine setup configurations in system settings.</p>
+           <p><a href="report-engine-setups-test.topic">View Test Details</a></p>
+       </chapter>
+   </chapter>
+
+</topic>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Administration Module - Navigation" id="administration-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/SideMenu/Administration/Administration_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/SideMenu/Administration</code></p>
+        <p><b>Description:</b> Validates the Administration menu navigation: ensuring menu visibility, opening menu items, and verifying pages load without visible loaders.</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, navigation, administration, ui</p>
+        <p><b>Dependencies:</b> cypress, getByDataCy</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Administration">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Opens the menu list under administration" id="test-1">
+            <p>Ensures the main sidebar is pinned and the Administration menu is expanded before each scenario.</p>
+            <p><b>Priority:</b> Medium</p>
+            <step>Visit /main/dashboard.</step>
+            <step>If the unpin icon is visible in the sidebar, click it to pin the menu.</step>
+            <step>Click the Administration menu.</step>
+            <chapter title="Expected Results">
+                <p>• Administration menu is visible and ready for interaction.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Opens Account" id="test-2">
+            <p>Ensures the main sidebar is pinned and the Administration menu is expanded before each scenario.</p>
+            <p><b>Priority:</b> Medium</p>
+            <step>Visit /main/dashboard.</step>
+            <step>If the unpin icon is visible in the sidebar, click it to pin the menu.</step>
+            <step>Click the Administration menu.</step>
+            <chapter title="Expected Results">
+                <p>• Administration menu is visible and ready for interaction.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Opens release notes" id="test-3">
+            <p>Ensures the main sidebar is pinned and the Administration menu is expanded before each scenario.</p>
+            <p><b>Priority:</b> Medium</p>
+            <step>Visit /main/dashboard.</step>
+            <step>If the unpin icon is visible in the sidebar, click it to pin the menu.</step>
+            <step>Click the Administration menu.</step>
+            <chapter title="Expected Results">
+                <p>• Administration menu is visible and ready for interaction.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/SideMenu/Administration/Administration_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/SideMenu/Administration/Administration_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/SideMenu/Administration/Administration_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

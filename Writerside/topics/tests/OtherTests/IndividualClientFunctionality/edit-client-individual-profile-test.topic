@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Edit Client Individual Profile" id="edit-client-individual-profile-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/IndividualClientFunctionality/Edit_Client_Individual_Profile_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/IndividualClientFunctionality</code></p>
+        <p><b>Description:</b> Validates editing profile details and archiving flow for an individual client.</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, smoke, profile</p>
+        <p><b>Dependencies:</b> navigateToClientMenu, navigateToNewestClientMenu</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Edit Client Individual Profile">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Edit Individual Profile" id="test-1">
+            <p><b>Scenario:</b> Edit Individual Profile</p>
+            <p>Navigates to the newest client’s profile and updates the middle name.</p>
+            <step>Load client from fixture</step>
+            <step>Navigate to Profile section</step>
+            <step>Type random middle name and Save</step>
+            <step>Capture client_id from URL for subsequent tests</step>
+            <chapter title="Expected Results">
+                <p>• Profile is saved successfully and client_id is available for reuse</p>
+            </chapter>
+        </procedure>
+        <procedure title="Archives a client" id="test-2">
+            <p><b>Scenario:</b> Edit Individual Profile</p>
+            <p>Navigates to the newest client’s profile and updates the middle name.</p>
+            <step>Load client from fixture</step>
+            <step>Navigate to Profile section</step>
+            <step>Type random middle name and Save</step>
+            <step>Capture client_id from URL for subsequent tests</step>
+            <chapter title="Expected Results">
+                <p>• Profile is saved successfully and client_id is available for reuse</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/IndividualClientFunctionality/Edit_Client_Individual_Profile_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/IndividualClientFunctionality/Edit_Client_Individual_Profile_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/IndividualClientFunctionality/Edit_Client_Individual_Profile_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

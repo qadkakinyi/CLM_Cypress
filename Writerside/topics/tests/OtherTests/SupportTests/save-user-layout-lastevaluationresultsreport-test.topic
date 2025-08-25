@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Save User Layout - Last Evaluation Results Report" id="save-user-layout-lastevaluationresultsreport-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/SupportTests/Save_User_Layout(LastEvaluationResultsReport)_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/SupportTests</code></p>
+        <p><b>Description:</b> Validates that a user can successfully save their layout preferences in the Last Evaluation Results Report page.</p>
+        <p><b>Priority:</b> Low</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, reports, layout</p>
+        <p><b>Dependencies:</b> cypress</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Save User Layout - Last Evaluation Results Report">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Checks if user can save their layout" id="test-1">
+            <p><b>Scenario:</b> Navigate and Prepare to Save Layout</p>
+            <p>Opens the Last Evaluation Results Report page to validate the ability to save a user-specific layout.</p>
+            <p><b>Priority:</b> Low</p>
+            <step>Visit `/reports/last-evaluation-results-report` → wait for page to load.</step>
+            <chapter title="Expected Results">
+                <p>• Page loads successfully and layout save controls are available.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/SupportTests/Save_User_Layout(LastEvaluationResultsReport)_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/SupportTests/Save_User_Layout(LastEvaluationResultsReport)_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/SupportTests/Save_User_Layout(LastEvaluationResultsReport)_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

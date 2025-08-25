@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Contract Policy Categories" id="contract-setup-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/HelperFunctionalities/TransactionMonitoring&Actions/Contract_Setup_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/HelperFunctionalities/TransactionMonitoring&Actions</code></p>
+        <p><b>Description:</b> Create and update contract policy categories</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> contracts, categories, settings</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Contract Policy Categories">
+        </chapter>
+        <chapter title="Contract Products">
+        </chapter>
+        <chapter title="Contract Status">
+        </chapter>
+        <chapter title="Contract Transaction Payment Method">
+        </chapter>
+        <chapter title="Contract Beneficiary Relations">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Adds a Policy Categories" id="test-1">
+            <p><b>Scenario:</b> Add Policy Category</p>
+            <p>Adds a new contract policy category</p>
+            <step>1. Open Contracts Setup. 2. Click Add. 3. Fill Name and Mapping Reference. 4. Save and verify success.</step>
+            <chapter title="Expected Results">
+                <p>• Category is created successfully.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Edits a Policy Category" id="test-2">
+            <p><b>Scenario:</b> Add Policy Category</p>
+            <p>Adds a new contract policy category</p>
+            <step>1. Open Contracts Setup. 2. Click Add. 3. Fill Name and Mapping Reference. 4. Save and verify success.</step>
+            <chapter title="Expected Results">
+                <p>• Category is created successfully.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Adds a Contract product" id="test-3">
+            <p><b>Scenario:</b> Add Policy Category</p>
+            <p>Adds a new contract policy category</p>
+            <step>1. Open Contracts Setup. 2. Click Add. 3. Fill Name and Mapping Reference. 4. Save and verify success.</step>
+            <chapter title="Expected Results">
+                <p>• Category is created successfully.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Edits a Contract policy product" id="test-4">
+            <p><b>Scenario:</b> Add Policy Category</p>
+            <p>Adds a new contract policy category</p>
+            <step>1. Open Contracts Setup. 2. Click Add. 3. Fill Name and Mapping Reference. 4. Save and verify success.</step>
+            <chapter title="Expected Results">
+                <p>• Category is created successfully.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Deletes a Contract product" id="test-5">
+            <p><b>Scenario:</b> Add Policy Category</p>
+            <p>Adds a new contract policy category</p>
+            <step>1. Open Contracts Setup. 2. Click Add. 3. Fill Name and Mapping Reference. 4. Save and verify success.</step>
+            <chapter title="Expected Results">
+                <p>• Category is created successfully.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Deletes a Contract policy category" id="test-6">
+            <p><b>Scenario:</b> Add Policy Category</p>
+            <p>Adds a new contract policy category</p>
+            <step>1. Open Contracts Setup. 2. Click Add. 3. Fill Name and Mapping Reference. 4. Save and verify success.</step>
+            <chapter title="Expected Results">
+                <p>• Category is created successfully.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Adds a Contract Status" id="test-7">
+            <p><b>Scenario:</b> Add Policy Category</p>
+            <p>Adds a new contract policy category</p>
+            <step>1. Open Contracts Setup. 2. Click Add. 3. Fill Name and Mapping Reference. 4. Save and verify success.</step>
+            <chapter title="Expected Results">
+                <p>• Category is created successfully.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Edits a Contract Status" id="test-8">
+            <p><b>Scenario:</b> Add Policy Category</p>
+            <p>Adds a new contract policy category</p>
+            <step>1. Open Contracts Setup. 2. Click Add. 3. Fill Name and Mapping Reference. 4. Save and verify success.</step>
+            <chapter title="Expected Results">
+                <p>• Category is created successfully.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Deletes a Contract Status" id="test-9">
+            <p><b>Scenario:</b> Add Policy Category</p>
+            <p>Adds a new contract policy category</p>
+            <step>1. Open Contracts Setup. 2. Click Add. 3. Fill Name and Mapping Reference. 4. Save and verify success.</step>
+            <chapter title="Expected Results">
+                <p>• Category is created successfully.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Adds a Transaction Payment Method" id="test-10">
+            <p><b>Scenario:</b> Add Policy Category</p>
+            <p>Adds a new contract policy category</p>
+            <step>1. Open Contracts Setup. 2. Click Add. 3. Fill Name and Mapping Reference. 4. Save and verify success.</step>
+            <chapter title="Expected Results">
+                <p>• Category is created successfully.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Edits a Transaction Payment Method" id="test-11">
+            <p><b>Scenario:</b> Add Policy Category</p>
+            <p>Adds a new contract policy category</p>
+            <step>1. Open Contracts Setup. 2. Click Add. 3. Fill Name and Mapping Reference. 4. Save and verify success.</step>
+            <chapter title="Expected Results">
+                <p>• Category is created successfully.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Deletes a Transaction Payment Method" id="test-12">
+            <p><b>Scenario:</b> Add Policy Category</p>
+            <p>Adds a new contract policy category</p>
+            <step>1. Open Contracts Setup. 2. Click Add. 3. Fill Name and Mapping Reference. 4. Save and verify success.</step>
+            <chapter title="Expected Results">
+                <p>• Category is created successfully.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Adds a Beneficiary Relations" id="test-13">
+            <p><b>Scenario:</b> Add Policy Category</p>
+            <p>Adds a new contract policy category</p>
+            <step>1. Open Contracts Setup. 2. Click Add. 3. Fill Name and Mapping Reference. 4. Save and verify success.</step>
+            <chapter title="Expected Results">
+                <p>• Category is created successfully.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Edits a Beneficiary Relations" id="test-14">
+            <p><b>Scenario:</b> Add Policy Category</p>
+            <p>Adds a new contract policy category</p>
+            <step>1. Open Contracts Setup. 2. Click Add. 3. Fill Name and Mapping Reference. 4. Save and verify success.</step>
+            <chapter title="Expected Results">
+                <p>• Category is created successfully.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Deletes a Beneficiary Relations" id="test-15">
+            <p><b>Scenario:</b> Add Policy Category</p>
+            <p>Adds a new contract policy category</p>
+            <step>1. Open Contracts Setup. 2. Click Add. 3. Fill Name and Mapping Reference. 4. Save and verify success.</step>
+            <chapter title="Expected Results">
+                <p>• Category is created successfully.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/HelperFunctionalities/TransactionMonitoring&Actions/Contract_Setup_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/HelperFunctionalities/TransactionMonitoring&Actions/Contract_Setup_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/HelperFunctionalities/TransactionMonitoring&Actions/Contract_Setup_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

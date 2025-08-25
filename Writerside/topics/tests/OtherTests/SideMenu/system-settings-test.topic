@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="System Settings - Navigation & Visibility" id="system-settings-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/SideMenu/System_Settings_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/SideMenu</code></p>
+        <p><b>Description:</b> Validates the System Settings menu: submenu count and page visibility for each item.</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, navigation, settings, system-settings</p>
+        <p><b>Dependencies:</b> cypress, getByDataCy</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="System Settings">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Click system settings menu and opens the submenus" id="test-1">
+            <p><b>Scenario:</b> Open System Settings Menu</p>
+            <p>Expands the System Settings menu and validates the number of submenu items.</p>
+            <p><b>Priority:</b> Medium</p>
+            <step>Click data-cy="system-settings-menu" and wait briefly.</step>
+            <chapter title="Expected Results">
+                <p>• Submenu has exactly 10 items.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Visits each page and asserts if it is visible" id="test-2">
+            <p><b>Scenario:</b> Open System Settings Menu</p>
+            <p>Expands the System Settings menu and validates the number of submenu items.</p>
+            <p><b>Priority:</b> Medium</p>
+            <step>Click data-cy="system-settings-menu" and wait briefly.</step>
+            <chapter title="Expected Results">
+                <p>• Submenu has exactly 10 items.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/SideMenu/System_Settings_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/SideMenu/System_Settings_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/SideMenu/System_Settings_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

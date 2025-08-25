@@ -1,6 +1,6 @@
 {
   "name": "clm_cypress",
-  "version": "1.0.0",
+  "version": "1.0.7",
   "description": "This project contains Automated E2E tests for the Regtech_CLM",
   "main": "index.js",
   "scripts": {

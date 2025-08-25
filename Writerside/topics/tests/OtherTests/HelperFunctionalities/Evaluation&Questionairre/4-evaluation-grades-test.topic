@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Evaluation Grades Management" id="4-evaluation-grades-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/HelperFunctionalities/Evaluation&Questionairre/4.Evaluation_Grades_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/HelperFunctionalities/Evaluation&Questionairre</code></p>
+        <p><b>Description:</b> Tests adding, editing, and deleting both Overall and Answer Evaluation Grades in the settings section.</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, evaluation, settings</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Evaluation Grades">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Adds an Overall Evaluation Grade" id="test-1">
+            <p><b>Scenario:</b> Add Overall Evaluation Grade</p>
+            <step>Navigate to Evaluation Grades settings</step>
+            <step>Click Add and fill in grade details (name, mapping reference, risk points, color, regulation group, next evaluation days)</step>
+            <step>Save the overall evaluation grade</step>
+            <chapter title="Expected Results">
+                <p>• Overall evaluation grade is successfully added</p>
+            </chapter>
+        </procedure>
+        <procedure title="Edits an Overall Evaluation Grade" id="test-2">
+            <p><b>Scenario:</b> Add Overall Evaluation Grade</p>
+            <step>Navigate to Evaluation Grades settings</step>
+            <step>Click Add and fill in grade details (name, mapping reference, risk points, color, regulation group, next evaluation days)</step>
+            <step>Save the overall evaluation grade</step>
+            <chapter title="Expected Results">
+                <p>• Overall evaluation grade is successfully added</p>
+            </chapter>
+        </procedure>
+        <procedure title="Adds an Answer Evaluation Grade" id="test-3">
+            <p><b>Scenario:</b> Add Overall Evaluation Grade</p>
+            <step>Navigate to Evaluation Grades settings</step>
+            <step>Click Add and fill in grade details (name, mapping reference, risk points, color, regulation group, next evaluation days)</step>
+            <step>Save the overall evaluation grade</step>
+            <chapter title="Expected Results">
+                <p>• Overall evaluation grade is successfully added</p>
+            </chapter>
+        </procedure>
+        <procedure title="Edits an Answer Evaluation Grade" id="test-4">
+            <p><b>Scenario:</b> Add Overall Evaluation Grade</p>
+            <step>Navigate to Evaluation Grades settings</step>
+            <step>Click Add and fill in grade details (name, mapping reference, risk points, color, regulation group, next evaluation days)</step>
+            <step>Save the overall evaluation grade</step>
+            <chapter title="Expected Results">
+                <p>• Overall evaluation grade is successfully added</p>
+            </chapter>
+        </procedure>
+        <procedure title="Deletes an Answer Evaluation Grade" id="test-5">
+            <p><b>Scenario:</b> Add Overall Evaluation Grade</p>
+            <step>Navigate to Evaluation Grades settings</step>
+            <step>Click Add and fill in grade details (name, mapping reference, risk points, color, regulation group, next evaluation days)</step>
+            <step>Save the overall evaluation grade</step>
+            <chapter title="Expected Results">
+                <p>• Overall evaluation grade is successfully added</p>
+            </chapter>
+        </procedure>
+        <procedure title="Deletes an Evaluation Grade" id="test-6">
+            <p><b>Scenario:</b> Add Overall Evaluation Grade</p>
+            <step>Navigate to Evaluation Grades settings</step>
+            <step>Click Add and fill in grade details (name, mapping reference, risk points, color, regulation group, next evaluation days)</step>
+            <step>Save the overall evaluation grade</step>
+            <chapter title="Expected Results">
+                <p>• Overall evaluation grade is successfully added</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/HelperFunctionalities/Evaluation&Questionairre/4.Evaluation_Grades_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/HelperFunctionalities/Evaluation&Questionairre/4.Evaluation_Grades_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/HelperFunctionalities/Evaluation&Questionairre/4.Evaluation_Grades_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

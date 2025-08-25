@@ -1,3 +1,21 @@
+/**
+ * @testSuite Client Transactions (Individual)
+ * @description Validates add/edit/delete flows for a client's Transactions detail line.
+ * @priority Medium
+ * @owner QA
+ * @tags individual, transactions, crud
+ * @dependencies navigateToNewestClientMenu
+ * @fileDescription Creates a transaction, edits its external reference, then deletes it.
+ */
+
+/**
+ * @helper goToTransactionByReference
+ * @description Navigates to the client’s Transactions grid and opens the first row matching the provided external reference.
+ * @params transactionReference: string
+ * @steps Visit Transactions → filter by external reference → open first matching row
+ * @expectedResult Edit form is opened for the targeted transaction.
+ */
+
 import { faker } from "@faker-js/faker";
 import {navigateToClientMenu, navigateToNewestClientMenu} from "../../../support/e2e";
 
@@ -16,6 +34,13 @@ function goToTransactionByReference(transactionReference) {
 }
 
 describe('Add, Edit, Delete Client Transactions - Individual', () => {
+  /**
+   * @scenario Add Client Transaction
+   * @description Adds a new client transaction with randomized amounts and metadata.
+   * @testData Faker-generated amounts, company/counterparty, dates, and external reference.
+   * @steps Load client → Navigate to Transactions → Add → Fill mandatory fields → Save
+   * @expectedResult Toast confirms “The transaction has been added”.
+   */
   it('Add Client Transactions', () => {
     let clientName;
     cy.readFile('cypress/fixtures/client_individual.json').then((data) =>{
@@ -74,6 +99,12 @@ describe('Add, Edit, Delete Client Transactions - Individual', () => {
     cy.contains('The transaction has been added').wait(1500)
   });
 
+  /**
+   * @scenario Edit Client Transaction
+   * @description Opens a transaction by external reference and updates its external reference value.
+   * @steps Visit Transactions → filter by external reference → open row → update external reference → Save & Close
+   * @expectedResult Toast confirms “The transaction has been updated”.
+   */
   it('Edit client Transactions', () => {
     // Edit Transaction
     try {
@@ -89,6 +120,12 @@ describe('Add, Edit, Delete Client Transactions - Individual', () => {
     }
   })
 
+  /**
+   * @scenario Delete Client Transaction
+   * @description Deletes the transaction that matches the (possibly updated) external reference.
+   * @steps Visit Transactions → filter by external reference → open row → Delete → Confirm
+   * @expectedResult Toast confirms deletion (“Transaction has been deleted”).
+   */
   it('Delete client Transactions', () => {
     try {
       goToTransactionByReference(transactionReference);
@@ -102,3 +139,4 @@ describe('Add, Edit, Delete Client Transactions - Individual', () => {
     }
   });
 })
+

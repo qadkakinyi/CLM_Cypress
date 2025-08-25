@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Client Profiling - Default Address" id="default-address-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/HelperFunctionalities/ClientProfiling/Default_Address_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/HelperFunctionalities/ClientProfiling</code></p>
+        <p><b>Description:</b> CRUD tests for managing Default Addresses in Settings</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, settings, addresses</p>
+        <p><b>Dependencies:</b> faker-js</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Default Address">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Adds A Default Address" id="test-1">
+            <p><b>Scenario:</b> Add Default Address</p>
+            <p>Creates a new default address with country and address type selections</p>
+            <p><b>Priority:</b> Medium</p>
+            <p><b>Test Data:</b> Address: "Nairobi", Postal Code: 90402, Locality/Province/District literal values</p>
+            <step>Navigate to Settings → Default Addresses</step>
+            <step>Click Add to open the add form</step>
+            <step>Fill address fields (address, postal code, locality, province, district)</step>
+            <step>Select Country and Address Type via first and second drop-down boxes</step>
+            <step>Click Save</step>
+            <chapter title="Expected Results">
+                <p>• Toast: "Default address has been added."</p>
+            </chapter>
+        </procedure>
+        <procedure title="Edits A Default Address" id="test-2">
+            <p><b>Scenario:</b> Add Default Address</p>
+            <p>Creates a new default address with country and address type selections</p>
+            <p><b>Priority:</b> Medium</p>
+            <p><b>Test Data:</b> Address: "Nairobi", Postal Code: 90402, Locality/Province/District literal values</p>
+            <step>Navigate to Settings → Default Addresses</step>
+            <step>Click Add to open the add form</step>
+            <step>Fill address fields (address, postal code, locality, province, district)</step>
+            <step>Select Country and Address Type via first and second drop-down boxes</step>
+            <step>Click Save</step>
+            <chapter title="Expected Results">
+                <p>• Toast: "Default address has been added."</p>
+            </chapter>
+        </procedure>
+        <procedure title="Deletes A Default Address" id="test-3">
+            <p><b>Scenario:</b> Add Default Address</p>
+            <p>Creates a new default address with country and address type selections</p>
+            <p><b>Priority:</b> Medium</p>
+            <p><b>Test Data:</b> Address: "Nairobi", Postal Code: 90402, Locality/Province/District literal values</p>
+            <step>Navigate to Settings → Default Addresses</step>
+            <step>Click Add to open the add form</step>
+            <step>Fill address fields (address, postal code, locality, province, district)</step>
+            <step>Select Country and Address Type via first and second drop-down boxes</step>
+            <step>Click Save</step>
+            <chapter title="Expected Results">
+                <p>• Toast: "Default address has been added."</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/HelperFunctionalities/ClientProfiling/Default_Address_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/HelperFunctionalities/ClientProfiling/Default_Address_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/HelperFunctionalities/ClientProfiling/Default_Address_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

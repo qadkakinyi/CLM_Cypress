@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Processes - Onboarding Portal Navigation" id="onboarding-portal-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/SideMenu/BatchProcesses/Onboarding_Portal_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/SideMenu/BatchProcesses</code></p>
+        <p><b>Description:</b> Verifies that each submenu item under Processes → Onboarding Portal navigates to the correct page and displays the expected heading.</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, navigation, processes, onboarding-portal</p>
+        <p><b>Dependencies:</b> cypress, getByDataCy</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Onboarding Portal">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Opens ${route.assertion} page" id="test-1">
+            <p><b>Scenario:</b> Open Onboarding Portal Page</p>
+            <p>Opens a specific Onboarding Portal page and verifies URL and expected heading text.</p>
+            <p><b>Priority:</b> Medium</p>
+            <p><b>Test Data:</b> index = route.index, expectedPath = route.route, expectedText = route.assertion.</p>
+            <step>Visit /main/dashboard and pin the sidebar if the unpin icon is present.</step>
+            <step>Click Processes → Onboarding Portal, then click the submenu item by index.</step>
+            <step>Verify the browser path equals the expected route and the page contains the expected assertion text.</step>
+            <chapter title="Expected Results">
+                <p>• Page loads with the correct URL and displays the expected heading text.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/SideMenu/BatchProcesses/Onboarding_Portal_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/SideMenu/BatchProcesses/Onboarding_Portal_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/SideMenu/BatchProcesses/Onboarding_Portal_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

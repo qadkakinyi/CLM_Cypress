@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Transaction Type Settings" id="transactions-setup-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/HelperFunctionalities/TransactionMonitoring&Actions/Transactions_Setup_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/HelperFunctionalities/TransactionMonitoring&Actions</code></p>
+        <p><b>Description:</b> Covers creation, modification, and deletion of transaction types</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> transactions, configuration</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Transaction Types">
+        </chapter>
+        <chapter title="Transaction Methods">
+        </chapter>
+        <chapter title="Execution Status Threshold">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Adds a Transaction Type" id="test-1">
+            <p><b>Scenario:</b> Navigate to Transaction Types Page</p>
+            <p>Open the transaction setup section</p>
+            <step>1. Visit transaction setup route</step>
+            <chapter title="Expected Results">
+                <p>• Page loads with grid</p>
+            </chapter>
+        </procedure>
+        <procedure title="Edits a Transaction Type" id="test-2">
+            <p><b>Scenario:</b> Navigate to Transaction Types Page</p>
+            <p>Open the transaction setup section</p>
+            <step>1. Visit transaction setup route</step>
+            <chapter title="Expected Results">
+                <p>• Page loads with grid</p>
+            </chapter>
+        </procedure>
+        <procedure title="Deletes a Game Type" id="test-3">
+            <p><b>Scenario:</b> Navigate to Transaction Types Page</p>
+            <p>Open the transaction setup section</p>
+            <step>1. Visit transaction setup route</step>
+            <chapter title="Expected Results">
+                <p>• Page loads with grid</p>
+            </chapter>
+        </procedure>
+        <procedure title="Adds a Transaction Method" id="test-4">
+            <p><b>Scenario:</b> Navigate to Transaction Types Page</p>
+            <p>Open the transaction setup section</p>
+            <step>1. Visit transaction setup route</step>
+            <chapter title="Expected Results">
+                <p>• Page loads with grid</p>
+            </chapter>
+        </procedure>
+        <procedure title="Edits a Transaction Method" id="test-5">
+            <p><b>Scenario:</b> Navigate to Transaction Types Page</p>
+            <p>Open the transaction setup section</p>
+            <step>1. Visit transaction setup route</step>
+            <chapter title="Expected Results">
+                <p>• Page loads with grid</p>
+            </chapter>
+        </procedure>
+        <procedure title="Deletes a Transaction Method" id="test-6">
+            <p><b>Scenario:</b> Navigate to Transaction Types Page</p>
+            <p>Open the transaction setup section</p>
+            <step>1. Visit transaction setup route</step>
+            <chapter title="Expected Results">
+                <p>• Page loads with grid</p>
+            </chapter>
+        </procedure>
+        <procedure title="Edits an Execution Status Threshold" id="test-7">
+            <p><b>Scenario:</b> Navigate to Transaction Types Page</p>
+            <p>Open the transaction setup section</p>
+            <step>1. Visit transaction setup route</step>
+            <chapter title="Expected Results">
+                <p>• Page loads with grid</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/HelperFunctionalities/TransactionMonitoring&Actions/Transactions_Setup_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/HelperFunctionalities/TransactionMonitoring&Actions/Transactions_Setup_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/HelperFunctionalities/TransactionMonitoring&Actions/Transactions_Setup_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

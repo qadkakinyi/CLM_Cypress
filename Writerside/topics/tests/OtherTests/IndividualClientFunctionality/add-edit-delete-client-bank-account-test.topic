@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Individual Client Bank Accounts" id="add-edit-delete-client-bank-account-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/IndividualClientFunctionality/Add_Edit_Delete_Client_Bank_Account_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/IndividualClientFunctionality</code></p>
+        <p><b>Description:</b> Validates adding and editing of client bank accounts for an individual client (banks are pre-seeded in a precondition)</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, smoke, bank-accounts</p>
+        <p><b>Dependencies:</b> faker-js, navigateToNewestClientMenu</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Add, Edit, Delete Client Bank Account">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Add Client Bank Account" id="test-1">
+            <p>Navigates to an individual client and creates a new bank account with faker data</p>
+            <step>Load individual client fixture and open newest client menu</step>
+            <step>Navigate to Bank Accounts page and click Add</step>
+            <step>Fill SWIFT, IBAN, Account Number, Bank, Country, Date, Comment, Currency</step>
+            <step>Save the bank account</step>
+            <chapter title="Expected Results">
+                <p>• Bank account is created and appears in the grid</p>
+            </chapter>
+        </procedure>
+        <procedure title="Edit client Bank Account" id="test-2">
+            <p>Navigates to an individual client and creates a new bank account with faker data</p>
+            <step>Load individual client fixture and open newest client menu</step>
+            <step>Navigate to Bank Accounts page and click Add</step>
+            <step>Fill SWIFT, IBAN, Account Number, Bank, Country, Date, Comment, Currency</step>
+            <step>Save the bank account</step>
+            <chapter title="Expected Results">
+                <p>• Bank account is created and appears in the grid</p>
+            </chapter>
+        </procedure>
+        <procedure title="Delete client Bank Account" id="test-3">
+            <p>Navigates to an individual client and creates a new bank account with faker data</p>
+            <step>Load individual client fixture and open newest client menu</step>
+            <step>Navigate to Bank Accounts page and click Add</step>
+            <step>Fill SWIFT, IBAN, Account Number, Bank, Country, Date, Comment, Currency</step>
+            <step>Save the bank account</step>
+            <chapter title="Expected Results">
+                <p>• Bank account is created and appears in the grid</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/IndividualClientFunctionality/Add_Edit_Delete_Client_Bank_Account_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/IndividualClientFunctionality/Add_Edit_Delete_Client_Bank_Account_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/IndividualClientFunctionality/Add_Edit_Delete_Client_Bank_Account_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

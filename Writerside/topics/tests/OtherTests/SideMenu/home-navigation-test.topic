@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Home Navigations" id="home-navigation-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/SideMenu/Home_Navigation_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/SideMenu</code></p>
+        <p><b>Description:</b> Validates navigation and content visibility on the home dashboard, including My Tasks, History, and task creation.</p>
+        <p><b>Priority:</b> High</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, navigation, dashboard</p>
+        <p><b>Dependencies:</b> cypress, getByDataCy</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Home Navigations">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Visit the homepage and various sections" id="test-1">
+            <p><b>Scenario:</b> Visit Homepage and Various Sections</p>
+            <p>Loads the dashboard and verifies multiple sections (Tour, Pending Actions, My Tasks, Key Metrics, Token Balances) are accessible.</p>
+            <p><b>Priority:</b> High</p>
+            <step>Visit dashboard.</step>
+            <step>Confirm URL path is "/main/dashboard".</step>
+            <step>Verify visibility of "Tour" and "Pending Actions".</step>
+            <step>Navigate to "My Tasks" and verify "Add Task" button is present.</step>
+            <step>Navigate to "Key Metrics" and verify "Transaction Volume".</step>
+            <step>Navigate to "Token Balances" and verify "Account Token Balances".</step>
+            <chapter title="Expected Results">
+                <p>• All sections are visible and navigable.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Visit my tasks and history page and tests visibility" id="test-2">
+            <p><b>Scenario:</b> Visit Homepage and Various Sections</p>
+            <p>Loads the dashboard and verifies multiple sections (Tour, Pending Actions, My Tasks, Key Metrics, Token Balances) are accessible.</p>
+            <p><b>Priority:</b> High</p>
+            <step>Visit dashboard.</step>
+            <step>Confirm URL path is "/main/dashboard".</step>
+            <step>Verify visibility of "Tour" and "Pending Actions".</step>
+            <step>Navigate to "My Tasks" and verify "Add Task" button is present.</step>
+            <step>Navigate to "Key Metrics" and verify "Transaction Volume".</step>
+            <step>Navigate to "Token Balances" and verify "Account Token Balances".</step>
+            <chapter title="Expected Results">
+                <p>• All sections are visible and navigable.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Can add a new task" id="test-3">
+            <p><b>Scenario:</b> Visit Homepage and Various Sections</p>
+            <p>Loads the dashboard and verifies multiple sections (Tour, Pending Actions, My Tasks, Key Metrics, Token Balances) are accessible.</p>
+            <p><b>Priority:</b> High</p>
+            <step>Visit dashboard.</step>
+            <step>Confirm URL path is "/main/dashboard".</step>
+            <step>Verify visibility of "Tour" and "Pending Actions".</step>
+            <step>Navigate to "My Tasks" and verify "Add Task" button is present.</step>
+            <step>Navigate to "Key Metrics" and verify "Transaction Volume".</step>
+            <step>Navigate to "Token Balances" and verify "Account Token Balances".</step>
+            <chapter title="Expected Results">
+                <p>• All sections are visible and navigable.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/SideMenu/Home_Navigation_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/SideMenu/Home_Navigation_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/SideMenu/Home_Navigation_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

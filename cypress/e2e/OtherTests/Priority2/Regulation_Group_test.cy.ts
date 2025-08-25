@@ -1,5 +1,15 @@
 import {faker} from "@faker-js/faker";
 
+/**
+ * @testSuite Regulation Groups - Management
+ * @description Performs end-to-end operations on regulation groups: generate provider hash key, duplicate a group, edit, synchronize, and delete.
+ * @priority Medium
+ * @owner QA Team
+ * @tags regression, smoke, settings, regulation-groups, synchronization
+ * @dependencies user-authentication, cypress, faker-js
+ * @fileDescription Validates key flows of the Regulation Groups feature from setup to teardown.
+ */
+
 function getProviderKey(){
     let today = new Date();
     let formattedDate = today.getFullYear().toString() + ('0' + (today.getMonth() +1)).slice(-2) + ('0' + today.getDate()).slice(-2)
@@ -8,8 +18,27 @@ function getProviderKey(){
 }
 
 let hashValue = '';
+
+/**
+ * @suite Regulation Groups Operations
+ * @description Collection of scenarios for managing regulation groups through the UI.
+ * @prerequisites User is logged in with permissions to access System Settings → Account and Settings → Regulation Groups.
+ * @prerequisites Provider list is configured; a selectable provider exists in the dropdown (row index 4).
+ * @testData Provider key = today's date (yyyyMMdd); TTL = "10"; duplicate name "DKA Duplicate Group <random>"; hash captured into variable "hashValue".
+ */
 describe('Regulation Groups', ()=>{
 
+    /**
+     * @scenario Generate Provider Hash Key
+     * @description Generates a provider hash key required for subsequent regulation-group operations.
+     * @priority Medium
+     * @testData providerKey = yyyyMMdd from getProviderKey(); ttl = "10".
+     * @steps Open System Settings menu and select "Account".
+     * @steps Open the key generator, choose a provider (row 4).
+     * @steps Enter provider key (yyyyMMdd) and TTL.
+     * @steps Save and capture the generated hash into "hashValue".
+     * @expectedResult Hash key is generated and stored in "hashValue"; dialog is closed.
+     */
     it('Generate Regulation Group Hash Key', function() {
         cy.wait(3000)
         cy.getByDataCy('system-settings-menu').scrollIntoView().click();
@@ -30,6 +59,17 @@ describe('Regulation Groups', ()=>{
 
     });
 
+    /**
+     * @scenario Duplicate Regulation Group
+     * @description Duplicates an existing regulation group using the generated hash key.
+     * @priority Medium
+     * @testData newName = "DKA Duplicate Group <alphanumeric(3)>"; hash = hashValue.
+     * @steps Navigate to Settings → Regulation Groups.
+     * @steps Click the Duplicate icon on the last listed regulation group.
+     * @steps Enter a new name and paste the hash value.
+     * @steps Save and wait for the success notification.
+     * @expectedResult Toast "Duplicated regulation group has been added." is displayed.
+     */
     it('Duplicates a Regulation Group', ()=>{
         cy.visit('/settings/regulation-groups').wait(1500)
         cy.get('header > div .fa-clone').last().click().wait(1000)
@@ -39,6 +79,16 @@ describe('Regulation Groups', ()=>{
         cy.poll('Duplicated regulation group has been added.').wait(1000)
     })
 
+    /**
+     * @scenario Edit Regulation Group
+     * @description Edits the duplicated regulation group name and saves changes.
+     * @priority Medium
+     * @steps Open Settings → Regulation Groups.
+     * @steps Open the last group's details via the share-square icon.
+     * @steps Change the name to "DKA Duplicate Group Edited".
+     * @steps Click "Save & Close" and verify the update toast.
+     * @expectedResult Toast "Regulation group has been updated." is displayed.
+     */
     it('Edits a Regulation Group', ()=>{
         cy.visit('/settings/regulation-groups').wait(3000)
 
@@ -48,6 +98,16 @@ describe('Regulation Groups', ()=>{
         cy.poll('Regulation group has been updated.')
     })
 
+    /**
+     * @scenario Synchronize Regulation Group
+     * @description Synchronizes selected setup types (e.g., Criteria) for a regulation group.
+     * @priority Medium
+     * @steps Open Settings → Regulation Groups and click the Refresh icon.
+     * @steps Choose regulation groups to be synced.
+     * @steps Select setup type "Criteria".
+     * @steps Choose criteria rows to sync and start synchronization.
+     * @expectedResult Toast "Synchronization Completed" is displayed.
+     */
     it('Synchronizes a Regulation Group', ()=>{
         cy.visit('/settings/regulation-groups').wait(3000)
         cy.get('header > div .fa-refresh').last().click().wait(3000)
@@ -60,9 +120,17 @@ describe('Regulation Groups', ()=>{
         cy.getByFormControlName('regulationGroupCriteria').click().wait(500)
         cy.get('[icon="recycle"] > .sa-button').click({force:true})
         cy.poll('Synchronization Completed')
-        
+
     })
 
+    /**
+     * @scenario Delete Regulation Group (Teardown)
+     * @description Deletes the previously edited regulation group to clean up test data.
+     * @priority Medium
+     * @steps Open Settings → Regulation Groups and open the last group's details.
+     * @steps Click Delete and confirm the Yes prompt.
+     * @expectedResult Toast "The Regulation Group has been deleted." is displayed and group is removed.
+     */
     it('Deletes a Regulation Group', ()=>{
         cy.visit('/settings/regulation-groups').wait(3000)
 
@@ -76,3 +144,4 @@ describe('Regulation Groups', ()=>{
 
 
 })
+

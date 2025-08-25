@@ -1,6 +1,26 @@
+/**
+ * @testSuite Client Profiling - Client Categorization Settings
+ * @description CRUD tests for Client Categorizations in Settings
+ * @priority Medium
+ * @owner QA Team
+ * @tags regression, settings, client-categorization
+ * @dependencies faker-js
+ * @fileDescription Verifies adding, editing, and deleting client categorizations via the Settings UI
+ */
+
 import {faker} from "@faker-js/faker";
 
 describe('Client Categorization', ()=>{
+
+    /**
+     * @scenario Add Client Categorization
+     * @description Creates a new client categorization entry in Settings
+     * @priority Medium
+     * @testData Faker-generated mapping reference
+     * @steps Navigate to Settings → Client Categorizations
+     * @steps Click Add, fill Name + Mapping Reference, pick Regulation Group (if required), Save
+     * @expectedResult Success toast appears: "The client categorization has been added."
+     */
     it('Adds A Client Categorization', ()=>{
         //add client category
         cy.visit('/settings/client-categorizations').wait(1000)
@@ -12,6 +32,14 @@ describe('Client Categorization', ()=>{
         cy.contains('The client categorization has been added.')
     })
 
+    /**
+     * @scenario Edit Client Categorization
+     * @description Updates the name of an existing client categorization inline in the grid
+     * @priority Medium
+     * @steps Open Settings → Client Categorizations
+     * @steps Filter by the created name, click edit icon, change Name, Save
+     * @expectedResult Success toast appears: "The client categorization has been updated."
+     */
     it('Edits A Client Categorization', ()=>{
         cy.visit('/settings/client-categorizations').wait(2000)
 
@@ -24,6 +52,14 @@ describe('Client Categorization', ()=>{
         cy.contains('The client categorization has been updated.')
     })
 
+    /**
+     * @scenario Delete Client Categorization
+     * @description Removes the client categorization from the list
+     * @priority Medium
+     * @steps Open Settings → Client Categorizations
+     * @steps Filter by updated name, click delete icon, confirm Yes
+     * @expectedResult Success toast appears: "The client categorization has been deleted."
+     */
     it('Deletes A Client Categorization', ()=>{
         cy.visit('/settings/client-categorizations').wait(2000)
 

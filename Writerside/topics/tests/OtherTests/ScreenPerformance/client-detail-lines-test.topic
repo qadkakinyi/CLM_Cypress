@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Client Detail Lines - Performance Navigation" id="client-detail-lines-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/ScreenPerformance/Client_Detail_Lines_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/ScreenPerformance</code></p>
+        <p><b>Description:</b> Validates that navigating across all client detail lines triggers a loader that then disappears quickly, indicating data loaded successfully.</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> performance, navigation, clients, ui</p>
+        <p><b>Dependencies:</b> cypress, navigateToClientMenu</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Client Detail Lines Performance">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="should navigate to each client detail line within 10 seconds" id="test-1">
+            <p><b>Scenario:</b> Navigate and Verify Loaders</p>
+            <p>Clicks each client detail line, expects the loader to appear, then confirms it is not visible shortly after.</p>
+            <p><b>Priority:</b> Medium</p>
+            <step>Use helper to navigate to the Clients section for "Individual".</step>
+            <step>Iterate through each left-menu item and click it.</step>
+            <step>Confirm loader appears, wait 2 seconds, then assert loader is not visible.</step>
+            <chapter title="Expected Results">
+                <p>• Each detail page loads and the spinner becomes not visible within the test window (≤ 2s; under a 10s budget).</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/ScreenPerformance/Client_Detail_Lines_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/ScreenPerformance/Client_Detail_Lines_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/ScreenPerformance/Client_Detail_Lines_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

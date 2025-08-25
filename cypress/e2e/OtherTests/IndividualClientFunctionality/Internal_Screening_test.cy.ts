@@ -1,9 +1,26 @@
+/**
+ * @testSuite Internal Screening - Individual
+ * @description Sets up internal blacklist reason and individual, then verifies internal blacklist search flow from an individual client's Internal Screening page.
+ * @priority High
+ * @owner QA Team
+ * @tags regression, internal-screening, smoke
+ * @dependencies navigateToNewestClientMenu
+ */
+
 import {faker} from "@faker-js/faker";
 import {navigateToClientMenu, navigateToNewestClientMenu} from "../../../support/e2e";
 
 let IdNumber = 12345678
 let location = '';
+
 describe('Internal Screening - Individual', ()=>{
+
+    /**
+     * @setup Create prerequisites
+     * @steps Add "Fraud" internal blacklist reason
+     * @steps Add an internal blacklisted individual linked to that reason
+     * @expectedResult Reason and individual exist for subsequent search
+     */
     before(()=>{
         // add blacklist reason
         cy.visit('/administration/internal-blacklists-setup').wait(3000)
@@ -16,10 +33,10 @@ describe('Internal Screening - Individual', ()=>{
         // cy.get("p:contains('Internal Blacklisted Reason already exists.')").then((el)=>{
         //     if(el.is(':visible')){
         //         cy.getByDataCy('Close-Blacklist-Reason-Form').click()
-        //     }            
+        //     }           
         // })
         cy.wait(1000)
-        
+
         // add internal blacklist
         cy.visit('/administration/internal-blacklists-setup').wait(3000)
         cy.get('span').contains('Individuals').click()
@@ -39,7 +56,13 @@ describe('Internal Screening - Individual', ()=>{
 
     })
 
-    
+    /**
+     * @scenario Perform Internal Blacklists Search
+     * @steps Open newest individual client
+     * @steps Navigate to Internal Screening
+     * @steps Open Internal Black Lists Search and search by ID number
+     * @expectedResult Search executes and confirmation toast/message appears
+     */
     it('Performs Internal blacklists search', ()=>{
         let clientName;
         cy.readFile('cypress/fixtures/client_individual.json').then((data) =>{
@@ -52,7 +75,7 @@ describe('Internal Screening - Individual', ()=>{
         cy.location('pathname').then((loc)=>{
             location = loc
         })
-        
+
         cy.contains('Internal Black Lists Search').click()
         cy.wait(1000)
         // cy.getByFormControlName('firstName').clear()
@@ -62,15 +85,15 @@ describe('Internal Screening - Individual', ()=>{
         cy.getByFormControlName('idNumber').type(IdNumber.toString())
         cy.getByDataCy('search-blacklisted-individual').click()
         cy.contains('Internal search has been executed.')
-        
+
         // cy.getByDataCy('search-results').find('tbody>tr').contains('12345678')
-        
+
 
         cy.wait(1500)
     })
-    
-    
+
     // it('Performs internal monitoring', ()=>{
-    //    
+    //   
     // })
 })
+

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Know Your Transactions - Support" id="know-your-transaction-case-actions-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/SupportTests/Know_Your_Transaction_Case_Actions_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/SupportTests</code></p>
+        <p><b>Description:</b> Validates case actions functionality and save operations in Live transactions within the Know Your Transactions module.</p>
+        <p><b>Priority:</b> High</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, transactions, actions, save, UI</p>
+        <p><b>Dependencies:</b> cypress, faker</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Know your transactions - Support">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="It drills into a single case action" id="test-1">
+            <p><b>Scenario:</b> Drill into and Add a Single Case Action</p>
+            <p>Opens the Case Actions tab for a live case, adds a new case action with generated target date, and verifies navigation to the Edit Action page.</p>
+            <p><b>Priority:</b> High</p>
+            <step>1) Navigate to the Actions → Case Actions tab. 2) Click "Add Client Action". 3) Select an action category and status. 4) Enter a target date (faker-generated). 5) Save and navigate into the newly added case action.</step>
+            <chapter title="Expected Results">
+                <p>• The new case action is created and the Edit Action page is displayed.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Differentiates `Save` vs `Save & Close` in Live Transaction" id="test-2">
+            <p><b>Scenario:</b> Drill into and Add a Single Case Action</p>
+            <p>Opens the Case Actions tab for a live case, adds a new case action with generated target date, and verifies navigation to the Edit Action page.</p>
+            <p><b>Priority:</b> High</p>
+            <step>1) Navigate to the Actions → Case Actions tab. 2) Click "Add Client Action". 3) Select an action category and status. 4) Enter a target date (faker-generated). 5) Save and navigate into the newly added case action.</step>
+            <chapter title="Expected Results">
+                <p>• The new case action is created and the Edit Action page is displayed.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/SupportTests/Know_Your_Transaction_Case_Actions_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/SupportTests/Know_Your_Transaction_Case_Actions_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/SupportTests/Know_Your_Transaction_Case_Actions_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

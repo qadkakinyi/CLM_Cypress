@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="PendingCompletion Tests" id="category-pendingcompletion">
+
+   <chapter title="Overview">
+       <p>Test files in the <code>OtherTests/IndividualClientFunctionality/PendingCompletion</code> directory.</p>
+       <p><b>Total Files:</b> 1</p>
+   </chapter>
+
+   <chapter title="Test Files">
+       <chapter title="Add, Edit, and Delete Contract Policies">
+           <p><b>File:</b> <code>Add_Edit_Delete_Contract_Policies_test.cy.ts</code></p>
+           <p>Creates required Contract Policy configurations in settings, then navigates to a client to add a new Contract Policy.</p>
+           <p><a href="add-edit-delete-contract-policies-test.topic">View Test Details</a></p>
+       </chapter>
+   </chapter>
+
+</topic>

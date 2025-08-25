@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Handle Rules - Recurring Rules Management" id="handle-rules-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/Priority2/Handle_Rules_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/Priority2</code></p>
+        <p><b>Description:</b> Validates executing rules, updating rule status, editing schedules, and synchronizing rules via the Handle Rules page.</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, smoke, rules, scheduling, synchronization, processes</p>
+        <p><b>Dependencies:</b> user-authentication, cypress, faker-js</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Handle Rules">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Execute Rule" id="test-1">
+            <step>Navigate to /processes/handle-rules.</step>
+            <step>In the grid filter (col 4), type "3A".</step>
+            <step>Select the checkbox in row 2 to target the rule(s).</step>
+            <chapter title="Expected Results">
+                <p>• The desired rule(s) are filtered and selected for subsequent actions.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Update Rule Status" id="test-2">
+            <step>Navigate to /processes/handle-rules.</step>
+            <step>In the grid filter (col 4), type "3A".</step>
+            <step>Select the checkbox in row 2 to target the rule(s).</step>
+            <chapter title="Expected Results">
+                <p>• The desired rule(s) are filtered and selected for subsequent actions.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Update Schedule" id="test-3">
+            <step>Navigate to /processes/handle-rules.</step>
+            <step>In the grid filter (col 4), type "3A".</step>
+            <step>Select the checkbox in row 2 to target the rule(s).</step>
+            <chapter title="Expected Results">
+                <p>• The desired rule(s) are filtered and selected for subsequent actions.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Synchronize Rule" id="test-4">
+            <step>Navigate to /processes/handle-rules.</step>
+            <step>In the grid filter (col 4), type "3A".</step>
+            <step>Select the checkbox in row 2 to target the rule(s).</step>
+            <chapter title="Expected Results">
+                <p>• The desired rule(s) are filtered and selected for subsequent actions.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/Priority2/Handle_Rules_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/Priority2/Handle_Rules_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/Priority2/Handle_Rules_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

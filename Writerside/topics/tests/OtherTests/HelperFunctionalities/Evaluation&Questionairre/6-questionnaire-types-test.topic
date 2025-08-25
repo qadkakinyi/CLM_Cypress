@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Questionnaire Types Management" id="6-questionnaire-types-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/HelperFunctionalities/Evaluation&Questionairre/6.Questionnaire_Types_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/HelperFunctionalities/Evaluation&Questionairre</code></p>
+        <p><b>Description:</b> Tests adding and editing questionnaire types in the settings section.</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, questionnaire, settings</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Questionnaire Types">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Adds a Questionnaire Type" id="test-1">
+            <p><b>Scenario:</b> Add Questionnaire Type</p>
+            <step>Navigate to Questionnaire Types settings</step>
+            <step>Click Add and fill in questionnaire type details (name, mapping reference)</step>
+            <step>Save the questionnaire type</step>
+            <chapter title="Expected Results">
+                <p>• Questionnaire type is successfully added</p>
+            </chapter>
+        </procedure>
+        <procedure title="Edits a Questionnaire Type" id="test-2">
+            <p><b>Scenario:</b> Add Questionnaire Type</p>
+            <step>Navigate to Questionnaire Types settings</step>
+            <step>Click Add and fill in questionnaire type details (name, mapping reference)</step>
+            <step>Save the questionnaire type</step>
+            <chapter title="Expected Results">
+                <p>• Questionnaire type is successfully added</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/HelperFunctionalities/Evaluation&Questionairre/6.Questionnaire_Types_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/HelperFunctionalities/Evaluation&Questionairre/6.Questionnaire_Types_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/HelperFunctionalities/Evaluation&Questionairre/6.Questionnaire_Types_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

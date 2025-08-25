@@ -1,6 +1,29 @@
+/**
+ * @testSuite Client Profiling - Default Address
+ * @description CRUD tests for managing Default Addresses in Settings
+ * @priority Medium
+ * @owner QA Team
+ * @tags regression, settings, addresses
+ * @dependencies faker-js
+ * @fileDescription Verifies adding, editing, and deleting default address records
+ */
+
 import {faker} from "@faker-js/faker";
 
 describe('Default Address', ()=>{
+
+    /**
+     * @scenario Add Default Address
+     * @description Creates a new default address with country and address type selections
+     * @priority Medium
+     * @testData Address: "Nairobi", Postal Code: 90402, Locality/Province/District literal values
+     * @steps Navigate to Settings → Default Addresses
+     * @steps Click Add to open the add form
+     * @steps Fill address fields (address, postal code, locality, province, district)
+     * @steps Select Country and Address Type via first and second drop-down boxes
+     * @steps Click Save
+     * @expectedResult Toast: "Default address has been added."
+     */
     it('Adds A Default Address', ()=>{
         cy.visit('/settings/default-addresses').wait(1000)
         cy.contains('sa-button', 'Add').click().wait(1000)
@@ -22,6 +45,16 @@ describe('Default Address', ()=>{
         cy.contains('Default address has been added.')
     })
 
+    /**
+     * @scenario Edit Default Address
+     * @description Filters the grid by address and updates the locality to "Mombasa"
+     * @priority Medium
+     * @steps Navigate to Settings → Default Addresses
+     * @steps Filter by "Nairobi" and click Edit on the first matching row
+     * @steps Update the locality field to "Mombasa"
+     * @steps Click Save
+     * @expectedResult Toast: "Default address has been updated."
+     */
     it('Edits A Default Address', ()=>{
         cy.visit('/settings/default-addresses').wait(3000)
 
@@ -34,6 +67,15 @@ describe('Default Address', ()=>{
         cy.contains('Default address has been updated.')
     })
 
+    /**
+     * @scenario Delete Default Address
+     * @description Removes the previously edited "Mombasa" default address
+     * @priority Medium
+     * @steps Navigate to Settings → Default Addresses
+     * @steps Filter by "Mombasa" and click the Trash icon
+     * @steps Confirm deletion in the popup
+     * @expectedResult Toast: "Default address has been deleted."
+     */
     it('Deletes A Default Address', ()=>{
         cy.visit('/settings/default-addresses').wait(3000)
 
@@ -43,3 +85,4 @@ describe('Default Address', ()=>{
         cy.contains('Default address has been deleted.')
     })
 })
+

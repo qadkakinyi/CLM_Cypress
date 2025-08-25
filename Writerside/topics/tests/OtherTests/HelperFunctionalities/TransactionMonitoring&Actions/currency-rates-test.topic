@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Currency Rate" id="currency-rates-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/HelperFunctionalities/TransactionMonitoring&Actions/Currency_Rates_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/HelperFunctionalities/TransactionMonitoring&Actions</code></p>
+        <p><b>Description:</b> Covers adding, editing, and deleting currency rate records</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> currency, rates, finance</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Currency Rate">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Adds a Currency Rate" id="test-1">
+            <p><b>Scenario:</b> Add Currency Rate</p>
+            <p>Adds a new currency rate to the system</p>
+            <step>1. Navigate to the Currency Rates settings page 2. Click the "Add" button 3. Select the "From Currency" 4. Select the "To Currency" 5. Enter the date 6. Enter the rate value 7. Click Save</step>
+            <chapter title="Expected Results">
+                <p>• Currency rate is successfully added and confirmation message is shown</p>
+            </chapter>
+        </procedure>
+        <procedure title="Edits a Currency Rate" id="test-2">
+            <p><b>Scenario:</b> Add Currency Rate</p>
+            <p>Adds a new currency rate to the system</p>
+            <step>1. Navigate to the Currency Rates settings page 2. Click the "Add" button 3. Select the "From Currency" 4. Select the "To Currency" 5. Enter the date 6. Enter the rate value 7. Click Save</step>
+            <chapter title="Expected Results">
+                <p>• Currency rate is successfully added and confirmation message is shown</p>
+            </chapter>
+        </procedure>
+        <procedure title="Deletes a Currency Rate" id="test-3">
+            <p><b>Scenario:</b> Add Currency Rate</p>
+            <p>Adds a new currency rate to the system</p>
+            <step>1. Navigate to the Currency Rates settings page 2. Click the "Add" button 3. Select the "From Currency" 4. Select the "To Currency" 5. Enter the date 6. Enter the rate value 7. Click Save</step>
+            <chapter title="Expected Results">
+                <p>• Currency rate is successfully added and confirmation message is shown</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/HelperFunctionalities/TransactionMonitoring&Actions/Currency_Rates_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/HelperFunctionalities/TransactionMonitoring&Actions/Currency_Rates_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/HelperFunctionalities/TransactionMonitoring&Actions/Currency_Rates_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Auth Tests" id="category-auth">
+
+   <chapter title="Overview">
+       <p>Test files in the <code>OtherTests/Auth</code> directory.</p>
+       <p><b>Total Files:</b> 1</p>
+   </chapter>
+
+   <chapter title="Test Files">
+       <chapter title="Authentication - User Login">
+           <p><b>File:</b> <code>User_Login_test.cy.ts</code></p>
+           <p>Validates login functionality with correct and incorrect credentials</p>
+           <p><a href="user-login-test.topic">View Test Details</a></p>
+       </chapter>
+   </chapter>
+
+</topic>

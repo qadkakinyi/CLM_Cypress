@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Tax Residency - Corporate" id="add-edit-delete-tax-residency-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/CorporateClientFunctionality/Add_Edit_Delete_Tax-Residency_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/CorporateClientFunctionality</code></p>
+        <p><b>Description:</b> Covers creation, modification, and deletion of corporate tax residency records</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> corporate, compliance, tax</p>
+        <p><b>Dependencies:</b> client_corporate.json, faker-js</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Adds, Edits and Deletes Tax Residency - Corporate">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Adds Tax Residency" id="test-1">
+            <p><b>Scenario:</b> Add Tax Residency</p>
+            <p>Adds a new tax residency for a corporate client</p>
+            <step>Execute test case</step>
+            <step>Verify expected results</step>
+            <chapter title="Expected Results">
+                <p>• Tax residency is added and success message appears</p>
+            </chapter>
+        </procedure>
+        <procedure title="Edits a Tax Residency" id="test-2">
+            <p><b>Scenario:</b> Add Tax Residency</p>
+            <p>Adds a new tax residency for a corporate client</p>
+            <step>Execute test case</step>
+            <step>Verify expected results</step>
+            <chapter title="Expected Results">
+                <p>• Tax residency is added and success message appears</p>
+            </chapter>
+        </procedure>
+        <procedure title="Deletes a Tax Residency" id="test-3">
+            <p><b>Scenario:</b> Add Tax Residency</p>
+            <p>Adds a new tax residency for a corporate client</p>
+            <step>Execute test case</step>
+            <step>Verify expected results</step>
+            <chapter title="Expected Results">
+                <p>• Tax residency is added and success message appears</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/CorporateClientFunctionality/Add_Edit_Delete_Tax-Residency_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/CorporateClientFunctionality/Add_Edit_Delete_Tax-Residency_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/CorporateClientFunctionality/Add_Edit_Delete_Tax-Residency_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

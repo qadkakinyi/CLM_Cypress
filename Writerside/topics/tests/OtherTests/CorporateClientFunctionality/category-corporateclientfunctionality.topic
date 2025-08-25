@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="CorporateClientFunctionality Tests" id="category-corporateclientfunctionality">
+
+   <chapter title="Overview">
+       <p>Test files in the <code>OtherTests/CorporateClientFunctionality</code> directory.</p>
+       <p><b>Total Files:</b> 41</p>
+   </chapter>
+
+   <chapter title="Test Files">
+       <chapter title="AML Segment Details - Corporate">
+           <p><b>File:</b> <code>AML_Segment_Detail_test.cy.ts</code></p>
+           <p>Validates access to the AML Segment Detail section for a corporate client</p>
+           <p><a href="aml-segment-detail-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Adhoc Evaluations - Corporate">
+           <p><b>File:</b> <code>AdHoc_Evaluations_test.cy.ts</code></p>
+           <p>Validates navigation to the Adhoc Evaluations section for a corporate client</p>
+           <p><a href="adhoc-evaluations-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="AddClientQuestionnaire - Corporate Questionnaire Flow">
+           <p><b>File:</b> <code>Add_Client_Questionnaire_test.cy.ts</code></p>
+           <p>Full workflow for creating a questionnaire type, adding question categories, adding questions and answers, and assigning a questionnaire to a corporate client.</p>
+           <p><a href="add-client-questionnaire-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Corporate Client Alternative Names">
+           <p><b>File:</b> <code>Add_Delete_Alternative_Names_test.cy.ts</code></p>
+           <p>Validates adding and deleting of alternative names for corporate clients</p>
+           <p><a href="add-delete-alternative-names-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="AddDeleteClientInternalNotes - Corporate Internal Notes">
+           <p><b>File:</b> <code>Add_Delete_Client_Internal_Notes_test.cy.ts</code></p>
+           <p>Tests for adding and deleting internal notes for a corporate client</p>
+           <p><a href="add-delete-client-internal-notes-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="ClientPaymentMethods - Corporate Client Payment Method Management">
+           <p><b>File:</b> <code>Add_Delete_Payment_Method_test.cy.ts</code></p>
+           <p>Suite for testing add and delete operations on payment methods linked to corporate clients</p>
+           <p><a href="add-delete-payment-method-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="ClientFATCA - FATCA Setup and Client Assignment">
+           <p><b>File:</b> <code>Add_Edit_Client_FATCA_test.cy.ts</code></p>
+           <p>End-to-end test suite for setting up FATCA metadata and assigning FATCA fields to a corporate client</p>
+           <p><a href="add-edit-client-fatca-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="ClientCapacity - Authorized Person Management">
+           <p><b>File:</b> <code>Add_Edit_Delete_Capacity_test.cy.ts</code></p>
+           <p>Test suite for adding, editing, and deleting authorized persons for corporate clients</p>
+           <p><a href="add-edit-delete-capacity-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="ClientCases - Corporate Case Management">
+           <p><b>File:</b> <code>Add_Edit_Delete_Case_test.cy.ts</code></p>
+           <p>Handles end-to-end testing for managing client cases under corporate clients</p>
+           <p><a href="add-edit-delete-case-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="ClientActions - Corporate Tasks Management">
+           <p><b>File:</b> <code>Add_Edit_Delete_Client_Action_test.cy.ts</code></p>
+           <p>Handles automation for creation, editing, and deletion of client-related actions (tasks)</p>
+           <p><a href="add-edit-delete-client-action-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="ClientAddresses - Corporate Client Address Management">
+           <p><b>File:</b> <code>Add_Edit_Delete_Client_Address_test.cy.ts</code></p>
+           <p>Validates the complete lifecycle of client address management: add, edit, and delete</p>
+           <p><a href="add-edit-delete-client-address-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="ClientApplications - Corporate Application Management">
+           <p><b>File:</b> <code>Add_Edit_Delete_Client_Application_test.cy.ts</code></p>
+           <p>Covers adding, editing, and deleting applications for corporate clients</p>
+           <p><a href="add-edit-delete-client-application-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="ClientBankAccounts - Corporate Bank Account Management">
+           <p><b>File:</b> <code>Add_Edit_Delete_Client_Bank_Account_test.cy.ts</code></p>
+           <p>Tests the full workflow for creating, editing, and deleting bank accounts for a corporate client</p>
+           <p><a href="add-edit-delete-client-bank-account-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="ClientCards - Corporate Client Card Management">
+           <p><b>File:</b> <code>Add_Edit_Delete_Client_Card_test.cy.ts</code></p>
+           <p>Covers the workflow for managing payment cards linked to corporate clients</p>
+           <p><a href="add-edit-delete-client-card-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="ClientChecklist - Corporate Client Checklist Management">
+           <p><b>File:</b> <code>Add_Edit_Delete_Client_Checklist_test.cy.ts</code></p>
+           <p>Test suite for adding, updating, and deleting client checklists for corporate clients</p>
+           <p><a href="add-edit-delete-client-checklist-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="ClientDocuments - Corporate Client Document Management">
+           <p><b>File:</b> <code>Add_Edit_Delete_Client_Document_test.cy.ts</code></p>
+           <p>Tests related to adding, editing, and deleting documents linked to corporate clients</p>
+           <p><a href="add-edit-delete-client-document-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="ClientEvaluation - Corporate Evaluation Process">
+           <p><b>File:</b> <code>Add_Edit_Delete_Client_Evaluation_test.cy.ts</code></p>
+           <p>End-to-end tests for corporate client evaluations including creation, edit, delete, and ignore re-evaluation logic</p>
+           <p><a href="add-edit-delete-client-evaluation-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="AddClients - Corporate Client Management">
+           <p><b>File:</b> <code>Add_Edit_Delete_Client_Gaming_Account_test.cy.ts</code></p>
+           <p>Test suite for managing client gaming accounts</p>
+           <p><a href="add-edit-delete-client-gaming-account-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Add_Edit_Delete_Client_Investment_Account_test">
+           <p><b>File:</b> <code>Add_Edit_Delete_Client_Investment_Account_test.cy.ts</code></p>
+           <p>Tests for adding, editing, and deleting investment accounts for corporate clients</p>
+           <p><a href="add-edit-delete-client-investment-account-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Add_Edit_Delete_Client_MID_Accounts_test">
+           <p><b>File:</b> <code>Add_Edit_Delete_Client_MID_Accounts_test.cy.ts</code></p>
+           <p>Tests for adding, editing, and deleting MID accounts for corporate clients</p>
+           <p><a href="add-edit-delete-client-mid-accounts-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="AddClients - Corporate Client Management">
+           <p><b>File:</b> <code>Add_Edit_Delete_Client_Policy_Payments_test.cy.ts</code></p>
+           <p>Test suite for managing client policy payment collections and transactions</p>
+           <p><a href="add-edit-delete-client-policy-payments-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="AddClients - Corporate Client Management">
+           <p><b>File:</b> <code>Add_Edit_Delete_Client_Related_Website_test.cy.ts</code></p>
+           <p>Test suite for managing related websites linked to corporate clients</p>
+           <p><a href="add-edit-delete-client-related-website-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="AddClients - Corporate Client Management">
+           <p><b>File:</b> <code>Add_Edit_Delete_Client_Trade_test.cy.ts</code></p>
+           <p>Full lifecycle testing for client trades (add, edit, delete)</p>
+           <p><a href="add-edit-delete-client-trade-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Client Transactions - Corporate">
+           <p><b>File:</b> <code>Add_Edit_Delete_Client_Transaction_test.cy.ts</code></p>
+           <p>Test suite for managing client transactions in the corporate module</p>
+           <p><a href="add-edit-delete-client-transaction-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Client Wallets - Corporate">
+           <p><b>File:</b> <code>Add_Edit_Delete_Client_Wallets_test.cy.ts</code></p>
+           <p>Test suite for adding, editing, and deleting wallets linked to corporate clients</p>
+           <p><a href="add-edit-delete-client-wallets-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Self-Declaration UBO">
+           <p><b>File:</b> <code>Add_Edit_Delete_Self-Declaration-UBO_test.cy.ts</code></p>
+           <p>Manages the add/edit/delete operations for Ultimate Beneficial Owner declarations for corporate clients</p>
+           <p><a href="add-edit-delete-self-declaration-ubo-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Shareholders/Partners">
+           <p><b>File:</b> <code>Add_Edit_Delete_Shareholder_test.cy.ts</code></p>
+           <p>Validates CRUD operations and validation behavior for shareholder/partner entities</p>
+           <p><a href="add-edit-delete-shareholder-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Tax Residency - Corporate">
+           <p><b>File:</b> <code>Add_Edit_Delete_Tax-Residency_test.cy.ts</code></p>
+           <p>Covers creation, modification, and deletion of corporate tax residency records</p>
+           <p><a href="add-edit-delete-tax-residency-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Ultimate Beneficial Owner - Corporate">
+           <p><b>File:</b> <code>Add_Edit_Delete_Ultimate_Beneficial_Owner_test.cy.ts</code></p>
+           <p>Test suite for managing corporate UBOs and related Shareholders/Partners</p>
+           <p><a href="add-edit-delete-ultimate-beneficial-owner-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Additional External References - Corporate">
+           <p><b>File:</b> <code>Additional_External_Refences_test.cy.ts</code></p>
+           <p>Covers end-to-end operations for additional external references for a corporate client</p>
+           <p><a href="additional-external-refences-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="System Logs - Corporate">
+           <p><b>File:</b> <code>Audit_Trails_test.cy.ts</code></p>
+           <p>Navigates through the Audit Trail logs for a corporate client</p>
+           <p><a href="audit-trails-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Certificates - Corporate">
+           <p><b>File:</b> <code>Certificates_test.cy.ts</code></p>
+           <p>Verifies that the Certificates page is accessible for a corporate client</p>
+           <p><a href="certificates-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Client Dashboard - Corporate">
+           <p><b>File:</b> <code>Dashboard_test.cy.ts</code></p>
+           <p>Verifies that the client dashboard loads correctly for corporate clients</p>
+           <p><a href="dashboard-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Client Profile - Corporate">
+           <p><b>File:</b> <code>Edit_Corporate_Client_Profile_test.cy.ts</code></p>
+           <p>Tests related to editing the corporate client profile</p>
+           <p><a href="edit-corporate-client-profile-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Electronic Identification - Corporate">
+           <p><b>File:</b> <code>Electronic_Identification_test.cy.ts</code></p>
+           <p>Tests the loading and visibility of the Electronic Identifications page for a corporate client</p>
+           <p><a href="electronic-identification-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Evaluation Status History - Corporate">
+           <p><b>File:</b> <code>Evaluation_Status_History_test.cy.ts</code></p>
+           <p>Verifies navigation to the Evaluation Status History page for a corporate client</p>
+           <p><a href="evaluation-status-history-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Fraud Risk Analysis - Corporate">
+           <p><b>File:</b> <code>Fraud_Risk_Analysis_test.cy.ts</code></p>
+           <p>Ensures navigation to the Fraud Risk Analysis and Pending Records sections for corporate clients</p>
+           <p><a href="fraud-risk-analysis-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Screening History - Corporate">
+           <p><b>File:</b> <code>Internal_Screening_test.cy.ts</code></p>
+           <p>Verifies navigation to the Internal Screening page for corporate clients</p>
+           <p><a href="internal-screening-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Screening History - Corporate">
+           <p><b>File:</b> <code>Screening_History_test.cy.ts</code></p>
+           <p>Verifies navigation to the Screening History (Negative Lists History) section for corporate clients</p>
+           <p><a href="screening-history-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Screening - Corporate">
+           <p><b>File:</b> <code>Screening_test.cy.ts</code></p>
+           <p>Ensures navigation to the Screening (Negative Lists) page for corporate clients</p>
+           <p><a href="screening-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Workflow Task History - Corporate">
+           <p><b>File:</b> <code>Workflow_Task_History_test.cy.ts</code></p>
+           <p>Validates that the Workflow Task History page loads correctly for corporate clients</p>
+           <p><a href="workflow-task-history-test.topic">View Test Details</a></p>
+       </chapter>
+   </chapter>
+
+</topic>

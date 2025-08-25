@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Firm Criteria" id="firm-criteria-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/HelperFunctionalities/KnowYourFirm/Firm_Criteria_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/HelperFunctionalities/KnowYourFirm</code></p>
+        <p><b>Description:</b> Covers adding, editing, and deleting firm criteria in the system settings.</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Firm Criteria">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Adds a Firm Criteria" id="test-1">
+            <p><b>Scenario:</b> Add a Firm Criteria</p>
+            <p>Verifies that a new firm criterion can be created with valid details.</p>
+            <step>1. Navigate to Firm Criteria settings. 2. Click "Add" and fill in the name, related dropdowns, and selections. 3. Save the criterion.</step>
+            <chapter title="Expected Results">
+                <p>• The firm criterion should be successfully added.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Edits a Firm Criteria" id="test-2">
+            <p><b>Scenario:</b> Add a Firm Criteria</p>
+            <p>Verifies that a new firm criterion can be created with valid details.</p>
+            <step>1. Navigate to Firm Criteria settings. 2. Click "Add" and fill in the name, related dropdowns, and selections. 3. Save the criterion.</step>
+            <chapter title="Expected Results">
+                <p>• The firm criterion should be successfully added.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Deletes a Firm Criteria" id="test-3">
+            <p><b>Scenario:</b> Add a Firm Criteria</p>
+            <p>Verifies that a new firm criterion can be created with valid details.</p>
+            <step>1. Navigate to Firm Criteria settings. 2. Click "Add" and fill in the name, related dropdowns, and selections. 3. Save the criterion.</step>
+            <chapter title="Expected Results">
+                <p>• The firm criterion should be successfully added.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/HelperFunctionalities/KnowYourFirm/Firm_Criteria_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/HelperFunctionalities/KnowYourFirm/Firm_Criteria_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/HelperFunctionalities/KnowYourFirm/Firm_Criteria_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

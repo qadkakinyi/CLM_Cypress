@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Know Your Firms" id="know-your-firms-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/SideMenu/Know_Your_Firms_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/SideMenu</code></p>
+        <p><b>Description:</b> Verifies navigation to the Know Your Firms module, viewing firm details, and adding a Firm Wide Evaluation.</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, ui, navigation, firm-evaluations</p>
+        <p><b>Dependencies:</b> cypress,</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Know your firms">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Visits know your firms page" id="test-1">
+            <p>Helper for the Add Firm Evaluation wizard Step 2 (inputs, mitigation measures, residual risk, proceed).</p>
+            <step>Fill all numeric inputs with 30.</step>
+            <step>For each mitigation dropdown, select the first row.</step>
+            <step>For each residual risk select box, select the first option.</step>
+            <step>Click the double-right arrow button to continue.</step>
+        </procedure>
+        <procedure title="Can view a single firm" id="test-2">
+            <p>Helper for the Add Firm Evaluation wizard Step 2 (inputs, mitigation measures, residual risk, proceed).</p>
+            <step>Fill all numeric inputs with 30.</step>
+            <step>For each mitigation dropdown, select the first row.</step>
+            <step>For each residual risk select box, select the first option.</step>
+            <step>Click the double-right arrow button to continue.</step>
+        </procedure>
+        <procedure title="Add Firm Wide Evaluations" id="test-3">
+            <p>Helper for the Add Firm Evaluation wizard Step 2 (inputs, mitigation measures, residual risk, proceed).</p>
+            <step>Fill all numeric inputs with 30.</step>
+            <step>For each mitigation dropdown, select the first row.</step>
+            <step>For each residual risk select box, select the first option.</step>
+            <step>Click the double-right arrow button to continue.</step>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/SideMenu/Know_Your_Firms_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/SideMenu/Know_Your_Firms_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/SideMenu/Know_Your_Firms_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

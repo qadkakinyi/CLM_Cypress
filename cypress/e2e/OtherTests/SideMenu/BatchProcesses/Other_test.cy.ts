@@ -1,3 +1,13 @@
+/**
+ * @testSuite Processes - Other Menu Navigation
+ * @description Verifies that each submenu item under Processes → Other navigates to the correct page and displays the expected heading.
+ * @priority Medium
+ * @owner QA Team
+ * @tags regression, navigation, processes, other-menu
+ * @dependencies cypress, getByDataCy
+ * @fileDescription Iterates through all Other menu routes, asserting correct URL and expected page content.
+ */
+
 let routes =[
     {index:0, route:'/processes/export-clients-xml', assertion:'Export Clients XML'},
     {index:1, route:'/processes/handle-eGOV-requests', assertion: 'Handle eGOV Requests'},
@@ -12,8 +22,20 @@ let routes =[
 describe("Other Menu", ()=>{
 
     routes.forEach((route)=>{
+
+        /**
+         * @scenario Open Other Menu Page
+         * @description Opens a specific Processes → Other submenu page and verifies the URL and expected heading.
+         * @priority Medium
+         * @testData index = route.index, expectedPath = route.route, expectedText = route.assertion.
+         * @steps Visit /main/dashboard and pin the sidebar if the unpin icon is present.
+         * @steps Expand Processes → Other menu.
+         * @steps Click submenu item by index and verify URL matches expected route.
+         * @steps Assert that the page contains the expected heading text.
+         * @expectedResult Correct page is displayed with matching URL and heading text.
+         */
         it(`opens ${route.assertion} pages`, ()=>{
-            
+
             if(route.index <= routes.length - 1){
                 cy.visit("/main/dashboard")
                 // pin the main sidebar
@@ -27,12 +49,12 @@ describe("Other Menu", ()=>{
                         cy.log('Unpin icon missing')
                     }
                 })
-                
+
                 cy.getByDataCy("processes").click()
                 cy.getByDataCy("other-submenu").scrollIntoView().should("be.visible")
                 cy.getByDataCy("other-submenu").click().as('other-submenu-menu')
                 cy.get("@other-submenu-menu").find("ul>li").as("other-submenu-list")
-                
+
                 //assertion
                 cy.get("@other-submenu-list").eq(route.index).click()
                 cy.location("pathname").should("equal", route.route)
@@ -44,3 +66,4 @@ describe("Other Menu", ()=>{
         })
     })
 })
+

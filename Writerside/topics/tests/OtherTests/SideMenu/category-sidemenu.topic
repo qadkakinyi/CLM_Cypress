@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="SideMenu Tests" id="category-sidemenu">
+
+   <chapter title="Overview">
+       <p>Test files in the <code>OtherTests/SideMenu</code> directory.</p>
+       <p><b>Total Files:</b> 8</p>
+   </chapter>
+
+   <chapter title="Test Files">
+       <chapter title="Client Management">
+           <p><b>File:</b> <code>ClientManagement_test.cy.ts</code></p>
+           <p>Verifies that clicking the "Know Your Clients" button navigates to the Client Management page.</p>
+           <p><a href="clientmanagement-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Home Navigations">
+           <p><b>File:</b> <code>Home_Navigation_test.cy.ts</code></p>
+           <p>Validates navigation and content visibility on the home dashboard, including My Tasks, History, and task creation.</p>
+           <p><a href="home-navigation-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Side-menu Visibility">
+           <p><b>File:</b> <code>Home_Side_Menu_Visibility_test.cy.ts</code></p>
+           <p>Validates that the side menu is visible upon login and contains the expected Dashboard link.</p>
+           <p><a href="home-side-menu-visibility-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Know Your Firms">
+           <p><b>File:</b> <code>Know_Your_Firms_test.cy.ts</code></p>
+           <p>Verifies navigation to the Know Your Firms module, viewing firm details, and adding a Firm Wide Evaluation.</p>
+           <p><a href="know-your-firms-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Transaction Insights">
+           <p><b>File:</b> <code>Know_Your_Transactions_test.cy.ts</code></p>
+           <p>Validates navigation to the "Know Your Transactions" page and confirms page content.</p>
+           <p><a href="know-your-transactions-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Navigation Menu - RegTek">
+           <p><b>File:</b> <code>Navigation_test.cy.ts</code></p>
+           <p>Validates that all main navigation menu items in RegTek are clickable.</p>
+           <p><a href="navigation-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Power BI Reports">
+           <p><b>File:</b> <code>PowerBi_Reports_test.cy.ts</code></p>
+           <p>Validates navigation to Power BI reports from the dashboard menu.</p>
+           <p><a href="powerbi-reports-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="System Settings - Navigation & Visibility">
+           <p><b>File:</b> <code>System_Settings_test.cy.ts</code></p>
+           <p>Validates the System Settings menu: submenu count and page visibility for each item.</p>
+           <p><a href="system-settings-test.topic">View Test Details</a></p>
+       </chapter>
+   </chapter>
+
+</topic>

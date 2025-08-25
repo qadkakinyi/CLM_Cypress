@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Processes - Other Menu Navigation" id="other-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/SideMenu/BatchProcesses/Other_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/SideMenu/BatchProcesses</code></p>
+        <p><b>Description:</b> Verifies that each submenu item under Processes → Other navigates to the correct page and displays the expected heading.</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, navigation, processes, other-menu</p>
+        <p><b>Dependencies:</b> cypress, getByDataCy</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Other Menu">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="opens ${route.assertion} pages" id="test-1">
+            <p><b>Scenario:</b> Open Other Menu Page</p>
+            <p>Opens a specific Processes → Other submenu page and verifies the URL and expected heading.</p>
+            <p><b>Priority:</b> Medium</p>
+            <p><b>Test Data:</b> index = route.index, expectedPath = route.route, expectedText = route.assertion.</p>
+            <step>Visit /main/dashboard and pin the sidebar if the unpin icon is present.</step>
+            <step>Expand Processes → Other menu.</step>
+            <step>Click submenu item by index and verify URL matches expected route.</step>
+            <step>Assert that the page contains the expected heading text.</step>
+            <chapter title="Expected Results">
+                <p>• Correct page is displayed with matching URL and heading text.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/SideMenu/BatchProcesses/Other_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/SideMenu/BatchProcesses/Other_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/SideMenu/BatchProcesses/Other_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

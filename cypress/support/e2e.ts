@@ -109,7 +109,7 @@ export function navigateToNewestClientMenu(clientName:string){
     })
 
     // click double-right icon to navigate to selected client
-    cy.get('.dx-datagrid-table > tbody > .dx-data-row > .dx-command-edit .dx-link > .fa').eq(0).click({ force: true })
+    cy.get('.dx-datagrid-table > tbody > .dx-data-row .fa-angle-double-right').eq(0).click({ force: true })
     
     cy.wait(3000);
 }

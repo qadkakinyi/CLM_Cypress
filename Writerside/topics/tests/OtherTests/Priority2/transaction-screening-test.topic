@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Transaction Screening - API & UI" id="transaction-screening-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/Priority2/Transaction_Screening_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/Priority2</code></p>
+        <p><b>Description:</b> Validates transaction screening via APIs and UI: obtains token, screens a transaction, navigates to the created case, and verifies the case page.</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, transaction-screening, api, ui, cases</p>
+        <p><b>Dependencies:</b> user-authentication, cypress, env-api_baseUrl</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Transaction Screening with APIS">
+        </chapter>
+        <chapter title="Performing Transaction Screening With UI">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Perform Transaction Screening check and navigate to the created case" id="test-1">
+            <p><b>Priority:</b> Medium</p>
+            <step>POST {api_baseUrl}/token with grant_type=password, username=systemadmin, password=Password1!.</step>
+            <chapter title="Expected Results">
+                <p>• Bearer token is stored in "user_token" for subsequent API calls.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Check Transaction Screening" id="test-2">
+            <p><b>Priority:</b> Medium</p>
+            <step>POST {api_baseUrl}/token with grant_type=password, username=systemadmin, password=Password1!.</step>
+            <chapter title="Expected Results">
+                <p>• Bearer token is stored in "user_token" for subsequent API calls.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/Priority2/Transaction_Screening_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/Priority2/Transaction_Screening_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/Priority2/Transaction_Screening_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="BatchProcesses Tests" id="category-batchprocesses">
+
+   <chapter title="Overview">
+       <p>Test files in the <code>OtherTests/SideMenu/BatchProcesses</code> directory.</p>
+       <p><b>Total Files:</b> 6</p>
+   </chapter>
+
+   <chapter title="Test Files">
+       <chapter title="Processes Menu Navigation">
+           <p><b>File:</b> <code>1.Processes_test.cy.ts</code></p>
+           <p>Verifies that the first-level menu items under "Processes" can be toggled for visibility and contain more than four items.</p>
+           <p><a href="1-processes-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Processes - Client Profiling Navigation">
+           <p><b>File:</b> <code>Client_Profiling_test.cy.ts</code></p>
+           <p>Verifies that each Client Profiling submenu item under Processes navigates to the correct page and displays the expected heading.</p>
+           <p><a href="client-profiling-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Processes - Onboarding Portal Navigation">
+           <p><b>File:</b> <code>Onboarding_Portal_test.cy.ts</code></p>
+           <p>Verifies that each submenu item under Processes → Onboarding Portal navigates to the correct page and displays the expected heading.</p>
+           <p><a href="onboarding-portal-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Processes - Other Menu Navigation">
+           <p><b>File:</b> <code>Other_test.cy.ts</code></p>
+           <p>Verifies that each submenu item under Processes → Other navigates to the correct page and displays the expected heading.</p>
+           <p><a href="other-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Processes - Screening Services Navigation">
+           <p><b>File:</b> <code>Screening_Services_test.cy.ts</code></p>
+           <p>Verifies that each submenu item under Processes → Screening & Identification navigates to the correct page and displays the expected heading.</p>
+           <p><a href="screening-services-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Processes - Transaction Monitoring Navigation">
+           <p><b>File:</b> <code>Transaction_Monitoring_test.cy.ts</code></p>
+           <p>Validates that each submenu item under Processes → Transaction Monitoring navigates to the correct page and displays the expected content.</p>
+           <p><a href="transaction-monitoring-test.topic">View Test Details</a></p>
+       </chapter>
+   </chapter>
+
+</topic>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="AddDeleteClientInternalNotes - Corporate Internal Notes" id="add-delete-client-internal-notes-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/CorporateClientFunctionality/Add_Delete_Client_Internal_Notes_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/CorporateClientFunctionality</code></p>
+        <p><b>Description:</b> Tests for adding and deleting internal notes for a corporate client</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, internal-notes, corporate</p>
+        <p><b>Dependencies:</b> client-navigation, faker-js</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Add, Delete Client Internal Notes - Corporate">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Add Client Internal Notes" id="test-1">
+            <p><b>Scenario:</b> Add Internal Note</p>
+            <p>Adds an internal note to a corporate client from the Internal Notes menu</p>
+            <p><b>Test Data:</b> Random sentence generated via faker</p>
+            <step>Read corporate client name from fixture</step>
+            <step>Navigate to client profile</step>
+            <step>Click on 'Internal Notes' tab</step>
+            <step>Type internal note and click save</step>
+            <chapter title="Expected Results">
+                <p>• Note is successfully added and visible in the UI</p>
+            </chapter>
+        </procedure>
+        <procedure title="Delete client Internal Notes" id="test-2">
+            <p><b>Scenario:</b> Add Internal Note</p>
+            <p>Adds an internal note to a corporate client from the Internal Notes menu</p>
+            <p><b>Test Data:</b> Random sentence generated via faker</p>
+            <step>Read corporate client name from fixture</step>
+            <step>Navigate to client profile</step>
+            <step>Click on 'Internal Notes' tab</step>
+            <step>Type internal note and click save</step>
+            <chapter title="Expected Results">
+                <p>• Note is successfully added and visible in the UI</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/CorporateClientFunctionality/Add_Delete_Client_Internal_Notes_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/CorporateClientFunctionality/Add_Delete_Client_Internal_Notes_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/CorporateClientFunctionality/Add_Delete_Client_Internal_Notes_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

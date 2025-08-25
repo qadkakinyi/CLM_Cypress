@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Adhoc Screening - Individual Client" id="adhoc-screening-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/Priority2/Adhoc_Screening_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/Priority2</code></p>
+        <p><b>Description:</b> Tests screening, monitoring, and API interactions for individual clients</p>
+        <p><b>Priority:</b> High</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> screening, individuals, monitoring</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Adhoc Screening Individual Client">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Performs Person Search Using UI" id="test-1">
+            <p><b>Scenario:</b> UI Person Search</p>
+            <p>Perform person search for individual via UI</p>
+            <step>Execute test case</step>
+            <step>Verify expected results</step>
+            <chapter title="Expected Results">
+                <p>• Person search is executed successfully</p>
+            </chapter>
+        </procedure>
+        <procedure title="Performs Person Monitoring and Refreshes Results" id="test-2">
+            <p><b>Scenario:</b> UI Person Search</p>
+            <p>Perform person search for individual via UI</p>
+            <step>Execute test case</step>
+            <step>Verify expected results</step>
+            <chapter title="Expected Results">
+                <p>• Person search is executed successfully</p>
+            </chapter>
+        </procedure>
+        <procedure title="Removes Person Monitoring" id="test-3">
+            <p><b>Scenario:</b> UI Person Search</p>
+            <p>Perform person search for individual via UI</p>
+            <step>Execute test case</step>
+            <step>Verify expected results</step>
+            <chapter title="Expected Results">
+                <p>• Person search is executed successfully</p>
+            </chapter>
+        </procedure>
+        <procedure title="Performs Person Search Using API - Acuris" id="test-4">
+            <p><b>Scenario:</b> UI Person Search</p>
+            <p>Perform person search for individual via UI</p>
+            <step>Execute test case</step>
+            <step>Verify expected results</step>
+            <chapter title="Expected Results">
+                <p>• Person search is executed successfully</p>
+            </chapter>
+        </procedure>
+        <procedure title="Performs Person Search Using API - Bridger" id="test-5">
+            <p><b>Scenario:</b> UI Person Search</p>
+            <p>Perform person search for individual via UI</p>
+            <step>Execute test case</step>
+            <step>Verify expected results</step>
+            <chapter title="Expected Results">
+                <p>• Person search is executed successfully</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/Priority2/Adhoc_Screening_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/Priority2/Adhoc_Screening_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/Priority2/Adhoc_Screening_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

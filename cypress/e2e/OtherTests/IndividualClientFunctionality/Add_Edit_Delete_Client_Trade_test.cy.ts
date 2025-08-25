@@ -1,10 +1,27 @@
+/**
+ * @testSuite Client Trades (Individual)
+ * @description Validates add/edit/delete flows for a client's Trades detail line. Seeds a Trade Type prerequisite.
+ * @priority Medium
+ * @owner QA
+ * @tags individual, trades, crud
+ * @dependencies navigateToNewestClientMenu
+ * @fileDescription Creates a trade, edits it, and then deletes it for an individual client.
+ */
+
 import { faker } from "@faker-js/faker";
 import {navigateToClientMenu, navigateToNewestClientMenu} from "../../../support/e2e";
 let externalReference = faker.string.alphanumeric(12);
 
 let client_id = '';
+
 describe('Add, Edit, Delete Client Trade', () => {
-  
+
+  /**
+   * @scenario Seed Trade Type
+   * @description Adds a Trade Type in Settings (e.g., “Day trading”) to be used during client trade creation.
+   * @steps Visit Settings → Trade Types → Add → Enter name & mapping reference → Save
+   * @expectedResult Trade type is created successfully.
+   */
   before(()=>{
     cy.visit('/settings/trade-types')
     cy.contains('sa-button','Add').click()
@@ -13,10 +30,17 @@ describe('Add, Edit, Delete Client Trade', () => {
     cy.getByDataCy("trade-type-mapping-reference").type(faker.string.alphanumeric(20))
 
     cy.contains('#addTradeTypeForm [icon="save"]','Save').click()
-    
+
     cy.wait(1000)
   })
-  
+
+  /**
+   * @scenario Add Client Trade
+   * @description Adds a new Trade for the client using the seeded Trade Type.
+   * @testData Randomized dates, order reference, volumes, symbols, prices, profits via faker.
+   * @steps Load client from fixture → Navigate to Trades → Add → Select frequency/type/currency/account → Fill numeric fields → Save
+   * @expectedResult A toast appears confirming “New trade has been added”.
+   */
   it('Add Client Trade', () => {
     let clientName;
     cy.readFile('cypress/fixtures/client_individual.json').then((data) =>{
@@ -75,6 +99,12 @@ describe('Add, Edit, Delete Client Trade', () => {
     });
   });
 
+  /**
+   * @scenario Edit Client Trade
+   * @description Opens the first trade row and updates the Order Reference.
+   * @steps Visit client → Trades → Open first row → Update Order Reference → Save & Close
+   * @expectedResult Trade is updated successfully.
+   */
   it('Edit client trade', () => {
     // Edit Cards
     cy.visit(`/main/client-individual/${client_id}/1/trades`).wait(2000);
@@ -94,6 +124,12 @@ describe('Add, Edit, Delete Client Trade', () => {
     });
   })
 
+  /**
+   * @scenario Delete Client Trade
+   * @description Deletes the first trade record from the client’s Trades grid.
+   * @steps Visit client → Trades → Open first row → Delete → Confirm
+   * @expectedResult Trade is deleted successfully.
+   */
   it('Delete client trade', () => {
     cy.visit(`/main/client-individual/${client_id}/1/trades`).wait(2000);
     // cy.getBySel('gridClientTrades').scrollIntoView();
@@ -108,3 +144,4 @@ describe('Add, Edit, Delete Client Trade', () => {
     cy.get('#bot2-Msg1').contains('Yes').click();
   })
 })
+

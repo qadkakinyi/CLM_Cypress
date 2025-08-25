@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Client Policy Management" id="add-edit-delete-client-policy-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/ClientCommonComponents/Add_Edit_Delete_Client_Policy_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/ClientCommonComponents</code></p>
+        <p><b>Description:</b> Test suite for managing client policies including adding, editing, and deleting policies</p>
+        <p><b>Priority:</b> High</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, smoke, policies, client-management</p>
+        <p><b>Dependencies:</b> faker-js</p>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Add Client Policy" id="test-1">
+            <p><b>Scenario:</b> Add Client Policy</p>
+            <p>Adds a new policy for an existing client including random financial and date data</p>
+            <p><b>Priority:</b> High</p>
+            <p><b>Test Data:</b> Random faker-generated policy number, values, and dates</p>
+            <step>Navigate to Know Your Clients</step>
+            <step>Select a client and open the Policies section</step>
+            <step>Click Add Policy and fill in all required fields</step>
+            <step>Submit and save the policy</step>
+            <chapter title="Expected Results">
+                <p>• A new client policy is saved and displayed in the table</p>
+            </chapter>
+        </procedure>
+        <procedure title="Edit client Policy" id="test-2">
+            <p><b>Scenario:</b> Add Client Policy</p>
+            <p>Adds a new policy for an existing client including random financial and date data</p>
+            <p><b>Priority:</b> High</p>
+            <p><b>Test Data:</b> Random faker-generated policy number, values, and dates</p>
+            <step>Navigate to Know Your Clients</step>
+            <step>Select a client and open the Policies section</step>
+            <step>Click Add Policy and fill in all required fields</step>
+            <step>Submit and save the policy</step>
+            <chapter title="Expected Results">
+                <p>• A new client policy is saved and displayed in the table</p>
+            </chapter>
+        </procedure>
+        <procedure title="Delete client policy" id="test-3">
+            <p><b>Scenario:</b> Add Client Policy</p>
+            <p>Adds a new policy for an existing client including random financial and date data</p>
+            <p><b>Priority:</b> High</p>
+            <p><b>Test Data:</b> Random faker-generated policy number, values, and dates</p>
+            <step>Navigate to Know Your Clients</step>
+            <step>Select a client and open the Policies section</step>
+            <step>Click Add Policy and fill in all required fields</step>
+            <step>Submit and save the policy</step>
+            <chapter title="Expected Results">
+                <p>• A new client policy is saved and displayed in the table</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/ClientCommonComponents/Add_Edit_Delete_Client_Policy_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/ClientCommonComponents/Add_Edit_Delete_Client_Policy_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/ClientCommonComponents/Add_Edit_Delete_Client_Policy_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

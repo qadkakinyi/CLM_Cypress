@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="AiScreeningMatch Tests" id="category-aiscreeningmatch">
+
+   <chapter title="Overview">
+       <p>Test files in the <code>OtherTests/AiScreeningMatch</code> directory.</p>
+       <p><b>Total Files:</b> 1</p>
+   </chapter>
+
+   <chapter title="Test Files">
+       <chapter title="AI Screening butterfly screening processor">
+           <p><b>File:</b> <code>Screening_Match_test.cy.ts</code></p>
+           <p>Performs person screening for individual client and triggers the Butterfly Screening scheduled job via Hangfire dashboard.</p>
+           <p><a href="screening-match-test.topic">View Test Details</a></p>
+       </chapter>
+   </chapter>
+
+</topic>

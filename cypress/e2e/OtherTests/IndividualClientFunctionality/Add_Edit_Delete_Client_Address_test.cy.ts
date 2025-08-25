@@ -1,3 +1,13 @@
+/**
+ * @testSuite Individual Client Address
+ * @description Validates adding, editing, and deleting addresses for an individual client
+ * @priority Medium
+ * @owner QA Team
+ * @tags regression, smoke, client-profile, addresses
+ * @dependencies faker-js, navigateToNewestClientMenu
+ * @fileDescription Performs CRUD on the 'Addresses' section of an individual client profile
+ */
+
 import { faker } from "@faker-js/faker";
 import {navigateToClientMenu, navigateToNewestClientMenu} from "../../../support/e2e";
 
@@ -6,7 +16,18 @@ let addressName = faker.location.streetAddress();
 let client_id = ''
 
 describe('Add, Edit, Delete Client Address', () => {
-  
+
+  /**
+   * @scenario Add Client Address
+   * @description Creates a new address for the selected individual client
+   * @priority Medium
+   * @testData Faker-generated street address, city, state, district, postal code, phone
+   * @steps Load individual client from fixture and navigate to newest client menu
+   * @steps Open “Addresses” from the left menu
+   * @steps Capture client_id from URL
+   * @steps Click Add, populate form fields, choose Country and Address Type, then Save
+   * @expectedResult Success toast “Address has been added.”
+   */
   it('Add Client Address', () => {
     let clientName;
     cy.readFile('cypress/fixtures/client_individual.json').then((data) =>{
@@ -44,6 +65,16 @@ describe('Add, Edit, Delete Client Address', () => {
     cy.contains('Address has been added.')
   });
 
+  /**
+   * @scenario Edit Client Address
+   * @description Modifies locality and phone number of the previously created address
+   * @priority Medium
+   * @testData Faker-generated city and numeric phone
+   * @steps Visit client Addresses page by client_id
+   * @steps Filter grid by the address text, click Edit on first row
+   * @steps Update locality and phone, Save row
+   * @expectedResult Toast shows “The address has been updated.”
+   */
   it('Edit client address', () => {
     // Edit Address
     cy.visit(`/main/client-individual/${client_id}/1/addresses`).wait(2000)
@@ -52,16 +83,25 @@ describe('Add, Edit, Delete Client Address', () => {
 
     cy.getBySel('gridClientAddresses').wait(2000).then(() => {
       cy.get('#gridClientAddresses .dx-icon-edit').eq(0).click({ force: true }).wait(500);
-      
+
       cy.get('.dx-datagrid-rowsview .dx-texteditor-input-container').eq(2).clear().type(faker.location.city());
       cy.get('.dx-datagrid-rowsview .dx-texteditor-input-container').eq(4).clear().type(faker.string.numeric(8));
-     
+
     });
 
     cy.get('#gridClientAddresses .dx-link.dx-icon-save').eq(0).click({ force: true }).wait(1000);
     cy.contains('The address has been updated.')
   })
 
+  /**
+   * @scenario Delete Client Address
+   * @description Removes the first address row after filtering by the created address
+   * @priority Medium
+   * @steps Visit client Addresses page by client_id
+   * @steps Filter grid by the address text
+   * @steps Click Delete on first row and confirm Yes
+   * @expectedResult Toast shows “Address has been deleted.”
+   */
   it('Delete client address', () => {
     // Delete Address
     cy.visit(`/main/client-individual/${client_id}/1/addresses`).wait(2000)
@@ -72,3 +112,4 @@ describe('Add, Edit, Delete Client Address', () => {
     cy.contains('Address has been deleted.')
   })
 })
+

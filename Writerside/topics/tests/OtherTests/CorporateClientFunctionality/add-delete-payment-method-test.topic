@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="ClientPaymentMethods - Corporate Client Payment Method Management" id="add-delete-payment-method-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/CorporateClientFunctionality/Add_Delete_Payment_Method_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/CorporateClientFunctionality</code></p>
+        <p><b>Description:</b> Suite for testing add and delete operations on payment methods linked to corporate clients</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, client-payment, corporate, settings</p>
+        <p><b>Dependencies:</b> payment-method-settings, faker-js, navigation-utils</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Payment Method">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Adds a new Payment Method" id="test-1">
+            <p>Creates a "PayPal Test" method under settings for use in later client-level tests</p>
+            <step>Visit settings/payment-methods</step>
+            <step>Click Add, enter name, mapping reference, history type, and time frame</step>
+            <chapter title="Expected Results">
+                <p>• Payment method is saved and available in client dropdowns</p>
+            </chapter>
+        </procedure>
+        <procedure title="Deletes Payment Method" id="test-2">
+            <p>Creates a "PayPal Test" method under settings for use in later client-level tests</p>
+            <step>Visit settings/payment-methods</step>
+            <step>Click Add, enter name, mapping reference, history type, and time frame</step>
+            <chapter title="Expected Results">
+                <p>• Payment method is saved and available in client dropdowns</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/CorporateClientFunctionality/Add_Delete_Payment_Method_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/CorporateClientFunctionality/Add_Delete_Payment_Method_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/CorporateClientFunctionality/Add_Delete_Payment_Method_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

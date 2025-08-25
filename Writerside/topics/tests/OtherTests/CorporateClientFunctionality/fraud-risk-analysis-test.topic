@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Fraud Risk Analysis - Corporate" id="fraud-risk-analysis-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/CorporateClientFunctionality/Fraud_Risk_Analysis_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/CorporateClientFunctionality</code></p>
+        <p><b>Description:</b> Ensures navigation to the Fraud Risk Analysis and Pending Records sections for corporate clients</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> fraud-risk, navigation, ui</p>
+        <p><b>Dependencies:</b> client_corporate.json</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Fraud Risk Analysis">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Navigates to Fraud Risk Analysis" id="test-1">
+            <p><b>Scenario:</b> Navigate to Fraud Risk Analysis</p>
+            <p>Opens the Fraud Risk Analysis section and verifies presence of grids and headers</p>
+            <step>Execute test case</step>
+            <step>Verify expected results</step>
+            <chapter title="Expected Results">
+                <p>• Fraud Risk Analysis and Pending Records sections are loaded and headers are visible</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/CorporateClientFunctionality/Fraud_Risk_Analysis_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/CorporateClientFunctionality/Fraud_Risk_Analysis_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/CorporateClientFunctionality/Fraud_Risk_Analysis_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

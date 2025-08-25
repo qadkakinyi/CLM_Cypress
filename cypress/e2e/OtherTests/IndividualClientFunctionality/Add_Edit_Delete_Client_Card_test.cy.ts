@@ -1,3 +1,13 @@
+/**
+ * @testSuite Individual Client Cards
+ * @description Validates add, edit, and delete operations for client payment cards on an individual client profile
+ * @priority Medium
+ * @owner QA Team
+ * @tags regression, smoke, cards
+ * @dependencies faker-js, navigateToNewestClientMenu
+ * @fileDescription Performs CRUD on the 'Cards' section; filters by card number to locate the created record for edit/delete.
+ */
+
 import { faker } from "@faker-js/faker";
 import { navigateToNewestClientMenu} from "../../../support/e2e";
 
@@ -5,6 +15,16 @@ let cardNumberTest = faker.finance.creditCardNumber('visa');
 let client_id:string = ''
 
 describe('Add, Edit, Delete Client Cards', () => {
+  /**
+   * @scenario Add Client Card
+   * @description Creates a new card for an individual client with faker data
+   * @priority Medium
+   * @testData Faker card number (visa), full name, MMYY expiry, external reference
+   * @steps Load individual client from fixture and navigate to newest client
+   * @steps Open Cards page, click Add, fill form (cardNumber, cardholder, expiry, externalReference, account)
+   * @steps Save the card
+   * @expectedResult Card is saved successfully and appears in the grid
+   */
   it('Add Client Cards', () => {
     let clientName;
     cy.readFile('cypress/fixtures/client_individual.json').then((data) =>{
@@ -35,10 +55,18 @@ describe('Add, Edit, Delete Client Cards', () => {
     });
   });
 
+  /**
+   * @scenario Edit Client Card
+   * @description Filters by the original card number, opens edit, and updates the card number
+   * @priority Medium
+   * @testData New faker visa card number
+   * @steps Visit client Cards, filter by card number, open edit form, change card number, save & close
+   * @expectedResult Card number is updated and success message is shown
+   */
   it('Edit client Cards', () => {
-    
+
     cy.visit(`/main/client-individual/${client_id}/1/cards`).wait(2000)
-    
+
     // Edit Cards
     cy.getBySel('gridClientCards').should('be.visible').then(() => {
       cy.get('.dx-datagrid-filter-row .dx-texteditor-input-container input').eq(2).type(cardNumberTest);
@@ -59,10 +87,17 @@ describe('Add, Edit, Delete Client Cards', () => {
 
   })
 
+  /**
+   * @scenario Delete Client Card
+   * @description Filters by the (possibly updated) card number and deletes the record
+   * @priority Medium
+   * @steps Visit client Cards, filter by card number, open row actions, click Delete, confirm Yes
+   * @expectedResult Card is deleted and confirmation message is displayed
+   */
   it('Delete client Cards', () => {
-    
+
     cy.visit(`/main/client-individual/${client_id}/1/cards`).wait(2000)
-    
+
     cy.getBySel('gridClientCards').should('be.visible');
     cy.get('.dx-datagrid-filter-row .dx-texteditor-input-container input').eq(2).type(cardNumberTest);
 
@@ -76,5 +111,6 @@ describe('Add, Edit, Delete Client Cards', () => {
     cy.get('#bot2-Msg1').contains('Yes').click();
   })
 
-  
+
 })
+

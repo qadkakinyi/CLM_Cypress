@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Specific Rules Execution" id="specific-rules-executions-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/SupportTests/Specific_Rules_Executions_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/SupportTests</code></p>
+        <p><b>Description:</b> Validates that specific rules (Rule 55 and Rule 11) can be executed successfully through the administration panel.</p>
+        <p><b>Priority:</b> High</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> rules, regression, admin</p>
+        <p><b>Dependencies:</b> cypress</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Specific Rules Execution">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Checks if Rule 55 execution is executed successfully" id="test-1">
+            <p><b>Scenario:</b> Execute Rule 55</p>
+            <p>Navigates to the rules administration page, activates Rule 55, and executes a test run.</p>
+            <p><b>Priority:</b> High</p>
+            <step>Visit `/administration/rules` → Search for Rule 55 → Activate the rule → Save → Test execution with result limit.</step>
+            <chapter title="Expected Results">
+                <p>• Rule 55 executes successfully and confirmation message is displayed.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Checks if Rule 11 execution is executed successfully" id="test-2">
+            <p><b>Scenario:</b> Execute Rule 55</p>
+            <p>Navigates to the rules administration page, activates Rule 55, and executes a test run.</p>
+            <p><b>Priority:</b> High</p>
+            <step>Visit `/administration/rules` → Search for Rule 55 → Activate the rule → Save → Test execution with result limit.</step>
+            <chapter title="Expected Results">
+                <p>• Rule 55 executes successfully and confirmation message is displayed.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/SupportTests/Specific_Rules_Executions_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/SupportTests/Specific_Rules_Executions_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/SupportTests/Specific_Rules_Executions_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Expired Documents Counter Validation" id="document-expiry-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/SupportTests/Document_Expiry_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/SupportTests</code></p>
+        <p><b>Description:</b> Verifies that the dashboard's "Expired Documents" counter matches the actual expiry status of each listed document.</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, dashboard, documents, data-validation</p>
+        <p><b>Dependencies:</b> cypress, navigateToNewestClientMenu</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Check If Expired Documents Counter Is Valid">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Checks each document to confirm if the current date exceeds expiry date" id="test-1">
+            <p><b>Scenario:</b> Validate Each Expired Document Row</p>
+            <p>When the expired documents counter is greater than zero, iterates through each row in the grid and verifies the expiry date is before today; throws an error if any item is not yet expired.</p>
+            <p><b>Priority:</b> Medium</p>
+            <step>1) Wait for dashboard to stabilize. 2) Read the counter from #expiredDocuments. 3) If counter > 0, open the expired documents view. 4) For each row: capture document name and expiry date. 5) Compute date difference (expiry - today) in days. 6) Log "has expired" when difference < 0; throw if difference > 0.</step>
+            <chapter title="Expected Results">
+                <p>• All listed items are truly expired (expiry date earlier than today). Any non-expired item fails the test.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/SupportTests/Document_Expiry_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/SupportTests/Document_Expiry_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/SupportTests/Document_Expiry_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

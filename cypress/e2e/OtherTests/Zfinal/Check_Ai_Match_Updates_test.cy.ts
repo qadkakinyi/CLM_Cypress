@@ -1,5 +1,4 @@
 import {navigateToNewestClientMenu} from "../../../support/e2e";
-import {valueOf} from "cypress";
 
 describe('Check AI Screening Match Status', ()=> {
     it('Check if Butterfly screening processor ran for the client', () => {

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Settings - Client Profiling Navigation" id="client-profiling-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/SideMenu/Settings/Client_Profiling_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/SideMenu/Settings</code></p>
+        <p><b>Description:</b> Verifies that the Settings menu opens and that each Client Profiling settings link navigates to the correct page, shows expected content, and finishes loading without a visible spinner.</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, navigation, settings, client-profiling</p>
+        <p><b>Dependencies:</b> cypress, getByDataCy</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Settings menu">
+        </chapter>
+        <chapter title="Client Profiling">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Logs in and open level on menu" id="test-1">
+            <p>Opens the Settings menu from the dashboard.</p>
+            <p><b>Priority:</b> Medium</p>
+            <step>Wait briefly for initial UI load.</step>
+            <step>Scroll to and click the Settings menu.</step>
+            <chapter title="Expected Results">
+                <p>• The Settings menu expands and becomes interactable.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Visits ${route.assertion} page" id="test-2">
+            <p>Opens the Settings menu from the dashboard.</p>
+            <p><b>Priority:</b> Medium</p>
+            <step>Wait briefly for initial UI load.</step>
+            <step>Scroll to and click the Settings menu.</step>
+            <chapter title="Expected Results">
+                <p>• The Settings menu expands and becomes interactable.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Visits ${route.assertion} page" id="test-3">
+            <p>Opens the Settings menu from the dashboard.</p>
+            <p><b>Priority:</b> Medium</p>
+            <step>Wait briefly for initial UI load.</step>
+            <step>Scroll to and click the Settings menu.</step>
+            <chapter title="Expected Results">
+                <p>• The Settings menu expands and becomes interactable.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Visits ${route.assertion} page" id="test-4">
+            <p>Opens the Settings menu from the dashboard.</p>
+            <p><b>Priority:</b> Medium</p>
+            <step>Wait briefly for initial UI load.</step>
+            <step>Scroll to and click the Settings menu.</step>
+            <chapter title="Expected Results">
+                <p>• The Settings menu expands and becomes interactable.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/SideMenu/Settings/Client_Profiling_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/SideMenu/Settings/Client_Profiling_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/SideMenu/Settings/Client_Profiling_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

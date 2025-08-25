@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Opens API Documentation" id="open-api-documentation-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/SupportTests/Open_API_Documentation_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/SupportTests</code></p>
+        <p><b>Description:</b> Validates that the RegTek+ API documentation page is accessible after logging out of the system.</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, API, documentation, authentication</p>
+        <p><b>Dependencies:</b> Cypress environment variable `api_baseUrl`</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Opens API Documentation">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="successfully opens API Documentation" id="test-1">
+            <p><b>Scenario:</b> Access API Documentation after Logout</p>
+            <p>Logs out from the current session and navigates directly to the API documentation URL to confirm availability and expected content.</p>
+            <p><b>Priority:</b> Medium</p>
+            <step>1) Click user options and select "Logout". 2) Confirm logout action in the modal. 3) Visit the API documentation URL. 4) Verify that "RegTek+ API Documentation" and "Authentication" sections are visible.</step>
+            <chapter title="Expected Results">
+                <p>• The API documentation page opens successfully and displays both the documentation title and the Authentication section.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/SupportTests/Open_API_Documentation_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/SupportTests/Open_API_Documentation_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/SupportTests/Open_API_Documentation_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

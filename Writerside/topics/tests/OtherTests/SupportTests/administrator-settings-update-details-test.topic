@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Administrator Settings Update" id="administrator-settings-update-details-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/SupportTests/Administrator_settings_update_Details_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/SupportTests</code></p>
+        <p><b>Description:</b> Verifies that the 'Last Evaluation Grade based on' setting can be updated successfully to different values.</p>
+        <p><b>Priority:</b> High</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, administration, settings</p>
+        <p><b>Dependencies:</b> cypress</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Administrator settings update settings">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="updates `Last Evaluation Grade based on" id="test-1">
+            <p><b>Scenario:</b> Update Last Evaluation Grade Based On</p>
+            <p>Updates the 'Last Evaluation Grade based on' field to multiple valid values and confirms save success.</p>
+            <p><b>Priority:</b> High</p>
+            <step>1. Visit '/administration/account'. 2. Open the 'Settings' tab. 3. Change the value to 'System Grade' and save. 4. Verify success message and absence of license error. 5. Change the value to 'Compliance Officer Grade' and save again. 6. Verify success message.</step>
+            <chapter title="Expected Results">
+                <p>• Setting updates successfully each time with no errors.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/SupportTests/Administrator_settings_update_Details_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/SupportTests/Administrator_settings_update_Details_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/SupportTests/Administrator_settings_update_Details_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

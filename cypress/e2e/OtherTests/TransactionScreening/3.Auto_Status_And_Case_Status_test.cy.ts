@@ -1,9 +1,31 @@
+/**
+ * @testSuite Transaction Screening Status Flow
+ * @description Validates transaction screening flows for different entity combinations and expected Auto/Case statuses.
+ * @priority Medium
+ * @owner QA Automation Team
+ * @tags transaction-screening, regression, end-to-end
+ * @fileDescription Covers scenarios for Auto Accepted → Released and Auto Manual Review → In Progress status transitions.
+ */
+
 const corporateEntity = 'Complytek';
 const individualEntityName = 'Vladimir Putin';
 const individualEntityName2 = 'Donald Trump';
 
 describe('Case 1: Auto Accepted -> Released', () => {
 
+    /**
+     * @scenario Individual Client - Business Entity Only
+     * @description Screens an individual client with only corporateEntities, verifies Auto Status transitions from "Auto Manual Review" to "Auto Accepted" and Case Status is "In Progress".
+     * @priority Medium
+     * @steps
+     *  1. Read individual client data from fixtures.
+     *  2. Open Transaction Screening page and select regulation group.
+     *  3. Select the client and add only a corporate entity.
+     *  4. Trigger screening and verify Auto Status is "Auto Manual Review".
+     *  5. Change match status to "No Match".
+     *  6. Re-run screening and verify Auto Status is "Auto Accepted" and Case Status is "In Progress".
+     * @expectedResult Status changes correctly after screening is re-run with no matches.
+     */
     it('Performs transaction screening for individual client with corporateEntities only and asserts Auto Status and Case Status', () => {
         let clientName;
         cy.readFile('cypress/fixtures/client_individual.json').then((data) => {
@@ -48,6 +70,17 @@ describe('Case 1: Auto Accepted -> Released', () => {
         });
     })
 
+    /**
+     * @scenario Individual Client - Person Entity Only
+     * @description Screens an individual client with only personEntities, verifies Auto Status transitions from "Auto Manual Review" to "Auto Accepted" and Case Status is "In Progress".
+     * @priority Medium
+     * @steps
+     *  1. Read individual client from fixture.
+     *  2. Add a person entity only and perform screening.
+     *  3. Mark hits as no match.
+     *  4. Re-run screening and validate statuses.
+     * @expectedResult Auto Status becomes "Auto Accepted" and Case Status is "In Progress".
+     */
     it('Performs transaction screening for individual client with person only and asserts Auto Status and Case Status', () => {
         let clientName;
         cy.readFile('cypress/fixtures/client_individual.json').then((data) => {
@@ -92,6 +125,17 @@ describe('Case 1: Auto Accepted -> Released', () => {
         });
     })
 
+    /**
+     * @scenario Corporate Client - Person Entity Only
+     * @description Screens a corporate client with only personEntities, verifies Auto Status transitions from "Auto Manual Review" to "Auto Accepted" and Case Status is "In Progress".
+     * @priority Medium
+     * @steps
+     *  1. Read corporate client from fixture.
+     *  2. Add a person entity only and perform screening.
+     *  3. Mark hits as no match.
+     *  4. Re-run screening and validate statuses.
+     * @expectedResult Auto Status becomes "Auto Accepted" and Case Status is "In Progress".
+     */
     it('Performs transaction screening for corporate client with personEntities only and asserts Auto Status', () => {
         let clientName;
         cy.readFile('cypress/fixtures/client_corporate.json').then((data) => {
@@ -144,6 +188,17 @@ describe('Case 1: Auto Accepted -> Released', () => {
         });
     });
 
+    /**
+     * @scenario Corporate Client - Business Entity Only
+     * @description Screens a corporate client with only businessEntities, verifies Auto Status transitions from "Auto Manual Review" to "Auto Accepted" and Case Status is "In Progress".
+     * @priority Medium
+     * @steps
+     *  1. Read corporate client from fixture.
+     *  2. Add a business entity only and perform screening.
+     *  3. Mark hits as no match.
+     *  4. Re-run screening and validate statuses.
+     * @expectedResult Auto Status becomes "Auto Accepted" and Case Status is "In Progress".
+     */
     it('Performs transaction screening for corporate client with businessEntities only and asserts Auto Status', () => {
         let clientName;
         cy.readFile('cypress/fixtures/client_corporate.json').then((data) => {
@@ -199,6 +254,16 @@ describe('Case 1: Auto Accepted -> Released', () => {
 
 describe('Case 2A: Auto Manual Review -> New (Negative match)', () => {
 
+    /**
+     * @scenario Individual Client - Negative Match
+     * @description Screens an individual client with a person entity expected to require manual review; validates Auto Status remains "Auto Manual Review" and Case Status is "In Progress".
+     * @priority Medium
+     * @steps
+     *  1. Read individual client from fixture.
+     *  2. Add a person entity likely to trigger manual review and perform screening.
+     *  3. Validate resulting auto and case statuses.
+     * @expectedResult Auto Status stays "Auto Manual Review" and Case Status is "In Progress".
+     */
     it('Performs transaction screening for individual client and asserts Auto Status and Case Status', () => {
         let clientName;
         cy.readFile('cypress/fixtures/client_individual.json').then((data) => {
@@ -231,3 +296,4 @@ describe('Case 2A: Auto Manual Review -> New (Negative match)', () => {
         });
     })
 });
+

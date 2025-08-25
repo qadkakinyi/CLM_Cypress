@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="ClientCommonComponents Tests" id="category-clientcommoncomponents">
+
+   <chapter title="Overview">
+       <p>Test files in the <code>OtherTests/ClientCommonComponents</code> directory.</p>
+       <p><b>Total Files:</b> 3</p>
+   </chapter>
+
+   <chapter title="Test Files">
+       <chapter title="Client Authorized Person Management">
+           <p><b>File:</b> <code>Add_Edit_Delete_Client_Authorized_Persons_test.cy.ts</code></p>
+           <p>Tests for adding, editing, and deleting client authorized persons with both existing and new profiles</p>
+           <p><a href="add-edit-delete-client-authorized-persons-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Client Policy Management">
+           <p><b>File:</b> <code>Add_Edit_Delete_Client_Policy_test.cy.ts</code></p>
+           <p>Test suite for managing client policies including adding, editing, and deleting policies</p>
+           <p><a href="add-edit-delete-client-policy-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Client Tax Residency Management">
+           <p><b>File:</b> <code>Add_Edit_Delete_Client_Tax_Residency_test.cy.ts</code></p>
+           <p>Full suite to validate adding, editing, and deleting client tax residency records</p>
+           <p><a href="add-edit-delete-client-tax-residency-test.topic">View Test Details</a></p>
+       </chapter>
+   </chapter>
+
+</topic>

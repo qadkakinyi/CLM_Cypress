@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Check_Ai_Match_Updates_test" id="check-ai-match-updates-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/Zfinal/Check_Ai_Match_Updates_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/Zfinal</code></p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Check AI Screening Match Status">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Check if Butterfly screening processor ran for the client" id="test-1">
+            <step>Execute test case</step>
+            <step>Verify expected results</step>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/Zfinal/Check_Ai_Match_Updates_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/Zfinal/Check_Ai_Match_Updates_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/Zfinal/Check_Ai_Match_Updates_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

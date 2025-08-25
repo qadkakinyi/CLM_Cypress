@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="KnowYourFirm Tests" id="category-knowyourfirm">
+
+   <chapter title="Overview">
+       <p>Test files in the <code>OtherTests/HelperFunctionalities/KnowYourFirm</code> directory.</p>
+       <p><b>Total Files:</b> 7</p>
+   </chapter>
+
+   <chapter title="Test Files">
+       <chapter title="Firm Criteria Categories">
+           <p><b>File:</b> <code>Firm_Criteria_Category_test.cy.ts</code></p>
+           <p>Covers adding, editing, and deleting firm criteria categories in the system settings.</p>
+           <p><a href="firm-criteria-category-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Firm Criteria">
+           <p><b>File:</b> <code>Firm_Criteria_test.cy.ts</code></p>
+           <p>Covers adding, editing, and deleting firm criteria in the system settings.</p>
+           <p><a href="firm-criteria-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Firm Impact Score">
+           <p><b>File:</b> <code>Firm_Evaluation_Grades_test.cy.ts</code></p>
+           <p>Covers adding, editing, and deleting firm impact scores in the settings.</p>
+           <p><a href="firm-evaluation-grades-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Firm Mitigation Measures">
+           <p><b>File:</b> <code>Firm_Mitigation_Measures_test.cy.ts</code></p>
+           <p>Validates adding, editing, and deleting firm mitigation measures in the settings section.</p>
+           <p><a href="firm-mitigation-measures-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Firm Sanction Criteria">
+           <p><b>File:</b> <code>Firm_Sanction_Criteria_test.cy.ts</code></p>
+           <p>Covers creation, editing, criterion answer CRUD, and deletion for firm sanction criteria</p>
+           <p><a href="firm-sanction-criteria-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Firm Sanction Evaluation Grades">
+           <p><b>File:</b> <code>Firm_Sanction_Evaluation_Grade_test.cy.ts</code></p>
+           <p>Covers creation and deletion of firm sanction impact scores</p>
+           <p><a href="firm-sanction-evaluation-grade-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Firm Sanction Mitigation Measures">
+           <p><b>File:</b> <code>Firm_Sanction_Mitigation_Measures_test.cy.ts</code></p>
+           <p>This suite is skipped because the related functionality has been removed from the system.</p>
+           <p><a href="firm-sanction-mitigation-measures-test.topic">View Test Details</a></p>
+       </chapter>
+   </chapter>
+
+</topic>

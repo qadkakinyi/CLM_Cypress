@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Client Related Website (Individual)" id="add-edit-delete-client-related-website-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/IndividualClientFunctionality/Add_Edit_Delete_Client_Related_Website_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/IndividualClientFunctionality</code></p>
+        <p><b>Description:</b> Creates a related website type (pre-req), then validates add/edit/delete of a client's Related Website.</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA</p>
+        <p><b>Tags:</b> individual, related-website, crud</p>
+        <p><b>Dependencies:</b> navigateToNewestClientMenu</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Add, Edit, Delete Client Related Website - Individual">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Add Client Related Website" id="test-1">
+            <p><b>Scenario:</b> Seed Related Website Type</p>
+            <p>Adds a Related Website Type in Settings for use in the client flow.</p>
+            <step>Visit settings → Related Website Types → Add → Fill name & mapping ref → Save</step>
+            <chapter title="Expected Results">
+                <p>• Type “Business Website” is created successfully.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Edit Client Related website" id="test-2">
+            <p><b>Scenario:</b> Seed Related Website Type</p>
+            <p>Adds a Related Website Type in Settings for use in the client flow.</p>
+            <step>Visit settings → Related Website Types → Add → Fill name & mapping ref → Save</step>
+            <chapter title="Expected Results">
+                <p>• Type “Business Website” is created successfully.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Delete client Related Website" id="test-3">
+            <p><b>Scenario:</b> Seed Related Website Type</p>
+            <p>Adds a Related Website Type in Settings for use in the client flow.</p>
+            <step>Visit settings → Related Website Types → Add → Fill name & mapping ref → Save</step>
+            <chapter title="Expected Results">
+                <p>• Type “Business Website” is created successfully.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/IndividualClientFunctionality/Add_Edit_Delete_Client_Related_Website_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/IndividualClientFunctionality/Add_Edit_Delete_Client_Related_Website_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/IndividualClientFunctionality/Add_Edit_Delete_Client_Related_Website_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

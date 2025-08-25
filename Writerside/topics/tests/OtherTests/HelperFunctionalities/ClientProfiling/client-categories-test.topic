@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Client_Categories_test" id="client-categories-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/HelperFunctionalities/ClientProfiling/Client_Categories_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/HelperFunctionalities/ClientProfiling</code></p>
+        <p><b>Description:</b> Creates a new client category with a faker-generated mapping reference</p>
+        <p><b>Priority:</b> High</p>
+        <p><b>Test Data:</b> Faker-generated mapping reference</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Client Categories">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Adds A Client Category" id="test-1">
+            <p><b>Scenario:</b> Add Client Category</p>
+            <p>Creates a new client category with a faker-generated mapping reference</p>
+            <p><b>Priority:</b> High</p>
+            <p><b>Test Data:</b> Faker-generated mapping reference</p>
+            <step>Navigate to client categories settings</step>
+            <step>Click 'Add', enter name and mapping reference</step>
+            <step>Save the client category</step>
+            <chapter title="Expected Results">
+                <p>• Client category is saved and confirmation message appears</p>
+            </chapter>
+        </procedure>
+        <procedure title="Edits A Client Category" id="test-2">
+            <p><b>Scenario:</b> Add Client Category</p>
+            <p>Creates a new client category with a faker-generated mapping reference</p>
+            <p><b>Priority:</b> High</p>
+            <p><b>Test Data:</b> Faker-generated mapping reference</p>
+            <step>Navigate to client categories settings</step>
+            <step>Click 'Add', enter name and mapping reference</step>
+            <step>Save the client category</step>
+            <chapter title="Expected Results">
+                <p>• Client category is saved and confirmation message appears</p>
+            </chapter>
+        </procedure>
+        <procedure title="Deletes A Client Category" id="test-3">
+            <p><b>Scenario:</b> Add Client Category</p>
+            <p>Creates a new client category with a faker-generated mapping reference</p>
+            <p><b>Priority:</b> High</p>
+            <p><b>Test Data:</b> Faker-generated mapping reference</p>
+            <step>Navigate to client categories settings</step>
+            <step>Click 'Add', enter name and mapping reference</step>
+            <step>Save the client category</step>
+            <chapter title="Expected Results">
+                <p>• Client category is saved and confirmation message appears</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/HelperFunctionalities/ClientProfiling/Client_Categories_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/HelperFunctionalities/ClientProfiling/Client_Categories_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/HelperFunctionalities/ClientProfiling/Client_Categories_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

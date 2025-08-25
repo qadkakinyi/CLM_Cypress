@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Firm Mitigation Measures" id="firm-mitigation-measures-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/HelperFunctionalities/KnowYourFirm/Firm_Mitigation_Measures_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/HelperFunctionalities/KnowYourFirm</code></p>
+        <p><b>Description:</b> Validates adding, editing, and deleting firm mitigation measures in the settings section.</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Firm Mitigation Measures">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Adds a Firm Mitigation Measure" id="test-1">
+            <p><b>Scenario:</b> Add a Firm Mitigation Measure</p>
+            <p>Verifies a new mitigation measure can be created with valid details.</p>
+            <step>1. Navigate to Firm Mitigation Measures. 2. Click "Add", enter the name, select the regulation group, and choose relevant options. 3. Save the mitigation measure.</step>
+            <chapter title="Expected Results">
+                <p>• The firm mitigation measure is successfully added.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Edits a Firm Mitigation Measure" id="test-2">
+            <p><b>Scenario:</b> Add a Firm Mitigation Measure</p>
+            <p>Verifies a new mitigation measure can be created with valid details.</p>
+            <step>1. Navigate to Firm Mitigation Measures. 2. Click "Add", enter the name, select the regulation group, and choose relevant options. 3. Save the mitigation measure.</step>
+            <chapter title="Expected Results">
+                <p>• The firm mitigation measure is successfully added.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Deletes a Firm Mitigation Measure" id="test-3">
+            <p><b>Scenario:</b> Add a Firm Mitigation Measure</p>
+            <p>Verifies a new mitigation measure can be created with valid details.</p>
+            <step>1. Navigate to Firm Mitigation Measures. 2. Click "Add", enter the name, select the regulation group, and choose relevant options. 3. Save the mitigation measure.</step>
+            <chapter title="Expected Results">
+                <p>• The firm mitigation measure is successfully added.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/HelperFunctionalities/KnowYourFirm/Firm_Mitigation_Measures_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/HelperFunctionalities/KnowYourFirm/Firm_Mitigation_Measures_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/HelperFunctionalities/KnowYourFirm/Firm_Mitigation_Measures_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

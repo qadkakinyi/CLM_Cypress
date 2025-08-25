@@ -1,10 +1,28 @@
+/**
+ * @testSuite Individual Client Checklist
+ * @description Validates adding, editing, and deleting client checklists on an individual client profile
+ * @priority Medium
+ * @owner QA Team
+ * @tags regression, smoke, checklist
+ * @dependencies faker-js, navigateToNewestClientMenu
+ * @fileDescription Creates a checklist in Settings, assigns it to a client, edits a field in-grid, then deletes it.
+ */
+
 import { faker } from "@faker-js/faker";
 import {navigateToClientMenu, navigateToNewestClientMenu} from "../../../support/e2e";
 
 let client_id = '';
 
 describe('Add, Edit, Delete Client Checklist', () => {
-  
+
+  /**
+   * @scenario Precondition: Create Checklist in Settings
+   * @description Adds a reusable checklist in Settings to be selected on the client profile
+   * @priority High
+   * @steps Visit Settings > Checklists
+   * @steps Click Add, fill name/priority/mappingRef, pick regulation group, Save
+   * @expectedResult Checklist is created and available in selection lists
+   */
   before(()=>{
     cy.visit('/settings/checklists')
     cy.contains('sa-button','Add').click()
@@ -15,7 +33,7 @@ describe('Add, Edit, Delete Client Checklist', () => {
     cy.getByDataCy('regulation-group').click().wait(500);
     cy.getBySel('dynamicSelectBoxDropdownGrid').find('[aria-rowindex="1"]').eq(0).click().wait(1000)
     cy.getByDataCy('save-checklist').click()
-    
+
     // cy.get("p:contains('Checklist name already exists')").then((el)=>{
     //   if(el.is(':visible')){
     //     cy.getByDataCy('close-checklist').click()
@@ -23,7 +41,16 @@ describe('Add, Edit, Delete Client Checklist', () => {
     // })
     cy.wait(2000)
   })
-  
+
+  /**
+   * @scenario Add Client Checklist
+   * @description Assigns the precreated checklist to the individual client
+   * @priority Medium
+   * @steps Load client from fixture and navigate to newest client
+   * @steps Open Checklists section, click Add
+   * @steps Select checklist from dropdown, Save
+   * @expectedResult Checklist is added to the client
+   */
   it('Add Client Checklist', () => {
     let clientName;
     cy.readFile('cypress/fixtures/client_individual.json').then((data) =>{
@@ -50,6 +77,14 @@ describe('Add, Edit, Delete Client Checklist', () => {
     cy.getBySel('saveChecklist').click().wait(1000);
   });
 
+  /**
+   * @scenario Edit Client Checklist
+   * @description Opens the checklist row in-grid and modifies a numeric field
+   * @priority Medium
+   * @steps Navigate to client’s Checklists, click Edit on first row
+   * @steps Type a single-digit value in the editable cell, Save row
+   * @expectedResult Checklist row is updated successfully
+   */
   it('Edit client checklist', () => {
     // Edit Address
     cy.visit(`/main/client-individual/${client_id}/1/checklists`).wait(2000)
@@ -62,6 +97,13 @@ describe('Add, Edit, Delete Client Checklist', () => {
     cy.get('#gridClientChecklists .dx-link.dx-icon-save').eq(0).click({ force: true }).wait(1000);
   })
 
+  /**
+   * @scenario Delete Client Checklist
+   * @description Removes the assigned checklist from the client
+   * @priority Medium
+   * @steps Navigate to client’s Checklists, click Delete on first row, confirm Yes
+   * @expectedResult Checklist is deleted and a confirmation message is shown
+   */
   it('Delete client checklist', () => {
     // Delete Address
     cy.visit(`/main/client-individual/${client_id}/1/checklists`).wait(2000)
@@ -71,3 +113,4 @@ describe('Add, Edit, Delete Client Checklist', () => {
     cy.contains('Checklist has been deleted.')
   })
 })
+

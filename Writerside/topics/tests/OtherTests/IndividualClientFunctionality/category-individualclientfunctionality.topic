@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="IndividualClientFunctionality Tests" id="category-individualclientfunctionality">
+
+   <chapter title="Overview">
+       <p>Test files in the <code>OtherTests/IndividualClientFunctionality</code> directory.</p>
+       <p><b>Total Files:</b> 28</p>
+   </chapter>
+
+   <chapter title="Test Files">
+       <chapter title="Individual Client Questionnaire">
+           <p><b>File:</b> <code>Add_Client_Questionnaire_test.cy.ts</code></p>
+           <p>Creates a questionnaire type and category, bulk-adds questions, then runs the client Questionnaire wizard (Individual)</p>
+           <p><a href="add-client-questionnaire-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Individual Client Alternative Names">
+           <p><b>File:</b> <code>Add_Delete_Alternative_Names_test.cy.ts</code></p>
+           <p>Validates adding and deleting of alternative names for an individual client</p>
+           <p><a href="add-delete-alternative-names-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Individual Client Internal Notes">
+           <p><b>File:</b> <code>Add_Delete_Client_Internal_Notes_test.cy.ts</code></p>
+           <p>Validates adding and deleting internal notes for an individual client profile</p>
+           <p><a href="add-delete-client-internal-notes-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Individual Client Payment Methods">
+           <p><b>File:</b> <code>Add_Delete_Payment_Method_test.cy.ts</code></p>
+           <p>Validates adding a payment method in Settings, linking it to an individual client, and deleting it from the client profile</p>
+           <p><a href="add-delete-payment-method-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Individual Client FATCA">
+           <p><b>File:</b> <code>Add_Edit_Client_FATCA_test.cy.ts</code></p>
+           <p>End-to-end validation of configuring FATCA prerequisites in Settings and assigning FATCA data to an individual client</p>
+           <p><a href="add-edit-client-fatca-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Individual Client Actions (Tasks)">
+           <p><b>File:</b> <code>Add_Edit_Delete_Client_Action_test.cy.ts</code></p>
+           <p>Validates end-to-end CRUD for client Actions, including creating required Settings (Action Category, Action Status), then Add, Edit, and Delete on an individual client</p>
+           <p><a href="add-edit-delete-client-action-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Individual Client Additional External Reference">
+           <p><b>File:</b> <code>Add_Edit_Delete_Client_Additional_External_Reference_test.cy.ts</code></p>
+           <p>Validates CRUD operations for Additional External References on an individual client profile</p>
+           <p><a href="add-edit-delete-client-additional-external-reference-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Individual Client Address">
+           <p><b>File:</b> <code>Add_Edit_Delete_Client_Address_test.cy.ts</code></p>
+           <p>Validates adding, editing, and deleting addresses for an individual client</p>
+           <p><a href="add-edit-delete-client-address-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Individual Client Applications">
+           <p><b>File:</b> <code>Add_Edit_Delete_Client_Application_test.cy.ts</code></p>
+           <p>Validates adding, editing, and deleting client applications for an individual client</p>
+           <p><a href="add-edit-delete-client-application-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Individual Client Bank Accounts">
+           <p><b>File:</b> <code>Add_Edit_Delete_Client_Bank_Account_test.cy.ts</code></p>
+           <p>Validates adding and editing of client bank accounts for an individual client (banks are pre-seeded in a precondition)</p>
+           <p><a href="add-edit-delete-client-bank-account-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Individual Client Cards">
+           <p><b>File:</b> <code>Add_Edit_Delete_Client_Card_test.cy.ts</code></p>
+           <p>Validates add, edit, and delete operations for client payment cards on an individual client profile</p>
+           <p><a href="add-edit-delete-client-card-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Individual Client Checklist">
+           <p><b>File:</b> <code>Add_Edit_Delete_Client_Checklist_test.cy.ts</code></p>
+           <p>Validates adding, editing, and deleting client checklists on an individual client profile</p>
+           <p><a href="add-edit-delete-client-checklist-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Individual Client Documents">
+           <p><b>File:</b> <code>Add_Edit_Delete_Client_Document_test.cy.ts</code></p>
+           <p>Validates adding, editing, and deleting documents on an individual client profile</p>
+           <p><a href="add-edit-delete-client-document-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Individual Client Evaluations">
+           <p><b>File:</b> <code>Add_Edit_Delete_Client_Evaluation_test.cy.ts</code></p>
+           <p>Validates creating an evaluation for an individual client through the multi‑step flow</p>
+           <p><a href="add-edit-delete-client-evaluation-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Individual Client Gaming Accounts">
+           <p><b>File:</b> <code>Add_Edit_Delete_Client_Gaming_Account_test.cy.ts</code></p>
+           <p>Validates adding, editing, and deleting gaming accounts for an individual client</p>
+           <p><a href="add-edit-delete-client-gaming-account-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Individual Client Gaming Transactions">
+           <p><b>File:</b> <code>Add_Edit_Delete_Client_Gaming_Transaction_test.cy.ts</code></p>
+           <p>Validates adding, editing, and deleting gaming transactions for an individual client</p>
+           <p><a href="add-edit-delete-client-gaming-transaction-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Client Investment Account Management">
+           <p><b>File:</b> <code>Add_Edit_Delete_Client_Investment_Account_test.cy.ts</code></p>
+           <p>Validates adding, editing, and deleting of client investment accounts.</p>
+           <p><a href="add-edit-delete-client-investment-account-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Client MID Accounts (Individual)">
+           <p><b>File:</b> <code>Add_Edit_Delete_Client_MID_Accounts_test.cy.ts</code></p>
+           <p>Adds prerequisites (MID Type/Class), adds a bank account, then validates add/edit/delete flows for client MID Accounts; finally cleans up the bank account.</p>
+           <p><a href="add-edit-delete-client-mid-accounts-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Client Policy Payments (Individual)">
+           <p><b>File:</b> <code>Add_Edit_Delete_Client_Policy_Payments_test.cy.ts</code></p>
+           <p>Navigates to Policy Payments, then performs CRUD flows for Collections and Transactions.</p>
+           <p><a href="add-edit-delete-client-policy-payments-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Client Related Website (Individual)">
+           <p><b>File:</b> <code>Add_Edit_Delete_Client_Related_Website_test.cy.ts</code></p>
+           <p>Creates a related website type (pre-req), then validates add/edit/delete of a client's Related Website.</p>
+           <p><a href="add-edit-delete-client-related-website-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Client Trades (Individual)">
+           <p><b>File:</b> <code>Add_Edit_Delete_Client_Trade_test.cy.ts</code></p>
+           <p>Validates add/edit/delete flows for a client's Trades detail line. Seeds a Trade Type prerequisite.</p>
+           <p><a href="add-edit-delete-client-trade-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Client Transactions (Individual)">
+           <p><b>File:</b> <code>Add_Edit_Delete_Client_Transaction_test.cy.ts</code></p>
+           <p>Validates add/edit/delete flows for a client's Transactions detail line.</p>
+           <p><a href="add-edit-delete-client-transaction-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Client Wallets - Individual">
+           <p><b>File:</b> <code>Add_Edit_Delete_Client_Wallets_test.cy.ts</code></p>
+           <p>Validates add, edit, and delete flows for a client's crypto/e-wallets detail line.</p>
+           <p><a href="add-edit-delete-client-wallets-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Tax Residency - Individual">
+           <p><b>File:</b> <code>Add_Edit_Delete_Tax-Residency_test.cy.ts</code></p>
+           <p>Validates add, edit, and delete flows for a client's Tax Residency detail line.</p>
+           <p><a href="add-edit-delete-tax-residency-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Individual Client Dashboard">
+           <p><b>File:</b> <code>Dashboard_test.cy.ts</code></p>
+           <p>Verifies the main dashboard widgets render and can be scrolled into view for an individual client.</p>
+           <p><a href="dashboard-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Edit Client Individual Profile">
+           <p><b>File:</b> <code>Edit_Client_Individual_Profile_test.cy.ts</code></p>
+           <p>Validates editing profile details and archiving flow for an individual client.</p>
+           <p><a href="edit-client-individual-profile-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Internal Screening - Individual">
+           <p><b>File:</b> <code>Internal_Screening_test.cy.ts</code></p>
+           <p>Sets up internal blacklist reason and individual, then verifies internal blacklist search flow from an individual client's Internal Screening page.</p>
+           <p><a href="internal-screening-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Navigate_Through_Client_Individual_Detail_Lines_test">
+           <p><b>File:</b> <code>Navigate_Through_Client_Individual_Detail_Lines_test.cy.ts</code></p>
+           <p><a href="navigate-through-client-individual-detail-lines-test.topic">View Test Details</a></p>
+       </chapter>
+   </chapter>
+
+</topic>

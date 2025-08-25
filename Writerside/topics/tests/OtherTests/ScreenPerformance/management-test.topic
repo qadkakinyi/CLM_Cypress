@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Management Module - Navigation" id="management-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/ScreenPerformance/Management_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/ScreenPerformance</code></p>
+        <p><b>Description:</b> Verifies that all main links in the Management menu navigate to the correct pages, display expected content, and finish loading without visible spinners.</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, navigation, management, ui</p>
+        <p><b>Dependencies:</b> cypress, getByDataCy</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Management Module">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Visits all links and loads the correct pages" id="test-1">
+            <p><b>Scenario:</b> Visit and Validate All Management Links</p>
+            <p>Sequentially clicks each Management link, verifies navigation and page content, and ensures UI loaders are hidden after load.</p>
+            <p><b>Priority:</b> Medium</p>
+            <p><b>Test Data:</b> routes[] = {index, route, assertionText}.</p>
+            <step>Scroll into view and click the Management menu.</step>
+            <step>Click each menu item in routes[] and assert the browser path equals expected route.</step>
+            <step>Verify page contains the expected assertion text.</step>
+            <step>Confirm that spinner ".sk-ball-spin-clockwise" and ".dx-loadpanel" are not visible.</step>
+            <step>Between navigations, return to main dashboard if more routes remain.</step>
+            <chapter title="Expected Results">
+                <p>• Each route loads the correct page with expected content and no visible loaders after load.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/ScreenPerformance/Management_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/ScreenPerformance/Management_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/ScreenPerformance/Management_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

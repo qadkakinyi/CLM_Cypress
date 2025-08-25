@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Settings - Template & Report Setup Navigation" id="template-and-report-setup-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/SideMenu/Settings/Template_And_Report_Setup_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/SideMenu/Settings</code></p>
+        <p><b>Description:</b> Verifies that each submenu item under Settings → Templates navigates to the correct page, shows the expected heading, and finishes loading without a visible spinner.</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, navigation, settings, templates, reports</p>
+        <p><b>Dependencies:</b> cypress, getByDataCy</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Template and Report Setup">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Visits ${route.assertion} page" id="test-1">
+            <p><b>Scenario:</b> Visit Template/Report Setup Page</p>
+            <p>Opens a specific Templates/Reports page and verifies URL, heading, and that the loader is not visible.</p>
+            <p><b>Priority:</b> Medium</p>
+            <p><b>Test Data:</b> index = route.index, expectedPath = route.route, expectedText = route.assertion.</p>
+            <step>Visit /main/dashboard and pin the sidebar if needed.</step>
+            <step>Open Settings → Templates and click the item by index.</step>
+            <step>Assert path equals expected route, spinner not visible, and page contains expected text.</step>
+            <chapter title="Expected Results">
+                <p>• Target page loads with correct URL and visible expected text; spinner is not visible.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/SideMenu/Settings/Template_And_Report_Setup_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/SideMenu/Settings/Template_And_Report_Setup_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/SideMenu/Settings/Template_And_Report_Setup_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

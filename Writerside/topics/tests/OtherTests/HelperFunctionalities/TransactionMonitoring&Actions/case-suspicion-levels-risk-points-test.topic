@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Case Suspicion Levels Risk Point" id="case-suspicion-levels-risk-points-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/HelperFunctionalities/TransactionMonitoring&Actions/Case_Suspicion_Levels_Risk_Points_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/HelperFunctionalities/TransactionMonitoring&Actions</code></p>
+        <p><b>Description:</b> Ensures that case suspicion level risk points can be modified and reverted to their original values.</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> settings, risk, suspicion-level</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Case Suspicion Levels Risk Point">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Edits a Case Suspicion Levels Risk Point" id="test-1">
+            <p><b>Scenario:</b> Edit and Revert Risk Point</p>
+            <p>Updates the first case suspicion level risk point to a new value and then reverts it to the original.</p>
+            <step>1. Navigate to Settings → Case Suspicion Levels Risk Points. 2. Click the Edit icon for the first row. 3. Change the risk point value to 2 and save. 4. Verify the success message appears. 5. Click Edit again for the same row. 6. Change the risk point value back to 0 and save. 7. Verify the success message appears again.</step>
+            <chapter title="Expected Results">
+                <p>• The risk point value is successfully updated both times and the correct success message is displayed.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/HelperFunctionalities/TransactionMonitoring&Actions/Case_Suspicion_Levels_Risk_Points_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/HelperFunctionalities/TransactionMonitoring&Actions/Case_Suspicion_Levels_Risk_Points_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/HelperFunctionalities/TransactionMonitoring&Actions/Case_Suspicion_Levels_Risk_Points_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

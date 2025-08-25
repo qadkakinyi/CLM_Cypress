@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Add_Client_Individual_Process_test" id="add-client-individual-process-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/DemonstrationFlow/Add_Client_Individual_Process_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/DemonstrationFlow</code></p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Add Individual Client Process">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="should add an individual client" id="test-1">
+            <step>Execute test case</step>
+            <step>Verify expected results</step>
+        </procedure>
+        <procedure title="should add a client document" id="test-2">
+            <step>Execute test case</step>
+            <step>Verify expected results</step>
+        </procedure>
+        <procedure title="should update document status to collected" id="test-3">
+            <step>Execute test case</step>
+            <step>Verify expected results</step>
+        </procedure>
+        <procedure title="should add to internal monitoring" id="test-4">
+            <step>Execute test case</step>
+            <step>Verify expected results</step>
+        </procedure>
+        <procedure title="should perform internal blacklist search" id="test-5">
+            <step>Execute test case</step>
+            <step>Verify expected results</step>
+        </procedure>
+        <procedure title="should archive a client(soft delete)" id="test-6">
+            <step>Execute test case</step>
+            <step>Verify expected results</step>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/DemonstrationFlow/Add_Client_Individual_Process_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/DemonstrationFlow/Add_Client_Individual_Process_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/DemonstrationFlow/Add_Client_Individual_Process_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

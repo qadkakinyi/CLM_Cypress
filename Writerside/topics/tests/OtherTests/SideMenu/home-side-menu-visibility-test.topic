@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Side-menu Visibility" id="home-side-menu-visibility-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/SideMenu/Home_Side_Menu_Visibility_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/SideMenu</code></p>
+        <p><b>Description:</b> Validates that the side menu is visible upon login and contains the expected Dashboard link.</p>
+        <p><b>Priority:</b> High</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, ui, navigation</p>
+        <p><b>Dependencies:</b> cypress</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Side-menu Visibility">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Checks if side-menu is visible on login" id="test-1">
+            <p><b>Scenario:</b> Check Side-menu on Login</p>
+            <p>Confirms that the side menu is displayed after logging in and that the "Dashboard" option is present.</p>
+            <p><b>Priority:</b> High</p>
+            <step>Ensure the user is logged in and the dashboard is loaded.</step>
+            <step>Verify `.left-menu` element is visible.</step>
+            <step>Verify the "Dashboard" text is present in the menu.</step>
+            <chapter title="Expected Results">
+                <p>• Side menu is visible and contains a "Dashboard" entry.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/SideMenu/Home_Side_Menu_Visibility_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/SideMenu/Home_Side_Menu_Visibility_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/SideMenu/Home_Side_Menu_Visibility_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

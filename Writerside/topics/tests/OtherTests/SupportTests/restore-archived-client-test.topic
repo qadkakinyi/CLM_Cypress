@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Restore Archived Client" id="restore-archived-client-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/SupportTests/Restore_Archived_Client_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/SupportTests</code></p>
+        <p><b>Description:</b> Validates that an archived client can be restored via UI after being soft-deleted through the API, and that their dashboard becomes accessible again.</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, api, processes, profiles, archive-restore</p>
+        <p><b>Dependencies:</b> cypress, navigateToNewestClientMenu, client_individual.json, env.api_baseUrl</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Restore archived client">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Archives the client" id="test-1">
+            <p><b>Scenario:</b> Authenticate for API Calls</p>
+            <p>Fetches an OAuth token to authorize subsequent API requests.</p>
+            <p><b>Priority:</b> Medium</p>
+            <step>POST {api_baseUrl}/token with systemadmin credentials → store access_token in `token`.</step>
+            <chapter title="Expected Results">
+                <p>• Token is retrieved successfully for use in API requests.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Restores and archived client access their dashboard" id="test-2">
+            <p><b>Scenario:</b> Authenticate for API Calls</p>
+            <p>Fetches an OAuth token to authorize subsequent API requests.</p>
+            <p><b>Priority:</b> Medium</p>
+            <step>POST {api_baseUrl}/token with systemadmin credentials → store access_token in `token`.</step>
+            <chapter title="Expected Results">
+                <p>• Token is retrieved successfully for use in API requests.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/SupportTests/Restore_Archived_Client_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/SupportTests/Restore_Archived_Client_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/SupportTests/Restore_Archived_Client_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

@@ -1,3 +1,13 @@
+/**
+ * @testSuite System Settings - Navigation & Visibility
+ * @description Validates the System Settings menu: submenu count and page visibility for each item.
+ * @priority Medium
+ * @owner QA Team
+ * @tags regression, navigation, settings, system-settings
+ * @dependencies cypress, getByDataCy
+ * @fileDescription Opens the System Settings menu to verify submenu length, then iterates through each submenu item to confirm expected page content is visible.
+ */
+
 let routes = [
     {index:0, route: '/system-settings/account', assertion: 'Account'},
     {index:1, route: '/system-settings/case-statuses', assertion: 'Case Statuses'},
@@ -12,15 +22,29 @@ let routes = [
 ]
 
 describe("System Settings", ()=>{
+    /**
+     * @scenario Open System Settings Menu
+     * @description Expands the System Settings menu and validates the number of submenu items.
+     * @priority Medium
+     * @steps Click data-cy="system-settings-menu" and wait briefly.
+     * @expectedResult Submenu has exactly 10 items.
+     */
     it("Click system settings menu and opens the submenus", ()=>{
 
         cy.getByDataCy("system-settings-menu").click().wait(2000).find("ul>li").should("have.length", 10)
     })
-    
+
+    /**
+     * @scenario Visit Each System Settings Page
+     * @description Pins sidebar if needed, opens System Settings, and clicks each submenu item; verifies expected text for each page.
+     * @priority Medium
+     * @steps Visit dashboard → (optional) pin sidebar → open System Settings → iterate submenu items with .each() → assert expected text via routes[index].assertion.
+     * @expectedResult Each page displays its corresponding assertion text.
+     */
     it("Visits each page and asserts if it is visible", ()=>{
-        
+
         cy.visit("/main/dashboard")
-        
+
         // pin the main sidebar
         cy.get('aside').then(el =>{
             let unpin_icon = el.find('.dx-icon-unpin')
@@ -32,7 +56,7 @@ describe("System Settings", ()=>{
                 cy.log('Unpin icon missing')
             }
         })
-       
+
         // routes.forEach((route, i)=>{
         cy.getByDataCy("system-settings-menu").scrollIntoView().click()
 
@@ -45,3 +69,4 @@ describe("System Settings", ()=>{
         // })
     })
 })
+

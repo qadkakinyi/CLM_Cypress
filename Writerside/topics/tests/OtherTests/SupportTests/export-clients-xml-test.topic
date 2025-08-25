@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Export Clients XML" id="export-clients-xml-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/SupportTests/Export_Clients_XML_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/SupportTests</code></p>
+        <p><b>Description:</b> Verifies that the "Export Clients XML" process successfully sends the XML report to the specified email.</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, export, xml, email</p>
+        <p><b>Dependencies:</b> cypress</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Export clients XML">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Exports clients XML successfully" id="test-1">
+            <p><b>Scenario:</b> Export Clients XML via Email</p>
+            <p>Enables email option, inputs recipient email, triggers search/export, and validates confirmation message is displayed without error.</p>
+            <p><b>Priority:</b> Medium</p>
+            <step>1) Visit `/processes/export-clients-xml`. 2) Check the "Enable Email" checkbox. 3) Enter recipient email address. 4) Click the "Search" button to trigger the export. 5) Verify that the success message appears and no error is shown.</step>
+            <chapter title="Expected Results">
+                <p>• Success confirmation is displayed stating the XML file will be emailed, and no error messages are present.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/SupportTests/Export_Clients_XML_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/SupportTests/Export_Clients_XML_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/SupportTests/Export_Clients_XML_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

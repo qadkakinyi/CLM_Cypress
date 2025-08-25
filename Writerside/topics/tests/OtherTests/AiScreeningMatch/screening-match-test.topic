@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="AI Screening butterfly screening processor" id="screening-match-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/AiScreeningMatch/Screening_Match_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/AiScreeningMatch</code></p>
+        <p><b>Description:</b> Performs person screening for individual client and triggers the Butterfly Screening scheduled job via Hangfire dashboard.</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, screening, acuris, hangfire, scheduled-jobs</p>
+        <p><b>Dependencies:</b> client_individual.json, user-authentication, API access to /hangfire</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Screening and Triggering butterfly screening processor Scheduled Job ">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Performs Person Screening" id="test-1">
+            <p><b>Scenario:</b> Perform Person Screening</p>
+            <p>Navigates to individual client's screening section and performs a person search through active provider</p>
+            <p><b>Priority:</b> Medium</p>
+            <p><b>Test Data:</b> Reads individualClientName from cypress/fixtures/client_individual.json and uses 'William Ruto' for search</p>
+            <step>Read client name from fixture</step>
+            <step>Navigate to client's Screening tab</step>
+            <step>Trigger screening process</step>
+            <step>Conditionally interact with popups or forms if present</step>
+            <chapter title="Expected Results">
+                <p>• Person screening search is performed and confirmation message is shown</p>
+            </chapter>
+        </procedure>
+        <procedure title="should trigger Butterfly Screening Processor job" id="test-2">
+            <p><b>Scenario:</b> Perform Person Screening</p>
+            <p>Navigates to individual client's screening section and performs a person search through active provider</p>
+            <p><b>Priority:</b> Medium</p>
+            <p><b>Test Data:</b> Reads individualClientName from cypress/fixtures/client_individual.json and uses 'William Ruto' for search</p>
+            <step>Read client name from fixture</step>
+            <step>Navigate to client's Screening tab</step>
+            <step>Trigger screening process</step>
+            <step>Conditionally interact with popups or forms if present</step>
+            <chapter title="Expected Results">
+                <p>• Person screening search is performed and confirmation message is shown</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/AiScreeningMatch/Screening_Match_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/AiScreeningMatch/Screening_Match_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/AiScreeningMatch/Screening_Match_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

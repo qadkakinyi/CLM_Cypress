@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Individual Client Payment Methods" id="add-delete-payment-method-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/IndividualClientFunctionality/Add_Delete_Payment_Method_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/IndividualClientFunctionality</code></p>
+        <p><b>Description:</b> Validates adding a payment method in Settings, linking it to an individual client, and deleting it from the client profile</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, smoke, payments, individual</p>
+        <p><b>Dependencies:</b> faker-js, navigateToNewestClientMenu</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Add and Delete Payment Method">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Adds a new Payment Method" id="test-1">
+            <p>Creates a reusable Payment Method in Settings to be referenced on the client</p>
+            <step>Visit Settings → Payment Methods</step>
+            <step>Click Add and populate name, mapping reference, history record type, and time frame</step>
+            <step>Save the new method</step>
+            <chapter title="Expected Results">
+                <p>• New method (PayPal Test) exists and is selectable in client forms</p>
+            </chapter>
+        </procedure>
+        <procedure title="Deletes Payment Method" id="test-2">
+            <p>Creates a reusable Payment Method in Settings to be referenced on the client</p>
+            <step>Visit Settings → Payment Methods</step>
+            <step>Click Add and populate name, mapping reference, history record type, and time frame</step>
+            <step>Save the new method</step>
+            <chapter title="Expected Results">
+                <p>• New method (PayPal Test) exists and is selectable in client forms</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/IndividualClientFunctionality/Add_Delete_Payment_Method_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/IndividualClientFunctionality/Add_Delete_Payment_Method_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/IndividualClientFunctionality/Add_Delete_Payment_Method_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

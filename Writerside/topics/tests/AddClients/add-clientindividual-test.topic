@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="AddClients - Individual Client Management" id="add-clientindividual-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>AddClients/Add_ClientIndividual_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>AddClients</code></p>
+        <p><b>Description:</b> Comprehensive test suite for adding individual clients to the system</p>
+        <p><b>Priority:</b> High</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, smoke, individual-clients, client-management</p>
+        <p><b>Dependencies:</b> user-authentication, faker-js</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Add Client Individual">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Add Client Individual" id="test-1">
+            <p><b>Scenario:</b> Complete Individual Client Creation</p>
+            <p>Successfully adds an individual client with all required and optional fields</p>
+            <p><b>Priority:</b> High</p>
+            <p><b>Test Data:</b> Dynamic faker data for personal details and contact information</p>
+            <step>Navigate to Know Your Clients section</step>
+            <step>Click Add Individual Client button</step>
+            <step>Fill in all required fields</step>
+            <step>Submit the form by clicking save button</step>
+            <step>Verify success message appears</step>
+            <step>Save client name and ID to fixtures file for reuse in future tests</step>
+            <chapter title="Expected Results">
+                <p>• Individual client is successfully created</p>
+                <p>• Success message "Client individual has been added" is displayed</p>
+                <p>• Client name and ID are saved to cypress/fixtures/client_individual.json</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "AddClients/Add_ClientIndividual_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "AddClients/Add_ClientIndividual_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>AddClients/Add_ClientIndividual_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

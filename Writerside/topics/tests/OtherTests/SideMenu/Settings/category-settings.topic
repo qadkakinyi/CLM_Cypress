@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Settings Tests" id="category-settings">
+
+   <chapter title="Overview">
+       <p>Test files in the <code>OtherTests/SideMenu/Settings</code> directory.</p>
+       <p><b>Total Files:</b> 6</p>
+   </chapter>
+
+   <chapter title="Test Files">
+       <chapter title="Settings - Client Profiling Navigation">
+           <p><b>File:</b> <code>Client_Profiling_test.cy.ts</code></p>
+           <p>Verifies that the Settings menu opens and that each Client Profiling settings link navigates to the correct page, shows expected content, and finishes loading without a visible spinner.</p>
+           <p><a href="client-profiling-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Settings - Countries Navigation">
+           <p><b>File:</b> <code>Countries_test.cy.ts</code></p>
+           <p>Verifies that each submenu item under Settings → Countries navigates to the correct page, displays the expected heading, and finishes loading without a visible spinner.</p>
+           <p><a href="countries-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Settings - Evaluation & Questionnaire Navigation">
+           <p><b>File:</b> <code>Evaluation_And_Questionnaire_test.cy.ts</code></p>
+           <p>Verifies that each submenu item under Settings → Evaluation & Questionnaire navigates to the correct page, shows the expected heading, and finishes loading without a visible spinner.</p>
+           <p><a href="evaluation-and-questionnaire-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Settings - Know Your Firm Navigation">
+           <p><b>File:</b> <code>Know_Your_Firm_test.cy.ts</code></p>
+           <p>Verifies that each submenu item under Settings → Know Your Firm navigates to the correct page, shows the expected heading, and finishes loading without a visible spinner.</p>
+           <p><a href="know-your-firm-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Settings - Template & Report Setup Navigation">
+           <p><b>File:</b> <code>Template_And_Report_Setup_test.cy.ts</code></p>
+           <p>Verifies that each submenu item under Settings → Templates navigates to the correct page, shows the expected heading, and finishes loading without a visible spinner.</p>
+           <p><a href="template-and-report-setup-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Settings - Transaction Monitoring & Actions Navigation">
+           <p><b>File:</b> <code>Transaction_Monitoring_And_Actions_test.cy.ts</code></p>
+           <p>Verifies navigation for each submenu item under Settings → Transaction Monitoring, ensuring correct page loads, expected heading appears, and loader is hidden.</p>
+           <p><a href="transaction-monitoring-and-actions-test.topic">View Test Details</a></p>
+       </chapter>
+   </chapter>
+
+</topic>

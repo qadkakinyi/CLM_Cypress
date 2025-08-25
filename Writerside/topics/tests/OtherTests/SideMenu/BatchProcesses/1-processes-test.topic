@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Processes Menu Navigation" id="1-processes-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/SideMenu/BatchProcesses/1.Processes_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/SideMenu/BatchProcesses</code></p>
+        <p><b>Description:</b> Verifies that the first-level menu items under "Processes" can be toggled for visibility and contain more than four items.</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, navigation, processes</p>
+        <p><b>Dependencies:</b> cypress, getByDataCy</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Processes Menu">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Toggles first level menu list items visibility" id="test-1">
+            <p>Confirms that the Processes menu can be expanded and its first-level menu items are visible.</p>
+            <p><b>Priority:</b> Medium</p>
+            <step>Click the Processes menu item.</step>
+            <step>Verify that the first-level menu list items are visible.</step>
+            <step>Ensure that the number of first-level items is greater than four.</step>
+            <chapter title="Expected Results">
+                <p>• First-level menu items are visible and contain more than four items.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/SideMenu/BatchProcesses/1.Processes_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/SideMenu/BatchProcesses/1.Processes_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/SideMenu/BatchProcesses/1.Processes_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

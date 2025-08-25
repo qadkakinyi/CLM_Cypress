@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Add Rule" id="administrator-rules-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/Priority2/Administrator_Rules_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/Priority2</code></p>
+        <p><b>Description:</b> Generates hash key and adds rule using the hash</p>
+        <p><b>Priority:</b> High</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> rule, hashkey, configuration</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Add Rule">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Generate Regulation Group Hash Key" id="test-1">
+            <p><b>Scenario:</b> Generate Regulation Group Hash Key</p>
+            <p>Generates a hash key from provider selection and future expiration date</p>
+            <step>1. Open system settings > Account 2. Click generate key icon 3. Select provider 4. Enter formatted date 5. Select checkboxes and expiration 6. Save and capture hash key</step>
+            <chapter title="Expected Results">
+                <p>• Hash key is generated and captured</p>
+            </chapter>
+        </procedure>
+        <procedure title="Adds A Rule" id="test-2">
+            <p><b>Scenario:</b> Generate Regulation Group Hash Key</p>
+            <p>Generates a hash key from provider selection and future expiration date</p>
+            <step>1. Open system settings > Account 2. Click generate key icon 3. Select provider 4. Enter formatted date 5. Select checkboxes and expiration 6. Save and capture hash key</step>
+            <chapter title="Expected Results">
+                <p>• Hash key is generated and captured</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/Priority2/Administrator_Rules_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/Priority2/Administrator_Rules_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/Priority2/Administrator_Rules_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

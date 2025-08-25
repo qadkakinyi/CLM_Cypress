@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Client Profiling - Checklist Management" id="checklist-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/HelperFunctionalities/ClientProfiling/Checklist_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/HelperFunctionalities/ClientProfiling</code></p>
+        <p><b>Description:</b> Validates adding, editing, and deleting checklists in system settings</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, checklist-settings, smoke</p>
+        <p><b>Dependencies:</b> faker-js</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Checklist">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Adds A Checklist" id="test-1">
+            <p><b>Scenario:</b> Add Checklist</p>
+            <p>Adds a new checklist with name, priority, mapping reference, and regulation group</p>
+            <p><b>Priority:</b> High</p>
+            <p><b>Test Data:</b> Faker-generated mapping reference</p>
+            <step>Navigate to checklists settings</step>
+            <step>Click 'Add', enter name, priority, mapping reference</step>
+            <step>Select regulation group from dropdown</step>
+            <step>Save checklist</step>
+            <chapter title="Expected Results">
+                <p>• Checklist is saved and confirmation message appears</p>
+            </chapter>
+        </procedure>
+        <procedure title="Edits A Checklist" id="test-2">
+            <p><b>Scenario:</b> Add Checklist</p>
+            <p>Adds a new checklist with name, priority, mapping reference, and regulation group</p>
+            <p><b>Priority:</b> High</p>
+            <p><b>Test Data:</b> Faker-generated mapping reference</p>
+            <step>Navigate to checklists settings</step>
+            <step>Click 'Add', enter name, priority, mapping reference</step>
+            <step>Select regulation group from dropdown</step>
+            <step>Save checklist</step>
+            <chapter title="Expected Results">
+                <p>• Checklist is saved and confirmation message appears</p>
+            </chapter>
+        </procedure>
+        <procedure title="Deletes A CheckList" id="test-3">
+            <p><b>Scenario:</b> Add Checklist</p>
+            <p>Adds a new checklist with name, priority, mapping reference, and regulation group</p>
+            <p><b>Priority:</b> High</p>
+            <p><b>Test Data:</b> Faker-generated mapping reference</p>
+            <step>Navigate to checklists settings</step>
+            <step>Click 'Add', enter name, priority, mapping reference</step>
+            <step>Select regulation group from dropdown</step>
+            <step>Save checklist</step>
+            <chapter title="Expected Results">
+                <p>• Checklist is saved and confirmation message appears</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/HelperFunctionalities/ClientProfiling/Checklist_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/HelperFunctionalities/ClientProfiling/Checklist_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/HelperFunctionalities/ClientProfiling/Checklist_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="DemonstrationFlow Tests" id="category-demonstrationflow">
+
+   <chapter title="Overview">
+       <p>Test files in the <code>OtherTests/DemonstrationFlow</code> directory.</p>
+       <p><b>Total Files:</b> 2</p>
+   </chapter>
+
+   <chapter title="Test Files">
+       <chapter title="Add_Client_Corporate_Process_test">
+           <p><b>File:</b> <code>Add_Client_Corporate_Process_test.cy.ts</code></p>
+           <p><a href="add-client-corporate-process-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Add_Client_Individual_Process_test">
+           <p><b>File:</b> <code>Add_Client_Individual_Process_test.cy.ts</code></p>
+           <p><a href="add-client-individual-process-test.topic">View Test Details</a></p>
+       </chapter>
+   </chapter>
+
+</topic>

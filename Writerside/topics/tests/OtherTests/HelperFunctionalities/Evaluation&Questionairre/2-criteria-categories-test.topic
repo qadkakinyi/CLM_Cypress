@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Criteria Categories" id="2-criteria-categories-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/HelperFunctionalities/Evaluation&Questionairre/2.Criteria_Categories_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/HelperFunctionalities/Evaluation&Questionairre</code></p>
+        <p><b>Description:</b> Tests adding and editing criteria categories in the settings section.</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, criteria-categories</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Criteria Categories">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Adds Criteria Category" id="test-1">
+            <step>Visit the Criteria Categories settings page</step>
+            <chapter title="Expected Results">
+                <p>• Page loads successfully for each test</p>
+            </chapter>
+        </procedure>
+        <procedure title="Edits a criteria category" id="test-2">
+            <step>Visit the Criteria Categories settings page</step>
+            <chapter title="Expected Results">
+                <p>• Page loads successfully for each test</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/HelperFunctionalities/Evaluation&Questionairre/2.Criteria_Categories_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/HelperFunctionalities/Evaluation&Questionairre/2.Criteria_Categories_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/HelperFunctionalities/Evaluation&Questionairre/2.Criteria_Categories_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

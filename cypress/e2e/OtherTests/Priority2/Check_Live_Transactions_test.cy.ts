@@ -7,9 +7,21 @@
 let token= '';
 let user:any;
 let api_baseUrl = Cypress.env('api_baseUrl')
+
+/**
+ * @testSuite Live Transaction Check
+ * @description Validates live transaction evaluation via API and UI navigation to resulting case
+ * @priority High
+ * @owner QA Team
+ * @tags transactions, screening, api
+ */
 describe('Checks live transaction', ()=>{
     before(()=>{
-        // get authorization token
+        /**
+         * @scenario Get API Token
+         * @description Acquires access token before running live transaction tests
+         * @expectedResult Token is stored for future requests
+         */
         cy.request({
             method:"POST",
             url:`${api_baseUrl}/token`,
@@ -24,7 +36,12 @@ describe('Checks live transaction', ()=>{
             token = res.body.access_token
         })
     })
-    
+
+    /**
+     * @scenario Check Live Transaction via API
+     * @description Filters a client and performs transaction check, then verifies case state in UI
+     * @expectedResult Case is created and client case status is visible in UI
+     */
     it('Check live transaction through API', ()=>{
         //get user ID
         cy.wait(1000)
@@ -74,7 +91,6 @@ describe('Checks live transaction', ()=>{
                 })
             }
         })
-        
-        
     })
 })
+

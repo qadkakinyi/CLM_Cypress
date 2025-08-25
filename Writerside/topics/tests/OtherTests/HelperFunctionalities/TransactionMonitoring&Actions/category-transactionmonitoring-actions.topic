@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="TransactionMonitoring&Actions Tests" id="category-transactionmonitoring-actions">
+
+   <chapter title="Overview">
+       <p>Test files in the <code>OtherTests/HelperFunctionalities/TransactionMonitoring&Actions</code> directory.</p>
+       <p><b>Total Files:</b> 15</p>
+   </chapter>
+
+   <chapter title="Test Files">
+       <chapter title="Actions Setup">
+           <p><b>File:</b> <code>Actions_Setup_test.cy.ts</code></p>
+           <p>Covers creation, modification, and deletion of Action Categories and Action Statuses.</p>
+           <p><a href="actions-setup-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Application Approval Setup">
+           <p><b>File:</b> <code>Application_Approval_Setup_test.cy.ts</code></p>
+           <p>Validates CRUD operations for Purpose of Transaction setup.</p>
+           <p><a href="application-approval-setup-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Case Statuses Risk Point">
+           <p><b>File:</b> <code>Case_Statuses_Risk_Points_test.cy.ts</code></p>
+           <p>Verifies that case status risk points can be edited and restored</p>
+           <p><a href="case-statuses-risk-points-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Case Suspicion Levels Risk Point">
+           <p><b>File:</b> <code>Case_Suspicion_Levels_Risk_Points_test.cy.ts</code></p>
+           <p>Ensures that case suspicion level risk points can be modified and reverted to their original values.</p>
+           <p><a href="case-suspicion-levels-risk-points-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Case Workflow Statuses">
+           <p><b>File:</b> <code>Case_Workflow_Statuses_test.cy.ts</code></p>
+           <p>Validates adding, editing, and deleting of case workflow statuses in the system.</p>
+           <p><a href="case-workflow-statuses-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Contract Policy Categories">
+           <p><b>File:</b> <code>Contract_Setup_test.cy.ts</code></p>
+           <p>Create and update contract policy categories</p>
+           <p><a href="contract-setup-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Currency_Information_test">
+           <p><b>File:</b> <code>Currency_Information_test.cy.ts</code></p>
+           <p><a href="currency-information-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Currency Rate">
+           <p><b>File:</b> <code>Currency_Rates_test.cy.ts</code></p>
+           <p>Covers adding, editing, and deleting currency rate records</p>
+           <p><a href="currency-rates-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Dynamic Report Engine Setups">
+           <p><b>File:</b> <code>Dynamic_Report_Engine_Setups_test.cy.ts</code></p>
+           <p>Covers creation, modification, and deletion of dynamic report setups and related email templates</p>
+           <p><a href="dynamic-report-engine-setups-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Game Types">
+           <p><b>File:</b> <code>Gaming_Setups_test.cy.ts</code></p>
+           <p>Covers creation, modification, and deletion of game types</p>
+           <p><a href="gaming-setups-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Investment Account Types">
+           <p><b>File:</b> <code>Investment_Account_Types_test.cy.ts</code></p>
+           <p>Covers creation, modification, and deletion of investment account types</p>
+           <p><a href="investment-account-types-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Payment Methods">
+           <p><b>File:</b> <code>Payment_Method_test.cy.ts</code></p>
+           <p>Covers creation, modification, and deletion of payment methods</p>
+           <p><a href="payment-method-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Rule Categories">
+           <p><b>File:</b> <code>Rule_Categories_test.cy.ts</code></p>
+           <p>Covers creation, editing, and deletion of rule categories</p>
+           <p><a href="rule-categories-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Trade Types">
+           <p><b>File:</b> <code>Trade_Types_test.cy.ts</code></p>
+           <p>Covers creation, editing, and deletion of trade types in the system</p>
+           <p><a href="trade-types-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Transaction Type Settings">
+           <p><b>File:</b> <code>Transactions_Setup_test.cy.ts</code></p>
+           <p>Covers creation, modification, and deletion of transaction types</p>
+           <p><a href="transactions-setup-test.topic">View Test Details</a></p>
+       </chapter>
+   </chapter>
+
+</topic>

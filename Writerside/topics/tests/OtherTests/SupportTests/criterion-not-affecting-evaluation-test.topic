@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Criterion with "Not Include in evaluation" not affect evaluation" id="criterion-not-affecting-evaluation-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/SupportTests/Criterion_Not_Affecting_Evaluation_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/SupportTests</code></p>
+        <p><b>Description:</b> Ensures that a criterion with "Include in evaluation" UNCHECKED does not affect the client's evaluation and that the full lifecycle (create criterion/category, add answer, run evaluation, delete) works as expected.</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, settings, evaluation, criteria</p>
+        <p><b>Dependencies:</b> cypress,</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Criterion with `Not Include in evaluation` not affect evaluation">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Creates a criterion with field `Not include in evaluation` unchecked" id="test-1">
+            <p><b>Scenario:</b> Create Criterion with Include in evaluation UNCHECKED</p>
+            <p>Adds a new criteria category, then creates a criterion linked to it with "Include in evaluation" explicitly unchecked.</p>
+            <p><b>Priority:</b> Medium</p>
+            <step>Visit /settings/criteria-categories → Add category → Save.</step>
+            <step>Visit /settings/criteria → Add criterion → set fields → uncheck includeInEvaluation → Save.</step>
+            <chapter title="Expected Results">
+                <p>• Criterion is created with includeInEvaluation unchecked; success message displayed.</p>
+            </chapter>
+            <chapter title="Notes">
+                <note>Verifies the previously reported bug where the field might be saved as checked.</note>
+            </chapter>
+        </procedure>
+        <procedure title="Adds a Criterion Answer" id="test-2">
+            <p><b>Scenario:</b> Create Criterion with Include in evaluation UNCHECKED</p>
+            <p>Adds a new criteria category, then creates a criterion linked to it with "Include in evaluation" explicitly unchecked.</p>
+            <p><b>Priority:</b> Medium</p>
+            <step>Visit /settings/criteria-categories → Add category → Save.</step>
+            <step>Visit /settings/criteria → Add criterion → set fields → uncheck includeInEvaluation → Save.</step>
+            <chapter title="Expected Results">
+                <p>• Criterion is created with includeInEvaluation unchecked; success message displayed.</p>
+            </chapter>
+            <chapter title="Notes">
+                <note>Verifies the previously reported bug where the field might be saved as checked.</note>
+            </chapter>
+        </procedure>
+        <procedure title="Adds an evaluation" id="test-3">
+            <p><b>Scenario:</b> Create Criterion with Include in evaluation UNCHECKED</p>
+            <p>Adds a new criteria category, then creates a criterion linked to it with "Include in evaluation" explicitly unchecked.</p>
+            <p><b>Priority:</b> Medium</p>
+            <step>Visit /settings/criteria-categories → Add category → Save.</step>
+            <step>Visit /settings/criteria → Add criterion → set fields → uncheck includeInEvaluation → Save.</step>
+            <chapter title="Expected Results">
+                <p>• Criterion is created with includeInEvaluation unchecked; success message displayed.</p>
+            </chapter>
+            <chapter title="Notes">
+                <note>Verifies the previously reported bug where the field might be saved as checked.</note>
+            </chapter>
+        </procedure>
+        <procedure title="Deletes a Criteria" id="test-4">
+            <p><b>Scenario:</b> Create Criterion with Include in evaluation UNCHECKED</p>
+            <p>Adds a new criteria category, then creates a criterion linked to it with "Include in evaluation" explicitly unchecked.</p>
+            <p><b>Priority:</b> Medium</p>
+            <step>Visit /settings/criteria-categories → Add category → Save.</step>
+            <step>Visit /settings/criteria → Add criterion → set fields → uncheck includeInEvaluation → Save.</step>
+            <chapter title="Expected Results">
+                <p>• Criterion is created with includeInEvaluation unchecked; success message displayed.</p>
+            </chapter>
+            <chapter title="Notes">
+                <note>Verifies the previously reported bug where the field might be saved as checked.</note>
+            </chapter>
+        </procedure>
+        <procedure title="Deletes a Criteria Category" id="test-5">
+            <p><b>Scenario:</b> Create Criterion with Include in evaluation UNCHECKED</p>
+            <p>Adds a new criteria category, then creates a criterion linked to it with "Include in evaluation" explicitly unchecked.</p>
+            <p><b>Priority:</b> Medium</p>
+            <step>Visit /settings/criteria-categories → Add category → Save.</step>
+            <step>Visit /settings/criteria → Add criterion → set fields → uncheck includeInEvaluation → Save.</step>
+            <chapter title="Expected Results">
+                <p>• Criterion is created with includeInEvaluation unchecked; success message displayed.</p>
+            </chapter>
+            <chapter title="Notes">
+                <note>Verifies the previously reported bug where the field might be saved as checked.</note>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/SupportTests/Criterion_Not_Affecting_Evaluation_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/SupportTests/Criterion_Not_Affecting_Evaluation_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/SupportTests/Criterion_Not_Affecting_Evaluation_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

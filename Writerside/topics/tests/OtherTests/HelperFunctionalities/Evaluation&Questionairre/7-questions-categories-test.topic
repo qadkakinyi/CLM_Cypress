@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Questionnaire Categories" id="7-questions-categories-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/HelperFunctionalities/Evaluation&Questionairre/7.Questions_Categories_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/HelperFunctionalities/Evaluation&Questionairre</code></p>
+        <p><b>Description:</b> Covers adding and editing questionnaire categories in the settings section.</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Questionnaire Categories">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Adds a Question Category" id="test-1">
+            <p><b>Scenario:</b> Add a Questionnaire Category</p>
+            <p>Verifies that a new questionnaire category can be added with valid details.</p>
+            <step>1. Navigate to Questionnaire Categories settings. 2. Click "Add" and fill in category name, mapping reference, questionnaire type, and weight. 3. Save the new category.</step>
+            <chapter title="Expected Results">
+                <p>• The questionnaire category should be successfully added.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Edits a Question Category" id="test-2">
+            <p><b>Scenario:</b> Add a Questionnaire Category</p>
+            <p>Verifies that a new questionnaire category can be added with valid details.</p>
+            <step>1. Navigate to Questionnaire Categories settings. 2. Click "Add" and fill in category name, mapping reference, questionnaire type, and weight. 3. Save the new category.</step>
+            <chapter title="Expected Results">
+                <p>• The questionnaire category should be successfully added.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/HelperFunctionalities/Evaluation&Questionairre/7.Questions_Categories_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/HelperFunctionalities/Evaluation&Questionairre/7.Questions_Categories_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/HelperFunctionalities/Evaluation&Questionairre/7.Questions_Categories_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Individual Client Additional External Reference" id="add-edit-delete-client-additional-external-reference-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/IndividualClientFunctionality/Add_Edit_Delete_Client_Additional_External_Reference_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/IndividualClientFunctionality</code></p>
+        <p><b>Description:</b> Validates CRUD operations for Additional External References on an individual client profile</p>
+        <p><b>Priority:</b> Medium</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, smoke, client-profile, external-references</p>
+        <p><b>Dependencies:</b> faker-js, navigateToNewestClientMenu</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Add, Delete Client additional external reference">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Add Client additional external reference" id="test-1">
+            <p><b>Scenario:</b> Add Client Additional External Reference</p>
+            <p>Creates a new additional external reference for the selected individual client</p>
+            <p><b>Priority:</b> Medium</p>
+            <p><b>Test Data:</b> Faker-generated 16-char alphanumeric reference</p>
+            <step>Load individual client from fixture and navigate to newest client menu</step>
+            <step>Open “Additional External References” from the left menu</step>
+            <step>Capture client_id from the URL</step>
+            <step>Click Add, enter external reference, click Save</step>
+            <chapter title="Expected Results">
+                <p>• Record is saved and visible in the grid</p>
+            </chapter>
+        </procedure>
+        <procedure title="Edit client additional external reference" id="test-2">
+            <p><b>Scenario:</b> Add Client Additional External Reference</p>
+            <p>Creates a new additional external reference for the selected individual client</p>
+            <p><b>Priority:</b> Medium</p>
+            <p><b>Test Data:</b> Faker-generated 16-char alphanumeric reference</p>
+            <step>Load individual client from fixture and navigate to newest client menu</step>
+            <step>Open “Additional External References” from the left menu</step>
+            <step>Capture client_id from the URL</step>
+            <step>Click Add, enter external reference, click Save</step>
+            <chapter title="Expected Results">
+                <p>• Record is saved and visible in the grid</p>
+            </chapter>
+        </procedure>
+        <procedure title="Delete client additional external reference" id="test-3">
+            <p><b>Scenario:</b> Add Client Additional External Reference</p>
+            <p>Creates a new additional external reference for the selected individual client</p>
+            <p><b>Priority:</b> Medium</p>
+            <p><b>Test Data:</b> Faker-generated 16-char alphanumeric reference</p>
+            <step>Load individual client from fixture and navigate to newest client menu</step>
+            <step>Open “Additional External References” from the left menu</step>
+            <step>Capture client_id from the URL</step>
+            <step>Click Add, enter external reference, click Save</step>
+            <chapter title="Expected Results">
+                <p>• Record is saved and visible in the grid</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/IndividualClientFunctionality/Add_Edit_Delete_Client_Additional_External_Reference_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/IndividualClientFunctionality/Add_Edit_Delete_Client_Additional_External_Reference_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/IndividualClientFunctionality/Add_Edit_Delete_Client_Additional_External_Reference_test.cy.ts</code></p>
+   </chapter>
+
+</topic>

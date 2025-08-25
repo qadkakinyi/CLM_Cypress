@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Countries Tests" id="category-countries">
+
+   <chapter title="Overview">
+       <p>Test files in the <code>OtherTests/HelperFunctionalities/Countries</code> directory.</p>
+       <p><b>Total Files:</b> 4</p>
+   </chapter>
+
+   <chapter title="Test Files">
+       <chapter title="Countries - Cities and Ports">
+           <p><b>File:</b> <code>Cities&Ports_test.cy.ts</code></p>
+           <p>Validates importing, editing, and deleting city/port records in the settings module</p>
+           <p><a href="cities-ports-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Countries">
+           <p><b>File:</b> <code>Countries_test.cy.ts</code></p>
+           <p>Validates editing, importing, and deleting country records in the settings module</p>
+           <p><a href="countries-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Countries - Country Category">
+           <p><b>File:</b> <code>Country_Categories_test.cy.ts</code></p>
+           <p>Validates adding, editing, and deleting of country categories in the settings module</p>
+           <p><a href="country-categories-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="Country Evaluation Grades">
+           <p><b>File:</b> <code>Country_Evaluation_Grades_test.cy.ts</code></p>
+           <p>Verifies editing of country evaluation grades, cross-checks with Criteria settings, and uploads grades via file</p>
+           <p><a href="country-evaluation-grades-test.topic">View Test Details</a></p>
+       </chapter>
+   </chapter>
+
+</topic>

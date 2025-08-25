@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="AddClients Tests" id="category-addclients">
+
+   <chapter title="Overview">
+       <p>Test files in the <code>AddClients</code> directory.</p>
+       <p><b>Total Files:</b> 3</p>
+   </chapter>
+
+   <chapter title="Test Files">
+       <chapter title="AddClients - Corporate Client Management">
+           <p><b>File:</b> <code>Add_ClientCorporate_test.cy.ts</code></p>
+           <p>This test verifies the functionality of adding a corporate client by filling out a form with company details, including registered name, registration number, regulation group, client status, contact information, and capital amounts, then confirming successful submission with a success message.</p>
+           <p><a href="add-clientcorporate-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="AddClients - Individual Client Management">
+           <p><b>File:</b> <code>Add_ClientIndividual_test.cy.ts</code></p>
+           <p>Comprehensive test suite for adding individual clients to the system</p>
+           <p><a href="add-clientindividual-test.topic">View Test Details</a></p>
+       </chapter>
+       <chapter title="AddClients - Joint Client Management">
+           <p><b>File:</b> <code>Add_ClientJoint_test.cy.ts</code></p>
+           <p>Test suite for adding joint clients to the system</p>
+           <p><a href="add-clientjoint-test.topic">View Test Details</a></p>
+       </chapter>
+   </chapter>
+
+</topic>

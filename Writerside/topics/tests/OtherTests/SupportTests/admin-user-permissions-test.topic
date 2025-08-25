@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+      title="Admin User Permissions" id="admin-user-permissions-test">
+
+   <show-structure for="chapter,procedure" depth="2"/>
+  
+   <chapter title="Overview">
+       <p><b>File:</b> <code>OtherTests/SupportTests/Admin_User_Permissions_test.cy.ts</code></p>
+        <p><b>Folder:</b> <code>OtherTests/SupportTests</code></p>
+        <p><b>Description:</b> Validates that an Admin user can see all expected navigation menu items and access a client's dashboard.</p>
+        <p><b>Priority:</b> High</p>
+        <p><b>Owner:</b> QA Team</p>
+        <p><b>Tags:</b> regression, permissions, navigation, client-dashboard</p>
+        <p><b>Dependencies:</b> cypress, navigateToNewestClientMenu, client_corporate.json</p>
+    </chapter>
+
+    <chapter title="Test Suites">
+        <chapter title="Admin User Permissions">
+        </chapter>
+    </chapter>
+
+    <chapter title="Test Scenarios">
+        <procedure title="Ensures that all expected menu items are visible" id="test-1">
+            <p><b>Scenario:</b> Verify Menu Items Visibility</p>
+            <p>Checks that all expected Admin navigation menu items are present and visible.</p>
+            <p><b>Priority:</b> High</p>
+            <step>Wait for page load → iterate menu_items → assert each sa-menu-item with matching text is visible.</step>
+            <chapter title="Expected Results">
+                <p>• All menu items are visible to Admin.</p>
+            </chapter>
+        </procedure>
+        <procedure title="Drills into a client dashboard" id="test-2">
+            <p><b>Scenario:</b> Verify Menu Items Visibility</p>
+            <p>Checks that all expected Admin navigation menu items are present and visible.</p>
+            <p><b>Priority:</b> High</p>
+            <step>Wait for page load → iterate menu_items → assert each sa-menu-item with matching text is visible.</step>
+            <chapter title="Expected Results">
+                <p>• All menu items are visible to Admin.</p>
+            </chapter>
+        </procedure>
+    </chapter>
+
+    <chapter title="Execution">
+       <chapter title="Run Individual Test">
+           <code-block lang="bash">
+               npx cypress run --spec "OtherTests/SupportTests/Admin_User_Permissions_test.cy.ts"
+           </code-block>
+       </chapter>
+      
+       <chapter title="Run in Interactive Mode">
+           <code-block lang="bash">
+               npx cypress open --spec "OtherTests/SupportTests/Admin_User_Permissions_test.cy.ts"
+           </code-block>
+       </chapter>
+   </chapter>
+
+    <chapter title="Source Code">
+       <p><b>File Path:</b> <code>OtherTests/SupportTests/Admin_User_Permissions_test.cy.ts</code></p>
+   </chapter>
+
+</topic>
